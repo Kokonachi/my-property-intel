@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { AppNav } from '../components/AppNav.jsx'
 import { Footer } from '../components/ui.jsx'
 import { NoteChip } from '../components/NoteChip.jsx'
@@ -6,11 +6,15 @@ import { useLang } from '../lib/i18n.jsx'
 import { typRentPsf, AREA_RENT_PSF } from '../data/launches.js'
 import { typYields, workingPrice, discountToTargetGross } from '../lib/launchYield.js'
 import { fmtRM, yieldBand } from '../data/properties.js'
+import { REAL_META } from '../data/real.js'
 import { LoanVerdict, LoanAssumptionsBar, LoanPctControl, LoanRateYears } from '../components/LtvVerdict.jsx'
 import { useLoanAssumptions } from '../lib/loanAssumptions.js'
 import { launchScore, scoreBand, SCORE_WEIGHTS, entryCostOf } from '../lib/launchScore.js'
 import { FirstBuyerNote } from '../components/HolderSheet.jsx'
 import { useHolder, SEGMENTS } from '../lib/holderProfile.js'
+import { cashVsRent, entryCost, salaryBurden, parseMoney } from '../lib/mortgage.js'
+import { vsCurrentRentLine, rentOutLine, salaryBandCopy } from '../lib/plainCopy.js'
+import { useCompare } from '../lib/compareDraft.js'
 
 const pct = v => (v == null || Number.isNaN(v) ? '—' : `${v.toFixed(2)}%`)
 const rm = v => (v == null || Number.isNaN(v) ? '—' : fmtRM(v))
@@ -37,7 +41,49 @@ function KeyFact({ label, value }) {
   )
 }
 
-function TypCard({ p, typ, t, draft, onChange, compactLoan = false }) {
+function NetBreakdown({ y, t }) {
+  if (!y || y.net == null) return null
+  const row = (label, pts) => (
+    <div className="flex justify-between gap-3 tabular-nums">
+      <span>{label}</span>
+      <span>− {pts.toFixed(2)}%</span>
+    </div>
+  )
+  return (
+    <div className="mt-3 rounded-xl bg-slate-50 px-3 py-2.5 text-[12px] text-slate-600 space-y-1" data-testid="net-breakdown">
+      <div className="flex justify-between font-medium text-slate-800 tabular-nums">
+        <span>{t('毛回报', 'Gross')}</span><span>{y.gross.toFixed(2)}%</span>
+      </div>
+      {row(t('空置（约 1 个月）', 'Vacancy (about 1 month)'), y.vacancyPts)}
+      {row(t('门牌税（年租 4%）', 'Assessment (4% of annual rent)'), y.assessmentPts)}
+      {row(t('管理费', 'Maintenance'), y.maintenancePts)}
+      {row(t('地税和保险', 'Quit rent and insurance'), y.fixedPts)}
+      <div className="flex justify-between font-medium text-slate-800 tabular-nums border-t border-slate-200 pt-1">
+        <span>{t('净回报', 'Net')}</span><span>{y.net.toFixed(2)}%</span>
+      </div>
+    </div>
+  )
+}
+
+function CompList({ band, t }) {
+  if (!band?.listings?.length) return null
+  return (
+    <div className="mt-3" data-testid="comp-list">
+      <div className="text-[11px] text-slate-500 mb-1">{t(`可比叫租 ${band.n} 则`, `${band.n} asking-rent comps`)}</div>
+      <ul className="space-y-1 max-h-56 overflow-y-auto text-[12px] text-slate-600">
+        {band.listings.map((s, i) => (
+          <li key={i} className="flex justify-between gap-2">
+            <span className="min-w-0 truncate">{s.project} · {s.size.toLocaleString()} sqft{s.rooms ? ` · ${t(`${s.rooms} 房`, `${s.rooms} bed`)}` : ''}</span>
+            <span className="shrink-0 tabular-nums">{rm(s.rent)}{t('/月', '/mo')} · RM{s.psf.toFixed(2)} psf</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+function TypCard({ p, typ, t, draft, onChange, compactLoan = false, variant = 'default' }) {
+  const { loan } = useLoanAssumptions()
   const { psf, band } = typRentPsf(typ)
   const list = typ.price_from
   const d = draft || { mode: list ? 'pct' : 'price', pct: '', price: '' }
@@ -58,8 +104,14 @@ function TypCard({ p, typ, t, draft, onChange, compactLoan = false }) {
     typ.size ? `${typ.size.toLocaleString()} sqft` : null,
     typ.units ? t(`${typ.units} 个`, `${typ.units} units`) : null,
   ].filter(Boolean)
-  const showGrid = impliedRent || y?.gross != null || y?.net != null
+  const showGrid = variant !== 'simple' && (impliedRent || y?.gross != null || y?.net != null)
   const gridCols = [impliedRent, y?.gross != null, y?.net != null].filter(Boolean).length
+  const v = price && impliedRent
+    ? cashVsRent({ price, rentMo: impliedRent, ltv: loan.ltv, rate: loan.rate, years: loan.years, maintMo: (p.maint_psf || 0) * typ.size })
+    : null
+  const typEntry = v ? entryCost({ price, down: v.down, size: typ.size }) : null
+  const simple = variant === 'simple'
+  const pro = variant === 'pro'
 
   return (
     <section className="rounded-2xl bg-white p-4 sm:p-5 ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)]" data-testid={`typ-${typ.id}`}>
@@ -74,8 +126,8 @@ function TypCard({ p, typ, t, draft, onChange, compactLoan = false }) {
             <div className="text-[11px] text-slate-500">{discounted ? t('折后价', 'After discount') : t('表价起', 'List from')}</div>
             <div className="text-[16px] font-semibold text-slate-900 tabular-nums leading-tight">{rm(discounted ? after : list)}</div>
             {discounted ? <div className="text-[11px] text-slate-400 tabular-nums line-through">{rm(list)}</div> : null}
-            {!discounted && typ.psf_from ? <div className="text-[11px] text-slate-500">RM{typ.psf_from.toLocaleString('en-MY')} psf</div> : null}
-            {discounted && typ.size ? <div className="text-[11px] text-slate-500">RM{Math.round(after / typ.size).toLocaleString('en-MY')} psf</div> : null}
+            {!simple && !discounted && typ.psf_from ? <div className="text-[11px] text-slate-500">RM{typ.psf_from.toLocaleString('en-MY')} psf</div> : null}
+            {!simple && discounted && typ.size ? <div className="text-[11px] text-slate-500">RM{Math.round(after / typ.size).toLocaleString('en-MY')} psf</div> : null}
             {!discounted && typ.price_to && typ.price_to !== list ? (
               <div className="text-[11px] text-slate-400 tabular-nums">{rm(list)}–{rm(typ.price_to)}</div>
             ) : null}
@@ -85,7 +137,25 @@ function TypCard({ p, typ, t, draft, onChange, compactLoan = false }) {
         )}
       </div>
 
-      {price && impliedRent ? <LoanVerdict price={price} rentMo={impliedRent} className="mt-3" compact={compactLoan} /> : null}
+      {simple && typEntry && (
+        <div className="mt-3 grid grid-cols-2 gap-3" data-testid={`typ-afford-${typ.id}`}>
+          <div>
+            <div className="text-[11px] text-slate-500">{t('入场要准备（估）', 'Cash to enter (est.)')}</div>
+            <div className="mt-0.5 text-[15px] font-semibold tabular-nums text-slate-900">{rm(typEntry.total)}</div>
+          </div>
+          {v?.inst != null ? (
+            <div>
+              <div className="text-[11px] text-slate-500">{t('月供', 'Instalment')}</div>
+              <div className="mt-0.5 text-[15px] font-semibold tabular-nums text-slate-900">{rm(v.inst)}{t('/月', '/mo')}</div>
+            </div>
+          ) : null}
+        </div>
+      )}
+      {simple && rentOutLine(v?.cash, t) ? (
+        <p className="mt-2 text-[13px] text-slate-600 leading-snug">{rentOutLine(v?.cash, t)}</p>
+      ) : null}
+
+      {!simple && price && impliedRent ? <LoanVerdict price={price} rentMo={impliedRent} className="mt-3" compact={compactLoan} /> : null}
 
       {showGrid && (
         <div className={`mt-3 grid gap-3 ${gridCols >= 3 ? 'grid-cols-3' : gridCols === 2 ? 'grid-cols-2' : 'grid-cols-1'}`}>
@@ -111,35 +181,40 @@ function TypCard({ p, typ, t, draft, onChange, compactLoan = false }) {
         </div>
       )}
 
-      <div className="mt-2.5 flex flex-wrap items-start gap-1.5">
-        {thin && (
-          <NoteChip testId={`thin-sample-${typ.id}`} label={t('样本少', 'Thin sample')}>
-            {t(`附近没有足够的相近面积租盘（±25% 内不足 4 则）。上面的回报改用孟沙南已建成楼盘的租金中位数 RM${psf.toFixed(2)} psf（不含组屋）。`,
-              `Not enough nearby listings in the same size band (fewer than 4 ads within ±25%). Yield above uses the Bangsar South completed-project median rent of RM${psf.toFixed(2)} psf, excluding low-cost flats.`)}
-            {band?.listings?.length
-              ? t(` 最近的一则：${band.listings[0].project} ${band.listings[0].size} sqft，叫租 ${rm(band.listings[0].rent)}/月。`,
-                ` Nearest ad: ${band.listings[0].project} ${band.listings[0].size} sqft, asking ${rm(band.listings[0].rent)}/mo.`)
-              : null}
-          </NoteChip>
-        )}
-        {band?.sufficient && (
-          <NoteChip testId={`comps-${typ.id}`} label={t(`${band.n} 则可比`, `${band.n} comps`)}>
-            <ul className="space-y-1 max-h-48 overflow-y-auto">
-              {band.listings.map((s, i) => (
-                <li key={i} className="flex justify-between gap-2">
-                  <span className="min-w-0 truncate">{s.project} · {s.size.toLocaleString()} sqft{s.rooms ? ` · ${t(`${s.rooms} 房`, `${s.rooms} bed`)}` : ''}</span>
-                  <span className="shrink-0 tabular-nums">{rm(s.rent)}{t('/月', '/mo')} · RM{s.psf.toFixed(2)} psf</span>
-                </li>
-              ))}
-            </ul>
-          </NoteChip>
-        )}
-        {(typ.price_source || typ.price_source_zh) && (
-          <NoteChip testId={`typ-source-${typ.id}`} label={t('价格来源', 'Price source')}>
-            {t(typ.price_source_zh || typ.price_source, typ.price_source)}
-          </NoteChip>
-        )}
-      </div>
+      {pro && <NetBreakdown y={y} t={t} />}
+      {pro && <CompList band={band} t={t} />}
+
+      {!simple && (
+        <div className="mt-2.5 flex flex-wrap items-start gap-1.5">
+          {thin && (
+            <NoteChip testId={`thin-sample-${typ.id}`} label={t('样本少', 'Thin sample')}>
+              {t(`附近没有足够的相近面积租盘（±25% 内不足 4 则）。上面的回报改用孟沙南已建成楼盘的租金中位数 RM${psf.toFixed(2)} psf（不含组屋）。`,
+                `Not enough nearby listings in the same size band (fewer than 4 ads within ±25%). Yield above uses the Bangsar South completed-project median rent of RM${psf.toFixed(2)} psf, excluding low-cost flats.`)}
+              {band?.listings?.length
+                ? t(` 最近的一则：${band.listings[0].project} ${band.listings[0].size} sqft，叫租 ${rm(band.listings[0].rent)}/月。`,
+                  ` Nearest ad: ${band.listings[0].project} ${band.listings[0].size} sqft, asking ${rm(band.listings[0].rent)}/mo.`)
+                : null}
+            </NoteChip>
+          )}
+          {!pro && band?.sufficient && (
+            <NoteChip testId={`comps-${typ.id}`} label={t(`${band.n} 则可比`, `${band.n} comps`)}>
+              <ul className="space-y-1 max-h-48 overflow-y-auto">
+                {band.listings.map((s, i) => (
+                  <li key={i} className="flex justify-between gap-2">
+                    <span className="min-w-0 truncate">{s.project} · {s.size.toLocaleString()} sqft{s.rooms ? ` · ${t(`${s.rooms} 房`, `${s.rooms} bed`)}` : ''}</span>
+                    <span className="shrink-0 tabular-nums">{rm(s.rent)}{t('/月', '/mo')} · RM{s.psf.toFixed(2)} psf</span>
+                  </li>
+                ))}
+              </ul>
+            </NoteChip>
+          )}
+          {(typ.price_source || typ.price_source_zh) && (
+            <NoteChip testId={`typ-source-${typ.id}`} label={t('价格来源', 'Price source')}>
+              {t(typ.price_source_zh || typ.price_source, typ.price_source)}
+            </NoteChip>
+          )}
+        </div>
+      )}
 
       <div className="mt-3">
         <button
@@ -182,7 +257,7 @@ function TypCard({ p, typ, t, draft, onChange, compactLoan = false }) {
                 {rm(list)} → {rm(after)} · {((1 - after / list) * 100).toFixed(1)}% · {pct(before.gross)} → {pct(afterY.gross)}
               </div>
             )}
-            {list && (t5 || t6) && (
+            {!simple && list && (t5 || t6) && (
               <div className="mt-2 text-[12px] text-slate-500 leading-snug space-y-0.5">
                 <div>{t5?.alreadyMet
                   ? t('表价毛回报已达到 5%。', 'Gross at list already meets 5%.')
@@ -199,20 +274,77 @@ function TypCard({ p, typ, t, draft, onChange, compactLoan = false }) {
   )
 }
 
+function SalaryBox({ inst, salary, onSave, t }) {
+  const [raw, setRaw] = useState(() => (salary != null ? String(Math.round(salary)) : ''))
+  useEffect(() => {
+    setRaw(salary != null ? String(Math.round(salary)) : '')
+  }, [salary])
+  const burden = salaryBurden(inst, salary)
+  const bandColor = burden?.band === 'comfortable' ? '#059669' : burden?.band === 'tight' ? '#d97706' : '#e11d48'
+
+  return (
+    <section className="rounded-2xl bg-white p-4 sm:p-5 ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)]" data-testid="salary-box">
+      <div className="text-[11px] text-slate-500">{t('月供占工资的比例', 'Instalment as a share of salary')}</div>
+      {burden ? (
+        <>
+          <div className="mt-0.5 flex items-end gap-3">
+            <div className="text-[28px] font-semibold tabular-nums leading-none tracking-tight text-slate-900">{burden.pct.toFixed(0)}%</div>
+            <div className="pb-0.5 text-[13px] font-medium" style={{ color: bandColor }}>{salaryBandCopy(burden.band, t)}</div>
+          </div>
+          <p className="mt-2 text-[12px] text-slate-500 leading-snug">
+            {t(`月供 ${rm(inst)}，以你填写的月薪 ${rm(salary)} 来算。这只是一般参考：30% 以下比较轻松，30%–40% 有点紧，超过 40% 压力较大。不是银行审批标准。`,
+              `The instalment is ${rm(inst)} against the monthly salary you entered, ${rm(salary)}. This is only a general guideline: under 30% is comfortable, 30–40% is tight, and over 40% is stretched. It is not a bank’s approval rule.`)}
+          </p>
+        </>
+      ) : (
+        <p className="mt-1 text-[13px] text-slate-600 leading-snug">{t('填写月薪后，可以看到月供大概占收入的多少。', 'Enter your monthly salary to see how much of it the instalment would take.')}</p>
+      )}
+      <label className="mt-3 flex items-end gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2">
+        <div className="flex-1 min-w-0">
+          <div className="text-[11px] text-slate-500">{t('每月工资（RM）', 'Monthly salary (RM)')}</div>
+          <div className="flex items-baseline gap-1">
+            <span className="text-[13px] text-slate-400">RM</span>
+            <input
+              data-testid="inline-salary"
+              inputMode="decimal"
+              className="w-full bg-transparent outline-none text-[16px] font-semibold tabular-nums text-slate-900"
+              placeholder="8,000"
+              value={raw}
+              onChange={e => setRaw(e.target.value)}
+              onBlur={() => onSave(parseMoney(raw))}
+            />
+          </div>
+        </div>
+        <button type="button" data-testid="inline-salary-save" onClick={() => onSave(parseMoney(raw))}
+          className="shrink-0 h-8 px-3 rounded-full bg-slate-900 text-white text-[12px] font-medium">{t('保存', 'Save')}</button>
+      </label>
+    </section>
+  )
+}
+
 export default function LaunchDetail({ p }) {
   const { t } = useLang()
   const { loan } = useLoanAssumptions()
-  const { segment } = useHolder()
+  const { holder, segment, setBudget } = useHolder()
+  const compare = useCompare()
   const [drafts, setDrafts] = useState(() => Object.fromEntries(p.typologies.map(ty => [ty.id, { mode: ty.price_from ? 'pct' : 'price', pct: '', price: '' }])))
   const setDraft = (id, d) => setDrafts(s => ({ ...s, [id]: { ...s[id], ...d } }))
-  const [scoreOpen, setScoreOpen] = useState(false)
+  const many = segment === SEGMENTS.many
+  const zero = segment === SEGMENTS.zero
+  const [scoreOpen, setScoreOpen] = useState(many)
+  const [howOpen, setHowOpen] = useState(many)
+
+  useEffect(() => {
+    if (many) {
+      setScoreOpen(true)
+      setHowOpen(true)
+    }
+  }, [many])
 
   const pricedTyp = useMemo(() => p.typologies.find(ty => ty.price_from), [p])
   const scored = useMemo(() => launchScore(p, { rate: loan.rate, years: loan.years, ltv: loan.ltv }), [p, loan.rate, loan.years, loan.ltv])
   const sBand = scoreBand(scored.score)
   const entry = entryCostOf(scored)
-  const many = segment === SEGMENTS.many
-  const zero = segment === SEGMENTS.zero
 
   const tenureLabel = /freehold/i.test(p.tenure)
     ? t('永久地契', 'Freehold')
@@ -241,6 +373,12 @@ export default function LaunchDetail({ p }) {
     p.construction_progress_pct != null ? { label: t('开工进度', 'Construction'), value: `${p.construction_progress_pct}%` } : null,
   ].filter(Boolean)
 
+  const typVariant = zero ? 'simple' : many ? 'pro' : 'default'
+  const vsRent = zero ? vsCurrentRentLine(scored.v?.inst, holder.currentRent, t) : null
+  const rentOut = zero ? rentOutLine(scored.v?.cash, t) : null
+  const selected = compare.has(p.id)
+  const dataAsOf = REAL_META?.generated_at
+
   return (
     <div className="min-h-full bg-[#f6f7f8] flex flex-col">
       <AppNav active="launches" />
@@ -248,6 +386,17 @@ export default function LaunchDetail({ p }) {
         <div className="flex flex-wrap items-center gap-3 text-[13px] font-medium text-slate-600">
           <a href="#/" className="hover:text-slate-900">{t('← 全部新楼盘', '← All new launches')}</a>
           <a href={`#/explore/${p.id}`} className="hover:text-slate-900">{t('在地图上看', 'See on the map')}</a>
+          {many && (
+            <button
+              type="button"
+              data-testid="detail-compare-toggle"
+              disabled={!selected && !compare.canAdd}
+              onClick={() => compare.toggle(p.id)}
+              className="ml-auto text-[13px] font-medium text-slate-700 disabled:text-slate-300"
+            >
+              {selected ? t('已加入对比', 'Added to compare') : t('加入对比', 'Add to compare')}
+            </button>
+          )}
         </div>
 
         <section className="rounded-2xl bg-white overflow-hidden ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)]">
@@ -298,31 +447,35 @@ export default function LaunchDetail({ p }) {
 
         {zero && entry && (
           <section className="rounded-2xl bg-white p-4 sm:p-5 ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)]" data-testid="entry-cost">
-            <div className="text-[11px] text-slate-500">{t('入场成本（估）', 'Entry cost (est.)')}</div>
+            <div className="text-[11px] text-slate-500">{t('入场要准备多少钱（估算）', 'How much cash to prepare (estimate)')}</div>
             <div className="mt-0.5 text-[28px] font-semibold tabular-nums leading-none tracking-tight text-slate-900">{rm(entry.total)}</div>
-            <div className="mt-2.5 grid grid-cols-3 gap-3">
-              <div>
-                <div className="text-[11px] text-slate-500">{t('首付', 'Down payment')}</div>
-                <div className="mt-0.5 text-[15px] font-semibold tabular-nums text-slate-900">{rm(entry.down)}</div>
-              </div>
-              <div>
-                <div className="text-[11px] text-slate-500">{t('税费估算', 'Legal / stamp est.')}</div>
-                <div className="mt-0.5 text-[15px] font-semibold tabular-nums text-slate-900">{rm(entry.fees)}</div>
-              </div>
-              <div>
-                <div className="text-[11px] text-slate-500">{t('月供', 'Instalment')}</div>
-                <div className="mt-0.5 text-[15px] font-semibold tabular-nums text-slate-900">{scored.v?.inst != null ? `${rm(scored.v.inst)}${t('/月', '/mo')}` : '—'}</div>
-              </div>
+            <div className="mt-3 space-y-1.5 text-[13px] text-slate-700">
+              <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500">{t('首付', 'Down payment')}</span><span className="font-medium">{rm(entry.down)}</span></div>
+              <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500">{t('律师费（含 8% 服务税，估）', 'Legal fees (incl. 8% SST, est.)')}</span><span className="font-medium">{rm(entry.legal)}</span></div>
+              <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500">{t('印花税（买卖合约 + 贷款协议，估）', 'Stamp duty (SPA + loan, est.)')}</span><span className="font-medium">{rm(entry.stamp)}</span></div>
+              <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500">{t(`装修预留（按 RM${entry.renoPsf}/尺估算）`, `Renovation allowance (RM${entry.renoPsf}/sqft estimate)`)}</span><span className="font-medium">{rm(entry.renovation)}</span></div>
             </div>
-            {scored.yields?.rentMo && scored.v ? (
-              <LoanVerdict price={scored.price} rentMo={scored.yields.rentMo} className="mt-3" />
+            {scored.v?.inst != null ? (
+              <div className="mt-3 pt-3 border-t border-slate-100">
+                <div className="text-[11px] text-slate-500">{t('月供', 'Instalment')}</div>
+                <div className="mt-0.5 text-[18px] font-semibold tabular-nums text-slate-900">{rm(scored.v.inst)}{t('/月', '/mo')}</div>
+                <div className="mt-1.5 space-y-0.5 text-[13px] text-slate-600 leading-snug">
+                  {vsRent ? <div>{vsRent}</div> : null}
+                  {rentOut ? <div>{rentOut}</div> : null}
+                </div>
+              </div>
             ) : null}
+            <p className="mt-3 text-[11px] text-slate-400 leading-snug">{t('以上律师费、印花税和装修都是估算，不是律师行或承包商的报价，也不含银行手续费或家具升级。', 'Legal fees, stamp duty and renovation are estimates, not quotes from a solicitor or contractor, and they exclude bank fees or a fuller furniture budget.')}</p>
           </section>
+        )}
+
+        {zero && scored.v?.inst != null && (
+          <SalaryBox inst={scored.v.inst} salary={holder.salary} onSave={v => setBudget({ salary: v })} t={t} />
         )}
 
         {zero && <FirstBuyerNote />}
 
-        {scored.score != null && (
+        {!zero && scored.score != null && (
           <button
             type="button"
             data-testid="launch-score"
@@ -372,10 +525,10 @@ export default function LaunchDetail({ p }) {
           <LoanAssumptionsBar />
         )}
 
-        <h2 className="pt-1 text-[15px] font-semibold text-slate-900">{t('按户型看回报', 'Yield by unit type')}</h2>
+        <h2 className="pt-1 text-[15px] font-semibold text-slate-900">{zero ? t('各户型要准备多少', 'Cash to enter by unit type') : t('按户型看回报', 'Yield by unit type')}</h2>
         <div className="space-y-3">
           {p.typologies.map(typ => (
-            <TypCard key={typ.id} p={p} typ={typ} t={t} draft={drafts[typ.id]} onChange={d => setDraft(typ.id, d)} compactLoan={many} />
+            <TypCard key={typ.id} p={p} typ={typ} t={t} draft={drafts[typ.id]} onChange={d => setDraft(typ.id, d)} compactLoan={many} variant={typVariant} />
           ))}
         </div>
 
@@ -399,13 +552,24 @@ export default function LaunchDetail({ p }) {
           </details>
         )}
 
-        <details className="rounded-2xl bg-white ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)] group" data-testid="how-calculated">
+        <details
+          className="rounded-2xl bg-white ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)] group"
+          data-testid="how-calculated"
+          open={howOpen}
+          onToggle={e => setHowOpen(e.currentTarget.open)}
+        >
           <summary className="cursor-pointer list-none px-4 sm:px-5 py-3.5 flex items-center justify-between gap-3 text-[15px] font-semibold text-slate-900">
             <span>{t('怎么计算 / 数据', 'How we calculate / Data')}</span>
             <span className="text-slate-400 text-[13px] font-medium group-open:hidden">{t('展开', 'Show')}</span>
             <span className="text-slate-400 text-[13px] font-medium hidden group-open:inline">{t('收起', 'Hide')}</span>
           </summary>
           <div className="px-4 sm:px-5 pb-5 border-t border-slate-100 space-y-3 text-[13px] text-slate-600 leading-relaxed">
+            {dataAsOf || p.units_left_as_of ? (
+              <p className="mt-3 text-[12px] text-slate-500" data-testid="data-as-of">
+                {dataAsOf ? t(`已建成楼盘租金数据截至 ${dataAsOf}。`, `Completed-project rent data as of ${dataAsOf}.`) : null}
+                {p.units_left_as_of ? t(` 剩余单位数字截至 ${p.units_left_as_of}。`, ` Units-left figure as of ${p.units_left_as_of}.`) : null}
+              </p>
+            ) : null}
             <ul className="mt-3 space-y-1.5 list-disc pl-5">
               <li>{t('参考毛回报 = 同面积段叫租中位（每平方尺）× 户型面积 × 12 ÷ 表价。净回报沿用现有算法：减去约 1 个月空置、门牌税（年租 4%）、管理费、地税和保险（公寓按每年 RM250 估）。',
                 'Indicative gross = size-band median asking rent psf × typ size × 12 ÷ list price. Net yield uses the existing method: subtract about one month of vacancy, assessment tax (4% of annual rent), maintenance, and quit rent plus insurance (RM250/year for strata).')}</li>
@@ -415,6 +579,8 @@ export default function LaunchDetail({ p }) {
               <li>{t('开发商给的议价折扣通常不会挂在网上。本页数字默认是表价；只有你填了销售报价之后，折扣后的回报和月供才会按折后价重算。', 'Negotiated developer discounts are rarely listed online. Figures default to the list price; after-discount yields and instalments appear only after you enter a sales quote.')}</li>
               <li>{t('月供用等额本息公式，贷款成数默认 90%，可在 50%–90% 之间改，首页、地图小窗和本页共用。年利率默认 4.3%、年期默认 35 年，可在本页修改。国行 2026 年 11 月 5 日维持隔夜政策利率 2.75%，各银行标准化基准利率（SBR）同为 2.75%。4.3% 是目前市面常见浮动房贷（约 4.10–4.75%）的中间假设，不是银行批复利率；投资客贷款可能更高。年期通常会受年龄上限（多为 70 岁）限制。租金是叫租估算，不是交房后的实收租金。',
                 'The instalment uses a standard amortising formula. Loan percentage defaults to 90% and can be set from 50% to 90%; the same value is shared on the home list, the map panel and this page. Interest defaults to 4.3% p.a. over 35 years, editable here. Bank Negara held the OPR at 2.75% on 5 Nov 2026, so every bank’s SBR is 2.75%. 4.3% is a mid-market assumption among advertised floating packages in November 2026 (about 4.10–4.75%), not a bank offer; investor loans can be higher. Tenure is often capped by age (commonly 70). Rent is an asking-rent estimate, not achieved rent after handover.')}</li>
+              <li>{t('入场要准备的钱 = 首付 + 买卖合约和贷款协议印花税 + 律师费（按常见律师收费表估算，并加上 8% 服务税）+ 按每平方尺 RM40 预留的装修。这些都是估算。',
+                'Cash to enter = down payment + SPA and loan-agreement stamp duty + legal fees (estimated on the commonly published solicitors’ scale, plus 8% SST) + a RM40 per sqft renovation allowance. These are estimates.')}</li>
               <li>{t('投资评分满分 10 分：租售比（参考毛回报）最多 4 分（3% 得 0 分，6% 或以上得满分），你当前贷款成数下租金覆盖月供最多 3 分（覆盖率 0.85 得 0 分，1.25 或以上得满分），与同区域已建成楼盘（不含组屋）毛回报中位相比最多 2 分（持平得 1 分，高或低 2 个百分点到满分或 0 分），可比租盘样本数量最多 1 分（同面积段 20 则以上得满分，样本不足改用区域中位则只得 0.2 分）。改贷款成数后评分和排序会一起更新。评分用表价和当前利率、年期，不会编造缺失的价格或租金。',
                 'The investment score is out of 10: up to 4 points for rent-to-price (indicative gross; 3% scores 0, 6% or more scores 4), up to 3 points for whether asking rent covers the instalment at your current loan percentage (coverage 0.85 scores 0, 1.25 or more scores 3), up to 2 points versus the area’s completed-project median gross yield excluding low-cost flats (in line scores 1; ±2 percentage points reach 2 or 0), and up to 1 point for comparable-rent sample size (a size band of 20+ ads scores 1; an area-median fallback scores 0.2). The score and ranking update when you change the loan percentage. The score uses the list price and the current rate and tenure. Missing prices or rents are not invented.')}</li>
             </ul>

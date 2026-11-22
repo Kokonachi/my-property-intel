@@ -1,6 +1,7 @@
-/** First-visit holder count and content segment (0 / 1–2 / 3+). */
+/** First-visit holder profile: count, segment (0 / 1–2 / 3+), budget and city. */
 import { useSyncExternalStore } from 'react'
 import { setLoanAssumptions } from './loanAssumptions.js'
+import { parseMoney } from './mortgage.js'
 
 export const HOLD_MIN = 0
 export const HOLD_MAX = 100
@@ -19,10 +20,29 @@ export const SORTS = [
   { id: 'psf', zh: '每尺价', en: 'Price psf' },
 ]
 
+export const SEGMENT_SORTS = {
+  zero: [{ id: 'entry', zh: '入场成本', en: 'Entry cost' }],
+  few: SORTS,
+  many: SORTS,
+}
+
 export const DEFAULT_SORT = {
   zero: 'entry',
   few: 'score',
   many: 'net',
+}
+
+export const DEFAULT_CITY = 'kl-bss'
+
+export const CITIES = [
+  { id: 'kl-bss', zh: '吉隆坡 · 孟沙南', en: 'Kuala Lumpur · Bangsar South', shortZh: '孟沙南', shortEn: 'Bangsar South', available: true },
+  { id: 'selangor-pj', zh: '雪兰莪 / 八打灵再也', en: 'Selangor / Petaling Jaya', shortZh: '雪兰莪', shortEn: 'Selangor', available: false },
+  { id: 'penang', zh: '槟城', en: 'Penang', shortZh: '槟城', shortEn: 'Penang', available: false },
+  { id: 'jb', zh: '新山', en: 'Johor Bahru', shortZh: '新山', shortEn: 'Johor Bahru', available: false },
+]
+
+export function cityById(id) {
+  return CITIES.find(c => c.id === id) || null
 }
 
 export function clampHold(n) {
@@ -43,10 +63,24 @@ export function segmentLtv(segment) {
   return segment === SEGMENTS.many ? 70 : 90
 }
 
+function moneyOrNull(v) {
+  if (v == null || v === '') return null
+  const n = typeof v === 'number' ? v : parseMoney(v)
+  return Number.isFinite(n) && n >= 0 ? n : null
+}
+
+function cityOrNull(id, fallback = null) {
+  const c = CITIES.find(x => x.id === id && x.available)
+  return c ? c.id : fallback
+}
+
 const defaultState = () => ({
   asked: false,
   skipped: false,
   count: null,
+  currentRent: null,
+  salary: null,
+  city: null,
   sortBy: { ...DEFAULT_SORT },
 })
 
@@ -62,7 +96,16 @@ function readStored() {
     const asked = !!o.asked || o.skipped === true || o.count != null
     const skipped = !!o.skipped && o.count == null
     const count = skipped || o.count == null ? null : clampHold(o.count)
-    return { asked, skipped, count, sortBy }
+    return {
+      asked,
+      skipped,
+      count,
+      currentRent: moneyOrNull(o.currentRent),
+      salary: moneyOrNull(o.salary),
+      // Returning v8 users who already finished count shouldn't be re-prompted.
+      city: cityOrNull(o.city, asked ? DEFAULT_CITY : null),
+      sortBy,
+    }
   } catch {
     return defaultState()
   }
@@ -86,7 +129,9 @@ export function currentSegment(s = state) {
 
 export function currentSort(s = state) {
   const seg = currentSegment(s)
-  return s.sortBy?.[seg] || DEFAULT_SORT[seg]
+  const allowed = SEGMENT_SORTS[seg] || SORTS
+  const id = s.sortBy?.[seg] || DEFAULT_SORT[seg]
+  return allowed.some(x => x.id === id) ? id : DEFAULT_SORT[seg]
 }
 
 /** Apply the segment's default loan % only if the user has not edited it. */
@@ -94,22 +139,86 @@ export function applySegmentLoan(segment) {
   setLoanAssumptions({ ltv: segmentLtv(segment) }, { source: 'segment' })
 }
 
-export function setHolderCount(count, { skipped = false } = {}) {
-  const prevSeg = state.asked ? currentSegment(state) : null
-  if (skipped) {
-    state = { ...state, asked: true, skipped: true, count: null }
-  } else {
-    state = { ...state, asked: true, skipped: false, count: clampHold(count) }
-  }
-  persist()
+function maybeApplyLoan(prevSeg) {
   const nextSeg = currentSegment(state)
   if (nextSeg !== prevSeg) applySegmentLoan(nextSeg)
   return state
 }
 
+export function setHolderCount(count, { skipped = false } = {}) {
+  const prevSeg = state.asked ? currentSegment(state) : null
+  if (skipped) {
+    state = { ...state, asked: true, skipped: true, count: null, city: state.city || DEFAULT_CITY }
+  } else {
+    const nextCount = clampHold(count)
+    const dropBudget = nextCount > 0
+    state = {
+      ...state,
+      asked: true,
+      skipped: false,
+      count: nextCount,
+      currentRent: dropBudget ? null : state.currentRent,
+      salary: dropBudget ? null : state.salary,
+      city: state.city || DEFAULT_CITY,
+    }
+  }
+  persist()
+  return maybeApplyLoan(prevSeg)
+}
+
+/** Finish the multi-step onboarding (or chip editor) in one write. */
+export function completeOnboarding({ count, skipped = false, currentRent, salary, city } = {}) {
+  const prevSeg = state.asked ? currentSegment(state) : null
+  const nextCity = cityOrNull(city, DEFAULT_CITY) || DEFAULT_CITY
+  if (skipped) {
+    state = {
+      ...state,
+      asked: true,
+      skipped: true,
+      count: null,
+      currentRent: null,
+      salary: null,
+      city: nextCity,
+    }
+  } else {
+    const nextCount = clampHold(count)
+    const isZero = nextCount <= 0
+    state = {
+      ...state,
+      asked: true,
+      skipped: false,
+      count: nextCount,
+      currentRent: isZero ? moneyOrNull(currentRent) : null,
+      salary: isZero ? moneyOrNull(salary) : null,
+      city: nextCity,
+    }
+  }
+  persist()
+  return maybeApplyLoan(prevSeg)
+}
+
+export function setHolderBudget({ currentRent, salary } = {}) {
+  state = {
+    ...state,
+    currentRent: currentRent === undefined ? state.currentRent : moneyOrNull(currentRent),
+    salary: salary === undefined ? state.salary : moneyOrNull(salary),
+  }
+  persist()
+  return state
+}
+
+export function setHolderCity(city) {
+  const next = cityOrNull(city)
+  if (!next) return state
+  state = { ...state, city: next }
+  persist()
+  return state
+}
+
 export function setHolderSort(sortId) {
-  if (!SORTS.some(s => s.id === sortId)) return state
   const seg = currentSegment(state)
+  const allowed = SEGMENT_SORTS[seg] || SORTS
+  if (!allowed.some(s => s.id === sortId)) return state
   state = { ...state, sortBy: { ...state.sortBy, [seg]: sortId } }
   persist()
   return state
@@ -127,5 +236,8 @@ export function useHolder() {
     sortBy: currentSort(current),
     setCount: setHolderCount,
     setSort: setHolderSort,
+    setBudget: setHolderBudget,
+    setCity: setHolderCity,
+    complete: completeOnboarding,
   }
 }

@@ -1,170 +1,211 @@
 import { useEffect, useState } from 'react'
 import { useLang } from '../lib/i18n.jsx'
-import { useHolder, clampHold, HOLD_MIN, HOLD_MAX, segmentOf, SEGMENTS } from '../lib/holderProfile.js'
+import {
+  HOLD_MAX, HOLD_MIN, CITIES, DEFAULT_CITY, SEGMENTS, cityById,
+  useHolder, completeOnboarding, openHolderEditor,
+} from '../lib/holderProfile.js'
+import { parseMoney } from '../lib/mortgage.js'
 
-function bandLabel(count, t) {
-  const seg = segmentOf(count)
-  if (seg === SEGMENTS.zero) return t('0 套', '0 properties')
-  if (seg === SEGMENTS.few) return t('1–2 套', '1–2 properties')
-  return t('3 套以上', '3 or more')
+function bandOf(count) {
+  if (count == null) return null
+  if (count <= 0) return 'zero'
+  if (count <= 2) return 'few'
+  return 'many'
 }
 
-function bandHint(count, t) {
-  const seg = segmentOf(count)
-  if (seg === SEGMENTS.zero) return t('会优先看入场成本和月供', 'We’ll lead with entry cost and the instalment')
-  if (seg === SEGMENTS.few) return t('会优先看租金能否覆盖月供', 'We’ll lead with rent versus the instalment')
-  return t('会优先看净回报和每尺价', 'We’ll lead with net yield and price psf')
+function MoneyField({ testId, label, hint, value, onChange, placeholder }) {
+  return (
+    <label className="block rounded-2xl border border-slate-200 bg-slate-50 px-3.5 py-3">
+      <div className="text-[12px] text-slate-500">{label}</div>
+      <div className="mt-1 flex items-baseline gap-1.5">
+        <span className="text-[13px] font-medium text-slate-400">RM</span>
+        <input
+          data-testid={testId}
+          inputMode="decimal"
+          className="w-full bg-transparent outline-none text-[22px] font-semibold tabular-nums text-slate-900 tracking-tight"
+          placeholder={placeholder}
+          value={value}
+          onChange={e => onChange(e.target.value)}
+        />
+      </div>
+      {hint ? <div className="mt-1 text-[11px] text-slate-400 leading-snug">{hint}</div> : null}
+    </label>
+  )
 }
 
-export function HolderSheet({ open, mode = 'onboard', onClose }) {
+function StepDots({ step, t, isZero }) {
+  const steps = isZero ? ['count', 'budget', 'city'] : ['count', 'city']
+  return (
+    <div className="flex items-center justify-center gap-1.5" aria-hidden="true">
+      {steps.map(s => (
+        <span
+          key={s}
+          className={`h-1.5 rounded-full transition-all ${s === step ? 'w-5 bg-slate-900' : 'w-1.5 bg-slate-300'}`}
+        />
+      ))}
+      <span className="sr-only">{t(`第 ${steps.indexOf(step) + 1} 步，共 ${steps.length} 步`, `Step ${steps.indexOf(step) + 1} of ${steps.length}`)}</span>
+    </div>
+  )
+}
+
+export function HolderSheet({ open, onClose, initial, firstVisit = false }) {
   const { t } = useLang()
-  const { holder, setCount } = useHolder()
-  const initial = holder.count != null ? holder.count : 0
-  const [value, setValue] = useState(initial)
-  const [draft, setDraft] = useState(null)
+  const [count, setCount] = useState(0)
+  const [rent, setRent] = useState('')
+  const [salary, setSalary] = useState('')
+  const [city, setCity] = useState(DEFAULT_CITY)
+  const [step, setStep] = useState('count')
 
   useEffect(() => {
-    if (open) {
-      const v = holder.count != null ? holder.count : 0
-      setValue(v)
-      setDraft(null)
-    }
-  }, [open, holder.count])
+    if (!open) return
+    const hasCount = initial && !initial.skipped && initial.count != null
+    setCount(hasCount ? initial.count : 0)
+    setRent(initial?.currentRent != null ? String(Math.round(initial.currentRent)) : '')
+    setSalary(initial?.salary != null ? String(Math.round(initial.salary)) : '')
+    setCity(initial?.city || DEFAULT_CITY)
+    setStep('count')
+  }, [open, initial])
 
   if (!open) return null
 
-  const shown = draft ?? String(value)
-  const commit = raw => {
-    setDraft(null)
-    const n = Number(String(raw).trim())
-    if (!Number.isFinite(n)) return
-    setValue(clampHold(n))
-  }
-  const bump = dir => setValue(v => clampHold(v + dir))
-  const save = () => {
-    setCount(value)
+  const band = bandOf(count)
+  const isZero = band === 'zero'
+  const bump = d => setCount(c => Math.min(HOLD_MAX, Math.max(HOLD_MIN, c + d)))
+
+  const save = (opts = {}) => {
+    completeOnboarding({
+      count,
+      skipped: !!opts.skipped,
+      currentRent: isZero && !opts.skipped ? parseMoney(rent) : null,
+      salary: isZero && !opts.skipped ? parseMoney(salary) : null,
+      city: city || DEFAULT_CITY,
+    })
     onClose?.()
   }
-  const skip = () => {
-    setCount(null, { skipped: true })
-    onClose?.()
-  }
+
+  const goNextFromCount = () => setStep(isZero ? 'budget' : 'city')
 
   return (
-    <div className="fixed inset-0 z-[2000] flex items-end sm:items-center sm:justify-center" data-testid="holder-sheet">
-      <div className="absolute inset-0 bg-slate-900/40" aria-hidden="true" />
-      <div
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="holder-title"
-        className="relative w-full sm:max-w-md bg-white rounded-t-3xl sm:rounded-3xl shadow-[0_16px_50px_rgba(15,23,42,.2)] px-5 pt-4 pb-[max(20px,env(safe-area-inset-bottom))] sm:p-6"
-      >
-        <div className="sm:hidden w-10 h-1 rounded-full bg-slate-200 mx-auto mb-3" />
-        {mode === 'edit' && (
-          <button
-            type="button"
-            data-testid="holder-close"
-            onClick={() => onClose?.()}
-            className="absolute top-3 right-3 h-8 w-8 rounded-full border border-slate-200 bg-white text-slate-500 text-[16px]"
-            aria-label={t('关闭', 'Close')}
-          >×</button>
+    <div className="fixed inset-0 z-[2000] flex items-end sm:items-center justify-center p-0 sm:p-4" role="dialog" aria-modal="true" data-testid="holder-sheet">
+      <button type="button" className="absolute inset-0 bg-slate-900/40" aria-label={t('关闭', 'Close')} onClick={() => (firstVisit ? null : onClose?.())} />
+      <div className="relative w-full sm:max-w-md rounded-t-3xl sm:rounded-3xl bg-white shadow-2xl px-5 pt-4 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
+        <div className="mx-auto mb-3 h-1 w-10 rounded-full bg-slate-200 sm:hidden" />
+        <StepDots step={step} t={t} isZero={isZero} />
+
+        {step === 'count' && (
+          <>
+            <h2 className="mt-3 text-[18px] font-semibold text-slate-900 tracking-tight">{t('你目前持有几套房产？', 'How many properties do you hold now?')}</h2>
+            <p className="mt-1 text-[13px] text-slate-500 leading-snug">{t('我们会按这个数字调整你看到的内容。可以随时在顶部修改。', 'We’ll tailor what you see. You can change this later from the top of the page.')}</p>
+            <div className="mt-5 flex items-center justify-center gap-4">
+              <button type="button" data-testid="hold-minus" onClick={() => bump(-1)} disabled={count <= HOLD_MIN}
+                className="h-11 w-11 rounded-full border border-slate-200 text-xl text-slate-700 disabled:text-slate-300 disabled:border-slate-100">−</button>
+              <div className="min-w-[6.5rem] text-center">
+                <div className="text-[52px] font-semibold tabular-nums leading-none tracking-tight text-slate-900" data-testid="hold-count">{count}</div>
+                <div className="mt-1 text-[12px] text-slate-500">{t('套', 'properties')}</div>
+              </div>
+              <button type="button" data-testid="hold-plus" onClick={() => bump(1)} disabled={count >= HOLD_MAX}
+                className="h-11 w-11 rounded-full border border-slate-200 text-xl text-slate-700 disabled:text-slate-300 disabled:border-slate-100">+</button>
+            </div>
+            <input type="range" min={HOLD_MIN} max={HOLD_MAX} value={count} data-testid="hold-slider"
+              onChange={e => setCount(Number(e.target.value))}
+              className="mt-5 w-full accent-slate-900" />
+            <div className="mt-4 rounded-2xl bg-slate-50 px-3.5 py-3 text-[13px] text-slate-600 leading-snug" data-testid="hold-hint">
+              {band === 'zero' && t('先看买不买得起：入场要准备多少钱、月供和你现在的租金、工资怎么比。', 'We’ll start with affordability: cash to enter, and how the instalment compares with your rent and salary.')}
+              {band === 'few' && t('会按投资评分排列，并对照月供和区域已建成楼盘。', 'We’ll rank by investment score, and compare instalments with completed projects in the area.')}
+              {band === 'many' && t('会按净回报排列，卡片更紧凑，并可以对比多个项目。', 'We’ll rank by net yield, keep the cards compact, and let you compare projects.')}
+            </div>
+            <div className="mt-5 flex items-center gap-3">
+              <button type="button" data-testid="hold-skip" onClick={() => save({ skipped: true })}
+                className="text-[13px] font-medium text-slate-500">{t('跳过', 'Skip')}</button>
+              <button type="button" data-testid="hold-continue" onClick={goNextFromCount}
+                className="ml-auto h-11 px-5 rounded-full bg-slate-900 text-white text-[14px] font-medium">{t('继续', 'Continue')}</button>
+            </div>
+          </>
         )}
-        <h2 id="holder-title" className="text-[17px] sm:text-[18px] font-semibold text-slate-900 text-center leading-snug px-6">
-          {t('你目前持有几套房产？', 'How many properties do you currently own?')}
-        </h2>
 
-        <div className="mt-5 text-center">
-          <div className="inline-flex items-end justify-center gap-1">
-            <input
-              data-testid="holder-count-input"
-              type="text"
-              inputMode="numeric"
-              aria-label={t('持有套数', 'Number of properties')}
-              className="w-[5.5rem] bg-transparent outline-none text-center text-[56px] font-semibold tabular-nums leading-none tracking-tight text-slate-900"
-              value={shown}
-              onChange={e => setDraft(e.target.value.replace(/[^\d]/g, '').slice(0, 3))}
-              onBlur={e => commit(e.target.value)}
-              onKeyDown={e => { if (e.key === 'Enter') e.currentTarget.blur() }}
-            />
-            <span className="pb-1 text-[15px] font-medium text-slate-500">{t('套', '')}</span>
-          </div>
-          <div className="mt-1.5 text-[13px] text-slate-500" data-testid="holder-band">{bandHint(value, t)}</div>
-        </div>
+        {step === 'budget' && (
+          <>
+            <h2 className="mt-3 text-[18px] font-semibold text-slate-900 tracking-tight">{t('你现在的租金和工资是多少？', 'What do you pay in rent now, and what is your monthly salary?')}</h2>
+            <p className="mt-1 text-[13px] text-slate-500 leading-snug">{t('都可以先不填，稍后也能补上。填了以后，我们会用白话告诉你月供高了还是低了。', 'Both are optional, and you can add them later. If you enter them, we’ll say in plain words how the instalment compares.')}</p>
+            <div className="mt-4 space-y-3">
+              <MoneyField testId="hold-rent" label={t('现在每月租金', 'Current monthly rent')}
+                placeholder="2,500" value={rent} onChange={setRent} />
+              <MoneyField testId="hold-salary" label={t('每月工资', 'Monthly salary')}
+                placeholder="8,000" value={salary} onChange={setSalary} />
+            </div>
+            <div className="mt-5 flex items-center gap-3">
+              <button type="button" data-testid="hold-back" onClick={() => setStep('count')}
+                className="text-[13px] font-medium text-slate-500">{t('返回', 'Back')}</button>
+              <button type="button" data-testid="hold-budget-skip" onClick={() => { setRent(''); setSalary(''); setStep('city') }}
+                className="text-[13px] font-medium text-slate-500">{t('跳过', 'Skip')}</button>
+              <button type="button" data-testid="hold-budget-continue" onClick={() => setStep('city')}
+                className="ml-auto h-11 px-5 rounded-full bg-slate-900 text-white text-[14px] font-medium">{t('继续', 'Continue')}</button>
+            </div>
+          </>
+        )}
 
-        <div className="mt-5 flex items-center gap-2">
-          <button
-            type="button"
-            data-testid="holder-dec"
-            aria-label={t('减少', 'Decrease')}
-            disabled={value <= HOLD_MIN}
-            onClick={() => bump(-1)}
-            className="shrink-0 h-9 w-9 rounded-full border border-slate-200 bg-white text-[18px] leading-none text-slate-700 disabled:opacity-30 disabled:pointer-events-none"
-          >−</button>
-          <input
-            type="range"
-            data-testid="holder-slider"
-            min={HOLD_MIN}
-            max={HOLD_MAX}
-            step="1"
-            value={value}
-            aria-label={t('持有套数', 'Number of properties')}
-            className="min-w-0 flex-1 h-9 accent-slate-900"
-            onChange={e => { setDraft(null); setValue(clampHold(e.target.value)) }}
-          />
-          <button
-            type="button"
-            data-testid="holder-inc"
-            aria-label={t('增加', 'Increase')}
-            disabled={value >= HOLD_MAX}
-            onClick={() => bump(1)}
-            className="shrink-0 h-9 w-9 rounded-full border border-slate-200 bg-white text-[18px] leading-none text-slate-700 disabled:opacity-30 disabled:pointer-events-none"
-          >+</button>
-        </div>
-        <div className="mt-0.5 flex justify-between text-[11px] text-slate-400 tabular-nums px-1">
-          <span>0</span><span>100</span>
-        </div>
-
-        <button
-          type="button"
-          data-testid="holder-continue"
-          onClick={save}
-          className="mt-5 w-full h-11 rounded-full bg-slate-900 text-white text-[15px] font-semibold"
-        >
-          {t('继续', 'Continue')}
-        </button>
-        {mode === 'onboard' && (
-          <button
-            type="button"
-            data-testid="holder-skip"
-            onClick={skip}
-            className="mt-2 w-full h-10 text-[13px] font-medium text-slate-500"
-          >
-            {t('跳过，稍后再说', 'Skip for now')}
-          </button>
+        {step === 'city' && (
+          <>
+            <h2 className="mt-3 text-[18px] font-semibold text-slate-900 tracking-tight">{t('你想看哪个城市？', 'Which city do you want to look at?')}</h2>
+            <p className="mt-1 text-[13px] text-slate-500 leading-snug">{t('目前已有孟沙南的新楼盘数据，其他城市正在准备。', 'We currently have new-launch data for Bangsar South. Other cities are on the way.')}</p>
+            <div className="mt-4 grid gap-2" data-testid="hold-cities">
+              {CITIES.map(c => {
+                const on = city === c.id
+                const disabled = !c.available
+                return (
+                  <button
+                    key={c.id}
+                    type="button"
+                    data-testid={`hold-city-${c.id}`}
+                    disabled={disabled}
+                    onClick={() => setCity(c.id)}
+                    className={`text-left rounded-2xl border px-3.5 py-3 transition ${
+                      disabled
+                        ? 'border-slate-100 bg-slate-50 text-slate-400 cursor-not-allowed'
+                        : on
+                          ? 'border-slate-900 bg-slate-900 text-white'
+                          : 'border-slate-200 bg-white text-slate-800'
+                    }`}
+                  >
+                    <div className="flex items-baseline justify-between gap-3">
+                      <span className="text-[15px] font-semibold">{t(c.zh, c.en)}</span>
+                      {disabled ? (
+                        <span className={`text-[11px] font-medium ${on ? 'text-white/70' : 'text-slate-400'}`}>{t('即将推出', 'Coming soon')}</span>
+                      ) : null}
+                    </div>
+                  </button>
+                )
+              })}
+            </div>
+            <div className="mt-5 flex items-center gap-3">
+              <button type="button" data-testid="hold-back" onClick={() => setStep(isZero ? 'budget' : 'count')}
+                className="text-[13px] font-medium text-slate-500">{t('返回', 'Back')}</button>
+              <button type="button" data-testid="hold-finish" onClick={() => save()}
+                className="ml-auto h-11 px-5 rounded-full bg-slate-900 text-white text-[14px] font-medium">{t('查看楼盘', 'See launches')}</button>
+            </div>
+          </>
         )}
       </div>
     </div>
   )
 }
 
-export function HoldChip({ className = '' }) {
-  const { t } = useLang()
+export function HoldChip() {
+  const { t, lang } = useLang()
   const { holder } = useHolder()
   const [open, setOpen] = useState(false)
-  const label = !holder.asked || holder.skipped || holder.count == null
+  const label = holder.skipped || holder.count == null
     ? t('持有房产', 'Holdings')
     : t(`持有 ${holder.count} 套`, holder.count === 1 ? 'Holds 1' : `Holds ${holder.count}`)
+  const city = cityById(holder.city)
+  const cityBit = city ? (lang === 'zh' ? city.shortZh : city.shortEn) : null
   return (
     <>
-      <button
-        type="button"
-        data-testid="holder-chip"
-        onClick={() => setOpen(true)}
-        className={`shrink-0 inline-flex items-center rounded-full border border-slate-200 bg-white px-2.5 h-8 text-[12px] font-medium text-slate-700 ${className}`}
-      >
-        {label}
+      <button type="button" data-testid="hold-chip" onClick={() => { setOpen(true); openHolderEditor() }}
+        className="shrink-0 max-w-[11rem] truncate rounded-full border border-slate-200 bg-white px-2.5 py-1 text-[12px] font-medium text-slate-700">
+        {label}{cityBit ? <span className="text-slate-400"> · {cityBit}</span> : null}
       </button>
-      <HolderSheet open={open} mode={holder.asked ? 'edit' : 'onboard'} onClose={() => setOpen(false)} />
+      <HolderSheet open={open} onClose={() => setOpen(false)} initial={holder} />
     </>
   )
 }
@@ -172,24 +213,25 @@ export function HoldChip({ className = '' }) {
 export function FirstBuyerNote() {
   const { t } = useLang()
   return (
-    <details className="rounded-2xl bg-white ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)] group" data-testid="first-buyer-note">
-      <summary className="cursor-pointer list-none px-4 py-3 flex items-center justify-between gap-3 text-[13px] font-medium text-slate-800">
-        <span>{t('首次置业可以先看什么', 'What to look at first')}</span>
-        <span className="text-slate-400 text-[12px] font-medium group-open:hidden">{t('展开', 'Show')}</span>
-        <span className="text-slate-400 text-[12px] font-medium hidden group-open:inline">{t('收起', 'Hide')}</span>
+    <details className="rounded-2xl bg-white ring-1 ring-slate-200/80 px-4 py-3" data-testid="first-buyer-note">
+      <summary className="cursor-pointer list-none text-[13px] font-medium text-slate-800 flex items-center justify-between gap-3">
+        <span>{t('第一次买房，先看这三件事', 'Buying for the first time? Start with these three things')}</span>
+        <span className="text-slate-400 text-[12px] font-medium">{t('说明', 'About')}</span>
       </summary>
-      <div className="px-4 pb-4 border-t border-slate-100 text-[12px] text-slate-600 leading-relaxed space-y-1.5">
-        <p>{t('先看入场要准备多少钱，以及月供能不能负担。', 'Start with how much cash you need to enter, and whether the monthly instalment is comfortable.')}</p>
-        <p>{t('入场成本 = 首付（房价中未贷款的部分）+ 约 4% 的律师费和印花税估算。这是常用的粗算，不是律师行报价。', 'Entry cost = the down payment (the un-loaned share of the price) plus an approximate 4% for legal fees and stamp duty. This is a rough allowance, not a solicitor’s quote.')}</p>
-        <p>{t('月供按你设定的贷款成数、利率和年限计算，租金是叫租估算。数字只供参考，不是银行批复，也不是投资建议。', 'The instalment uses your loan percentage, rate and tenure. Rent is an asking-rent estimate. Figures are indicative only — not a bank offer, and not investment advice.')}</p>
-      </div>
+      <ul className="mt-2 space-y-1.5 text-[13px] text-slate-600 leading-snug list-disc pl-5 border-t border-slate-100 pt-2">
+        <li>{t('入场要准备的钱 = 首付 + 律师费和印花税（估算）+ 装修预留。下面会逐项列出来。', 'Cash to enter = down payment + estimated legal fees and stamp duty + a renovation allowance. The page below lists each item.')}</li>
+        <li>{t('月供是按你选定的贷款成数、利率和年期估算的，不是银行批复的数字。', 'The instalment is an estimate from the loan percentage, rate and tenure you chose — not a bank offer.')}</li>
+        <li>{t('毛回报是一年预估租金除以房价；净回报还要再扣空置、管理费、门牌税、地税和保险。', 'Gross yield is a year’s estimated rent divided by the price; net yield also subtracts vacancy, maintenance, assessment, and quit rent plus insurance.')}</li>
+      </ul>
     </details>
   )
 }
 
 export function OnboardingHost() {
   const { holder } = useHolder()
-  const [open, setOpen] = useState(!holder.asked)
-  useEffect(() => { if (!holder.asked) setOpen(true) }, [holder.asked])
-  return <HolderSheet open={open && !holder.asked} mode="onboard" onClose={() => setOpen(false)} />
+  const [open, setOpen] = useState(() => !holder.asked)
+  useEffect(() => {
+    if (!holder.asked) setOpen(true)
+  }, [holder.asked])
+  return <HolderSheet open={open} onClose={() => setOpen(false)} initial={holder} firstVisit={!holder.asked} />
 }

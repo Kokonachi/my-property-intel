@@ -1,9 +1,9 @@
 import assert from 'node:assert/strict'
 import { LAUNCHES } from '../src/data/launches.js'
 import { rankedLaunches, entryCostOf, launchScore } from '../src/lib/launchScore.js'
-import { entryCost, LEGAL_STAMP_PCT } from '../src/lib/mortgage.js'
+import { entryCost, spaStampDuty, loanStampDuty, sroLegalFee, LEGAL_SST, RENO_PSF, salaryBurden, parseMoney } from '../src/lib/mortgage.js'
 import { setLoanAssumptions, getLoanAssumptions } from '../src/lib/loanAssumptions.js'
-import { segmentOf, segmentLtv, setHolderCount, currentSegment, currentSort, setHolderSort, clampHold, HOLD_MAX } from '../src/lib/holderProfile.js'
+import { segmentOf, segmentLtv, setHolderCount, currentSegment, currentSort, setHolderSort, clampHold, HOLD_MAX, completeOnboarding, getHolder, DEFAULT_CITY } from '../src/lib/holderProfile.js'
 
 assert.equal(segmentOf(0), 'zero')
 assert.equal(segmentOf(1), 'few')
@@ -17,10 +17,24 @@ assert.equal(segmentLtv('many'), 70)
 assert.equal(clampHold(-3), 0)
 assert.equal(clampHold(140), HOLD_MAX)
 
-const cost = entryCost({ price: 666000, down: 66600 })
-assert.equal(LEGAL_STAMP_PCT, 0.04)
-assert.equal(Math.round(cost.fees), 26640)
-assert.equal(Math.round(cost.total), 66600 + 26640)
+assert.equal(parseMoney('RM 2,500'), 2500)
+assert.equal(spaStampDuty(666000), 13980)
+assert.equal(loanStampDuty(599400), 2997)
+assert.equal(sroLegalFee(666000), 6328)
+assert.equal(sroLegalFee(599400), 5795.2)
+const cost = entryCost({ price: 666000, down: 66600, size: 543 })
+assert.equal(RENO_PSF, 40)
+assert.equal(Math.round(cost.spaStamp), 13980)
+assert.equal(Math.round(cost.loanStamp), 2997)
+assert.equal(Math.round(cost.legal), Math.round((6328 + 5795.2) * (1 + LEGAL_SST)))
+assert.equal(Math.round(cost.renovation), 543 * 40)
+assert.equal(Math.round(cost.total), Math.round(66600 + cost.stamp + cost.legal + cost.renovation))
+const burdenEasy = salaryBurden(2500, 10000)
+assert.equal(burdenEasy.band, 'comfortable')
+assert.ok(burdenEasy.pct < 30)
+assert.equal(salaryBurden(3500, 10000).band, 'tight')
+assert.equal(salaryBurden(4500, 10000).band, 'stretched')
+assert.equal(salaryBurden(2500, null), null)
 
 setLoanAssumptions({ rate: 4.3, years: 35, ltv: 90, ltvManual: false })
 setHolderCount(5)
@@ -56,6 +70,20 @@ assert.ok(entryCostOf(aviera).total > aviera.down)
 setHolderSort('psf')
 // skipped segment is few, so sort for few becomes psf
 assert.equal(currentSort(), 'psf')
+
+completeOnboarding({ count: 0, currentRent: 2500, salary: 8000, city: 'kl-bss' })
+assert.equal(currentSegment(), 'zero')
+assert.equal(getHolder().currentRent, 2500)
+assert.equal(getHolder().salary, 8000)
+assert.equal(getHolder().city, DEFAULT_CITY)
+completeOnboarding({ count: 0, currentRent: 2500, salary: 8000, city: 'penang' })
+assert.equal(getHolder().city, DEFAULT_CITY, 'unavailable cities fall back to the live city')
+completeOnboarding({ count: 4, currentRent: 2500, salary: 8000, city: 'kl-bss' })
+assert.equal(currentSegment(), 'many')
+assert.equal(getHolder().currentRent, null, 'rent is only kept for the 0-property segment')
+completeOnboarding({ skipped: true })
+assert.equal(currentSegment(), 'few')
+assert.equal(getHolder().city, DEFAULT_CITY)
 
 console.log('holder tests ok')
 console.log({

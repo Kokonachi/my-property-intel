@@ -123,7 +123,7 @@ export function launchScore(p, { rate = DEFAULT_RATE, years = DEFAULT_YEARS, ltv
 
 export function entryCostOf(s) {
   if (!s) return null
-  return entryCost({ price: s.price, down: s.down })
+  return entryCost({ price: s.price, down: s.down, size: s.typ?.size })
 }
 
 function missingLast(av, bv, dir = 1) {
