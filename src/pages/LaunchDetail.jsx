@@ -14,7 +14,8 @@ import { FirstBuyerNote } from '../components/HolderSheet.jsx'
 import { useHolder, SEGMENTS } from '../lib/holderProfile.js'
 import { cashVsRent, entryCost, salaryBurden, parseMoney } from '../lib/mortgage.js'
 import { salaryBandCopy } from '../lib/plainCopy.js'
-import { CompareTiles } from '../components/CompareTiles.jsx'
+import { CompareTiles, EntryFacts, EntryStack } from '../components/CompareTiles.jsx'
+import { IconKey, IconCalendar, IconInfo } from '../components/icons.jsx'
 import { useCompare } from '../lib/compareDraft.js'
 
 const pct = v => (v == null || Number.isNaN(v) ? '—' : `${v.toFixed(2)}%`)
@@ -139,18 +140,7 @@ function TypCard({ p, typ, t, draft, onChange, compactLoan = false, variant = 'd
       </div>
 
       {simple && typEntry && (
-        <div className="mt-3 grid grid-cols-2 gap-3" data-testid={`typ-afford-${typ.id}`}>
-          <div>
-            <div className="text-[11px] text-slate-500">{t('入场要准备（估）', 'Cash to enter (est.)')}</div>
-            <div className="mt-0.5 text-[15px] font-semibold tabular-nums text-slate-900">{rm(typEntry.total)}</div>
-          </div>
-          {v?.inst != null ? (
-            <div>
-              <div className="text-[11px] text-slate-500">{t('月供', 'Instalment')}</div>
-              <div className="mt-0.5 text-[15px] font-semibold tabular-nums text-slate-900">{rm(v.inst)}{t('/月', '/mo')}</div>
-            </div>
-          ) : null}
-        </div>
+        <EntryFacts entry={typEntry} inst={v?.inst} className="mt-3" />
       )}
       {simple && v?.inst != null && (
         <CompareTiles
@@ -425,18 +415,29 @@ export default function LaunchDetail({ p }) {
 
             {zero && entry && (
               <div className="mt-4 rounded-2xl bg-slate-50 px-3.5 py-3.5" data-testid="entry-cost">
-                <div className="text-[11px] text-slate-500">{t('入场要准备多少钱（估算）', 'How much cash to prepare (estimate)')}</div>
-                <div className="mt-0.5 text-[28px] font-semibold tabular-nums leading-none tracking-tight text-slate-900">{rm(entry.total)}</div>
-                <div className="mt-3 space-y-1.5 text-[13px] text-slate-700">
-                  <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500 min-w-0">{t('首付', 'Down payment')}</span><span className="font-medium shrink-0 whitespace-nowrap">{rm(entry.down)}</span></div>
-                  <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500 min-w-0">{t('律师费（含 8% 服务税，估）', 'Legal fees (incl. 8% SST, est.)')}</span><span className="font-medium shrink-0 whitespace-nowrap">{rm(entry.legal)}</span></div>
-                  <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500 min-w-0">{t('印花税（买卖合约 + 贷款协议，估）', 'Stamp duty (SPA + loan, est.)')}</span><span className="font-medium shrink-0 whitespace-nowrap">{rm(entry.stamp)}</span></div>
-                  <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500 min-w-0">{t(`装修预留（按 RM${entry.renoPsf}/尺估算）`, `Renovation allowance (RM${entry.renoPsf}/sqft estimate)`)}</span><span className="font-medium shrink-0 whitespace-nowrap">{rm(entry.renovation)}</span></div>
+                <div className="flex items-start justify-between gap-2">
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2 text-slate-900">
+                      <span className="grid place-items-center rounded-lg bg-white ring-1 ring-slate-200/80 text-slate-700" style={{ width: 28, height: 28 }}><IconKey size={16} /></span>
+                      <div className="text-[28px] font-semibold tabular-nums leading-none tracking-tight">{rm(entry.total)}</div>
+                    </div>
+                  </div>
+                  <details className="relative shrink-0">
+                    <summary className="cursor-pointer list-none grid place-items-center h-7 w-7 rounded-full text-slate-400 hover:text-slate-700" aria-label={t('说明', 'About')}>
+                      <IconInfo size={15} />
+                    </summary>
+                    <p className="absolute right-0 top-8 z-20 w-64 rounded-xl bg-white p-3 text-[12px] leading-snug text-slate-600 ring-1 ring-slate-200 shadow-[0_8px_24px_rgba(15,23,42,.12)]">
+                      {t('律师费、印花税和装修都是估算，不是律师行或承包商的报价，也不含银行手续费或家具升级。', 'Legal fees, stamp duty and renovation are estimates, not quotes from a solicitor or contractor, and they exclude bank fees or a fuller furniture budget.')}
+                    </p>
+                  </details>
                 </div>
+                <EntryStack entry={entry} t={t} className="mt-3" />
                 {scored.v?.inst != null ? (
                   <div className="mt-3 pt-3 border-t border-slate-200/80">
-                    <div className="text-[11px] text-slate-500">{t('月供', 'Instalment')}</div>
-                    <div className="mt-0.5 text-[18px] font-semibold tabular-nums text-slate-900">{rm(scored.v.inst)}{t('/月', '/mo')}</div>
+                    <div className="flex items-center gap-2 text-slate-900">
+                      <span className="grid place-items-center rounded-lg bg-white ring-1 ring-slate-200/80 text-slate-700" style={{ width: 28, height: 28 }}><IconCalendar size={16} /></span>
+                      <div className="text-[18px] font-semibold tabular-nums leading-none">{rm(scored.v.inst)}</div>
+                    </div>
                     <CompareTiles
                       className="mt-3"
                       inst={scored.v.inst}
@@ -446,7 +447,6 @@ export default function LaunchDetail({ p }) {
                     />
                   </div>
                 ) : null}
-                <p className="mt-3 text-[11px] text-slate-400 leading-snug">{t('以上律师费、印花税和装修都是估算，不是律师行或承包商的报价，也不含银行手续费或家具升级。', 'Legal fees, stamp duty and renovation are estimates, not quotes from a solicitor or contractor, and they exclude bank fees or a fuller furniture budget.')}</p>
               </div>
             )}
 
@@ -482,7 +482,7 @@ export default function LaunchDetail({ p }) {
           <SalaryBox inst={scored.v.inst} salary={holder.salary} onSave={v => setBudget({ salary: v })} t={t} />
         )}
 
-        {zero && <FirstBuyerNote />}
+        {zero && <div className="flex"><FirstBuyerNote compact /></div>}
 
         {!zero && scored.score != null && (
           <button

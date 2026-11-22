@@ -7,7 +7,8 @@ import { rankedLaunches, scoreBand, headlineVerdict, downLabel, entryCostOf } fr
 import { LoanPctControl, LoanVerdict } from '../components/LtvVerdict.jsx'
 import { HoldChip, FirstBuyerNote, RestartButton } from '../components/HolderSheet.jsx'
 import { useHolder, SEGMENT_SORTS, SEGMENTS } from '../lib/holderProfile.js'
-import { CompareTiles } from '../components/CompareTiles.jsx'
+import { CompareTiles, EntryFacts } from '../components/CompareTiles.jsx'
+import { IconKey, IconCoins, IconPsf, IconScore } from '../components/icons.jsx'
 import { useCompare, COMPARE_MAX } from '../lib/compareDraft.js'
 import { CompareTable, CompareBar } from '../components/CompareTable.jsx'
 
@@ -70,40 +71,31 @@ function RankCard({ p, s, segment, compare }) {
             <div className="min-w-0">
               <div className="font-semibold text-[15px] text-slate-900 leading-snug truncate">{p.card_name || p.name}</div>
               {zero && entry ? (
-                <div className="mt-0.5">
-                  <div className="text-[13px] tabular-nums text-slate-800">
-                    {t('入场 ', 'Entry ')}{fmtRM(entry.total)}
-                  </div>
-                  {inst != null ? (
-                    <div className="text-[13px] tabular-nums text-slate-800 whitespace-nowrap">
-                      {t('月供 ', 'Inst. ')}{fmtRM(inst)}{t('/月', '/mo')}
-                    </div>
-                  ) : null}
-                </div>
+                <EntryFacts entry={entry} inst={inst} className="mt-1.5" />
               ) : many ? (
                 <div className="mt-0.5">
                   <div className="text-[13px] tabular-nums text-slate-700">
                     {s.price ? fmtRM(s.price) : t('待报价', 'Ask')}
-                    {s.price ? <span className="text-slate-400 font-normal">{t(' 起', ' from')}</span> : null}
-                    {s.psf ? <span className="text-slate-400 font-normal"> · RM{Math.round(s.psf).toLocaleString('en-MY')} psf</span> : null}
+                    {s.psf ? <span className="text-slate-400 font-normal"> · RM{Math.round(s.psf).toLocaleString('en-MY')}</span> : null}
                   </div>
-                  <div className="text-[12px] tabular-nums text-slate-500">
-                    {y?.net != null ? <span>{t('净', 'Net')} {y.net.toFixed(2)}%</span> : null}
-                    {y?.gross != null ? <span>{y.net != null ? ' · ' : ''}{t('毛', 'Gross')} {y.gross.toFixed(2)}%</span> : null}
-                    {s.bandN ? <span> · {t(`${s.bandN} 则`, `${s.bandN} comps`)}</span> : null}
+                  <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-[12px] tabular-nums text-slate-600">
+                    {y?.net != null ? <span className="inline-flex items-center gap-1"><IconCoins size={13} />{y.net.toFixed(2)}%</span> : null}
+                    {y?.gross != null ? <span>{y.gross.toFixed(2)}%</span> : null}
+                    {s.bandN ? <span>{s.bandN}</span> : null}
                   </div>
                 </div>
               ) : (
                 <div className="mt-0.5 text-[13px] tabular-nums text-slate-700">
                   {s.price ? fmtRM(s.price) : t('待报价', 'Ask')}
-                  {s.price ? <span className="text-slate-400 font-normal">{t(' 起', ' from')}</span> : null}
                   {y ? <span className="text-slate-400 font-normal"> · {y.gross.toFixed(2)}%</span> : null}
                 </div>
               )}
             </div>
             {!zero && <ScoreMark score={s.score} />}
           </div>
-          {(!zero && verdict) ? (
+          {(!zero && inst != null && (s.v?.rentMo ?? y?.rentMo)) ? (
+            <CompareTiles className="mt-1.5" compact inst={inst} rentMo={s.v?.rentMo ?? y?.rentMo} cash={s.v?.cash} />
+          ) : (!zero && verdict) ? (
             <LoanVerdict price={s.price} rentMo={y?.rentMo} className="mt-1.5" compact={many} />
           ) : (!zero && down) ? (
             <div className="mt-1 text-[11px] text-slate-500">{down}</div>
@@ -135,18 +127,6 @@ export default function LaunchHome() {
   const sorts = SEGMENT_SORTS[segment] || SEGMENT_SORTS.few
   const compareItems = rows.filter(r => compare.ids.includes(r.p.id))
 
-  const intro = segment === SEGMENTS.zero
-    ? t('按入场要准备的钱从少到多排列，只看买不买得起', 'Sorted by the cash you need to enter, focused on whether you can afford it')
-    : segment === SEGMENTS.many
-      ? t('按净回报排序，突出每尺价和可比样本，最多可选 3 个对比', `Sorted by net yield, with price psf and comparable sample size. Select up to ${COMPARE_MAX} to compare.`)
-      : t('按租售比与当前贷款成数下的月供覆盖排序，高分在前', 'Ranked by rent-to-price and whether rent covers the instalment at your loan percentage')
-  const introForSort = {
-    entry: t('按入场要准备的钱从少到多排列', 'Sorted by the cash you need to enter, low to high'),
-    score: t('按投资评分排序，高分在前', 'Sorted by investment score'),
-    net: t('按净回报从高到低排序', 'Sorted by net yield, high to low'),
-    psf: t('按每尺价从低到高排序', 'Sorted by price psf, low to high'),
-    gross: t('按毛回报从高到低排序', 'Sorted by gross yield, high to low'),
-  }
 
   return (
     <div className="min-h-full bg-[#f6f7f8] flex flex-col" data-testid="launch-home" data-segment={segment}>
@@ -171,33 +151,33 @@ export default function LaunchHome() {
       </header>
 
       <main className="flex-1 max-w-xl mx-auto w-full px-3 sm:px-5 py-3 sm:py-5">
-        {segment === SEGMENTS.zero && <div className="mb-2.5"><FirstBuyerNote /></div>}
-        <div className="mb-2 px-0.5 flex items-start justify-between gap-3">
-          <p className="text-[12.5px] text-slate-500 leading-snug min-w-0" data-testid="sort-intro">
-            {introForSort[sortBy] || intro}
-          </p>
-          <RestartButton className="shrink-0 mt-px whitespace-nowrap" />
+        <div className="mb-2.5 flex items-center gap-2">
+          {segment === SEGMENTS.zero && <FirstBuyerNote compact />}
+          {sorts.length > 1 && (
+            <div className="flex flex-wrap gap-1.5 min-w-0" data-testid="sort-chips" role="tablist" aria-label={t('排序', 'Sort')}>
+              {sorts.map(s => {
+                const on = sortBy === s.id
+                const Icon = s.id === 'entry' ? IconKey : s.id === 'score' ? IconScore : s.id === 'net' ? IconCoins : IconPsf
+                return (
+                  <button
+                    key={s.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={on}
+                    data-testid={`sort-${s.id}`}
+                    onClick={() => setSort(s.id)}
+                    className={`inline-flex items-center gap-1 rounded-full px-2.5 h-8 text-[12px] font-medium ${on ? 'bg-slate-900 text-white' : 'bg-white text-slate-600 ring-1 ring-slate-200'}`}
+                  >
+                    <Icon size={13} />
+                    {t(s.zh, s.en)}
+                  </button>
+                )
+              })}
+            </div>
+          )}
+          <div className="flex-1 min-w-0" />
+          <RestartButton className="shrink-0 whitespace-nowrap" />
         </div>
-        {sorts.length > 1 && (
-          <div className="flex flex-wrap gap-1.5 mb-2.5" data-testid="sort-chips" role="tablist" aria-label={t('排序', 'Sort')}>
-            {sorts.map(s => {
-              const on = sortBy === s.id
-              return (
-                <button
-                  key={s.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={on}
-                  data-testid={`sort-${s.id}`}
-                  onClick={() => setSort(s.id)}
-                  className={`rounded-full px-2.5 h-7 text-[12px] font-medium ${on ? 'bg-slate-900 text-white' : 'bg-white text-slate-600 ring-1 ring-slate-200'}`}
-                >
-                  {t(s.zh, s.en)}
-                </button>
-              )
-            })}
-          </div>
-        )}
         <div className="flex flex-col gap-2.5">
           {rows.map(({ p, s }) => <RankCard key={p.id} p={p} s={s} segment={segment} compare={segment === SEGMENTS.many ? compare : null} />)}
         </div>

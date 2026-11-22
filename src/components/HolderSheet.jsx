@@ -6,6 +6,7 @@ import {
   useHolder, completeOnboarding, openHolderEditor, resetOnboarding,
 } from '../lib/holderProfile.js'
 import { parseMoney } from '../lib/mortgage.js'
+import { IconInfo, IconKey, IconCalendar, IconHouse } from './icons.jsx'
 
 function bandOf(count) {
   if (count == null) return null
@@ -248,19 +249,33 @@ export function HoldChip() {
   )
 }
 
-export function FirstBuyerNote() {
+export function FirstBuyerNote({ compact = false } = {}) {
   const { t } = useLang()
+  const items = [
+    { icon: IconKey, text: t('入场要准备的钱 = 首付 + 律师费和印花税（估算）+ 装修预留。', 'Cash to enter = down payment + estimated legal fees and stamp duty + a renovation allowance.') },
+    { icon: IconCalendar, text: t('月供是按你选定的贷款成数、利率和年期估算的，不是银行批复的数字。', 'The instalment is an estimate from the loan percentage, rate and tenure you chose — not a bank offer.') },
+    { icon: IconHouse, text: t('毛回报是一年预估租金除以房价；净回报还要再扣空置、管理费、门牌税、地税和保险。', 'Gross yield is a year’s estimated rent divided by the price; net yield also subtracts vacancy, maintenance, assessment, and quit rent plus insurance.') },
+  ]
   return (
-    <details className="rounded-2xl bg-white ring-1 ring-slate-200/80 px-4 py-3" data-testid="first-buyer-note">
-      <summary className="cursor-pointer list-none text-[13px] font-medium text-slate-800 flex items-center justify-between gap-3">
-        <span>{t('第一次买房，先看这三件事', 'Buying for the first time? Start with these three things')}</span>
-        <span className="text-slate-400 text-[12px] font-medium">{t('说明', 'About')}</span>
+    <details className={compact ? 'relative' : 'rounded-2xl bg-white ring-1 ring-slate-200/80 px-4 py-3'} data-testid="first-buyer-note">
+      <summary className={`cursor-pointer list-none flex items-center ${compact ? 'justify-center h-8 w-8 rounded-full ring-1 ring-slate-200 bg-white text-slate-500 hover:text-slate-800' : 'justify-between gap-3 text-[13px] font-medium text-slate-800'}`} aria-label={t('说明', 'About')}>
+        {compact ? <IconInfo size={16} /> : (
+          <>
+            <span>{t('第一次买房，先看这三件事', 'Buying for the first time? Start with these three things')}</span>
+            <span className="text-slate-400 text-[12px] font-medium">{t('说明', 'About')}</span>
+          </>
+        )}
       </summary>
-      <ul className="mt-2 space-y-1.5 text-[13px] text-slate-600 leading-snug list-disc pl-5 border-t border-slate-100 pt-2">
-        <li>{t('入场要准备的钱 = 首付 + 律师费和印花税（估算）+ 装修预留。下面会逐项列出来。', 'Cash to enter = down payment + estimated legal fees and stamp duty + a renovation allowance. The page below lists each item.')}</li>
-        <li>{t('月供是按你选定的贷款成数、利率和年期估算的，不是银行批复的数字。', 'The instalment is an estimate from the loan percentage, rate and tenure you chose — not a bank offer.')}</li>
-        <li>{t('毛回报是一年预估租金除以房价；净回报还要再扣空置、管理费、门牌税、地税和保险。', 'Gross yield is a year’s estimated rent divided by the price; net yield also subtracts vacancy, maintenance, assessment, and quit rent plus insurance.')}</li>
-      </ul>
+      <div className={compact
+        ? 'absolute left-0 top-9 z-20 w-[min(20rem,calc(100vw-2rem))] rounded-xl bg-white p-3 ring-1 ring-slate-200 shadow-[0_8px_24px_rgba(15,23,42,.12)] space-y-2'
+        : 'mt-2 space-y-1.5 text-[13px] text-slate-600 leading-snug border-t border-slate-100 pt-2'}>
+        {items.map((item, i) => (
+          <div key={i} className="flex items-start gap-2 text-[13px] text-slate-600 leading-snug">
+            <item.icon size={15} className="shrink-0 mt-0.5 text-slate-500" />
+            <span>{item.text}</span>
+          </div>
+        ))}
+      </div>
     </details>
   )
 }
