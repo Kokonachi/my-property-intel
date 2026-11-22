@@ -1,0 +1,166 @@
+/* From Uiverse.io by gharsh11032000 — vendored from uiverse-io/galaxy
+   Forms/gharsh11032000_nasty-insect-66.html (commit adbd2ad).
+   width is capped so the form fits a 390px viewport. */
+
+.form-container {
+  width: 100%;
+  max-width: 350px;
+  background-color: #fff;
+  padding: 32px 24px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #212121;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.084), 0px 2px 3px rgba(0, 0, 0, 0.168);
+}
+
+.form-container button:active {
+  scale: 0.95;
+}
+
+.logo-container {
+  margin-bottom: 12px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.social-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: inherit;
+  color: #fff;
+  border: none;
+  padding: 12px 16px;
+  gap: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.084), 0px 2px 3px rgba(0, 0, 0, 0.168);
+}
+
+.social-button svg {
+  width: 22px;
+  height: 22px;
+  fill: white;
+}
+
+.facebook {
+  background-color: #1778f2;
+}
+
+.apple {
+  background-color: #212121;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"] {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-family: inherit;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.form-group input::placeholder {
+  opacity: 0.5;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="email"]:focus {
+  outline: none;
+  border-color: #1778f2;
+}
+
+.form-submit-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+  color: #fff;
+  background-color: #212121;
+  border: none;
+  width: 100%;
+  padding: 12px 16px;
+  font-size: inherit;
+  gap: 8px;
+  margin: 12px 0;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.084), 0px 2px 3px rgba(0, 0, 0, 0.168);
+}
+
+.form-submit-btn:hover {
+  background-color: #313131;
+}
+
+.link {
+  color: #1778f2;
+  text-decoration: none;
+}
+
+.forgot-password-link {
+  align-self: flex-end;
+  margin-top: -20px;
+}
+
+.signup-link {
+  align-self: center;
+  font-weight: 500;
+}
+
+.signup-link .link {
+  font-weight: 400;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #212121;
+  opacity: 0.1;
+}
+
+.status {
+  margin: 0;
+  font-size: 13px;
+  color: #1778f2;
+  text-align: center;
+}

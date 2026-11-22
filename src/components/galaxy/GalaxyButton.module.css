@@ -1,0 +1,34 @@
+/* From Uiverse.io by adamgiebl — vendored from uiverse-io/galaxy
+   Buttons/adamgiebl_fluffy-liger-17.html (commit adbd2ad).
+   The original styled the bare `button` tag; it is scoped to `.button` here. */
+
+.button {
+  background: linear-gradient(-45deg, #3f00b5, #9f69fe, #27c8b7, #3f00b5);
+  background-size: 800% 400%;
+  padding: 1em 2em;
+  display: inline-block;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+  animation: galaxyGradient 10s infinite cubic-bezier(.62, .28, .23, .99) both;
+}
+
+.button:hover {
+  animation: galaxyGradient 3s infinite;
+  transform: scale(1.05);
+}
+
+.button:active {
+  animation: galaxyGradient 3s infinite;
+  transform: scale(0.8);
+}
+
+@keyframes galaxyGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

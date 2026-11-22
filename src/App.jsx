@@ -4,6 +4,7 @@ import RealDetailPage from './pages/RealDetailPage.jsx'
 import LaunchHome from './pages/LaunchHome.jsx'
 import LaunchExplore from './pages/LaunchExplore.jsx'
 import LaunchDetail from './pages/LaunchDetail.jsx'
+import GalaxyDemo from './pages/GalaxyDemo.jsx'
 import { realById } from './data/real.js'
 import { launchById } from './data/launches.js'
 
@@ -23,6 +24,7 @@ export default function App() {
   const launch = hash.match(/^#\/launch\/([^/?]+)/)
   const explore = hash.match(/^#\/explore(?:\/([^/?]+))?\/?$/)
   const isMap = hash === '#/map' || hash.startsWith('#/map?')
+  const isGalaxy = hash === '#/galaxy' || hash.startsWith('#/galaxy?') || window.location.pathname.replace(/\/$/, '') === '/galaxy'
   useEffect(() => { window.scrollTo(0, 0) }, [hash])
 
   if (property) {
@@ -43,6 +45,7 @@ export default function App() {
     const id = explore[1] ? decodeURIComponent(explore[1]) : null
     return <LaunchExplore focusId={id} />
   }
+  if (isGalaxy) return <GalaxyDemo />
   if (isMap) return <MapPage />
   return <LaunchHome />
 }
