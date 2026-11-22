@@ -62,3 +62,18 @@ export function signedRM(n, { withMo = false, t } = {}) {
   const mo = withMo ? (t ? t('/月', '/mo') : '/月') : ''
   return `${sign}${body}${mo}`
 }
+
+
+/** Rough all-in legal fees + stamp duty, used only when no quoted costs exist. */
+export const LEGAL_STAMP_PCT = 0.04
+
+export function legalStampEst(price) {
+  if (!(Number(price) > 0)) return null
+  return Number(price) * LEGAL_STAMP_PCT
+}
+
+export function entryCost({ price, down }) {
+  if (!(Number(price) > 0) || down == null || Number.isNaN(Number(down))) return null
+  const fees = legalStampEst(price)
+  return { down: Number(down), fees, total: Number(down) + fees, feePct: LEGAL_STAMP_PCT }
+}

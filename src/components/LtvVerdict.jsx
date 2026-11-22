@@ -33,9 +33,9 @@ export function LoanPctControl({ variant = 'header', className = '' }) {
     setDraft(null)
     const n = Number(String(raw).trim())
     if (!Number.isFinite(n)) return
-    setLoan({ ltv: clampLtv(n) })
+    setLoan({ ltv: clampLtv(n) }, { source: 'user' })
   }
-  const bump = dir => setLoan({ ltv: clampLtv(loan.ltv + dir * LTV_STEP) })
+  const bump = dir => setLoan({ ltv: clampLtv(loan.ltv + dir * LTV_STEP) }, { source: 'user' })
   const showSlider = variant !== 'compact'
 
   return (
@@ -84,7 +84,7 @@ export function LoanPctControl({ variant = 'header', className = '' }) {
           value={loan.ltv}
           aria-label={t('贷款成数', 'Loan percentage')}
           className="min-w-0 flex-1 h-7 accent-slate-900"
-          onChange={e => setLoan({ ltv: clampLtv(e.target.value) })}
+          onChange={e => setLoan({ ltv: clampLtv(e.target.value) }, { source: 'user' })}
         />
       )}
     </div>

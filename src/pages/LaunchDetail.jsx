@@ -6,9 +6,11 @@ import { useLang } from '../lib/i18n.jsx'
 import { typRentPsf, AREA_RENT_PSF } from '../data/launches.js'
 import { typYields, workingPrice, discountToTargetGross } from '../lib/launchYield.js'
 import { fmtRM, yieldBand } from '../data/properties.js'
-import { LoanVerdict, LoanAssumptionsBar } from '../components/LtvVerdict.jsx'
+import { LoanVerdict, LoanAssumptionsBar, LoanPctControl, LoanRateYears } from '../components/LtvVerdict.jsx'
 import { useLoanAssumptions } from '../lib/loanAssumptions.js'
-import { launchScore, scoreBand, SCORE_WEIGHTS } from '../lib/launchScore.js'
+import { launchScore, scoreBand, SCORE_WEIGHTS, entryCostOf } from '../lib/launchScore.js'
+import { FirstBuyerNote } from '../components/HolderSheet.jsx'
+import { useHolder, SEGMENTS } from '../lib/holderProfile.js'
 
 const pct = v => (v == null || Number.isNaN(v) ? '—' : `${v.toFixed(2)}%`)
 const rm = v => (v == null || Number.isNaN(v) ? '—' : fmtRM(v))
@@ -35,7 +37,7 @@ function KeyFact({ label, value }) {
   )
 }
 
-function TypCard({ p, typ, t, draft, onChange }) {
+function TypCard({ p, typ, t, draft, onChange, compactLoan = false }) {
   const { psf, band } = typRentPsf(typ)
   const list = typ.price_from
   const d = draft || { mode: list ? 'pct' : 'price', pct: '', price: '' }
@@ -83,7 +85,7 @@ function TypCard({ p, typ, t, draft, onChange }) {
         )}
       </div>
 
-      {price && impliedRent ? <LoanVerdict price={price} rentMo={impliedRent} className="mt-3" /> : null}
+      {price && impliedRent ? <LoanVerdict price={price} rentMo={impliedRent} className="mt-3" compact={compactLoan} /> : null}
 
       {showGrid && (
         <div className={`mt-3 grid gap-3 ${gridCols >= 3 ? 'grid-cols-3' : gridCols === 2 ? 'grid-cols-2' : 'grid-cols-1'}`}>
@@ -200,13 +202,17 @@ function TypCard({ p, typ, t, draft, onChange }) {
 export default function LaunchDetail({ p }) {
   const { t } = useLang()
   const { loan } = useLoanAssumptions()
+  const { segment } = useHolder()
   const [drafts, setDrafts] = useState(() => Object.fromEntries(p.typologies.map(ty => [ty.id, { mode: ty.price_from ? 'pct' : 'price', pct: '', price: '' }])))
   const setDraft = (id, d) => setDrafts(s => ({ ...s, [id]: { ...s[id], ...d } }))
   const [scoreOpen, setScoreOpen] = useState(false)
 
-  const entry = useMemo(() => p.typologies.find(ty => ty.price_from), [p])
+  const pricedTyp = useMemo(() => p.typologies.find(ty => ty.price_from), [p])
   const scored = useMemo(() => launchScore(p, { rate: loan.rate, years: loan.years, ltv: loan.ltv }), [p, loan.rate, loan.years, loan.ltv])
   const sBand = scoreBand(scored.score)
+  const entry = entryCostOf(scored)
+  const many = segment === SEGMENTS.many
+  const zero = segment === SEGMENTS.zero
 
   const tenureLabel = /freehold/i.test(p.tenure)
     ? t('永久地契', 'Freehold')
@@ -290,6 +296,32 @@ export default function LaunchDetail({ p }) {
           </div>
         </section>
 
+        {zero && entry && (
+          <section className="rounded-2xl bg-white p-4 sm:p-5 ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)]" data-testid="entry-cost">
+            <div className="text-[11px] text-slate-500">{t('入场成本（估）', 'Entry cost (est.)')}</div>
+            <div className="mt-0.5 text-[28px] font-semibold tabular-nums leading-none tracking-tight text-slate-900">{rm(entry.total)}</div>
+            <div className="mt-2.5 grid grid-cols-3 gap-3">
+              <div>
+                <div className="text-[11px] text-slate-500">{t('首付', 'Down payment')}</div>
+                <div className="mt-0.5 text-[15px] font-semibold tabular-nums text-slate-900">{rm(entry.down)}</div>
+              </div>
+              <div>
+                <div className="text-[11px] text-slate-500">{t('税费估算', 'Legal / stamp est.')}</div>
+                <div className="mt-0.5 text-[15px] font-semibold tabular-nums text-slate-900">{rm(entry.fees)}</div>
+              </div>
+              <div>
+                <div className="text-[11px] text-slate-500">{t('月供', 'Instalment')}</div>
+                <div className="mt-0.5 text-[15px] font-semibold tabular-nums text-slate-900">{scored.v?.inst != null ? `${rm(scored.v.inst)}${t('/月', '/mo')}` : '—'}</div>
+              </div>
+            </div>
+            {scored.yields?.rentMo && scored.v ? (
+              <LoanVerdict price={scored.price} rentMo={scored.yields.rentMo} className="mt-3" />
+            ) : null}
+          </section>
+        )}
+
+        {zero && <FirstBuyerNote />}
+
         {scored.score != null && (
           <button
             type="button"
@@ -303,6 +335,13 @@ export default function LaunchDetail({ p }) {
               <div className="text-[32px] font-semibold tabular-nums leading-none tracking-tight" style={{ color: sBand.color }}>{scored.score.toFixed(1)}</div>
               <div className="pb-0.5 text-[13px] font-medium text-slate-600">{t(sBand.zh, sBand.en)}</div>
             </div>
+            {many && scored.yields && (
+              <div className="mt-2 text-[12px] text-slate-600 tabular-nums" data-testid="investor-metrics">
+                {scored.yields.net != null ? <span>{t('净回报', 'Net')} {scored.yields.net.toFixed(2)}%</span> : null}
+                {scored.psf ? <span> · RM{Math.round(scored.psf).toLocaleString('en-MY')} psf</span> : null}
+                {scored.bandN ? <span> · {t(`${scored.bandN} 则可比`, `${scored.bandN} comps`)}</span> : null}
+              </div>
+            )}
             {scoreOpen && (
               <div className="mt-2.5 text-[12px] text-slate-600 tabular-nums leading-snug" data-testid="score-breakdown">
                 {t('租售比', 'Rent-to-price')} {scored.parts.yield.toFixed(1)}/{SCORE_WEIGHTS.yield}
@@ -317,12 +356,26 @@ export default function LaunchDetail({ p }) {
           </button>
         )}
 
-        <LoanAssumptionsBar />
+        {many ? (
+          <details className="rounded-2xl bg-white ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)] group" data-testid="loan-assumptions-fold">
+            <summary className="cursor-pointer list-none px-4 py-3 flex items-center justify-between gap-3 text-[13px] font-medium text-slate-800">
+              <span>{t('贷款设定', 'Loan settings')}</span>
+              <span className="text-slate-400 text-[12px] font-medium group-open:hidden">{t(`贷 ${loan.ltv}% · 展开`, `${loan.ltv}% loan · Show`)}</span>
+              <span className="text-slate-400 text-[12px] font-medium hidden group-open:inline">{t('收起', 'Hide')}</span>
+            </summary>
+            <div className="px-3 pb-3 border-t border-slate-100">
+              <LoanPctControl variant="full" className="mt-2 rounded-xl bg-slate-50 border border-slate-200/80 px-2 py-1" />
+              <LoanRateYears />
+            </div>
+          </details>
+        ) : (
+          <LoanAssumptionsBar />
+        )}
 
         <h2 className="pt-1 text-[15px] font-semibold text-slate-900">{t('按户型看回报', 'Yield by unit type')}</h2>
         <div className="space-y-3">
           {p.typologies.map(typ => (
-            <TypCard key={typ.id} p={p} typ={typ} t={t} draft={drafts[typ.id]} onChange={d => setDraft(typ.id, d)} />
+            <TypCard key={typ.id} p={p} typ={typ} t={t} draft={drafts[typ.id]} onChange={d => setDraft(typ.id, d)} compactLoan={many} />
           ))}
         </div>
 
@@ -377,7 +430,7 @@ export default function LaunchDetail({ p }) {
                 {p.title_note ? <p>{p.title_note}</p> : null}
               </div>
             )}
-            {entry && <p className="text-[12px] text-slate-500">{t(`区域楼盘租金中位（不含组屋）为 RM${AREA_RENT_PSF.toFixed(2)} psf，仅作对照，户型回报优先用同面积段。`, `The area project-median rent (excluding flats) is RM${AREA_RENT_PSF.toFixed(2)} psf, shown only as a cross-check. Typ yields prefer the same-size band.`)}</p>}
+            {pricedTyp && <p className="text-[12px] text-slate-500">{t(`区域楼盘租金中位（不含组屋）为 RM${AREA_RENT_PSF.toFixed(2)} psf，仅作对照，户型回报优先用同面积段。`, `The area project-median rent (excluding flats) is RM${AREA_RENT_PSF.toFixed(2)} psf, shown only as a cross-check. Typ yields prefer the same-size band.`)}</p>}
             {p.typologies.some(ty => ty.price_source || ty.price_source_zh) && (
               <div>
                 <div className="font-medium text-slate-800">{t('各户型价格来源', 'Price source by unit type')}</div>

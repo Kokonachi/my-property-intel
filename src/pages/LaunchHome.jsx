@@ -2,8 +2,10 @@ import { LangToggle, useLang } from '../lib/i18n.jsx'
 import { LAUNCHES } from '../data/launches.js'
 import { fmtRM } from '../data/properties.js'
 import { useLoanAssumptions } from '../lib/loanAssumptions.js'
-import { rankedLaunches, scoreBand, headlineVerdict, downLabel } from '../lib/launchScore.js'
+import { rankedLaunches, scoreBand, headlineVerdict, downLabel, entryCostOf } from '../lib/launchScore.js'
 import { LoanPctControl, LoanVerdict } from '../components/LtvVerdict.jsx'
+import { HoldChip, FirstBuyerNote } from '../components/HolderSheet.jsx'
+import { useHolder, SORTS, SEGMENTS } from '../lib/holderProfile.js'
 
 function ScoreMark({ score }) {
   const { t } = useLang()
@@ -18,12 +20,17 @@ function ScoreMark({ score }) {
   )
 }
 
-function RankCard({ p, s }) {
+function RankCard({ p, s, segment }) {
   const { t } = useLang()
   const y = s.yields
   const photo = p.render?.card || p.render?.pin || p.render?.src
   const verdict = headlineVerdict(s, t)
   const down = downLabel(s.down, t)
+  const entry = entryCostOf(s)
+  const inst = s.v?.inst
+  const many = segment === SEGMENTS.many
+  const zero = segment === SEGMENTS.zero
+
   return (
     <a href={`#/explore/${p.id}`} data-testid={`score-card-${p.id}`}
       className="group flex gap-3 rounded-2xl bg-white p-2.5 pr-3 ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)] hover:ring-slate-300 hover:shadow-[0_4px_16px_rgba(15,23,42,.08)] transition">
@@ -39,16 +46,41 @@ function RankCard({ p, s }) {
         <div className="flex items-start justify-between gap-2">
           <div className="min-w-0">
             <div className="font-semibold text-[15px] text-slate-900 leading-snug truncate">{p.card_name || p.name}</div>
-            <div className="mt-0.5 text-[13px] tabular-nums text-slate-700">
-              {s.price ? fmtRM(s.price) : t('待报价', 'Ask')}
-              {s.price ? <span className="text-slate-400 font-normal">{t(' 起', ' from')}</span> : null}
-              {y ? <span className="text-slate-400 font-normal"> · {y.gross.toFixed(2)}%</span> : null}
-            </div>
+            {zero && entry ? (
+              <div className="mt-0.5">
+                <div className="text-[13px] tabular-nums text-slate-800">
+                  {t('入场 ', 'Entry ')}{fmtRM(entry.total)}
+                </div>
+                <div className="text-[12px] tabular-nums text-slate-500 leading-snug">
+                  {t('首付', 'Down')} {fmtRM(entry.down)}
+                  {inst != null ? <span className="whitespace-nowrap"> · {t('月供', 'Inst.')} {fmtRM(inst)}</span> : null}
+                </div>
+              </div>
+            ) : many ? (
+              <div className="mt-0.5">
+                <div className="text-[13px] tabular-nums text-slate-700">
+                  {s.price ? fmtRM(s.price) : t('待报价', 'Ask')}
+                  {s.price ? <span className="text-slate-400 font-normal">{t(' 起', ' from')}</span> : null}
+                  {s.psf ? <span className="text-slate-400 font-normal"> · RM{Math.round(s.psf).toLocaleString('en-MY')} psf</span> : null}
+                </div>
+                <div className="text-[12px] tabular-nums text-slate-500">
+                  {y?.net != null ? <span>{t('净', 'Net')} {y.net.toFixed(2)}%</span> : null}
+                  {y?.gross != null ? <span>{y.net != null ? ' · ' : ''}{t('毛', 'Gross')} {y.gross.toFixed(2)}%</span> : null}
+                  {s.bandN ? <span> · {t(`${s.bandN} 则`, `${s.bandN} comps`)}</span> : null}
+                </div>
+              </div>
+            ) : (
+              <div className="mt-0.5 text-[13px] tabular-nums text-slate-700">
+                {s.price ? fmtRM(s.price) : t('待报价', 'Ask')}
+                {s.price ? <span className="text-slate-400 font-normal">{t(' 起', ' from')}</span> : null}
+                {y ? <span className="text-slate-400 font-normal"> · {y.gross.toFixed(2)}%</span> : null}
+              </div>
+            )}
           </div>
           <ScoreMark score={s.score} />
         </div>
         {verdict && (
-          <LoanVerdict price={s.price} rentMo={y?.rentMo} className="mt-1.5" />
+          <LoanVerdict price={s.price} rentMo={y?.rentMo} className="mt-1.5" compact={many || zero} />
         )}
         {!verdict && down && <div className="mt-1 text-[11px] text-slate-500">{down}</div>}
       </div>
@@ -59,10 +91,24 @@ function RankCard({ p, s }) {
 export default function LaunchHome() {
   const { t } = useLang()
   const { loan } = useLoanAssumptions()
-  const rows = rankedLaunches(LAUNCHES, { rate: loan.rate, years: loan.years, ltv: loan.ltv })
+  const { segment, sortBy, setSort } = useHolder()
+  const rows = rankedLaunches(LAUNCHES, { rate: loan.rate, years: loan.years, ltv: loan.ltv, sortBy })
+
+  const intro = segment === SEGMENTS.zero
+    ? t('按入场成本从低到高排序，先看首付、月供和入场总费用', 'Sorted by lowest entry cost — down payment, instalment and total cash to enter')
+    : segment === SEGMENTS.many
+      ? t('按净回报排序，突出每尺价和可比样本', 'Sorted by net yield, with price psf and comparable sample size')
+      : t('按租售比与当前贷款成数下的月供覆盖排序，高分在前', 'Ranked by rent-to-price and whether rent covers the instalment at your loan percentage')
+  const introForSort = {
+    entry: t('按入场成本从低到高排序', 'Sorted by lowest entry cost'),
+    score: t('按投资评分排序，高分在前', 'Sorted by investment score'),
+    net: t('按净回报从高到低排序', 'Sorted by net yield, high to low'),
+    psf: t('按每尺价从低到高排序', 'Sorted by price psf, low to high'),
+    gross: t('按毛回报从高到低排序', 'Sorted by gross yield, high to low'),
+  }
 
   return (
-    <div className="min-h-full bg-[#f6f7f8] flex flex-col" data-testid="launch-home">
+    <div className="min-h-full bg-[#f6f7f8] flex flex-col" data-testid="launch-home" data-segment={segment}>
       <header className="sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-slate-200/80">
         <div className="flex items-center gap-2 px-3 sm:px-5 h-12">
           <a href="#/" className="shrink-0 flex items-center gap-2" aria-label={t('马来西亚房地产智能平台', 'Malaysia Property Intelligence')}>
@@ -75,6 +121,7 @@ export default function LaunchHome() {
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="2.2" /><circle cx="16.5" cy="15" r="2.2" /><path d="M8 10.2v6.3c0 .7.6 1.2 1.2.9L16.5 13" /></svg>
             {t('回报地图', 'Yield map')}
           </a>
+          <HoldChip />
           <LangToggle />
         </div>
         <div className="px-3 sm:px-5 pb-2 max-w-xl mx-auto w-full">
@@ -83,11 +130,30 @@ export default function LaunchHome() {
       </header>
 
       <main className="flex-1 max-w-xl mx-auto w-full px-3 sm:px-5 py-3 sm:py-5">
-        <p className="text-[12.5px] text-slate-500 mb-2.5 px-0.5 leading-snug">
-          {t('按租售比与当前贷款成数下的月供覆盖排序，高分在前', 'Ranked by rent-to-price and whether rent covers the instalment at your loan percentage')}
+        {segment === SEGMENTS.zero && <div className="mb-2.5"><FirstBuyerNote /></div>}
+        <p className="text-[12.5px] text-slate-500 mb-2 px-0.5 leading-snug" data-testid="sort-intro">
+          {introForSort[sortBy] || intro}
         </p>
+        <div className="flex flex-wrap gap-1.5 mb-2.5" data-testid="sort-chips" role="tablist" aria-label={t('排序', 'Sort')}>
+          {SORTS.map(s => {
+            const on = sortBy === s.id
+            return (
+              <button
+                key={s.id}
+                type="button"
+                role="tab"
+                aria-selected={on}
+                data-testid={`sort-${s.id}`}
+                onClick={() => setSort(s.id)}
+                className={`rounded-full px-2.5 h-7 text-[12px] font-medium ${on ? 'bg-slate-900 text-white' : 'bg-white text-slate-600 ring-1 ring-slate-200'}`}
+              >
+                {t(s.zh, s.en)}
+              </button>
+            )
+          })}
+        </div>
         <div className="flex flex-col gap-2.5">
-          {rows.map(({ p, s }) => <RankCard key={p.id} p={p} s={s} />)}
+          {rows.map(({ p, s }) => <RankCard key={p.id} p={p} s={s} segment={segment} />)}
         </div>
       </main>
     </div>

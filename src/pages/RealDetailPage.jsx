@@ -5,6 +5,7 @@ import { TYPE_LABEL, fmtRM, fmtRMk } from '../data/properties.js'
 import { Footer } from '../components/ui.jsx'
 import ProjectPhoto from '../components/ProjectPhoto.jsx'
 import { useLang, LangToggle } from '../lib/i18n.jsx'
+import { HoldChip } from '../components/HolderSheet.jsx'
 import { areaCompletedStats } from '../lib/launchScore.js'
 import { LoanPctControl, LoanRateYears, LtvCompare } from '../components/LtvVerdict.jsx'
 
@@ -288,7 +289,8 @@ export default function RealDetailPage({ p }) {
       <header className="sticky top-0 z-50 h-12 bg-white/90 backdrop-blur border-b border-slate-200/80 flex items-center gap-2 px-3 sm:px-5">
         <a href="#/map" className="shrink-0 rounded-full border border-slate-200 bg-white px-3 h-8 inline-flex items-center text-[13px] font-medium text-slate-700" data-testid="back">← {t('返回地图', 'Back to map')}</a>
         <div className="min-w-0 flex-1 font-semibold text-[13px] text-slate-800 truncate md:hidden" data-testid="sticky-name">{p.name}</div>
-        <LangToggle className="ml-auto shrink-0" />
+        <HoldChip className="ml-auto shrink-0" />
+        <LangToggle className="shrink-0" />
       </header>
 
       <main className="flex-1 max-w-2xl mx-auto w-full px-3 sm:px-5 py-3 sm:py-5 space-y-3">

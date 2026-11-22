@@ -16,7 +16,7 @@ import { REAL } from '../data/real.js'
 import { typRentPsf } from '../data/launches.js'
 import { typYields } from './launchYield.js'
 import { entryYield } from './launchEntry.js'
-import { cashVsRent, DEFAULT_RATE, DEFAULT_YEARS, DEFAULT_LTV, clampLtv } from './mortgage.js'
+import { cashVsRent, DEFAULT_RATE, DEFAULT_YEARS, DEFAULT_LTV, clampLtv, entryCost } from './mortgage.js'
 
 export const SCORE_WEIGHTS = { yield: 4, cash: 3, vsArea: 2, confidence: 1 }
 
@@ -121,15 +121,41 @@ export function launchScore(p, { rate = DEFAULT_RATE, years = DEFAULT_YEARS, ltv
   }
 }
 
-export function rankedLaunches(launches, opts) {
+export function entryCostOf(s) {
+  if (!s) return null
+  return entryCost({ price: s.price, down: s.down })
+}
+
+function missingLast(av, bv, dir = 1) {
+  if (av == null && bv == null) return 0
+  if (av == null) return 1
+  if (bv == null) return -1
+  return (av - bv) * dir
+}
+
+export function rankedLaunches(launches, opts = {}) {
+  const sortBy = opts.sortBy || 'score'
   return (launches || [])
     .map(p => ({ p, s: launchScore(p, opts) }))
     .sort((a, b) => {
-      const as = a.s.score, bs = b.s.score
-      if (as == null && bs == null) return 0
-      if (as == null) return 1
-      if (bs == null) return -1
-      if (bs !== as) return bs - as
+      if (sortBy === 'entry') {
+        const ae = entryCostOf(a.s)?.total
+        const be = entryCostOf(b.s)?.total
+        const d = missingLast(ae, be, 1)
+        if (d) return d
+      } else if (sortBy === 'net') {
+        const d = missingLast(a.s.yields?.net, b.s.yields?.net, -1)
+        if (d) return d
+      } else if (sortBy === 'psf') {
+        const d = missingLast(a.s.psf, b.s.psf, 1)
+        if (d) return d
+      } else if (sortBy === 'gross') {
+        const d = missingLast(a.s.yields?.gross, b.s.yields?.gross, -1)
+        if (d) return d
+      } else {
+        const d = missingLast(a.s.score, b.s.score, -1)
+        if (d) return d
+      }
       return (b.s.yields?.gross || 0) - (a.s.yields?.gross || 0)
     })
 }

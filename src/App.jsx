@@ -6,6 +6,7 @@ import LaunchExplore from './pages/LaunchExplore.jsx'
 import LaunchDetail from './pages/LaunchDetail.jsx'
 import { realById } from './data/real.js'
 import { launchById } from './data/launches.js'
+import { OnboardingHost } from './components/HolderSheet.jsx'
 
 function useHash() {
   const [h, setH] = useState(window.location.hash || '#/')
@@ -25,24 +26,27 @@ export default function App() {
   const isMap = hash === '#/map' || hash.startsWith('#/map?')
   useEffect(() => { window.scrollTo(0, 0) }, [hash])
 
+  let page = <LaunchHome />
   if (property) {
     const id = decodeURIComponent(property[1])
     const rp = realById(id)
-    if (rp) return <RealDetailPage key={rp.id} p={rp} />
-    window.location.replace('#/')
-    return null
-  }
-  if (launch) {
+    if (rp) page = <RealDetailPage key={rp.id} p={rp} />
+    else { window.location.replace('#/'); return null }
+  } else if (launch) {
     const id = decodeURIComponent(launch[1])
     const p = launchById(id)
-    if (p) return <LaunchDetail key={p.id} p={p} />
-    window.location.replace('#/')
-    return null
-  }
-  if (explore) {
+    if (p) page = <LaunchDetail key={p.id} p={p} />
+    else { window.location.replace('#/'); return null }
+  } else if (explore) {
     const id = explore[1] ? decodeURIComponent(explore[1]) : null
-    return <LaunchExplore focusId={id} />
+    page = <LaunchExplore focusId={id} />
+  } else if (isMap) {
+    page = <MapPage />
   }
-  if (isMap) return <MapPage />
-  return <LaunchHome />
+  return (
+    <>
+      {page}
+      <OnboardingHost />
+    </>
+  )
 }

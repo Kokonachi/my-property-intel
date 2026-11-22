@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { MapContainer, Marker, useMap, useMapEvents } from 'react-leaflet'
 import L from '../lib/leaflet-globals.js'
 import { LangToggle, useLang } from '../lib/i18n.jsx'
+import { HoldChip } from '../components/HolderSheet.jsx'
 import { REAL, yieldOf } from '../data/real.js'
 import { LAUNCHES, launchById } from '../data/launches.js'
 import { REGIONS, yieldBand } from '../data/properties.js'
@@ -117,6 +118,7 @@ export default function LaunchExplore({ focusId }) {
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="2.2" /><circle cx="16.5" cy="15" r="2.2" /><path d="M8 10.2v6.3c0 .7.6 1.2 1.2.9L16.5 13" /></svg>
             {t('回报地图', 'Yield map')}
           </a>
+          <HoldChip className="h-10" />
           <LangToggle className="h-10" />
         </div>
       </div>
