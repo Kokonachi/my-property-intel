@@ -223,3 +223,6 @@ input[type=range] { accent-color: #2563eb; }
 }
 
 .explore-map [data-testid=explore-chrome] { z-index: 1300; }
+
+details[data-testid=how-calculated] > summary { list-style: none; }
+details[data-testid=how-calculated] > summary::-webkit-details-marker { display: none; }

@@ -28,7 +28,7 @@ export default function App() {
   if (property) {
     const id = decodeURIComponent(property[1])
     const rp = realById(id)
-    if (rp) return <RealDetailPage p={rp} />
+    if (rp) return <RealDetailPage key={rp.id} p={rp} />
     window.location.replace('#/')
     return null
   }

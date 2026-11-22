@@ -18,7 +18,7 @@ const AREA_TINT = {
   sj: { bg: '#ffedd5', fg: '#9a3412' },
 }
 
-export default function ProjectPhoto({ p, className = '', compact = false, label = true, strip = false }) {
+export default function ProjectPhoto({ p, className = '', compact = false, label = true, strip = false, hero = false }) {
   const { t, L } = useLang()
   const ph = p.photo
   if (ph) {
@@ -37,6 +37,16 @@ export default function ProjectPhoto({ p, className = '', compact = false, label
   if (compact || strip) {
     return (
       <div className={`shrink-0 ${className}`} style={{ background: tint.bg }} data-testid="photo-fallback" title={area} aria-hidden />
+    )
+  }
+  if (hero) {
+    return (
+      <div className={`overflow-hidden flex items-center justify-center ${className}`} style={{ background: '#eef1f4' }} data-testid="photo-fallback">
+        <div className="px-5 text-center">
+          <div className="text-[13px] font-medium text-slate-500">{area}</div>
+          <div className="text-[12px] text-slate-400 mt-1">{t('暂无官方外观照片', 'No official exterior photo')}</div>
+        </div>
+      </div>
     )
   }
   return (

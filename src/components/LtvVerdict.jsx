@@ -139,17 +139,19 @@ export function LtvRows(props) {
 }
 
 /** Detail-page bar: rent vs instalment at the current loan %, plus net after maintenance. */
-export function LtvCompare({ price, rentMo, maintMo }) {
+export function LtvCompare({ price, rentMo, maintMo, hideTitle = false }) {
   const { t } = useLang()
   const { loan, v } = useCurrentVerdict({ price, rentMo, maintMo })
   if (!v || !rentMo) return null
   const max = Math.max(rentMo, v.inst, 1)
   return (
     <div className="mt-3 rounded-2xl border border-slate-200 bg-slate-50 p-3" data-testid="ltv-compare">
-      <div className="flex items-baseline justify-between gap-2">
-        <div className="text-[13px] font-semibold text-slate-900">{t('月供 vs 租金', 'Instalment vs rent')}</div>
-        <div className="text-[11px] text-slate-500">{t('叫租估算，非实收', 'Asking-rent estimate, not achieved rent')}</div>
-      </div>
+      {!hideTitle && (
+        <div className="flex items-baseline justify-between gap-2">
+          <div className="text-[13px] font-semibold text-slate-900">{t('月供 vs 租金', 'Instalment vs rent')}</div>
+          <div className="text-[11px] text-slate-500">{t('叫租估算，非实收', 'Asking-rent estimate, not achieved rent')}</div>
+        </div>
+      )}
       <div className="mt-2 space-y-2">
         <Bar label={t('参考月租', 'Est. rent')} value={rentMo} max={max} color="#0f172a" t={t} />
         <div>
@@ -171,8 +173,8 @@ export function LtvCompare({ price, rentMo, maintMo }) {
         </div>
       </div>
       <div className="mt-2 text-[12px] text-slate-600 tabular-nums">
-        {t(`首付 RM${Math.round(v.down).toLocaleString('en-MY')}（表价或折后价的 ${100 - loan.ltv}%）`,
-          `Down payment RM${Math.round(v.down).toLocaleString('en-MY')} (${100 - loan.ltv}% of list or after-discount price)`)}
+        {t(`首付 RM${Math.round(v.down).toLocaleString('en-MY')}（该价格的 ${100 - loan.ltv}%）`,
+          `Down payment RM${Math.round(v.down).toLocaleString('en-MY')} (${100 - loan.ltv}% of this price)`)}
       </div>
     </div>
   )
