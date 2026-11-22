@@ -35,7 +35,7 @@ export default function App() {
   if (launch) {
     const id = decodeURIComponent(launch[1])
     const p = launchById(id)
-    if (p) return <LaunchDetail p={p} />
+    if (p) return <LaunchDetail key={p.id} p={p} />
     window.location.replace('#/')
     return null
   }

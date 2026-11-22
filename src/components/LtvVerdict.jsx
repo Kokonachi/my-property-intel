@@ -195,55 +195,53 @@ function Bar({ label, value, max, color, t }) {
   )
 }
 
-export function LoanAssumptionsBar() {
+export function LoanRateYears({ className = '' }) {
   const { t } = useLang()
   const { loan, setLoan } = useLoanAssumptions()
   return (
-    <div className="mt-3 rounded-2xl border border-slate-200 bg-white p-3" data-testid="loan-assumptions">
-      <div className="text-[13px] font-semibold text-slate-900">{t('房贷假设（可改）', 'Loan assumptions (editable)')}</div>
-      <p className="text-[12px] text-slate-500 mt-0.5 leading-snug">
-        {t(
-          '贷款成数默认 90%，可在 50%–90% 之间改，首页、地图小窗和本页共用。国行 2026 年 11 月 5 日维持隔夜政策利率 2.75%，各银行标准化基准利率（SBR）同为 2.75%。默认 4.3% 是目前市面常见浮动房贷（约 4.10–4.75%）的中间值，不是银行批复利率；投资客贷款可能更高。年期默认 35 年，通常会受年龄上限（多为 70 岁）限制。月供按表价或你填的折后价计算，租金是叫租估算。',
-          'Loan percentage defaults to 90% and can be set anywhere from 50% to 90%; the same value is shared on the home list, the map panel and this page. Bank Negara held the OPR at 2.75% on 5 Nov 2026, so every bank’s SBR is 2.75%. The 4.3% default is a mid-market assumption among advertised floating packages (about 4.10–4.75%), not a bank offer; investor loans can be higher. Tenure defaults to 35 years, often capped by age (commonly 70). Instalment uses the list or after-discount price. Rent is an asking-rent estimate.',
-        )}
-      </p>
-      <div className="mt-2">
-        <LoanPctControl variant="full" />
-      </div>
-      <div className="mt-2 grid grid-cols-2 gap-2 max-w-sm">
-        <label className="rounded-xl border border-slate-200 px-3 py-2">
-          <div className="text-[11px] text-slate-500">{t('年利率', 'Interest rate')}</div>
-          <div className="flex items-center gap-1">
-            <input
-              type="number"
-              step="0.05"
-              min="0.5"
-              max="15"
-              data-testid="loan-rate"
-              className="w-full bg-transparent outline-none font-semibold tabular-nums"
-              value={loan.rate}
-              onChange={e => setLoan({ ...loan, rate: e.target.value })}
-            />
-            <span className="text-[11px] text-slate-400 shrink-0">% p.a.</span>
-          </div>
-        </label>
-        <label className="rounded-xl border border-slate-200 px-3 py-2">
-          <div className="text-[11px] text-slate-500">{t('贷款年期', 'Tenure')}</div>
-          <div className="flex items-center gap-1">
-            <input
-              type="number"
-              step="1"
-              min="5"
-              max="40"
-              data-testid="loan-years"
-              className="w-full bg-transparent outline-none font-semibold tabular-nums"
-              value={loan.years}
-              onChange={e => setLoan({ ...loan, years: e.target.value })}
-            />
-            <span className="text-[11px] text-slate-400 shrink-0">{t('年', 'yrs')}</span>
-          </div>
-        </label>
-      </div>
+    <div className={`mt-2 grid grid-cols-2 gap-2 ${className}`} data-testid="loan-rate-years">
+      <label className="rounded-xl border border-slate-200 bg-white px-3 py-2">
+        <div className="text-[11px] text-slate-500">{t('年利率', 'Interest rate')}</div>
+        <div className="flex items-center gap-1">
+          <input
+            type="number"
+            step="0.05"
+            min="0.5"
+            max="15"
+            data-testid="loan-rate"
+            className="w-full bg-transparent outline-none font-semibold tabular-nums text-[13px]"
+            value={loan.rate}
+            onChange={e => setLoan({ rate: e.target.value })}
+          />
+          <span className="text-[11px] text-slate-400 shrink-0">% p.a.</span>
+        </div>
+      </label>
+      <label className="rounded-xl border border-slate-200 bg-white px-3 py-2">
+        <div className="text-[11px] text-slate-500">{t('贷款年期', 'Tenure')}</div>
+        <div className="flex items-center gap-1">
+          <input
+            type="number"
+            step="1"
+            min="5"
+            max="40"
+            data-testid="loan-years"
+            className="w-full bg-transparent outline-none font-semibold tabular-nums text-[13px]"
+            value={loan.years}
+            onChange={e => setLoan({ years: e.target.value })}
+          />
+          <span className="text-[11px] text-slate-400 shrink-0">{t('年', 'yrs')}</span>
+        </div>
+      </label>
+    </div>
+  )
+}
+
+/** Compact loan % + rate/tenure controls. Explanatory copy lives in the page’s data section. */
+export function LoanAssumptionsBar() {
+  return (
+    <div className="rounded-2xl bg-white p-3 sm:p-4 ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)]" data-testid="loan-assumptions">
+      <LoanPctControl variant="full" className="rounded-xl bg-slate-50 border border-slate-200/80 px-2 py-1" />
+      <LoanRateYears />
     </div>
   )
 }

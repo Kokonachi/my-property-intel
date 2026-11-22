@@ -6,8 +6,7 @@ import { Footer } from '../components/ui.jsx'
 import ProjectPhoto from '../components/ProjectPhoto.jsx'
 import { useLang, LangToggle } from '../lib/i18n.jsx'
 import { areaCompletedStats } from '../lib/launchScore.js'
-import { useLoanAssumptions } from '../lib/loanAssumptions.js'
-import { LoanPctControl, LoanVerdict, LtvCompare } from '../components/LtvVerdict.jsx'
+import { LoanPctControl, LoanRateYears, LtvCompare } from '../components/LtvVerdict.jsx'
 
 const pct = v => (v == null ? '—' : `${v.toFixed(2)}%`)
 const UPDATED = (REAL_META.generated_at || '2026-11-15').slice(0, 10)
@@ -234,33 +233,6 @@ function KeyFact({ label, value }) {
   )
 }
 
-function RateYears() {
-  const { t } = useLang()
-  const { loan, setLoan } = useLoanAssumptions()
-  return (
-    <div className="mt-2 grid grid-cols-2 gap-2" data-testid="loan-rate-years">
-      <label className="rounded-xl border border-slate-200 bg-white px-3 py-2">
-        <div className="text-[11px] text-slate-500">{t('年利率', 'Interest rate')}</div>
-        <div className="flex items-center gap-1">
-          <input type="number" step="0.05" min="0.5" max="15" data-testid="loan-rate"
-            className="w-full bg-transparent outline-none font-semibold tabular-nums text-[13px]"
-            value={loan.rate} onChange={e => setLoan({ rate: e.target.value })} />
-          <span className="text-[11px] text-slate-400 shrink-0">% p.a.</span>
-        </div>
-      </label>
-      <label className="rounded-xl border border-slate-200 bg-white px-3 py-2">
-        <div className="text-[11px] text-slate-500">{t('贷款年期', 'Tenure')}</div>
-        <div className="flex items-center gap-1">
-          <input type="number" step="1" min="5" max="40" data-testid="loan-years"
-            className="w-full bg-transparent outline-none font-semibold tabular-nums text-[13px]"
-            value={loan.years} onChange={e => setLoan({ years: e.target.value })} />
-          <span className="text-[11px] text-slate-400 shrink-0">{t('年', 'yrs')}</span>
-        </div>
-      </label>
-    </div>
-  )
-}
-
 export default function RealDetailPage({ p }) {
   const { t, L } = useLang()
   const est = p.rent_estimate
@@ -297,11 +269,18 @@ export default function RealDetailPage({ p }) {
   const valueDiffers = mortPrice && p.tx.price_median && Math.abs(mortPrice - p.tx.price_median) / p.tx.price_median > 0.08
   const gw = gatewayNote(p.id, t)
 
+  const txCount = p.tx?.count || 0
   const facts = [
     p.rent ? { label: t('中位租金', 'Median rent'), value: `${fmtRM(p.rent)}${t('/月', '/mo')}` } : null,
-    p.tx.price_median ? { label: t('成交中位价', 'Median price'), value: fmtRM(p.tx.price_median) } : null,
+    p.tx.price_median ? {
+      label: txCount
+        ? t(`成交中位价 · ${txCount} 宗`, txCount === 1 ? 'Median sale · 1 sale' : `Median sale · ${txCount} sales`)
+        : t('成交中位价', 'Median sale'),
+      value: fmtRM(p.tx.price_median),
+    } : null,
     p.tx.psf_median ? { label: t('成交 psf', 'Transacted psf'), value: `RM ${p.tx.psf_median.toLocaleString('en-MY')}` } : null,
     p.ask_sale?.psf_median ? { label: t('叫价 psf', 'Asking psf'), value: `RM ${p.ask_sale.psf_median.toLocaleString('en-MY')}` } : null,
+    valueDiffers ? { label: t('月供所用估值', 'Value used for loan'), value: fmtRM(mortPrice) } : null,
   ].filter(Boolean)
 
   return (
@@ -353,7 +332,7 @@ export default function RealDetailPage({ p }) {
             )}
 
             {facts.length > 0 && !p.excluded && (
-              <div className={`mt-4 grid gap-3 ${facts.length >= 3 ? 'grid-cols-3' : facts.length === 2 ? 'grid-cols-2' : 'grid-cols-1'}`} data-testid="key-facts">
+              <div className={`mt-4 grid gap-3 ${facts.length >= 4 ? 'grid-cols-2 sm:grid-cols-4' : facts.length === 3 ? 'grid-cols-3' : facts.length === 2 ? 'grid-cols-2' : 'grid-cols-1'}`} data-testid="key-facts">
                 {facts.map(f => <KeyFact key={f.label} label={f.label} value={f.value} />)}
               </div>
             )}
@@ -363,15 +342,13 @@ export default function RealDetailPage({ p }) {
         {!p.excluded && mortPrice > 0 && mortRent > 0 && (
           <section className="rounded-2xl bg-white p-4 sm:p-5 ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)]" data-testid="mortgage-vs-rent">
             <h2 className="text-[15px] font-semibold text-slate-900">{t('月供 vs 租金', 'Instalment vs rent')}</h2>
-            <p className="mt-0.5 text-[12px] text-slate-500 leading-snug">
-              {valueDiffers
-                ? t(`代表单位：估值 ${fmtRM(mortPrice)} · 叫租 ${fmtRM(mortRent)}/月`,
-                  `Representative unit: ${fmtRM(mortPrice)} · rent ${fmtRM(mortRent)}/mo`)
-                : t('按成交估值和叫租估算，贷款成数与新楼盘页面共用。', 'Uses the transacted value and asking-rent estimate. Loan percentage is shared with the new-launch pages.')}
-            </p>
+            {valueDiffers && (
+              <p className="mt-0.5 text-[12px] text-slate-500 leading-snug" data-testid="mortgage-basis">
+                {t('按上方「月供所用估值」，不是成交中位价', 'Uses the “Value used for loan” above, not the median sale')}
+              </p>
+            )}
             <LoanPctControl variant="full" className="mt-2.5 rounded-xl bg-slate-50 border border-slate-200/80 px-2 py-1" />
-            <RateYears />
-            <LoanVerdict price={mortPrice} rentMo={mortRent} className="mt-2.5" />
+            <LoanRateYears />
             <LtvCompare price={mortPrice} rentMo={mortRent} maintMo={mortMaint} hideTitle />
           </section>
         )}
