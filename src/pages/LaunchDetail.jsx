@@ -417,6 +417,30 @@ export default function LaunchDetail({ p }) {
             <p className="mt-1 text-[13px] text-slate-500">{metaLine}</p>
             <p className="mt-0.5 text-[13px] text-slate-500">{p.developer}{p.developer_parent ? ` · ${p.developer_parent}` : ''}</p>
 
+            {zero && entry && (
+              <div className="mt-4 rounded-2xl bg-slate-50 px-3.5 py-3.5" data-testid="entry-cost">
+                <div className="text-[11px] text-slate-500">{t('入场要准备多少钱（估算）', 'How much cash to prepare (estimate)')}</div>
+                <div className="mt-0.5 text-[28px] font-semibold tabular-nums leading-none tracking-tight text-slate-900">{rm(entry.total)}</div>
+                <div className="mt-3 space-y-1.5 text-[13px] text-slate-700">
+                  <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500">{t('首付', 'Down payment')}</span><span className="font-medium">{rm(entry.down)}</span></div>
+                  <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500">{t('律师费（含 8% 服务税，估）', 'Legal fees (incl. 8% SST, est.)')}</span><span className="font-medium">{rm(entry.legal)}</span></div>
+                  <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500">{t('印花税（买卖合约 + 贷款协议，估）', 'Stamp duty (SPA + loan, est.)')}</span><span className="font-medium">{rm(entry.stamp)}</span></div>
+                  <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500">{t(`装修预留（按 RM${entry.renoPsf}/尺估算）`, `Renovation allowance (RM${entry.renoPsf}/sqft estimate)`)}</span><span className="font-medium">{rm(entry.renovation)}</span></div>
+                </div>
+                {scored.v?.inst != null ? (
+                  <div className="mt-3 pt-3 border-t border-slate-200/80">
+                    <div className="text-[11px] text-slate-500">{t('月供', 'Instalment')}</div>
+                    <div className="mt-0.5 text-[18px] font-semibold tabular-nums text-slate-900">{rm(scored.v.inst)}{t('/月', '/mo')}</div>
+                    <div className="mt-1.5 space-y-0.5 text-[13px] text-slate-600 leading-snug">
+                      {vsRent ? <div>{vsRent}</div> : null}
+                      {rentOut ? <div>{rentOut}</div> : null}
+                    </div>
+                  </div>
+                ) : null}
+                <p className="mt-3 text-[11px] text-slate-400 leading-snug">{t('以上律师费、印花税和装修都是估算，不是律师行或承包商的报价，也不含银行手续费或家具升级。', 'Legal fees, stamp duty and renovation are estimates, not quotes from a solicitor or contractor, and they exclude bank fees or a fuller furniture budget.')}</p>
+              </div>
+            )}
+
             {facts.length > 0 && (
               <div className="mt-4 grid grid-cols-2 gap-3" data-testid="key-facts">
                 {facts.map(f => <KeyFact key={f.label} label={f.label} value={f.value} />)}
@@ -444,30 +468,6 @@ export default function LaunchDetail({ p }) {
             </div>
           </div>
         </section>
-
-        {zero && entry && (
-          <section className="rounded-2xl bg-white p-4 sm:p-5 ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)]" data-testid="entry-cost">
-            <div className="text-[11px] text-slate-500">{t('入场要准备多少钱（估算）', 'How much cash to prepare (estimate)')}</div>
-            <div className="mt-0.5 text-[28px] font-semibold tabular-nums leading-none tracking-tight text-slate-900">{rm(entry.total)}</div>
-            <div className="mt-3 space-y-1.5 text-[13px] text-slate-700">
-              <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500">{t('首付', 'Down payment')}</span><span className="font-medium">{rm(entry.down)}</span></div>
-              <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500">{t('律师费（含 8% 服务税，估）', 'Legal fees (incl. 8% SST, est.)')}</span><span className="font-medium">{rm(entry.legal)}</span></div>
-              <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500">{t('印花税（买卖合约 + 贷款协议，估）', 'Stamp duty (SPA + loan, est.)')}</span><span className="font-medium">{rm(entry.stamp)}</span></div>
-              <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500">{t(`装修预留（按 RM${entry.renoPsf}/尺估算）`, `Renovation allowance (RM${entry.renoPsf}/sqft estimate)`)}</span><span className="font-medium">{rm(entry.renovation)}</span></div>
-            </div>
-            {scored.v?.inst != null ? (
-              <div className="mt-3 pt-3 border-t border-slate-100">
-                <div className="text-[11px] text-slate-500">{t('月供', 'Instalment')}</div>
-                <div className="mt-0.5 text-[18px] font-semibold tabular-nums text-slate-900">{rm(scored.v.inst)}{t('/月', '/mo')}</div>
-                <div className="mt-1.5 space-y-0.5 text-[13px] text-slate-600 leading-snug">
-                  {vsRent ? <div>{vsRent}</div> : null}
-                  {rentOut ? <div>{rentOut}</div> : null}
-                </div>
-              </div>
-            ) : null}
-            <p className="mt-3 text-[11px] text-slate-400 leading-snug">{t('以上律师费、印花税和装修都是估算，不是律师行或承包商的报价，也不含银行手续费或家具升级。', 'Legal fees, stamp duty and renovation are estimates, not quotes from a solicitor or contractor, and they exclude bank fees or a fuller furniture budget.')}</p>
-          </section>
-        )}
 
         {zero && scored.v?.inst != null && (
           <SalaryBox inst={scored.v.inst} salary={holder.salary} onSave={v => setBudget({ salary: v })} t={t} />

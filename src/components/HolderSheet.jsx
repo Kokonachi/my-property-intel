@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { useLang } from '../lib/i18n.jsx'
 import {
   HOLD_MAX, HOLD_MIN, CITIES, DEFAULT_CITY, SEGMENTS, cityById,
-  useHolder, completeOnboarding, openHolderEditor,
+  useHolder, completeOnboarding, openHolderEditor, resetOnboarding,
 } from '../lib/holderProfile.js'
 import { parseMoney } from '../lib/mortgage.js'
 
@@ -85,11 +86,31 @@ export function HolderSheet({ open, onClose, initial, firstVisit = false }) {
 
   const goNextFromCount = () => setStep(isZero ? 'budget' : 'city')
 
-  return (
+  const restart = () => {
+    resetOnboarding()
+    setCount(0)
+    setRent('')
+    setSalary('')
+    setCity(DEFAULT_CITY)
+    setStep('count')
+    onClose?.()
+  }
+
+  const sheet = (
     <div className="fixed inset-0 z-[2000] flex items-end sm:items-center justify-center p-0 sm:p-4" role="dialog" aria-modal="true" data-testid="holder-sheet">
-      <button type="button" className="absolute inset-0 bg-slate-900/40" aria-label={t('关闭', 'Close')} onClick={() => (firstVisit ? null : onClose?.())} />
-      <div className="relative w-full sm:max-w-md rounded-t-3xl sm:rounded-3xl bg-white shadow-2xl px-5 pt-4 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
-        <div className="mx-auto mb-3 h-1 w-10 rounded-full bg-slate-200 sm:hidden" />
+      <div className="absolute inset-0 z-0 bg-slate-900/40" role="presentation" onClick={() => (firstVisit ? null : onClose?.())} />
+      <div className="relative z-10 w-full min-w-0 max-w-full sm:max-w-md rounded-t-3xl sm:rounded-3xl bg-white shadow-2xl px-5 pt-4 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
+        <div className={`relative mb-2 ${firstVisit ? 'h-4 sm:h-0' : 'h-8'}`}>
+          <div className="absolute inset-x-0 top-1.5 flex justify-center pointer-events-none">
+            <div className="h-1 w-10 rounded-full bg-slate-200 sm:hidden" />
+          </div>
+          {!firstVisit && (
+            <button type="button" data-testid="hold-restart" onClick={restart}
+              className="absolute right-0 top-0 z-10 h-8 whitespace-nowrap text-[13px] font-medium text-slate-500">
+              {t('重新选择', 'Start over')}
+            </button>
+          )}
+        </div>
         <StepDots step={step} t={t} isZero={isZero} />
 
         {step === 'count' && (
@@ -188,6 +209,23 @@ export function HolderSheet({ open, onClose, initial, firstVisit = false }) {
       </div>
     </div>
   )
+  return createPortal(sheet, document.body)
+}
+
+export function RestartButton({ className = '' }) {
+  const { t } = useLang()
+  const { holder } = useHolder()
+  if (!holder.asked) return null
+  return (
+    <button
+      type="button"
+      data-testid="hold-restart-home"
+      onClick={() => resetOnboarding()}
+      className={`text-[12px] font-medium text-slate-500 hover:text-slate-800 ${className}`}
+    >
+      {t('重新选择', 'Start over')}
+    </button>
+  )
 }
 
 export function HoldChip() {
@@ -202,8 +240,8 @@ export function HoldChip() {
   return (
     <>
       <button type="button" data-testid="hold-chip" onClick={() => { setOpen(true); openHolderEditor() }}
-        className="shrink-0 max-w-[11rem] truncate rounded-full border border-slate-200 bg-white px-2.5 py-1 text-[12px] font-medium text-slate-700">
-        {label}{cityBit ? <span className="text-slate-400"> · {cityBit}</span> : null}
+        className="shrink-0 max-w-[8.5rem] sm:max-w-[11rem] truncate rounded-full border border-slate-200 bg-white px-2.5 py-1 text-[12px] font-medium text-slate-700">
+        {label}{cityBit ? <span className="hidden sm:inline text-slate-400"> · {cityBit}</span> : null}
       </button>
       <HolderSheet open={open} onClose={() => setOpen(false)} initial={holder} />
     </>

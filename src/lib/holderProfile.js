@@ -1,6 +1,8 @@
 /** First-visit holder profile: count, segment (0 / 1–2 / 3+), budget and city. */
 import { useSyncExternalStore } from 'react'
 import { setLoanAssumptions } from './loanAssumptions.js'
+import { DEFAULT_LTV } from './mortgage.js'
+import { clearCompare } from './compareDraft.js'
 import { parseMoney } from './mortgage.js'
 
 export const HOLD_MIN = 0
@@ -228,6 +230,15 @@ export function openHolderEditor() {
   emit()
 }
 
+/** Clear count, rent/salary and city, keep language, reset loan % to 90 (not manual), and return to an unasked state. */
+export function resetOnboarding() {
+  state = defaultState()
+  persist()
+  setLoanAssumptions({ ltv: DEFAULT_LTV, ltvManual: false })
+  clearCompare()
+  return state
+}
+
 export function useHolder() {
   const current = useSyncExternalStore(f => { subs.add(f); return () => subs.delete(f) }, () => state, () => state)
   return {
@@ -239,5 +250,6 @@ export function useHolder() {
     setBudget: setHolderBudget,
     setCity: setHolderCity,
     complete: completeOnboarding,
+    restart: resetOnboarding,
   }
 }

@@ -5,7 +5,7 @@ import { fmtRM } from '../data/properties.js'
 import { useLoanAssumptions } from '../lib/loanAssumptions.js'
 import { rankedLaunches, scoreBand, headlineVerdict, downLabel, entryCostOf } from '../lib/launchScore.js'
 import { LoanPctControl, LoanVerdict } from '../components/LtvVerdict.jsx'
-import { HoldChip, FirstBuyerNote } from '../components/HolderSheet.jsx'
+import { HoldChip, FirstBuyerNote, RestartButton } from '../components/HolderSheet.jsx'
 import { useHolder, SEGMENT_SORTS, SEGMENTS } from '../lib/holderProfile.js'
 import { vsCurrentRentLine, rentOutLine } from '../lib/plainCopy.js'
 import { useCompare, COMPARE_MAX } from '../lib/compareDraft.js'
@@ -165,9 +165,12 @@ export default function LaunchHome() {
 
       <main className="flex-1 max-w-xl mx-auto w-full px-3 sm:px-5 py-3 sm:py-5">
         {segment === SEGMENTS.zero && <div className="mb-2.5"><FirstBuyerNote /></div>}
-        <p className="text-[12.5px] text-slate-500 mb-2 px-0.5 leading-snug" data-testid="sort-intro">
-          {introForSort[sortBy] || intro}
-        </p>
+        <div className="mb-2 px-0.5 flex items-start justify-between gap-3">
+          <p className="text-[12.5px] text-slate-500 leading-snug min-w-0" data-testid="sort-intro">
+            {introForSort[sortBy] || intro}
+          </p>
+          <RestartButton className="shrink-0 mt-px whitespace-nowrap" />
+        </div>
         {sorts.length > 1 && (
           <div className="flex flex-wrap gap-1.5 mb-2.5" data-testid="sort-chips" role="tablist" aria-label={t('排序', 'Sort')}>
             {sorts.map(s => {

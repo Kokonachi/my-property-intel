@@ -3,7 +3,7 @@ import { LAUNCHES } from '../src/data/launches.js'
 import { rankedLaunches, entryCostOf, launchScore } from '../src/lib/launchScore.js'
 import { entryCost, spaStampDuty, loanStampDuty, sroLegalFee, LEGAL_SST, RENO_PSF, salaryBurden, parseMoney } from '../src/lib/mortgage.js'
 import { setLoanAssumptions, getLoanAssumptions } from '../src/lib/loanAssumptions.js'
-import { segmentOf, segmentLtv, setHolderCount, currentSegment, currentSort, setHolderSort, clampHold, HOLD_MAX, completeOnboarding, getHolder, DEFAULT_CITY } from '../src/lib/holderProfile.js'
+import { segmentOf, segmentLtv, setHolderCount, currentSegment, currentSort, setHolderSort, clampHold, HOLD_MAX, completeOnboarding, getHolder, DEFAULT_CITY, resetOnboarding } from '../src/lib/holderProfile.js'
 
 assert.equal(segmentOf(0), 'zero')
 assert.equal(segmentOf(1), 'few')
@@ -84,6 +84,23 @@ assert.equal(getHolder().currentRent, null, 'rent is only kept for the 0-propert
 completeOnboarding({ skipped: true })
 assert.equal(currentSegment(), 'few')
 assert.equal(getHolder().city, DEFAULT_CITY)
+
+completeOnboarding({ count: 5, city: 'kl-bss' })
+setLoanAssumptions({ ltv: 80, rate: 4.3, years: 35 }, { source: 'user' })
+assert.equal(getLoanAssumptions().ltv, 80)
+assert.equal(getLoanAssumptions().ltvManual, true)
+resetOnboarding()
+assert.equal(getHolder().asked, false)
+assert.equal(getHolder().skipped, false)
+assert.equal(getHolder().count, null)
+assert.equal(getHolder().currentRent, null)
+assert.equal(getHolder().salary, null)
+assert.equal(getHolder().city, null)
+assert.equal(currentSegment(), 'few')
+assert.equal(getLoanAssumptions().ltv, 90, 'restart resets loan % to the default')
+assert.equal(getLoanAssumptions().ltvManual, false)
+assert.equal(getLoanAssumptions().rate, 4.3, 'interest is kept')
+assert.equal(getLoanAssumptions().years, 35, 'tenure is kept')
 
 console.log('holder tests ok')
 console.log({
