@@ -7,7 +7,7 @@ import { rankedLaunches, scoreBand, headlineVerdict, downLabel, entryCostOf } fr
 import { LoanPctControl, LoanVerdict } from '../components/LtvVerdict.jsx'
 import { HoldChip, FirstBuyerNote, RestartButton } from '../components/HolderSheet.jsx'
 import { useHolder, SEGMENT_SORTS, SEGMENTS } from '../lib/holderProfile.js'
-import { CompareBars } from '../components/CompareBars.jsx'
+import { CompareTiles } from '../components/CompareTiles.jsx'
 import { useCompare, COMPARE_MAX } from '../lib/compareDraft.js'
 import { CompareTable, CompareBar } from '../components/CompareTable.jsx'
 
@@ -35,12 +35,13 @@ function RankCard({ p, s, segment, compare }) {
   const inst = s.v?.inst
   const many = segment === SEGMENTS.many
   const zero = segment === SEGMENTS.zero
-  const showBars = zero && inst != null
+  const showTiles = zero && inst != null
   const selected = compare?.has(p.id)
   const blocked = many && !selected && !compare?.canAdd
 
   return (
-    <div className="group flex gap-3 rounded-2xl bg-white p-2.5 pr-3 ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)] hover:ring-slate-300 hover:shadow-[0_4px_16px_rgba(15,23,42,.08)] transition" data-testid={`score-card-${p.id}`}>
+    <div className="group flex flex-col gap-2 rounded-2xl bg-white p-2.5 pr-3 ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)] hover:ring-slate-300 hover:shadow-[0_4px_16px_rgba(15,23,42,.08)] transition" data-testid={`score-card-${p.id}`}>
+      <div className="flex gap-3">
         <div className="relative shrink-0 w-24 h-24 sm:w-[104px] sm:h-[104px] rounded-xl overflow-hidden bg-slate-100">
           <a href={`#/explore/${p.id}`} className="absolute inset-0" aria-hidden="true" tabIndex={-1}>
             {photo ? (
@@ -102,21 +103,24 @@ function RankCard({ p, s, segment, compare }) {
             </div>
             {!zero && <ScoreMark score={s.score} />}
           </div>
-          {showBars ? (
-            <CompareBars
-              className="mt-1.5"
-              compact
-              inst={inst}
-              currentRent={holder.currentRent}
-              rentMo={s.v?.rentMo ?? y?.rentMo}
-              cash={s.v?.cash}
-            />
-          ) : verdict ? (
+          {(!zero && verdict) ? (
             <LoanVerdict price={s.price} rentMo={y?.rentMo} className="mt-1.5" compact={many} />
-          ) : down ? (
+          ) : (!zero && down) ? (
             <div className="mt-1 text-[11px] text-slate-500">{down}</div>
           ) : null}
         </a>
+      </div>
+      {showTiles ? (
+        <a href={`#/explore/${p.id}`} className="block">
+          <CompareTiles
+            compact
+            inst={inst}
+            currentRent={holder.currentRent}
+            rentMo={s.v?.rentMo ?? y?.rentMo}
+            cash={s.v?.cash}
+          />
+        </a>
+      ) : null}
     </div>
   )
 }

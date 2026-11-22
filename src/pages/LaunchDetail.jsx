@@ -14,7 +14,7 @@ import { FirstBuyerNote } from '../components/HolderSheet.jsx'
 import { useHolder, SEGMENTS } from '../lib/holderProfile.js'
 import { cashVsRent, entryCost, salaryBurden, parseMoney } from '../lib/mortgage.js'
 import { salaryBandCopy } from '../lib/plainCopy.js'
-import { CompareBars, EntryStack } from '../components/CompareBars.jsx'
+import { CompareTiles } from '../components/CompareTiles.jsx'
 import { useCompare } from '../lib/compareDraft.js'
 
 const pct = v => (v == null || Number.isNaN(v) ? '—' : `${v.toFixed(2)}%`)
@@ -153,8 +153,9 @@ function TypCard({ p, typ, t, draft, onChange, compactLoan = false, variant = 'd
         </div>
       )}
       {simple && v?.inst != null && (
-        <CompareBars
+        <CompareTiles
           className="mt-3"
+          compact
           inst={v.inst}
           currentRent={currentRent}
           rentMo={impliedRent}
@@ -426,7 +427,6 @@ export default function LaunchDetail({ p }) {
               <div className="mt-4 rounded-2xl bg-slate-50 px-3.5 py-3.5" data-testid="entry-cost">
                 <div className="text-[11px] text-slate-500">{t('入场要准备多少钱（估算）', 'How much cash to prepare (estimate)')}</div>
                 <div className="mt-0.5 text-[28px] font-semibold tabular-nums leading-none tracking-tight text-slate-900">{rm(entry.total)}</div>
-                <EntryStack entry={entry} t={t} className="mt-3" />
                 <div className="mt-3 space-y-1.5 text-[13px] text-slate-700">
                   <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500 min-w-0">{t('首付', 'Down payment')}</span><span className="font-medium shrink-0 whitespace-nowrap">{rm(entry.down)}</span></div>
                   <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500 min-w-0">{t('律师费（含 8% 服务税，估）', 'Legal fees (incl. 8% SST, est.)')}</span><span className="font-medium shrink-0 whitespace-nowrap">{rm(entry.legal)}</span></div>
@@ -437,7 +437,7 @@ export default function LaunchDetail({ p }) {
                   <div className="mt-3 pt-3 border-t border-slate-200/80">
                     <div className="text-[11px] text-slate-500">{t('月供', 'Instalment')}</div>
                     <div className="mt-0.5 text-[18px] font-semibold tabular-nums text-slate-900">{rm(scored.v.inst)}{t('/月', '/mo')}</div>
-                    <CompareBars
+                    <CompareTiles
                       className="mt-3"
                       inst={scored.v.inst}
                       currentRent={holder.currentRent}
