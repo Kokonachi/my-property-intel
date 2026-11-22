@@ -5,14 +5,24 @@
  *  (SBR + spread). 4.3% sits in the middle of that range; first-home
  *  promotions can be lower, and investor loans can be higher.
  *  Tenure defaults to 35 years, commonly capped by the borrower's age (often 70).
+ *  Loan percentage defaults to 90%, and is user-editable (50–90).
  */
 
 export const DEFAULT_RATE = 4.3
 export const DEFAULT_YEARS = 35
-export const LTVS = [90, 70]
+export const DEFAULT_LTV = 90
+export const LTV_MIN = 50
+export const LTV_MAX = 90
+export const LTV_STEP = 5
 export const LOAN_NOTE_AS_OF = '2026-11-05'
 export const LOAN_RATE_RANGE = [4.10, 4.75]
 export const SBR = 2.75
+
+export function clampLtv(n) {
+  const v = Math.round(Number(n))
+  if (!Number.isFinite(v)) return DEFAULT_LTV
+  return Math.min(LTV_MAX, Math.max(LTV_MIN, v))
+}
 
 /** Monthly instalment for a reducing-balance loan. */
 export function monthlyInstalment(principal, annualRatePct, years) {
@@ -26,19 +36,22 @@ export function monthlyInstalment(principal, annualRatePct, years) {
   return P * i / (1 - Math.pow(1 + i, -n))
 }
 
-export function cashVsRent({ price, rentMo, ltv, rate = DEFAULT_RATE, years = DEFAULT_YEARS, maintMo = 0 }) {
-  if (!(price > 0) || !(rentMo > 0) || !ltv) return null
-  const loan = price * ltv / 100
+export function cashVsRent({ price, rentMo, ltv = DEFAULT_LTV, rate = DEFAULT_RATE, years = DEFAULT_YEARS, maintMo = 0 }) {
+  const ltvN = clampLtv(ltv)
+  if (!(price > 0) || !(rentMo > 0) || !ltvN) return null
+  const loan = price * ltvN / 100
+  const down = price - loan
   const inst = monthlyInstalment(loan, rate, years)
   if (inst == null) return null
   const cash = rentMo - inst
   const cashAfterMaint = cash - (maintMo || 0)
-  return { ltv, loan, inst, rentMo, cash, cashAfterMaint, maintMo: maintMo || 0, covers: cash >= 0 }
+  return { ltv: ltvN, loan, down, inst, rentMo, cash, cashAfterMaint, maintMo: maintMo || 0, covers: cash >= 0 }
 }
 
-export function ltvVerdicts({ price, rentMo, rate = DEFAULT_RATE, years = DEFAULT_YEARS, maintMo = 0, ltvs = LTVS }) {
+export function ltvVerdicts({ price, rentMo, rate = DEFAULT_RATE, years = DEFAULT_YEARS, maintMo = 0, ltv = DEFAULT_LTV, ltvs }) {
   if (!(price > 0) || !(rentMo > 0)) return null
-  return ltvs.map(ltv => cashVsRent({ price, rentMo, ltv, rate, years, maintMo }))
+  const list = ltvs && ltvs.length ? ltvs : [ltv]
+  return list.map(v => cashVsRent({ price, rentMo, ltv: v, rate, years, maintMo })).filter(Boolean)
 }
 
 export function signedRM(n, { withMo = false, t } = {}) {

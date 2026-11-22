@@ -1,11 +1,11 @@
 /** New-launch investment score (0–10), transparent and not fabricated.
  *
- *  score = yieldPts (0–4) + cash70Pts (0–3) + vsAreaPts (0–2) + confidencePts (0–1)
+ *  score = yieldPts (0–4) + cashPts (0–3) + vsAreaPts (0–2) + confidencePts (0–1)
  *
  *  Yield: indicative gross of the headline typ (size-band asking rent × size × 12 ÷ list price).
  *    3% → 0, 6%+ → 4, linear in between.
- *  Cash at 70% LTV (BNM cap from a 3rd residential loan): rent ÷ 70% instalment.
- *    coverage 0.85 → 0, 1.25+ → 3, linear.
+ *  Cash at the user's current loan percentage: rent ÷ instalment at that LTV.
+ *    coverage 0.85 → 0, 1.25+ → 3, linear. Ranking updates when the loan % changes.
  *  Vs-area: headline gross minus the area’s completed-project median gross
  *    (same area, excluding Angkasapuri low-cost flats). Equal → 1.0; ±2 pp → 0 or 2.
  *  Confidence: size-band sample count (area-median fallback is 0.2).
@@ -16,9 +16,9 @@ import { REAL } from '../data/real.js'
 import { typRentPsf } from '../data/launches.js'
 import { typYields } from './launchYield.js'
 import { entryYield } from './launchEntry.js'
-import { cashVsRent, DEFAULT_RATE, DEFAULT_YEARS } from './mortgage.js'
+import { cashVsRent, DEFAULT_RATE, DEFAULT_YEARS, DEFAULT_LTV, clampLtv } from './mortgage.js'
 
-export const SCORE_WEIGHTS = { yield: 4, cash70: 3, vsArea: 2, confidence: 1 }
+export const SCORE_WEIGHTS = { yield: 4, cash: 3, vsArea: 2, confidence: 1 }
 
 function median(arr) {
   if (!arr.length) return null
@@ -68,7 +68,8 @@ export function confidencePts(source, n) {
   return 0
 }
 
-export function launchScore(p, { rate = DEFAULT_RATE, years = DEFAULT_YEARS, priceOverride } = {}) {
+export function launchScore(p, { rate = DEFAULT_RATE, years = DEFAULT_YEARS, ltv = DEFAULT_LTV, priceOverride } = {}) {
+  const ltvN = clampLtv(ltv)
   const { typ, y, source } = entryYield(p)
   const { psf, band } = typRentPsf(typ)
   const price = priceOverride || typ?.price_from
@@ -76,16 +77,15 @@ export function launchScore(p, { rate = DEFAULT_RATE, years = DEFAULT_YEARS, pri
     ? typYields({ size: typ.size, price, rentPsf: psf, maintPsf: p.maint_psf })
     : y
   if (!yields || !price) {
-    return { score: null, typ, reason: 'missing_price_or_rent', area: null, parts: null }
+    return { score: null, typ, reason: 'missing_price_or_rent', area: null, parts: null, ltv: ltvN }
   }
   const area = areaCompletedStats(p.area)
   const gross = yields.gross
   const yieldPts = clamp(((gross - 3) / 3) * SCORE_WEIGHTS.yield, 0, SCORE_WEIGHTS.yield)
 
-  const v70 = cashVsRent({ price, rentMo: yields.rentMo, ltv: 70, rate, years, maintMo: (p.maint_psf || 0) * typ.size })
-  const v90 = cashVsRent({ price, rentMo: yields.rentMo, ltv: 90, rate, years, maintMo: (p.maint_psf || 0) * typ.size })
-  const coverage = v70 && v70.inst > 0 ? v70.rentMo / v70.inst : null
-  const cash70Pts = coverage == null ? 0 : clamp(((coverage - 0.85) / 0.4) * SCORE_WEIGHTS.cash70, 0, SCORE_WEIGHTS.cash70)
+  const v = cashVsRent({ price, rentMo: yields.rentMo, ltv: ltvN, rate, years, maintMo: (p.maint_psf || 0) * typ.size })
+  const coverage = v && v.inst > 0 ? v.rentMo / v.inst : null
+  const cashPts = coverage == null ? 0 : clamp(((coverage - 0.85) / 0.4) * SCORE_WEIGHTS.cash, 0, SCORE_WEIGHTS.cash)
 
   const delta = area.medianGross != null ? gross - area.medianGross : 0
   const vsAreaPts = area.medianGross == null ? 0 : clamp(1 + delta / 2, 0, SCORE_WEIGHTS.vsArea)
@@ -93,7 +93,7 @@ export function launchScore(p, { rate = DEFAULT_RATE, years = DEFAULT_YEARS, pri
   const confN = band?.n ?? 0
   const confPts = confidencePts(source, confN)
 
-  const raw = yieldPts + cash70Pts + vsAreaPts + confPts
+  const raw = yieldPts + cashPts + vsAreaPts + confPts
   const score = Math.round(raw * 10) / 10
 
   return {
@@ -103,15 +103,16 @@ export function launchScore(p, { rate = DEFAULT_RATE, years = DEFAULT_YEARS, pri
     source,
     bandN: confN,
     area,
-    v70,
-    v90,
-    coverage70: coverage,
+    v,
+    coverage,
+    ltv: ltvN,
+    down: v?.down ?? null,
     yieldDelta: area.medianGross != null ? delta : null,
     psf: typ.psf_from || (typ.size ? price / typ.size : null),
     price,
     parts: {
       yield: Math.round(yieldPts * 100) / 100,
-      cash70: Math.round(cash70Pts * 100) / 100,
+      cash: Math.round(cashPts * 100) / 100,
       vsArea: Math.round(vsAreaPts * 100) / 100,
       confidence: Math.round(confPts * 100) / 100,
     },
@@ -153,28 +154,25 @@ export function takeaway(s, t) {
   const room = typ.beds == null ? '' : typ.beds <= 0 ? t('套房', 'Studio') : t(`${typ.beds} 房`, typ.beds === 1 ? '1-bed' : `${typ.beds}-bed`)
   const size = `${typ.size.toLocaleString()} sqft`
   const head = [room, size].filter(Boolean).join(' ')
-  const short90 = s.v90 ? Math.abs(Math.round(s.v90.cash)).toLocaleString('en-MY') : null
-  if (s.v90?.covers && s.v70?.covers) {
-    return t(`${head}，租金可覆盖第1–2套（贷90%）与第3套起（贷70%）月供`, `${head}: rent covers both 1st–2nd-home (90%) and 3rd+ (70%) instalments`)
+  if (!s.v) return head
+  const short = Math.abs(Math.round(s.v.cash)).toLocaleString('en-MY')
+  if (s.v.covers) {
+    return t(`${head}，租金可覆盖贷${s.ltv}%月供`, `${head}: rent covers a ${s.ltv}% loan instalment`)
   }
-  if (s.v70?.covers && s.v90 && !s.v90.covers) {
-    return t(`${head}，租金可覆盖第3套起（贷70%）月供；第1–2套（贷90%）每月倒贴约 RM${short90}`, `${head}: rent covers a 3rd+ (70%) instalment; a 1st–2nd-home (90%) loan is about RM${short90}/mo short`)
-  }
-  if (s.v70 && !s.v70.covers) {
-    return t(`${head}，第1–2套与第3套起的月供都高于参考租金`, `${head}: both the 90% and 70% instalments are above the asking-rent estimate`)
-  }
-  return head
+  return t(`${head}，贷${s.ltv}%每月倒贴约 RM${short}`, `${head}: a ${s.ltv}% loan is about RM${short}/mo short`)
 }
 
 /** One-line investment verdict for cards and the map panel. */
 export function headlineVerdict(s, t) {
-  if (!s?.v70 && !s?.v90) return null
-  const prefer = s.v90?.covers ? s.v90 : (s.v70 || s.v90)
-  if (!prefer) return null
-  const who = prefer.ltv === 90
-    ? t('第1–2套贷90%', '1st–2nd · 90%')
-    : t('第3套起贷70%', '3rd+ · 70%')
-  const amt = Math.abs(Math.round(prefer.cash)).toLocaleString('en-MY')
-  if (prefer.covers) return t(`${who} · 每月+RM${amt}`, `${who} · +RM${amt}/mo`)
-  return t(`${who} · 每月倒贴RM${amt}`, `${who} · short RM${amt}/mo`)
+  if (!s?.v) return null
+  const amt = Math.abs(Math.round(s.v.cash)).toLocaleString('en-MY')
+  const who = t(`贷${s.ltv}%`, `${s.ltv}% loan`)
+  if (s.v.covers) return t(`${who} · 每月+RM${amt}`, `${who} · +RM${amt}/mo`)
+  return t(`${who} · 每月倒贴 RM${amt}`, `${who} · −RM${amt}/mo`)
+}
+
+export function downLabel(down, t) {
+  if (down == null) return null
+  const amt = Math.round(down).toLocaleString('en-MY')
+  return t(`首付 RM${amt}`, `Down RM${amt}`)
 }

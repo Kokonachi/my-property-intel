@@ -5,7 +5,7 @@ import { useLang } from '../lib/i18n.jsx'
 import { typRentPsf, AREA_RENT_PSF } from '../data/launches.js'
 import { typYields, workingPrice, discountToTargetGross } from '../lib/launchYield.js'
 import { fmtRM, yieldBand } from '../data/properties.js'
-import { LtvChips, LtvCompare, LoanAssumptionsBar } from '../components/LtvVerdict.jsx'
+import { LoanVerdict, LtvCompare, LoanAssumptionsBar } from '../components/LtvVerdict.jsx'
 import { useLoanAssumptions } from '../lib/loanAssumptions.js'
 import { launchScore, scoreBand, SCORE_WEIGHTS } from '../lib/launchScore.js'
 
@@ -64,7 +64,7 @@ function TypCard({ p, typ, t, draft, onChange }) {
       )}
       <p className="text-[12px] text-slate-500 mt-1.5 leading-snug">{t(typ.price_source_zh || typ.price_source, typ.price_source)}</p>
 
-      <LtvChips price={after || list} rentMo={impliedRent} stacked className="mt-2" />
+      <LoanVerdict price={after || list} rentMo={impliedRent} className="mt-2" />
 
       <div className="mt-3 grid grid-cols-2 sm:grid-cols-4 gap-2">
         <div className="rounded-xl bg-slate-50 p-2.5">
@@ -172,7 +172,7 @@ export default function LaunchDetail({ p }) {
   const setDraft = (id, d) => setDrafts(s => ({ ...s, [id]: { ...s[id], ...d } }))
 
   const entry = useMemo(() => p.typologies.find(ty => ty.price_from), [p])
-  const scored = useMemo(() => launchScore(p, { rate: loan.rate, years: loan.years }), [p, loan.rate, loan.years])
+  const scored = useMemo(() => launchScore(p, { rate: loan.rate, years: loan.years, ltv: loan.ltv }), [p, loan.rate, loan.years, loan.ltv])
   const sBand = scoreBand(scored.score)
 
   return (
@@ -248,7 +248,7 @@ export default function LaunchDetail({ p }) {
               <div className="mt-1 tabular-nums">
                 {t('租售比', 'Rent-to-price')} {scored.parts.yield.toFixed(1)}/{SCORE_WEIGHTS.yield}
                 <span className="text-slate-300"> · </span>
-                {t('贷70%现金流', '70% LTV cash flow')} {scored.parts.cash70.toFixed(1)}/{SCORE_WEIGHTS.cash70}
+                {t(`贷${loan.ltv}%现金流`, `${loan.ltv}% loan cash flow`)} {scored.parts.cash.toFixed(1)}/{SCORE_WEIGHTS.cash}
                 <span className="text-slate-300"> · </span>
                 {t('对比区域', 'Vs area')} {scored.parts.vsArea.toFixed(1)}/{SCORE_WEIGHTS.vsArea}
                 <span className="text-slate-300"> · </span>
@@ -290,8 +290,8 @@ export default function LaunchDetail({ p }) {
             <li>{t(p.maint_source_zh || p.maint_source, p.maint_source)}</li>
             <li>{t('可比样本已去掉安卡莎布里组屋（租金约 RM1.88 psf，和这类新盘不可比），KL Gateway / Suezcap 的重复广告只计一次。', 'Angkasapuri low-cost flats (about RM1.88 psf) are excluded; duplicate ads under the KL Gateway / Suezcap Brickz records are counted once.')}</li>
             <li>{t('开发商给的议价折扣通常不会挂在网上。本页数字默认是表价；只有你填了销售报价之后，折扣后的回报和月供才会按折后价重算。', 'Negotiated developer discounts are rarely listed online. Figures default to the list price; after-discount yields and instalments appear only after you enter a sales quote.')}</li>
-            <li>{t('第1–2套（贷90%）和第3套起（贷70%）的月供用等额本息公式，默认年利率 4.3%、35 年，可在本页修改。这是国行对个人住宅贷款成数的上限：第一、二套最多 90%，第三套起最多 70%。4.3% 是 2026 年 11 月市面常见浮动房贷（约 4.10–4.75%）的中间假设，不是银行批复利率。租金是叫租估算，不是交房后的实收租金。', '1st–2nd-home (90%) and 3rd+ (70%) instalments use a standard amortising formula at a default 4.3% p.a. over 35 years, editable on this page. Those LTVs are Bank Negara’s caps: 90% on a first or second residential loan, 70% from the third. 4.3% is a mid-market assumption among advertised floating packages in November 2026 (about 4.10–4.75%), not a bank offer. Rent is an asking-rent estimate, not achieved rent after handover.')}</li>
-            <li>{t('投资评分满分 10 分：租售比（参考毛回报）最多 4 分（3% 得 0 分，6% 或以上得满分），第3套起（贷70%）租金覆盖月供最多 3 分（覆盖率 0.85 得 0 分，1.25 或以上得满分），与同区域已建成楼盘（不含组屋）毛回报中位相比最多 2 分（持平得 1 分，高或低 2 个百分点到满分或 0 分），可比租盘样本数量最多 1 分（同面积段 20 则以上得满分，样本不足改用区域中位则只得 0.2 分）。评分用表价和当前贷款假设，不会编造缺失的价格或租金。', 'The investment score is out of 10: up to 4 points for rent-to-price (indicative gross; 3% scores 0, 6% or more scores 4), up to 3 points for whether asking rent covers a 3rd+ (70% LTV) instalment (coverage 0.85 scores 0, 1.25 or more scores 3), up to 2 points versus the area’s completed-project median gross yield excluding low-cost flats (in line scores 1; ±2 percentage points reach 2 or 0), and up to 1 point for comparable-rent sample size (a size band of 20+ ads scores 1; an area-median fallback scores 0.2). The score uses the list price and the current loan assumptions. Missing prices or rents are not invented.')}</li>
+            <li>{t('月供用等额本息公式，贷款成数默认 90%，可在 50%–90% 之间改，首页、地图小窗和本页共用。年利率默认 4.3%、年期默认 35 年，可在本页修改。4.3% 是 2026 年 11 月市面常见浮动房贷（约 4.10–4.75%）的中间假设，不是银行批复利率。租金是叫租估算，不是交房后的实收租金。', 'The instalment uses a standard amortising formula. Loan percentage defaults to 90% and can be set from 50% to 90%; the same value is shared on the home list, the map panel and this page. Interest defaults to 4.3% p.a. over 35 years, editable here. 4.3% is a mid-market assumption among advertised floating packages in November 2026 (about 4.10–4.75%), not a bank offer. Rent is an asking-rent estimate, not achieved rent after handover.')}</li>
+            <li>{t('投资评分满分 10 分：租售比（参考毛回报）最多 4 分（3% 得 0 分，6% 或以上得满分），你当前贷款成数下租金覆盖月供最多 3 分（覆盖率 0.85 得 0 分，1.25 或以上得满分），与同区域已建成楼盘（不含组屋）毛回报中位相比最多 2 分（持平得 1 分，高或低 2 个百分点到满分或 0 分），可比租盘样本数量最多 1 分（同面积段 20 则以上得满分，样本不足改用区域中位则只得 0.2 分）。改贷款成数后评分和排序会一起更新。评分用表价和当前利率、年期，不会编造缺失的价格或租金。', 'The investment score is out of 10: up to 4 points for rent-to-price (indicative gross; 3% scores 0, 6% or more scores 4), up to 3 points for whether asking rent covers the instalment at your current loan percentage (coverage 0.85 scores 0, 1.25 or more scores 3), up to 2 points versus the area’s completed-project median gross yield excluding low-cost flats (in line scores 1; ±2 percentage points reach 2 or 0), and up to 1 point for comparable-rent sample size (a size band of 20+ ads scores 1; an area-median fallback scores 0.2). The score and ranking update when you change the loan percentage. The score uses the list price and the current rate and tenure. Missing prices or rents are not invented.')}</li>
           </ul>
           {entry && <p className="text-[12px] text-slate-500 mt-2">{t(`区域楼盘租金中位（不含组屋）为 RM${AREA_RENT_PSF.toFixed(2)} psf，仅作对照，户型回报优先用同面积段。`, `The area project-median rent (excluding flats) is RM3.75 psf, shown only as a cross-check. Typ yields prefer the same-size band.`)}</p>}
         </section>

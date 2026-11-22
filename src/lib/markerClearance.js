@@ -1,9 +1,9 @@
 import L from './leaflet-globals.js'
 
 /** Extra padding around the pin body when testing overlap with a yield pill. */
-export const LAUNCH_CLEAR_PX = 66
-const PIN_W = 52
-const PIN_H = 52
+export const LAUNCH_CLEAR_PX = 72
+const PIN_W = 56
+const PIN_H = 56
 const PIN_TAIL = 8
 const PILL_W = 66
 const PILL_H = 30
@@ -121,4 +121,41 @@ function separateYields(map, placed, minPx) {
       }
     }
   }
+}
+
+
+/** Group yield pills that still sit on top of each other into one muted cluster. */
+export function mergeYieldMarkers(map, placed, projects, getYield, { px = 26 } = {}) {
+  const items = (projects || []).map(p => {
+    const pos = placed?.[p.id] || (p.lat != null ? [p.lat, p.lng] : null)
+    if (!pos) return null
+    return { p, pos, y: getYield(p), pt: map ? map.latLngToLayerPoint(L.latLng(...pos)) : null }
+  }).filter(x => x && x.pt)
+  const used = new Set()
+  const groups = []
+  for (const a of items) {
+    if (used.has(a.p.id)) continue
+    const pack = [a]
+    used.add(a.p.id)
+    for (const b of items) {
+      if (used.has(b.p.id)) continue
+      if (a.pt.distanceTo(b.pt) < px) {
+        pack.push(b)
+        used.add(b.p.id)
+      }
+    }
+    const ys = pack.map(x => x.y).filter(v => v != null).sort((m, n) => m - n)
+    const mid = ys.length ? (ys.length % 2 ? ys[(ys.length - 1) >> 1] : (ys[ys.length / 2 - 1] + ys[ys.length / 2]) / 2) : null
+    const lat = pack.reduce((s, x) => s + x.pos[0], 0) / pack.length
+    const lng = pack.reduce((s, x) => s + x.pos[1], 0) / pack.length
+    groups.push({
+      id: pack.map(x => x.p.id).sort().join('+'),
+      ids: pack.map(x => x.p.id),
+      p: pack[0].p,
+      pos: [lat, lng],
+      y: mid,
+      n: pack.length,
+    })
+  }
+  return groups
 }

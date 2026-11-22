@@ -2,8 +2,8 @@ import { LangToggle, useLang } from '../lib/i18n.jsx'
 import { LAUNCHES } from '../data/launches.js'
 import { fmtRM } from '../data/properties.js'
 import { useLoanAssumptions } from '../lib/loanAssumptions.js'
-import { rankedLaunches, scoreBand, headlineVerdict } from '../lib/launchScore.js'
-import { LtvRows } from '../components/LtvVerdict.jsx'
+import { rankedLaunches, scoreBand, headlineVerdict, downLabel } from '../lib/launchScore.js'
+import { LoanPctControl, LoanVerdict } from '../components/LtvVerdict.jsx'
 
 function ScoreMark({ score }) {
   const { t } = useLang()
@@ -23,6 +23,7 @@ function RankCard({ p, s }) {
   const y = s.yields
   const photo = p.render?.card || p.render?.pin || p.render?.src
   const verdict = headlineVerdict(s, t)
+  const down = downLabel(s.down, t)
   return (
     <a href={`#/explore/${p.id}`} data-testid={`score-card-${p.id}`}
       className="group flex gap-3 rounded-2xl bg-white p-2.5 pr-3 ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)] hover:ring-slate-300 hover:shadow-[0_4px_16px_rgba(15,23,42,.08)] transition">
@@ -46,8 +47,10 @@ function RankCard({ p, s }) {
           </div>
           <ScoreMark score={s.score} />
         </div>
-        {verdict && <div className="mt-1 text-[12.5px] font-medium text-slate-800 leading-snug">{verdict}</div>}
-        <LtvRows price={s.price} rentMo={y?.rentMo} className="mt-1.5" />
+        {verdict && (
+          <LoanVerdict price={s.price} rentMo={y?.rentMo} className="mt-1.5" />
+        )}
+        {!verdict && down && <div className="mt-1 text-[11px] text-slate-500">{down}</div>}
       </div>
     </a>
   )
@@ -56,7 +59,7 @@ function RankCard({ p, s }) {
 export default function LaunchHome() {
   const { t } = useLang()
   const { loan } = useLoanAssumptions()
-  const rows = rankedLaunches(LAUNCHES, { rate: loan.rate, years: loan.years })
+  const rows = rankedLaunches(LAUNCHES, { rate: loan.rate, years: loan.years, ltv: loan.ltv })
 
   return (
     <div className="min-h-full bg-[#f6f7f8] flex flex-col" data-testid="launch-home">
@@ -74,11 +77,14 @@ export default function LaunchHome() {
           </a>
           <LangToggle />
         </div>
+        <div className="px-3 sm:px-5 pb-2 max-w-xl mx-auto w-full">
+          <LoanPctControl variant="header" className="rounded-xl bg-slate-50 border border-slate-200/80 px-2 py-1" />
+        </div>
       </header>
 
       <main className="flex-1 max-w-xl mx-auto w-full px-3 sm:px-5 py-3 sm:py-5">
         <p className="text-[12.5px] text-slate-500 mb-2.5 px-0.5 leading-snug">
-          {t('按租售比与月供覆盖排序，高分在前', 'Ranked by rent-to-price and whether rent covers the loan')}
+          {t('按租售比与当前贷款成数下的月供覆盖排序，高分在前', 'Ranked by rent-to-price and whether rent covers the instalment at your loan percentage')}
         </p>
         <div className="flex flex-col gap-2.5">
           {rows.map(({ p, s }) => <RankCard key={p.id} p={p} s={s} />)}

@@ -1,31 +1,36 @@
 import { useSyncExternalStore } from 'react'
-import { DEFAULT_RATE, DEFAULT_YEARS } from './mortgage.js'
+import { DEFAULT_RATE, DEFAULT_YEARS, DEFAULT_LTV, clampLtv } from './mortgage.js'
 
 const KEY = 'mpi-loan'
 const subs = new Set()
 
-function clamp(rate, years) {
+function clamp(rate, years, ltv) {
   return {
     rate: rate > 0 && rate < 20 ? rate : DEFAULT_RATE,
     years: years > 0 && years <= 40 ? years : DEFAULT_YEARS,
+    ltv: clampLtv(ltv),
   }
 }
 
 function readStored() {
   try {
     const raw = localStorage.getItem(KEY)
-    if (!raw) return { rate: DEFAULT_RATE, years: DEFAULT_YEARS }
+    if (!raw) return { rate: DEFAULT_RATE, years: DEFAULT_YEARS, ltv: DEFAULT_LTV }
     const o = JSON.parse(raw)
-    return clamp(Number(o.rate), Number(o.years))
+    return clamp(Number(o.rate), Number(o.years), o.ltv == null ? DEFAULT_LTV : Number(o.ltv))
   } catch {
-    return { rate: DEFAULT_RATE, years: DEFAULT_YEARS }
+    return { rate: DEFAULT_RATE, years: DEFAULT_YEARS, ltv: DEFAULT_LTV }
   }
 }
 
-let loan = typeof window !== 'undefined' ? readStored() : { rate: DEFAULT_RATE, years: DEFAULT_YEARS }
+let loan = typeof window !== 'undefined' ? readStored() : { rate: DEFAULT_RATE, years: DEFAULT_YEARS, ltv: DEFAULT_LTV }
 
 export function setLoanAssumptions(next) {
-  loan = clamp(Number(next.rate ?? loan.rate), Number(next.years ?? loan.years))
+  loan = clamp(
+    Number(next.rate ?? loan.rate),
+    Number(next.years ?? loan.years),
+    next.ltv == null ? loan.ltv : Number(next.ltv),
+  )
   try { localStorage.setItem(KEY, JSON.stringify(loan)) } catch { /* ignore */ }
   subs.forEach(f => f())
 }

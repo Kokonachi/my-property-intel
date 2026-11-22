@@ -8,13 +8,13 @@ import { REGIONS, yieldBand } from '../data/properties.js'
 import Basemap from '../components/Basemap.jsx'
 import { LaunchMarkers, LaunchLegend } from '../components/LaunchPins.jsx'
 import LaunchPanel from '../components/LaunchPanel.jsx'
-import { placeYieldMarkers } from '../lib/markerClearance.js'
+import { placeYieldMarkers, mergeYieldMarkers } from '../lib/markerClearance.js'
 import { fitExploreMap } from '../lib/exploreFit.js'
 
 const onMapOk = p => p.lat != null && p.lng != null
 const bandColor = v => (v == null ? '#94a3b8' : yieldBand(v).color)
 
-function pillIcon(p, y) {
+function pillIcon(p, y, n = 1) {
   if (y == null) {
     return L.divIcon({
       className: 'ab-pill nodata',
@@ -22,9 +22,11 @@ function pillIcon(p, y) {
       iconSize: [0, 0], iconAnchor: [0, 0],
     })
   }
+  const merged = n > 1
+  const label = merged ? `${y.toFixed(1)}% · ${n}` : `${y.toFixed(1)}%`
   return L.divIcon({
-    className: 'ab-pill',
-    html: `<div data-pid="${p.id}"><i style="background:${bandColor(y)}"></i>${y.toFixed(1)}%</div>`,
+    className: 'ab-pill' + (merged ? ' merged' : ''),
+    html: `<div data-pid="${p.id}" data-n="${n}"><i style="background:${bandColor(y)}"></i>${label}</div>`,
     iconSize: [0, 0], iconAnchor: [0, 0],
   })
 }
@@ -45,16 +47,23 @@ function ClearedYieldMarkers({ launches }) {
   }, [map])
   const projects = REAL.filter(onMapOk)
   const placed = placeYieldMarkers(map, projects, launches)
+  const groups = mergeYieldMarkers(map, placed, projects, p => yieldOf(p, 'long', 'gross'))
   return (
     <>
-      {projects.map(p => {
-        const y = yieldOf(p, 'long', 'gross')
-        const pos = placed[p.id] || [p.lat, p.lng]
+      {groups.map(g => {
+        const y = g.y
         return (
-          <Marker key={p.id} position={pos} icon={pillIcon(p, y)}
-            zIndexOffset={Math.round((y ?? 0) * 10)}
+          <Marker key={g.id} position={g.pos} icon={pillIcon(g.p, y, g.n)}
+            zIndexOffset={Math.round((y ?? 0) * 2)}
             eventHandlers={{
-              click: e => { L.DomEvent.stopPropagation(e); window.location.hash = `#/property/${p.id}` },
+              click: e => {
+                L.DomEvent.stopPropagation(e)
+                if (g.n > 1) {
+                  map.setView(g.pos, Math.min(19, (map.getZoom() || 15) + 1.25))
+                  return
+                }
+                window.location.hash = `#/property/${g.p.id}`
+              },
             }} />
         )
       })}

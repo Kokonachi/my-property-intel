@@ -95,7 +95,7 @@ input[type=range] { accent-color: #2563eb; }
 /* New-launch pins — rounded-square photo, distinct from circular yield pills */
 .nl-pin { background: transparent; border: none; }
 .nl-pin > div {
-  position: relative; width: 48px; height: 48px; border-radius: 14px;
+  position: relative; width: 54px; height: 54px; border-radius: 15px;
   background: #0f172a; color: #fff;
   transform: translate(-50%, calc(-100% - 8px));
   border: 3px solid #0f172a;
@@ -103,7 +103,7 @@ input[type=range] { accent-color: #2563eb; }
   transition: transform .12s, border-color .12s, box-shadow .12s;
 }
 @media (min-width: 768px) {
-  .nl-pin > div { width: 52px; height: 52px; border-radius: 15px; }
+  .nl-pin > div { width: 60px; height: 60px; border-radius: 16px; }
 }
 .nl-pin > div::after {
   content: ""; position: absolute; left: 50%; bottom: -8px; transform: translateX(-50%);
@@ -115,11 +115,11 @@ input[type=range] { accent-color: #2563eb; }
   background: #0f172a;
 }
 .nl-pin .nl-thumb {
-  width: 48px; height: 48px; max-width: none; min-width: 0; min-height: 0;
+  width: 54px; height: 54px; max-width: none; min-width: 0; min-height: 0;
   object-fit: cover; display: block; pointer-events: none;
 }
 @media (min-width: 768px) {
-  .nl-pin .nl-thumb { width: 52px; height: 52px; }
+  .nl-pin .nl-thumb { width: 60px; height: 60px; }
 }
 .nl-pin .nl-fallback {
   position: absolute; inset: 0; display: grid; place-items: center;
@@ -180,18 +180,46 @@ input[type=range] { accent-color: #2563eb; }
   .launch-dock { left: 0; right: 0; bottom: 0; padding-bottom: max(8px, env(safe-area-inset-bottom)); }
   .launch-panel {
     margin: 0 8px 8px; height: auto; max-height: 58vh; border-radius: 1.35rem 1.35rem 1.1rem 1.1rem;
-    background: rgba(255,255,255,.64); backdrop-filter: blur(22px) saturate(1.35); -webkit-backdrop-filter: blur(22px) saturate(1.35);
+    background: rgba(255,255,255,.58); backdrop-filter: blur(22px) saturate(1.35); -webkit-backdrop-filter: blur(22px) saturate(1.35);
     box-shadow: 0 -8px 32px rgba(15,23,42,.22); border: 1px solid rgba(255,255,255,.55);
   }
 }
 @media (min-width: 768px) {
   .launch-dock {
     top: 0; right: 0; bottom: auto; width: 24rem; max-height: 100%;
-    padding: 4.35rem 12px 12px 0; display: flex; flex-direction: column; align-items: stretch;
+    padding: 5.75rem 16px 16px 0; display: flex; flex-direction: column; align-items: stretch;
   }
   .launch-panel {
     height: auto; max-height: calc(100dvh - 4.35rem - 12px); border-radius: 1.35rem;
-    background: rgba(255,255,255,.62); backdrop-filter: blur(22px) saturate(1.35); -webkit-backdrop-filter: blur(22px) saturate(1.35);
+    background: rgba(255,255,255,.56); backdrop-filter: blur(22px) saturate(1.35); -webkit-backdrop-filter: blur(22px) saturate(1.35);
     box-shadow: -8px 8px 32px rgba(15,23,42,.14); border: 1px solid rgba(255,255,255,.5);
   }
 }
+
+/* Explore map: mute completed-project pills so new-launch photo pins lead */
+.explore-map .ab-pill > div {
+  padding: 2px 7px 2px 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #475569;
+  background: rgba(255,255,255,.72);
+  box-shadow: 0 0 0 1px rgba(15,23,42,.08), 0 1px 2px rgba(15,23,42,.10);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.explore-map .ab-pill > div > i { width: 6px; height: 6px; opacity: .8; }
+.explore-map .ab-pill.merged > div { color: #334155; font-weight: 600; }
+.explore-map .ab-pill > div:hover, .explore-map .ab-pill.active > div {
+  background: rgba(15,23,42,.88);
+  color: #fff;
+  transform: translate(-50%, -50%) scale(1.06);
+}
+.explore-map .nl-pin { z-index: 600 !important; }
+.explore-map .ab-pill { z-index: 200 !important; }
+
+/* Panel close sits top-left; keep dock clear of the chrome on desktop */
+@media (min-width: 768px) {
+  .launch-dock { padding-top: 5.75rem; }
+}
+
+.explore-map [data-testid=explore-chrome] { z-index: 1300; }
