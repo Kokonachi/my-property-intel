@@ -1,0 +1,266 @@
+{
+  "changed": [
+    {
+      "id": "real-impian-meridian",
+      "name": "Impian Meridian",
+      "type": "Serviced Residence",
+      "area": "sj",
+      "before_gross": 7.55,
+      "after_gross": 8.42,
+      "before_net": 5.83,
+      "after_net": 6.6,
+      "before_n": 3,
+      "after_n": 2,
+      "before_rent": 1100.0,
+      "after_rent": 2300.0,
+      "before_size": 980.0,
+      "after_size": 615.0,
+      "delta": 0.87,
+      "dropped": 1,
+      "dropped_detail": [
+        {
+          "rent": 850.0,
+          "size": 995.0,
+          "rooms": 5.0,
+          "src": "Mudah",
+          "title": "Selangor Subang Jaya Partially Furnished Impian Meridian Condominium For Rent",
+          "reason": "psf_below_1.0_unit_size",
+          "project_id": "real-impian-meridian",
+          "project": "Impian Meridian"
+        }
+      ]
+    },
+    {
+      "id": "real-casa-tiara",
+      "name": "Casa Tiara",
+      "type": "Serviced Residence",
+      "area": "sj",
+      "before_gross": 5.99,
+      "after_gross": 6.41,
+      "before_net": 4.37,
+      "after_net": 4.74,
+      "before_n": 4,
+      "after_n": 3,
+      "before_rent": 1850.0,
+      "after_rent": 2400.0,
+      "before_size": 841.5,
+      "after_size": 800.0,
+      "delta": 0.42,
+      "dropped": 1,
+      "dropped_detail": [
+        {
+          "rent": 1050.0,
+          "size": 883.0,
+          "rooms": 1.0,
+          "src": "Mudah",
+          "title": "Nice unit Casa Tiara SS16 room for rent",
+          "reason": "title_room_rental",
+          "project_id": "real-casa-tiara",
+          "project": "Casa Tiara"
+        }
+      ]
+    },
+    {
+      "id": "real-subang-avenue",
+      "name": "Subang Avenue",
+      "type": "Serviced Residence",
+      "area": "sj",
+      "before_gross": 6.94,
+      "after_gross": 7.01,
+      "before_net": 5.07,
+      "after_net": 5.14,
+      "before_n": 3,
+      "after_n": 2,
+      "before_rent": 2599.0,
+      "after_rent": 2699.5,
+      "before_size": 1021.0,
+      "after_size": 1050.5,
+      "delta": 0.07,
+      "dropped": 1,
+      "dropped_detail": [
+        {
+          "rent": 1238.0,
+          "size": 560.0,
+          "rooms": 1.0,
+          "src": "Mudah",
+          "title": "Master room FOR RENT with private bathroom at Subang Avenue, next to Aeon Big Subang Jaya",
+          "reason": "title_room_rental",
+          "project_id": "real-subang-avenue",
+          "project": "Subang Avenue"
+        }
+      ]
+    },
+    {
+      "id": "real-d-seven-lagoon-perdana",
+      "name": "D'Seven (Lagoon Perdana)",
+      "type": "Condo",
+      "area": "sj",
+      "before_gross": 10.51,
+      "after_gross": 7.46,
+      "before_net": 8.49,
+      "after_net": 5.85,
+      "before_n": 4,
+      "after_n": 2,
+      "before_rent": 2800.0,
+      "after_rent": 4300.0,
+      "before_size": 608.0,
+      "after_size": 1093.0,
+      "delta": -3.05,
+      "dropped": 2,
+      "dropped_detail": [
+        {
+          "rent": 1350.0,
+          "size": 200.0,
+          "rooms": 1.0,
+          "src": "PropertyGuru",
+          "title": "D7 (D'Seven Lagoon Perdana)",
+          "reason": "size_below_250",
+          "project_id": "real-d-seven-lagoon-perdana",
+          "project": "D'Seven (Lagoon Perdana)"
+        },
+        {
+          "rent": 1500.0,
+          "size": 200.0,
+          "rooms": 1.0,
+          "src": "PropertyGuru",
+          "title": "D7 (D'Seven Lagoon Perdana)",
+          "reason": "size_below_250",
+          "project_id": "real-d-seven-lagoon-perdana",
+          "project": "D'Seven (Lagoon Perdana)"
+        }
+      ]
+    },
+    {
+      "id": "real-ss16",
+      "name": "Ss16",
+      "type": "Serviced Residence",
+      "area": "sj",
+      "before_gross": 6.68,
+      "after_gross": 7.69,
+      "before_net": 5.23,
+      "after_net": 6.12,
+      "before_n": 6,
+      "after_n": 5,
+      "before_rent": 3150.0,
+      "after_rent": 3500.0,
+      "before_size": 841.5,
+      "after_size": 800.0,
+      "delta": 1.01,
+      "dropped": 1,
+      "dropped_detail": [
+        {
+          "rent": 1050.0,
+          "size": 883.0,
+          "rooms": 1.0,
+          "src": "Mudah",
+          "title": "Nice unit Casa Tiara SS16 room for rent",
+          "reason": "title_room_rental",
+          "project_id": "real-ss16",
+          "project": "Ss16"
+        }
+      ]
+    }
+  ],
+  "outliers": [
+    {
+      "id": "real-trinity-pentamont-mont-kiara",
+      "name": "Trinity Pentamont Mont Kiara",
+      "gross": 7.39,
+      "net": 5.84,
+      "n": 20,
+      "rent": 11000.0,
+      "size": 2085.0,
+      "tx_psf": 866.0,
+      "type": "Condo"
+    },
+    {
+      "id": "real-the-park-residences-1",
+      "name": "The Park Residences 1",
+      "gross": 8.76,
+      "net": 6.93,
+      "n": 1,
+      "rent": 6600.0,
+      "size": 1565.0,
+      "tx_psf": 578.0,
+      "type": "Condo"
+    },
+    {
+      "id": "real-pantai-panorama",
+      "name": "Pantai Panorama",
+      "gross": 7.74,
+      "net": 5.68,
+      "n": 3,
+      "rent": 2600.0,
+      "size": 1000.0,
+      "tx_psf": 403.0,
+      "type": "Condo"
+    },
+    {
+      "id": "real-impian-meridian",
+      "name": "Impian Meridian",
+      "gross": 8.42,
+      "net": 6.6,
+      "n": 2,
+      "rent": 2300.0,
+      "size": 615.0,
+      "tx_psf": 568.0,
+      "type": "Serviced Residence"
+    },
+    {
+      "id": "real-subang-avenue",
+      "name": "Subang Avenue",
+      "gross": 7.01,
+      "net": 5.14,
+      "n": 2,
+      "rent": 2699.5,
+      "size": 1050.5,
+      "tx_psf": 440.0,
+      "type": "Serviced Residence"
+    },
+    {
+      "id": "real-d-seven-lagoon-perdana",
+      "name": "D'Seven (Lagoon Perdana)",
+      "gross": 7.46,
+      "net": 5.85,
+      "n": 2,
+      "rent": 4300.0,
+      "size": 1093.0,
+      "tx_psf": 638.0,
+      "type": "Condo"
+    },
+    {
+      "id": "real-dorsett-waterfront-subang",
+      "name": "Dorsett Waterfront Subang",
+      "gross": 7.69,
+      "net": 6.17,
+      "n": 6,
+      "rent": 2500.0,
+      "size": 570.0,
+      "tx_psf": 808.0,
+      "type": "Serviced Residence"
+    },
+    {
+      "id": "real-empire-subang",
+      "name": "Empire Subang",
+      "gross": 7.61,
+      "net": 5.91,
+      "n": 1,
+      "rent": 1500.0,
+      "size": 368.0,
+      "tx_psf": 643.0,
+      "type": "Serviced Residence"
+    },
+    {
+      "id": "real-ss16",
+      "name": "Ss16",
+      "gross": 7.69,
+      "net": 6.12,
+      "n": 5,
+      "rent": 3500.0,
+      "size": 800.0,
+      "tx_psf": 722.0,
+      "type": "Serviced Residence"
+    }
+  ],
+  "dropped_n": 6
+}

@@ -1,0 +1,256 @@
+{
+ "real-southlink": {
+  "name": "Southlink",
+  "lat": 3.112932,
+  "lng": 101.666824,
+  "source": "street from Brickz transactions (Jalan Kerinchi Kiri 2) → nominatim: Jalan Kerinchi Kiri 2, Bangsar South, Pantai Dalam, Kuala Lumpur, 59200, Malaysi"
+ },
+ "real-residensi-era-novum": {
+  "name": "Residensi Era Novum",
+  "lat": 3.112932,
+  "lng": 101.666824,
+  "source": "street from Brickz transactions (Jalan Kerinchi Kiri 2) → nominatim: Jalan Kerinchi Kiri 2, Bangsar South, Pantai Dalam, Kuala Lumpur, 59200, Malaysi"
+ },
+ "real-southview-residence": {
+  "name": "Southview Residence",
+  "lat": 3.112932,
+  "lng": 101.666824,
+  "source": "street from Brickz transactions (Jalan Kerinchi Kiri 2) → nominatim: Jalan Kerinchi Kiri 2, Bangsar South, Pantai Dalam, Kuala Lumpur, 59200, Malaysi"
+ },
+ "real-rhythm-avenue": {
+  "name": "Rhythm Avenue",
+  "lat": 3.031162,
+  "lng": 101.58749,
+  "source": "street from Brickz transactions (Jalan Usj 19/1) → nominatim: Jalan USJ 19/1, USJ 19, UEP Subang Jaya, Puchong, Majlis Bandaraya Subang Jaya, "
+ },
+ "real-subang-perdana-goodyear-court-10": {
+  "name": "Subang Perdana Goodyear Court 10",
+  "lat": 3.03622,
+  "lng": 101.591424,
+  "source": "photon: Goodyear Court 10 (landuse=residential)"
+ },
+ "real-main-place-residence": {
+  "name": "Main Place Residence",
+  "lat": 3.026354,
+  "lng": 101.581148,
+  "source": "photon: Main Place Mall (shop=mall)"
+ },
+ "real-subang-perdana-goodyear-court-8": {
+  "name": "Subang Perdana Goodyear Court 8",
+  "lat": 3.039172,
+  "lng": 101.591466,
+  "source": "photon: Goodyear Court 8 (landuse=residential)"
+ },
+ "real-edumetro-empira-remix-2-subang-jaya": {
+  "name": "Edumetro (Empira Remix 2) @ Subang Jaya",
+  "lat": 3.058472,
+  "lng": 101.603855,
+  "source": "photon: Edumetro @ Subang Jaya (Empire Remix 2) (landuse=commercial)"
+ },
+ "real-subang-perdana-goodyear-court-9": {
+  "name": "Subang Perdana Goodyear Court 9",
+  "lat": 3.040388,
+  "lng": 101.593301,
+  "source": "photon: Goodyear Court 9 (landuse=residential)"
+ },
+ "real-subang-perdana-goodyear-court-3": {
+  "name": "Subang Perdana Goodyear Court 3",
+  "lat": 3.047279,
+  "lng": 101.59154,
+  "source": "photon: Goodyear Court 3 (landuse=residential)"
+ },
+ "real-sri-mutiara-putra-height": {
+  "name": "Sri Mutiara - Putra Height",
+  "lat": 2.993825,
+  "lng": 101.560355,
+  "source": "photon: Pangsapuri Sri Mutiara (landuse=residential)"
+ },
+ "real-subang-perdana-goodyear-court-7": {
+  "name": "Subang Perdana Goodyear Court 7",
+  "lat": 3.041844,
+  "lng": 101.591452,
+  "source": "photon: Goodyear Court 7 (landuse=residential)"
+ },
+ "real-d-seven-lagoon-perdana": {
+  "name": "D'Seven (Lagoon Perdana)",
+  "lat": 3.060806,
+  "lng": 101.611574,
+  "source": "photon: Sunway Lagoon Perdana Apartments (landuse=residential)"
+ },
+ "real-subang-perdana-goodyear-court-1": {
+  "name": "Subang Perdana Goodyear Court 1",
+  "lat": 3.055493,
+  "lng": 101.591118,
+  "source": "photon: Goodyear Court 1 (landuse=residential)"
+ },
+ "real-subang-perdana-goodyear-court-2": {
+  "name": "Subang Perdana Goodyear Court 2",
+  "lat": 3.053583,
+  "lng": 101.590946,
+  "source": "photon: Goodyear Court 2 (landuse=residential)"
+ },
+ "real-the-regina": {
+  "name": "The Regina",
+  "lat": 3.052427,
+  "lng": 101.599667,
+  "source": "photon: Regina USJ 1 (landuse=residential)"
+ },
+ "real-union-suites": {
+  "name": "Union Suites",
+  "lat": 3.060865,
+  "lng": 101.60945,
+  "source": "photon: Union (building=apartments)"
+ },
+ "real-first-subang-ss-15-courtyard": {
+  "name": "First Subang (Ss 15 Courtyard)",
+  "lat": 3.077666,
+  "lng": 101.586645,
+  "source": "photon: First Subang (building=apartments)"
+ },
+ "real-sri-nipah": {
+  "name": "Sri Nipah",
+  "lat": 3.054416,
+  "lng": 101.558504,
+  "source": "street from Brickz transactions (Jalan Sm 2) → nominatim: Jalan SM 2, Taman Subang Mas, Subang Hi-Tech, Batu Tiga, Majlis Bandaraya Subang"
+ },
+ "real-taman-subang-permai-landed": {
+  "name": "Taman Subang Permai",
+  "lat": 3.051283,
+  "lng": 101.59952,
+  "source": "photon: Subang Permai Apartment (landuse=residential)"
+ },
+ "real-grand-subang-jaya-ss15": {
+  "name": "Grand Subang Jaya @ Ss15",
+  "lat": 3.074503,
+  "lng": 101.589837,
+  "source": "photon: The Grand SS15 (building=apartments)"
+ },
+ "real-permai-usj-1-coral-court": {
+  "name": "Permai @ Usj 1 (Coral Court)",
+  "lat": 3.051655,
+  "lng": 101.599038,
+  "source": "photon: Permai @ USJ 1 (landuse=residential)"
+ },
+ "real-ss13-flats": {
+  "name": "Ss13 Flats",
+  "lat": 3.066922,
+  "lng": 101.593644,
+  "source": "street from Brickz transactions (Jalan Ss 13/1H) → nominatim: Jalan SS 13/1H, SS 13, Pusat Bandar Subang Jaya, Puchong, Majlis Bandaraya Suban"
+ },
+ "real-kuala-lumpur-gateway": {
+  "name": "Kuala Lumpur Gateway",
+  "lat": 3.110854,
+  "lng": 101.663301,
+  "source": "street from Brickz transactions (Jalan Kerinchi) → nominatim: Jalan Kerinchi, Bangsar South, Pantai Dalam, Kuala Lumpur, 59200, Malaysia"
+ },
+ "real-kuala-lumpur-gateway-menara-suezcap": {
+  "name": "Kuala Lumpur Gateway (Menara Suezcap)",
+  "lat": 3.110854,
+  "lng": 101.663301,
+  "source": "street from Brickz transactions (Jalan Kerinchi) → nominatim: Jalan Kerinchi, Bangsar South, Pantai Dalam, Kuala Lumpur, 59200, Malaysia"
+ },
+ "real-pkns-17-kampung-kerinchi": {
+  "name": "Pkns 17 Kampung Kerinchi",
+  "lat": 3.11213,
+  "lng": 101.66306,
+  "source": "photon: Pangsapuri 17 Tingkat Kampung Kerinchi (building=apartments)"
+ },
+ "real-damen-usj-service-apartment": {
+  "name": "Damen Usj Service Apartment",
+  "lat": 3.058067,
+  "lng": 101.591811,
+  "source": "nominatim: Da Men Mall (Opp), Jalan USJ 2/2, USJ 2, UEP Subang Jaya, Puchong, Majlis Bandar"
+ },
+ "real-pandora-service-residence": {
+  "name": "Pandora Service Residence",
+  "lat": 3.07044,
+  "lng": 101.565622,
+  "source": "photon: Pandora Serviced Residence (landuse=residential)"
+ },
+ "real-paloma-service-residence": {
+  "name": "Paloma Service Residence",
+  "lat": 3.071478,
+  "lng": 101.565804,
+  "source": "photon: Paloma Serviced Residences (landuse=residential)"
+ },
+ "real-goodyear-court-4-fasa-3": {
+  "name": "Goodyear Court 4 - Fasa 3",
+  "lat": 3.04651,
+  "lng": 101.590247,
+  "source": "photon: Goodyear Court 4 (landuse=residential)"
+ },
+ "real-taman-bukit-angkasa-angkasapuri-flat": {
+  "name": "Taman Bukit Angkasa (Angkasapuri Flat)",
+  "lat": 3.109065,
+  "lng": 101.670249,
+  "source": "nominatim: Taman Bukit Angkasa, Pantai Dalam, Kuala Lumpur, 59200, Malaysia"
+ },
+ "real-taman-bukit-angkasa-taman-angkasapuri-flat": {
+  "name": "Taman Bukit Angkasa (Taman Angkasapuri Flat)",
+  "lat": 3.109065,
+  "lng": 101.670249,
+  "source": "nominatim: Taman Bukit Angkasa, Pantai Dalam, Kuala Lumpur, 59200, Malaysia"
+ },
+ "real-seri-tanjung": {
+  "name": "Seri Tanjung",
+  "hide": true,
+  "reason": "no geocoder match for project name or Brickz street"
+ },
+ "real-subang-perdana-goodyear-court-5": {
+  "name": "Subang Perdana Goodyear Court 5",
+  "hide": true,
+  "reason": "no geocoder match for project name or Brickz street"
+ },
+ "real-subang-parkhomes": {
+  "name": "Subang Parkhomes",
+  "hide": true,
+  "reason": "no geocoder match for project name or Brickz street"
+ },
+ "real-usj-one-you-one": {
+  "name": "Usj One (You One)",
+  "lat": 3.059191,
+  "lng": 101.598484,
+  "source": "photon: You One (building=apartments)"
+ },
+ "real-dorsett-waterfront-subang": {
+  "name": "Dorsett Waterfront Subang",
+  "lat": 3.07911,
+  "lng": 101.596479,
+  "source": "street from Brickz transactions (Jalan Ss 12/1) → nominatim: Jalan SS 12/1, Taman Wangsa Baiduri, SS 12, Pusat Bandar Subang Jaya, Majlis Ban"
+ },
+ "real-subang-soho-one-soho": {
+  "name": "Subang Soho (One Soho)",
+  "lat": 3.079281,
+  "lng": 101.572596,
+  "source": "photon: One Soho (building=apartments)"
+ },
+ "real-spring-summer-villa": {
+  "name": "Spring Summer Villa",
+  "lat": 3.07911,
+  "lng": 101.596479,
+  "source": "street from Brickz transactions (Jalan Ss 12/1) → nominatim: Jalan SS 12/1, Taman Wangsa Baiduri, SS 12, Pusat Bandar Subang Jaya, Majlis Ban"
+ },
+ "real-menara-geno": {
+  "name": "Menara Geno",
+  "lat": 3.055376,
+  "lng": 101.558868,
+  "source": "street from Brickz transactions (Jalan Subang Mas) → nominatim: Jalan Subang Mas, Subang Hi-Tech, Batu Tiga, Majlis Bandaraya Subang Jaya, Petal"
+ },
+ "real-pangsapuri-seri-kayan-pinggiran-usj": {
+  "name": "Pangsapuri Seri Kayan-Pinggiran Usj",
+  "lat": 3.050363,
+  "lng": 101.560549,
+  "source": "street from Brickz transactions (Jalan Pinggiran Usj 2/1) → nominatim: Jalan Pinggiran USJ 2/1, Taman Pinggiran USJ, Subang Hi-Tech, Majlis Bandaraya S"
+ },
+ "real-subang-jaya-apartment": {
+  "name": "Subang Jaya Apartment",
+  "hide": true,
+  "reason": "generic name, no specific geocoder match"
+ },
+ "real-starville": {
+  "name": "Starville",
+  "lat": 3.034378,
+  "lng": 101.589533,
+  "source": "street from Brickz transactions (Jalan Usj 19/6) → nominatim: Jalan USJ 19/6, USJ 19, UEP Subang Jaya, Puchong, Majlis Bandaraya Subang Jaya, "
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "kuala-lumpur": {
+  "pages": 150,
+  "per_page": 10,
+  "last_page_projects": 10,
+  "projects": 1500,
+  "index": "https://www.brickz.my/transactions/residential/kuala-lumpur/"
+ },
+ "selangor": {
+  "pages": 353,
+  "per_page": 10,
+  "last_page_projects": 10,
+  "projects": 3530,
+  "index": "https://www.brickz.my/transactions/residential/selangor/"
+ },
+ "total_projects": 5030,
+ "note": "Counts are Brickz residential project/township rows with filed transactions. Town dropdown is JS-loaded so town totals were not fully enumerated. 10 rows per page; last-page remainder included."
+}

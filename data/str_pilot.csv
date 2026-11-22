@@ -1,0 +1,38 @@
+project_id,project,area,status,n_airbnb,adr_rm,occupancy,occ_source,unit_rooms,unit_sqft,value_rm,str_revenue_rm,str_gross_pct,str_net_pct,lt_gross_pct,lt_net_pct,cost_platform,cost_cleaning,cost_utilities,cost_furnish,cost_management,cost_assessment,cost_maintenance,cost_quit_rent,cost_total
+real-pangsapuri-servis-conlay,Pangsapuri Servis Conlay,klcc,insufficient,0,,0.6,assumed,,,,,,,,,,,,,,,,,
+real-the-manor-kl,The Manor Kl,klcc,insufficient,0,,0.6,assumed,,,,,,,4.83,3.84,,,,,,,,,
+real-platinum-suites-the-face-suites,Platinum Suites (The Face Suites),klcc,insufficient,0,,0.6,assumed,,,,,,,2.9,2.23,,,,,,,,,
+real-residensi-agile-delima,Residensi Agile Delima,klcc,insufficient,1,,0.6,assumed,,,,,,,4.11,3.31,,,,,,,,,
+real-quill-residence,Quill Residence,klcc,insufficient,0,,0.6,assumed,,,,,,,4.29,3.32,,,,,,,,,
+real-oxley-towers,Oxley Towers,klcc,insufficient,0,,0.6,assumed,,,,,,,4.44,3.68,,,,,,,,,
+real-wisma-infinitum,Wisma Infinitum,klcc,ok,6,200.0,0.6,assumed,0,947,1400000,43800,3.13,0.78,,,1314,8760,4800,3000,8760,876,5115,250,32875
+real-10-stonor,10 Stonor,klcc,insufficient,0,,0.6,assumed,,,,,,,3.46,2.74,,,,,,,,,
+real-kl-eco-city,KL Eco City,bss,insufficient,2,,0.55,assumed,,,,,,,3.31,2.55,,,,,,,,,
+real-laurel-residence,Laurel Residence,bss,insufficient,0,,0.55,assumed,,,,,,,5.29,4.24,,,,,,,,,
+real-southlink,Southlink,bss,insufficient,0,,0.55,assumed,,,,,,,6.2,4.97,,,,,,,,,
+real-the-park-residences-1,The Park Residences 1,bss,insufficient,0,,0.55,assumed,,,,,,,8.76,6.93,,,,,,,,,
+real-residensi-era-novum,Residensi Era Novum,bss,insufficient,0,,0.55,assumed,,,,,,,5.15,4.06,,,,,,,,,
+real-southview-residence,Southview Residence,bss,insufficient,0,,0.55,assumed,,,,,,,5.39,4.12,,,,,,,,,
+real-the-goodwood-residence,The Goodwood Residence,bss,insufficient,0,,0.55,assumed,,,,,,,5.32,4.2,,,,,,,,,
+real-taman-bukit-angkasa-angkasapuri-flat,Taman Bukit Angkasa (Angkasapuri Flat),bss,insufficient,0,,0.55,assumed,,,,,,,5.97,4.77,,,,,,,,,
+real-pantai-panorama,Pantai Panorama,bss,insufficient,0,,0.55,assumed,,,,,,,7.74,5.68,,,,,,,,,
+real-taman-bukit-angkasa-taman-angkasapuri-flat,Taman Bukit Angkasa (Taman Angkasapuri Flat),bss,insufficient,0,,0.55,assumed,,,,,,,5.64,4.51,,,,,,,,,
+real-kl-gateway,KL Gateway,bss,ok,20,207.5,0.55,assumed,2,830,628310,41656,6.63,1.6,5.94,4.62,1250,8030,4800,4000,8331,1440,3486,250,31587
+real-kuala-lumpur-gateway,Kuala Lumpur Gateway,bss,insufficient,0,,0.55,assumed,,,,,,,5.93,4.59,,,,,,,,,
+real-kuala-lumpur-gateway-menara-suezcap,Kuala Lumpur Gateway (Menara Suezcap),bss,insufficient,0,,0.55,assumed,,,,,,,6.52,5.05,,,,,,,,,
+real-pkns-17-kampung-kerinchi,Pkns 17 Kampung Kerinchi,bss,insufficient,0,,0.55,assumed,,,,,,,,,,,,,,,,,
+real-residensi-kerinchi,Residensi Kerinchi,bss,insufficient,0,,0.55,assumed,,,,,,,6.92,5.21,,,,,,,,,
+real-camellia-serviced-suites,Camellia Serviced Suites,bss,insufficient,2,,0.55,assumed,,,,,,,6.42,4.92,,,,,,,,,
+real-casa-tiara,Casa Tiara,sj,insufficient,0,,0.5,assumed,,,,,,,6.41,4.74,,,,,,,,,
+real-subang-avenue,Subang Avenue,sj,ok,3,239,0.5,assumed,3,1050,462220,43618,9.44,2.28,7.01,5.14,1309,7300,4800,5000,8724,1296,4412,250,33090
+real-e-tiara,E-Tiara,sj,insufficient,1,,0.5,assumed,,,,,,,5.91,4.35,,,,,,,,,
+real-first-subang-ss-15-courtyard,First Subang (Ss 15 Courtyard),sj,ok,19,191.33,0.5,assumed,1,500,381000,34918,9.16,2.28,5.04,3.8,1048,7300,4800,3000,6984,768,2100,250,26249
+real-saujana-residency,Saujana Residency,sj,insufficient,0,,0.5,assumed,,,,,,,5.93,4.47,,,,,,,,,
+real-sjcc-lot-15-ss-16-subang-jaya,(Sjcc) Lot 15 - Ss 16 Subang Jaya,sj,insufficient,0,,0.5,assumed,,,,,,,,,,,,,,,,,
+real-grand-subang-jaya-ss15,Grand Subang Jaya @ Ss15,sj,ok,3,290.33,0.5,assumed,2,563,573134,52985,9.24,3.63,5.65,4.5,1590,7300,4800,4000,10597,1296,2365,250,32197
+real-lafite-apartment,Lafite Apartment,sj,insufficient,0,,0.5,assumed,,,,,,,4.51,3.25,,,,,,,,,
+real-keranji,Keranji,sj,insufficient,0,,0.5,assumed,,,,,,,,,,,,,,,,,
+real-dorsett-waterfront-subang,Dorsett Waterfront Subang,sj,ok,15,232.67,0.5,assumed,1,570,460560,42462,9.22,2.97,7.69,6.17,1274,7300,4800,3000,8492,1296,2394,250,28806
+real-spring-summer-villa,Spring Summer Villa,sj,insufficient,0,,0.5,assumed,,,,,,,,,,,,,,,,,
+real-isola,Isola,sj,insufficient,0,,0.5,assumed,,,,,,,6.07,4.66,,,,,,,,,
+real-my-place,My Place,sj,insufficient,0,,0.5,assumed,,,,,,,6.53,5.03,,,,,,,,,

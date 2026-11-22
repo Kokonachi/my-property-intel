@@ -1,0 +1,8 @@
+node_modules
+dist
+screenshots
+scripts
+ref
+.vercel
+/scraper
+/data

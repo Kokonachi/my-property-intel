@@ -1,0 +1,955 @@
+{
+ "real-southlink": {
+  "name": "Southlink",
+  "streets": [
+   [
+    "JALAN KERINCHI KIRI 2",
+    18
+   ],
+   [
+    "JALAN KERINCHI 2",
+    2
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/kampung-kerinchi--bangsar-south-/southlink/non-landed/"
+ },
+ "real-residensi-era-novum": {
+  "name": "Residensi Era Novum",
+  "streets": [
+   [
+    "JALAN KERINCHI KIRI 2",
+    20
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/kampung-kerinchi--bangsar-south-/residensi-era-novum/non-landed/"
+ },
+ "real-southview-residence": {
+  "name": "Southview Residence",
+  "streets": [
+   [
+    "JALAN KERINCHI KIRI 2",
+    20
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/kampung-kerinchi--bangsar-south-/southview-residence/non-landed/"
+ },
+ "real-taman-bukit-angkasa-angkasapuri-flat": {
+  "name": "Taman Bukit Angkasa (Angkasapuri Flat)",
+  "streets": [
+   [
+    "JALAN 7/112A",
+    4
+   ],
+   [
+    "JALAN 6/112A",
+    4
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/kampung-kerinchi--bangsar-south-/taman-bukit-angkasa--angkasapuri-flat-/non-landed/"
+ },
+ "real-taman-bukit-angkasa-taman-angkasapuri-flat": {
+  "name": "Taman Bukit Angkasa (Taman Angkasapuri Flat)",
+  "streets": [
+   [
+    "JALAN PANTAI DALAM",
+    10
+   ],
+   [
+    "JALAN 6/112A",
+    6
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/kampung-kerinchi--bangsar-south-/taman-bukit-angkasa--taman-angkasapuri-flat-/non-landed/"
+ },
+ "real-kuala-lumpur-gateway": {
+  "name": "Kuala Lumpur Gateway",
+  "streets": [
+   [
+    "JALAN KERINCHI",
+    8
+   ],
+   [
+    "JALAN KERINCHI RESIDENSI PREMIUM",
+    2
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/kampung-kerinchi--bangsar-south-/kuala-lumpur-gateway/non-landed/"
+ },
+ "real-kuala-lumpur-gateway-menara-suezcap": {
+  "name": "Kuala Lumpur Gateway (Menara Suezcap)",
+  "streets": [
+   [
+    "JALAN KERINCHI",
+    6
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/kampung-kerinchi--bangsar-south-/kuala-lumpur-gateway--menara-suezcap-/non-landed/"
+ },
+ "real-pkns-17-kampung-kerinchi": {
+  "name": "Pkns 17 Kampung Kerinchi",
+  "streets": [],
+  "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/kampung-kerinchi--bangsar-south-/pkns-17-kampung-kerinchi/non-landed/"
+ },
+ "real-rhythm-avenue": {
+  "name": "Rhythm Avenue",
+  "streets": [
+   [
+    "JALAN USJ",
+    16
+   ],
+   [
+    "JALAN USJ 19/1",
+    16
+   ],
+   [
+    "JALAN USJ 19",
+    4
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/rhythm-avenue/non-landed/"
+ },
+ "real-ss17-landed": {
+  "name": "Ss17",
+  "streets": [
+   [
+    "JALAN SS",
+    20
+   ],
+   [
+    "JALAN SS 17/2C",
+    4
+   ],
+   [
+    "JALAN SS 17/2K",
+    4
+   ],
+   [
+    "JALAN SS 17/2A",
+    2
+   ],
+   [
+    "JALAN SS 17/1F",
+    2
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/ss17/landed/"
+ },
+ "real-subang-perdana-goodyear-court-10": {
+  "name": "Subang Perdana Goodyear Court 10",
+  "streets": [
+   [
+    "JALAN PERSIARAN GYC 10 MULIA",
+    2
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/subang-perdana-goodyear-court-10/non-landed/"
+ },
+ "real-main-place-residence": {
+  "name": "Main Place Residence",
+  "streets": [
+   [
+    "JALAN USJ",
+    16
+   ],
+   [
+    "JALAN USJ 21/10",
+    16
+   ],
+   [
+    "JALAN USJ 21",
+    8
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/main-place-residence/non-landed/"
+ },
+ "real-kenwingston-usj-1": {
+  "name": "Kenwingston - Usj 1",
+  "streets": [
+   [
+    "JALAN SUBANG 1",
+    20
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/kenwingston---usj-1/non-landed/"
+ },
+ "real-ss15-landed": {
+  "name": "Ss15",
+  "streets": [
+   [
+    "JALAN SS",
+    20
+   ],
+   [
+    "JALAN SS 15/2B",
+    6
+   ],
+   [
+    "JALAN SS 15/5C",
+    4
+   ],
+   [
+    "JALAN SS 15/2D",
+    2
+   ],
+   [
+    "JALAN SS 15/5B",
+    2
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/ss15/landed/"
+ },
+ "real-subang-perdana-goodyear-court-8": {
+  "name": "Subang Perdana Goodyear Court 8",
+  "streets": [
+   [
+    "JALAN USJ",
+    8
+   ],
+   [
+    "JALAN USJ 14/1",
+    8
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/subang-perdana-goodyear-court-8/non-landed/"
+ },
+ "real-edumetro-empira-remix-2-subang-jaya": {
+  "name": "Edumetro (Empira Remix 2) @ Subang Jaya",
+  "streets": [],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/edumetro--empira-remix-2----subang-jaya/non-landed/"
+ },
+ "real-subang-perdana-goodyear-court-9": {
+  "name": "Subang Perdana Goodyear Court 9",
+  "streets": [],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/subang-perdana-goodyear-court-9/non-landed/"
+ },
+ "real-subang-perdana-goodyear-court-3": {
+  "name": "Subang Perdana Goodyear Court 3",
+  "streets": [
+   [
+    "JALAN KEWAJIPAN",
+    2
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/subang-perdana-goodyear-court-3/non-landed/"
+ },
+ "real-sri-mutiara-putra-height": {
+  "name": "Sri Mutiara - Putra Height",
+  "streets": [
+   [
+    "JALAN PUTRA INDAH 9/1C",
+    4
+   ],
+   [
+    "JALAN PULAU INDAH 9/1C",
+    4
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/sri-mutiara---putra-height/non-landed/"
+ },
+ "real-the-grand-subang-ss-13-subang-jaya": {
+  "name": "The Grand Subang-Ss 13 Subang Jaya",
+  "streets": [
+   [
+    "JALAN SS13/3",
+    40
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/the-grand-subang-ss-13-subang-jaya/non-landed/"
+ },
+ "real-subang-perdana-goodyear-court-7": {
+  "name": "Subang Perdana Goodyear Court 7",
+  "streets": [
+   [
+    "JALAN USJ",
+    12
+   ],
+   [
+    "JALAN USJ 14/1",
+    12
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/subang-perdana-goodyear-court-7/non-landed/"
+ },
+ "real-d-seven-lagoon-perdana": {
+  "name": "D'Seven (Lagoon Perdana)",
+  "streets": [
+   [
+    "JALAN PJS 9/1",
+    40
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/d-seven--lagoon-perdana-/non-landed/"
+ },
+ "real-usj-5-landed": {
+  "name": "Usj 5",
+  "streets": [
+   [
+    "JALAN USJ 5/1",
+    8
+   ],
+   [
+    "JALAN USJ 5/1H",
+    8
+   ],
+   [
+    "JALAN USJ 5/4",
+    4
+   ],
+   [
+    "JALAN USJ 5/2",
+    4
+   ],
+   [
+    "JALAN USJ 5/1B",
+    4
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/usj-5/landed/"
+ },
+ "real-angsana": {
+  "name": "Angsana",
+  "streets": [],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/angsana/non-landed/"
+ },
+ "real-damen-usj-service-apartment": {
+  "name": "Damen Usj Service Apartment",
+  "streets": [],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/damen-usj-service-apartment/non-landed/"
+ },
+ "real-seri-tanjung": {
+  "name": "Seri Tanjung",
+  "streets": [
+   [
+    "JALAN USJ",
+    14
+   ],
+   [
+    "JALAN USJ 16/6",
+    14
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/seri-tanjung/non-landed/"
+ },
+ "real-arcadia": {
+  "name": "Arcadia",
+  "streets": [
+   [
+    "JALAN USJ",
+    12
+   ],
+   [
+    "JALAN USJ 11/1",
+    12
+   ],
+   [
+    "JALAN USJ11/1",
+    4
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/arcadia/non-landed/"
+ },
+ "real-usj-one-avenue": {
+  "name": "Usj One Avenue",
+  "streets": [
+   [
+    "JALAN SUBANG 1",
+    8
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/usj-one-avenue/non-landed/"
+ },
+ "real-usj-17-landed": {
+  "name": "Usj 17",
+  "streets": [
+   [
+    "JALAN USJ",
+    14
+   ],
+   [
+    "JALAN USJ 17/3B",
+    4
+   ],
+   [
+    "JALAN USJ 17/8",
+    4
+   ],
+   [
+    "JALAN USJ 17/3C",
+    2
+   ],
+   [
+    "JALAN USJ 17/1",
+    2
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/usj-17/landed/"
+ },
+ "real-subang-perdana-goodyear-court-1": {
+  "name": "Subang Perdana Goodyear Court 1",
+  "streets": [
+   [
+    "JALAN USJ 6/1",
+    16
+   ],
+   [
+    "JALAN USJ6/1",
+    4
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/subang-perdana-goodyear-court-1/non-landed/"
+ },
+ "real-subang-perdana-goodyear-court-2": {
+  "name": "Subang Perdana Goodyear Court 2",
+  "streets": [
+   [
+    "JALAN USJ 6/1",
+    12
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/subang-perdana-goodyear-court-2/non-landed/"
+ },
+ "real-the-regina": {
+  "name": "The Regina",
+  "streets": [
+   [
+    "JALAN SUBANG PERMAI",
+    12
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/the-regina/non-landed/"
+ },
+ "real-union-suites": {
+  "name": "Union Suites",
+  "streets": [
+   [
+    "JALAN PJS 9/1",
+    28
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/union-suites/non-landed/"
+ },
+ "real-first-subang-ss-15-courtyard": {
+  "name": "First Subang (Ss 15 Courtyard)",
+  "streets": [
+   [
+    "JALAN SS",
+    12
+   ],
+   [
+    "JALAN SS 15/4G",
+    12
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/first-subang--ss-15-courtyard-/non-landed/"
+ },
+ "real-sri-nipah": {
+  "name": "Sri Nipah",
+  "streets": [
+   [
+    "JALAN SM 2",
+    6
+   ],
+   [
+    "JALAN SM 1",
+    4
+   ],
+   [
+    "JALAN USJ 2/1",
+    2
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/sri-nipah/non-landed/"
+ },
+ "real-taman-subang-permai-landed": {
+  "name": "Taman Subang Permai",
+  "streets": [
+   [
+    "JALAN USJ 1/26",
+    8
+   ],
+   [
+    "JALAN USJ 1/27",
+    8
+   ],
+   [
+    "JALAN USJ 1/25",
+    8
+   ],
+   [
+    "JALAN USJ 1/9",
+    4
+   ],
+   [
+    "JALAN USJ 1/15",
+    4
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/taman-subang-permai/landed/"
+ },
+ "real-subang-perdana-goodyear-court-5": {
+  "name": "Subang Perdana Goodyear Court 5",
+  "streets": [],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/subang-perdana-goodyear-court-5/non-landed/"
+ },
+ "real-taman-wangsa-baiduri-landed": {
+  "name": "Taman Wangsa Baiduri",
+  "streets": [],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/taman-wangsa-baiduri/landed/"
+ },
+ "real-sjcc-lot-15-ss-16-subang-jaya": {
+  "name": "(Sjcc) Lot 15 - Ss 16 Subang Jaya",
+  "streets": [
+   [
+    "JALAN SS",
+    2
+   ],
+   [
+    "JALAN SS 16/1",
+    2
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/-sjcc--lot-15---ss-16-subang-jaya/non-landed/"
+ },
+ "real-grand-subang-jaya-ss15": {
+  "name": "Grand Subang Jaya @ Ss15",
+  "streets": [
+   [
+    "JALAN SS15/8A",
+    16
+   ],
+   [
+    "JALAN SS",
+    6
+   ],
+   [
+    "JALAN SS 15/8A",
+    6
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/grand-subang-jaya---ss15/non-landed/"
+ },
+ "real-lafite-apartment": {
+  "name": "Lafite Apartment",
+  "streets": [
+   [
+    "JALAN SS",
+    10
+   ],
+   [
+    "JALAN SS17/1G",
+    8
+   ],
+   [
+    "JALAN SS 17/1G",
+    8
+   ],
+   [
+    "JALAN SS 17/2",
+    2
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/lafite-apartment/non-landed/"
+ },
+ "real-subang-parkhomes": {
+  "name": "Subang Parkhomes",
+  "streets": [
+   [
+    "JALAN SUBANG PARKHOMES",
+    4
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/subang-parkhomes/non-landed/"
+ },
+ "real-taman-subang-mewah-landed": {
+  "name": "Taman Subang Mewah",
+  "streets": [
+   [
+    "JALAN USJ 1/2C",
+    8
+   ],
+   [
+    "JALAN USJ 1/4N",
+    8
+   ],
+   [
+    "JALAN USJ 1/2H",
+    4
+   ],
+   [
+    "JALAN USJ 1/4E",
+    4
+   ],
+   [
+    "JALAN USJ 1/2D",
+    4
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/taman-subang-mewah/landed/"
+ },
+ "real-usj-22-landed": {
+  "name": "Usj 22",
+  "streets": [
+   [
+    "JALAN USJ",
+    8
+   ],
+   [
+    "JALAN USJ 22/2E",
+    4
+   ],
+   [
+    "JALAN USJ 22/1C",
+    2
+   ],
+   [
+    "JALAN USJ 22/1B",
+    2
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/usj-22/landed/"
+ },
+ "real-permai-usj-1-coral-court": {
+  "name": "Permai @ Usj 1 (Coral Court)",
+  "streets": [
+   [
+    "JALAN SUBANG PERMAI",
+    10
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/permai---usj-1--coral-court-/non-landed/"
+ },
+ "real-summer-villa": {
+  "name": "Summer Villa",
+  "streets": [
+   [
+    "JALAN SS",
+    12
+   ],
+   [
+    "JALAN SS 12/1",
+    12
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/summer-villa/non-landed/"
+ },
+ "real-ss13-flats": {
+  "name": "Ss13 Flats",
+  "streets": [
+   [
+    "JALAN SS",
+    6
+   ],
+   [
+    "JALAN SS13/1H",
+    4
+   ],
+   [
+    "JALAN SS 13/1D",
+    4
+   ],
+   [
+    "JALAN SS 13/1C",
+    2
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/ss13-flats/non-landed/"
+ },
+ "real-keranji": {
+  "name": "Keranji",
+  "streets": [
+   [
+    "JALAN SS",
+    8
+   ],
+   [
+    "JALAN SS 19/3A",
+    8
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/keranji/non-landed/"
+ },
+ "real-usj-16-landed": {
+  "name": "Usj 16",
+  "streets": [
+   [
+    "JALAN USJ",
+    14
+   ],
+   [
+    "JALAN USJ16/2H",
+    4
+   ],
+   [
+    "JALAN USJ 16/3D",
+    2
+   ],
+   [
+    "JALAN USJ 16/3E",
+    2
+   ],
+   [
+    "JALAN USJ 16/3C",
+    2
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/usj-16/landed/"
+ },
+ "real-jati-1": {
+  "name": "Jati 1",
+  "streets": [],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/jati-1/non-landed/"
+ },
+ "real-pandora-service-residence": {
+  "name": "Pandora Service Residence",
+  "streets": [
+   [
+    "JALAN MP 1",
+    4
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/pandora-service-residence/non-landed/"
+ },
+ "real-paloma-service-residence": {
+  "name": "Paloma Service Residence",
+  "streets": [],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/paloma-service-residence/non-landed/"
+ },
+ "real-sime-uep-industrial-park-landed": {
+  "name": "Sime Uep Industrial Park",
+  "streets": [
+   [
+    "JALAN TP 1/4",
+    4
+   ],
+   [
+    "JALAN TP 1/5",
+    2
+   ],
+   [
+    "JALAN TP 7/C",
+    2
+   ],
+   [
+    "JALAN TP 1/6",
+    2
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/sime-uep-industrial-park/landed/"
+ },
+ "real-goodyear-court-4-fasa-3": {
+  "name": "Goodyear Court 4 - Fasa 3",
+  "streets": [],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/goodyear-court-4---fasa-3/non-landed/"
+ },
+ "real-meranti": {
+  "name": "Meranti",
+  "streets": [],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/meranti/non-landed/"
+ },
+ "real-usj-one-you-one": {
+  "name": "Usj One (You One)",
+  "streets": [
+   [
+    "JALAN USJ 1/1N",
+    4
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/usj-one--you-one-/non-landed/"
+ },
+ "real-sri-bayu": {
+  "name": "Sri Bayu",
+  "streets": [
+   [
+    "JALAN USJ",
+    4
+   ],
+   [
+    "JALAN USJ 11",
+    4
+   ],
+   [
+    "JALAN USJ 11/7",
+    4
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/sri-bayu/non-landed/"
+ },
+ "real-usj-23-landed": {
+  "name": "Usj 23",
+  "streets": [
+   [
+    "JALAN USJ",
+    8
+   ],
+   [
+    "JALAN USJ 23/5A",
+    4
+   ],
+   [
+    "JALAN USJ 23/3C",
+    2
+   ],
+   [
+    "JALAN USJ 23/5",
+    2
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/usj-23/landed/"
+ },
+ "real-indera-subang": {
+  "name": "Indera Subang",
+  "streets": [
+   [
+    "JALAN USJ 6/2L",
+    6
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/indera-subang/non-landed/"
+ },
+ "real-tanamera-usj-landed": {
+  "name": "Tanamera Usj",
+  "streets": [
+   [
+    "JALAN KASTURI",
+    2
+   ],
+   [
+    "JALAN GELENGGANG",
+    2
+   ],
+   [
+    "JALAN PULAI",
+    2
+   ],
+   [
+    "JALAN MEMPOYAN",
+    2
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/tanamera-usj/landed/"
+ },
+ "real-dorsett-waterfront-subang": {
+  "name": "Dorsett Waterfront Subang",
+  "streets": [
+   [
+    "JALAN SS",
+    4
+   ],
+   [
+    "JALAN SS 12/1",
+    4
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/dorsett-waterfront-subang/non-landed/"
+ },
+ "real-subang-soho-one-soho": {
+  "name": "Subang Soho (One Soho)",
+  "streets": [
+   [
+    "JALAN KEMAJUAN BLOK EMERALD",
+    2
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/subang-soho--one-soho-/non-landed/"
+ },
+ "real-spring-summer-villa": {
+  "name": "Spring Summer Villa",
+  "streets": [
+   [
+    "JALAN SS12/1",
+    4
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/spring-summer-villa/non-landed/"
+ },
+ "real-tropika-paradise": {
+  "name": "Tropika Paradise",
+  "streets": [
+   [
+    "JALAN USJ",
+    4
+   ],
+   [
+    "JALAN USJ 17/8",
+    4
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/tropika-paradise/non-landed/"
+ },
+ "real-menara-geno": {
+  "name": "Menara Geno",
+  "streets": [
+   [
+    "JALAN SUBANG MAS",
+    4
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/menara-geno/non-landed/"
+ },
+ "real-usj-8-landed": {
+  "name": "Usj 8",
+  "streets": [
+   [
+    "JALAN USJ 8/2E",
+    12
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/usj-8/landed/"
+ },
+ "real-pangsapuri-seri-kayan-pinggiran-usj": {
+  "name": "Pangsapuri Seri Kayan-Pinggiran Usj",
+  "streets": [
+   [
+    "JALAN PINGGIRAN USJ 2/1",
+    8
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/pangsapuri-seri-kayan-pinggiran-usj/non-landed/"
+ },
+ "real-subang-jaya-apartment": {
+  "name": "Subang Jaya Apartment",
+  "streets": [
+   [
+    "JALAN SS",
+    4
+   ],
+   [
+    "JALAN SS 15/6",
+    4
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/subang-jaya-apartment/non-landed/"
+ },
+ "real-starville": {
+  "name": "Starville",
+  "streets": [
+   [
+    "JALAN USJ",
+    4
+   ],
+   [
+    "JALAN USJ 19/6",
+    4
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/starville/non-landed/"
+ },
+ "real-usj-26-landed": {
+  "name": "Usj 26",
+  "streets": [
+   [
+    "JALAN USJ",
+    4
+   ],
+   [
+    "JALAN USJ 26/3",
+    2
+   ],
+   [
+    "JALAN USJ 26/1E",
+    2
+   ]
+  ],
+  "url": "https://www.brickz.my/transactions/residential/selangor/subang-jaya/usj-26/landed/"
+ }
+}

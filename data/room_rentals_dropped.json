@@ -1,0 +1,62 @@
+[
+  {
+    "rent": 850.0,
+    "size": 995.0,
+    "rooms": 5.0,
+    "src": "Mudah",
+    "title": "Selangor Subang Jaya Partially Furnished Impian Meridian Condominium For Rent",
+    "reason": "psf_below_1.0_unit_size",
+    "project_id": "real-impian-meridian",
+    "project": "Impian Meridian"
+  },
+  {
+    "rent": 1050.0,
+    "size": 883.0,
+    "rooms": 1.0,
+    "src": "Mudah",
+    "title": "Nice unit Casa Tiara SS16 room for rent",
+    "reason": "title_room_rental",
+    "project_id": "real-casa-tiara",
+    "project": "Casa Tiara"
+  },
+  {
+    "rent": 1238.0,
+    "size": 560.0,
+    "rooms": 1.0,
+    "src": "Mudah",
+    "title": "Master room FOR RENT with private bathroom at Subang Avenue, next to Aeon Big Subang Jaya",
+    "reason": "title_room_rental",
+    "project_id": "real-subang-avenue",
+    "project": "Subang Avenue"
+  },
+  {
+    "rent": 1350.0,
+    "size": 200.0,
+    "rooms": 1.0,
+    "src": "PropertyGuru",
+    "title": "D7 (D'Seven Lagoon Perdana)",
+    "reason": "size_below_250",
+    "project_id": "real-d-seven-lagoon-perdana",
+    "project": "D'Seven (Lagoon Perdana)"
+  },
+  {
+    "rent": 1500.0,
+    "size": 200.0,
+    "rooms": 1.0,
+    "src": "PropertyGuru",
+    "title": "D7 (D'Seven Lagoon Perdana)",
+    "reason": "size_below_250",
+    "project_id": "real-d-seven-lagoon-perdana",
+    "project": "D'Seven (Lagoon Perdana)"
+  },
+  {
+    "rent": 1050.0,
+    "size": 883.0,
+    "rooms": 1.0,
+    "src": "Mudah",
+    "title": "Nice unit Casa Tiara SS16 room for rent",
+    "reason": "title_room_rental",
+    "project_id": "real-ss16",
+    "project": "Ss16"
+  }
+]

@@ -1,0 +1,4 @@
+{
+ "_doc": "project id -> reason. Excluded projects stay listed (with transacted prices) but get no rent/yield.",
+ "real-sime-uep-industrial-park-landed": "Industrial park (Sime UEP Industrial Park): Brickz files these lots under terrace houses, but there is no residential rental market for them on PropertyGuru/Mudah, so no yield is shown."
+}

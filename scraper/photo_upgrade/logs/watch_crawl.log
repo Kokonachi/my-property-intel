@@ -1,0 +1,13 @@
+10:06:56 still going: 10:06:46 selangor p232/353 rows=10 cached=False
+10:08:56 still going: 10:08:46 selangor p237/353 rows=10 cached=False
+10:10:56 still going: 10:10:50 selangor p249/353 rows=10 cached=False
+10:12:57 still going: 10:12:50 selangor p265/353 rows=10 cached=False
+10:14:57 still going: 10:14:52 selangor p282/353 rows=10 cached=False
+10:16:57 still going: 10:16:48 selangor p299/353 rows=10 cached=False
+10:18:57 still going: 10:18:52 selangor p316/353 rows=10 cached=False
+10:20:57 still going: 10:20:54 selangor p336/353 rows=10 cached=False
+10:22:37 crawl DONE
+rows_in=5030 kept=5030 dropped_nonres=0
+KL=1500 Selangor=3530
+areas=120 csv=/workspace/my-property-intel/data/kl_selangor_candidates.csv summary=/workspace/my-property-intel/data/kl_selangor_area_summary.csv
+10:22:37 csv built: -rw-r--r-- 1 box box 871068 Nov 15 10:22 /workspace/my-property-intel/data/kl_selangor_candidates.csv

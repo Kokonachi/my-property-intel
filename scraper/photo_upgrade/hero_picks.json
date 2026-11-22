@@ -1,0 +1,127 @@
+{
+  "real-residensi-kerinchi": {
+    "file": "pg_81c4954ee39d_2000x1093.jpg",
+    "kind": "exterior",
+    "note": "Full tower with Residensi Kerinchi name on facade"
+  },
+  "real-laurel-residence": {
+    "file": "pg_c5aa4aa46f74_2000x1106.jpg",
+    "kind": "exterior",
+    "note": "Full tower with entrance canopy, best true exterior"
+  },
+  "real-arcoris-residences": {
+    "file": "pg_c9cef27a67ff_1472x2000.jpg",
+    "kind": "exterior",
+    "note": "Dusk shot of the actual stepped towers; rejected podium retail (#4) and construction site (#5)"
+  },
+  "real-pavilion-hilltop": {
+    "file": "pg_ca138d315f05_2000x1124.jpg",
+    "kind": "exterior",
+    "note": "Official two-tower exterior (developer render); only official photo"
+  },
+  "real-trinity-pentamont-mont-kiara": {
+    "file": null,
+    "kind": "text",
+    "note": "Only an interior and a scale-model photo with a person; no usable exterior"
+  },
+  "real-mont-kiara-palma": {
+    "file": "pg_4be2fd1655df_1328x2000.jpg",
+    "kind": "exterior",
+    "note": "Upward facade of the actual Palma tower"
+  },
+  "real-residensi-allevia": {
+    "file": "pg_aa1c7ef0406d_2000x1126.jpg",
+    "kind": "exterior",
+    "note": "Street-level facade and entrance; rejected interiors and lobby"
+  },
+  "real-residensi-38-bangsar": {
+    "file": "pg_17ad0356e674_2000x1125.jpg",
+    "kind": "exterior",
+    "note": "Dusk tower exterior with 38 logo; rejected map, text-heavy lobby, gardens"
+  },
+  "real-seni-mont-kiara": {
+    "file": "pg_c567d1f83c6a_2000x1500.jpg",
+    "kind": "exterior",
+    "note": "Looking up at distinctive facade; other shots are pool/facility"
+  },
+  "real-residensi-22-mont-kiara": {
+    "file": "pg_35e9c0088de8_2000x1333.jpg",
+    "kind": "exterior",
+    "note": "Clean two-tower exterior; rejected floor plan and interiors"
+  },
+  "real-11-mont-kiara-mk11": {
+    "file": "pg_d3a0a067c0c9_2000x1330.jpg",
+    "kind": "exterior",
+    "note": "Street-level two towers with MONT'KIARA sign; rejected interiors, bathrooms, gym"
+  },
+  "real-28-mont-kiara": {
+    "file": "pg_a71f3e447da0_2000x1500.jpg",
+    "kind": "facility",
+    "note": "Pool with the actual 28 MK buildings clearly visible; no clean street exterior. Rejected #21 (likely a neighbouring tower)."
+  },
+  "real-kiara-163": {
+    "file": "pg_6ddc29eb4675_2000x1502.jpg",
+    "kind": "exterior",
+    "note": "Dusk shot of the two towers and podium; rejected interiors and restaurant shots"
+  },
+  "real-pangsapuri-servis-conlay": {
+    "file": "pg_499db6ce5aa6_2000x1333.jpg",
+    "kind": "exterior",
+    "note": "Full slim tower on the approach road; rejected interiors, cutaway, aerial logo"
+  },
+  "real-platinum-suites-the-face-suites": {
+    "file": "pg_5c57333f35a2_2000x1500.jpg",
+    "kind": "exterior",
+    "note": "Tower with PLATINUM sign"
+  },
+  "real-pantai-panorama": {
+    "file": "pg_61b2adeb52c4_1339x2000.jpg",
+    "kind": "exterior",
+    "note": "Full white towers; rejected gym and pool shots"
+  },
+  "real-residensi-trx-1-tun-razak-exchange": {
+    "file": "pg_1367052de400_2000x2000.jpg",
+    "kind": "exterior",
+    "note": "Looking up at the distinctive twin towers"
+  },
+  "real-bangsar-permai": {
+    "file": "pg_7e8f569f4666_2000x1339.jpg",
+    "kind": "exterior",
+    "note": "Compound entrance and building facade"
+  },
+  "real-kl-eco-city": {
+    "file": "pg_3229d6582176_2000x1500.jpg",
+    "kind": "exterior",
+    "note": "The Pillars three linked glass towers; only official photo"
+  },
+  "real-southlink": {
+    "file": "pg_4c332902c62a_2000x1190.jpg",
+    "kind": "exterior",
+    "note": "Night shot of the twin towers; rejected interiors"
+  },
+  "real-residensi-era-novum": {
+    "file": "pg_dd214202170c_2000x1940.jpg",
+    "kind": "exterior",
+    "note": "Street-level facade of the distinctive stacked towers; rejected award graphic and watermarked aerial"
+  },
+  "real-damen-usj-service-apartment": {
+    "file": null,
+    "kind": "text",
+    "note": "Only a construction-site photo with crane and scaffolding"
+  },
+  "real-kuala-lumpur-gateway-menara-suezcap": {
+    "file": "pg_9bec9efe9927_1605x2000.jpg",
+    "kind": "exterior",
+    "note": "Dusk shot of the two glass towers"
+  },
+  "real-the-goodwood-residence": {
+    "file": "pg_beed327fd197_1375x2000.jpg",
+    "kind": "facility",
+    "note": "Pool with the residential block clearly visible; no clean street exterior; rejected text-heavy podium and interiors"
+  },
+  "real-main-place-residence": {
+    "file": "pg_c05ba19bb0d4_2000x1439.jpg",
+    "kind": "exterior",
+    "note": "Looking up at the towers above the Main Place retail sign"
+  }
+}

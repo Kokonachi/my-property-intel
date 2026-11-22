@@ -1,0 +1,1671 @@
+{
+  "n_unique_listings": 316,
+  "n_matched": 72,
+  "by_project": {
+    "real-kl-gateway": {
+      "name": "Kl Gateway",
+      "area": "bss",
+      "n": 20,
+      "enough": true,
+      "listings": [
+        {
+          "room_id": "1348190234171760836",
+          "room_url": "https://www.airbnb.com/rooms/1348190234171760836",
+          "name": "Stylish 1BR Suite @ KL Gateway | Direct LRT Access",
+          "title": "Apartment in Kuala Lumpur",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.89,
+          "review_count": 27,
+          "price_per_night": 180.67,
+          "price_total": 542,
+          "latitude": 3.1138,
+          "longitude": 101.6627,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-kl-gateway",
+          "match_method": "name:\\bkl\\s*gateway\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.07
+        },
+        {
+          "room_id": "30469747",
+          "room_url": "https://www.airbnb.com/rooms/30469747",
+          "name": "Home@ KL Gateway Bangsar South 5mins to Mid Valley",
+          "title": "Condo in Kuala Lumpur",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.75,
+          "review_count": 198,
+          "price_per_night": 168.67,
+          "price_total": 506,
+          "latitude": 3.11377,
+          "longitude": 101.66351,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-kl-gateway",
+          "match_method": "name:\\bkl\\s*gateway\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.026
+        },
+        {
+          "room_id": "36884280",
+          "room_url": "https://www.airbnb.com/rooms/36884280",
+          "name": "Modern, Bright, Accessible Studio @ KL Gateway",
+          "title": "Condo in Kuala Lumpur",
+          "bedrooms": null,
+          "bathrooms": 1.5,
+          "rating": 4.84,
+          "review_count": 147,
+          "price_per_night": 151.67,
+          "price_total": 455,
+          "latitude": 3.11364,
+          "longitude": 101.66249,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-kl-gateway",
+          "match_method": "name:\\bkl\\s*gateway\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.091
+        },
+        {
+          "room_id": "815582496675722344",
+          "room_url": "https://www.airbnb.com/rooms/815582496675722344",
+          "name": "1- C2605 Copenhagen Studio | KLG | WiFi&Netflix |",
+          "title": "Condo in Kuala Lumpur",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.91,
+          "review_count": 43,
+          "price_per_night": 174.67,
+          "price_total": 524,
+          "latitude": 3.11421,
+          "longitude": 101.66198,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-kl-gateway",
+          "match_method": "name:\\bklg\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.16
+        },
+        {
+          "room_id": "1221617124423245640",
+          "room_url": "https://www.airbnb.com/rooms/1221617124423245640",
+          "name": "[PROMO] 2 ROOM Nice Design KL Gateway Residence 27",
+          "title": "Apartment in Kuala Lumpur",
+          "bedrooms": 2,
+          "bathrooms": 2,
+          "rating": 4.87,
+          "review_count": 15,
+          "price_per_night": 223.33,
+          "price_total": 670,
+          "latitude": 3.11473,
+          "longitude": 101.66349,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-kl-gateway",
+          "match_method": "name:\\bkl\\s*gateway\\s*residence\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.122
+        },
+        {
+          "room_id": "1088535195594740993",
+          "room_url": "https://www.airbnb.com/rooms/1088535195594740993",
+          "name": "Kl Gateway Residence C66 Studio",
+          "title": "Apartment in Kuala Lumpur",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.83,
+          "review_count": 46,
+          "price_per_night": 175.67,
+          "price_total": 527,
+          "latitude": 3.11295,
+          "longitude": 101.66221,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-kl-gateway",
+          "match_method": "name:\\bkl\\s*gateway\\s*residence\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.145
+        },
+        {
+          "room_id": "1239595065206157869",
+          "room_url": "https://www.airbnb.com/rooms/1239595065206157869",
+          "name": "KL Gateway Residence B83",
+          "title": "Apartment in Kuala Lumpur",
+          "bedrooms": 2,
+          "bathrooms": 2,
+          "rating": 4.67,
+          "review_count": 27,
+          "price_per_night": 211.33,
+          "price_total": 634,
+          "latitude": 3.11368,
+          "longitude": 101.66216,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-kl-gateway",
+          "match_method": "name:\\bkl\\s*gateway\\s*residence\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.128
+        },
+        {
+          "room_id": "19919071",
+          "room_url": "https://www.airbnb.com/rooms/19919071",
+          "name": "1- B607 Brussels Studio |KLG | WiFi&Netflix |",
+          "title": "Condo in Kuala Lumpur",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.73,
+          "review_count": 176,
+          "price_per_night": 180.33,
+          "price_total": 541,
+          "latitude": 3.11427,
+          "longitude": 101.66371,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-kl-gateway",
+          "match_method": "name:\\bklg\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.082
+        },
+        {
+          "room_id": "865512851536818179",
+          "room_url": "https://www.airbnb.com/rooms/865512851536818179",
+          "name": "[Promo] Connected Train 2 Bedroom (ABOVE MALL) 289",
+          "title": "Apartment in Kuala Lumpur",
+          "bedrooms": 2,
+          "bathrooms": 1,
+          "rating": 5,
+          "review_count": 8,
+          "price_per_night": 217,
+          "price_total": 651,
+          "latitude": 3.1141,
+          "longitude": 101.66259,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-kl-gateway",
+          "match_method": "name:connected train.{0,40}above mall",
+          "match_conf": "name+dist",
+          "match_dist": 0.094
+        },
+        {
+          "room_id": "740941907902977613",
+          "room_url": "https://www.airbnb.com/rooms/740941907902977613",
+          "name": "KL Gateway Residence B53A",
+          "title": "Apartment in Kuala Lumpur",
+          "bedrooms": 2,
+          "bathrooms": 1,
+          "rating": 4.69,
+          "review_count": 51,
+          "price_per_night": 203.33,
+          "price_total": 610,
+          "latitude": 3.11495,
+          "longitude": 101.66294,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-kl-gateway",
+          "match_method": "name:\\bkl\\s*gateway\\s*residence\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.15
+        },
+        {
+          "room_id": "39803098",
+          "room_url": "https://www.airbnb.com/rooms/39803098",
+          "name": "1- C2208 Dublin Studio | KLG |WiFi&Netflix |",
+          "title": "Condo in Kuala Lumpur",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.79,
+          "review_count": 62,
+          "price_per_night": 189,
+          "price_total": 567,
+          "latitude": 3.10899,
+          "longitude": 101.66476,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-kl-gateway",
+          "match_method": "name:\\bklg\\b",
+          "match_conf": "name-far",
+          "match_dist": 0.543
+        },
+        {
+          "room_id": "832436741092718083",
+          "room_url": "https://www.airbnb.com/rooms/832436741092718083",
+          "name": "[PROMO] Connected Train 2 Bedroom (ABOVE MALL) 28",
+          "title": "Apartment in Kuala Lumpur",
+          "bedrooms": 2,
+          "bathrooms": 1,
+          "rating": 4.8,
+          "review_count": 15,
+          "price_per_night": 230.33,
+          "price_total": 691,
+          "latitude": 3.11437,
+          "longitude": 101.6629,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-kl-gateway",
+          "match_method": "name:connected train.{0,40}above mall",
+          "match_conf": "name+dist",
+          "match_dist": 0.092
+        },
+        {
+          "room_id": "1150373909206145573",
+          "room_url": "https://www.airbnb.com/rooms/1150373909206145573",
+          "name": "KL Gateway Residence C69",
+          "title": "Apartment in Kuala Lumpur",
+          "bedrooms": 2,
+          "bathrooms": 1,
+          "rating": 4.59,
+          "review_count": 44,
+          "price_per_night": 203.67,
+          "price_total": 611,
+          "latitude": 3.11319,
+          "longitude": 101.66434,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-kl-gateway",
+          "match_method": "name:\\bkl\\s*gateway\\s*residence\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.125
+        },
+        {
+          "room_id": "1350505716327026728",
+          "room_url": "https://www.airbnb.com/rooms/1350505716327026728",
+          "name": "GlowlyHaus 2BR@KL Gateway*PrivateLift*BangsarSouth",
+          "title": "Apartment in Kuala Lumpur",
+          "bedrooms": 2,
+          "bathrooms": 2,
+          "rating": 4.96,
+          "review_count": 23,
+          "price_per_night": 406.67,
+          "price_total": 1220,
+          "latitude": 3.112,
+          "longitude": 101.6634,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-kl-gateway",
+          "match_method": "name:\\bkl\\s*gateway\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.184
+        },
+        {
+          "room_id": "1008988600627751230",
+          "room_url": "https://www.airbnb.com/rooms/1008988600627751230",
+          "name": "SkyLine CityStays |2BR |PrivateLift |KLGateway LRT",
+          "title": "Apartment in Kuala Lumpur",
+          "bedrooms": 2,
+          "bathrooms": 2,
+          "rating": 4.67,
+          "review_count": 63,
+          "price_per_night": 364.33,
+          "price_total": 1093,
+          "latitude": 3.1141,
+          "longitude": 101.6633,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-kl-gateway",
+          "match_method": "name:\\bklgateway\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.05
+        },
+        {
+          "room_id": "54390727",
+          "room_url": "https://www.airbnb.com/rooms/54390727",
+          "name": "KL Gateway Residence C19",
+          "title": "Apartment in Kuala Lumpur",
+          "bedrooms": 3,
+          "bathrooms": 2,
+          "rating": 4.58,
+          "review_count": 80,
+          "price_per_night": 245.67,
+          "price_total": 737,
+          "latitude": 3.11443,
+          "longitude": 101.66424,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-kl-gateway",
+          "match_method": "name:\\bkl\\s*gateway\\s*residence\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.135
+        },
+        {
+          "room_id": "1216385271482911575",
+          "room_url": "https://www.airbnb.com/rooms/1216385271482911575",
+          "name": "Melody Home*7pax*KLGateway*Pool&Garden*Near*LRT",
+          "title": "Apartment in Kuala Lumpur",
+          "bedrooms": 3,
+          "bathrooms": 2.5,
+          "rating": 4.89,
+          "review_count": 36,
+          "price_per_night": 413,
+          "price_total": 1239,
+          "latitude": 3.114,
+          "longitude": 101.6641,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-kl-gateway",
+          "match_method": "name:\\bklgateway\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.096
+        },
+        {
+          "room_id": "1042268251440641931",
+          "room_url": "https://www.airbnb.com/rooms/1042268251440641931",
+          "name": "1- C3105 Odesa Studio | KLG | WiFi&NetFlix |",
+          "title": "Condo in Kuala Lumpur",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.71,
+          "review_count": 34,
+          "price_per_night": 200.67,
+          "price_total": 602,
+          "latitude": 3.1091,
+          "longitude": 101.66427,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-kl-gateway",
+          "match_method": "name:\\bklg\\b",
+          "match_conf": "name-far",
+          "match_dist": 0.517
+        },
+        {
+          "room_id": "821561391012226971",
+          "room_url": "https://www.airbnb.com/rooms/821561391012226971",
+          "name": "[PROMO]Connected train 2 Bedroom ABOVE MALL",
+          "title": "Apartment in Kuala Lumpur",
+          "bedrooms": 2,
+          "bathrooms": 2,
+          "rating": 4.25,
+          "review_count": 4,
+          "price_per_night": 240,
+          "price_total": 720,
+          "latitude": 3.11217,
+          "longitude": 101.66203,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-kl-gateway",
+          "match_method": "name:connected train.{0,40}above mall",
+          "match_conf": "name+dist",
+          "match_dist": 0.217
+        },
+        {
+          "room_id": "1568149700053465779",
+          "room_url": "https://www.airbnb.com/rooms/1568149700053465779",
+          "name": "Morning coffee in KL Gateway Mall | 2BR for Family",
+          "title": "Home in Kuala Lumpur",
+          "bedrooms": 2,
+          "bathrooms": 2,
+          "rating": 4.75,
+          "review_count": 8,
+          "price_per_night": 289.67,
+          "price_total": 869,
+          "latitude": 3.1138,
+          "longitude": 101.6627,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-kl-gateway",
+          "match_method": "name:\\bkl\\s*gateway\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.07
+        }
+      ]
+    },
+    "real-first-subang-ss-15-courtyard": {
+      "name": "First Subang (Ss 15 Courtyard)",
+      "area": "sj",
+      "n": 19,
+      "enough": true,
+      "listings": [
+        {
+          "room_id": "1299064158522951152",
+          "room_url": "https://www.airbnb.com/rooms/1299064158522951152",
+          "name": "First Subang A/1-4pax/2 mins LRT+Wi-Fi+Netflix",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.96,
+          "review_count": 25,
+          "price_per_night": 140,
+          "price_total": 420,
+          "latitude": 3.0782,
+          "longitude": 101.5866,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-first-subang-ss-15-courtyard",
+          "match_method": "name:\\bfirst\\s*subang\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.06
+        },
+        {
+          "room_id": "40568101",
+          "room_url": "https://www.airbnb.com/rooms/40568101",
+          "name": "Newly renovated 1BR First Subang SS15(w Netflix)",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.96,
+          "review_count": 193,
+          "price_per_night": 210.33,
+          "price_total": 631,
+          "latitude": 3.07705,
+          "longitude": 101.58706,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-first-subang-ss-15-courtyard",
+          "match_method": "name:\\bfirst\\s*subang\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.083
+        },
+        {
+          "room_id": "1222993550610611501",
+          "room_url": "https://www.airbnb.com/rooms/1222993550610611501",
+          "name": "#28 1-Bedroom Apartment @ SS15 Courtyard (4-5PAX)",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.92,
+          "review_count": 25,
+          "price_per_night": 202.67,
+          "price_total": 608,
+          "latitude": 3.078,
+          "longitude": 101.5865,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-first-subang-ss-15-courtyard",
+          "match_method": "name:\\bss\\s*15 courtyard\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.04
+        },
+        {
+          "room_id": "1190977937122694658",
+          "room_url": "https://www.airbnb.com/rooms/1190977937122694658",
+          "name": "SS15 Courtyard|1BR Studio|Go0gle TV Nflix|LRT 100m",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": null,
+          "bathrooms": 1,
+          "rating": 4.99,
+          "review_count": 77,
+          "price_per_night": 210.33,
+          "price_total": 631,
+          "latitude": 3.07863,
+          "longitude": 101.58733,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-first-subang-ss-15-courtyard",
+          "match_method": "name:\\bss\\s*15 courtyard\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.131
+        },
+        {
+          "room_id": "53709704",
+          "room_url": "https://www.airbnb.com/rooms/53709704",
+          "name": "#11 Studio next to LRT【SS15 Courtyard, Subang】2PAX",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.77,
+          "review_count": 31,
+          "price_per_night": 186.67,
+          "price_total": 560,
+          "latitude": 3.078,
+          "longitude": 101.5865,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-first-subang-ss-15-courtyard",
+          "match_method": "name:\\bss\\s*15 courtyard\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.04
+        },
+        {
+          "room_id": "1081842276118489912",
+          "room_url": "https://www.airbnb.com/rooms/1081842276118489912",
+          "name": "SS15 Courtyard by Xuites - Mall/LRT/Netflix/5pax",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.89,
+          "review_count": 83,
+          "price_per_night": 215.67,
+          "price_total": 647,
+          "latitude": 3.0782,
+          "longitude": 101.5873,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-first-subang-ss-15-courtyard",
+          "match_method": "name:\\bss\\s*15 courtyard\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.094
+        },
+        {
+          "room_id": "38414848",
+          "room_url": "https://www.airbnb.com/rooms/38414848",
+          "name": "Designer First Subang Courtyard SS15 By IdealHub",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": null,
+          "bathrooms": 1,
+          "rating": 4.63,
+          "review_count": 71,
+          "price_per_night": 230,
+          "price_total": 690,
+          "latitude": 3.07856,
+          "longitude": 101.58685,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-first-subang-ss-15-courtyard",
+          "match_method": "name:\\bfirst\\s*subang\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.102
+        },
+        {
+          "room_id": "1330904576529873818",
+          "room_url": "https://www.airbnb.com/rooms/1330904576529873818",
+          "name": "First Subang E/1-4pax/LRT+Wi-Fi/SS 15 Subang Jaya",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.92,
+          "review_count": 12,
+          "price_per_night": 140,
+          "price_total": 420,
+          "latitude": 3.0782,
+          "longitude": 101.5867,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-first-subang-ss-15-courtyard",
+          "match_method": "name:\\bfirst\\s*subang\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.06
+        },
+        {
+          "room_id": "1491130244816817465",
+          "room_url": "https://www.airbnb.com/rooms/1491130244816817465",
+          "name": "#34 Studio First Subang Courtyard@SS15 LRT(2-5PAX)",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": null,
+          "bathrooms": 1,
+          "rating": 5,
+          "review_count": 3,
+          "price_per_night": 198,
+          "price_total": 594,
+          "latitude": 3.0779,
+          "longitude": 101.5864,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-first-subang-ss-15-courtyard",
+          "match_method": "name:\\bfirst\\s*subang\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.038
+        },
+        {
+          "room_id": "899836073762027401",
+          "room_url": "https://www.airbnb.com/rooms/899836073762027401",
+          "name": "New Studio SS15 Courtyard Projector 100m fr LRT",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": null,
+          "bathrooms": null,
+          "rating": 4.97,
+          "review_count": 31,
+          "price_per_night": 220.33,
+          "price_total": 661,
+          "latitude": 3.078,
+          "longitude": 101.5865,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-first-subang-ss-15-courtyard",
+          "match_method": "name:\\bss\\s*15 courtyard\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.04
+        },
+        {
+          "room_id": "1091736051046494216",
+          "room_url": "https://www.airbnb.com/rooms/1091736051046494216",
+          "name": "#25 Studio next to LRT【SS15 Courtyard, Subang】3PAX",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.75,
+          "review_count": 12,
+          "price_per_night": 186.67,
+          "price_total": 560,
+          "latitude": 3.078,
+          "longitude": 101.5865,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-first-subang-ss-15-courtyard",
+          "match_method": "name:\\bss\\s*15 courtyard\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.04
+        },
+        {
+          "room_id": "1502821360784927754",
+          "room_url": "https://www.airbnb.com/rooms/1502821360784927754",
+          "name": "#32 Studio next to LRT【SS15 Courtyard】2-3PAX",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": null,
+          "bathrooms": 1,
+          "rating": 4.88,
+          "review_count": 8,
+          "price_per_night": 214.33,
+          "price_total": 643,
+          "latitude": 3.07705,
+          "longitude": 101.58604,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-first-subang-ss-15-courtyard",
+          "match_method": "name:\\bss\\s*15 courtyard\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.096
+        },
+        {
+          "room_id": "629345719333916673",
+          "room_url": "https://www.airbnb.com/rooms/629345719333916673",
+          "name": "#17 Studio next to LRT【SS15 Courtyard, Subang】4PAX",
+          "title": "Condo in Subang Jaya",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.83,
+          "review_count": 6,
+          "price_per_night": 191.33,
+          "price_total": 574,
+          "latitude": 3.0770438388710892,
+          "longitude": 101.58578709282848,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-first-subang-ss-15-courtyard",
+          "match_method": "name:\\bss\\s*15 courtyard\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.118
+        },
+        {
+          "room_id": "797428131340882313",
+          "room_url": "https://www.airbnb.com/rooms/797428131340882313",
+          "name": "Studio@SS15 First Subang For 1-4pax/Netflix&Wi-Fi",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.91,
+          "review_count": 99,
+          "price_per_night": 180,
+          "price_total": 540,
+          "latitude": 3.0779,
+          "longitude": 101.5864,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-first-subang-ss-15-courtyard",
+          "match_method": "name:\\bfirst\\s*subang\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.038
+        },
+        {
+          "room_id": "1030876897237039474",
+          "room_url": "https://www.airbnb.com/rooms/1030876897237039474",
+          "name": "#21 Studio next to LRT【SS15 Courtyard, Subang】4PAX",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.5,
+          "review_count": 6,
+          "price_per_night": 191.33,
+          "price_total": 574,
+          "latitude": 3.078,
+          "longitude": 101.5865,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-first-subang-ss-15-courtyard",
+          "match_method": "name:\\bss\\s*15 courtyard\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.04
+        },
+        {
+          "room_id": "1282298304617464640",
+          "room_url": "https://www.airbnb.com/rooms/1282298304617464640",
+          "name": "FirstSubang Courtyard SS15 SubangJaya Taylors SJMC",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 3.9,
+          "review_count": 10,
+          "price_per_night": 145.33,
+          "price_total": 436,
+          "latitude": 3.0777,
+          "longitude": 101.5866,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-first-subang-ss-15-courtyard",
+          "match_method": "name:\\bfirst\\s*subang\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.006
+        },
+        {
+          "room_id": "1791241028040554888",
+          "room_url": "https://www.airbnb.com/rooms/1791241028040554888",
+          "name": "#37 Studio next to LRT【SS15 Courtyard, Subang】2PAX",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": null,
+          "bathrooms": 1,
+          "rating": 0,
+          "review_count": 0,
+          "price_per_night": 186.67,
+          "price_total": 560,
+          "latitude": 3.0782,
+          "longitude": 101.5866,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-first-subang-ss-15-courtyard",
+          "match_method": "name:\\bss\\s*15 courtyard\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.06
+        },
+        {
+          "room_id": "1338772985733863366",
+          "room_url": "https://www.airbnb.com/rooms/1338772985733863366",
+          "name": "FirstSubang SubangJaya Taylors SJMC Sunway Pyramid",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 3.57,
+          "review_count": 7,
+          "price_per_night": 135.33,
+          "price_total": 406,
+          "latitude": 3.0773,
+          "longitude": 101.5867,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-first-subang-ss-15-courtyard",
+          "match_method": "name:\\bfirst\\s*subang\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.041
+        },
+        {
+          "room_id": "1542589701630542314",
+          "room_url": "https://www.airbnb.com/rooms/1542589701630542314",
+          "name": "#15 Studio next to LRT【SS15 Courtyard, Subang】4PAX",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": null,
+          "bathrooms": 1,
+          "rating": 3.75,
+          "review_count": 4,
+          "price_per_night": 192.33,
+          "price_total": 577,
+          "latitude": 3.0779,
+          "longitude": 101.5864,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-first-subang-ss-15-courtyard",
+          "match_method": "name:\\bss\\s*15 courtyard\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.038
+        }
+      ]
+    },
+    "real-dorsett-waterfront-subang": {
+      "name": "Dorsett Waterfront Subang",
+      "area": "sj",
+      "n": 15,
+      "enough": true,
+      "listings": [
+        {
+          "room_id": "1652789434734183074",
+          "room_url": "https://www.airbnb.com/rooms/1652789434734183074",
+          "name": "Premium Lakeview Suite @ Dorsett Waterfront Subang",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 5,
+          "review_count": 5,
+          "price_per_night": 205.33,
+          "price_total": 616,
+          "latitude": 3.0801862693468998,
+          "longitude": 101.59222138448871,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-dorsett-waterfront-subang",
+          "match_method": "name:\\bdorsett\\s*waterfront\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.488
+        },
+        {
+          "room_id": "1816475569807796017",
+          "room_url": "https://www.airbnb.com/rooms/1816475569807796017",
+          "name": "Cloud @ Dorsett Subang - Beside SJMC - Lake View",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 0,
+          "review_count": 0,
+          "price_per_night": 211.33,
+          "price_total": 634,
+          "latitude": 3.0788,
+          "longitude": 101.5943,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-dorsett-waterfront-subang",
+          "match_method": "name:\\bdorsett\\s*subang\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.244
+        },
+        {
+          "room_id": "1674402733402622084",
+          "room_url": "https://www.airbnb.com/rooms/1674402733402622084",
+          "name": "Dorsett Waterfront#Stylish#Parking#Netflix#DS1.02",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 0,
+          "review_count": 0,
+          "price_per_night": 224.67,
+          "price_total": 674,
+          "latitude": 3.08102,
+          "longitude": 101.59517,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-dorsett-waterfront-subang",
+          "match_method": "name:\\bdorsett\\s*waterfront\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.257
+        },
+        {
+          "room_id": "1671546236754544913",
+          "room_url": "https://www.airbnb.com/rooms/1671546236754544913",
+          "name": "Lake View@Dorsett Subang Near SJMC & Sunway Lagoon",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.92,
+          "review_count": 24,
+          "price_per_night": 218,
+          "price_total": 654,
+          "latitude": 3.0797,
+          "longitude": 101.5965,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-dorsett-waterfront-subang",
+          "match_method": "name:\\bdorsett\\s*subang\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.066
+        },
+        {
+          "room_id": "1754184423036585746",
+          "room_url": "https://www.airbnb.com/rooms/1754184423036585746",
+          "name": "DWS07#Mujistyle#Bathtub#2R2B#DorsettWaterfront",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 2,
+          "bathrooms": 2,
+          "rating": 0,
+          "review_count": 0,
+          "price_per_night": 281.67,
+          "price_total": 845,
+          "latitude": 3.0791,
+          "longitude": 101.5951,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-dorsett-waterfront-subang",
+          "match_method": "name:\\bdorsett\\s*waterfront\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.153
+        },
+        {
+          "room_id": "1609407576411840734",
+          "room_url": "https://www.airbnb.com/rooms/1609407576411840734",
+          "name": "Dorsett Subang @ Near SJMC, Inti College &Pyramid",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": null,
+          "bathrooms": 1,
+          "rating": 4.93,
+          "review_count": 14,
+          "price_per_night": 183.33,
+          "price_total": 550,
+          "latitude": 3.0798,
+          "longitude": 101.5965,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-dorsett-waterfront-subang",
+          "match_method": "name:\\bdorsett\\s*subang\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.077
+        },
+        {
+          "room_id": "1721835923082317983",
+          "room_url": "https://www.airbnb.com/rooms/1721835923082317983",
+          "name": "New Lakeview Dorsett Waterfront Subang / SJMC SS12",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 2,
+          "bathrooms": 2,
+          "rating": 5,
+          "review_count": 3,
+          "price_per_night": 275.33,
+          "price_total": 826,
+          "latitude": 3.0795,
+          "longitude": 101.5966,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-dorsett-waterfront-subang",
+          "match_method": "name:\\bdorsett\\s*waterfront\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.045
+        },
+        {
+          "room_id": "1659177488741462097",
+          "room_url": "https://www.airbnb.com/rooms/1659177488741462097",
+          "name": "Cora @ Dorsett Subang - Beside SJMC - Lake View",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.9,
+          "review_count": 10,
+          "price_per_night": 235.33,
+          "price_total": 706,
+          "latitude": 3.0802,
+          "longitude": 101.5947,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-dorsett-waterfront-subang",
+          "match_method": "name:\\bdorsett\\s*subang\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.232
+        },
+        {
+          "room_id": "1721527506257925017",
+          "room_url": "https://www.airbnb.com/rooms/1721527506257925017",
+          "name": "DWS05#ModernDuplex#Bathtub#4pax#Subang",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 1,
+          "bathrooms": 2,
+          "rating": 4.8,
+          "review_count": 5,
+          "price_per_night": 246.67,
+          "price_total": 740,
+          "latitude": 3.0796,
+          "longitude": 101.5955,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-dorsett-waterfront-subang",
+          "match_method": "name:\\bdws\\d{2}\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.122
+        },
+        {
+          "room_id": "1754055013538979177",
+          "room_url": "https://www.airbnb.com/rooms/1754055013538979177",
+          "name": "DWS06#2R2B#4pax#Bathtub#DorsettWaterfront",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 2,
+          "bathrooms": 2,
+          "rating": 0,
+          "review_count": 0,
+          "price_per_night": 281.67,
+          "price_total": 845,
+          "latitude": 3.08,
+          "longitude": 101.5965,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-dorsett-waterfront-subang",
+          "match_method": "name:\\bdorsett\\s*waterfront\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.099
+        },
+        {
+          "room_id": "1685876663633354013",
+          "room_url": "https://www.airbnb.com/rooms/1685876663633354013",
+          "name": "DWS03#1R1B#2pax#Bathtub#DorsettWaterfront",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 5,
+          "review_count": 6,
+          "price_per_night": 232.67,
+          "price_total": 698,
+          "latitude": 3.0799,
+          "longitude": 101.5948,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-dorsett-waterfront-subang",
+          "match_method": "name:\\bdorsett\\s*waterfront\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.206
+        },
+        {
+          "room_id": "1639119691314387295",
+          "room_url": "https://www.airbnb.com/rooms/1639119691314387295",
+          "name": "Cozy Studio Apartment @ Dorsett Subang | SJMC | Sunway | INTI",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 5,
+          "review_count": 13,
+          "price_per_night": 286.67,
+          "price_total": 860,
+          "latitude": 3.0802,
+          "longitude": 101.5947,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-dorsett-waterfront-subang",
+          "match_method": "name:\\bdorsett\\s*subang\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.232
+        },
+        {
+          "room_id": "1795575984925294816",
+          "room_url": "https://www.airbnb.com/rooms/1795575984925294816",
+          "name": "Bayu @ Dorsett Subang - Beside SJMC - Pool View",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 0,
+          "review_count": 0,
+          "price_per_night": 245.33,
+          "price_total": 736,
+          "latitude": 3.0799,
+          "longitude": 101.5948,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-dorsett-waterfront-subang",
+          "match_method": "name:\\bdorsett\\s*subang\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.206
+        },
+        {
+          "room_id": "1650557354153874982",
+          "room_url": "https://www.airbnb.com/rooms/1650557354153874982",
+          "name": "Belle @ Dorsett Subang - Beside SJMC - City View",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.71,
+          "review_count": 7,
+          "price_per_night": 198.33,
+          "price_total": 595,
+          "latitude": 3.0795,
+          "longitude": 101.5966,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-dorsett-waterfront-subang",
+          "match_method": "name:\\bdorsett\\s*subang\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.045
+        },
+        {
+          "room_id": "1674287505458839036",
+          "room_url": "https://www.airbnb.com/rooms/1674287505458839036",
+          "name": "Dorsett Waterfront#Stylish#Parking#Netflix#DS1.01",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.33,
+          "review_count": 3,
+          "price_per_night": 224.67,
+          "price_total": 674,
+          "latitude": 3.08,
+          "longitude": 101.5948,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-dorsett-waterfront-subang",
+          "match_method": "name:\\bdorsett\\s*waterfront\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.211
+        }
+      ]
+    },
+    "real-wisma-infinitum": {
+      "name": "Wisma Infinitum",
+      "area": "klcc",
+      "n": 6,
+      "enough": true,
+      "listings": [
+        {
+          "room_id": "807676590561127647",
+          "room_url": "https://www.airbnb.com/rooms/807676590561127647",
+          "name": "NEW & Elegant 1BR HighFloor Netflix WiFi LargeMall",
+          "title": "Apartment in Kampung Bahru",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.81,
+          "review_count": 80,
+          "price_per_night": 218,
+          "price_total": 654,
+          "latitude": 3.1612,
+          "longitude": 101.701,
+          "search_area": "klcc",
+          "search_areas": [
+            "klcc"
+          ],
+          "match_id": "real-wisma-infinitum",
+          "match_method": "geo-unique",
+          "match_conf": "geo-unique",
+          "match_dist": 0.049
+        },
+        {
+          "room_id": "1004306667531433112",
+          "room_url": "https://www.airbnb.com/rooms/1004306667531433112",
+          "name": "Infinitum Colony KLCC Couple",
+          "title": "Apartment in Kampung Bahru",
+          "bedrooms": null,
+          "bathrooms": 1,
+          "rating": 4.67,
+          "review_count": 153,
+          "price_per_night": 124.33,
+          "price_total": 373,
+          "latitude": 3.1608,
+          "longitude": 101.7004,
+          "search_area": "klcc",
+          "search_areas": [
+            "klcc"
+          ],
+          "match_id": "real-wisma-infinitum",
+          "match_method": "name:\\binfinitum\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.032
+        },
+        {
+          "room_id": "1763839532291122408",
+          "room_url": "https://www.airbnb.com/rooms/1763839532291122408",
+          "name": "Cozy Studio Cinema & PS5 I Pool With KLCC View",
+          "title": "Apartment in Kampung Bahru",
+          "bedrooms": null,
+          "bathrooms": 1,
+          "rating": 5,
+          "review_count": 10,
+          "price_per_night": 192.67,
+          "price_total": 578,
+          "latitude": 3.1612,
+          "longitude": 101.7004,
+          "search_area": "klcc",
+          "search_areas": [
+            "klcc"
+          ],
+          "match_id": "real-wisma-infinitum",
+          "match_method": "geo-unique",
+          "match_conf": "geo-unique",
+          "match_dist": 0.035
+        },
+        {
+          "room_id": "1715793665405494074",
+          "room_url": "https://www.airbnb.com/rooms/1715793665405494074",
+          "name": "@72S KLCC Sky Pool View | Standard Studio",
+          "title": "Apartment in Kampung Bahru",
+          "bedrooms": null,
+          "bathrooms": 1,
+          "rating": 5,
+          "review_count": 3,
+          "price_per_night": 139,
+          "price_total": 417,
+          "latitude": 3.1608,
+          "longitude": 101.7004,
+          "search_area": "klcc",
+          "search_areas": [
+            "klcc"
+          ],
+          "match_id": "real-wisma-infinitum",
+          "match_method": "geo-unique",
+          "match_conf": "geo-unique",
+          "match_dist": 0.032
+        },
+        {
+          "room_id": "1802691585654629910",
+          "room_url": "https://www.airbnb.com/rooms/1802691585654629910",
+          "name": "Studio Cinema, PS5, Kid Play with Pool KLCC View",
+          "title": "Apartment in Kampung Bahru",
+          "bedrooms": null,
+          "bathrooms": 1,
+          "rating": 0,
+          "review_count": 0,
+          "price_per_night": 207.33,
+          "price_total": 622,
+          "latitude": 3.1608,
+          "longitude": 101.7004,
+          "search_area": "klcc",
+          "search_areas": [
+            "klcc"
+          ],
+          "match_id": "real-wisma-infinitum",
+          "match_method": "geo-unique",
+          "match_conf": "geo-unique",
+          "match_dist": 0.032
+        },
+        {
+          "room_id": "1759755062712129267",
+          "room_url": "https://www.airbnb.com/rooms/1759755062712129267",
+          "name": "@9BA1801 BEST SKY Pool KLTower KLCC Merdeka Tower",
+          "title": "Apartment in Kampung Bahru",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 5,
+          "review_count": 8,
+          "price_per_night": 232.67,
+          "price_total": 698,
+          "latitude": 3.1608,
+          "longitude": 101.7004,
+          "search_area": "klcc",
+          "search_areas": [
+            "klcc"
+          ],
+          "match_id": "real-wisma-infinitum",
+          "match_method": "geo-unique",
+          "match_conf": "geo-unique",
+          "match_dist": 0.032
+        }
+      ]
+    },
+    "real-grand-subang-jaya-ss15": {
+      "name": "Grand Subang Jaya @ Ss15",
+      "area": "sj",
+      "n": 3,
+      "enough": true,
+      "listings": [
+        {
+          "room_id": "663445591917971889",
+          "room_url": "https://www.airbnb.com/rooms/663445591917971889",
+          "name": "The Grand SS15 2 Bedrooms (Wifi+Netflix)",
+          "title": "Condo in Subang Jaya",
+          "bedrooms": 2,
+          "bathrooms": 1,
+          "rating": 4.81,
+          "review_count": 91,
+          "price_per_night": 201.67,
+          "price_total": 605,
+          "latitude": 3.07625,
+          "longitude": 101.59018,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-grand-subang-jaya-ss15",
+          "match_method": "name:\\bthe grand ss\\s*15\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.198
+        },
+        {
+          "room_id": "640974545149182778",
+          "room_url": "https://www.airbnb.com/rooms/640974545149182778",
+          "name": "The Grand SS15 Sunway 4Pax 2BRs City View (WiFi)",
+          "title": "Condo in Subang Jaya",
+          "bedrooms": 2,
+          "bathrooms": 1,
+          "rating": 4.92,
+          "review_count": 50,
+          "price_per_night": 290.33,
+          "price_total": 871,
+          "latitude": 3.0742,
+          "longitude": 101.5889,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-grand-subang-jaya-ss15",
+          "match_method": "name:\\bthe grand ss\\s*15\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.109
+        },
+        {
+          "room_id": "1672992365543052392",
+          "room_url": "https://www.airbnb.com/rooms/1672992365543052392",
+          "name": "Lovely VinTage @ SS15 The Grand Subang",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 2,
+          "bathrooms": 1,
+          "rating": 0,
+          "review_count": 0,
+          "price_per_night": 410,
+          "price_total": 1230,
+          "latitude": 3.073106952612826,
+          "longitude": 101.5885138991526,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-grand-subang-jaya-ss15",
+          "match_method": "name:\\bgrand subang\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.214
+        }
+      ]
+    },
+    "real-subang-avenue": {
+      "name": "Subang Avenue",
+      "area": "sj",
+      "n": 3,
+      "enough": true,
+      "listings": [
+        {
+          "room_id": "1303318070857170222",
+          "room_url": "https://www.airbnb.com/rooms/1303318070857170222",
+          "name": "Subang Avenue F/1-9pax/5mins LRT/Gym+Pool",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 3,
+          "bathrooms": 2,
+          "rating": 4.91,
+          "review_count": 54,
+          "price_per_night": 239,
+          "price_total": 717,
+          "latitude": 3.0824,
+          "longitude": 101.5891,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-subang-avenue",
+          "match_method": "name:\\bsubang avenue\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.041
+        },
+        {
+          "room_id": "1079982276451635299",
+          "room_url": "https://www.airbnb.com/rooms/1079982276451635299",
+          "name": "Apt 1-8pax/Subang Avenue/5 mins LRT/Wi-Fi/Gym&Pool",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 3,
+          "bathrooms": 2,
+          "rating": 4.89,
+          "review_count": 36,
+          "price_per_night": 277.67,
+          "price_total": 833,
+          "latitude": 3.0824,
+          "longitude": 101.5891,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-subang-avenue",
+          "match_method": "name:\\bsubang avenue\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.041
+        },
+        {
+          "room_id": "1373643350306733189",
+          "room_url": "https://www.airbnb.com/rooms/1373643350306733189",
+          "name": "Subang Avenue C/1-9pax/5mins LRT/Gym+Pool",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 3,
+          "bathrooms": 2,
+          "rating": 4.83,
+          "review_count": 6,
+          "price_per_night": 211.67,
+          "price_total": 635,
+          "latitude": 3.0824,
+          "longitude": 101.5891,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-subang-avenue",
+          "match_method": "name:\\bsubang avenue\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.041
+        }
+      ]
+    },
+    "real-camellia-serviced-suites": {
+      "name": "Camellia Serviced Suites",
+      "area": "bss",
+      "n": 2,
+      "enough": false,
+      "listings": [
+        {
+          "room_id": "620225994386006098",
+          "room_url": "https://www.airbnb.com/rooms/620225994386006098",
+          "name": "Camelia-5min to University LRT, Free Weekly Clean",
+          "title": "Condo in Kuala Lumpur",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.73,
+          "review_count": 37,
+          "price_per_night": 159,
+          "price_total": 477,
+          "latitude": 3.1108,
+          "longitude": 101.66632,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-camellia-serviced-suites",
+          "match_method": "name:\\bcamelia\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.301
+        },
+        {
+          "room_id": "603760315047429865",
+          "room_url": "https://www.airbnb.com/rooms/603760315047429865",
+          "name": "Camelia-5min to KL Gateway LRT, Free Weekly Clean",
+          "title": "Condo in Kuala Lumpur",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.82,
+          "review_count": 38,
+          "price_per_night": 160.67,
+          "price_total": 482,
+          "latitude": 3.10969,
+          "longitude": 101.66482,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-camellia-serviced-suites",
+          "match_method": "name:\\bcamelia\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.109
+        }
+      ]
+    },
+    "real-kl-eco-city": {
+      "name": "Kl Eco City",
+      "area": "bss",
+      "n": 2,
+      "enough": false,
+      "listings": [
+        {
+          "room_id": "821419302007848799",
+          "room_url": "https://www.airbnb.com/rooms/821419302007848799",
+          "name": "Modern Classy Suite I ViiA KLEC | MidValley #S1BR",
+          "title": "Apartment in Kuala Lumpur",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.95,
+          "review_count": 20,
+          "price_per_night": 245.33,
+          "price_total": 736,
+          "latitude": 3.11881,
+          "longitude": 101.67311,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-kl-eco-city",
+          "match_method": "name:\\bklec\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.116
+        },
+        {
+          "room_id": "1502576287302358524",
+          "room_url": "https://www.airbnb.com/rooms/1502576287302358524",
+          "name": "ViiA Residence KL MidValley by UcomeStay",
+          "title": "Apartment in Kuala Lumpur",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.85,
+          "review_count": 20,
+          "price_per_night": 274.33,
+          "price_total": 823,
+          "latitude": 3.1176,
+          "longitude": 101.6732,
+          "search_area": "bss",
+          "search_areas": [
+            "bss"
+          ],
+          "match_id": "real-kl-eco-city",
+          "match_method": "name:\\bviia\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.061
+        }
+      ]
+    },
+    "real-residensi-agile-delima": {
+      "name": "Residensi Agile Delima",
+      "area": "klcc",
+      "n": 1,
+      "enough": false,
+      "listings": [
+        {
+          "room_id": "1465133906375711746",
+          "room_url": "https://www.airbnb.com/rooms/1465133906375711746",
+          "name": "Agile KLCCView High Floor 3Pax/10Min to Pavillion",
+          "title": "Apartment in Kuala Lumpur",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "rating": 4.98,
+          "review_count": 65,
+          "price_per_night": 279.33,
+          "price_total": 838,
+          "latitude": 3.1465,
+          "longitude": 101.7208,
+          "search_area": "klcc",
+          "search_areas": [
+            "klcc"
+          ],
+          "match_id": "real-residensi-agile-delima",
+          "match_method": "name:\\bagile\\b",
+          "match_conf": "name-far",
+          "match_dist": 0.694
+        }
+      ]
+    },
+    "real-e-tiara": {
+      "name": "E-Tiara",
+      "area": "sj",
+      "n": 1,
+      "enough": false,
+      "listings": [
+        {
+          "room_id": "1798297783938978064",
+          "room_url": "https://www.airbnb.com/rooms/1798297783938978064",
+          "name": "E-Tiara/1-6pax/2-bedroom Unit/Wi-Fi+LRT/YSW Homes",
+          "title": "Apartment in Subang Jaya",
+          "bedrooms": 2,
+          "bathrooms": 2,
+          "rating": 0,
+          "review_count": 0,
+          "price_per_night": 222,
+          "price_total": 666,
+          "latitude": 3.0828,
+          "longitude": 101.5897,
+          "search_area": "ss15",
+          "search_areas": [
+            "ss15"
+          ],
+          "match_id": "real-e-tiara",
+          "match_method": "name:\\be-?tiara\\b",
+          "match_conf": "name+dist",
+          "match_dist": 0.007
+        }
+      ]
+    }
+  },
+  "unmatched_n": 244
+}

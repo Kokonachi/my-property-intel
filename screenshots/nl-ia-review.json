@@ -1,0 +1,138 @@
+{
+  "m390-zh": {
+    "errors": [],
+    "console": [],
+    "pages": {
+      "home": {
+        "html_lang": "zh-Hans",
+        "hscroll": false,
+        "cards": 2,
+        "first_id": "score-card-nl-river-park-2b",
+        "river_chips": "第1–2套 · 贷90%\n+RM103\n第3套起 · 贷70%\n+RM825",
+        "aviera_chips": "第1–2套 · 贷90%\n倒贴 RM21\n第3套起 · 贷70%\n+RM593",
+        "has_intro": 0,
+        "scores": [
+          "7.4\n可看",
+          "7.1\n可看"
+        ]
+      },
+      "panel": {
+        "panel": 1,
+        "pin": 1,
+        "active": 1,
+        "cta": 1,
+        "text": "×\n新盘\nRiver Park 2B\n7.4\n可看\nRM 783,600 起\nRM965 psf\n第1–2套 · 贷90%\n+RM103\n第3套起 · 贷70%\n+RM825\n毛回报 5.14%\n净回报 4.04%\n↓ 比区域低 0.80 个百分点\n2027\n99年\n452\nKTM 300 m\n\n2 房 812 sqft，租金可覆盖第1–2套（贷90%）与第3套起（贷70%）月供\n\n看户型与折扣",
+        "hscroll": false,
+        "stray_cluster": 0
+      },
+      "panel_aviera": "×\n新盘\nAviera Bangsar South\n7.1\n可看\nRM 666,000 起\nRM1,227 psf\n第1–2套 · 贷90%\n倒贴 RM21\n第3套起 · 贷70%\n+RM593\n毛回报 4.94%\n净回报 3.80%\n↓ 比区域低 1.00 个百分点\n2031\n永久\n1,033\nLRT 750 m\n\n2 房 543 sqft，租金可覆盖第3套起（贷70%）月供；第1–2套（贷90%）每月倒贴约 RM21\n\n看户型与折扣",
+      "aviera_pin_visible": 1,
+      "river_pin_visible": 1
+    },
+    "error_count": 0,
+    "console_error_count": 0,
+    "console_sample": []
+  },
+  "m390-en": {
+    "errors": [],
+    "console": [],
+    "pages": {
+      "home": {
+        "html_lang": "en",
+        "hscroll": false,
+        "cards": 2,
+        "first_id": "score-card-nl-river-park-2b",
+        "river_chips": "1st–2nd · 90%\n+RM103\n3rd+ · 70%\n+RM825",
+        "aviera_chips": "1st–2nd · 90%\n−RM21\n3rd+ · 70%\n+RM593",
+        "has_intro": 0,
+        "scores": [
+          "7.4\nWorth a look",
+          "7.1\nWorth a look"
+        ]
+      },
+      "panel": {
+        "panel": 1,
+        "pin": 1,
+        "active": 1,
+        "cta": 1,
+        "text": "×\nNEW\nRiver Park 2B\n7.4\nWorth a look\nRM 783,600 from\nRM965 psf\n1st–2nd · 90%\n+RM103\n3rd+ · 70%\n+RM825\nGross 5.14%\nNet 4.04%\n↓ 0.80 pp below the area\n2027\n99-yr\n452\nKTM 300 m\n\n2-bed 812 sqft: rent covers both 1st–2nd-home (90%) and 3rd+ (70%) instalments\n\nUnit types and discount",
+        "hscroll": false,
+        "stray_cluster": 0
+      },
+      "panel_aviera": "×\nNEW\nAviera Bangsar South\n7.1\nWorth a look\nRM 666,000 from\nRM1,227 psf\n1st–2nd · 90%\n−RM21\n3rd+ · 70%\n+RM593\nGross 4.94%\nNet 3.80%\n↓ 1.00 pp below the area\n2031\nFreehold\n1,033\nLRT 750 m\n\n2-bed 543 sqft: rent covers a 3rd+ (70%) instalment; a 1st–2nd-home (90%) loan is about RM21/mo short\n\nUnit types and discount",
+      "aviera_pin_visible": 1,
+      "river_pin_visible": 1
+    },
+    "error_count": 0,
+    "console_error_count": 0,
+    "console_sample": []
+  },
+  "d1440-zh": {
+    "errors": [],
+    "console": [],
+    "pages": {
+      "home": {
+        "html_lang": "zh-Hans",
+        "hscroll": false,
+        "cards": 2,
+        "first_id": "score-card-nl-river-park-2b",
+        "river_chips": "第1–2套 · 贷90%\n+RM103\n第3套起 · 贷70%\n+RM825",
+        "aviera_chips": "第1–2套 · 贷90%\n倒贴 RM21\n第3套起 · 贷70%\n+RM593",
+        "has_intro": 0,
+        "scores": [
+          "7.4\n可看",
+          "7.1\n可看"
+        ]
+      },
+      "panel": {
+        "panel": 1,
+        "pin": 1,
+        "active": 1,
+        "cta": 1,
+        "text": "×\n新盘\nRiver Park 2B\n7.4\n可看\nRM 783,600 起\nRM965 psf\n第1–2套 · 贷90%\n+RM103\n第3套起 · 贷70%\n+RM825\n毛回报 5.14%\n净回报 4.04%\n↓ 比区域低 0.80 个百分点\n2027\n99年\n452\nKTM 300 m\n\n2 房 812 sqft，租金可覆盖第1–2套（贷90%）与第3套起（贷70%）月供\n\n看户型与折扣",
+        "hscroll": false,
+        "stray_cluster": 0
+      },
+      "panel_aviera": "×\n新盘\nAviera Bangsar South\n7.1\n可看\nRM 666,000 起\nRM1,227 psf\n第1–2套 · 贷90%\n倒贴 RM21\n第3套起 · 贷70%\n+RM593\n毛回报 4.94%\n净回报 3.80%\n↓ 比区域低 1.00 个百分点\n2031\n永久\n1,033\nLRT 750 m\n\n2 房 543 sqft，租金可覆盖第3套起（贷70%）月供；第1–2套（贷90%）每月倒贴约 RM21\n\n看户型与折扣",
+      "aviera_pin_visible": 1,
+      "river_pin_visible": 1
+    },
+    "error_count": 0,
+    "console_error_count": 0,
+    "console_sample": []
+  },
+  "d1440-en": {
+    "errors": [],
+    "console": [],
+    "pages": {
+      "home": {
+        "html_lang": "en",
+        "hscroll": false,
+        "cards": 2,
+        "first_id": "score-card-nl-river-park-2b",
+        "river_chips": "1st–2nd · 90%\n+RM103\n3rd+ · 70%\n+RM825",
+        "aviera_chips": "1st–2nd · 90%\n−RM21\n3rd+ · 70%\n+RM593",
+        "has_intro": 0,
+        "scores": [
+          "7.4\nWorth a look",
+          "7.1\nWorth a look"
+        ]
+      },
+      "panel": {
+        "panel": 1,
+        "pin": 1,
+        "active": 1,
+        "cta": 1,
+        "text": "×\nNEW\nRiver Park 2B\n7.4\nWorth a look\nRM 783,600 from\nRM965 psf\n1st–2nd · 90%\n+RM103\n3rd+ · 70%\n+RM825\nGross 5.14%\nNet 4.04%\n↓ 0.80 pp below the area\n2027\n99-yr\n452\nKTM 300 m\n\n2-bed 812 sqft: rent covers both 1st–2nd-home (90%) and 3rd+ (70%) instalments\n\nUnit types and discount",
+        "hscroll": false,
+        "stray_cluster": 0
+      },
+      "panel_aviera": "×\nNEW\nAviera Bangsar South\n7.1\nWorth a look\nRM 666,000 from\nRM1,227 psf\n1st–2nd · 90%\n−RM21\n3rd+ · 70%\n+RM593\nGross 4.94%\nNet 3.80%\n↓ 1.00 pp below the area\n2031\nFreehold\n1,033\nLRT 750 m\n\n2-bed 543 sqft: rent covers a 3rd+ (70%) instalment; a 1st–2nd-home (90%) loan is about RM21/mo short\n\nUnit types and discount",
+      "aviera_pin_visible": 1,
+      "river_pin_visible": 1
+    },
+    "error_count": 0,
+    "console_error_count": 0,
+    "console_sample": []
+  }
+}

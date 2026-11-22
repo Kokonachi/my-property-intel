@@ -1,0 +1,56 @@
+{
+  "actor": "openclawai/airbnb-scraper",
+  "stay": "2026-12-08..11 3n 2 adults MYR entire home",
+  "search": {
+    "bss": {
+      "run": "n4mG3GcCZFTDBd4AA",
+      "ds": "EHBjg0DLyGF2qfdRp",
+      "n": 80,
+      "file": "bss_listings.json",
+      "mode": "search_by_url"
+    },
+    "klcc": {
+      "run": "rQ5t6M2oKhptb66QW",
+      "ds": "ITf0gmvxhnqjSf1U7",
+      "n": 120,
+      "file": "klcc_listings.json",
+      "mode": "search_by_url"
+    },
+    "ss15": {
+      "run": "6Abu3Jyqqf7ZXfyAm",
+      "ds": "tnYYVWPOdu3hBmbRl",
+      "n": 120,
+      "file": "ss15_listings.json",
+      "mode": "search_by_url"
+    }
+  },
+  "failed_bbox": {
+    "bss": {
+      "run": "rE7WuL5mjIqJYYpoe",
+      "ds": "hk3TCTrQajpw5sc0j"
+    },
+    "klcc": {
+      "run": "LCnq2by60zLIdkghz",
+      "ds": "VfZd4ck1J4552MybC"
+    },
+    "ss15": {
+      "run": "fVfD4KiyFqRMyp3D1",
+      "ds": "0dUlflDasyNV2eUCw"
+    }
+  },
+  "entire_home": true,
+  "room_filter_dropped": 0,
+  "retries_2026_11_15": {
+    "room_details": {
+      "run": "KLadI1PqelGFcdUAe",
+      "ds": "v8tbkCKMQbCLzLSTi",
+      "result": "HTTP 400 / ChallengeError listing payload missing; billed no records"
+    },
+    "room_calendar": {
+      "run": "z3odl59x3ZAVvuRRw",
+      "ds": "l6Rq9bd23zqmg5gGF",
+      "result": "HTTP 400; billed no records"
+    },
+    "note": "Occupancy remains an area assumption. Search results already used entire-home URLs."
+  }
+}

@@ -1,0 +1,1139 @@
+{
+ "real-pavilion-hilltop": {
+  "src": "photos/real-pavilion-hilltop.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/pavilion-hilltop-for-rent-by-benn-tan-502431096",
+  "w": 800,
+  "h": 517
+ },
+ "real-seni-mont-kiara": {
+  "src": "photos/real-seni-mont-kiara.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/seni-mont-kiara-for-rent-by-peter-sek-502236745",
+  "w": 800,
+  "h": 600
+ },
+ "real-kiara-163": {
+  "src": "photos/real-kiara-163.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/ooak-suites-kiara-163-for-rent-by-josh-gan-502371581",
+  "w": 800,
+  "h": 600
+ },
+ "real-residensi-allevia": {
+  "src": "photos/real-residensi-allevia.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/allevia-for-rent-by-monica-wong-502413790",
+  "w": 800,
+  "h": 374
+ },
+ "real-11-mont-kiara-mk11": {
+  "src": "photos/real-11-mont-kiara-mk11.webp",
+  "kind": "exterior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/11-mont-kiara-mk11-for-rent-by-mr-wan-502416540",
+  "w": 800,
+  "h": 600
+ },
+ "real-28-mont-kiara": {
+  "src": "photos/real-28-mont-kiara.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/28-mont-kiara-mk28-for-rent-by-kc-lim-102259617",
+  "w": 800,
+  "h": 600
+ },
+ "real-residensi-22-mont-kiara": {
+  "src": "photos/real-residensi-22-mont-kiara.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/residensi-22-for-rent-by-linus-chan-502281887",
+  "w": 800,
+  "h": 600
+ },
+ "real-mont-kiara-palma": {
+  "src": "photos/real-mont-kiara-palma.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/mont-kiara-palma-for-rent-by-dion-diong-502338343",
+  "w": 800,
+  "h": 600
+ },
+ "real-arcoris-residences": {
+  "src": "photos/real-arcoris-residences.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=arcoris+residences",
+  "w": 600,
+  "h": 449
+ },
+ "real-trinity-pentamont-mont-kiara": {
+  "src": "photos/real-trinity-pentamont-mont-kiara.webp",
+  "kind": "exterior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/trinity-pentamont-for-rent-by-casandra-wong-502432234",
+  "w": 800,
+  "h": 600
+ },
+ "real-pangsapuri-servis-conlay": {
+  "src": "photos/real-pangsapuri-servis-conlay.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-the-manor-kl": {
+  "src": "photos/real-the-manor-kl.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/the-manor-for-rent-by-alan-tai-502329290",
+  "w": 800,
+  "h": 600
+ },
+ "real-platinum-suites-the-face-suites": {
+  "src": "photos/real-platinum-suites-the-face-suites.webp",
+  "kind": "exterior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/the-face-suites-platinum-suites-for-rent-by-carol-lim-502400632",
+  "w": 800,
+  "h": 600
+ },
+ "real-residensi-agile-delima": {
+  "src": "photos/real-residensi-agile-delima.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/agile-bukit-bintang-for-rent-by-man-tan-501461413",
+  "w": 800,
+  "h": 600
+ },
+ "real-quill-residence": {
+  "src": "photos/real-quill-residence.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/quill-residence-for-rent-by-enrico-tan-502207494",
+  "w": 800,
+  "h": 600
+ },
+ "real-residensi-trx-1-tun-razak-exchange": {
+  "src": "photos/real-residensi-trx-1-tun-razak-exchange.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/trx-residences-for-rent-by-zi-yi-502433260",
+  "w": 800,
+  "h": 450
+ },
+ "real-oxley-towers": {
+  "src": "photos/real-oxley-towers.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=oxley+towers",
+  "w": 360,
+  "h": 480
+ },
+ "real-sunway-velocity-two": {
+  "src": "photos/real-sunway-velocity-two.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/sunway-velocity-two-for-rent-by-aaron-tan-502131669",
+  "w": 800,
+  "h": 600
+ },
+ "real-wisma-infinitum": {
+  "src": "photos/real-wisma-infinitum.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-10-stonor": {
+  "src": "photos/real-10-stonor.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/10-stonor-for-rent-by-angie-ng-502342093",
+  "w": 800,
+  "h": 600
+ },
+ "real-jamnah-view": {
+  "src": "photos/real-jamnah-view.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-kl-eco-city": {
+  "src": "photos/real-kl-eco-city.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=kl+eco+city",
+  "w": 543,
+  "h": 354
+ },
+ "real-residensi-38-bangsar": {
+  "src": "photos/real-residensi-38-bangsar.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/residensi-38-bangsar-for-rent-by-jay-selvam-502415095",
+  "w": 450,
+  "h": 600
+ },
+ "real-bangsar-permai": {
+  "src": "photos/real-bangsar-permai.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=bangsar+permai",
+  "w": 360,
+  "h": 480
+ },
+ "real-sri-penaga": {
+  "src": "photos/real-sri-penaga.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=sri+penaga",
+  "w": 640,
+  "h": 480
+ },
+ "real-laurel-residence": {
+  "src": "photos/real-laurel-residence.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=laurel+residence",
+  "w": 360,
+  "h": 480
+ },
+ "real-southlink": {
+  "src": "photos/real-southlink.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=southlink",
+  "w": 360,
+  "h": 480
+ },
+ "real-residensi-era-novum": {
+  "src": "photos/real-residensi-era-novum.webp",
+  "kind": "exterior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/novum-for-rent-by-rex-tan-502321761",
+  "w": 450,
+  "h": 600
+ },
+ "real-southview-residence": {
+  "src": "photos/real-southview-residence.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=southview+residence",
+  "w": 640,
+  "h": 480
+ },
+ "real-the-goodwood-residence": {
+  "src": "photos/real-the-goodwood-residence.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=the+goodwood+residence",
+  "w": 360,
+  "h": 480
+ },
+ "real-taman-bukit-angkasa-angkasapuri-flat": {
+  "src": "photos/real-taman-bukit-angkasa-angkasapuri-flat.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-pantai-panorama": {
+  "src": "photos/real-pantai-panorama.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=pantai+panorama",
+  "w": 640,
+  "h": 360
+ },
+ "real-taman-bukit-angkasa-taman-angkasapuri-flat": {
+  "src": "photos/real-taman-bukit-angkasa-taman-angkasapuri-flat.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-kl-gateway": {
+  "src": "photos/real-kl-gateway.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/kl-gateway-residences-for-rent-by-sujatha-m-502406110",
+  "w": 600,
+  "h": 600
+ },
+ "real-kuala-lumpur-gateway": {
+  "src": "photos/real-kuala-lumpur-gateway.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/kl-gateway-residences-for-rent-by-sujatha-m-502406110",
+  "w": 600,
+  "h": 600
+ },
+ "real-kuala-lumpur-gateway-menara-suezcap": {
+  "src": "photos/real-kuala-lumpur-gateway-menara-suezcap.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/kl-gateway-residences-for-rent-by-sujatha-m-502406110",
+  "w": 600,
+  "h": 600
+ },
+ "real-pkns-17-kampung-kerinchi": {
+  "src": "photos/real-pkns-17-kampung-kerinchi.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-residensi-kerinchi": {
+  "src": "photos/real-residensi-kerinchi.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=residensi+kerinchi",
+  "w": 402,
+  "h": 480
+ },
+ "real-camellia-serviced-suites": {
+  "src": "photos/real-camellia-serviced-suites.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=camellia+serviced+suites",
+  "w": 640,
+  "h": 480
+ },
+ "real-putra-heights-landed": {
+  "src": "photos/real-putra-heights-landed.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/houses-for-rent?q=putra+heights",
+  "w": 640,
+  "h": 359
+ },
+ "real-ss19-landed": {
+  "src": "photos/real-ss19-landed.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/houses-for-rent?q=ss19",
+  "w": 640,
+  "h": 198
+ },
+ "real-usj-11-landed": {
+  "src": "photos/real-usj-11-landed.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/houses-for-rent?q=usj+11",
+  "w": 360,
+  "h": 480
+ },
+ "real-usj-3-landed": {
+  "src": "photos/real-usj-3-landed.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-usj-2-landed": {
+  "src": "photos/real-usj-2-landed.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/houses-for-rent?q=usj+2",
+  "w": 640,
+  "h": 476
+ },
+ "real-usj-6-landed": {
+  "src": "photos/real-usj-6-landed.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/houses-for-rent?q=usj+6",
+  "w": 360,
+  "h": 480
+ },
+ "real-ss18-landed": {
+  "src": "photos/real-ss18-landed.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/houses-for-rent?q=ss18",
+  "w": 640,
+  "h": 479
+ },
+ "real-rhythm-avenue": {
+  "src": "photos/real-rhythm-avenue.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=rhythm+avenue",
+  "w": 640,
+  "h": 480
+ },
+ "real-harmoni-1": {
+  "src": "photos/real-harmoni-1.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=harmoni+1",
+  "w": 640,
+  "h": 480
+ },
+ "real-ss14-landed": {
+  "src": "photos/real-ss14-landed.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/houses-for-rent?q=ss14",
+  "w": 640,
+  "h": 480
+ },
+ "real-ss17-landed": {
+  "src": "photos/real-ss17-landed.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-subang-perdana-goodyear-court-10": {
+  "src": "photos/real-subang-perdana-goodyear-court-10.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/subang-perdana-goodyear-court-10-for-rent-by-archie-chin-502357243",
+  "w": 600,
+  "h": 600
+ },
+ "real-usj-4-landed": {
+  "src": "photos/real-usj-4-landed.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/houses-for-rent?q=usj+4",
+  "w": 640,
+  "h": 479
+ },
+ "real-main-place-residence": {
+  "src": "photos/real-main-place-residence.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/main-place-residence-for-rent-by-vin-mukdawichit-502307745",
+  "w": 800,
+  "h": 600
+ },
+ "real-casa-subang": {
+  "src": "photos/real-casa-subang.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=casa+subang",
+  "w": 640,
+  "h": 479
+ },
+ "real-usj-12-landed": {
+  "src": "photos/real-usj-12-landed.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/houses-for-rent?q=usj+12",
+  "w": 360,
+  "h": 480
+ },
+ "real-kenwingston-usj-1": {
+  "src": "photos/real-kenwingston-usj-1.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=kenwingston+usj+1",
+  "w": 360,
+  "h": 480
+ },
+ "real-usj-9-landed": {
+  "src": "photos/real-usj-9-landed.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/houses-for-rent?q=usj+9",
+  "w": 360,
+  "h": 480
+ },
+ "real-subang-perdana-goodyear-court-6": {
+  "src": "photos/real-subang-perdana-goodyear-court-6.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=subang+perdana+goodyear+court+6",
+  "w": 640,
+  "h": 480
+ },
+ "real-ss15-landed": {
+  "src": "photos/real-ss15-landed.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-subang-perdana-goodyear-court-8": {
+  "src": "photos/real-subang-perdana-goodyear-court-8.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=subang+perdana+goodyear+court+8",
+  "w": 360,
+  "h": 480
+ },
+ "real-edumetro-empira-remix-2-subang-jaya": {
+  "src": "photos/real-edumetro-empira-remix-2-subang-jaya.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-impian-meridian": {
+  "src": "photos/real-impian-meridian.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=impian+meridian",
+  "w": 402,
+  "h": 301
+ },
+ "real-usj-heights-landed": {
+  "src": "photos/real-usj-heights-landed.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/houses-for-rent?q=usj+heights",
+  "w": 640,
+  "h": 480
+ },
+ "real-casa-tiara": {
+  "src": "photos/real-casa-tiara.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=casa+tiara",
+  "w": 640,
+  "h": 480
+ },
+ "real-usj-13-landed": {
+  "src": "photos/real-usj-13-landed.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/houses-for-rent?q=usj+13",
+  "w": 360,
+  "h": 480
+ },
+ "real-subang-perdana-goodyear-court-9": {
+  "src": "photos/real-subang-perdana-goodyear-court-9.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=subang+perdana+goodyear+court+9",
+  "w": 640,
+  "h": 480
+ },
+ "real-subang-perdana-goodyear-court-3": {
+  "src": "photos/real-subang-perdana-goodyear-court-3.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=subang+perdana+goodyear+court+3",
+  "w": 640,
+  "h": 480
+ },
+ "real-ss12-landed": {
+  "src": "photos/real-ss12-landed.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/houses-for-rent?q=ss12",
+  "w": 640,
+  "h": 360
+ },
+ "real-subang-avenue": {
+  "src": "photos/real-subang-avenue.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=subang+avenue",
+  "w": 640,
+  "h": 480
+ },
+ "real-sri-mutiara-putra-height": {
+  "src": "photos/real-sri-mutiara-putra-height.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-the-grand-subang-ss-13-subang-jaya": {
+  "src": "photos/real-the-grand-subang-ss-13-subang-jaya.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/the-grand-subang-jaya-ss13-for-rent-by-justin-wong-502403495",
+  "w": 800,
+  "h": 600
+ },
+ "real-subang-perdana-goodyear-court-7": {
+  "src": "photos/real-subang-perdana-goodyear-court-7.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=subang+perdana+goodyear+court+7",
+  "w": 640,
+  "h": 480
+ },
+ "real-d-seven-lagoon-perdana": {
+  "src": "photos/real-d-seven-lagoon-perdana.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-usj-5-landed": {
+  "src": "photos/real-usj-5-landed.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-angsana": {
+  "src": "photos/real-angsana.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-damen-usj-service-apartment": {
+  "src": "photos/real-damen-usj-service-apartment.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-seri-tanjung": {
+  "src": "photos/real-seri-tanjung.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=seri+tanjung",
+  "w": 640,
+  "h": 479
+ },
+ "real-usj-14-landed": {
+  "src": "photos/real-usj-14-landed.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/houses-for-rent?q=usj+14",
+  "w": 381,
+  "h": 480
+ },
+ "real-usj-20-landed": {
+  "src": "photos/real-usj-20-landed.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/houses-for-rent?q=usj+20",
+  "w": 640,
+  "h": 480
+ },
+ "real-jati-2": {
+  "src": "photos/real-jati-2.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=jati+2",
+  "w": 360,
+  "h": 480
+ },
+ "real-e-tiara": {
+  "src": "photos/real-e-tiara.webp",
+  "kind": "exterior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/e-tiara-for-rent-by-justin-wong-502331163",
+  "w": 513,
+  "h": 600
+ },
+ "real-seri-kayan": {
+  "src": "photos/real-seri-kayan.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=seri+kayan",
+  "w": 640,
+  "h": 479
+ },
+ "real-arcadia": {
+  "src": "photos/real-arcadia.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/arcadia-for-rent-by-alyna-ang-502423839",
+  "w": 800,
+  "h": 600
+ },
+ "real-usj-one-avenue": {
+  "src": "photos/real-usj-one-avenue.webp",
+  "kind": "exterior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/usj-one-avenue-condo-for-rent-by-celia-tan-502335272",
+  "w": 800,
+  "h": 600
+ },
+ "real-usj-17-landed": {
+  "src": "photos/real-usj-17-landed.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-subang-perdana-goodyear-court-1": {
+  "src": "photos/real-subang-perdana-goodyear-court-1.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-subang-olives-residence": {
+  "src": "photos/real-subang-olives-residence.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=subang+olives+residence",
+  "w": 640,
+  "h": 480
+ },
+ "real-the-boulevard": {
+  "src": "photos/real-the-boulevard.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=the+boulevard",
+  "w": 360,
+  "h": 480
+ },
+ "real-subang-perdana-goodyear-court-2": {
+  "src": "photos/real-subang-perdana-goodyear-court-2.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-the-regina": {
+  "src": "photos/real-the-regina.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=the+regina",
+  "w": 360,
+  "h": 480
+ },
+ "real-union-suites": {
+  "src": "photos/real-union-suites.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=union+suites",
+  "w": 640,
+  "h": 478
+ },
+ "real-first-subang-ss-15-courtyard": {
+  "src": "photos/real-first-subang-ss-15-courtyard.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=first+subang+ss+15+courtyard",
+  "w": 640,
+  "h": 470
+ },
+ "real-sri-nipah": {
+  "src": "photos/real-sri-nipah.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-putra-residence": {
+  "src": "photos/real-putra-residence.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=putra+residence",
+  "w": 640,
+  "h": 480
+ },
+ "real-taman-subang-permai-landed": {
+  "src": "photos/real-taman-subang-permai-landed.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/houses-for-rent?q=taman+subang+permai",
+  "w": 640,
+  "h": 480
+ },
+ "real-saujana-residency": {
+  "src": "photos/real-saujana-residency.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-subang-perdana-goodyear-court-5": null,
+ "real-taman-wangsa-baiduri-landed": {
+  "src": "photos/real-taman-wangsa-baiduri-landed.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-sjcc-lot-15-ss-16-subang-jaya": {
+  "src": "photos/real-sjcc-lot-15-ss-16-subang-jaya.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-grand-subang-jaya-ss15": {
+  "src": "photos/real-grand-subang-jaya-ss15.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/the-grand-subang-jaya-ss15-for-rent-by-cathryn-koo-502240837",
+  "w": 800,
+  "h": 600
+ },
+ "real-lafite-apartment": {
+  "src": "photos/real-lafite-apartment.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/subang-jaya-lafite-for-rent-by-thomas-ngu-200525423",
+  "w": 800,
+  "h": 600
+ },
+ "real-subang-parkhomes": {
+  "src": "photos/real-subang-parkhomes.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=subang+parkhomes",
+  "w": 360,
+  "h": 480
+ },
+ "real-taman-subang-mewah-landed": {
+  "src": "photos/real-taman-subang-mewah-landed.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-pinggiran-usj-landed": {
+  "src": "photos/real-pinggiran-usj-landed.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/houses-for-rent?q=pinggiran+usj",
+  "w": 640,
+  "h": 426
+ },
+ "real-usj-22-landed": {
+  "src": "photos/real-usj-22-landed.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-permai-usj-1-coral-court": {
+  "src": "photos/real-permai-usj-1-coral-court.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=permai+usj+1+coral+court",
+  "w": 640,
+  "h": 480
+ },
+ "real-usj-18-landed": {
+  "src": "photos/real-usj-18-landed.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/houses-for-rent?q=usj+18",
+  "w": 640,
+  "h": 480
+ },
+ "real-summer-villa": {
+  "src": "photos/real-summer-villa.webp",
+  "kind": "exterior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/summer-villa-for-rent-by-cs-wong-502370153",
+  "w": 800,
+  "h": 600
+ },
+ "real-the-glades-landed": {
+  "src": "photos/real-the-glades-landed.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-ss13-flats": {
+  "src": "photos/real-ss13-flats.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-keranji": {
+  "src": "photos/real-keranji.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-usj-16-landed": {
+  "src": "photos/real-usj-16-landed.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-usj-1-landed": {
+  "src": "photos/real-usj-1-landed.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/houses-for-rent?q=usj+1",
+  "w": 640,
+  "h": 426
+ },
+ "real-jati-1": {
+  "src": "photos/real-jati-1.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-pandora-service-residence": {
+  "src": "photos/real-pandora-service-residence.webp",
+  "kind": "interior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/pandora-tropicana-metropark-for-rent-by-cs-chua-100788587",
+  "w": 800,
+  "h": 600
+ },
+ "real-paloma-service-residence": {
+  "src": "photos/real-paloma-service-residence.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-sime-uep-industrial-park-landed": {
+  "src": "photos/real-sime-uep-industrial-park-landed.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-laman-baiduri-subang-jaya": {
+  "src": "photos/real-laman-baiduri-subang-jaya.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=laman+baiduri+subang+jaya",
+  "w": 640,
+  "h": 480
+ },
+ "real-goodyear-court-4-fasa-3": {
+  "src": "photos/real-goodyear-court-4-fasa-3.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-meranti": {
+  "src": "photos/real-meranti.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-usj-one-you-one": {
+  "src": "photos/real-usj-one-you-one.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=usj+one+you+one",
+  "w": 640,
+  "h": 480
+ },
+ "real-sri-bayu": {
+  "src": "photos/real-sri-bayu.webp",
+  "kind": "exterior",
+  "source": "PropertyGuru listing",
+  "url": "https://www.propertyguru.com.my/property-listing/sri-bayu-condominium-for-rent-by-jason-502033455",
+  "w": 800,
+  "h": 536
+ },
+ "real-usj-23-landed": {
+  "src": "photos/real-usj-23-landed.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-indera-subang": {
+  "src": "photos/real-indera-subang.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-tanamera-usj-landed": {
+  "src": "photos/real-tanamera-usj-landed.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-dorsett-waterfront-subang": {
+  "src": "photos/real-dorsett-waterfront-subang.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=dorsett+waterfront+subang",
+  "w": 640,
+  "h": 480
+ },
+ "real-fairville": {
+  "src": "photos/real-fairville.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=fairville",
+  "w": 360,
+  "h": 480
+ },
+ "real-subang-soho-one-soho": {
+  "src": "photos/real-subang-soho-one-soho.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=subang+soho+one+soho",
+  "w": 640,
+  "h": 468
+ },
+ "real-spring-summer-villa": {
+  "src": "photos/real-spring-summer-villa.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-isola": {
+  "src": "photos/real-isola.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=isola",
+  "w": 640,
+  "h": 480
+ },
+ "real-empire-subang": {
+  "src": "photos/real-empire-subang.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=empire+subang",
+  "w": 640,
+  "h": 480
+ },
+ "real-tropika-paradise": {
+  "src": "photos/real-tropika-paradise.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-menara-geno": {
+  "src": "photos/real-menara-geno.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=menara+geno",
+  "w": 640,
+  "h": 480
+ },
+ "real-usj-8-landed": {
+  "src": "photos/real-usj-8-landed.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-ss16": {
+  "src": "photos/real-ss16.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=ss16",
+  "w": 360,
+  "h": 480
+ },
+ "real-my-place": {
+  "src": "photos/real-my-place.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=my+place",
+  "w": 640,
+  "h": 480
+ },
+ "real-armani-soho": {
+  "src": "photos/real-armani-soho.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=armani+soho",
+  "w": 360,
+  "h": 480
+ },
+ "real-pangsapuri-seri-kayan-pinggiran-usj": {
+  "src": "photos/real-pangsapuri-seri-kayan-pinggiran-usj.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-riverdale-usj-one-park": {
+  "src": "photos/real-riverdale-usj-one-park.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=riverdale+usj+one+park",
+  "w": 360,
+  "h": 480
+ },
+ "real-subang-jaya-apartment": {
+  "src": "photos/real-subang-jaya-apartment.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=subang+jaya+apartment",
+  "w": 640,
+  "h": 480
+ },
+ "real-starville": {
+  "src": "photos/real-starville.webp",
+  "kind": "listing",
+  "source": "Mudah.my listing",
+  "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=starville",
+  "w": 360,
+  "h": 480
+ },
+ "real-usj-26-landed": {
+  "src": "photos/real-usj-26-landed.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ },
+ "real-the-park-residences-1": {
+  "src": "photos/real-the-park-residences-1.webp",
+  "kind": "aerial",
+  "source": "Esri World Imagery (Maxar, Earthstar Geographics)",
+  "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9",
+  "w": 800,
+  "h": 600
+ }
+}

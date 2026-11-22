@@ -1,0 +1,2034 @@
+{
+  "m390-zh": {
+    "errors": [],
+    "pages": {
+      "home": {
+        "hscroll": false,
+        "cards": 2
+      },
+      "river": {
+        "hscroll": false,
+        "chromeBottom": 52,
+        "mapH": 844,
+        "panel": {
+          "top": 444,
+          "height": 384,
+          "bottom": 828,
+          "bg": "rgba(255, 255, 255, 0.64)",
+          "blur": "none",
+          "maxH": "489.52px",
+          "heightCss": "384px",
+          "mapVisibleBelow": 16
+        },
+        "pillCount": 139,
+        "minPillTop": -638,
+        "clipped": [
+          {
+            "text": "5.8%",
+            "top": -564,
+            "bottom": -564,
+            "left": 2,
+            "right": 2,
+            "underChrome": false,
+            "gapBelowChrome": -616
+          },
+          {
+            "text": "6.1%",
+            "top": -590,
+            "bottom": -590,
+            "left": 40,
+            "right": 40,
+            "underChrome": false,
+            "gapBelowChrome": -642
+          },
+          {
+            "text": "6.3%",
+            "top": -509,
+            "bottom": -509,
+            "left": -158,
+            "right": -158,
+            "underChrome": false,
+            "gapBelowChrome": -561
+          },
+          {
+            "text": "6.8%",
+            "top": -626,
+            "bottom": -626,
+            "left": -110,
+            "right": -110,
+            "underChrome": false,
+            "gapBelowChrome": -678
+          },
+          {
+            "text": "6.0%",
+            "top": -561,
+            "bottom": -561,
+            "left": -32,
+            "right": -32,
+            "underChrome": false,
+            "gapBelowChrome": -613
+          },
+          {
+            "text": "6.9%",
+            "top": -638,
+            "bottom": -638,
+            "left": -81,
+            "right": -81,
+            "underChrome": false,
+            "gapBelowChrome": -690
+          },
+          {
+            "text": "5.2%",
+            "top": -542,
+            "bottom": -542,
+            "left": -119,
+            "right": -119,
+            "underChrome": false,
+            "gapBelowChrome": -594
+          },
+          {
+            "text": "5.2%",
+            "top": -538,
+            "bottom": -538,
+            "left": -54,
+            "right": -54,
+            "underChrome": false,
+            "gapBelowChrome": -590
+          },
+          {
+            "text": "4.3%",
+            "top": -546,
+            "bottom": -546,
+            "left": -88,
+            "right": -88,
+            "underChrome": false,
+            "gapBelowChrome": -598
+          },
+          {
+            "text": "7.4%",
+            "top": -589,
+            "bottom": -589,
+            "left": -144,
+            "right": -144,
+            "underChrome": false,
+            "gapBelowChrome": -641
+          },
+          {
+            "text": "",
+            "top": -433,
+            "bottom": -433,
+            "left": 850,
+            "right": 850,
+            "underChrome": false,
+            "gapBelowChrome": -485
+          },
+          {
+            "text": "4.8%",
+            "top": -283,
+            "bottom": -283,
+            "left": 1028,
+            "right": 1028,
+            "underChrome": false,
+            "gapBelowChrome": -335
+          },
+          {
+            "text": "2.9%",
+            "top": -433,
+            "bottom": -433,
+            "left": 939,
+            "right": 939,
+            "underChrome": false,
+            "gapBelowChrome": -485
+          },
+          {
+            "text": "4.1%",
+            "top": -279,
+            "bottom": -279,
+            "left": 998,
+            "right": 998,
+            "underChrome": false,
+            "gapBelowChrome": -331
+          },
+          {
+            "text": "4.3%",
+            "top": -423,
+            "bottom": -423,
+            "left": 898,
+            "right": 898,
+            "underChrome": false,
+            "gapBelowChrome": -475
+          },
+          {
+            "text": "4.9%",
+            "top": -138,
+            "bottom": -138,
+            "left": 1019,
+            "right": 1019,
+            "underChrome": false,
+            "gapBelowChrome": -190
+          },
+          {
+            "text": "4.4%",
+            "top": -392,
+            "bottom": -392,
+            "left": 960,
+            "right": 960,
+            "underChrome": false,
+            "gapBelowChrome": -444
+          },
+          {
+            "text": "",
+            "top": -428,
+            "bottom": -428,
+            "left": 716,
+            "right": 716,
+            "underChrome": false,
+            "gapBelowChrome": -480
+          },
+          {
+            "text": "3.5%",
+            "top": -303,
+            "bottom": -303,
+            "left": 1052,
+            "right": 1052,
+            "underChrome": false,
+            "gapBelowChrome": -355
+          },
+          {
+            "text": "",
+            "top": -165,
+            "bottom": -165,
+            "left": 169,
+            "right": 169,
+            "underChrome": false,
+            "gapBelowChrome": -217
+          },
+          {
+            "text": "5.0%",
+            "top": -110,
+            "bottom": -110,
+            "left": 130,
+            "right": 130,
+            "underChrome": false,
+            "gapBelowChrome": -162
+          }
+        ],
+        "northern": [
+          {
+            "text": "6.9%",
+            "top": -638,
+            "bottom": -638,
+            "left": -81,
+            "right": -81,
+            "underChrome": false,
+            "gapBelowChrome": -690
+          },
+          {
+            "text": "6.8%",
+            "top": -626,
+            "bottom": -626,
+            "left": -110,
+            "right": -110,
+            "underChrome": false,
+            "gapBelowChrome": -678
+          },
+          {
+            "text": "6.1%",
+            "top": -590,
+            "bottom": -590,
+            "left": 40,
+            "right": 40,
+            "underChrome": false,
+            "gapBelowChrome": -642
+          },
+          {
+            "text": "7.4%",
+            "top": -589,
+            "bottom": -589,
+            "left": -144,
+            "right": -144,
+            "underChrome": false,
+            "gapBelowChrome": -641
+          }
+        ],
+        "panel_text": "×\n新盘\nRiver Park 2B\n7.4\n可看\nRM 783,600 起\nRM965 psf\n第1–2套 · 贷90%\n+RM103\n第3套起 · 贷70%\n+RM825\n毛回报 5.14%\n净回报 4.04%\n↓ 比区域低 0.80 个百分点\n2027\n99年\n452\nKTM 300 m\n\n2 房 812 sqft，租金可覆盖第1–2套（贷90%）与第3套起（贷70%）月供\n\n看户型与折扣",
+        "active_pin": 1,
+        "stray_cluster": 0
+      },
+      "aviera": {
+        "hscroll": false,
+        "chromeBottom": 52,
+        "mapH": 844,
+        "panel": {
+          "top": 444,
+          "height": 384,
+          "bottom": 828,
+          "bg": "rgba(255, 255, 255, 0.64)",
+          "blur": "none",
+          "maxH": "489.52px",
+          "heightCss": "384px",
+          "mapVisibleBelow": 16
+        },
+        "pillCount": 139,
+        "minPillTop": -640,
+        "clipped": [
+          {
+            "text": "5.8%",
+            "top": -564,
+            "bottom": -564,
+            "left": 7,
+            "right": 7,
+            "underChrome": false,
+            "gapBelowChrome": -616
+          },
+          {
+            "text": "6.1%",
+            "top": -591,
+            "bottom": -591,
+            "left": 42,
+            "right": 42,
+            "underChrome": false,
+            "gapBelowChrome": -643
+          },
+          {
+            "text": "6.3%",
+            "top": -509,
+            "bottom": -509,
+            "left": -158,
+            "right": -158,
+            "underChrome": false,
+            "gapBelowChrome": -561
+          },
+          {
+            "text": "6.8%",
+            "top": -624,
+            "bottom": -624,
+            "left": -116,
+            "right": -116,
+            "underChrome": false,
+            "gapBelowChrome": -676
+          },
+          {
+            "text": "6.0%",
+            "top": -566,
+            "bottom": -566,
+            "left": -35,
+            "right": -35,
+            "underChrome": false,
+            "gapBelowChrome": -618
+          },
+          {
+            "text": "6.9%",
+            "top": -640,
+            "bottom": -640,
+            "left": -75,
+            "right": -75,
+            "underChrome": false,
+            "gapBelowChrome": -692
+          },
+          {
+            "text": "5.2%",
+            "top": -541,
+            "bottom": -541,
+            "left": -129,
+            "right": -129,
+            "underChrome": false,
+            "gapBelowChrome": -593
+          },
+          {
+            "text": "5.2%",
+            "top": -526,
+            "bottom": -526,
+            "left": -52,
+            "right": -52,
+            "underChrome": false,
+            "gapBelowChrome": -578
+          },
+          {
+            "text": "4.3%",
+            "top": -553,
+            "bottom": -553,
+            "left": -86,
+            "right": -86,
+            "underChrome": false,
+            "gapBelowChrome": -605
+          },
+          {
+            "text": "7.4%",
+            "top": -589,
+            "bottom": -589,
+            "left": -144,
+            "right": -144,
+            "underChrome": false,
+            "gapBelowChrome": -641
+          },
+          {
+            "text": "",
+            "top": -433,
+            "bottom": -433,
+            "left": 850,
+            "right": 850,
+            "underChrome": false,
+            "gapBelowChrome": -485
+          },
+          {
+            "text": "4.8%",
+            "top": -275,
+            "bottom": -275,
+            "left": 1032,
+            "right": 1032,
+            "underChrome": false,
+            "gapBelowChrome": -327
+          },
+          {
+            "text": "2.9%",
+            "top": -433,
+            "bottom": -433,
+            "left": 939,
+            "right": 939,
+            "underChrome": false,
+            "gapBelowChrome": -485
+          },
+          {
+            "text": "4.1%",
+            "top": -277,
+            "bottom": -277,
+            "left": 989,
+            "right": 989,
+            "underChrome": false,
+            "gapBelowChrome": -329
+          },
+          {
+            "text": "4.3%",
+            "top": -423,
+            "bottom": -423,
+            "left": 898,
+            "right": 898,
+            "underChrome": false,
+            "gapBelowChrome": -475
+          },
+          {
+            "text": "4.9%",
+            "top": -138,
+            "bottom": -138,
+            "left": 1019,
+            "right": 1019,
+            "underChrome": false,
+            "gapBelowChrome": -190
+          },
+          {
+            "text": "4.4%",
+            "top": -392,
+            "bottom": -392,
+            "left": 960,
+            "right": 960,
+            "underChrome": false,
+            "gapBelowChrome": -444
+          },
+          {
+            "text": "",
+            "top": -427,
+            "bottom": -427,
+            "left": 716,
+            "right": 716,
+            "underChrome": false,
+            "gapBelowChrome": -479
+          },
+          {
+            "text": "3.5%",
+            "top": -311,
+            "bottom": -311,
+            "left": 1058,
+            "right": 1058,
+            "underChrome": false,
+            "gapBelowChrome": -363
+          },
+          {
+            "text": "",
+            "top": -164,
+            "bottom": -164,
+            "left": 169,
+            "right": 169,
+            "underChrome": false,
+            "gapBelowChrome": -216
+          },
+          {
+            "text": "5.0%",
+            "top": -110,
+            "bottom": -110,
+            "left": 130,
+            "right": 130,
+            "underChrome": false,
+            "gapBelowChrome": -162
+          }
+        ],
+        "northern": [
+          {
+            "text": "6.9%",
+            "top": -640,
+            "bottom": -640,
+            "left": -75,
+            "right": -75,
+            "underChrome": false,
+            "gapBelowChrome": -692
+          },
+          {
+            "text": "6.8%",
+            "top": -624,
+            "bottom": -624,
+            "left": -116,
+            "right": -116,
+            "underChrome": false,
+            "gapBelowChrome": -676
+          },
+          {
+            "text": "6.1%",
+            "top": -591,
+            "bottom": -591,
+            "left": 42,
+            "right": 42,
+            "underChrome": false,
+            "gapBelowChrome": -643
+          },
+          {
+            "text": "7.4%",
+            "top": -589,
+            "bottom": -589,
+            "left": -144,
+            "right": -144,
+            "underChrome": false,
+            "gapBelowChrome": -641
+          }
+        ],
+        "panel_text": "×\n新盘\nAviera Bangsar South\n7.1\n可看\nRM 666,000 起\nRM1,227 psf\n第1–2套 · 贷90%\n倒贴 RM21\n第3套起 · 贷70%\n+RM593\n毛回报 4.94%\n净回报 3.80%\n↓ 比区域低 1.00 个百分点\n2031\n永久\n1,033\nLRT 750 m\n\n2 房 543 sqft，租金可覆盖第3套起（贷70%）月供；第1–2套（贷90%）每月倒贴约 RM21\n\n看户型与折扣",
+        "active_pin": 1,
+        "stray_cluster": 0
+      }
+    },
+    "error_count": 0
+  },
+  "m390-en": {
+    "errors": [],
+    "pages": {
+      "home": {
+        "hscroll": false,
+        "cards": 2
+      },
+      "river": {
+        "hscroll": false,
+        "chromeBottom": 52,
+        "mapH": 844,
+        "panel": {
+          "top": 444,
+          "height": 384,
+          "bottom": 828,
+          "bg": "rgba(255, 255, 255, 0.64)",
+          "blur": "none",
+          "maxH": "489.52px",
+          "heightCss": "384px",
+          "mapVisibleBelow": 16
+        },
+        "pillCount": 139,
+        "minPillTop": -638,
+        "clipped": [
+          {
+            "text": "5.8%",
+            "top": -564,
+            "bottom": -564,
+            "left": 2,
+            "right": 2,
+            "underChrome": false,
+            "gapBelowChrome": -616
+          },
+          {
+            "text": "6.1%",
+            "top": -590,
+            "bottom": -590,
+            "left": 40,
+            "right": 40,
+            "underChrome": false,
+            "gapBelowChrome": -642
+          },
+          {
+            "text": "6.3%",
+            "top": -509,
+            "bottom": -509,
+            "left": -158,
+            "right": -158,
+            "underChrome": false,
+            "gapBelowChrome": -561
+          },
+          {
+            "text": "6.8%",
+            "top": -626,
+            "bottom": -626,
+            "left": -110,
+            "right": -110,
+            "underChrome": false,
+            "gapBelowChrome": -678
+          },
+          {
+            "text": "6.0%",
+            "top": -561,
+            "bottom": -561,
+            "left": -32,
+            "right": -32,
+            "underChrome": false,
+            "gapBelowChrome": -613
+          },
+          {
+            "text": "6.9%",
+            "top": -638,
+            "bottom": -638,
+            "left": -81,
+            "right": -81,
+            "underChrome": false,
+            "gapBelowChrome": -690
+          },
+          {
+            "text": "5.2%",
+            "top": -542,
+            "bottom": -542,
+            "left": -119,
+            "right": -119,
+            "underChrome": false,
+            "gapBelowChrome": -594
+          },
+          {
+            "text": "5.2%",
+            "top": -538,
+            "bottom": -538,
+            "left": -54,
+            "right": -54,
+            "underChrome": false,
+            "gapBelowChrome": -590
+          },
+          {
+            "text": "4.3%",
+            "top": -546,
+            "bottom": -546,
+            "left": -88,
+            "right": -88,
+            "underChrome": false,
+            "gapBelowChrome": -598
+          },
+          {
+            "text": "7.4%",
+            "top": -589,
+            "bottom": -589,
+            "left": -144,
+            "right": -144,
+            "underChrome": false,
+            "gapBelowChrome": -641
+          },
+          {
+            "text": "",
+            "top": -433,
+            "bottom": -433,
+            "left": 850,
+            "right": 850,
+            "underChrome": false,
+            "gapBelowChrome": -485
+          },
+          {
+            "text": "4.8%",
+            "top": -283,
+            "bottom": -283,
+            "left": 1028,
+            "right": 1028,
+            "underChrome": false,
+            "gapBelowChrome": -335
+          },
+          {
+            "text": "2.9%",
+            "top": -433,
+            "bottom": -433,
+            "left": 939,
+            "right": 939,
+            "underChrome": false,
+            "gapBelowChrome": -485
+          },
+          {
+            "text": "4.1%",
+            "top": -279,
+            "bottom": -279,
+            "left": 998,
+            "right": 998,
+            "underChrome": false,
+            "gapBelowChrome": -331
+          },
+          {
+            "text": "4.3%",
+            "top": -423,
+            "bottom": -423,
+            "left": 898,
+            "right": 898,
+            "underChrome": false,
+            "gapBelowChrome": -475
+          },
+          {
+            "text": "4.9%",
+            "top": -138,
+            "bottom": -138,
+            "left": 1019,
+            "right": 1019,
+            "underChrome": false,
+            "gapBelowChrome": -190
+          },
+          {
+            "text": "4.4%",
+            "top": -392,
+            "bottom": -392,
+            "left": 960,
+            "right": 960,
+            "underChrome": false,
+            "gapBelowChrome": -444
+          },
+          {
+            "text": "",
+            "top": -428,
+            "bottom": -428,
+            "left": 716,
+            "right": 716,
+            "underChrome": false,
+            "gapBelowChrome": -480
+          },
+          {
+            "text": "3.5%",
+            "top": -303,
+            "bottom": -303,
+            "left": 1052,
+            "right": 1052,
+            "underChrome": false,
+            "gapBelowChrome": -355
+          },
+          {
+            "text": "",
+            "top": -165,
+            "bottom": -165,
+            "left": 169,
+            "right": 169,
+            "underChrome": false,
+            "gapBelowChrome": -217
+          },
+          {
+            "text": "5.0%",
+            "top": -110,
+            "bottom": -110,
+            "left": 130,
+            "right": 130,
+            "underChrome": false,
+            "gapBelowChrome": -162
+          }
+        ],
+        "northern": [
+          {
+            "text": "6.9%",
+            "top": -638,
+            "bottom": -638,
+            "left": -81,
+            "right": -81,
+            "underChrome": false,
+            "gapBelowChrome": -690
+          },
+          {
+            "text": "6.8%",
+            "top": -626,
+            "bottom": -626,
+            "left": -110,
+            "right": -110,
+            "underChrome": false,
+            "gapBelowChrome": -678
+          },
+          {
+            "text": "6.1%",
+            "top": -590,
+            "bottom": -590,
+            "left": 40,
+            "right": 40,
+            "underChrome": false,
+            "gapBelowChrome": -642
+          },
+          {
+            "text": "7.4%",
+            "top": -589,
+            "bottom": -589,
+            "left": -144,
+            "right": -144,
+            "underChrome": false,
+            "gapBelowChrome": -641
+          }
+        ],
+        "panel_text": "×\nNEW\nRiver Park 2B\n7.4\nWorth a look\nRM 783,600 from\nRM965 psf\n1st–2nd · 90%\n+RM103\n3rd+ · 70%\n+RM825\nGross 5.14%\nNet 4.04%\n↓ 0.80 pp below the area\n2027\n99-yr\n452\nKTM 300 m\n\n2-bed 812 sqft: rent covers both 1st–2nd-home (90%) and 3rd+ (70%) instalments\n\nUnit types and discount",
+        "active_pin": 1,
+        "stray_cluster": 0
+      },
+      "aviera": {
+        "hscroll": false,
+        "chromeBottom": 52,
+        "mapH": 844,
+        "panel": {
+          "top": 444,
+          "height": 384,
+          "bottom": 828,
+          "bg": "rgba(255, 255, 255, 0.64)",
+          "blur": "none",
+          "maxH": "489.52px",
+          "heightCss": "384px",
+          "mapVisibleBelow": 16
+        },
+        "pillCount": 139,
+        "minPillTop": -640,
+        "clipped": [
+          {
+            "text": "5.8%",
+            "top": -564,
+            "bottom": -564,
+            "left": 7,
+            "right": 7,
+            "underChrome": false,
+            "gapBelowChrome": -616
+          },
+          {
+            "text": "6.1%",
+            "top": -591,
+            "bottom": -591,
+            "left": 42,
+            "right": 42,
+            "underChrome": false,
+            "gapBelowChrome": -643
+          },
+          {
+            "text": "6.3%",
+            "top": -509,
+            "bottom": -509,
+            "left": -158,
+            "right": -158,
+            "underChrome": false,
+            "gapBelowChrome": -561
+          },
+          {
+            "text": "6.8%",
+            "top": -624,
+            "bottom": -624,
+            "left": -116,
+            "right": -116,
+            "underChrome": false,
+            "gapBelowChrome": -676
+          },
+          {
+            "text": "6.0%",
+            "top": -566,
+            "bottom": -566,
+            "left": -35,
+            "right": -35,
+            "underChrome": false,
+            "gapBelowChrome": -618
+          },
+          {
+            "text": "6.9%",
+            "top": -640,
+            "bottom": -640,
+            "left": -75,
+            "right": -75,
+            "underChrome": false,
+            "gapBelowChrome": -692
+          },
+          {
+            "text": "5.2%",
+            "top": -541,
+            "bottom": -541,
+            "left": -129,
+            "right": -129,
+            "underChrome": false,
+            "gapBelowChrome": -593
+          },
+          {
+            "text": "5.2%",
+            "top": -526,
+            "bottom": -526,
+            "left": -52,
+            "right": -52,
+            "underChrome": false,
+            "gapBelowChrome": -578
+          },
+          {
+            "text": "4.3%",
+            "top": -553,
+            "bottom": -553,
+            "left": -86,
+            "right": -86,
+            "underChrome": false,
+            "gapBelowChrome": -605
+          },
+          {
+            "text": "7.4%",
+            "top": -589,
+            "bottom": -589,
+            "left": -144,
+            "right": -144,
+            "underChrome": false,
+            "gapBelowChrome": -641
+          },
+          {
+            "text": "",
+            "top": -433,
+            "bottom": -433,
+            "left": 850,
+            "right": 850,
+            "underChrome": false,
+            "gapBelowChrome": -485
+          },
+          {
+            "text": "4.8%",
+            "top": -275,
+            "bottom": -275,
+            "left": 1032,
+            "right": 1032,
+            "underChrome": false,
+            "gapBelowChrome": -327
+          },
+          {
+            "text": "2.9%",
+            "top": -433,
+            "bottom": -433,
+            "left": 939,
+            "right": 939,
+            "underChrome": false,
+            "gapBelowChrome": -485
+          },
+          {
+            "text": "4.1%",
+            "top": -277,
+            "bottom": -277,
+            "left": 989,
+            "right": 989,
+            "underChrome": false,
+            "gapBelowChrome": -329
+          },
+          {
+            "text": "4.3%",
+            "top": -423,
+            "bottom": -423,
+            "left": 898,
+            "right": 898,
+            "underChrome": false,
+            "gapBelowChrome": -475
+          },
+          {
+            "text": "4.9%",
+            "top": -138,
+            "bottom": -138,
+            "left": 1019,
+            "right": 1019,
+            "underChrome": false,
+            "gapBelowChrome": -190
+          },
+          {
+            "text": "4.4%",
+            "top": -392,
+            "bottom": -392,
+            "left": 960,
+            "right": 960,
+            "underChrome": false,
+            "gapBelowChrome": -444
+          },
+          {
+            "text": "",
+            "top": -427,
+            "bottom": -427,
+            "left": 716,
+            "right": 716,
+            "underChrome": false,
+            "gapBelowChrome": -479
+          },
+          {
+            "text": "3.5%",
+            "top": -311,
+            "bottom": -311,
+            "left": 1058,
+            "right": 1058,
+            "underChrome": false,
+            "gapBelowChrome": -363
+          },
+          {
+            "text": "",
+            "top": -164,
+            "bottom": -164,
+            "left": 169,
+            "right": 169,
+            "underChrome": false,
+            "gapBelowChrome": -216
+          },
+          {
+            "text": "5.0%",
+            "top": -110,
+            "bottom": -110,
+            "left": 130,
+            "right": 130,
+            "underChrome": false,
+            "gapBelowChrome": -162
+          }
+        ],
+        "northern": [
+          {
+            "text": "6.9%",
+            "top": -640,
+            "bottom": -640,
+            "left": -75,
+            "right": -75,
+            "underChrome": false,
+            "gapBelowChrome": -692
+          },
+          {
+            "text": "6.8%",
+            "top": -624,
+            "bottom": -624,
+            "left": -116,
+            "right": -116,
+            "underChrome": false,
+            "gapBelowChrome": -676
+          },
+          {
+            "text": "6.1%",
+            "top": -591,
+            "bottom": -591,
+            "left": 42,
+            "right": 42,
+            "underChrome": false,
+            "gapBelowChrome": -643
+          },
+          {
+            "text": "7.4%",
+            "top": -589,
+            "bottom": -589,
+            "left": -144,
+            "right": -144,
+            "underChrome": false,
+            "gapBelowChrome": -641
+          }
+        ],
+        "panel_text": "×\nNEW\nAviera Bangsar South\n7.1\nWorth a look\nRM 666,000 from\nRM1,227 psf\n1st–2nd · 90%\n−RM21\n3rd+ · 70%\n+RM593\nGross 4.94%\nNet 3.80%\n↓ 1.00 pp below the area\n2031\nFreehold\n1,033\nLRT 750 m\n\n2-bed 543 sqft: rent covers a 3rd+ (70%) instalment; a 1st–2nd-home (90%) loan is about RM21",
+        "active_pin": 1,
+        "stray_cluster": 0
+      }
+    },
+    "error_count": 0
+  },
+  "d1440-zh": {
+    "errors": [],
+    "pages": {
+      "home": {
+        "hscroll": false,
+        "cards": 2
+      },
+      "river": {
+        "hscroll": false,
+        "chromeBottom": 52,
+        "mapH": 900,
+        "panel": {
+          "top": 70,
+          "height": 422,
+          "bottom": 491,
+          "bg": "rgba(255, 255, 255, 0.62)",
+          "blur": "none",
+          "maxH": "818.4px",
+          "heightCss": "421.5px",
+          "mapVisibleBelow": 409
+        },
+        "pillCount": 139,
+        "minPillTop": -1387,
+        "clipped": [
+          {
+            "text": "5.8%",
+            "top": -1238,
+            "bottom": -1238,
+            "left": 141,
+            "right": 141,
+            "underChrome": false,
+            "gapBelowChrome": -1290
+          },
+          {
+            "text": "6.1%",
+            "top": -1289,
+            "bottom": -1289,
+            "left": 218,
+            "right": 218,
+            "underChrome": false,
+            "gapBelowChrome": -1341
+          },
+          {
+            "text": "6.3%",
+            "top": -1128,
+            "bottom": -1128,
+            "left": -180,
+            "right": -180,
+            "underChrome": false,
+            "gapBelowChrome": -1180
+          },
+          {
+            "text": "6.8%",
+            "top": -1361,
+            "bottom": -1361,
+            "left": -84,
+            "right": -84,
+            "underChrome": false,
+            "gapBelowChrome": -1413
+          },
+          {
+            "text": "6.0%",
+            "top": -1231,
+            "bottom": -1231,
+            "left": 72,
+            "right": 72,
+            "underChrome": false,
+            "gapBelowChrome": -1283
+          },
+          {
+            "text": "6.9%",
+            "top": -1387,
+            "bottom": -1387,
+            "left": -26,
+            "right": -26,
+            "underChrome": false,
+            "gapBelowChrome": -1439
+          },
+          {
+            "text": "5.2%",
+            "top": -1195,
+            "bottom": -1195,
+            "left": -102,
+            "right": -102,
+            "underChrome": false,
+            "gapBelowChrome": -1247
+          },
+          {
+            "text": "5.2%",
+            "top": -1186,
+            "bottom": -1186,
+            "left": 28,
+            "right": 28,
+            "underChrome": false,
+            "gapBelowChrome": -1238
+          },
+          {
+            "text": "4.3%",
+            "top": -1202,
+            "bottom": -1202,
+            "left": -40,
+            "right": -40,
+            "underChrome": false,
+            "gapBelowChrome": -1254
+          },
+          {
+            "text": "7.4%",
+            "top": -1288,
+            "bottom": -1288,
+            "left": -151,
+            "right": -151,
+            "underChrome": false,
+            "gapBelowChrome": -1340
+          },
+          {
+            "text": "",
+            "top": -977,
+            "bottom": -977,
+            "left": 1837,
+            "right": 1837,
+            "underChrome": false,
+            "gapBelowChrome": -1029
+          },
+          {
+            "text": "4.8%",
+            "top": -676,
+            "bottom": -676,
+            "left": 2193,
+            "right": 2193,
+            "underChrome": false,
+            "gapBelowChrome": -728
+          },
+          {
+            "text": "2.9%",
+            "top": -977,
+            "bottom": -977,
+            "left": 2015,
+            "right": 2015,
+            "underChrome": false,
+            "gapBelowChrome": -1029
+          },
+          {
+            "text": "4.1%",
+            "top": -667,
+            "bottom": -667,
+            "left": 2134,
+            "right": 2134,
+            "underChrome": false,
+            "gapBelowChrome": -719
+          },
+          {
+            "text": "4.3%",
+            "top": -957,
+            "bottom": -957,
+            "left": 1933,
+            "right": 1933,
+            "underChrome": false,
+            "gapBelowChrome": -1009
+          },
+          {
+            "text": "4.9%",
+            "top": -386,
+            "bottom": -386,
+            "left": 2175,
+            "right": 2175,
+            "underChrome": false,
+            "gapBelowChrome": -438
+          },
+          {
+            "text": "4.4%",
+            "top": -893,
+            "bottom": -893,
+            "left": 2058,
+            "right": 2058,
+            "underChrome": false,
+            "gapBelowChrome": -945
+          },
+          {
+            "text": "",
+            "top": -965,
+            "bottom": -965,
+            "left": 1568,
+            "right": 1568,
+            "underChrome": false,
+            "gapBelowChrome": -1017
+          },
+          {
+            "text": "3.5%",
+            "top": -717,
+            "bottom": -717,
+            "left": 2241,
+            "right": 2241,
+            "underChrome": false,
+            "gapBelowChrome": -769
+          },
+          {
+            "text": "",
+            "top": -439,
+            "bottom": -439,
+            "left": 475,
+            "right": 475,
+            "underChrome": false,
+            "gapBelowChrome": -491
+          },
+          {
+            "text": "5.0%",
+            "top": -330,
+            "bottom": -330,
+            "left": 397,
+            "right": 397,
+            "underChrome": false,
+            "gapBelowChrome": -382
+          }
+        ],
+        "northern": [
+          {
+            "text": "6.9%",
+            "top": -1387,
+            "bottom": -1387,
+            "left": -26,
+            "right": -26,
+            "underChrome": false,
+            "gapBelowChrome": -1439
+          },
+          {
+            "text": "6.8%",
+            "top": -1361,
+            "bottom": -1361,
+            "left": -84,
+            "right": -84,
+            "underChrome": false,
+            "gapBelowChrome": -1413
+          },
+          {
+            "text": "6.1%",
+            "top": -1289,
+            "bottom": -1289,
+            "left": 218,
+            "right": 218,
+            "underChrome": false,
+            "gapBelowChrome": -1341
+          },
+          {
+            "text": "7.4%",
+            "top": -1288,
+            "bottom": -1288,
+            "left": -151,
+            "right": -151,
+            "underChrome": false,
+            "gapBelowChrome": -1340
+          }
+        ],
+        "panel_text": "×\n新盘\nRiver Park 2B\n7.4\n可看\nRM 783,600 起\nRM965 psf\n第1–2套 · 贷90%\n+RM103\n第3套起 · 贷70%\n+RM825\n毛回报 5.14%\n净回报 4.04%\n↓ 比区域低 0.80 个百分点\n2027\n99年\n452\nKTM 300 m\n\n2 房 812 sqft，租金可覆盖第1–2套（贷90%）与第3套起（贷70%）月供\n\n看户型与折扣",
+        "active_pin": 1,
+        "stray_cluster": 0
+      },
+      "aviera": {
+        "hscroll": false,
+        "chromeBottom": 52,
+        "mapH": 900,
+        "panel": {
+          "top": 70,
+          "height": 400,
+          "bottom": 470,
+          "bg": "rgba(255, 255, 255, 0.62)",
+          "blur": "none",
+          "maxH": "818.4px",
+          "heightCss": "400px",
+          "mapVisibleBelow": 430
+        },
+        "pillCount": 139,
+        "minPillTop": -1386,
+        "clipped": [
+          {
+            "text": "5.8%",
+            "top": -1239,
+            "bottom": -1239,
+            "left": 141,
+            "right": 141,
+            "underChrome": false,
+            "gapBelowChrome": -1291
+          },
+          {
+            "text": "6.1%",
+            "top": -1289,
+            "bottom": -1289,
+            "left": 218,
+            "right": 218,
+            "underChrome": false,
+            "gapBelowChrome": -1341
+          },
+          {
+            "text": "6.3%",
+            "top": -1127,
+            "bottom": -1127,
+            "left": -179,
+            "right": -179,
+            "underChrome": false,
+            "gapBelowChrome": -1179
+          },
+          {
+            "text": "6.8%",
+            "top": -1362,
+            "bottom": -1362,
+            "left": -84,
+            "right": -84,
+            "underChrome": false,
+            "gapBelowChrome": -1414
+          },
+          {
+            "text": "6.0%",
+            "top": -1229,
+            "bottom": -1229,
+            "left": 69,
+            "right": 69,
+            "underChrome": false,
+            "gapBelowChrome": -1281
+          },
+          {
+            "text": "6.9%",
+            "top": -1386,
+            "bottom": -1386,
+            "left": -26,
+            "right": -26,
+            "underChrome": false,
+            "gapBelowChrome": -1438
+          },
+          {
+            "text": "5.2%",
+            "top": -1195,
+            "bottom": -1195,
+            "left": -103,
+            "right": -103,
+            "underChrome": false,
+            "gapBelowChrome": -1247
+          },
+          {
+            "text": "5.2%",
+            "top": -1188,
+            "bottom": -1188,
+            "left": 31,
+            "right": 31,
+            "underChrome": false,
+            "gapBelowChrome": -1240
+          },
+          {
+            "text": "4.3%",
+            "top": -1202,
+            "bottom": -1202,
+            "left": -39,
+            "right": -39,
+            "underChrome": false,
+            "gapBelowChrome": -1254
+          },
+          {
+            "text": "7.4%",
+            "top": -1288,
+            "bottom": -1288,
+            "left": -151,
+            "right": -151,
+            "underChrome": false,
+            "gapBelowChrome": -1340
+          },
+          {
+            "text": "",
+            "top": -977,
+            "bottom": -977,
+            "left": 1837,
+            "right": 1837,
+            "underChrome": false,
+            "gapBelowChrome": -1029
+          },
+          {
+            "text": "4.8%",
+            "top": -681,
+            "bottom": -681,
+            "left": 2201,
+            "right": 2201,
+            "underChrome": false,
+            "gapBelowChrome": -733
+          },
+          {
+            "text": "2.9%",
+            "top": -976,
+            "bottom": -976,
+            "left": 2015,
+            "right": 2015,
+            "underChrome": false,
+            "gapBelowChrome": -1028
+          },
+          {
+            "text": "4.1%",
+            "top": -667,
+            "bottom": -667,
+            "left": 2133,
+            "right": 2133,
+            "underChrome": false,
+            "gapBelowChrome": -719
+          },
+          {
+            "text": "4.3%",
+            "top": -957,
+            "bottom": -957,
+            "left": 1933,
+            "right": 1933,
+            "underChrome": false,
+            "gapBelowChrome": -1009
+          },
+          {
+            "text": "4.9%",
+            "top": -385,
+            "bottom": -385,
+            "left": 2175,
+            "right": 2175,
+            "underChrome": false,
+            "gapBelowChrome": -437
+          },
+          {
+            "text": "4.4%",
+            "top": -894,
+            "bottom": -894,
+            "left": 2058,
+            "right": 2058,
+            "underChrome": false,
+            "gapBelowChrome": -946
+          },
+          {
+            "text": "",
+            "top": -965,
+            "bottom": -965,
+            "left": 1569,
+            "right": 1569,
+            "underChrome": false,
+            "gapBelowChrome": -1017
+          },
+          {
+            "text": "3.5%",
+            "top": -710,
+            "bottom": -710,
+            "left": 2235,
+            "right": 2235,
+            "underChrome": false,
+            "gapBelowChrome": -762
+          },
+          {
+            "text": "",
+            "top": -439,
+            "bottom": -439,
+            "left": 475,
+            "right": 475,
+            "underChrome": false,
+            "gapBelowChrome": -491
+          },
+          {
+            "text": "5.0%",
+            "top": -330,
+            "bottom": -330,
+            "left": 397,
+            "right": 397,
+            "underChrome": false,
+            "gapBelowChrome": -382
+          }
+        ],
+        "northern": [
+          {
+            "text": "6.9%",
+            "top": -1386,
+            "bottom": -1386,
+            "left": -26,
+            "right": -26,
+            "underChrome": false,
+            "gapBelowChrome": -1438
+          },
+          {
+            "text": "6.8%",
+            "top": -1362,
+            "bottom": -1362,
+            "left": -84,
+            "right": -84,
+            "underChrome": false,
+            "gapBelowChrome": -1414
+          },
+          {
+            "text": "6.1%",
+            "top": -1289,
+            "bottom": -1289,
+            "left": 218,
+            "right": 218,
+            "underChrome": false,
+            "gapBelowChrome": -1341
+          },
+          {
+            "text": "7.4%",
+            "top": -1288,
+            "bottom": -1288,
+            "left": -151,
+            "right": -151,
+            "underChrome": false,
+            "gapBelowChrome": -1340
+          }
+        ],
+        "panel_text": "×\n新盘\nAviera Bangsar South\n7.1\n可看\nRM 666,000 起\nRM1,227 psf\n第1–2套 · 贷90%\n倒贴 RM21\n第3套起 · 贷70%\n+RM593\n毛回报 4.94%\n净回报 3.80%\n↓ 比区域低 1.00 个百分点\n2031\n永久\n1,033\nLRT 750 m\n\n2 房 543 sqft，租金可覆盖第3套起（贷70%）月供；第1–2套（贷90%）每月倒贴约 RM21\n\n看户型与折扣",
+        "active_pin": 1,
+        "stray_cluster": 0
+      }
+    },
+    "error_count": 0
+  },
+  "d1440-en": {
+    "errors": [],
+    "pages": {
+      "home": {
+        "hscroll": false,
+        "cards": 2
+      },
+      "river": {
+        "hscroll": false,
+        "chromeBottom": 52,
+        "mapH": 900,
+        "panel": {
+          "top": 70,
+          "height": 400,
+          "bottom": 470,
+          "bg": "rgba(255, 255, 255, 0.62)",
+          "blur": "none",
+          "maxH": "818.4px",
+          "heightCss": "400px",
+          "mapVisibleBelow": 430
+        },
+        "pillCount": 139,
+        "minPillTop": -1387,
+        "clipped": [
+          {
+            "text": "5.8%",
+            "top": -1238,
+            "bottom": -1238,
+            "left": 141,
+            "right": 141,
+            "underChrome": false,
+            "gapBelowChrome": -1290
+          },
+          {
+            "text": "6.1%",
+            "top": -1289,
+            "bottom": -1289,
+            "left": 218,
+            "right": 218,
+            "underChrome": false,
+            "gapBelowChrome": -1341
+          },
+          {
+            "text": "6.3%",
+            "top": -1128,
+            "bottom": -1128,
+            "left": -180,
+            "right": -180,
+            "underChrome": false,
+            "gapBelowChrome": -1180
+          },
+          {
+            "text": "6.8%",
+            "top": -1361,
+            "bottom": -1361,
+            "left": -84,
+            "right": -84,
+            "underChrome": false,
+            "gapBelowChrome": -1413
+          },
+          {
+            "text": "6.0%",
+            "top": -1231,
+            "bottom": -1231,
+            "left": 72,
+            "right": 72,
+            "underChrome": false,
+            "gapBelowChrome": -1283
+          },
+          {
+            "text": "6.9%",
+            "top": -1387,
+            "bottom": -1387,
+            "left": -26,
+            "right": -26,
+            "underChrome": false,
+            "gapBelowChrome": -1439
+          },
+          {
+            "text": "5.2%",
+            "top": -1195,
+            "bottom": -1195,
+            "left": -102,
+            "right": -102,
+            "underChrome": false,
+            "gapBelowChrome": -1247
+          },
+          {
+            "text": "5.2%",
+            "top": -1186,
+            "bottom": -1186,
+            "left": 28,
+            "right": 28,
+            "underChrome": false,
+            "gapBelowChrome": -1238
+          },
+          {
+            "text": "4.3%",
+            "top": -1202,
+            "bottom": -1202,
+            "left": -40,
+            "right": -40,
+            "underChrome": false,
+            "gapBelowChrome": -1254
+          },
+          {
+            "text": "7.4%",
+            "top": -1288,
+            "bottom": -1288,
+            "left": -151,
+            "right": -151,
+            "underChrome": false,
+            "gapBelowChrome": -1340
+          },
+          {
+            "text": "",
+            "top": -977,
+            "bottom": -977,
+            "left": 1837,
+            "right": 1837,
+            "underChrome": false,
+            "gapBelowChrome": -1029
+          },
+          {
+            "text": "4.8%",
+            "top": -676,
+            "bottom": -676,
+            "left": 2193,
+            "right": 2193,
+            "underChrome": false,
+            "gapBelowChrome": -728
+          },
+          {
+            "text": "2.9%",
+            "top": -977,
+            "bottom": -977,
+            "left": 2015,
+            "right": 2015,
+            "underChrome": false,
+            "gapBelowChrome": -1029
+          },
+          {
+            "text": "4.1%",
+            "top": -667,
+            "bottom": -667,
+            "left": 2134,
+            "right": 2134,
+            "underChrome": false,
+            "gapBelowChrome": -719
+          },
+          {
+            "text": "4.3%",
+            "top": -957,
+            "bottom": -957,
+            "left": 1933,
+            "right": 1933,
+            "underChrome": false,
+            "gapBelowChrome": -1009
+          },
+          {
+            "text": "4.9%",
+            "top": -386,
+            "bottom": -386,
+            "left": 2175,
+            "right": 2175,
+            "underChrome": false,
+            "gapBelowChrome": -438
+          },
+          {
+            "text": "4.4%",
+            "top": -893,
+            "bottom": -893,
+            "left": 2058,
+            "right": 2058,
+            "underChrome": false,
+            "gapBelowChrome": -945
+          },
+          {
+            "text": "",
+            "top": -965,
+            "bottom": -965,
+            "left": 1568,
+            "right": 1568,
+            "underChrome": false,
+            "gapBelowChrome": -1017
+          },
+          {
+            "text": "3.5%",
+            "top": -717,
+            "bottom": -717,
+            "left": 2241,
+            "right": 2241,
+            "underChrome": false,
+            "gapBelowChrome": -769
+          },
+          {
+            "text": "",
+            "top": -439,
+            "bottom": -439,
+            "left": 475,
+            "right": 475,
+            "underChrome": false,
+            "gapBelowChrome": -491
+          },
+          {
+            "text": "5.0%",
+            "top": -330,
+            "bottom": -330,
+            "left": 397,
+            "right": 397,
+            "underChrome": false,
+            "gapBelowChrome": -382
+          }
+        ],
+        "northern": [
+          {
+            "text": "6.9%",
+            "top": -1387,
+            "bottom": -1387,
+            "left": -26,
+            "right": -26,
+            "underChrome": false,
+            "gapBelowChrome": -1439
+          },
+          {
+            "text": "6.8%",
+            "top": -1361,
+            "bottom": -1361,
+            "left": -84,
+            "right": -84,
+            "underChrome": false,
+            "gapBelowChrome": -1413
+          },
+          {
+            "text": "6.1%",
+            "top": -1289,
+            "bottom": -1289,
+            "left": 218,
+            "right": 218,
+            "underChrome": false,
+            "gapBelowChrome": -1341
+          },
+          {
+            "text": "7.4%",
+            "top": -1288,
+            "bottom": -1288,
+            "left": -151,
+            "right": -151,
+            "underChrome": false,
+            "gapBelowChrome": -1340
+          }
+        ],
+        "panel_text": "×\nNEW\nRiver Park 2B\n7.4\nWorth a look\nRM 783,600 from\nRM965 psf\n1st–2nd · 90%\n+RM103\n3rd+ · 70%\n+RM825\nGross 5.14%\nNet 4.04%\n↓ 0.80 pp below the area\n2027\n99-yr\n452\nKTM 300 m\n\n2-bed 812 sqft: rent covers both 1st–2nd-home (90%) and 3rd+ (70%) instalments\n\nUnit types and discount",
+        "active_pin": 1,
+        "stray_cluster": 0
+      },
+      "aviera": {
+        "hscroll": false,
+        "chromeBottom": 52,
+        "mapH": 900,
+        "panel": {
+          "top": 70,
+          "height": 400,
+          "bottom": 470,
+          "bg": "rgba(255, 255, 255, 0.62)",
+          "blur": "none",
+          "maxH": "818.4px",
+          "heightCss": "400px",
+          "mapVisibleBelow": 430
+        },
+        "pillCount": 139,
+        "minPillTop": -1386,
+        "clipped": [
+          {
+            "text": "5.8%",
+            "top": -1239,
+            "bottom": -1239,
+            "left": 141,
+            "right": 141,
+            "underChrome": false,
+            "gapBelowChrome": -1291
+          },
+          {
+            "text": "6.1%",
+            "top": -1289,
+            "bottom": -1289,
+            "left": 218,
+            "right": 218,
+            "underChrome": false,
+            "gapBelowChrome": -1341
+          },
+          {
+            "text": "6.3%",
+            "top": -1127,
+            "bottom": -1127,
+            "left": -179,
+            "right": -179,
+            "underChrome": false,
+            "gapBelowChrome": -1179
+          },
+          {
+            "text": "6.8%",
+            "top": -1362,
+            "bottom": -1362,
+            "left": -84,
+            "right": -84,
+            "underChrome": false,
+            "gapBelowChrome": -1414
+          },
+          {
+            "text": "6.0%",
+            "top": -1229,
+            "bottom": -1229,
+            "left": 69,
+            "right": 69,
+            "underChrome": false,
+            "gapBelowChrome": -1281
+          },
+          {
+            "text": "6.9%",
+            "top": -1386,
+            "bottom": -1386,
+            "left": -26,
+            "right": -26,
+            "underChrome": false,
+            "gapBelowChrome": -1438
+          },
+          {
+            "text": "5.2%",
+            "top": -1195,
+            "bottom": -1195,
+            "left": -103,
+            "right": -103,
+            "underChrome": false,
+            "gapBelowChrome": -1247
+          },
+          {
+            "text": "5.2%",
+            "top": -1188,
+            "bottom": -1188,
+            "left": 31,
+            "right": 31,
+            "underChrome": false,
+            "gapBelowChrome": -1240
+          },
+          {
+            "text": "4.3%",
+            "top": -1202,
+            "bottom": -1202,
+            "left": -39,
+            "right": -39,
+            "underChrome": false,
+            "gapBelowChrome": -1254
+          },
+          {
+            "text": "7.4%",
+            "top": -1288,
+            "bottom": -1288,
+            "left": -151,
+            "right": -151,
+            "underChrome": false,
+            "gapBelowChrome": -1340
+          },
+          {
+            "text": "",
+            "top": -977,
+            "bottom": -977,
+            "left": 1837,
+            "right": 1837,
+            "underChrome": false,
+            "gapBelowChrome": -1029
+          },
+          {
+            "text": "4.8%",
+            "top": -681,
+            "bottom": -681,
+            "left": 2201,
+            "right": 2201,
+            "underChrome": false,
+            "gapBelowChrome": -733
+          },
+          {
+            "text": "2.9%",
+            "top": -976,
+            "bottom": -976,
+            "left": 2015,
+            "right": 2015,
+            "underChrome": false,
+            "gapBelowChrome": -1028
+          },
+          {
+            "text": "4.1%",
+            "top": -667,
+            "bottom": -667,
+            "left": 2133,
+            "right": 2133,
+            "underChrome": false,
+            "gapBelowChrome": -719
+          },
+          {
+            "text": "4.3%",
+            "top": -957,
+            "bottom": -957,
+            "left": 1933,
+            "right": 1933,
+            "underChrome": false,
+            "gapBelowChrome": -1009
+          },
+          {
+            "text": "4.9%",
+            "top": -385,
+            "bottom": -385,
+            "left": 2175,
+            "right": 2175,
+            "underChrome": false,
+            "gapBelowChrome": -437
+          },
+          {
+            "text": "4.4%",
+            "top": -894,
+            "bottom": -894,
+            "left": 2058,
+            "right": 2058,
+            "underChrome": false,
+            "gapBelowChrome": -946
+          },
+          {
+            "text": "",
+            "top": -965,
+            "bottom": -965,
+            "left": 1569,
+            "right": 1569,
+            "underChrome": false,
+            "gapBelowChrome": -1017
+          },
+          {
+            "text": "3.5%",
+            "top": -710,
+            "bottom": -710,
+            "left": 2235,
+            "right": 2235,
+            "underChrome": false,
+            "gapBelowChrome": -762
+          },
+          {
+            "text": "",
+            "top": -439,
+            "bottom": -439,
+            "left": 475,
+            "right": 475,
+            "underChrome": false,
+            "gapBelowChrome": -491
+          },
+          {
+            "text": "5.0%",
+            "top": -330,
+            "bottom": -330,
+            "left": 397,
+            "right": 397,
+            "underChrome": false,
+            "gapBelowChrome": -382
+          }
+        ],
+        "northern": [
+          {
+            "text": "6.9%",
+            "top": -1386,
+            "bottom": -1386,
+            "left": -26,
+            "right": -26,
+            "underChrome": false,
+            "gapBelowChrome": -1438
+          },
+          {
+            "text": "6.8%",
+            "top": -1362,
+            "bottom": -1362,
+            "left": -84,
+            "right": -84,
+            "underChrome": false,
+            "gapBelowChrome": -1414
+          },
+          {
+            "text": "6.1%",
+            "top": -1289,
+            "bottom": -1289,
+            "left": 218,
+            "right": 218,
+            "underChrome": false,
+            "gapBelowChrome": -1341
+          },
+          {
+            "text": "7.4%",
+            "top": -1288,
+            "bottom": -1288,
+            "left": -151,
+            "right": -151,
+            "underChrome": false,
+            "gapBelowChrome": -1340
+          }
+        ],
+        "panel_text": "×\nNEW\nAviera Bangsar South\n7.1\nWorth a look\nRM 666,000 from\nRM1,227 psf\n1st–2nd · 90%\n−RM21\n3rd+ · 70%\n+RM593\nGross 4.94%\nNet 3.80%\n↓ 1.00 pp below the area\n2031\nFreehold\n1,033\nLRT 750 m\n\n2-bed 543 sqft: rent covers a 3rd+ (70%) instalment; a 1st–2nd-home (90%) loan is about RM21",
+        "active_pin": 1,
+        "stray_cluster": 0
+      }
+    },
+    "error_count": 0
+  }
+}

@@ -1,0 +1,68 @@
+{
+ "fetches": [
+  {
+   "slug": "arcoris-residences-5840",
+   "n": 5,
+   "file": "afe30a0a3f169776",
+   "kb": 92.4,
+   "status": "kept",
+   "mtime": 1794704694.0
+  },
+  {
+   "slug": "laurel-residence-17871",
+   "n": 11,
+   "file": "8895aa8cbcda00f5",
+   "kb": 34.2,
+   "status": "kept",
+   "mtime": 1794704999.0
+  },
+  {
+   "slug": "residensi-kerinchi-10150",
+   "n": 7,
+   "file": "e10454dc887dea51",
+   "kb": 28.1,
+   "status": "kept",
+   "mtime": 1794705013.0
+  },
+  {
+   "slug": "pavilion-hilltop-6554",
+   "n": 1,
+   "file": "cf32cc0fec6ceae9",
+   "kb": 31.3,
+   "status": "kept",
+   "mtime": 1794705381.0
+  },
+  {
+   "slug": "seni-mont-kiara-1890",
+   "n": 10,
+   "file": "99cbd1e9de86f541",
+   "kb": 28.6,
+   "status": "kept",
+   "mtime": 1794705383.0
+  },
+  {
+   "slug": "ooak-suites-kiara-163-9221",
+   "n": 22,
+   "file": "44e04d927ab8c368",
+   "kb": 31.4,
+   "status": "kept",
+   "mtime": 1794705417.0
+  },
+  {
+   "slug": "28-mont-kiara-mk28-1878",
+   "n": 23,
+   "file": "49f3594b5a75dcb7",
+   "kb": 33.2,
+   "status": "kept",
+   "mtime": 1794705418.0
+  },
+  {
+   "slug": "allevia-16375",
+   "n": 8,
+   "file": "67010749d6e7db95",
+   "kb": 26.6,
+   "status": "kept",
+   "mtime": 1794705423.0
+  }
+ ]
+}
