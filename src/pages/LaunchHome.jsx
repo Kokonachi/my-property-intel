@@ -7,7 +7,7 @@ import { rankedLaunches, scoreBand, headlineVerdict, downLabel, entryCostOf } fr
 import { LoanPctControl, LoanVerdict } from '../components/LtvVerdict.jsx'
 import { HoldChip, FirstBuyerNote, RestartButton } from '../components/HolderSheet.jsx'
 import { useHolder, SEGMENT_SORTS, SEGMENTS } from '../lib/holderProfile.js'
-import { vsCurrentRentLine, rentOutLine } from '../lib/plainCopy.js'
+import { CompareBars } from '../components/CompareBars.jsx'
 import { useCompare, COMPARE_MAX } from '../lib/compareDraft.js'
 import { CompareTable, CompareBar } from '../components/CompareTable.jsx'
 
@@ -35,8 +35,7 @@ function RankCard({ p, s, segment, compare }) {
   const inst = s.v?.inst
   const many = segment === SEGMENTS.many
   const zero = segment === SEGMENTS.zero
-  const vsRent = zero ? vsCurrentRentLine(inst, holder.currentRent, t) : null
-  const rentOut = zero ? rentOutLine(s.v?.cash, t) : null
+  const showBars = zero && inst != null
   const selected = compare?.has(p.id)
   const blocked = many && !selected && !compare?.canAdd
 
@@ -103,11 +102,15 @@ function RankCard({ p, s, segment, compare }) {
             </div>
             {!zero && <ScoreMark score={s.score} />}
           </div>
-          {zero ? (
-            <div className="mt-1.5 space-y-0.5 text-[12px] text-slate-600 leading-snug" data-testid="plain-lines">
-              {vsRent ? <div>{vsRent}</div> : null}
-              {rentOut ? <div>{rentOut}</div> : null}
-            </div>
+          {showBars ? (
+            <CompareBars
+              className="mt-1.5"
+              compact
+              inst={inst}
+              currentRent={holder.currentRent}
+              rentMo={s.v?.rentMo ?? y?.rentMo}
+              cash={s.v?.cash}
+            />
           ) : verdict ? (
             <LoanVerdict price={s.price} rentMo={y?.rentMo} className="mt-1.5" compact={many} />
           ) : down ? (
@@ -121,7 +124,7 @@ function RankCard({ p, s, segment, compare }) {
 export default function LaunchHome() {
   const { t } = useLang()
   const { loan } = useLoanAssumptions()
-  const { holder, segment, sortBy, setSort } = useHolder()
+  const { segment, sortBy, setSort } = useHolder()
   const compare = useCompare()
   const [compareOpen, setCompareOpen] = useState(false)
   const rows = rankedLaunches(LAUNCHES, { rate: loan.rate, years: loan.years, ltv: loan.ltv, sortBy })

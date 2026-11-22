@@ -13,7 +13,8 @@ import { launchScore, scoreBand, SCORE_WEIGHTS, entryCostOf } from '../lib/launc
 import { FirstBuyerNote } from '../components/HolderSheet.jsx'
 import { useHolder, SEGMENTS } from '../lib/holderProfile.js'
 import { cashVsRent, entryCost, salaryBurden, parseMoney } from '../lib/mortgage.js'
-import { vsCurrentRentLine, rentOutLine, salaryBandCopy } from '../lib/plainCopy.js'
+import { salaryBandCopy } from '../lib/plainCopy.js'
+import { CompareBars, EntryStack } from '../components/CompareBars.jsx'
 import { useCompare } from '../lib/compareDraft.js'
 
 const pct = v => (v == null || Number.isNaN(v) ? '—' : `${v.toFixed(2)}%`)
@@ -82,7 +83,7 @@ function CompList({ band, t }) {
   )
 }
 
-function TypCard({ p, typ, t, draft, onChange, compactLoan = false, variant = 'default' }) {
+function TypCard({ p, typ, t, draft, onChange, compactLoan = false, variant = 'default', currentRent = null }) {
   const { loan } = useLoanAssumptions()
   const { psf, band } = typRentPsf(typ)
   const list = typ.price_from
@@ -151,9 +152,15 @@ function TypCard({ p, typ, t, draft, onChange, compactLoan = false, variant = 'd
           ) : null}
         </div>
       )}
-      {simple && rentOutLine(v?.cash, t) ? (
-        <p className="mt-2 text-[13px] text-slate-600 leading-snug">{rentOutLine(v?.cash, t)}</p>
-      ) : null}
+      {simple && v?.inst != null && (
+        <CompareBars
+          className="mt-3"
+          inst={v.inst}
+          currentRent={currentRent}
+          rentMo={impliedRent}
+          cash={v.cash}
+        />
+      )}
 
       {!simple && price && impliedRent ? <LoanVerdict price={price} rentMo={impliedRent} className="mt-3" compact={compactLoan} /> : null}
 
@@ -374,8 +381,6 @@ export default function LaunchDetail({ p }) {
   ].filter(Boolean)
 
   const typVariant = zero ? 'simple' : many ? 'pro' : 'default'
-  const vsRent = zero ? vsCurrentRentLine(scored.v?.inst, holder.currentRent, t) : null
-  const rentOut = zero ? rentOutLine(scored.v?.cash, t) : null
   const selected = compare.has(p.id)
   const dataAsOf = REAL_META?.generated_at
 
@@ -421,20 +426,24 @@ export default function LaunchDetail({ p }) {
               <div className="mt-4 rounded-2xl bg-slate-50 px-3.5 py-3.5" data-testid="entry-cost">
                 <div className="text-[11px] text-slate-500">{t('入场要准备多少钱（估算）', 'How much cash to prepare (estimate)')}</div>
                 <div className="mt-0.5 text-[28px] font-semibold tabular-nums leading-none tracking-tight text-slate-900">{rm(entry.total)}</div>
+                <EntryStack entry={entry} t={t} className="mt-3" />
                 <div className="mt-3 space-y-1.5 text-[13px] text-slate-700">
-                  <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500">{t('首付', 'Down payment')}</span><span className="font-medium">{rm(entry.down)}</span></div>
-                  <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500">{t('律师费（含 8% 服务税，估）', 'Legal fees (incl. 8% SST, est.)')}</span><span className="font-medium">{rm(entry.legal)}</span></div>
-                  <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500">{t('印花税（买卖合约 + 贷款协议，估）', 'Stamp duty (SPA + loan, est.)')}</span><span className="font-medium">{rm(entry.stamp)}</span></div>
-                  <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500">{t(`装修预留（按 RM${entry.renoPsf}/尺估算）`, `Renovation allowance (RM${entry.renoPsf}/sqft estimate)`)}</span><span className="font-medium">{rm(entry.renovation)}</span></div>
+                  <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500 min-w-0">{t('首付', 'Down payment')}</span><span className="font-medium shrink-0 whitespace-nowrap">{rm(entry.down)}</span></div>
+                  <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500 min-w-0">{t('律师费（含 8% 服务税，估）', 'Legal fees (incl. 8% SST, est.)')}</span><span className="font-medium shrink-0 whitespace-nowrap">{rm(entry.legal)}</span></div>
+                  <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500 min-w-0">{t('印花税（买卖合约 + 贷款协议，估）', 'Stamp duty (SPA + loan, est.)')}</span><span className="font-medium shrink-0 whitespace-nowrap">{rm(entry.stamp)}</span></div>
+                  <div className="flex justify-between gap-3 tabular-nums"><span className="text-slate-500 min-w-0">{t(`装修预留（按 RM${entry.renoPsf}/尺估算）`, `Renovation allowance (RM${entry.renoPsf}/sqft estimate)`)}</span><span className="font-medium shrink-0 whitespace-nowrap">{rm(entry.renovation)}</span></div>
                 </div>
                 {scored.v?.inst != null ? (
                   <div className="mt-3 pt-3 border-t border-slate-200/80">
                     <div className="text-[11px] text-slate-500">{t('月供', 'Instalment')}</div>
                     <div className="mt-0.5 text-[18px] font-semibold tabular-nums text-slate-900">{rm(scored.v.inst)}{t('/月', '/mo')}</div>
-                    <div className="mt-1.5 space-y-0.5 text-[13px] text-slate-600 leading-snug">
-                      {vsRent ? <div>{vsRent}</div> : null}
-                      {rentOut ? <div>{rentOut}</div> : null}
-                    </div>
+                    <CompareBars
+                      className="mt-3"
+                      inst={scored.v.inst}
+                      currentRent={holder.currentRent}
+                      rentMo={scored.v.rentMo ?? scored.yields?.rentMo}
+                      cash={scored.v.cash}
+                    />
                   </div>
                 ) : null}
                 <p className="mt-3 text-[11px] text-slate-400 leading-snug">{t('以上律师费、印花税和装修都是估算，不是律师行或承包商的报价，也不含银行手续费或家具升级。', 'Legal fees, stamp duty and renovation are estimates, not quotes from a solicitor or contractor, and they exclude bank fees or a fuller furniture budget.')}</p>
@@ -528,7 +537,7 @@ export default function LaunchDetail({ p }) {
         <h2 className="pt-1 text-[15px] font-semibold text-slate-900">{zero ? t('各户型要准备多少', 'Cash to enter by unit type') : t('按户型看回报', 'Yield by unit type')}</h2>
         <div className="space-y-3">
           {p.typologies.map(typ => (
-            <TypCard key={typ.id} p={p} typ={typ} t={t} draft={drafts[typ.id]} onChange={d => setDraft(typ.id, d)} compactLoan={many} variant={typVariant} />
+            <TypCard key={typ.id} p={p} typ={typ} t={t} draft={drafts[typ.id]} onChange={d => setDraft(typ.id, d)} compactLoan={many} variant={typVariant} currentRent={holder.currentRent} />
           ))}
         </div>
 
