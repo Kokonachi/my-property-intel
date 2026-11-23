@@ -38,3 +38,11 @@ export function deltaLabel(n) {
   const sign = v > 0 ? '+' : '−'
   return `${sign}RM${Math.abs(v).toLocaleString('en-MY')}`
 }
+
+/** Compact signed count, no currency: −163 / +103. */
+export function shortDelta(n) {
+  if (n == null || Number.isNaN(Number(n))) return null
+  const v = Math.round(Number(n))
+  if (v === 0) return '0'
+  return `${v > 0 ? '+' : '−'}${Math.abs(v).toLocaleString('en-MY')}`
+}

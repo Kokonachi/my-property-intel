@@ -102,7 +102,7 @@ export function CompareTiles({ inst, currentRent, rentMo, cash, compact = false,
   )
 }
 
-export function EntryFacts({ entry, inst, compact = false, className = '' }) {
+export function EntryFacts({ entry, inst, instExtra = null, compact = false, className = '' }) {
   const { t } = useLang()
   if (!entry?.total && inst == null) return null
   return (
@@ -114,7 +114,7 @@ export function EntryFacts({ entry, inst, compact = false, className = '' }) {
       )}
       {inst != null && (
         <Metric testId="metric-inst" icon={<IconCalendar size={15} />} label={t('月供', 'Monthly')}>
-          {fmtRM(inst)}{t('/月', '/mo')}
+          {fmtRM(inst)}{t('/月', '/mo')}{instExtra}
         </Metric>
       )}
     </div>

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { LAUNCHES } from '../src/data/launches.js'
 import { launchScore } from '../src/lib/launchScore.js'
-import { compareBarModel, deltaLabel } from '../src/lib/compareBars.js'
+import { compareBarModel, deltaLabel, shortDelta } from '../src/lib/compareBars.js'
 
 const aviera = launchScore(LAUNCHES.find(p => p.id === 'nl-aviera'), { rate: 4.3, years: 35, ltv: 90 })
 const river = launchScore(LAUNCHES.find(p => p.id === 'nl-river-park-2b'), { rate: 4.3, years: 35, ltv: 90 })
@@ -34,6 +34,9 @@ assert.equal(deltaLabel(-a2600.instVsNow), '−RM163')
 assert.equal(deltaLabel(-r2600.instVsNow), '−RM651')
 assert.equal(deltaLabel(r2600.letVsInst), '+RM103')
 assert.equal(deltaLabel(a2600.letVsInst), '−RM21')
+
+assert.equal(shortDelta(-163), '−163')
+assert.equal(shortDelta(103), '+103')
 
 console.log('compare bar tests ok', {
   aviera: { inst: Math.round(aviera.v.inst), cash: Math.round(aviera.v.cash), vs2600: a2600.instVsNow },
