@@ -15,6 +15,8 @@ import { useHolder, SEGMENTS } from '../lib/holderProfile.js'
 import { cashVsRent, entryCost, salaryBurden, parseMoney } from '../lib/mortgage.js'
 import { salaryBandCopy } from '../lib/plainCopy.js'
 import { CompareTiles, EntryFacts, EntryStack } from '../components/CompareTiles.jsx'
+import { PremiumPair } from '../components/PremiumTiles.jsx'
+import { useSkin, skinHref } from '../lib/cardSkin.jsx'
 import { IconKey, IconCalendar, IconInfo } from '../components/icons.jsx'
 import { useCompare } from '../lib/compareDraft.js'
 
@@ -372,15 +374,16 @@ export default function LaunchDetail({ p }) {
   ].filter(Boolean)
 
   const typVariant = zero ? 'simple' : many ? 'pro' : 'default'
+  const skin = useSkin()
   const selected = compare.has(p.id)
   const dataAsOf = REAL_META?.generated_at
 
   return (
-    <div className="min-h-full bg-[#f6f7f8] flex flex-col">
+    <div className="min-h-full flex flex-col" style={{ background: skin.bg, color: skin.ink }}>
       <AppNav active="launches" />
       <main className="flex-1 max-w-2xl mx-auto w-full px-3 sm:px-5 py-3 sm:py-5 space-y-3">
-        <div className="flex flex-wrap items-center gap-3 text-[13px] font-medium text-slate-600">
-          <a href="#/" className="hover:text-slate-900">{t('← 全部新楼盘', '← All new launches')}</a>
+        <div className="flex flex-wrap items-center gap-3 text-[13px] font-medium" style={{ color: skin.muted }}>
+          <a href={skinHref("#/")} className="hover:text-slate-900">{t('← 全部新楼盘', '← All new launches')}</a>
           <a href={`#/explore/${p.id}`} className="hover:text-slate-900">{t('在地图上看', 'See on the map')}</a>
           {many && (
             <button
@@ -395,7 +398,7 @@ export default function LaunchDetail({ p }) {
           )}
         </div>
 
-        <section className="rounded-2xl bg-white overflow-hidden ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)]">
+        <section className="overflow-hidden rounded-[22px]" style={{ background: skin.card, boxShadow: skin.shadow }} data-testid="detail-hero">
           {p.render?.src ? (
             <div className="relative h-52 sm:h-72 bg-slate-200">
               <img src={p.render.src} alt="" className="absolute inset-0 w-full h-full object-cover" />
@@ -409,16 +412,16 @@ export default function LaunchDetail({ p }) {
             </div>
           )}
           <div className="p-4 sm:p-5">
-            <h1 className="text-[22px] sm:text-[26px] font-semibold text-slate-900 leading-tight tracking-tight">{p.name}</h1>
-            <p className="mt-1 text-[13px] text-slate-500">{metaLine}</p>
-            <p className="mt-0.5 text-[13px] text-slate-500">{p.developer}{p.developer_parent ? ` · ${p.developer_parent}` : ''}</p>
+            <h1 className="text-[22px] sm:text-[26px] font-semibold leading-tight tracking-tight" style={{ color: skin.ink }}>{p.name}</h1>
+            <p className="mt-1 text-[13px]" style={{ color: skin.muted }}>{metaLine}</p>
+            <p className="mt-0.5 text-[13px]" style={{ color: skin.muted }}>{p.developer}{p.developer_parent ? ` · ${p.developer_parent}` : ''}</p>
 
             {zero && entry && (
-              <div className="mt-4 rounded-2xl bg-slate-50 px-3.5 py-3.5" data-testid="entry-cost">
+              <div className="mt-4 rounded-[20px] px-3.5 py-3.5" data-testid="entry-cost" style={{ background: skin.tile }}>
                 <div className="flex items-start justify-between gap-2">
                   <div className="min-w-0">
-                    <div className="flex items-center gap-2 text-slate-900">
-                      <span className="grid place-items-center rounded-lg bg-white ring-1 ring-slate-200/80 text-slate-700" style={{ width: 28, height: 28 }}><IconKey size={16} /></span>
+                    <div className="flex items-center gap-2" style={{ color: skin.ink }}>
+                      <span className="text-[11px] font-medium" style={{ color: skin.muted }}>{t('入场', 'Entry')}</span>
                       <div className="text-[28px] font-semibold tabular-nums leading-none tracking-tight">{rm(entry.total)}</div>
                     </div>
                   </div>
@@ -433,19 +436,13 @@ export default function LaunchDetail({ p }) {
                 </div>
                 <EntryStack entry={entry} t={t} className="mt-3" />
                 {scored.v?.inst != null ? (
-                  <div className="mt-3 pt-3 border-t border-slate-200/80">
-                    <div className="flex items-center gap-2 text-slate-900">
-                      <span className="grid place-items-center rounded-lg bg-white ring-1 ring-slate-200/80 text-slate-700" style={{ width: 28, height: 28 }}><IconCalendar size={16} /></span>
-                      <div className="text-[18px] font-semibold tabular-nums leading-none">{rm(scored.v.inst)}{t('/月', '/mo')}</div>
-                    </div>
-                    <CompareTiles
-                      className="mt-3"
-                      inst={scored.v.inst}
-                      currentRent={holder.currentRent}
-                      rentMo={scored.v.rentMo ?? scored.yields?.rentMo}
-                      cash={scored.v.cash}
-                    />
-                  </div>
+                  <PremiumPair
+                    className="mt-3"
+                    inst={scored.v.inst}
+                    currentRent={holder.currentRent}
+                    rentMo={scored.v.rentMo ?? scored.yields?.rentMo}
+                    cash={scored.v.cash}
+                  />
                 ) : null}
               </div>
             )}

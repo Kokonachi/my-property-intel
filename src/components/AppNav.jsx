@@ -1,17 +1,29 @@
 import { LangToggle, useLang } from '../lib/i18n.jsx'
 import { Logo } from './ui.jsx'
 import { HoldChip } from './HolderSheet.jsx'
+import { useSkin, skinHref } from '../lib/cardSkin.jsx'
 
 export function NavTabs({ active, className = '' }) {
   const { t } = useLang()
-  const tab = (id, href, zh, en) => (
-    <a href={href} data-testid={`nav-${id}`}
-      className={`flex-1 sm:flex-none text-center px-3 py-1.5 rounded-full text-[13px] font-semibold whitespace-nowrap ${active === id ? 'bg-slate-900 text-white' : 'text-slate-600 hover:bg-slate-100'}`}>
-      {t(zh, en)}
-    </a>
-  )
+  const skin = useSkin()
+  const tab = (id, href, zh, en) => {
+    const on = active === id
+    return (
+      <a href={skinHref(href)} data-testid={`nav-${id}`}
+        className="flex-1 sm:flex-none text-center px-3 py-1.5 rounded-full text-[13px] font-semibold whitespace-nowrap"
+        style={on
+          ? { background: skin.navOn, color: skin.navOnInk }
+          : { color: skin.muted }}>
+        {t(zh, en)}
+      </a>
+    )
+  }
   return (
-    <nav className={`flex items-center gap-1 p-0.5 rounded-full bg-slate-100/80 border border-slate-200 ${className}`} aria-label={t('栏目', 'Sections')}>
+    <nav
+      className={`flex items-center gap-1 p-0.5 rounded-full ${className}`}
+      style={{ background: skin.navTrack, border: `1px solid ${skin.line}` }}
+      aria-label={t('栏目', 'Sections')}
+    >
       {tab('launches', '#/', '新楼盘', 'New launches')}
       {tab('map', '#/map', '租金回报地图', 'Yield map')}
     </nav>
@@ -19,8 +31,9 @@ export function NavTabs({ active, className = '' }) {
 }
 
 export function AppNav({ active, end, below }) {
+  const skin = useSkin()
   return (
-    <header className="sticky top-0 z-[1100] border-b border-slate-200 bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-[1100] backdrop-blur" style={{ background: skin.headerBg, borderBottom: `1px solid ${skin.line}` }}>
       <div className="flex items-center gap-3 px-4 sm:px-6 h-14 sm:h-[72px]">
         <Logo compact />
         <div className="hidden sm:block"><NavTabs active={active} /></div>

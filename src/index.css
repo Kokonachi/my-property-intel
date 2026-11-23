@@ -20,7 +20,7 @@ body { font-family: "Inter", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", s
 .leaflet-popup-content { margin: 14px 16px; }
 .leaflet-container { font-family: inherit; }
 .card { background: #fff; border-radius: 20px; box-shadow: 0 1px 2px rgba(15,23,42,.04), 0 4px 16px rgba(15,23,42,.05); }
-input[type=range] { accent-color: #2563eb; }
+input[type=range] { accent-color: var(--ink, #141416); }
 
 .leaflet-control-attribution { font-size: 9px; }
 
@@ -232,3 +232,33 @@ details[data-testid=how-calculated] > summary::-webkit-details-marker,
 details[data-testid=facilities] > summary::-webkit-details-marker,
 details[data-testid=first-buyer-note] > summary::-webkit-details-marker,
 details[data-testid=loan-assumptions-fold] > summary::-webkit-details-marker { display: none; }
+
+
+/* v16 skin: one accent, neutral chrome */
+[data-skin] .logo-mark { background: var(--ink) !important; color: var(--card) !important; }
+[data-skin="d"] .logo-mark { background: var(--accent) !important; color: #111 !important; }
+[data-skin] .skin-ink { color: var(--ink) !important; }
+[data-skin] .skin-muted { color: var(--muted) !important; }
+[data-skin="d"] [data-testid="hold-chip"],
+[data-skin="d"] [data-testid="lang-toggle"],
+[data-skin="d"] [data-testid="first-buyer-note"] > summary {
+  background: var(--tile) !important;
+  border-color: var(--line) !important;
+  color: var(--ink) !important;
+  box-shadow: none !important;
+}
+[data-skin="d"] [data-testid="lang-toggle"] span.bg-slate-900 {
+  background: var(--accent) !important;
+  color: #111 !important;
+}
+[data-skin="d"] [data-testid="loan-pct"] button,
+[data-skin="d"] [data-testid="loan-pct"] label {
+  background: var(--tile) !important;
+  border-color: var(--line) !important;
+  color: var(--ink) !important;
+}
+[data-skin="d"] [data-testid="loan-pct"] input,
+[data-skin="d"] [data-testid="loan-pct"] span {
+  color: inherit;
+}
+[data-skin="d"] [data-testid="hold-restart-home"] { color: var(--muted) !important; }

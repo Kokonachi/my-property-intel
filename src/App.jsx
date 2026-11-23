@@ -7,6 +7,7 @@ import LaunchDetail from './pages/LaunchDetail.jsx'
 import { realById } from './data/real.js'
 import { launchById } from './data/launches.js'
 import { OnboardingHost } from './components/HolderSheet.jsx'
+import { SkinProvider } from './lib/cardSkin.jsx'
 
 function useHash() {
   const [h, setH] = useState(window.location.hash || '#/')
@@ -44,9 +45,9 @@ export default function App() {
     page = <MapPage />
   }
   return (
-    <>
+    <SkinProvider hash={hash}>
       {page}
       <OnboardingHost />
-    </>
+    </SkinProvider>
   )
 }

@@ -1,13 +1,14 @@
 import { useLang } from '../lib/i18n.jsx'
+import { skinHref } from '../lib/cardSkin.jsx'
 
 export function Logo({ compact = false }) {
   const { t } = useLang()
   return (
-    <a href="#/" className="flex items-center gap-2 min-w-0">
-      <div className="h-8 w-8 shrink-0 rounded-xl bg-blue-600 text-white grid place-items-center font-black text-sm">MY</div>
+    <a href={skinHref("#/")} className="flex items-center gap-2 min-w-0">
+      <div className="logo-mark h-8 w-8 shrink-0 rounded-xl bg-blue-600 text-white grid place-items-center font-black text-sm">MY</div>
       <div className="leading-tight min-w-0">
-        <div className={`font-bold text-slate-900 text-sm sm:text-base truncate ${compact ? 'max-sm:max-w-[11.5rem]' : ''}`}>{t('马来西亚房地产智能平台', 'Malaysia Property Intelligence')}</div>
-        <div className="text-[12px] text-slate-600 truncate">{t('新楼盘 · 租金回报', 'New launches · rental yield')}</div>
+        <div className={`font-bold text-slate-900 text-sm skin-ink sm:text-base truncate ${compact ? 'max-sm:max-w-[11.5rem]' : ''}`}>{t('马来西亚房地产智能平台', 'Malaysia Property Intelligence')}</div>
+        <div className="text-[12px] text-slate-600 truncate skin-muted">{t('新楼盘 · 租金回报', 'New launches · rental yield')}</div>
       </div>
     </a>
   )
