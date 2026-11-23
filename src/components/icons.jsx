@@ -144,25 +144,23 @@ export function IconPsf(p) {
   )
 }
 
-const GOOD = { fill: '#059669', empty: '#d1fae5', stroke: '#065f46', overflow: '#34d399' }
-const SHORT = { fill: '#059669', empty: '#fecdd3', stroke: '#334155', overflow: null }
+const GOOD = { fill: '#059669', empty: '#d1fae5', stroke: '#065f46', overflow: '#34d399', sliver: null }
+const SHORT = { fill: '#be123c', empty: '#fecdd3', stroke: '#9f1239', overflow: null, sliver: '#e11d48' }
 
-/** House silhouette filled from the floor by rent ÷ instalment. */
-export function HouseFill({ coverage, size = 40, className = '' }) {
+/** House filled from the floor by rent ÷ instalment. Colour follows surplus (green) or top-up (red). */
+export function HouseFill({ coverage, surplus = null, size = 40, className = '' }) {
   const uid = useId().replace(/:/g, '')
   const clip = `hf-${uid}`
   const ratio = coverage == null || Number.isNaN(Number(coverage)) ? 0 : Math.max(0, Number(coverage))
-  const full = ratio >= 0.995
-  const pal = full ? GOOD : SHORT
+  const isSurplus = surplus == null ? ratio >= 0.995 : !!surplus
+  const pal = isSurplus ? GOOD : SHORT
   const fillPct = Math.min(1, ratio)
-  // ViewBox 40×40. House occupies y=6..36. Fill rises from y=36.
-  // Near-full shortfalls still show a visible gap at the roof (at least ~3.5 units).
   const floor = 36
   const ceil = 6
   const span = floor - ceil
-  const minGap = full ? 0 : 3.5
-  const fillH = Math.max(0, span * fillPct - minGap)
+  const fillH = span * fillPct
   const fillY = floor - fillH
+  const showSliver = !isSurplus && fillPct < 0.995 && fillH > 2
 
   return (
     <svg width={size} height={size} viewBox="0 0 40 40" className={className} aria-hidden="true">
@@ -173,7 +171,10 @@ export function HouseFill({ coverage, size = 40, className = '' }) {
       </defs>
       <path d="M6 18 L20 7 L34 18 V36 H6 Z" fill={pal.empty} />
       <rect x="5" y={fillY} width="30" height={fillH} fill={pal.fill} clipPath={`url(#${clip})`} />
-      {full && (
+      {showSliver && (
+        <rect x="5" y={Math.max(ceil, fillY - 1.6)} width="30" height="2.2" fill={pal.sliver} clipPath={`url(#${clip})`} />
+      )}
+      {isSurplus && fillPct >= 0.995 && (
         <path d="M16 5.5 L20 2.5 L24 5.5" fill="none" stroke={pal.overflow} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       )}
       <path d="M4 19.5 L20 6 L36 19.5" fill="none" stroke={pal.stroke} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />

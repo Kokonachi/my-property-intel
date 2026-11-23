@@ -2,8 +2,7 @@ import { useLang } from '../lib/i18n.jsx'
 import { fmtRM } from '../data/properties.js'
 import { compareBarModel, deltaLabel } from '../lib/compareBars.js'
 import {
-  IconKey, IconWallet, IconCalendar, IconArrowUp, IconArrowDown,
-  IconCoins, IconFile, IconStamp, IconBrush, HouseFill,
+  IconWallet, IconCalendar, IconKey, IconCoins, HouseFill,
 } from './icons.jsx'
 
 const TONE = {
@@ -12,13 +11,12 @@ const TONE = {
   flat: { bg: '#f1f5f9', text: '#334155' },
 }
 
-function toneOf(n, invert = false) {
+function toneOf(n) {
   if (n == null || n === 0) return 'flat'
-  const good = invert ? n < 0 : n > 0
-  return good ? 'good' : 'bad'
+  return n > 0 ? 'good' : 'bad'
 }
 
-function Metric({ icon, tone = 'flat', children, testId, className = '' }) {
+function Metric({ icon, tone = 'flat', label, testId, className = '', children }) {
   const pal = TONE[tone] || TONE.flat
   return (
     <div
@@ -26,11 +24,14 @@ function Metric({ icon, tone = 'flat', children, testId, className = '' }) {
       data-testid={testId}
       style={{ color: pal.text }}
     >
-      <span
-        className="shrink-0 grid place-items-center rounded-lg"
-        style={{ background: pal.bg, width: 28, height: 28 }}
-      >
-        {icon}
+      <span className="shrink-0 flex flex-col items-center gap-0.5">
+        <span
+          className="grid place-items-center rounded-lg"
+          style={{ background: pal.bg, width: 28, height: 28 }}
+        >
+          {icon}
+        </span>
+        {label ? <span className="text-[11px] leading-none font-medium text-slate-500 whitespace-nowrap">{label}</span> : null}
       </span>
       <span className="min-w-0 font-semibold tabular-nums tracking-tight leading-none whitespace-nowrap text-[15px] sm:text-[16px]">
         {children}
@@ -39,7 +40,8 @@ function Metric({ icon, tone = 'flat', children, testId, className = '' }) {
   )
 }
 
-/** Icon + big delta. No sentence captions. */
+/** Wallet (vs current rent) on the left, house (rent vs instalment) on the right.
+ *  Sign rule: money out is − and red, money in is + and green. */
 export function CompareTiles({ inst, currentRent, rentMo, cash, compact = false, className = '' }) {
   const { t } = useLang()
   const model = compareBarModel({ inst, currentRent, rentMo, cash })
@@ -50,9 +52,11 @@ export function CompareTiles({ inst, currentRent, rentMo, cash, compact = false,
   if (!hasNow && !hasLet) return null
 
   const coverage = model.rentMo && model.inst ? model.rentMo / model.inst : null
-  const rentTone = toneOf(model.instVsNow, true)
-  const letTone = toneOf(model.letVsInst, false)
-  const rentArrow = model.instVsNow > 0 ? 'up' : model.instVsNow < 0 ? 'down' : null
+  // Wallet: paying more than current rent is money out → negate instVsNow for display.
+  const walletFlow = hasNow ? -model.instVsNow : null
+  const rentTone = toneOf(walletFlow)
+  const letTone = toneOf(model.letVsInst)
+  const houseSurplus = model.letVsInst != null && model.letVsInst >= 0
   const houseSize = compact ? 42 : 56
 
   const rentAria = hasNow
@@ -69,7 +73,7 @@ export function CompareTiles({ inst, currentRent, rentMo, cash, compact = false,
     : ''
 
   const letNumber = deltaLabel(model.letVsInst) === '0' ? 'RM0' : deltaLabel(model.letVsInst)
-  const nowNumber = deltaLabel(model.instVsNow) === '0' ? 'RM0' : deltaLabel(model.instVsNow)
+  const nowNumber = deltaLabel(walletFlow) === '0' ? 'RM0' : deltaLabel(walletFlow)
 
   return (
     <div
@@ -79,20 +83,16 @@ export function CompareTiles({ inst, currentRent, rentMo, cash, compact = false,
       aria-label={[rentAria, letAria].filter(Boolean).join('. ')}
     >
       {hasNow && (
-        <Metric
-          testId="tile-rent"
-          tone={rentTone}
-          icon={<IconWallet size={15} />}
-        >
-          <span className="inline-flex items-center gap-0.5">
-            {rentArrow === 'up' ? <IconArrowUp size={13} /> : rentArrow === 'down' ? <IconArrowDown size={13} /> : null}
-            {nowNumber}
-          </span>
+        <Metric testId="tile-rent" tone={rentTone} label={t('多付', 'Extra')} icon={<IconWallet size={15} />}>
+          {nowNumber}
         </Metric>
       )}
       {hasLet && (
         <div className="flex items-center gap-1.5 min-w-0" data-testid="tile-rental" style={{ color: (TONE[letTone] || TONE.flat).text }}>
-          <HouseFill coverage={coverage} size={houseSize} data-testid="house-fill" />
+          <span className="shrink-0 flex flex-col items-center gap-0.5">
+            <HouseFill coverage={coverage} surplus={houseSurplus} size={houseSize} />
+            <span className="text-[11px] leading-none font-medium text-slate-500 whitespace-nowrap">{t('租金', 'Rent')}</span>
+          </span>
           <span className={`font-semibold tabular-nums tracking-tight leading-none whitespace-nowrap ${compact ? 'text-[15px] sm:text-[16px]' : 'text-[20px] sm:text-[24px]'}`}>
             {letNumber}
           </span>
@@ -103,17 +103,18 @@ export function CompareTiles({ inst, currentRent, rentMo, cash, compact = false,
 }
 
 export function EntryFacts({ entry, inst, compact = false, className = '' }) {
+  const { t } = useLang()
   if (!entry?.total && inst == null) return null
   return (
     <div className={`flex flex-wrap items-center gap-x-4 gap-y-1.5 ${className}`}>
       {entry?.total != null && (
-        <Metric testId="metric-entry" icon={<IconKey size={15} />}>
+        <Metric testId="metric-entry" icon={<IconKey size={15} />} label={t('入场', 'Entry')}>
           {fmtRM(entry.total)}
         </Metric>
       )}
       {inst != null && (
-        <Metric testId="metric-inst" icon={<IconCalendar size={15} />}>
-          {fmtRM(inst)}
+        <Metric testId="metric-inst" icon={<IconCalendar size={15} />} label={t('月供', 'Monthly')}>
+          {fmtRM(inst)}{t('/月', '/mo')}
         </Metric>
       )}
     </div>
@@ -121,15 +122,15 @@ export function EntryFacts({ entry, inst, compact = false, className = '' }) {
 }
 
 const ENTRY_LAYERS = [
-  { id: 'down', icon: IconKey, zh: '首付', en: 'Down' },
-  { id: 'legal', icon: IconFile, zh: '律师', en: 'Legal', key: 'legal' },
-  { id: 'stamp', icon: IconStamp, zh: '印花', en: 'Stamp', key: 'stamp' },
-  { id: 'reno', icon: IconBrush, zh: '装修', en: 'Reno', key: 'renovation' },
+  { id: 'down', zh: '首付', en: 'Down' },
+  { id: 'legal', zh: '律师', en: 'Legal' },
+  { id: 'stamp', zh: '印花', en: 'Stamp' },
+  { id: 'reno', zh: '装修', en: 'Reno' },
 ]
 
-const LAYER_FILL = ['#0f172a', '#334155', '#64748b', '#94a3b8']
+const LAYER_FILL = ['#0f172a', '#1e293b', '#334155', '#475569']
 
-/** Stacked blocks with the amount on each layer. One short word + icon. */
+/** Stacked blocks with a short label and the amount on each layer. The key icon stays on the total only. */
 export function EntryStack({ entry, t, className = '' }) {
   if (!entry?.total) return null
   const parts = [
@@ -145,12 +146,11 @@ export function EntryStack({ entry, t, className = '' }) {
     <div className={className} data-testid="entry-stack" role="img" aria-label={aria}>
       <div className="space-y-1.5">
         {parts.map((p, i) => {
-          const IconCmp = p.icon
           const width = Math.max(28, (p.value / max) * 100)
           return (
             <div key={p.id} className="flex items-center gap-2">
-              <span className="shrink-0 grid place-items-center rounded-md bg-slate-200/80 text-slate-700" style={{ width: 22, height: 22 }}>
-                <IconCmp size={13} />
+              <span className="shrink-0 w-10 text-[11px] font-medium text-slate-500 text-right whitespace-nowrap">
+                {t(p.zh, p.en)}
               </span>
               <div className="flex-1 min-w-0 h-7 rounded-md bg-slate-200/60 overflow-hidden">
                 <div

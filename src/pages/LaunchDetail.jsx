@@ -436,7 +436,7 @@ export default function LaunchDetail({ p }) {
                   <div className="mt-3 pt-3 border-t border-slate-200/80">
                     <div className="flex items-center gap-2 text-slate-900">
                       <span className="grid place-items-center rounded-lg bg-white ring-1 ring-slate-200/80 text-slate-700" style={{ width: 28, height: 28 }}><IconCalendar size={16} /></span>
-                      <div className="text-[18px] font-semibold tabular-nums leading-none">{rm(scored.v.inst)}</div>
+                      <div className="text-[18px] font-semibold tabular-nums leading-none">{rm(scored.v.inst)}{t('/月', '/mo')}</div>
                     </div>
                     <CompareTiles
                       className="mt-3"
@@ -482,8 +482,7 @@ export default function LaunchDetail({ p }) {
           <SalaryBox inst={scored.v.inst} salary={holder.salary} onSave={v => setBudget({ salary: v })} t={t} />
         )}
 
-        {zero && <div className="flex"><FirstBuyerNote compact /></div>}
-
+        
         {!zero && scored.score != null && (
           <button
             type="button"
@@ -526,12 +525,14 @@ export default function LaunchDetail({ p }) {
               <span className="text-slate-400 text-[12px] font-medium hidden group-open:inline">{t('收起', 'Hide')}</span>
             </summary>
             <div className="px-3 pb-3 border-t border-slate-100">
-              <LoanPctControl variant="full" className="mt-2 rounded-xl bg-slate-50 border border-slate-200/80 px-2 py-1" />
+              <div className="mt-2 flex items-center gap-2">
+                <LoanPctControl variant="full" className="flex-1 min-w-0 rounded-xl bg-slate-50 border border-slate-200/80 px-2 py-1" />
+              </div>
               <LoanRateYears />
             </div>
           </details>
         ) : (
-          <LoanAssumptionsBar />
+          <LoanAssumptionsBar end={zero ? <FirstBuyerNote compact /> : null} />
         )}
 
         <h2 className="pt-1 text-[15px] font-semibold text-slate-900">{zero ? t('各户型要准备多少', 'Cash to enter by unit type') : t('按户型看回报', 'Yield by unit type')}</h2>

@@ -29,6 +29,12 @@ assert.equal(noRent.instVsNow, null)
 assert.equal(noRent.letVsInst, -21)
 assert.equal(Math.round(noRent.inst), 2763)
 
+// Display rule: money out is −, money in is +. Wallet negates instVsNow.
+assert.equal(deltaLabel(-a2600.instVsNow), '−RM163')
+assert.equal(deltaLabel(-r2600.instVsNow), '−RM651')
+assert.equal(deltaLabel(r2600.letVsInst), '+RM103')
+assert.equal(deltaLabel(a2600.letVsInst), '−RM21')
+
 console.log('compare bar tests ok', {
   aviera: { inst: Math.round(aviera.v.inst), cash: Math.round(aviera.v.cash), vs2600: a2600.instVsNow },
   river: { inst: Math.round(river.v.inst), cash: Math.round(river.v.cash), vs2600: r2600.instVsNow },
