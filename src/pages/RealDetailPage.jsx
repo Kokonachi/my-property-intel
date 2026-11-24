@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ScatterChart, Scatter, XAxis, YAxis, ZAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts'
 import { REAL, REAL_META } from '../data/real.js'
 import { TYPE_LABEL, fmtRM, fmtRMk } from '../data/properties.js'
-import { Footer } from '../components/ui.jsx'
+import { Footer, Logo } from '../components/ui.jsx'
 import ProjectPhoto from '../components/ProjectPhoto.jsx'
 import { useLang, LangToggle } from '../lib/i18n.jsx'
+import { NavTabs } from '../components/AppNav.jsx'
+import YieldMapPane from '../components/YieldMapPane.jsx'
 import { areaCompletedStats } from '../lib/launchScore.js'
 import { LoanPctControl, LoanRateYears, LtvCompare } from '../components/LtvVerdict.jsx'
 
@@ -233,7 +235,20 @@ function KeyFact({ label, value }) {
   )
 }
 
+
+function useDesktop() {
+  const [isDesktop, setIsDesktop] = useState(() => typeof window !== 'undefined' && window.matchMedia('(min-width: 768px)').matches)
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 768px)')
+    const onChange = () => setIsDesktop(mq.matches)
+    mq.addEventListener('change', onChange)
+    return () => mq.removeEventListener('change', onChange)
+  }, [])
+  return isDesktop
+}
+
 export default function RealDetailPage({ p }) {
+  const isDesktop = useDesktop()
   const { t, L } = useLang()
   const est = p.rent_estimate
   const samples = (p.ask_rent.samples || []).filter(s => s.size > 0 && s.rent > 0).map(s => ({ ...s, size: +s.size, rent: +s.rent, psf: +(s.rent / s.size).toFixed(2) }))
@@ -283,15 +298,34 @@ export default function RealDetailPage({ p }) {
     valueDiffers ? { label: t('月供所用估值', 'Value used for loan'), value: fmtRM(mortPrice) } : null,
   ].filter(Boolean)
 
+  const goMap = (e) => {
+    if (e.key === 'Enter') window.location.hash = '#/map'
+  }
+
   return (
-    <div className="min-h-full bg-[#f6f7f8] flex flex-col">
-      <header className="sticky top-0 z-50 h-12 bg-white/90 backdrop-blur border-b border-slate-200/80 flex items-center gap-2 px-3 sm:px-5">
+    <div className="min-h-full md:h-full md:min-h-0 md:overflow-hidden bg-[#f6f7f8] md:bg-white flex flex-col">
+      <header className="hidden md:flex h-[72px] shrink-0 items-center gap-4 px-6 border-b border-slate-200 bg-white z-[1100] relative">
+        <Logo />
+        <NavTabs active="map" />
+        <div className="flex-1 max-w-[560px] mx-auto">
+          <div className="flex items-center gap-2 rounded-full bg-white border border-slate-200 shadow-[0_3px_12px_rgba(15,23,42,.12)] pl-4 pr-1.5 py-1.5 w-full">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#0f172a" strokeWidth="2"><circle cx="7" cy="7" r="5" /><path d="m11 11 3.5 3.5" /></svg>
+            <input onKeyDown={goMap} readOnly onFocus={() => { window.location.hash = '#/map' }} placeholder={t('搜索楼盘或地区', 'Search project or area')} className="flex-1 min-w-0 bg-transparent text-sm outline-none py-1 cursor-pointer" data-testid="search" aria-label={t('搜索楼盘或地区', 'Search project or area')} />
+          </div>
+        </div>
+        <div className="text-[12px] text-slate-600 text-right leading-tight whitespace-nowrap shrink-0">{t('更新', 'Updated')} {UPDATED}</div>
+        <LangToggle />
+      </header>
+
+      <header className="md:hidden sticky top-0 z-50 h-12 bg-white/90 backdrop-blur border-b border-slate-200/80 flex items-center gap-2 px-3 sm:px-5">
         <a href="#/map" className="shrink-0 rounded-full border border-slate-200 bg-white px-3 h-8 inline-flex items-center text-[13px] font-medium text-slate-700" data-testid="back">← {t('返回地图', 'Back to map')}</a>
-        <div className="min-w-0 flex-1 font-semibold text-[13px] text-slate-800 truncate md:hidden" data-testid="sticky-name">{p.name}</div>
+        <div className="min-w-0 flex-1 font-semibold text-[13px] text-slate-800 truncate" data-testid="sticky-name">{p.name}</div>
         <LangToggle className="ml-auto shrink-0" />
       </header>
 
-      <main className="flex-1 max-w-2xl mx-auto w-full px-3 sm:px-5 py-3 sm:py-5 space-y-3">
+      <div className="flex-1 flex min-h-0 relative md:overflow-hidden">
+      <main className="w-full md:w-[55%] md:overflow-y-auto max-w-2xl mx-auto md:max-w-none md:mx-0 px-3 sm:px-5 py-3 sm:py-5 md:px-6 md:py-5 space-y-3">
+        <a href="#/map" className="hidden md:inline-flex shrink-0 rounded-full border border-slate-200 bg-white px-3 h-8 items-center text-[13px] font-medium text-slate-700" data-testid="back-desktop">← {t('返回地图', 'Back to map')}</a>
         <section className="rounded-2xl bg-white overflow-hidden ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)]">
           <ProjectPhoto p={p} hero className={p.photo ? 'h-52 sm:h-72 w-full' : 'h-28 sm:h-32 w-full'} />
           <div className="p-4 sm:p-5">
@@ -528,8 +562,21 @@ export default function RealDetailPage({ p }) {
             </section>
           </div>
         </details>
-      </main>
       <Footer />
+      </main>
+        {isDesktop && p.lat != null && p.lng != null && (
+          <div className="hidden md:block flex-1 relative p-4 pl-0" data-testid="detail-sidemap">
+            <div className="absolute inset-4 left-0 rounded-2xl overflow-hidden">
+              <YieldMapPane
+                focus={{ lat: p.lat, lng: p.lng, zoom: 16 }}
+                highlightedId={p.id}
+                onPinClick={id => { if (id !== p.id) window.location.hash = `#/property/${id}` }}
+                onLaunchClick={id => { window.location.hash = `#/launch/${id}` }}
+              />
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   )
 }
