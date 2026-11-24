@@ -9,6 +9,7 @@ import { NavTabs } from '../components/AppNav.jsx'
 import YieldMapPane from '../components/YieldMapPane.jsx'
 import { areaCompletedStats } from '../lib/launchScore.js'
 import { LoanPctControl, LoanRateYears, LtvCompare } from '../components/LtvVerdict.jsx'
+import QuotePrice, { typKey, defaultTypKey, useQuoteOverrides } from '../components/QuotePrice.jsx'
 
 const pct = v => (v == null ? '—' : `${v.toFixed(2)}%`)
 const UPDATED = (REAL_META.generated_at || '2026-11-15').slice(0, 10)
@@ -281,8 +282,25 @@ export default function RealDetailPage({ p }) {
   const mortPrice = p.net_costs?.ref_value || p.price
   const mortRent = p.net_costs?.ref_rent || p.rent
   const mortMaint = p.net_costs ? (p.net_costs.maint_psf || 0) * (p.net_costs.ref_size || 0) : (p.maint || 0)
-  const valueDiffers = mortPrice && p.tx.price_median && Math.abs(mortPrice - p.tx.price_median) / p.tx.price_median > 0.08
   const gw = gatewayNote(p.id, t)
+
+  const quote = useQuoteOverrides(p.id)
+  const fallbackKey = defaultTypKey(buckets, p)
+  const selectedKey = (quote.selected && (buckets.some(b => typKey(b) === quote.selected) || quote.selected === 'default'))
+    ? quote.selected
+    : fallbackKey
+  const selectedRow = buckets.find(b => typKey(b) === selectedKey) || null
+  const quoteKey = selectedRow ? typKey(selectedRow) : 'default'
+  const marketPrice = selectedRow?.value ?? mortPrice
+  const calcPrice = quote.prices[quoteKey] ?? marketPrice
+  const calcRent = selectedRow?.rent ?? mortRent
+  const calcMaint = selectedRow?.size && p.net_costs
+    ? (p.net_costs.maint_psf || 0) * selectedRow.size
+    : mortMaint
+  const typLabel = selectedRow
+    ? [roomsLabel(selectedRow.rooms, t), selectedRow.size ? `${Math.round(selectedRow.size).toLocaleString('en-MY')} sqft` : null].filter(Boolean).join(' · ')
+    : null
+  const setQuotePrice = n => quote.setPrice(quoteKey, n)
 
   const txCount = p.tx?.count || 0
   const facts = [
@@ -295,7 +313,6 @@ export default function RealDetailPage({ p }) {
     } : null,
     p.tx.psf_median ? { label: t('成交 psf', 'Transacted psf'), value: `RM ${p.tx.psf_median.toLocaleString('en-MY')}` } : null,
     p.ask_sale?.psf_median ? { label: t('叫价 psf', 'Asking psf'), value: `RM ${p.ask_sale.psf_median.toLocaleString('en-MY')}` } : null,
-    valueDiffers ? { label: t('月供所用估值', 'Value used for loan'), value: fmtRM(mortPrice) } : null,
   ].filter(Boolean)
 
   const goMap = (e) => {
@@ -373,17 +390,21 @@ export default function RealDetailPage({ p }) {
           </div>
         </section>
 
-        {!p.excluded && mortPrice > 0 && mortRent > 0 && (
+        {!p.excluded && calcPrice > 0 && calcRent > 0 && (
           <section className="rounded-2xl bg-white p-4 sm:p-5 ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)]" data-testid="mortgage-vs-rent">
-            <h2 className="text-[15px] font-semibold text-slate-900">{t('月供 vs 租金', 'Instalment vs rent')}</h2>
-            {valueDiffers && (
-              <p className="mt-0.5 text-[12px] text-slate-500 leading-snug" data-testid="mortgage-basis">
-                {t('按上方「月供所用估值」，不是成交中位价', 'Uses the “Value used for loan” above, not the median sale')}
-              </p>
-            )}
+            <div className="flex items-start justify-between gap-3">
+              <div className="min-w-0">
+                <h2 className="text-[15px] font-semibold text-slate-900">{t('月供 vs 租金', 'Instalment vs rent')}</h2>
+                {typLabel && <div className="mt-0.5 text-[12px] text-slate-500 truncate" data-testid="loan-typ">{typLabel}</div>}
+              </div>
+              <div className="shrink-0 text-right">
+                <div className="text-[11px] text-slate-500">{t('月供所用估值', 'Value used for loan')}</div>
+                <QuotePrice value={calcPrice} market={marketPrice} onChange={setQuotePrice} />
+              </div>
+            </div>
             <LoanPctControl variant="full" className="mt-2.5 rounded-xl bg-slate-50 border border-slate-200/80 px-2 py-1" />
             <LoanRateYears />
-            <LtvCompare price={mortPrice} rentMo={mortRent} maintMo={mortMaint} hideTitle />
+            <LtvCompare price={calcPrice} rentMo={calcRent} maintMo={calcMaint} hideTitle />
           </section>
         )}
 
@@ -393,19 +414,35 @@ export default function RealDetailPage({ p }) {
               <h2 className="text-[15px] font-semibold text-slate-900">{t('按户型', 'By unit type')}</h2>
             </div>
             <div className="min-[480px]:hidden divide-y divide-slate-100" data-testid="unit-compare-cards">
-              {buckets.map((row, i) => (
-                <div key={i} className="px-4 py-3">
+              {buckets.map((row, i) => {
+                const key = typKey(row)
+                const selected = key === selectedKey
+                const price = quote.prices[key] ?? row.value
+                const gross = price && row.rent ? row.rent * 12 / price * 100 : null
+                return (
+                <div
+                  key={i}
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => quote.setSelected(key)}
+                  onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); quote.setSelected(key) } }}
+                  data-testid="unit-row"
+                  data-typ={key}
+                  data-selected={selected ? 'true' : 'false'}
+                  className={`px-4 py-3 cursor-pointer ${selected ? 'bg-slate-100' : ''}`}
+                >
                   <div className="flex items-baseline justify-between gap-2">
                     <div className="font-medium text-slate-900">{[roomsLabel(row.rooms, t), row.size ? `${Math.round(row.size).toLocaleString('en-MY')} sqft` : null].filter(Boolean).join(' · ') || '—'}</div>
-                    <div className="shrink-0 font-semibold tabular-nums text-slate-900">{row.gross == null ? '—' : `${row.gross.toFixed(2)}%`}</div>
+                    <div className="shrink-0 font-semibold tabular-nums text-slate-900" data-testid="unit-gross">{gross == null ? '—' : `${gross.toFixed(2)}%`}</div>
                   </div>
-                  <div className="mt-1.5 flex flex-wrap gap-x-3 gap-y-0.5 text-[12px] tabular-nums text-slate-600">
+                  <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-[12px] tabular-nums text-slate-600">
                     <span>{fmtRM(row.rent)}{t('/月', '/mo')}</span>
-                    {row.value ? <span>{fmtRMk(row.value)}</span> : null}
+                    {price ? <QuotePrice compact value={price} market={row.value} onChange={n => quote.setPrice(key, n)} data-testid="unit-price" className="text-[12px]" /> : null}
                     <span>{t(`${row.n} 则`, row.n === 1 ? '1 ad' : `${row.n} ads`)}</span>
                   </div>
                 </div>
-              ))}
+                )
+              })}
             </div>
             <div className="hidden min-[480px]:block overflow-x-auto">
               <table className="w-full text-[13px]">
@@ -419,15 +456,28 @@ export default function RealDetailPage({ p }) {
                   </tr>
                 </thead>
                 <tbody>
-                  {buckets.map((row, i) => (
-                    <tr key={i} className="border-t border-slate-100">
+                  {buckets.map((row, i) => {
+                    const key = typKey(row)
+                    const selected = key === selectedKey
+                    const price = quote.prices[key] ?? row.value
+                    const gross = price && row.rent ? row.rent * 12 / price * 100 : null
+                    return (
+                    <tr
+                      key={i}
+                      onClick={() => quote.setSelected(key)}
+                      data-testid="unit-row"
+                      data-typ={key}
+                      data-selected={selected ? 'true' : 'false'}
+                      className={`border-t border-slate-100 cursor-pointer ${selected ? 'bg-slate-100' : 'hover:bg-slate-50/70'}`}
+                    >
                       <td className="py-2 pl-4 text-slate-800 font-medium">{[roomsLabel(row.rooms, t), row.size ? `${Math.round(row.size).toLocaleString('en-MY')} sqft` : null].filter(Boolean).join(' · ') || '—'}</td>
                       <td className="py-2 text-slate-600 tabular-nums">{row.n}</td>
                       <td className="py-2 text-slate-800 tabular-nums">{fmtRM(row.rent)}{t('/月', '/mo')}</td>
-                      <td className="py-2 text-slate-800 tabular-nums">{row.value ? fmtRMk(row.value) : '—'}</td>
-                      <td className="py-2 pr-4 text-right font-semibold tabular-nums text-slate-900">{row.gross == null ? '—' : `${row.gross.toFixed(2)}%`}</td>
+                      <td className="py-2 text-slate-800 tabular-nums">{price ? <QuotePrice compact value={price} market={row.value} onChange={n => quote.setPrice(key, n)} data-testid="unit-price" /> : '—'}</td>
+                      <td className="py-2 pr-4 text-right font-semibold tabular-nums text-slate-900" data-testid="unit-gross">{gross == null ? '—' : `${gross.toFixed(2)}%`}</td>
                     </tr>
-                  ))}
+                    )
+                  })}
                 </tbody>
               </table>
             </div>
