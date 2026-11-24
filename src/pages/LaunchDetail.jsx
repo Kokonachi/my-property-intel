@@ -15,6 +15,7 @@ import { useHolder, SEGMENTS } from '../lib/holderProfile.js'
 import { cashVsRent, entryCost, salaryBurden, parseMoney } from '../lib/mortgage.js'
 import { salaryBandCopy } from '../lib/plainCopy.js'
 import { CompareTiles, EntryFacts, EntryStack } from '../components/CompareTiles.jsx'
+import { RentRow, InstDelta } from '../components/RentGauge.jsx'
 import { IconKey, IconCalendar, IconInfo } from '../components/icons.jsx'
 import { useCompare } from '../lib/compareDraft.js'
 
@@ -436,12 +437,14 @@ export default function LaunchDetail({ p }) {
                   <div className="mt-3 pt-3 border-t border-slate-200/80">
                     <div className="flex items-center gap-2 text-slate-900">
                       <span className="grid place-items-center rounded-lg bg-white ring-1 ring-slate-200/80 text-slate-700" style={{ width: 28, height: 28 }}><IconCalendar size={16} /></span>
-                      <div className="text-[18px] font-semibold tabular-nums leading-none">{rm(scored.v.inst)}{t('/月', '/mo')}</div>
+                      <div className="text-[18px] font-semibold tabular-nums leading-none">
+                        {rm(scored.v.inst)}{t('/月', '/mo')}
+                        <InstDelta inst={scored.v.inst} currentRent={holder.currentRent} />
+                      </div>
                     </div>
-                    <CompareTiles
-                      className="mt-3"
+                    <RentRow
+                      className="mt-2.5"
                       inst={scored.v.inst}
-                      currentRent={holder.currentRent}
                       rentMo={scored.v.rentMo ?? scored.yields?.rentMo}
                       cash={scored.v.cash}
                     />

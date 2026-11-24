@@ -8,7 +8,9 @@ import { AppNav } from '../components/AppNav.jsx'
 import { LoanPctControl, LoanVerdict } from '../components/LtvVerdict.jsx'
 import { FirstBuyerNote, RestartButton } from '../components/HolderSheet.jsx'
 import { useHolder, SEGMENT_SORTS, SEGMENTS } from '../lib/holderProfile.js'
-import { CompareTiles, EntryFacts } from '../components/CompareTiles.jsx'
+import { EntryFacts } from '../components/CompareTiles.jsx'
+import { RentRow, InstDelta } from '../components/RentGauge.jsx'
+import { readCardAlt } from '../lib/cardAlt.js'
 import { IconKey, IconCoins, IconPsf, IconScore } from '../components/icons.jsx'
 import { useCompare, COMPARE_MAX } from '../lib/compareDraft.js'
 import { CompareTable, CompareBar } from '../components/CompareTable.jsx'
@@ -37,14 +39,25 @@ function RankCard({ p, s, segment, compare }) {
   const inst = s.v?.inst
   const many = segment === SEGMENTS.many
   const zero = segment === SEGMENTS.zero
-  const showTiles = zero && inst != null
   const selected = compare?.has(p.id)
   const blocked = many && !selected && !compare?.canAdd
+  const rentMo = s.v?.rentMo ?? y?.rentMo
+  const cash = s.v?.cash
+  const currentRent = zero ? holder.currentRent : undefined
+  const hasRent = inst != null && rentMo != null
+  const alt = readCardAlt()
+  const photoBox = alt === 'a' && hasRent
+    ? 'relative shrink-0 w-24 sm:w-[104px] self-stretch min-h-24 sm:min-h-[104px] rounded-xl overflow-hidden bg-slate-100'
+    : 'relative shrink-0 w-24 h-24 sm:w-[104px] sm:h-[104px] rounded-xl overflow-hidden bg-slate-100'
+
+  const rentRow = hasRent ? (
+    <RentRow className={alt === 'b' ? 'mt-0.5' : 'mt-1.5'} inst={inst} rentMo={rentMo} cash={cash} />
+  ) : null
 
   return (
     <div className="group flex flex-col gap-2 rounded-2xl bg-white p-2.5 pr-3 ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)] hover:ring-slate-300 hover:shadow-[0_4px_16px_rgba(15,23,42,.08)] transition" data-testid={`score-card-${p.id}`}>
       <div className="flex gap-3">
-        <div className="relative shrink-0 w-24 h-24 sm:w-[104px] sm:h-[104px] rounded-xl overflow-hidden bg-slate-100">
+        <div className={photoBox}>
           <a href={`#/explore/${p.id}`} className="absolute inset-0" aria-hidden="true" tabIndex={-1}>
             {photo ? (
               <img src={photo} alt="" className="w-full h-full object-cover" />
@@ -72,7 +85,7 @@ function RankCard({ p, s, segment, compare }) {
             <div className="min-w-0">
               <div className="font-semibold text-[15px] text-slate-900 leading-snug truncate">{p.card_name || p.name}</div>
               {zero && entry ? (
-                <EntryFacts entry={entry} inst={inst} className="mt-1.5" />
+                <EntryFacts entry={entry} inst={inst} className="mt-1.5" instExtra={<InstDelta inst={inst} currentRent={currentRent} />} />
               ) : many ? (
                 <div className="mt-0.5">
                   <div className="text-[13px] tabular-nums text-slate-700">
@@ -94,24 +107,17 @@ function RankCard({ p, s, segment, compare }) {
             </div>
             {!zero && <ScoreMark score={s.score} />}
           </div>
-          {(!zero && inst != null && (s.v?.rentMo ?? y?.rentMo)) ? (
-            <CompareTiles className="mt-1.5" compact inst={inst} rentMo={s.v?.rentMo ?? y?.rentMo} cash={s.v?.cash} />
-          ) : (!zero && verdict) ? (
+          {alt === 'a' && rentRow}
+          {(!zero && !hasRent && verdict) ? (
             <LoanVerdict price={s.price} rentMo={y?.rentMo} className="mt-1.5" compact={many} />
-          ) : (!zero && down) ? (
+          ) : (!zero && !hasRent && down) ? (
             <div className="mt-1 text-[11px] text-slate-500">{down}</div>
           ) : null}
         </a>
       </div>
-      {showTiles ? (
-        <a href={`#/explore/${p.id}`} className="block">
-          <CompareTiles
-            compact
-            inst={inst}
-            currentRent={holder.currentRent}
-            rentMo={s.v?.rentMo ?? y?.rentMo}
-            cash={s.v?.cash}
-          />
+      {alt === 'b' && rentRow ? (
+        <a href={`#/explore/${p.id}`} className="block pl-0">
+          {rentRow}
         </a>
       ) : null}
     </div>
