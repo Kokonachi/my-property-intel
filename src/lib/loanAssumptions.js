@@ -1,13 +1,15 @@
 import { useSyncExternalStore } from 'react'
-import { DEFAULT_RATE, DEFAULT_YEARS, DEFAULT_LTV, clampLtv } from './mortgage.js'
+import { DEFAULT_RATE, DEFAULT_YEARS, DEFAULT_LTV, clampLtv, RATE_MIN, RATE_MAX, YEARS_MIN, YEARS_MAX } from './mortgage.js'
 
 const KEY = 'mpi-loan'
 const subs = new Set()
 
 function clamp(rate, years, ltv) {
+  const r = Number(rate)
+  const y = Math.round(Number(years))
   return {
-    rate: rate > 0 && rate < 20 ? rate : DEFAULT_RATE,
-    years: years > 0 && years <= 40 ? years : DEFAULT_YEARS,
+    rate: Number.isFinite(r) && r >= RATE_MIN && r <= RATE_MAX ? r : DEFAULT_RATE,
+    years: Number.isFinite(y) && y >= YEARS_MIN && y <= YEARS_MAX ? y : DEFAULT_YEARS,
     ltv: clampLtv(ltv),
   }
 }

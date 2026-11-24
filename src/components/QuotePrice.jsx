@@ -65,7 +65,7 @@ function parsePrice(raw) {
   return Number.isFinite(n) && n > 0 ? n : null
 }
 
-/** Tappable price. iPhone numeric keypad; live-commits a valid number. */
+/** Tappable price. iPhone numeric keypad; commits a valid number on blur/Enter. */
 export default function QuotePrice({
   value,
   market,
@@ -96,10 +96,7 @@ export default function QuotePrice({
     setOpen(true)
   }
   const live = raw => {
-    const cleaned = String(raw).replace(/[^\d]/g, '').slice(0, 9)
-    setDraft(cleaned)
-    const n = parsePrice(cleaned)
-    if (n != null && n >= 1000) onChange(n)
+    setDraft(String(raw).replace(/[^\d]/g, '').slice(0, 9))
   }
   const close = () => {
     const n = parsePrice(draft)
@@ -139,11 +136,12 @@ export default function QuotePrice({
             spellCheck={false}
             data-testid={`${testId}-input`}
             aria-label={t('售价', 'Price')}
-            className="w-[8.5ch] bg-transparent outline-none text-[14px] font-semibold tabular-nums text-slate-900"
+            className="w-[8.5ch] bg-transparent outline-none text-[16px] font-semibold tabular-nums text-slate-900 leading-snug"
             value={draft}
             onChange={e => live(e.target.value)}
+            onFocus={e => { requestAnimationFrame(() => { e.target.select(); try { e.target.setSelectionRange(0, e.target.value.length) } catch {} }) }}
             onBlur={close}
-            onClick={e => e.stopPropagation()}
+            onClick={e => { e.stopPropagation(); e.currentTarget.select() }}
             onKeyDown={e => {
               e.stopPropagation()
               if (e.key === 'Enter') e.currentTarget.blur()

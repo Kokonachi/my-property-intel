@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useLang } from '../lib/i18n.jsx'
-import { cashVsRent, signedRM, DEFAULT_LTV, LTV_MIN, LTV_MAX, LTV_STEP, clampLtv } from '../lib/mortgage.js'
+import { cashVsRent, signedRM, DEFAULT_LTV, LTV_MIN, LTV_MAX, LTV_STEP, clampLtv, RATE_MIN, RATE_MAX, YEARS_MIN, YEARS_MAX } from '../lib/mortgage.js'
 import { useLoanAssumptions } from '../lib/loanAssumptions.js'
 import { headlineVerdict, downLabel } from '../lib/launchScore.js'
 
@@ -195,23 +195,65 @@ function Bar({ label, value, max, color, t }) {
   )
 }
 
+function parseYears(raw) {
+  const n = Math.round(Number(String(raw).trim()))
+  return Number.isFinite(n) && n >= YEARS_MIN && n <= YEARS_MAX ? n : null
+}
+
+function parseRate(raw) {
+  const n = Number(String(raw).trim())
+  return Number.isFinite(n) && n >= RATE_MIN && n <= RATE_MAX ? n : null
+}
+
+function selectAll(el) {
+  if (!el) return
+  el.select()
+  try { el.setSelectionRange(0, el.value.length) } catch { /* ignore */ }
+}
+
 export function LoanRateYears({ className = '' }) {
   const { t } = useLang()
   const { loan, setLoan } = useLoanAssumptions()
+  const [rateDraft, setRateDraft] = useState(null)
+  const [yearsDraft, setYearsDraft] = useState(null)
+  useEffect(() => { setRateDraft(null) }, [loan.rate])
+  useEffect(() => { setYearsDraft(null) }, [loan.years])
+
+  const commitRate = raw => {
+    const n = parseRate(raw)
+    if (n != null) setLoan({ rate: n })
+    setRateDraft(null)
+  }
+  const commitYears = raw => {
+    const n = parseYears(raw)
+    if (n != null) setLoan({ years: n })
+    setYearsDraft(null)
+  }
+
   return (
     <div className={`mt-2 grid grid-cols-2 gap-2 ${className}`} data-testid="loan-rate-years">
       <label className="rounded-xl border border-slate-200 bg-white px-3 py-2">
         <div className="text-[11px] text-slate-500">{t('年利率', 'Interest rate')}</div>
         <div className="flex items-center gap-1">
           <input
-            type="number"
-            step="0.05"
-            min="0.5"
-            max="15"
+            type="text"
+            inputMode="decimal"
+            enterKeyHint="done"
+            autoComplete="off"
+            autoCorrect="off"
+            spellCheck={false}
             data-testid="loan-rate"
-            className="w-full bg-transparent outline-none font-semibold tabular-nums text-[13px]"
-            value={loan.rate}
-            onChange={e => setLoan({ rate: e.target.value })}
+            aria-label={t('年利率', 'Interest rate')}
+            className="w-full bg-transparent outline-none font-semibold tabular-nums text-[16px] leading-snug"
+            value={rateDraft ?? String(loan.rate)}
+            onFocus={e => { setRateDraft(String(loan.rate)); requestAnimationFrame(() => selectAll(e.target)) }}
+            onClick={e => selectAll(e.currentTarget)}
+            onChange={e => setRateDraft(e.target.value.replace(/[^\d.]/g, '').replace(/(\..*)\./g, '$1').slice(0, 6))}
+            onBlur={e => commitRate(e.target.value)}
+            onKeyDown={e => {
+              if (e.key === 'Enter') e.currentTarget.blur()
+              if (e.key === 'Escape') setRateDraft(null)
+            }}
           />
           <span className="text-[11px] text-slate-400 shrink-0">% p.a.</span>
         </div>
@@ -220,14 +262,25 @@ export function LoanRateYears({ className = '' }) {
         <div className="text-[11px] text-slate-500">{t('贷款年期', 'Tenure')}</div>
         <div className="flex items-center gap-1">
           <input
-            type="number"
-            step="1"
-            min="5"
-            max="40"
+            type="text"
+            inputMode="numeric"
+            pattern="[0-9]*"
+            enterKeyHint="done"
+            autoComplete="off"
+            autoCorrect="off"
+            spellCheck={false}
             data-testid="loan-years"
-            className="w-full bg-transparent outline-none font-semibold tabular-nums text-[13px]"
-            value={loan.years}
-            onChange={e => setLoan({ years: e.target.value })}
+            aria-label={t('贷款年期', 'Tenure')}
+            className="w-full bg-transparent outline-none font-semibold tabular-nums text-[16px] leading-snug"
+            value={yearsDraft ?? String(loan.years)}
+            onFocus={e => { setYearsDraft(String(loan.years)); requestAnimationFrame(() => selectAll(e.target)) }}
+            onClick={e => selectAll(e.currentTarget)}
+            onChange={e => setYearsDraft(e.target.value.replace(/[^\d]/g, '').slice(0, 2))}
+            onBlur={e => commitYears(e.target.value)}
+            onKeyDown={e => {
+              if (e.key === 'Enter') e.currentTarget.blur()
+              if (e.key === 'Escape') setYearsDraft(null)
+            }}
           />
           <span className="text-[11px] text-slate-400 shrink-0">{t('年', 'yrs')}</span>
         </div>
