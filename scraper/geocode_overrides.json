@@ -139,15 +139,17 @@
  },
  "real-kuala-lumpur-gateway": {
   "name": "Kuala Lumpur Gateway",
-  "lat": 3.110854,
-  "lng": 101.663301,
-  "source": "street from Brickz transactions (Jalan Kerinchi) → nominatim: Jalan Kerinchi, Bangsar South, Pantai Dalam, Kuala Lumpur, 59200, Malaysia"
+  "lat": 3.1136,
+  "lng": 101.663023,
+  "source": "manual: Google Maps place 'KL Gateway Mall', 2 Jalan Kerinchi, 59200 (KL Gateway Residences sit on the mall podium); checked 2026-11-25",
+  "verified": true
  },
  "real-kuala-lumpur-gateway-menara-suezcap": {
   "name": "Kuala Lumpur Gateway (Menara Suezcap)",
-  "lat": 3.110854,
-  "lng": 101.663301,
-  "source": "street from Brickz transactions (Jalan Kerinchi) → nominatim: Jalan Kerinchi, Bangsar South, Pantai Dalam, Kuala Lumpur, 59200, Malaysia"
+  "lat": 3.1136,
+  "lng": 101.663023,
+  "source": "manual: Google Maps place 'KL Gateway Mall', 2 Jalan Kerinchi, 59200 (KL Gateway Residences sit on the mall podium); checked 2026-11-25",
+  "verified": true
  },
  "real-pkns-17-kampung-kerinchi": {
   "name": "Pkns 17 Kampung Kerinchi",
@@ -252,5 +254,12 @@
   "lat": 3.034378,
   "lng": 101.589533,
   "source": "street from Brickz transactions (Jalan Usj 19/6) → nominatim: Jalan USJ 19/6, USJ 19, UEP Subang Jaya, Puchong, Majlis Bandaraya Subang Jaya, "
+ },
+ "real-kl-gateway": {
+  "name": "Kl Gateway",
+  "lat": 3.1136,
+  "lng": 101.663023,
+  "source": "manual: Google Maps place 'KL Gateway Mall', 2 Jalan Kerinchi, 59200 (KL Gateway Residences sit on the mall podium); checked 2026-11-25",
+  "verified": true
  }
 }

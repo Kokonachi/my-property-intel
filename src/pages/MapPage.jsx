@@ -142,6 +142,7 @@ function ListingCard({ p, metric, rentMode, active, onHover, onClick, compact })
         <div className="text-[12px] text-slate-700 mt-1">{noYieldText(p, rentMode, t)}</div>
         {related && <div className="text-[12px] text-slate-600 mt-0.5">{related}</div>}
         {!onMapOk(p) && <div className="text-[12px] text-slate-600 mt-0.5">📍 {t('位置待核实，未在地图显示', 'Location unverified — not shown on map')}</div>}
+        {onMapOk(p) && (p.geo_precision === 'street' || p.geo_precision === 'area') && <div className="text-[12px] text-slate-600 mt-0.5" data-testid="geo-approx">📍 {p.geo_precision === 'street' ? t('大概位置（只精确到街道）', 'Approximate location (street-level)') : t('大概位置（只精确到片区）', 'Approximate location (area-level)')}</div>}
       </a>
     )
   }
@@ -193,6 +194,7 @@ function ListingCard({ p, metric, rentMode, active, onHover, onClick, compact })
         <div className="text-[14px] text-slate-900 mt-0.5"><b>{priceTxt}</b><span className="text-[12px] text-slate-600">{p.size ? t(` 按 ${Number(p.size).toLocaleString('en-MY')} sqft 估值`, ` value at ${Number(p.size).toLocaleString('en-MY')} sqft`) : t(' 典型单位', ' typical unit')}</span> · {t('租', 'Rent')} <b>{p.rent ? fmtRM(p.rent) : '—'}</b>{t('/月', '/mo')}{p.rent_method === 'area_comps' && <span className="text-[12px] text-amber-800"> · {t('区域估算', 'area est.')}</span>}</div>
         {related && <div className="text-[12px] text-slate-600">{related}</div>}
         {!onMapOk(p) && <div className="text-[12px] text-slate-600">📍 {t('位置待核实，未在地图显示', 'Location unverified — not shown on map')}</div>}
+        {onMapOk(p) && (p.geo_precision === 'street' || p.geo_precision === 'area') && <div className="text-[12px] text-slate-600" data-testid="geo-approx">📍 {p.geo_precision === 'street' ? t('大概位置（只精确到街道）', 'Approximate location (street-level)') : t('大概位置（只精确到片区）', 'Approximate location (area-level)')}</div>}
         <div className="mt-1 text-[12px] font-semibold" style={{ color: bandColor(netY) }}>{pct(netY)} <span className="font-normal text-slate-600">{t('净回报', 'Net yield')}</span></div>
       </div>
     </a>

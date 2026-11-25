@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ScatterChart, Scatter, XAxis, YAxis, ZAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts'
-import { REAL, REAL_META, isThinSample, rentSampleN, RANK_MIN_SAMPLES } from '../data/real.js'
+import { REAL, REAL_META, isThinSample, rentSampleN, RANK_MIN_SAMPLES, geoStreet } from '../data/real.js'
 import { TYPE_LABEL, fmtRM, fmtRMk } from '../data/properties.js'
 import { Footer, Logo } from '../components/ui.jsx'
 import ProjectPhoto from '../components/ProjectPhoto.jsx'
@@ -20,10 +20,21 @@ const GATEWAY = {
   'real-kuala-lumpur-gateway': 'Kuala Lumpur Gateway',
   'real-kuala-lumpur-gateway-menara-suezcap': 'Menara Suezcap',
 }
+function locationText(p, t) {
+  const st = geoStreet(p)
+  switch (p.geo_precision) {
+    case 'none': return t('位置待核实，未在地图显示', 'Location unverified — not shown on the map')
+    case 'verified': return t('位置已按 Google 地图人工核对', 'Location checked by hand against Google Maps')
+    case 'street': return t(`位置只精确到街道（${st || '成交记录里的街道'}），地图上的点不是楼栋的准确位置`, `Location is street-level only (${st || 'street from transactions'}); the pin is not the exact building`)
+    case 'area': return t('位置只精确到片区，地图上的点不是楼栋的准确位置', 'Location is area-level only; the pin is not the exact building')
+    default: return t('位置根据楼盘名称匹配', 'Location matched from the project name')
+  }
+}
+
 function gatewayNote(id, t) {
   if (!(id in GATEWAY)) return null
   const others = Object.entries(GATEWAY).filter(([k]) => k !== id).map(([, n]) => n).join(' / ')
-  return t(`同一片区还有 ${others}（Brickz 分项记录，价格与成交不同，未合并）`, `Same precinct: also ${others} (separate Brickz records with different prices — not merged)`)
+  return t(`和 ${others} 是同一个项目（KL Gateway，2 Jalan Kerinchi）：Brickz 把成交分成几条记录，租盘是同一批，未合并`, `Same development as ${others} (KL Gateway, 2 Jalan Kerinchi): Brickz splits the transactions into several records; the rent ads are the same set. Not merged`)
 }
 
 function displaySources(sources) {
@@ -261,9 +272,7 @@ export default function RealDetailPage({ p }) {
   const unranked = inArea.filter(x => x.gross == null || isThinSample(x)).sort(byGross).map(x => ({ ...x, rank: null }))
   const allPeers = [...rankable, ...unranked]
   const peers = showAll ? allPeers : allPeers.filter(x => (x.rank != null && x.rank <= 8) || x.id === p.id)
-  const locTxt = p.on_map === false
-    ? t('位置待核实，未在地图显示', 'Location unverified — not shown on the map')
-    : t('位置根据楼盘名称匹配', 'Location matched from the project name')
+  const locTxt = locationText(p, t)
   const nRent = est ? est.n : p.ask_rent.count
   const nRentAdsLabel = t(`${nRent} 则`, nRent === 1 ? '1 ad' : `${nRent} ads`)
   const tenure = p.tenure === 'Freehold' ? t('永久地契', 'Freehold') : t('租赁地契', 'Leasehold')
@@ -354,6 +363,9 @@ export default function RealDetailPage({ p }) {
             <h1 className="text-[22px] sm:text-[26px] font-semibold text-slate-900 leading-tight tracking-tight" data-testid="prop-name">{p.name}</h1>
             <p className="mt-1 text-[13px] text-slate-500" data-testid="prop-meta">{metaLine}</p>
             {gw && <p className="mt-1 text-[12px] text-slate-500" data-testid="related-precinct">{gw}</p>}
+            {(p.geo_precision === 'street' || p.geo_precision === 'area') && (
+              <p className="mt-1 text-[12px] text-amber-800" data-testid="geo-approx">📍 {locTxt}</p>
+            )}
 
             {p.excluded && (
               <div className="mt-3 rounded-xl bg-slate-100 text-slate-700 text-[12px] p-3" data-testid="excluded">

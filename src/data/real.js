@@ -24,7 +24,21 @@ export function yieldOf(p, rentMode, metric) {
 }
 
 
-export const REAL = [...raw.projects, ...klBatch1.projects].map((r, i) => {
+// How exact a map point is. 'street': placed on a street from Brickz transactions; 'area': an area
+// centre (geo_source 'approx' is a jittered area centre) or a point shared with other projects.
+const coordKey = r => `${r.lat},${r.lng}`
+const ALL = [...raw.projects, ...klBatch1.projects]
+const SHARED = ALL.reduce((m, r) => (r.lat != null ? m.set(coordKey(r), (m.get(coordKey(r)) || 0) + 1) : m), new Map())
+export function geoPrecision(r) {
+  if (r.lat == null || r.lng == null) return 'none'
+  if (r.geo_source === 'verified') return 'verified'
+  if (/^street from/i.test(r.geo_detail || '')) return 'street'
+  if (r.geo_source === 'approx' || SHARED.get(coordKey(r)) > 1) return 'area'
+  return 'name'
+}
+export const geoStreet = r => (/^street from Brickz transactions \(([^)]+)\)/i.exec(r.geo_detail || '') || [])[1] || null
+
+export const REAL = ALL.map((r, i) => {
   const c = r.net_costs
   const est = r.rent_estimate
   const size = c?.ref_size ?? r.ask_rent.size_median ?? null
@@ -38,6 +52,7 @@ export const REAL = [...raw.projects, ...klBatch1.projects].map((r, i) => {
     ...r,
     name: r.name.replace(/^Kl\b/, 'KL'),
     real: true,
+    geo_precision: geoPrecision(r),
     price, rent, psf, size, maint, otherCosts,
     gross: r.gross_yield, net: r.net_yield,
     photo: photos[r.id] || null,
