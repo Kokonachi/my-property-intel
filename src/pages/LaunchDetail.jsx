@@ -15,8 +15,8 @@ import { useHolder, SEGMENTS } from '../lib/holderProfile.js'
 import { cashVsRent, entryCost, salaryBurden, parseMoney } from '../lib/mortgage.js'
 import { salaryBandCopy } from '../lib/plainCopy.js'
 import { EntryFacts, EntryStack, BuyVsRent } from '../components/CompareTiles.jsx'
+import { DecisionSummary } from '../components/DecisionSummary.jsx'
 import { IconKey, IconCalendar, IconInfo } from '../components/icons.jsx'
-import { useCompare } from '../lib/compareDraft.js'
 
 const pct = v => (v == null || Number.isNaN(v) ? '—' : `${v.toFixed(2)}%`)
 const rm = v => (v == null || Number.isNaN(v) ? '—' : fmtRM(v))
@@ -326,26 +326,19 @@ function SalaryBox({ inst, salary, onSave, t }) {
 export default function LaunchDetail({ p }) {
   const { t } = useLang()
   const { loan } = useLoanAssumptions()
-  const { holder, segment, setBudget } = useHolder()
-  const compare = useCompare()
+  const { holder, goal, segment, setBudget } = useHolder()
   const [drafts, setDrafts] = useState(() => Object.fromEntries(p.typologies.map(ty => [ty.id, { mode: ty.price_from ? 'pct' : 'price', pct: '', price: '' }])))
   const setDraft = (id, d) => setDrafts(s => ({ ...s, [id]: { ...s[id], ...d } }))
-  const many = false // compact investor variant retired with the holdings-count segments; removed in phase 3
+  const [selTypId, setSelTypId] = useState(null)
   const zero = segment === SEGMENTS.zero
-  const [scoreOpen, setScoreOpen] = useState(many)
-  const [howOpen, setHowOpen] = useState(many)
-
-  useEffect(() => {
-    if (many) {
-      setScoreOpen(true)
-      setHowOpen(true)
-    }
-  }, [many])
+  const [scoreOpen, setScoreOpen] = useState(false)
+  const [howOpen, setHowOpen] = useState(false)
 
   const pricedTyp = useMemo(() => p.typologies.find(ty => ty.price_from), [p])
   const scored = useMemo(() => launchScore(p, { rate: loan.rate, years: loan.years, ltv: loan.ltv }), [p, loan.rate, loan.years, loan.ltv])
   const sBand = scoreBand(scored.score)
   const entry = entryCostOf(scored)
+  const selTyp = selTypId ?? scored.typ?.id ?? p.typologies[0]?.id
 
   const tenureLabel = /freehold/i.test(p.tenure)
     ? t('永久地契', 'Freehold')
@@ -374,8 +367,7 @@ export default function LaunchDetail({ p }) {
     p.construction_progress_pct != null ? { label: t('开工进度', 'Construction'), value: `${p.construction_progress_pct}%` } : null,
   ].filter(Boolean)
 
-  const typVariant = zero ? 'simple' : many ? 'pro' : 'default'
-  const selected = compare.has(p.id)
+  const typVariant = zero ? 'simple' : 'pro'
   const dataAsOf = REAL_META?.generated_at
 
   return (
@@ -385,17 +377,6 @@ export default function LaunchDetail({ p }) {
         <div className="flex flex-wrap items-center gap-3 text-[13px] font-medium text-slate-600">
           <a href="#/" className="hover:text-slate-900">{t('← 全部新楼盘', '← All new launches')}</a>
           <a href={`#/explore/${p.id}`} className="hover:text-slate-900">{t('在地图上看', 'See on the map')}</a>
-          {many && (
-            <button
-              type="button"
-              data-testid="detail-compare-toggle"
-              disabled={!selected && !compare.canAdd}
-              onClick={() => compare.toggle(p.id)}
-              className="ml-auto text-[13px] font-medium text-slate-700 disabled:text-slate-300"
-            >
-              {selected ? t('已加入对比', 'Added to compare') : t('加入对比', 'Add to compare')}
-            </button>
-          )}
         </div>
 
         <GoalPrompt />
@@ -417,6 +398,8 @@ export default function LaunchDetail({ p }) {
             <h1 className="text-[22px] sm:text-[26px] font-semibold text-slate-900 leading-tight tracking-tight">{p.name}</h1>
             <p className="mt-1 text-[13px] text-slate-500">{metaLine}</p>
             <p className="mt-0.5 text-[13px] text-slate-500">{p.developer}{p.developer_parent ? ` · ${p.developer_parent}` : ''}</p>
+
+            <DecisionSummary embedded p={p} s={scored} entry={entry} goal={goal} loan={loan} currentRent={holder.currentRent} />
 
             {zero && entry && (
               <div className="mt-4 rounded-2xl bg-slate-50 px-3.5 py-3.5" data-testid="entry-cost">
@@ -491,23 +474,14 @@ export default function LaunchDetail({ p }) {
             onClick={() => setScoreOpen(v => !v)}
             className="w-full text-left rounded-2xl bg-white p-4 sm:p-5 ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)]"
           >
-            <div className="text-[11px] text-slate-500">{t('投资评分', 'Investment score')}</div>
+            <div className="text-[11px] text-slate-500">{t('楼盘回报分（按表价，不随贷款变化）', 'Project score (at list price; does not move with your loan)')}</div>
             <div className="mt-0.5 flex items-end gap-3">
               <div className="text-[32px] font-semibold tabular-nums leading-none tracking-tight" style={{ color: sBand.color }}>{scored.score.toFixed(1)}</div>
               <div className="pb-0.5 text-[13px] font-medium text-slate-600">{t(sBand.zh, sBand.en)}</div>
             </div>
-            {many && scored.yields && (
-              <div className="mt-2 text-[12px] text-slate-600 tabular-nums" data-testid="investor-metrics">
-                {scored.yields.net != null ? <span>{t('净回报', 'Net')} {scored.yields.net.toFixed(2)}%</span> : null}
-                {scored.psf ? <span> · RM{Math.round(scored.psf).toLocaleString('en-MY')} psf</span> : null}
-                {scored.bandN ? <span> · {t(`${scored.bandN} 则可比`, `${scored.bandN} comps`)}</span> : null}
-              </div>
-            )}
             {scoreOpen && (
               <div className="mt-2.5 text-[12px] text-slate-600 tabular-nums leading-snug" data-testid="score-breakdown">
                 {t('租售比', 'Rent-to-price')} {scored.parts.yield.toFixed(1)}/{SCORE_WEIGHTS.yield}
-                <span className="text-slate-300"> · </span>
-                {t(`贷${loan.ltv}%现金流`, `${loan.ltv}% loan cash flow`)} {scored.parts.cash.toFixed(1)}/{SCORE_WEIGHTS.cash}
                 <span className="text-slate-300"> · </span>
                 {t('对比区域', 'Vs area')} {scored.parts.vsArea.toFixed(1)}/{SCORE_WEIGHTS.vsArea}
                 <span className="text-slate-300"> · </span>
@@ -517,28 +491,24 @@ export default function LaunchDetail({ p }) {
           </button>
         )}
 
-        {many ? (
-          <details className="rounded-2xl bg-white ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)] group" data-testid="loan-assumptions-fold">
-            <summary className="cursor-pointer list-none px-4 py-3 flex items-center justify-between gap-3 text-[13px] font-medium text-slate-800">
-              <span>{t('贷款设定', 'Loan settings')}</span>
-              <span className="text-slate-400 text-[12px] font-medium group-open:hidden">{t(`贷 ${loan.ltv}% · 展开`, `${loan.ltv}% loan · Show`)}</span>
-              <span className="text-slate-400 text-[12px] font-medium hidden group-open:inline">{t('收起', 'Hide')}</span>
-            </summary>
-            <div className="px-3 pb-3 border-t border-slate-100">
-              <div className="mt-2 flex items-center gap-2">
-                <LoanPctControl variant="full" className="flex-1 min-w-0 rounded-xl bg-slate-50 border border-slate-200/80 px-2 py-1" />
-              </div>
-              <LoanRateYears />
-            </div>
-          </details>
-        ) : (
-          <LoanAssumptionsBar end={zero ? <FirstBuyerNote compact /> : null} />
-        )}
+        <LoanAssumptionsBar end={zero ? <FirstBuyerNote compact /> : null} />
 
         <h2 className="pt-1 text-[15px] font-semibold text-slate-900">{zero ? t('各户型要准备多少', 'Cash to enter by unit type') : t('按户型看回报', 'Yield by unit type')}</h2>
+        <div className="-mx-3 px-3 sm:mx-0 sm:px-0 flex gap-1.5 overflow-x-auto no-scrollbar" role="tablist" aria-label={t('户型', 'Unit types')} data-testid="typ-tabs">
+          {p.typologies.map(typ => {
+            const on = typ.id === selTyp
+            const label = [roomsLabel(typ.beds, t), `${typ.size.toLocaleString()} sqft`].filter(Boolean).join(' · ')
+            return (
+              <button key={typ.id} type="button" role="tab" aria-selected={on} data-testid={`typ-tab-${typ.id}`} onClick={() => setSelTypId(typ.id)}
+                className={`shrink-0 rounded-full px-3 h-8 text-[12px] font-medium whitespace-nowrap ${on ? 'bg-slate-900 text-white' : 'bg-white text-slate-700 ring-1 ring-slate-200'}`}>
+                {label}
+              </button>
+            )
+          })}
+        </div>
         <div className="space-y-3">
-          {p.typologies.map(typ => (
-            <TypCard key={typ.id} p={p} typ={typ} t={t} draft={drafts[typ.id]} onChange={d => setDraft(typ.id, d)} compactLoan={many} variant={typVariant} currentRent={holder.currentRent} />
+          {p.typologies.filter(typ => typ.id === selTyp).map(typ => (
+            <TypCard key={typ.id} p={p} typ={typ} t={t} draft={drafts[typ.id]} onChange={d => setDraft(typ.id, d)} compactLoan={false} variant={typVariant} currentRent={holder.currentRent} />
           ))}
         </div>
 
@@ -591,8 +561,10 @@ export default function LaunchDetail({ p }) {
                 'The instalment uses a standard amortising formula. Loan percentage defaults to 90% and can be set from 50% to 90%; the same value is shared on the home list, the map panel and this page. Interest defaults to 4.3% p.a. over 35 years, editable here. Bank Negara held the OPR at 2.75% on 5 Nov 2026, so every bank’s SBR is 2.75%. 4.3% is a mid-market assumption among advertised floating packages in November 2026 (about 4.10–4.75%), not a bank offer; investor loans can be higher. Tenure is often capped by age (commonly 70). Rent is an asking-rent estimate, not achieved rent after handover.')}</li>
               <li>{t('入场要准备的钱 = 首付 + 买卖合约和贷款协议印花税 + 律师费（按常见律师收费表估算，并加上 8% 服务税）+ 按每平方尺 RM40 预留的装修。这些都是估算。',
                 'Cash to enter = down payment + SPA and loan-agreement stamp duty + legal fees (estimated on the commonly published solicitors’ scale, plus 8% SST) + a RM40 per sqft renovation allowance. These are estimates.')}</li>
-              <li>{t('投资评分满分 10 分：租售比（参考毛回报）最多 4 分（3% 得 0 分，6% 或以上得满分），你当前贷款成数下，扣掉空置、管理费、门牌税、地税和保险后的租金覆盖月供最多 3 分（覆盖率 0.85 得 0 分，1.25 或以上得满分），与同区域已建成楼盘（不含组屋）毛回报中位相比最多 2 分（持平得 1 分，高或低 2 个百分点到满分或 0 分），可比租盘样本数量最多 1 分（同面积段 20 则以上得满分，样本不足改用区域中位则只得 0.2 分）。改贷款成数后评分和排序会一起更新。评分用表价和当前利率、年期，不会编造缺失的价格或租金。',
-                'The investment score is out of 10: up to 4 points for rent-to-price (indicative gross; 3% scores 0, 6% or more scores 4), up to 3 points for whether asking rent, after vacancy, maintenance, assessment, quit rent and insurance, covers the instalment at your current loan percentage (coverage 0.85 scores 0, 1.25 or more scores 3), up to 2 points versus the area’s completed-project median gross yield excluding low-cost flats (in line scores 1; ±2 percentage points reach 2 or 0), and up to 1 point for comparable-rent sample size (a size band of 20+ ads scores 1; an area-median fallback scores 0.2). The score and ranking update when you change the loan percentage. The score uses the list price and the current rate and tenure. Missing prices or rents are not invented.')}</li>
+              <li>{t('楼盘回报分满分 10 分，只看楼盘本身：租售比（参考毛回报）最多 4 分（3% 得 0 分，6% 或以上得满分），与同区域已建成楼盘毛回报中位相比最多 2 分（不含组屋和租盘少于 3 则的楼盘；持平得 1 分，高或低 2 个百分点到满分或 0 分），可比租盘样本数量最多 1 分（同面积段 20 则以上得满分，样本不足改用区域中位则只得 0.2 分），合计换算成 10 分。它不随你的贷款成数变化：你借多少影响的是每月现金流，见上面的结论。评分用表价，不会编造缺失的价格或租金。',
+                'The project score is out of 10 and describes the project only: up to 4 points for rent-to-price (indicative gross; 3% scores 0, 6% or more scores 4), up to 2 points versus the area’s completed-project median gross yield (excluding low-cost flats and projects with fewer than 3 rent ads; in line scores 1, ±2 percentage points reach 2 or 0), and up to 1 point for comparable-rent sample size (a size band of 20+ ads scores 1; an area-median fallback scores 0.2), scaled to 10. It does not move with your loan percentage: how much you borrow changes the monthly cash flow shown in the summary above. The score uses the list price. Missing prices or rents are not invented.')}</li>
+              <li>{t('交房前利息：假设银行按施工进度放款，已完成的部分现在就放，其余到交房前平均放出，所以平均欠款 ≈ 贷款 ×（进度 +（1 − 进度）÷ 2）。这是粗估，实际按发展商的进度款时间表。',
+                'Interest before handover: the bank is assumed to release the loan with construction — what is built now is drawn now, the rest evenly until handover — so the average balance ≈ loan × (progress + (1 − progress) ÷ 2). A rough estimate; the developer’s billing schedule decides the real figure.')}</li>
             </ul>
                         {(p.render?.credit_zh || p.developer_note || p.handover_note || p.handover_note_zh || p.total_units_note || p.total_units_note_zh || p.abdullah_hukum || p.transit?.[0] || p.mid_valley || p.title_note) && (
               <div className="text-[12px] text-slate-500 space-y-1.5">

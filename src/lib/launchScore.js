@@ -1,6 +1,9 @@
-/** New-launch investment score (0–10), transparent and not fabricated.
+/** New-launch project score (0–10), transparent and not fabricated.
  *
- *  score = yieldPts (0–4) + cashPts (0–3) + vsAreaPts (0–2) + confidencePts (0–1)
+ *  score = (yieldPts (0–4) + vsAreaPts (0–2) + confidencePts (0–1)) ÷ 7 × 10
+ *  It describes the project at its list price and does NOT move with the visitor's loan %.
+ *  cashPts (0–3) is still computed and returned in `parts.cash` as an affordability signal, but is
+ *  kept out of the score: a project is not better because someone borrows less.
  *
  *  Yield: indicative gross of the headline typ (size-band asking rent × size × 12 ÷ list price).
  *    3% → 0, 6%+ → 4, linear in between.
@@ -20,6 +23,7 @@ import { entryYield } from './launchEntry.js'
 import { cashVsRent, DEFAULT_RATE, DEFAULT_YEARS, DEFAULT_LTV, clampLtv, entryCost } from './mortgage.js'
 
 export const SCORE_WEIGHTS = { yield: 4, cash: 3, vsArea: 2, confidence: 1 }
+export const SCORE_QUALITY_MAX = SCORE_WEIGHTS.yield + SCORE_WEIGHTS.vsArea + SCORE_WEIGHTS.confidence
 
 function median(arr) {
   if (!arr.length) return null
@@ -94,8 +98,8 @@ export function launchScore(p, { rate = DEFAULT_RATE, years = DEFAULT_YEARS, ltv
   const confN = band?.n ?? 0
   const confPts = confidencePts(source, confN)
 
-  const raw = yieldPts + cashPts + vsAreaPts + confPts
-  const score = Math.round(raw * 10) / 10
+  const quality = yieldPts + vsAreaPts + confPts
+  const score = Math.round(quality / SCORE_QUALITY_MAX * 100) / 10
 
   return {
     score,
