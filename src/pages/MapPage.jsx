@@ -9,6 +9,7 @@ import ClusterGroup from '../components/ClusterGroup.jsx'
 import Basemap from '../components/Basemap.jsx'
 import { useLang, LangToggle } from '../lib/i18n.jsx'
 import { NavTabs } from '../components/AppNav.jsx'
+import { HoldChip } from '../components/HolderSheet.jsx'
 import { LAUNCHES } from '../data/launches.js'
 import { LaunchMarkers, LaunchCard } from '../components/LaunchPins.jsx'
 
@@ -449,6 +450,7 @@ export default function MapPage() {
         <NavTabs active="map" />
         <div className="flex-1 max-w-[560px] mx-auto">{searchBar}</div>
         <div className="text-[12px] text-slate-600 text-right leading-tight">{countLabel}<br />{t('更新', 'Updated')} {REAL_META.generated_at?.slice(0, 10)}</div>
+        <HoldChip />
         <LangToggle />
       </header>
       <div className="hidden md:flex items-center gap-2 px-6 py-3 border-b border-slate-100 overflow-x-auto no-scrollbar bg-white">{chips}</div>
@@ -494,6 +496,7 @@ export default function MapPage() {
                 <span className="text-[12px] font-semibold leading-tight">{t('地图', 'Map')}</span>
               </a>
               <div className="flex-1 min-w-0">{searchBar}</div>
+              <HoldChip className="h-10" />
               <LangToggle className="h-10" />
             </div>
             <div className="relative pointer-events-auto -mr-3">

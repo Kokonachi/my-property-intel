@@ -225,6 +225,10 @@ input[type=range] { accent-color: #2563eb; }
 .explore-map [data-testid=explore-chrome] { z-index: 1300; }
 
 details[data-testid=how-calculated] > summary,
-details[data-testid=facilities] > summary { list-style: none; }
+details[data-testid=facilities] > summary,
+details[data-testid=first-buyer-note] > summary,
+details[data-testid=loan-assumptions-fold] > summary { list-style: none; }
 details[data-testid=how-calculated] > summary::-webkit-details-marker,
-details[data-testid=facilities] > summary::-webkit-details-marker { display: none; }
+details[data-testid=facilities] > summary::-webkit-details-marker,
+details[data-testid=first-buyer-note] > summary::-webkit-details-marker,
+details[data-testid=loan-assumptions-fold] > summary::-webkit-details-marker { display: none; }

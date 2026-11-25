@@ -33,9 +33,9 @@ export function LoanPctControl({ variant = 'header', className = '' }) {
     setDraft(null)
     const n = Number(String(raw).trim())
     if (!Number.isFinite(n)) return
-    setLoan({ ltv: clampLtv(n) })
+    setLoan({ ltv: clampLtv(n) }, { source: 'user' })
   }
-  const bump = dir => setLoan({ ltv: clampLtv(loan.ltv + dir * LTV_STEP) })
+  const bump = dir => setLoan({ ltv: clampLtv(loan.ltv + dir * LTV_STEP) }, { source: 'user' })
   const showSlider = variant !== 'compact'
 
   return (
@@ -84,7 +84,7 @@ export function LoanPctControl({ variant = 'header', className = '' }) {
           value={loan.ltv}
           aria-label={t('贷款成数', 'Loan percentage')}
           className="min-w-0 flex-1 h-7 accent-slate-900"
-          onChange={e => setLoan({ ltv: clampLtv(e.target.value) })}
+          onChange={e => setLoan({ ltv: clampLtv(e.target.value) }, { source: 'user' })}
         />
       )}
     </div>
@@ -290,10 +290,13 @@ export function LoanRateYears({ className = '' }) {
 }
 
 /** Compact loan % + rate/tenure controls. Explanatory copy lives in the page’s data section. */
-export function LoanAssumptionsBar() {
+export function LoanAssumptionsBar({ end }) {
   return (
     <div className="rounded-2xl bg-white p-3 sm:p-4 ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)]" data-testid="loan-assumptions">
-      <LoanPctControl variant="full" className="rounded-xl bg-slate-50 border border-slate-200/80 px-2 py-1" />
+      <div className="flex items-center gap-2">
+        <LoanPctControl variant="full" className="flex-1 min-w-0 rounded-xl bg-slate-50 border border-slate-200/80 px-2 py-1" />
+        {end}
+      </div>
       <LoanRateYears />
     </div>
   )

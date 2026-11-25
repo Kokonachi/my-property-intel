@@ -66,3 +66,108 @@ export function signedRM(n, { withMo = false, t } = {}) {
   const mo = withMo ? (t ? t('/月', '/mo') : '/月') : ''
   return `${sign}${body}${mo}`
 }
+
+
+/** Stamp duty bands for an instrument of transfer (Stamp Act, commonly published scale). */
+export const SPA_STAMP_BANDS = [
+  [100000, 0.01],
+  [500000, 0.02],
+  [1000000, 0.03],
+  [Infinity, 0.04],
+]
+/** Loan-agreement stamp duty, 0.5% of the loan amount. */
+export const LOAN_STAMP_RATE = 0.005
+/** Commonly published Solicitors’ Remuneration Order scale for conveyancing. */
+export const SRO_LEGAL_BANDS = [
+  [500000, 0.01],
+  [1000000, 0.008],
+  [3000000, 0.007],
+  [5000000, 0.006],
+  [7500000, 0.005],
+  [Infinity, 0.005],
+]
+/** SST on professional legal fees (8% as of 2024). */
+export const LEGAL_SST = 0.08
+/** Basic fit-out allowance for a new-launch high-rise, not a contractor quote. */
+export const RENO_PSF = 40
+/** Salary-to-instalment guide only: under 30% comfortable, 30–40% tight, over 40% stretched. */
+export const SALARY_COMFORT = 30
+export const SALARY_TIGHT = 40
+
+export function bandedFee(amount, bands) {
+  let left = Math.max(0, Number(amount) || 0)
+  let prev = 0
+  let fee = 0
+  for (const [cap, rate] of bands) {
+    const slice = Math.min(left, cap - prev)
+    if (slice > 0) {
+      fee += slice * rate
+      left -= slice
+    }
+    prev = cap
+    if (left <= 0) break
+  }
+  return fee
+}
+
+export function spaStampDuty(price) {
+  if (!(Number(price) > 0)) return null
+  return bandedFee(price, SPA_STAMP_BANDS)
+}
+
+export function loanStampDuty(loan) {
+  if (!(Number(loan) > 0)) return 0
+  return Number(loan) * LOAN_STAMP_RATE
+}
+
+export function sroLegalFee(amount) {
+  if (!(Number(amount) > 0)) return 0
+  return bandedFee(amount, SRO_LEGAL_BANDS)
+}
+
+export function renovationEst(size) {
+  if (!(Number(size) > 0)) return 0
+  return Number(size) * RENO_PSF
+}
+
+export function salaryBurden(inst, salary) {
+  if (!(Number(inst) > 0) || !(Number(salary) > 0)) return null
+  const pct = Number(inst) / Number(salary) * 100
+  const band = pct < SALARY_COMFORT ? 'comfortable' : pct <= SALARY_TIGHT ? 'tight' : 'stretched'
+  return { pct, band }
+}
+
+export function parseMoney(raw) {
+  if (raw == null || raw === '') return null
+  const n = Number(String(raw).replace(/[RM,\s]/gi, ''))
+  return Number.isFinite(n) && n >= 0 ? n : null
+}
+
+/** Cash to enter: down payment + SPA/loan stamp + legal fees (incl. SST) + renovation allowance. */
+export function entryCost({ price, down, size }) {
+  if (!(Number(price) > 0) || down == null || Number.isNaN(Number(down))) return null
+  const priceN = Number(price)
+  const downN = Number(down)
+  const loan = Math.max(0, priceN - downN)
+  const spaStamp = spaStampDuty(priceN) || 0
+  const loanStamp = loanStampDuty(loan)
+  const legalEx = sroLegalFee(priceN) + sroLegalFee(loan)
+  const legal = legalEx * (1 + LEGAL_SST)
+  const stamp = spaStamp + loanStamp
+  const renovation = renovationEst(size)
+  const fees = stamp + legal
+  return {
+    down: downN,
+    loan,
+    spaStamp,
+    loanStamp,
+    stamp,
+    legalEx,
+    legal,
+    fees,
+    renovation,
+    total: downN + stamp + legal + renovation,
+    renoPsf: RENO_PSF,
+    legalSst: LEGAL_SST,
+  }
+}

@@ -34,7 +34,7 @@ export function LangToggle({ className = '' }) {
   return (
     <button onClick={() => setLang(l === 'zh' ? 'en' : 'zh')} data-testid="lang-toggle" aria-label={l === 'zh' ? 'Switch to English' : '切换到中文'}
       className={`shrink-0 inline-flex items-center rounded-full bg-white border border-slate-200 shadow-[0_3px_12px_rgba(15,23,42,.12)] p-0.5 text-[12px] font-semibold ${className}`}>
-      <span className={`px-2 py-1 rounded-full ${l === 'zh' ? 'bg-slate-900 text-white' : 'text-slate-500'}`}>中</span>
+      <span className={`px-1.5 py-1 rounded-full ${l === 'zh' ? 'bg-slate-900 text-white' : 'text-slate-500'}`}>中</span>
       <span className={`px-1.5 py-1 rounded-full ${l === 'en' ? 'bg-slate-900 text-white' : 'text-slate-500'}`}>EN</span>
     </button>
   )

@@ -1,5 +1,6 @@
 import { LangToggle, useLang } from '../lib/i18n.jsx'
 import { Logo } from './ui.jsx'
+import { HoldChip } from './HolderSheet.jsx'
 
 export function NavTabs({ active, className = '' }) {
   const { t } = useLang()
@@ -17,7 +18,7 @@ export function NavTabs({ active, className = '' }) {
   )
 }
 
-export function AppNav({ active, end }) {
+export function AppNav({ active, end, below }) {
   return (
     <header className="sticky top-0 z-[1100] border-b border-slate-200 bg-white/95 backdrop-blur">
       <div className="flex items-center gap-3 px-4 sm:px-6 h-14 sm:h-[72px]">
@@ -25,11 +26,13 @@ export function AppNav({ active, end }) {
         <div className="hidden sm:block"><NavTabs active={active} /></div>
         <div className="flex-1 min-w-0" />
         {end}
+        <HoldChip />
         <LangToggle />
       </div>
       <div className="sm:hidden px-4 pb-2">
         <NavTabs active={active} />
       </div>
+      {below ? <div className="px-4 sm:px-6 pb-2 max-w-xl mx-auto w-full">{below}</div> : null}
     </header>
   )
 }
