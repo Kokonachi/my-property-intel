@@ -4,9 +4,9 @@ import { TYPE_LABEL, displayName } from '../data/properties.js'
 import { useLang } from '../lib/i18n.jsx'
 
 const SRC_LABEL = {
-  'PropertyGuru project': ['照片：PropertyGuru 楼盘页', 'Photo: PropertyGuru project page'],
-  'PropertyGuru listing': ['照片：PropertyGuru 房源', 'Photo: PropertyGuru listing'],
-  'Mudah.my listing': ['照片：Mudah.my 房源', 'Photo: Mudah.my listing'],
+  'PropertyGuru project': ['© PropertyGuru', '© PropertyGuru'],
+  'PropertyGuru listing': ['© PropertyGuru', '© PropertyGuru'],
+  'Mudah.my listing': ['© Mudah.my', '© Mudah.my'],
 }
 
 const AREA_TINT = {
@@ -23,11 +23,11 @@ export default function ProjectPhoto({ p, className = '', compact = false, label
   const ph = p.photo
   if (ph) {
     const aerial = ph.kind === 'aerial'
-    const [zh, en] = aerial ? ['卫星影像 © Esri', 'Satellite view © Esri'] : SRC_LABEL[ph.source] || ['照片：房源广告', 'Photo: listing']
+    const [zh, en] = aerial ? ['© Esri', '© Esri'] : SRC_LABEL[ph.source] || ['© listing', '© listing']
     return (
       <div className={`relative overflow-hidden bg-slate-200 ${className}`} data-testid="photo" data-kind={ph.kind}>
         <img src={`${import.meta.env.BASE_URL}${ph.src}`} alt={displayName(p)} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
-        {label && <span className="absolute left-1.5 bottom-1.5 rounded bg-black/55 text-white text-[12px] leading-none px-1.5 py-1 max-w-[90%] truncate" data-testid="photo-credit">{t(zh, en)}</span>}
+        {label && !compact && <span className="absolute left-1.5 bottom-1.5 rounded bg-black/40 text-white/90 text-[10px] leading-none px-1 py-0.5 max-w-[90%] truncate" data-testid="photo-credit">{t(zh, en)}</span>}
       </div>
     )
   }

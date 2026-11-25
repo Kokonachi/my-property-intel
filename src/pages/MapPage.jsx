@@ -25,25 +25,13 @@ const PRICE_RANGES = [
 const SORTS = [
   { id: 'yd', zh: '回报率 高→低', en: 'Yield: high → low' }, { id: 'ya', zh: '回报率 低→高', en: 'Yield: low → high' }, { id: 'pa', zh: '价格 低→高', en: 'Price: low → high' }, { id: 'psf', zh: '每平方尺 低→高', en: 'PSF: low → high' },
 ]
-const GATEWAY_IDS = ['real-kl-gateway', 'real-kuala-lumpur-gateway', 'real-kuala-lumpur-gateway-menara-suezcap']
-const GATEWAY_NAMES = {
-  'real-kl-gateway': 'KL Gateway',
-  'real-kuala-lumpur-gateway': 'Kuala Lumpur Gateway',
-  'real-kuala-lumpur-gateway-menara-suezcap': 'Menara Suezcap',
-}
-
-function relatedNote(p, t) {
-  if (!GATEWAY_IDS.includes(p.id)) return null
-  const others = GATEWAY_IDS.filter(id => id !== p.id).map(id => GATEWAY_NAMES[id]).join(' / ')
-  return t(`同一片区还有 ${others}（Brickz 分项记录，未合并）`, `Same precinct: also ${others} (separate Brickz records, not merged)`)
-}
 
 function noYieldText(p, rentMode, t) {
   if (rentMode === 'short') {
-    if (p.str && p.str.status !== 'ok') return t('短租样本不足，无法计算回报', 'Not enough short-term listings — yield cannot be calculated')
-    return t('未纳入本轮短租试做', 'Not in this short-term pilot')
+    if (p.str && p.str.status !== 'ok') return t('短租样本不足', 'Too few short-let ads')
+    return t('无短租数据', 'No short-let data')
   }
-  return t('暂无在租样本，无法计算回报', 'No rent listings — yield cannot be calculated')
+  return t('暂无租盘', 'No rent ads')
 }
 
 function KlHaloLabel({ enabled }) {
@@ -125,7 +113,6 @@ function ListingCard({ p, metric, rentMode, active, onHover, onClick, compact })
   const netY = yieldOf(p, rentMode, 'net')
   const noYield = yieldOf(p, rentMode, metric) == null
   const nRent = p.rent_estimate ? p.rent_estimate.n : p.ask_rent.count
-  const related = relatedNote(p, t)
   const priceTxt = p.price ? fmtRMk(p.price) : (p.tx?.price_median ? fmtRMk(p.tx.price_median) : '—')
 
   if (noYield) {
@@ -140,8 +127,8 @@ function ListingCard({ p, metric, rentMode, active, onHover, onClick, compact })
           </div>
         </div>
         <div className="text-[12px] text-slate-700 mt-1">{noYieldText(p, rentMode, t)}</div>
-        {related && <div className="text-[12px] text-slate-600 mt-0.5">{related}</div>}
-        {!onMapOk(p) && <div className="text-[12px] text-slate-600 mt-0.5">📍 {t('位置待核实，未在地图显示', 'Location unverified — not shown on map')}</div>}
+        {!onMapOk(p) && <div className="text-[12px] text-slate-600 mt-0.5">📍 {t('未上地图', 'Not on map')}</div>}
+        {onMapOk(p) && (p.geo_precision === 'street' || p.geo_precision === 'area') && <div className="text-[11.5px] text-amber-800 mt-0.5" data-testid="geo-approx">📍 {t('大概位置', 'Approx. location')}</div>}
       </a>
     )
   }
@@ -161,12 +148,12 @@ function ListingCard({ p, metric, rentMode, active, onHover, onClick, compact })
               <div className="shrink-0 font-bold text-[15px] tabular-nums" style={{ color: bandColor(grossY) }}>{pct(grossY)}</div>
             </div>
             <div className="text-[12px] text-slate-600 truncate mt-0.5">{tl({ zh: p.area_zh, en: p.area_en })} · {tl(TYPE_LABEL[p.type])}</div>
+            {onMapOk(p) && (p.geo_precision === 'street' || p.geo_precision === 'area') && <div className="text-[11.5px] text-amber-800 truncate" data-testid="geo-approx">📍 {t('大概位置', 'Approx. location')}</div>}
             <SampleBadge p={p} />
           </div>
           <div>
             <div className="text-[12px] text-slate-700 truncate">{t('成交', 'Transacted')} {p.psf ? `RM${Number(p.psf).toLocaleString('en-MY')} psf` : priceTxt} · {p.rent ? `${t('租', 'Rent')} ${fmtRM(p.rent)}${t('/月', '/mo')}` : ''}</div>
             <div className="mt-0.5 text-[12px] font-semibold" style={{ color: bandColor(netY) }}>{pct(netY)} <span className="font-normal text-slate-600">{t('净回报', 'Net yield')}</span></div>
-            {related && <div className="text-[12px] text-slate-600 truncate">{related}</div>}
           </div>
         </div>
       </a>
@@ -191,8 +178,8 @@ function ListingCard({ p, metric, rentMode, active, onHover, onClick, compact })
           {t(`成交 RM${p.psf ? Number(p.psf).toLocaleString('en-MY') : '—'} psf · ${rentAdLabel(nRent, t)} / ${saleLabel(p.tx.count, t)}`, `Transacted RM${p.psf ? Number(p.psf).toLocaleString('en-MY') : '—'} psf · ${rentAdLabel(nRent, t)} / ${saleLabel(p.tx.count, t)}`)}
         </div>
         <div className="text-[14px] text-slate-900 mt-0.5"><b>{priceTxt}</b><span className="text-[12px] text-slate-600">{p.size ? t(` 按 ${Number(p.size).toLocaleString('en-MY')} sqft 估值`, ` value at ${Number(p.size).toLocaleString('en-MY')} sqft`) : t(' 典型单位', ' typical unit')}</span> · {t('租', 'Rent')} <b>{p.rent ? fmtRM(p.rent) : '—'}</b>{t('/月', '/mo')}{p.rent_method === 'area_comps' && <span className="text-[12px] text-amber-800"> · {t('区域估算', 'area est.')}</span>}</div>
-        {related && <div className="text-[12px] text-slate-600">{related}</div>}
-        {!onMapOk(p) && <div className="text-[12px] text-slate-600">📍 {t('位置待核实，未在地图显示', 'Location unverified — not shown on map')}</div>}
+        {!onMapOk(p) && <div className="text-[12px] text-slate-600">📍 {t('未上地图', 'Not on map')}</div>}
+        {onMapOk(p) && (p.geo_precision === 'street' || p.geo_precision === 'area') && <div className="text-[11.5px] text-amber-800" data-testid="geo-approx">📍 {t('大概位置', 'Approx. location')}</div>}
         <div className="mt-1 text-[12px] font-semibold" style={{ color: bandColor(netY) }}>{pct(netY)} <span className="font-normal text-slate-600">{t('净回报', 'Net yield')}</span></div>
       </div>
     </a>
@@ -253,7 +240,6 @@ function BottomSheet({ count, avg, metric, children, snap, setSnap }) {
     else setSnap(Object.entries(pos).sort((a, b) => Math.abs(a[1] - cur) - Math.abs(b[1] - cur))[0][0])
     drag.current = null; setDy(null)
   }
-  const hint = snap === 'peek' ? t('上拉查看列表', 'Pull up for list') : t('下拉回地图', 'Pull down for map')
   return (
     <div ref={ref} data-testid="sheet" data-snap={snap}
       className="md:hidden fixed left-0 right-0 bottom-0 z-[1050] overflow-x-hidden bg-white rounded-t-3xl shadow-[0_-6px_24px_rgba(15,23,42,.18)] flex flex-col"
@@ -261,7 +247,7 @@ function BottomSheet({ count, avg, metric, children, snap, setSnap }) {
       <div className="pt-2 pb-3 touch-none cursor-grab select-none" onPointerDown={start} onPointerMove={move} onPointerUp={end} onPointerCancel={end} data-testid="sheet-handle">
         <div className="mx-auto w-10 h-1.5 rounded-full bg-slate-300" />
         <div className="text-center mt-2 font-semibold text-[15px] text-slate-900">{t(`${count} 个楼盘`, `${count} projects`)}</div>
-        <div className="text-center text-[12px] text-slate-600">{metric === 'gross' ? t('平均毛回报', 'Avg gross yield') : t('平均净回报', 'Avg net yield')} {avg.toFixed(2)}% · {hint}</div>
+        <div className="text-center text-[12px] text-slate-600">{metric === 'gross' ? t('平均毛回报', 'Avg gross yield') : t('平均净回报', 'Avg net yield')} {avg.toFixed(2)}%</div>
       </div>
       <div className={`flex-1 min-h-0 px-4 pb-6 ${snap === 'peek' ? 'overflow-hidden' : 'overflow-y-auto'}`}>{children}</div>
     </div>

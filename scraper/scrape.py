@@ -406,7 +406,7 @@ def build(area_key, max_projects, brickz_pages):
         ovr = OVERRIDES.get(pid)
         hidden = bool(ovr and ovr.get("hide"))
         if ovr and not hidden:
-            geo, geo_note = [ovr["lat"], ovr["lng"]], "override"
+            geo, geo_note = [ovr["lat"], ovr["lng"]], "verified" if ovr.get("verified") else "override"
         else:
             geo = geocode(p["name"].title(), A["en"], A.get("state", "kuala-lumpur"))
             geo_note = geo[2] if geo else "approx"

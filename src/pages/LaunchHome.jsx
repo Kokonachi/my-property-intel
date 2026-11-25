@@ -113,8 +113,7 @@ export default function LaunchHome() {
           <div className="min-w-0">
             <h1 className="text-[17px] font-semibold text-slate-900 tracking-tight">{t('孟沙南新楼盘', 'New launches in Bangsar South')}</h1>
             <p className="mt-0.5 text-[12px] text-slate-500 leading-snug" data-testid="scope-line">
-              {t(`收录 ${LAUNCHES.length} 个新盘，拿同区已建成楼盘做对照：二手成交中位 RM${area.medianPsf} psf（${area.n} 个楼盘）。`,
-                `${LAUNCHES.length} launches, checked against completed projects nearby: resale median RM${area.medianPsf} psf (${area.n} projects).`)}
+              {t(`${LAUNCHES.length} 个新盘 · 二手中位 RM${area.medianPsf} psf`, `${LAUNCHES.length} launches · resale median RM${area.medianPsf} psf`)}
             </p>
           </div>
           {home && <FirstBuyerNote compact />}

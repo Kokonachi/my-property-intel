@@ -15,15 +15,11 @@ const pct = v => (v == null ? '—' : `${v.toFixed(2)}%`)
 const UPDATED = (REAL_META.generated_at || '2026-11-15').slice(0, 10)
 const rm = v => 'RM ' + Math.round(v).toLocaleString('en-MY')
 
-const GATEWAY = {
-  'real-kl-gateway': 'KL Gateway',
-  'real-kuala-lumpur-gateway': 'Kuala Lumpur Gateway',
-  'real-kuala-lumpur-gateway-menara-suezcap': 'Menara Suezcap',
-}
-function gatewayNote(id, t) {
-  if (!(id in GATEWAY)) return null
-  const others = Object.entries(GATEWAY).filter(([k]) => k !== id).map(([, n]) => n).join(' / ')
-  return t(`同一片区还有 ${others}（Brickz 分项记录，价格与成交不同，未合并）`, `Same precinct: also ${others} (separate Brickz records with different prices — not merged)`)
+/** Only flag a pin that is not on the building itself. */
+function GeoTag({ p }) {
+  const { t } = useLang()
+  if (p.geo_precision !== 'street' && p.geo_precision !== 'area') return null
+  return <div className="mt-1.5 inline-flex rounded-full bg-amber-50 px-2 py-0.5 text-[11px] font-medium text-amber-800" data-testid="geo-approx">📍 {t('大概位置', 'Approx. location')}</div>
 }
 
 function displaySources(sources) {
@@ -164,64 +160,24 @@ function sampleRangeLine(samples, t) {
   return t(`${fmt(a)} 至 ${fmt(b)}`, `${fmt(a)} to ${fmt(b)}`)
 }
 
-function yieldSentence(p, t, L) {
-  if (p.gross == null) return t('暂无足够的租金样本，还算不出回报。', 'Not enough rent listings to calculate a yield.')
-  if (p.rent_estimate) {
-    return t('毛回报按同区同类有地住宅的租金估算，仅供参考。', 'Gross yield uses estimated rents from similar landed homes in the area, so treat it as indicative.')
-  }
+/** Gross yield against the area median, as one short number line. */
+function yieldDelta(p, t, L) {
+  if (p.gross == null) return null
+  if (p.rent_estimate) return t('租金为估算', 'Estimated rent')
   const area = areaCompletedStats(p.area)
-  const areaName = L({ zh: p.area_zh, en: p.area_en })
-  if (area?.medianGross != null) {
-    const d = p.gross - area.medianGross
-    const mid = area.medianGross.toFixed(2)
-    if (Math.abs(d) < 0.15) {
-      return t(`毛回报与${areaName}已建成楼盘中位（${mid}%）大致持平。`, `Gross yield is in line with the ${areaName} completed-project median of ${mid}%.`)
-    }
-    if (d > 0) {
-      return t(`毛回报比${areaName}已建成楼盘中位（${mid}%）高 ${d.toFixed(2)} 个百分点。`, `Gross yield is ${d.toFixed(2)} pp above the ${areaName} completed-project median of ${mid}%.`)
-    }
-    return t(`毛回报比${areaName}已建成楼盘中位（${mid}%）低 ${Math.abs(d).toFixed(2)} 个百分点。`, `Gross yield is ${Math.abs(d).toFixed(2)} pp below the ${areaName} completed-project median of ${mid}%.`)
-  }
-  return t('毛回报按叫租与成交价估算。', 'Gross yield is an estimate from asking rents and transacted prices.')
+  if (area?.medianGross == null) return null
+  const d = p.gross - area.medianGross
+  const arrow = Math.abs(d) < 0.15 ? '≈' : d > 0 ? `↑${d.toFixed(2)}` : `↓${Math.abs(d).toFixed(2)}`
+  return { arrow, up: d >= 0.15, down: d <= -0.15, label: t(`区中位 ${area.medianGross.toFixed(2)}%`, `area median ${area.medianGross.toFixed(2)}%`) }
 }
 
 function DataConfidence({ p, nRent }) {
   const { t } = useLang()
-  const [open, setOpen] = useState(false)
   const nTx = p.tx?.count || 0
-  const rentBit = t(`${nRent} 则租盘`, nRent === 1 ? '1 rent ad' : `${nRent} rent ads`)
-  const saleBit = t(`${nTx} 宗成交`, nTx === 1 ? '1 sale' : `${nTx} sales`)
-  const level = p.confidence
-  const head = level === 'high'
-    ? t('数据较足', 'Solid data')
-    : level === 'medium'
-      ? t('数据一般', 'Fair data')
-      : t('数据较少', 'Low data')
-  const note = p.rent_estimate
-    ? t('有地住宅租金为区域同类房源估算，不是本楼盘的租盘，回报率仅供参考。', 'Landed rent is estimated from comparable houses in the area, not ads for this project — treat the yield as indicative only.')
-    : level === 'low'
-      ? t('样本较少，回报率仅供参考。', 'Sample counts are small, so treat this yield as indicative only.')
-      : level === 'medium'
-        ? t('样本尚可，但仍是叫租和成交中位，不是交割后的实收租金。', 'A fair sample, still based on asking rents and median transacted prices, not achieved rent.')
-        : t('样本较足。回报仍按叫租与成交中位估算，不是交割后的实收租金。', 'A solid sample. Yield is still an estimate from asking rents and median transacted prices, not achieved rent.')
+  const low = p.confidence === 'low'
   return (
-    <div className="mt-2.5">
-      <button
-        type="button"
-        data-testid="confidence"
-        aria-expanded={open}
-        onClick={() => setOpen(v => !v)}
-        className="inline-flex items-center gap-1 rounded-full bg-slate-100 text-slate-600 text-[11px] font-medium px-2 py-0.5"
-        title={note}
-      >
-        <span>{head} · {rentBit} · {saleBit}</span>
-        <span className="text-slate-400 text-[10px] leading-none" aria-hidden="true">{open ? '▴' : 'i'}</span>
-      </button>
-      {open && (
-        <p className="mt-1.5 text-[12px] leading-snug text-slate-500" data-testid="confidence-note">
-          {note}
-        </p>
-      )}
+    <div className={`mt-2.5 inline-flex rounded-full px-2 py-0.5 text-[11px] font-medium tabular-nums ${low ? 'bg-amber-50 text-amber-800' : 'bg-slate-100 text-slate-600'}`} data-testid="confidence">
+      {t(`${nRent} 租盘 · ${nTx} 成交`, `${nRent} rent ads · ${nTx} sales`)}
     </div>
   )
 }
@@ -261,16 +217,13 @@ export default function RealDetailPage({ p }) {
   const unranked = inArea.filter(x => x.gross == null || isThinSample(x)).sort(byGross).map(x => ({ ...x, rank: null }))
   const allPeers = [...rankable, ...unranked]
   const peers = showAll ? allPeers : allPeers.filter(x => (x.rank != null && x.rank <= 8) || x.id === p.id)
-  const locTxt = p.on_map === false
-    ? t('位置待核实，未在地图显示', 'Location unverified — not shown on the map')
-    : t('位置根据楼盘名称匹配', 'Location matched from the project name')
   const nRent = est ? est.n : p.ask_rent.count
   const nRentAdsLabel = t(`${nRent} 则`, nRent === 1 ? '1 ad' : `${nRent} ads`)
   const tenure = p.tenure === 'Freehold' ? t('永久地契', 'Freehold') : t('租赁地契', 'Leasehold')
   const typ = L(TYPE_LABEL[p.type] || {})
   const areaName = L({ zh: p.area_zh, en: p.area_en })
   const metaLine = [areaName, typ, tenure].filter(Boolean).join(' · ')
-  const sentence = yieldSentence(p, t, L)
+  const sentence = yieldDelta(p, t, L)
   const sources = displaySources(p.sources)
   const buckets = (!est && samples.length && p.tx.psf_median) ? unitBuckets(samples, p.tx.psf_median) : []
   const txSize = impliedTxSize(p.tx)
@@ -287,7 +240,6 @@ export default function RealDetailPage({ p }) {
   const mortPrice = p.net_costs?.ref_value || p.price
   const mortRent = p.net_costs?.ref_rent || p.rent
   const mortMaint = p.net_costs ? (p.net_costs.maint_psf || 0) * (p.net_costs.ref_size || 0) : (p.maint || 0)
-  const gw = gatewayNote(p.id, t)
 
   const quote = useQuoteOverrides(p.id)
   const fallbackKey = defaultTypKey(buckets, p)
@@ -353,7 +305,7 @@ export default function RealDetailPage({ p }) {
           <div className="p-4 sm:p-5">
             <h1 className="text-[22px] sm:text-[26px] font-semibold text-slate-900 leading-tight tracking-tight" data-testid="prop-name">{p.name}</h1>
             <p className="mt-1 text-[13px] text-slate-500" data-testid="prop-meta">{metaLine}</p>
-            {gw && <p className="mt-1 text-[12px] text-slate-500" data-testid="related-precinct">{gw}</p>}
+            <GeoTag p={p} />
 
             {p.excluded && (
               <div className="mt-3 rounded-xl bg-slate-100 text-slate-700 text-[12px] p-3" data-testid="excluded">
@@ -382,15 +334,11 @@ export default function RealDetailPage({ p }) {
                         </div>
                       )}
                     </div>
-                    <p className="mt-2 text-[13px] text-slate-600 leading-snug">{sentence}</p>
-                    {!est && p.net_costs?.ref_value && p.net_costs?.ref_size ? (
-                      <p className="mt-1 text-[12px] text-slate-500 leading-snug tabular-nums" data-testid="value-basis">
-                        {t(
-                          `回报按 ${Math.round(p.net_costs.ref_size).toLocaleString('en-MY')} sqft 单位计算：成交 RM${p.tx.psf_median?.toLocaleString('en-MY')} psf × 租盘面积 = 估值 ${fmtRM(p.net_costs.ref_value)}${p.tx.price_median && Math.abs(p.tx.price_median - p.net_costs.ref_value) / p.tx.price_median > 0.1 ? `（不是成交中位价 ${fmtRM(p.tx.price_median)}，两者户型大小不同）` : ''}。`,
-                          `Yield is for a ${Math.round(p.net_costs.ref_size).toLocaleString('en-MY')} sqft unit: transacted RM${p.tx.psf_median?.toLocaleString('en-MY')} psf × the rent ads' size = value ${fmtRM(p.net_costs.ref_value)}${p.tx.price_median && Math.abs(p.tx.price_median - p.net_costs.ref_value) / p.tx.price_median > 0.1 ? ` (not the median sale price of ${fmtRM(p.tx.price_median)}, which is for a different unit size)` : ''}.`,
-                        )}
-                      </p>
-                    ) : null}
+                    {sentence && (
+                      <div className="mt-1.5 text-[12px] tabular-nums text-slate-500" data-testid="yield-delta">
+                        {typeof sentence === 'string' ? sentence : <><span className={`font-semibold ${sentence.up ? 'text-[#176b45]' : sentence.down ? 'text-[#9f1239]' : 'text-slate-700'}`}>{sentence.arrow}</span> vs {sentence.label}</>}
+                      </div>
+                    )}
                   </div>
                 )}
                 <DataConfidence p={p} nRent={nRent} />
@@ -500,8 +448,7 @@ export default function RealDetailPage({ p }) {
         )}
 
         <section className="rounded-2xl bg-white p-4 sm:p-5 ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)]">
-          <h2 className="text-[15px] font-semibold text-slate-900">{t(`${p.area_zh}其他楼盘`, `Other projects in ${p.area_en}`)}</h2>
-          <p className="mt-0.5 text-[12px] text-slate-500">{t(`按毛回报排名，只排租盘至少 ${RANK_MIN_SAMPLES} 则的楼盘。`, `Ranked by gross yield; only projects with at least ${RANK_MIN_SAMPLES} rent ads are ranked.`)}</p>
+          <h2 className="text-[15px] font-semibold text-slate-900">{t(`${p.area_zh} · 毛回报排名`, `${p.area_en} · gross yield rank`)}</h2>
           <ol className="sm:hidden mt-2 divide-y divide-slate-100" data-testid="peer-cards">
             {peers.map(x => {
               const me = x.id === p.id
@@ -561,7 +508,7 @@ export default function RealDetailPage({ p }) {
           </summary>
           <div className="px-4 sm:px-5 pb-5 border-t border-slate-100 space-y-4">
             <p className="pt-3 text-[12px] text-slate-500" data-testid="scrape-date">
-              {t(`数据更新于 ${UPDATED} · ${locTxt}`, `Updated ${UPDATED} · ${locTxt}`)}
+              {t(`数据更新于 ${UPDATED}`, `Updated ${UPDATED}`)}
             </p>
             {yieldMismatch && (
               <p className="text-[12px] text-slate-600" data-testid="yield-method-note">

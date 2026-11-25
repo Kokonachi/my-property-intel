@@ -101,9 +101,7 @@ export function LoansControl({ className = '' }) {
       <button type="button" data-testid="loans-inc" aria-label={t('增加', 'More')} disabled={n >= LOANS_MAX} onClick={() => setLoans(n + 1)}
         className="h-7 w-7 rounded-full border border-slate-200 bg-white text-[16px] leading-none text-slate-700 disabled:opacity-30">+</button>
       <span className="min-w-0 text-[11px] leading-tight text-slate-500" data-testid="loans-cap">
-        {ltvCap <= THIRD_LOAN_LTV
-          ? t(`这是第 ${n + 1} 笔房贷，最多贷 ${THIRD_LOAN_LTV}%`, `Loan no. ${n + 1}: capped at ${THIRD_LOAN_LTV}%`)
-          : t('第 3 笔房贷起最多贷 70%', 'From the 3rd loan the cap is 70%')}
+        {ltvCap <= THIRD_LOAN_LTV ? t(`最多贷 ${THIRD_LOAN_LTV}%`, `Max ${THIRD_LOAN_LTV}%`) : null}
       </span>
     </div>
   )
