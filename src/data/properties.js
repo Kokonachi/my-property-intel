@@ -18,6 +18,20 @@ export const AREAS = [
     transit: ['LRT Kerinchi', 'LRT Universiti', 'LRT Abdullah Hukum'], amen: ['Nexus Bangsar South', 'Mid Valley Megamall', 'Universiti Malaya', 'KL Eco City'] },
   { id: 'sj', zh: '梳邦再也', en: 'Subang Jaya', region: 'kv', c: [3.0490, 101.5850],
     transit: ['LRT SS15', 'LRT USJ 7', 'KTM Subang Jaya'], amen: ['Sunway Pyramid', 'Subang Parade', 'Sunway Medical Centre', 'Taylor’s University'] },
+  // KL batch 1 (scraper/kl_expand.py): Brickz towns; centres are the town centroids used for the location check
+  { id: 'dh', zh: '白沙罗高原', en: 'Damansara Heights', region: 'kv', c: [3.1480, 101.6580], transit: ['MRT Semantan'], amen: [] },
+  { id: 'hartamas', zh: '斯里哈达马斯', en: 'Sri Hartamas', region: 'kv', c: [3.1620, 101.6500], transit: [], amen: [] },
+  { id: 'dutamas', zh: 'Dutamas', en: 'Dutamas', region: 'kv', c: [3.1720, 101.6640], transit: [], amen: [] },
+  { id: 'dpc', zh: '德沙公园城', en: 'Desa ParkCity', region: 'kv', c: [3.1870, 101.6300], transit: [], amen: [] },
+  { id: 'sentral', zh: '吉隆坡中环', en: 'KL Sentral', region: 'kv', c: [3.1340, 101.6860], transit: ['KL Sentral'], amen: [] },
+  { id: 'bf', zh: '十五碑', en: 'Brickfields', region: 'kv', c: [3.1300, 101.6850], transit: [], amen: [] },
+  { id: 'mv', zh: '谷中城', en: 'Mid Valley', region: 'kv', c: [3.1180, 101.6770], transit: ['KTM Mid Valley'], amen: [] },
+  { id: 'pantai', zh: 'Pantai', en: 'Pantai', region: 'kv', c: [3.1150, 101.6650], transit: [], amen: [] },
+  { id: 'seputeh', zh: '士布爹', en: 'Seputeh', region: 'kv', c: [3.1140, 101.6800], transit: [], amen: [] },
+  { id: 'td', zh: '德沙花园', en: 'Taman Desa', region: 'kv', c: [3.1030, 101.6830], transit: [], amen: [] },
+  { id: 'okr', zh: '旧巴生路', en: 'Old Klang Road', region: 'kv', c: [3.0900, 101.6750], transit: [], amen: [] },
+  { id: 'kl-kuchai', zh: 'Kuchai Lama', en: 'Kuchai Lama', region: 'kv', c: [3.0890, 101.6900], transit: [], amen: [] },
+  { id: 'bj', zh: '武吉加里尔', en: 'Bukit Jalil', region: 'kv', c: [3.0580, 101.6900], transit: [], amen: [] },
 ]
 
 export const TYPE_LABEL = {

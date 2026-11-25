@@ -367,7 +367,9 @@ export default function RealDetailPage({ p }) {
                   <div>
                     <div className="text-[11px] text-slate-500">{t('毛回报', 'Gross yield')}</div>
                     <div className="text-[28px] font-semibold text-slate-700 tabular-nums leading-none mt-0.5">{t('暂无', 'N/A')}</div>
-                    <p className="mt-2 text-[13px] text-slate-600 leading-snug" data-testid="no-rent-note">{t('暂无在租样本，无法计算回报。', 'No rent listings — yield cannot be calculated.')}</p>
+                    <p className="mt-2 text-[13px] text-slate-600 leading-snug" data-testid="no-rent-note">{rentSampleN(p) > 0
+                      ? t(`只找到 ${rentSampleN(p)} 条出租广告，少于 4 条，不算回报。`, `Only ${rentSampleN(p)} rent ad${rentSampleN(p) > 1 ? 's' : ''} found — fewer than 4, so no yield is shown.`)
+                      : t('暂无在租样本，无法计算回报。', 'No rent listings — yield cannot be calculated.')}</p>
                   </div>
                 ) : (
                   <div>

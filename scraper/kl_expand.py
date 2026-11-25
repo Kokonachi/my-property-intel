@@ -352,5 +352,46 @@ def cmd_save():
     print(f"saved {len(recs) - sum(bad.values())}, skipped {dict(bad)}; cache now {len(list(PG_DIR.glob('*.json')))}")
 
 
+SITE_OUT = ROOT.parent / "src" / "data" / "kl_batch1_site.json"
+
+
+def cmd_site():
+    """kl_expand.py site: data/kl_batch1.json → src/data/kl_batch1_site.json in the real_projects.json record shape.
+    Projects already in real_projects.json are left out (those keep their richer PG+Mudah data). Only projects that
+    are on the map or have a yield (>= MIN_RENT_ADS own ads) are kept; the yield is blanked below that threshold."""
+    kl = json.loads(OUT.read_text())
+    real = json.loads((ROOT.parent / "src" / "data" / "real_projects.json").read_text())["projects"]
+    have = {p["id"] for p in real} | {p["name"].lower() for p in real}
+    keep = []
+    for p in kl["projects"]:
+        if p["id"] in have or p["name"].lower() in have or p.get("same_condo_as"):
+            continue
+        if not (p["on_map"] or p["yield_display"]):
+            continue
+        show = p["yield_display"]
+        area, en, zh = p["area"], p["area_en"], p["area_zh"]
+        # Brickz "KL City Centre" spans KLCC, Bukit Bintang and parts of Cheras: split by the site's area centres
+        if area == "klcc" and p["lat"] and math.dist([p["lat"], p["lng"]], [3.1466, 101.7108]) < math.dist([p["lat"], p["lng"]], [3.1578, 101.7123]):
+            area, en, zh = "bb", "Bukit Bintang", "武吉免登"
+        keep.append(dict(
+            id=p["id"], name=p["name"], area=area, area_en=en, area_zh=zh,
+            brickz_town=p["area_en"], region="kv", lat=p["lat"], lng=p["lng"], geo_source=p["geo_source"],
+            geo_detail="OpenStreetMap building/landuse name match (Overpass, 2026-11-25)" if p["geo_source"] == "osm" else None,
+            on_map=p["on_map"], excluded=None, rent_method=p["rent_method"] if show else None, rent_estimate=None,
+            tenure=p["tenure"], type=p["type"], brickz_type=p["brickz_type"], tx=p["tx"],
+            ask_sale=dict(price_median=None, psf_median=None, count=0),
+            ask_rent={**{k: v for k, v in p["ask_rent"].items() if k != "samples"},
+                      "rent_psf_median": None,
+                      "samples": [{k: s[k] for k in ("rent", "size", "rooms", "src")} for s in p["ask_rent"]["samples"]]},
+            gross_yield=p["gross_yield"] if show else None, net_yield=p["net_yield"] if show else None,
+            net_costs=p["net_costs"] if show else None, gross_yield_vs_asking=None,
+            confidence=p["confidence"] if show else "low", sources=p["sources"], scraped_at=p["scraped_at"],
+            batch="kl-1"))
+    SITE_OUT.write_text(json.dumps(dict(generated_at=kl["generated_at"], batch="kl-1", projects=keep),
+                                   ensure_ascii=False, separators=(",", ":")))
+    print(f"site: {len(keep)} projects ({sum(x['on_map'] for x in keep)} on map, "
+          f"{sum(x['gross_yield'] is not None for x in keep)} with yield) → {SITE_OUT.relative_to(ROOT.parent)}")
+
+
 if __name__ == "__main__":
-    {"match": cmd_match, "build": cmd_build, "save": cmd_save}[sys.argv[1] if len(sys.argv) > 1 else "match"]()
+    {"match": cmd_match, "build": cmd_build, "save": cmd_save, "site": cmd_site}[sys.argv[1] if len(sys.argv) > 1 else "match"]()
