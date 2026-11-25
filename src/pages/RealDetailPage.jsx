@@ -7,7 +7,6 @@ import ProjectPhoto from '../components/ProjectPhoto.jsx'
 import { useLang, LangToggle } from '../lib/i18n.jsx'
 import { NavTabs } from '../components/AppNav.jsx'
 import YieldMapPane from '../components/YieldMapPane.jsx'
-import { HoldChip } from '../components/HolderSheet.jsx'
 import { areaCompletedStats } from '../lib/launchScore.js'
 import { LoanPctControl, LoanRateYears, LtvCompare } from '../components/LtvVerdict.jsx'
 import QuotePrice, { typKey, defaultTypKey, useQuoteOverrides } from '../components/QuotePrice.jsx'
@@ -337,14 +336,12 @@ export default function RealDetailPage({ p }) {
           </div>
         </div>
         <div className="text-[12px] text-slate-600 text-right leading-tight whitespace-nowrap shrink-0">{t('更新', 'Updated')} {UPDATED}</div>
-        <HoldChip />
         <LangToggle />
       </header>
 
       <header className="md:hidden sticky top-0 z-50 h-12 bg-white/90 backdrop-blur border-b border-slate-200/80 flex items-center gap-2 px-3 sm:px-5">
         <a href="#/map" className="shrink-0 rounded-full border border-slate-200 bg-white px-3 h-8 inline-flex items-center text-[13px] font-medium text-slate-700" data-testid="back">← {t('返回地图', 'Back to map')}</a>
         <div className="min-w-0 flex-1 font-semibold text-[13px] text-slate-800 truncate" data-testid="sticky-name">{p.name}</div>
-        <HoldChip className="ml-auto shrink-0" />
         <LangToggle className="shrink-0" />
       </header>
 

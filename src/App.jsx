@@ -6,7 +6,6 @@ import LaunchExplore from './pages/LaunchExplore.jsx'
 import LaunchDetail from './pages/LaunchDetail.jsx'
 import { realById } from './data/real.js'
 import { launchById } from './data/launches.js'
-import { OnboardingHost } from './components/HolderSheet.jsx'
 
 function useHash() {
   const [h, setH] = useState(window.location.hash || '#/')
@@ -46,7 +45,6 @@ export default function App() {
   return (
     <>
       {page}
-      <OnboardingHost />
     </>
   )
 }
