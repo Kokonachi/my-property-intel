@@ -2,13 +2,13 @@ import { useLang } from '../lib/i18n.jsx'
 import { fmtRM } from '../data/properties.js'
 import { compareBarModel, deltaLabel } from '../lib/compareBars.js'
 import {
-  IconWallet, IconCalendar, IconKey, IconCoins, HouseFill,
+  IconCalendar, IconKey, IconCoins,
 } from './icons.jsx'
 
 const TONE = {
-  good: { bg: '#eef7f2', text: '#176b45' },
-  bad: { bg: '#f8eeee', text: '#9f1239' },
-  flat: { bg: '#f1f5f9', text: '#334155' },
+  good: { bg: '#eef7f2', text: '#176b45', bar: '#176b45' },
+  bad: { bg: '#f8eeee', text: '#9f1239', bar: '#9f1239' },
+  flat: { bg: '#f1f5f9', text: '#334155', bar: '#64748b' },
 }
 
 function toneOf(n) {
@@ -40,64 +40,54 @@ function Metric({ icon, tone = 'flat', label, testId, className = '', children }
   )
 }
 
-/** Wallet (vs current rent) on the left, house (rent vs instalment) on the right.
- *  Sign rule: money out is − and red, money in is + and green. */
+/** Leftover / shortfall of rent vs instalment, in the Rocket Money “left to spend” pattern:
+ *  a large signed hero, then a remaining bar (instalment as spent, rent as budget).
+ *  Sign rule: money in is + and green, money out is − and red. */
 export function CompareTiles({ inst, currentRent, rentMo, cash, compact = false, className = '' }) {
   const { t } = useLang()
   const model = compareBarModel({ inst, currentRent, rentMo, cash })
-  if (!model || model.inst == null) return null
+  if (!model || model.inst == null || model.letVsInst == null || model.rentMo == null) return null
 
-  const hasNow = model.instVsNow != null
-  const hasLet = model.letVsInst != null
-  if (!hasNow && !hasLet) return null
-
-  const coverage = model.rentMo && model.inst ? model.rentMo / model.inst : null
-  // Wallet: paying more than current rent is money out → negate instVsNow for display.
-  const walletFlow = hasNow ? -model.instVsNow : null
-  const rentTone = toneOf(walletFlow)
-  const letTone = toneOf(model.letVsInst)
-  const houseSurplus = model.letVsInst != null && model.letVsInst >= 0
-  const houseSize = compact ? 42 : 56
-
-  const rentAria = hasNow
-    ? (model.instVsNow > 0
-      ? t(`月供比现在的租金多 ${fmtRM(model.instVsNow)}`, `Instalment ${fmtRM(model.instVsNow)} more than your current rent`)
-      : model.instVsNow < 0
-        ? t(`月供比现在的租金少 ${fmtRM(Math.abs(model.instVsNow))}`, `Instalment ${fmtRM(Math.abs(model.instVsNow))} less than your current rent`)
-        : t('月供和现在的租金差不多', 'Instalment is about the same as your current rent'))
-    : ''
-  const letAria = hasLet
-    ? (model.letVsInst >= 0
-      ? t(`出租后每月大约剩 ${fmtRM(model.letVsInst)}`, `If rented out, about ${fmtRM(model.letVsInst)} left each month`)
-      : t(`出租后每月还要补 ${fmtRM(Math.abs(model.letVsInst))}`, `If rented out, you'd still top up ${fmtRM(Math.abs(model.letVsInst))} each month`))
-    : ''
-
-  const letNumber = deltaLabel(model.letVsInst) === '0' ? 'RM0' : deltaLabel(model.letVsInst)
-  const nowNumber = deltaLabel(walletFlow) === '0' ? 'RM0' : deltaLabel(walletFlow)
+  const leftover = model.letVsInst
+  const tone = toneOf(leftover)
+  const pal = TONE[tone] || TONE.flat
+  const over = leftover < 0
+  const fill = model.rentMo > 0
+    ? Math.max(0, Math.min(100, (model.inst / model.rentMo) * 100))
+    : 0
+  const barPct = over ? 100 : fill
+  const hero = deltaLabel(leftover) === '0' ? 'RM0' : deltaLabel(leftover)
+  const aria = leftover >= 0
+    ? t(`出租后每月大约剩 ${fmtRM(leftover)}`, `If rented out, about ${fmtRM(leftover)} left each month`)
+    : t(`出租后每月还要补 ${fmtRM(Math.abs(leftover))}`, `If rented out, you'd still top up ${fmtRM(Math.abs(leftover))} each month`)
 
   return (
     <div
-      className={`flex items-center ${hasNow && hasLet ? 'justify-between gap-3' : 'gap-3'} ${className}`}
+      className={`rounded-xl bg-slate-50 px-3 ${compact ? 'py-2' : 'py-2.5'} ${className}`}
       data-testid="compare-tiles"
       role="img"
-      aria-label={[rentAria, letAria].filter(Boolean).join('. ')}
+      aria-label={aria}
     >
-      {hasNow && (
-        <Metric testId="tile-rent" tone={rentTone} label={t('多付', 'Extra')} icon={<IconWallet size={15} />}>
-          {nowNumber}
-        </Metric>
-      )}
-      {hasLet && (
-        <div className="flex items-center gap-1.5 min-w-0" data-testid="tile-rental" style={{ color: (TONE[letTone] || TONE.flat).text }}>
-          <span className="shrink-0 flex flex-col items-center gap-0.5">
-            <HouseFill coverage={coverage} surplus={houseSurplus} size={houseSize} />
-            <span className="text-[11px] leading-none font-medium text-slate-500 whitespace-nowrap">{t('租金', 'Rent')}</span>
-          </span>
-          <span className={`font-semibold tabular-nums tracking-tight leading-none whitespace-nowrap ${compact ? 'text-[15px] sm:text-[16px]' : 'text-[20px] sm:text-[24px]'}`}>
-            {letNumber}
-          </span>
-        </div>
-      )}
+      <div
+        className={`font-semibold tabular-nums tracking-tight leading-none ${compact ? 'text-[20px]' : 'text-[26px]'}`}
+        style={{ color: pal.text }}
+        data-testid="tile-rental"
+      >
+        {hero}
+      </div>
+      <div
+        className={`rounded-full bg-slate-200/90 overflow-hidden ${compact ? 'mt-1.5 h-1.5' : 'mt-2 h-2'}`}
+        data-testid="rent-bar"
+      >
+        <div
+          className="h-full rounded-full"
+          style={{ width: `${barPct}%`, background: pal.bar }}
+        />
+      </div>
+      <div className={`flex items-baseline justify-between gap-2 text-slate-500 tabular-nums ${compact ? 'mt-1 text-[10px]' : 'mt-1.5 text-[11px]'}`}>
+        <span className="min-w-0 truncate">{t('月供', 'Monthly')} {fmtRM(model.inst)}</span>
+        <span className="min-w-0 truncate text-right">{t('租金', 'Rent')} {fmtRM(model.rentMo)}</span>
+      </div>
     </div>
   )
 }

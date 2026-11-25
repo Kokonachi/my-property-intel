@@ -106,7 +106,6 @@ function RankCard({ p, s, segment, compare }) {
       {showTiles ? (
         <a href={`#/explore/${p.id}`} className="block">
           <CompareTiles
-            compact
             inst={inst}
             currentRent={holder.currentRent}
             rentMo={s.v?.rentMo ?? y?.rentMo}
