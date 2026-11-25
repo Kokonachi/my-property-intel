@@ -15,7 +15,7 @@ import { useHolder, SEGMENTS } from '../lib/holderProfile.js'
 import { cashVsRent, entryCost, salaryBurden, parseMoney } from '../lib/mortgage.js'
 import { salaryBandCopy } from '../lib/plainCopy.js'
 import { EntryFacts, EntryStack, BuyVsRent } from '../components/CompareTiles.jsx'
-import { DecisionSummary } from '../components/DecisionSummary.jsx'
+import { NeighbourCompare } from '../components/NeighbourCompare.jsx'
 import { IconKey, IconCalendar, IconInfo } from '../components/icons.jsx'
 
 const pct = v => (v == null || Number.isNaN(v) ? '—' : `${v.toFixed(2)}%`)
@@ -399,7 +399,7 @@ export default function LaunchDetail({ p }) {
             <p className="mt-1 text-[13px] text-slate-500">{metaLine}</p>
             <p className="mt-0.5 text-[13px] text-slate-500">{p.developer}{p.developer_parent ? ` · ${p.developer_parent}` : ''}</p>
 
-            <DecisionSummary embedded p={p} s={scored} entry={entry} goal={goal} loan={loan} currentRent={holder.currentRent} />
+            <NeighbourCompare p={p} s={scored} entry={entry} goal={goal} loan={loan} currentRent={holder.currentRent} />
 
             {zero && entry && (
               <div className="mt-4 rounded-2xl bg-slate-50 px-3.5 py-3.5" data-testid="entry-cost">

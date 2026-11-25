@@ -53,6 +53,7 @@ export function launchRisks(p, s, { loan, today = new Date() } = {}) {
     out.push({
       id: 'extension',
       level: ext >= 12 ? 'high' : 'medium',
+      short: { zh: `已延期 ${ext} 个月`, en: `${ext}-month delay` },
       zh: `交房已批准延期 ${ext} 个月（合约 ${p.handover_spa} → ${p.handover_after_extension}）${early ? '，而且是在几乎还没开工时就批的' : ''}。`,
       en: `Handover has an approved ${ext}-month extension (SPA ${p.handover_spa} → ${p.handover_after_extension})${early ? ', granted before construction had really started' : ''}.`,
     })
@@ -64,6 +65,7 @@ export function launchRisks(p, s, { loan, today = new Date() } = {}) {
       id: 'construction-interest',
       level: ci.years >= 2 ? 'high' : 'medium',
       amount: ci.total,
+      short: { zh: `交房前利息 RM${Math.round(ci.total / 1000)}k`, en: `RM${Math.round(ci.total / 1000)}k interest pre-handover` },
       zh: `交房前约 ${ci.years.toFixed(1)} 年没有租金，但要付分期放款的利息，估计共约 RM${amt}（开工进度 ${progress ?? 0}%，按进度平均放款估算）。这笔钱不在入场成本里。`,
       en: `About ${ci.years.toFixed(1)} years with no rent before handover, while paying interest on progressive disbursement: roughly RM${amt} in total (construction ${progress ?? 0}%, even drawdown assumed). This is not in the cash to enter.`,
     })
@@ -72,6 +74,7 @@ export function launchRisks(p, s, { loan, today = new Date() } = {}) {
     out.push({
       id: 'supply',
       level: 'medium',
+      short: { zh: `${p.total_units.toLocaleString()} 户同时交房`, en: `${p.total_units.toLocaleString()} units at once` },
       zh: `${p.total_units.toLocaleString()} 个单位会在差不多同一时间交房、同时招租，交房头一两年的实际租金可能低于这里用的叫租。`,
       en: `${p.total_units.toLocaleString()} units hand over at about the same time and look for tenants together, so rent in the first year or two may be below the asking rent used here.`,
     })
@@ -80,6 +83,7 @@ export function launchRisks(p, s, { loan, today = new Date() } = {}) {
     out.push({
       id: 'negative-leverage',
       level: 'high',
+      short: { zh: '负杠杆', en: 'Negative leverage' },
       zh: `净回报 ${s.v.netYield.toFixed(2)}% 低于贷款利率 ${loan?.rate}%：借得越多，每月倒贴越多，回本要靠升值。`,
       en: `Net yield ${s.v.netYield.toFixed(2)}% is below the ${loan?.rate}% loan rate: the more you borrow, the more you top up, and the return depends on capital gain.`,
     })
@@ -88,6 +92,7 @@ export function launchRisks(p, s, { loan, today = new Date() } = {}) {
     out.push({
       id: 'leasehold',
       level: 'medium',
+      short: { zh: '99 年地契', en: '99-yr leasehold' },
       zh: '99 年租赁地契：剩余年期越短，转售和再贷款越难，长期升值通常不如永久地契。',
       en: '99-year leasehold: as the remaining lease shortens, resale and refinancing get harder, and long-run gains usually trail freehold.',
     })

@@ -42,6 +42,13 @@ function isLowCostFlat(p) {
 }
 
 /** Completed high-rise stats in the same area, excluding low-cost flats and thin rent samples (< 3 ads). */
+/** Completed, comparable projects in an area (no low-cost flats, no thin samples); KL Gateway's
+ *  duplicate Brickz records are listed once. */
+const GATEWAY_DUPES = new Set(['real-kuala-lumpur-gateway', 'real-kuala-lumpur-gateway-menara-suezcap'])
+export function areaCompletedProjects(area) {
+  return REAL.filter(p => p.area === area && p.psf > 0 && p.gross != null && !isLowCostFlat(p) && !isThinSample(p) && !GATEWAY_DUPES.has(p.id))
+}
+
 export function areaCompletedStats(area) {
   const ps = REAL.filter(p => p.area === area && p.gross != null && !isLowCostFlat(p) && !isThinSample(p))
   const grosses = ps.map(p => p.gross)
