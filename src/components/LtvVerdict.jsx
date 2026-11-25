@@ -223,18 +223,27 @@ export function LoanRateYears({ className = '' }) {
   useEffect(() => { setRateDraft(null) }, [loan.rate])
   useEffect(() => { setYearsDraft(null) }, [loan.years])
 
+  const [err, setErr] = useState(null)
+  useEffect(() => {
+    if (!err) return undefined
+    const id = setTimeout(() => setErr(null), 4000)
+    return () => clearTimeout(id)
+  }, [err])
   const commitRate = raw => {
     const n = parseRate(raw)
-    if (n != null) setLoan({ rate: n })
+    if (n != null) { setLoan({ rate: n }); setErr(null) }
+    else if (String(raw).trim() !== String(loan.rate)) setErr(t(`利率要在 ${RATE_MIN}%–${RATE_MAX}% 之间，已保留 ${loan.rate}%。`, `Rate must be ${RATE_MIN}–${RATE_MAX}%; kept ${loan.rate}%.`))
     setRateDraft(null)
   }
   const commitYears = raw => {
     const n = parseYears(raw)
-    if (n != null) setLoan({ years: n })
+    if (n != null) { setLoan({ years: n }); setErr(null) }
+    else if (String(raw).trim() !== String(loan.years)) setErr(t(`年期要在 ${YEARS_MIN}–${YEARS_MAX} 年之间，已保留 ${loan.years} 年。`, `Tenure must be ${YEARS_MIN}–${YEARS_MAX} years; kept ${loan.years}.`))
     setYearsDraft(null)
   }
 
   return (
+    <>
     <div className={`mt-2 grid grid-cols-2 gap-2 ${className}`} data-testid="loan-rate-years">
       <label className="rounded-xl border border-slate-200 bg-white px-3 py-2">
         <div className="text-[11px] text-slate-500">{t('年利率', 'Interest rate')}</div>
@@ -290,6 +299,8 @@ export function LoanRateYears({ className = '' }) {
         </div>
       </label>
     </div>
+    {err ? <div className="mt-1.5 text-[12px] text-[#9f1239]" role="alert" data-testid="loan-input-error">{err}</div> : null}
+    </>
   )
 }
 
