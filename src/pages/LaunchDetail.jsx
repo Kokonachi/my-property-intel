@@ -10,11 +10,11 @@ import { REAL_META } from '../data/real.js'
 import { LoanVerdict, LoanAssumptionsBar, LoanPctControl, LoanRateYears } from '../components/LtvVerdict.jsx'
 import { useLoanAssumptions } from '../lib/loanAssumptions.js'
 import { launchScore, scoreBand, SCORE_WEIGHTS, entryCostOf } from '../lib/launchScore.js'
-import { FirstBuyerNote } from '../components/HolderSheet.jsx'
+import { FirstBuyerNote, RentPrompt, GoalPrompt } from '../components/HolderSheet.jsx'
 import { useHolder, SEGMENTS } from '../lib/holderProfile.js'
 import { cashVsRent, entryCost, salaryBurden, parseMoney } from '../lib/mortgage.js'
 import { salaryBandCopy } from '../lib/plainCopy.js'
-import { CompareTiles, EntryFacts, EntryStack } from '../components/CompareTiles.jsx'
+import { EntryFacts, EntryStack, BuyVsRent } from '../components/CompareTiles.jsx'
 import { IconKey, IconCalendar, IconInfo } from '../components/icons.jsx'
 import { useCompare } from '../lib/compareDraft.js'
 
@@ -153,15 +153,7 @@ function TypCard({ p, typ, t, draft, onChange, compactLoan = false, variant = 'd
         </div>
       ) : null}
       {simple && v?.inst != null && (
-        <CompareTiles
-          className="mt-3"
-          compact
-          inst={v.inst}
-          currentRent={currentRent}
-          rentMo={impliedRent}
-          cash={v.cash}
-          v={v}
-        />
+        <BuyVsRent className="mt-3" compact v={v} currentRent={currentRent} />
       )}
 
       {!simple && price && impliedRent ? <LoanVerdict price={price} rentMo={impliedRent} maintMo={(p.maint_psf || 0) * typ.size} className="mt-3" compact={compactLoan} /> : null}
@@ -338,7 +330,7 @@ export default function LaunchDetail({ p }) {
   const compare = useCompare()
   const [drafts, setDrafts] = useState(() => Object.fromEntries(p.typologies.map(ty => [ty.id, { mode: ty.price_from ? 'pct' : 'price', pct: '', price: '' }])))
   const setDraft = (id, d) => setDrafts(s => ({ ...s, [id]: { ...s[id], ...d } }))
-  const many = segment === SEGMENTS.many
+  const many = false // compact investor variant retired with the holdings-count segments; removed in phase 3
   const zero = segment === SEGMENTS.zero
   const [scoreOpen, setScoreOpen] = useState(many)
   const [howOpen, setHowOpen] = useState(many)
@@ -406,6 +398,8 @@ export default function LaunchDetail({ p }) {
           )}
         </div>
 
+        <GoalPrompt />
+
         <section className="rounded-2xl bg-white overflow-hidden ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)]">
           {p.render?.src ? (
             <div className="relative h-52 sm:h-72 bg-slate-200">
@@ -449,14 +443,8 @@ export default function LaunchDetail({ p }) {
                       <span className="grid place-items-center rounded-lg bg-white ring-1 ring-slate-200/80 text-slate-700" style={{ width: 28, height: 28 }}><IconCalendar size={16} /></span>
                       <div className="text-[18px] font-semibold tabular-nums leading-none">{rm(scored.v.inst)}{t('/月', '/mo')}</div>
                     </div>
-                    <CompareTiles
-                      className="mt-3"
-                      inst={scored.v.inst}
-                      currentRent={holder.currentRent}
-                      rentMo={scored.v.rentMo ?? scored.yields?.rentMo}
-                      cash={scored.v.cash}
-                      v={scored.v}
-                    />
+                    <BuyVsRent className="mt-3" v={scored.v} currentRent={holder.currentRent} />
+                    <RentPrompt className="mt-2" compact />
                   </div>
                 ) : null}
               </div>

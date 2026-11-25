@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useLang } from '../lib/i18n.jsx'
 import { cashVsRent, DEFAULT_LTV, LTV_MIN, LTV_MAX, LTV_STEP, clampLtv, RATE_MIN, RATE_MAX, YEARS_MIN, YEARS_MAX } from '../lib/mortgage.js'
 import { useLoanAssumptions } from '../lib/loanAssumptions.js'
+import { useHolder } from '../lib/holderProfile.js'
 import { headlineVerdict, downLabel } from '../lib/launchScore.js'
 import { HoldBreakdown } from './CompareTiles.jsx'
 
@@ -27,6 +28,9 @@ function useCurrentVerdict({ price, rentMo, maintMo = 0, fixedRmYr }) {
 export function LoanPctControl({ variant = 'header', className = '' }) {
   const { t } = useLang()
   const { loan, setLoan } = useLoanAssumptions()
+  const { ltvCap } = useHolder()
+  const maxLtv = Math.min(LTV_MAX, ltvCap || LTV_MAX)
+  const capped = n => Math.min(maxLtv, clampLtv(n))
   const [draft, setDraft] = useState(null)
   useEffect(() => { setDraft(null) }, [loan.ltv])
   const shown = draft ?? String(loan.ltv)
@@ -34,9 +38,9 @@ export function LoanPctControl({ variant = 'header', className = '' }) {
     setDraft(null)
     const n = Number(String(raw).trim())
     if (!Number.isFinite(n)) return
-    setLoan({ ltv: clampLtv(n) }, { source: 'user' })
+    setLoan({ ltv: capped(n) }, { source: 'user' })
   }
-  const bump = dir => setLoan({ ltv: clampLtv(loan.ltv + dir * LTV_STEP) }, { source: 'user' })
+  const bump = dir => setLoan({ ltv: capped(loan.ltv + dir * LTV_STEP) }, { source: 'user' })
   const showSlider = variant !== 'compact'
 
   return (
@@ -71,7 +75,7 @@ export function LoanPctControl({ variant = 'header', className = '' }) {
         type="button"
         data-testid="loan-pct-inc"
         aria-label={t('提高贷款成数', 'Increase loan percentage')}
-        disabled={loan.ltv >= LTV_MAX}
+        disabled={loan.ltv >= maxLtv}
         onClick={() => bump(1)}
         className="shrink-0 h-7 w-7 rounded-full border border-slate-200 bg-white text-[16px] leading-none text-slate-700 disabled:opacity-30 disabled:pointer-events-none"
       >+</button>
@@ -80,12 +84,12 @@ export function LoanPctControl({ variant = 'header', className = '' }) {
           type="range"
           data-testid="loan-pct-slider"
           min={LTV_MIN}
-          max={LTV_MAX}
+          max={maxLtv}
           step={LTV_STEP}
           value={loan.ltv}
           aria-label={t('贷款成数', 'Loan percentage')}
           className="min-w-0 flex-1 h-7 accent-slate-900"
-          onChange={e => setLoan({ ltv: clampLtv(e.target.value) }, { source: 'user' })}
+          onChange={e => setLoan({ ltv: capped(e.target.value) }, { source: 'user' })}
         />
       )}
     </div>
