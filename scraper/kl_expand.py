@@ -257,10 +257,31 @@ def type_of(bt):
     return "Serviced Residence" if any(x in b for x in ("service", "soho", "sofo")) else "Condo"
 
 
+MUDAH_FP = ROOT / "mudah_kl_matched.json"   # {search term: [[price, size, rooms], ...]} already title-matched in the browser
+OSM_FP = ROOT / "osm_kl_matches.json"       # {Brickz name: [lat, lng, osm kind, osm name]} unambiguous OSM name hits
+# names too generic for a Mudah keyword search: the matched ads are mostly other buildings (checked by hand 2026-11-25)
+MUDAH_SKIP = {"BOULEVARD", "RESIDENSI TUN RAZAK", "THE PARK 2", "KL ECO CITY", "THE PEARL", "THE PARK RESIDENCES 1",
+              "SENTRAL SUITE", "VERVE SUITES", "TR RESIDENCE", "SKYLINE RESIDENCE"}
+
+
+def mudah_rents(p, store, aliases):
+    """Mudah ads already matched to the project in the browser (scrape.title_matches + aliases, deduped)."""
+    if p["name"] in MUDAH_SKIP:
+        return []
+    rows = store.get(" ".join(toks(p["name"]))) or []
+    return [dict(price=r[0], size=r[1], rooms=r[2], title=None, url=None, src="Mudah")
+            for r in rows if r[0] and r[1] and 250 <= r[1] <= 8000]
+
+
 def cmd_build():
     from room_filter import clean_whole_unit_rents
     mp = json.loads(MAP_FP.read_text())
+    aliases = json.loads((ROOT / "aliases.json").read_text())
+    mudah = json.loads(MUDAH_FP.read_text()) if MUDAH_FP.exists() else {}
     overrides = json.loads((ROOT / "geocode_overrides.json").read_text())
+    osm = json.loads(OSM_FP.read_text()) if OSM_FP.exists() else {}
+    osm_drop = set(osm.get("_meta", {}).get("drop", []))
+    mudah_at = mudah.get("_meta", {}).get("fetched")
     ps = batch1_projects()
     first_by_condo, out = {}, []
     for p in ps:
@@ -271,6 +292,7 @@ def cmd_build():
         typ = type_of(p["brickz_type"])
         raw = [dict(price=l["price"], size=l["size"], rooms=l.get("beds"), title=l.get("title"), url=l.get("url"), src="PropertyGuru")
                for l in (pg or {}).get("listings", []) if l.get("price") and l.get("size")]
+        raw += mudah_rents(p, mudah, aliases)
         rents, _ = clean_whole_unit_rents(raw, typ=typ, brickz_type=p["brickz_type"])
         gross, net, costs = yield_block(p, rents, maint_psf(p, area))
         n = len(rents)
@@ -279,6 +301,9 @@ def cmd_build():
         geo, geo_src, precision = None, "none", None
         if pg and pg.get("lat") and math.dist([pg["lat"], pg["lng"]], c) <= radius:
             geo, geo_src, precision = [pg["lat"], pg["lng"]], "propertyguru", "building"
+        o = osm.get(p["name"]) if p["name"] not in osm_drop else None
+        if not geo and o and math.dist(o[:2], c) <= radius:
+            geo, geo_src, precision = o[:2], "osm", "building"
         ov = overrides.get(pid)
         if ov and not ov.get("hide") and (ov.get("verified") or not geo):
             geo, geo_src, precision = [ov["lat"], ov["lng"]], "override", "building" if ov.get("verified") else "approx"
@@ -294,16 +319,17 @@ def cmd_build():
             same_condo_as=same, tenure=p["tenure"], type=typ, brickz_type=p["brickz_type"],
             tx=dict(psf_median=p["tx_psf_median"], psf_q=p["tx_psf_q"], price_median=p["tx_price_median"],
                     price_q=p["tx_price_q"], count=p["tx_count"], period=p["tx_period"]),
-            ask_rent=dict(count=n, rent_median=costs["ref_rent"] if costs else None, size_median=costs["ref_size"] if costs else None,
+            ask_rent=dict(count=n, by_source=dict(PropertyGuru=sum(r["src"] == "PropertyGuru" for r in rents), Mudah=sum(r["src"] == "Mudah" for r in rents)), rent_median=costs["ref_rent"] if costs else None, size_median=costs["ref_size"] if costs else None,
                           samples=[dict(rent=r["price"], size=r["size"], rooms=r["rooms"], src=r["src"], url=r.get("url"),
                                         title=(r.get("title") or "")[:160]) for r in rents][:40]),
             gross_yield=gross, net_yield=net, net_costs=costs, yield_display=bool(gross is not None and n >= MIN_RENT_ADS),
             confidence=conf, rent_method="listings" if rents else None,
             sources=[dict(name="Brickz.my (transacted)", url=p["brickz_url"]),
-                     *([dict(name="PropertyGuru (rent listings)", url=m["condo_url"].replace("/condo/", "/property-for-rent/at-"))] if m.get("condo_url") else [])],
-            scraped_at=(pg or {}).get("fetched_at"),
+                     *([dict(name="PropertyGuru (rent listings)", url=m["condo_url"].replace("/condo/", "/property-for-rent/at-"))] if pg else []),
+                     *([dict(name="Mudah.my (rent listings)", url="https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=" + "+".join(toks(p["name"])))] if any(r["src"] == "Mudah" for r in rents) else [])],
+            scraped_at=(pg or {}).get("fetched_at") or (mudah_at if any(r["src"] == "Mudah" for r in rents) else None),
         ))
-    summary = dict(projects=len(out), with_pg_data=sum(1 for x in out if x["scraped_at"]),
+    summary = dict(projects=len(out), with_rent_data=sum(1 for x in out if x["ask_rent"]["count"]),
                    on_map=sum(x["on_map"] for x in out), yield_display=sum(x["yield_display"] for x in out),
                    confidence=collections.Counter(x["confidence"] for x in out),
                    by_area={k: sum(1 for x in out if x["area"] == v[0]) for k, v in BATCH1.items()})
