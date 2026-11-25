@@ -4,7 +4,7 @@
  "summary": {
   "projects": 329,
   "with_rent_data": 172,
-  "on_map": 205,
+  "on_map": 240,
   "yield_display": 64,
   "confidence": {
    "medium": 57,
@@ -681,11 +681,11 @@
    "area_zh": "吉隆坡市中心",
    "brickz_town": "kl-city-centre",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.158609,
+   "lng": 101.703858,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/the-face-suites-platinum-suites-2453",
     "id": "2453",
@@ -762,7 +762,8 @@
      "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=platinum+suites+the+face+suites"
     }
    ],
-   "scraped_at": "2026-11-25"
+   "scraped_at": "2026-11-25",
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · The Face Platinum Suites"
   },
   {
    "id": "real-pavilion-hilltop",
@@ -1240,11 +1241,11 @@
    "area_zh": "白沙罗高原",
    "brickz_town": "damansara-heights",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.147112,
+   "lng": 101.660869,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": null,
     "id": null,
@@ -1321,7 +1322,8 @@
      "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=residensi+dc+damansara+city"
     }
    ],
-   "scraped_at": "2026-11-25"
+   "scraped_at": "2026-11-25",
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · DC Residensi"
   },
   {
    "id": "real-so-sofitel-kuala-lumpur-residences",
@@ -1585,11 +1587,11 @@
    "area_zh": "吉隆坡市中心",
    "brickz_town": "kl-city-centre",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.128569,
+   "lng": 101.725527,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/sunway-velocity-two-14103",
     "id": "14103",
@@ -1738,7 +1740,8 @@
      "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=sunway+velocity+two"
     }
    ],
-   "scraped_at": "2026-11-25"
+   "scraped_at": "2026-11-25",
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Sunway Velocity Two"
   },
   {
    "id": "real-the-ooak-suites-residence",
@@ -2205,11 +2208,11 @@
    "area_zh": "吉隆坡市中心",
    "brickz_town": "kl-city-centre",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.160992,
+   "lng": 101.700626,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": null,
     "id": null,
@@ -2259,7 +2262,8 @@
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/wisma-infinitum/non-landed/"
     }
    ],
-   "scraped_at": null
+   "scraped_at": null,
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Wisma Infinitum"
   },
   {
    "id": "real-the-park-sky-residence",
@@ -2392,11 +2396,11 @@
    "area_zh": "孟沙",
    "brickz_town": "bangsar",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.117923,
+   "lng": 101.673794,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": null,
     "id": null,
@@ -2446,7 +2450,8 @@
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/bangsar/kl-eco-city/non-landed/"
     }
    ],
-   "scraped_at": null
+   "scraped_at": null,
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · KL Eco City"
   },
   {
    "id": "real-residensi-allevia",
@@ -2945,11 +2950,11 @@
    "area_zh": "谷中城",
    "brickz_town": "mid-valley-city",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.131604,
+   "lng": 101.612245,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": null,
     "id": null,
@@ -2999,7 +3004,8 @@
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/mid-valley-city/boulevard/non-landed/"
     }
    ],
-   "scraped_at": null
+   "scraped_at": null,
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Boulevard Residence"
   },
   {
    "id": "real-sentral-suite",
@@ -3626,11 +3632,11 @@
    "area_zh": "吉隆坡市中心",
    "brickz_town": "kl-city-centre",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.160247,
+   "lng": 101.739226,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/novo-ampang-6584",
     "id": "6584",
@@ -3707,7 +3713,8 @@
      "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=novo+ampang"
     }
    ],
-   "scraped_at": "2026-11-25"
+   "scraped_at": "2026-11-25",
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · NOVO Ampang"
   },
   {
    "id": "real-the-forum",
@@ -3717,11 +3724,11 @@
    "area_zh": "吉隆坡市中心",
    "brickz_town": "kl-city-centre",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.14442,
+   "lng": 101.721055,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/the-forum-439",
     "id": "439",
@@ -3771,7 +3778,8 @@
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/the-forum/non-landed/"
     }
    ],
-   "scraped_at": null
+   "scraped_at": null,
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · The Forum Condominium"
   },
   {
    "id": "real-residensi-sunway-belfield",
@@ -4099,11 +4107,11 @@
    "area_zh": "吉隆坡市中心",
    "brickz_town": "kl-city-centre",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.14978,
+   "lng": 101.712075,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/pavilion-suites-9735",
     "id": "9735",
@@ -4220,7 +4228,8 @@
      "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=pavilion+suites"
     }
    ],
-   "scraped_at": "2026-11-25"
+   "scraped_at": "2026-11-25",
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Pavilion Tower"
   },
   {
    "id": "real-solaris-dutamas",
@@ -4230,11 +4239,11 @@
    "area_zh": "Dutamas",
    "brickz_town": "dutamas",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.171175,
+   "lng": 101.665919,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/solaris-dutamas-483",
     "id": "483",
@@ -4343,7 +4352,8 @@
      "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=solaris+dutamas"
     }
    ],
-   "scraped_at": "2026-11-25"
+   "scraped_at": "2026-11-25",
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Solaris Dutamas"
   },
   {
    "id": "real-sri-rakyat",
@@ -5403,11 +5413,11 @@
    "area_zh": "Pantai",
    "brickz_town": "pantai",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.105006,
+   "lng": 101.663249,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/pantai-hillpark-2-1632",
     "id": "1632",
@@ -5457,7 +5467,8 @@
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/pantai/pantai-hillpark-2/non-landed/"
     }
    ],
-   "scraped_at": null
+   "scraped_at": null,
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Pantai Hillpark Phase 2"
   },
   {
    "id": "real-trinity-pentamont-mont-kiara",
@@ -5726,11 +5737,11 @@
    "area_zh": "满家乐",
    "brickz_town": "mont-kiara",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.167649,
+   "lng": 101.646023,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/verve-suites-484",
     "id": "484",
@@ -5780,7 +5791,8 @@
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/verve-suites/non-landed/"
     }
    ],
-   "scraped_at": null
+   "scraped_at": null,
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Verve Suites"
   },
   {
    "id": "real-residensi-solaris-parq",
@@ -6602,11 +6614,11 @@
    "area_zh": "吉隆坡市中心",
    "brickz_town": "kl-city-centre",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.154958,
+   "lng": 101.708199,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/crown-regency-262",
     "id": "262",
@@ -6656,7 +6668,8 @@
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/crown-regency/non-landed/"
     }
    ],
-   "scraped_at": null
+   "scraped_at": null,
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Crown Regency Serviced Suites"
   },
   {
    "id": "real-the-park-2",
@@ -8808,11 +8821,11 @@
    "area_zh": "武吉加里尔",
    "brickz_town": "bukit-jalil",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.060828,
+   "lng": 101.649511,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": null,
     "id": null,
@@ -8985,7 +8998,8 @@
      "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=kinrara+mas"
     }
    ],
-   "scraped_at": "2026-11-25"
+   "scraped_at": "2026-11-25",
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Kinrara Mas Condominium"
   },
   {
    "id": "real-berjaya-times-square",
@@ -10756,11 +10770,11 @@
    "area_zh": "吉隆坡市中心",
    "brickz_town": "kl-city-centre",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.14978,
+   "lng": 101.712075,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/pavilion-residences-152",
     "id": "152",
@@ -10810,7 +10824,8 @@
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/pavilion-residences/non-landed/"
     }
    ],
-   "scraped_at": null
+   "scraped_at": null,
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Pavilion Tower"
   },
   {
    "id": "real-one-central-park",
@@ -11154,11 +11169,11 @@
    "area_zh": "武吉加里尔",
    "brickz_town": "bukit-jalil",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.064661,
+   "lng": 101.663914,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/casa-green-condominium-9650",
     "id": "9650",
@@ -11235,7 +11250,8 @@
      "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=casa+green"
     }
    ],
-   "scraped_at": "2026-11-25"
+   "scraped_at": "2026-11-25",
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Casa Green"
   },
   {
    "id": "real-de-tropicana-condominium",
@@ -11464,11 +11480,11 @@
    "area_zh": "孟沙",
    "brickz_town": "bangsar",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.141773,
+   "lng": 101.665048,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": null,
     "id": null,
@@ -11545,7 +11561,8 @@
      "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=sri+penaga"
     }
    ],
-   "scraped_at": "2026-11-25"
+   "scraped_at": "2026-11-25",
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Sri Penaga"
   },
   {
    "id": "real-verdana",
@@ -12014,11 +12031,11 @@
    "area_zh": "Pantai",
    "brickz_town": "pantai",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.105218,
+   "lng": 101.662366,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/pantai-hillpark-5-1634",
     "id": "1634",
@@ -12095,7 +12112,8 @@
      "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=pantai+hillpark+5"
     }
    ],
-   "scraped_at": "2026-11-25"
+   "scraped_at": "2026-11-25",
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Pantai Hillpark Phase 5"
   },
   {
    "id": "real-savanna",
@@ -12204,11 +12222,11 @@
    "area_zh": "吉隆坡市中心",
    "brickz_town": "kl-city-centre",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.13637,
+   "lng": 101.692752,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/dua-sentral-2095",
     "id": "2095",
@@ -12309,7 +12327,8 @@
      "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=dua+sentral"
     }
    ],
-   "scraped_at": "2026-11-25"
+   "scraped_at": "2026-11-25",
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Dua Sentral"
   },
   {
    "id": "real-ceriaan-kiara",
@@ -12672,11 +12691,11 @@
    "area_zh": "吉隆坡市中心",
    "brickz_town": "kl-city-centre",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.15053,
+   "lng": 101.713767,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": null,
     "id": null,
@@ -12726,7 +12745,8 @@
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/banyan-tree-signature/non-landed/"
     }
    ],
-   "scraped_at": null
+   "scraped_at": null,
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Banyan Tree Signature"
   },
   {
    "id": "real-windsor-tower",
@@ -12736,11 +12756,11 @@
    "area_zh": "斯里哈达马斯",
    "brickz_town": "sri-hartamas",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.164624,
+   "lng": 101.658058,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/windsor-tower-604",
     "id": "604",
@@ -12881,7 +12901,8 @@
      "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=windsor+tower"
     }
    ],
-   "scraped_at": "2026-11-25"
+   "scraped_at": "2026-11-25",
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Windsor Tower"
   },
   {
    "id": "real-the-legacy-oug",
@@ -13169,11 +13190,11 @@
    "area_zh": "Pantai",
    "brickz_town": "pantai",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.107134,
+   "lng": 101.664986,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/pantai-hillpark-1-492",
     "id": "492",
@@ -13250,7 +13271,8 @@
      "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=pantai+hillpark+1"
     }
    ],
-   "scraped_at": "2026-11-25"
+   "scraped_at": "2026-11-25",
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Pantai Hillpark Phase 1"
   },
   {
    "id": "real-hampshire-park",
@@ -13415,11 +13437,11 @@
    "area_zh": "武吉加里尔",
    "brickz_town": "bukit-jalil",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.062905,
+   "lng": 101.667463,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": null,
     "id": null,
@@ -13584,7 +13606,8 @@
      "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=bukit+oug"
     }
    ],
-   "scraped_at": "2026-11-25"
+   "scraped_at": "2026-11-25",
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Bukit OUG Condominiums"
   },
   {
    "id": "real-villa-putra",
@@ -13594,11 +13617,11 @@
    "area_zh": "吉隆坡市中心",
    "brickz_town": "kl-city-centre",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.165342,
+   "lng": 101.691988,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/villa-putra-1717",
     "id": "1717",
@@ -13691,7 +13714,8 @@
      "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=villa+putra"
     }
    ],
-   "scraped_at": "2026-11-25"
+   "scraped_at": "2026-11-25",
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Villa Putra"
   },
   {
    "id": "real-m-suite-desa-park-north",
@@ -14570,11 +14594,11 @@
    "area_zh": "吉隆坡市中心",
    "brickz_town": "kl-city-centre",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.155865,
+   "lng": 101.71056,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/one-kl-1587",
     "id": "1587",
@@ -14624,7 +14648,8 @@
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/one-kl/non-landed/"
     }
    ],
-   "scraped_at": null
+   "scraped_at": null,
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · ONE KL"
   },
   {
    "id": "real-residensi-riana-dutamas-savvy",
@@ -15491,11 +15516,11 @@
    "area_zh": "吉隆坡市中心",
    "brickz_town": "kl-city-centre",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.155892,
+   "lng": 101.708532,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/parkview-service-apartment-1578",
     "id": "1578",
@@ -15545,7 +15570,8 @@
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/parkview-service-apartment/non-landed/"
     }
    ],
-   "scraped_at": null
+   "scraped_at": null,
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Parkview Service Apartment"
   },
   {
    "id": "real-bangsar-permai",
@@ -19750,11 +19776,11 @@
    "area_zh": "斯里哈达马斯",
    "brickz_town": "sri-hartamas",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.164046,
+   "lng": 101.656493,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/plaza-damas-22311",
     "id": "22311",
@@ -19847,7 +19873,8 @@
      "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=plaza+damas"
     }
    ],
-   "scraped_at": "2026-11-25"
+   "scraped_at": "2026-11-25",
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Plaza Damas"
   },
   {
    "id": "real-the-pearl",
@@ -19921,11 +19948,11 @@
    "area_zh": "吉隆坡市中心",
    "brickz_town": "kl-city-centre",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.162743,
+   "lng": 101.716122,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/hampshire-place-1631",
     "id": "1631",
@@ -20002,7 +20029,8 @@
      "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=hampshire+place"
     }
    ],
-   "scraped_at": "2026-11-25"
+   "scraped_at": "2026-11-25",
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Hampshire Place Luxury Residences"
   },
   {
    "id": "real-menara-bintang-goldhill",
@@ -20437,11 +20465,11 @@
    "area_zh": "旧巴生路",
    "brickz_town": "old-klang-road",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.080821,
+   "lng": 101.687859,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": null,
     "id": null,
@@ -20491,7 +20519,8 @@
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/288-residences/non-landed/"
     }
    ],
-   "scraped_at": null
+   "scraped_at": null,
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · 288 Residences"
   },
   {
    "id": "real-pantai-panorama-condominium",
@@ -21436,11 +21465,11 @@
    "area_zh": "十五碑",
    "brickz_town": "brickfields",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.129343,
+   "lng": 101.682134,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/menara-pelangi-137",
     "id": "137",
@@ -21589,7 +21618,8 @@
      "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=menara+pelangi"
     }
    ],
-   "scraped_at": "2026-11-25"
+   "scraped_at": "2026-11-25",
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Menara Pelangi"
   },
   {
    "id": "real-bistari-lavendar",
@@ -23154,11 +23184,11 @@
    "area_zh": "吉隆坡市中心",
    "brickz_town": "kl-city-centre",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.165776,
+   "lng": 101.695178,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/menara-putra-1715",
     "id": "1715",
@@ -23208,7 +23238,8 @@
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/menara-putra/non-landed/"
     }
    ],
-   "scraped_at": null
+   "scraped_at": null,
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Menara Putra"
   },
   {
    "id": "real-pantai-panorama",
@@ -24322,11 +24353,11 @@
    "area_zh": "十五碑",
    "brickz_town": "brickfields",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.128876,
+   "lng": 101.681433,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": null,
     "id": null,
@@ -24443,7 +24474,8 @@
      "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=sri+impian"
     }
    ],
-   "scraped_at": "2026-11-25"
+   "scraped_at": "2026-11-25",
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Sri Impian Condominium"
   },
   {
    "id": "real-tong-fatt-building",
@@ -24616,11 +24648,11 @@
    "area_zh": "吉隆坡市中心",
    "brickz_town": "kl-city-centre",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.159038,
+   "lng": 101.704571,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/mercu-summer-suites-8252",
     "id": "8252",
@@ -24713,7 +24745,8 @@
      "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=mercu+summer+suites"
     }
    ],
-   "scraped_at": "2026-11-25"
+   "scraped_at": "2026-11-25",
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Mercu Summer Suites"
   },
   {
    "id": "real-scott-sentral",
@@ -25994,11 +26027,11 @@
    "area_zh": "Pantai",
    "brickz_town": "pantai",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.107096,
+   "lng": 101.663442,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/pantai-hillpark-3-1633",
     "id": "1633",
@@ -26048,7 +26081,8 @@
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/pantai/pantai-hillpark-3/non-landed/"
     }
    ],
-   "scraped_at": null
+   "scraped_at": null,
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Pantai Hillpark Phase 3"
   },
   {
    "id": "real-kondominium-pantai-estet",
@@ -27049,11 +27083,11 @@
    "area_zh": "吉隆坡市中心",
    "brickz_town": "kl-city-centre",
    "region": "kv",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
+   "lat": 3.144167,
+   "lng": 101.704479,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
    "pg_condo": {
     "url": "https://www.propertyguru.com.my/condo/the-robertson-6863",
     "id": "6863",
@@ -27226,7 +27260,8 @@
      "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=the+robertson"
     }
    ],
-   "scraped_at": "2026-11-25"
+   "scraped_at": "2026-11-25",
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · The Robertson"
   },
   {
    "id": "real-the-manhattan",

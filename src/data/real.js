@@ -2,6 +2,7 @@
 // this file only maps fields; it must NOT recompute gross/net (see scripts/check_yields.py).
 import raw from './real_projects.json' with { type: 'json' }
 import klBatch1 from './kl_batch1_site.json' with { type: 'json' }  // scraper/kl_expand.py site (Mudah rents only)
+import kvBatch2 from './kv_batch2_site.json' with { type: 'json' }  // scraper/kv_batch2.py build (Mudah rents, OSM points)
 import photos from './photos.json' with { type: 'json' }
 import strPilot from './str_pilot.json' with { type: 'json' }
 
@@ -24,7 +25,7 @@ export function yieldOf(p, rentMode, metric) {
 }
 
 
-export const REAL = [...raw.projects, ...klBatch1.projects].map((r, i) => {
+export const REAL = [...raw.projects, ...klBatch1.projects, ...kvBatch2.projects].map((r, i) => {
   const c = r.net_costs
   const est = r.rent_estimate
   const size = c?.ref_size ?? r.ask_rent.size_median ?? null
