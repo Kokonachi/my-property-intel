@@ -4,12 +4,11 @@ import L from '../lib/leaflet-globals.js'
 import { AREAS, REGIONS, yieldBand, BANDS, TYPE_LABEL, fmtRM, fmtRMk } from '../data/properties.js'
 import ProjectPhoto from '../components/ProjectPhoto.jsx'
 import { Logo } from '../components/ui.jsx'
-import { REAL, REAL_META, realAreaStats, yieldOf } from '../data/real.js'
+import { REAL, REAL_META, realAreaStats, yieldOf, rentSampleN, isThinSample, RANK_MIN_SAMPLES } from '../data/real.js'
 import ClusterGroup from '../components/ClusterGroup.jsx'
 import Basemap from '../components/Basemap.jsx'
 import { useLang, LangToggle } from '../lib/i18n.jsx'
 import { NavTabs } from '../components/AppNav.jsx'
-import { HoldChip } from '../components/HolderSheet.jsx'
 import { LAUNCHES } from '../data/launches.js'
 import { LaunchMarkers, LaunchCard } from '../components/LaunchPins.jsx'
 
@@ -109,6 +108,17 @@ function MapEvents({ onMove, onClick }) {
   return null
 }
 
+function SampleBadge({ p }) {
+  const { t } = useLang()
+  if (!isThinSample(p) || p.gross == null) return null
+  const n = rentSampleN(p)
+  return (
+    <span className="mt-1 inline-flex items-center rounded-md bg-amber-50 px-1.5 py-0.5 text-[11px] font-medium text-amber-800 ring-1 ring-amber-200" data-testid="sample-badge">
+      {t(`仅 ${n} 则租盘 · 未排名`, n === 1 ? 'Only 1 rent ad · not ranked' : `Only ${n} rent ads · not ranked`)}
+    </span>
+  )
+}
+
 function ListingCard({ p, metric, rentMode, active, onHover, onClick, compact }) {
   const { t, L: tl } = useLang()
   const grossY = yieldOf(p, rentMode, 'gross')
@@ -151,6 +161,7 @@ function ListingCard({ p, metric, rentMode, active, onHover, onClick, compact })
               <div className="shrink-0 font-bold text-[15px] tabular-nums" style={{ color: bandColor(grossY) }}>{pct(grossY)}</div>
             </div>
             <div className="text-[12px] text-slate-600 truncate mt-0.5">{tl({ zh: p.area_zh, en: p.area_en })} · {tl(TYPE_LABEL[p.type])}</div>
+            <SampleBadge p={p} />
           </div>
           <div>
             <div className="text-[12px] text-slate-700 truncate">{t('成交', 'Transacted')} {p.psf ? `RM${Number(p.psf).toLocaleString('en-MY')} psf` : priceTxt} · {p.rent ? `${t('租', 'Rent')} ${fmtRM(p.rent)}${t('/月', '/mo')}` : ''}</div>
@@ -175,10 +186,11 @@ function ListingCard({ p, metric, rentMode, active, onHover, onClick, compact })
           <div className="shrink-0 font-bold text-sm tabular-nums" style={{ color: bandColor(grossY) }}>{pct(grossY)}</div>
         </div>
         <div className="text-[12px] text-slate-600 truncate">{tl({ zh: p.area_zh, en: p.area_en })} · {tl(TYPE_LABEL[p.type])} · {p.tenure === 'Freehold' ? t('永久地契', 'Freehold') : t('租赁地契', 'Leasehold')}</div>
+        <SampleBadge p={p} />
         <div className="text-[12px] text-slate-600 truncate">
           {t(`成交 RM${p.psf ? Number(p.psf).toLocaleString('en-MY') : '—'} psf · ${rentAdLabel(nRent, t)} / ${saleLabel(p.tx.count, t)}`, `Transacted RM${p.psf ? Number(p.psf).toLocaleString('en-MY') : '—'} psf · ${rentAdLabel(nRent, t)} / ${saleLabel(p.tx.count, t)}`)}
         </div>
-        <div className="text-[14px] text-slate-900 mt-0.5"><b>{priceTxt}</b><span className="text-[12px] text-slate-600">{t(' 典型单位', ' typical unit')}</span> · {t('租', 'Rent')} <b>{p.rent ? fmtRM(p.rent) : '—'}</b>{t('/月', '/mo')}{p.rent_method === 'area_comps' && <span className="text-[12px] text-amber-800"> · {t('区域估算', 'area est.')}</span>}</div>
+        <div className="text-[14px] text-slate-900 mt-0.5"><b>{priceTxt}</b><span className="text-[12px] text-slate-600">{p.size ? t(` 按 ${Number(p.size).toLocaleString('en-MY')} sqft 估值`, ` value at ${Number(p.size).toLocaleString('en-MY')} sqft`) : t(' 典型单位', ' typical unit')}</span> · {t('租', 'Rent')} <b>{p.rent ? fmtRM(p.rent) : '—'}</b>{t('/月', '/mo')}{p.rent_method === 'area_comps' && <span className="text-[12px] text-amber-800"> · {t('区域估算', 'area est.')}</span>}</div>
         {related && <div className="text-[12px] text-slate-600">{related}</div>}
         {!onMapOk(p) && <div className="text-[12px] text-slate-600">📍 {t('位置待核实，未在地图显示', 'Location unverified — not shown on map')}</div>}
         <div className="mt-1 text-[12px] font-semibold" style={{ color: bandColor(netY) }}>{pct(netY)} <span className="font-normal text-slate-600">{t('净回报', 'Net yield')}</span></div>
@@ -212,6 +224,7 @@ function PeekCard({ p, metric, rentMode, onClose }) {
                 <span className="font-bold" style={{ color: bandColor(grossY) }}>{pct(grossY)} <span className="font-normal text-slate-600">{t('毛回报', 'Gross')}</span></span>
                 <span className="font-bold" style={{ color: bandColor(netY) }}>{pct(netY)} <span className="font-normal text-slate-600">{t('净回报', 'Net')}</span></span>
               </div>
+              <SampleBadge p={p} />
             </>
           )}
           <div className="text-[12px] font-semibold text-blue-700 mt-1.5">{t('查看详情 →', 'View details →')}</div>
@@ -300,6 +313,9 @@ export default function MapPage() {
   const listed = useMemo(() => (inView && bounds ? filtered.filter(p => onMapOk(p) && bounds.contains([p.lat, p.lng])) : filtered), [filtered, inView, bounds])
   const withY = listed.filter(p => yieldOf(p, rentMode, metric) != null)
   const noY = listed.filter(p => yieldOf(p, rentMode, metric) == null)
+  // Yield rankings only use projects with enough rent ads; thin ones are listed after, flagged.
+  const ranked = withY.filter(p => !isThinSample(p))
+  const thinY = withY.filter(p => isThinSample(p))
   const avg = withY.length ? withY.reduce((s, p) => s + yieldOf(p, rentMode, metric), 0) / withY.length : 0
   const sel = selected ? ALL.find(p => p.id === selected) : null
   const activeId = hover || selected
@@ -344,9 +360,16 @@ export default function MapPage() {
   const listBody = (compact) => (
     <>
       <div className={compact ? 'grid grid-cols-1 gap-3' : 'grid grid-cols-1 min-[480px]:grid-cols-2 gap-x-5 gap-y-6 items-start'} data-testid="property-list">
-        {renderCards(groupNoYield ? withY : listed, compact)}
+        {renderCards(groupNoYield ? ranked : listed, compact)}
         {!listed.length && <div className="col-span-full py-10 text-center text-sm text-slate-600">{t('没有符合条件的楼盘，试试移动地图或放宽筛选。', 'No matching projects — try moving the map or loosening filters.')}</div>}
       </div>
+      {groupNoYield && thinY.length > 0 && (
+        <div className="mt-6" data-testid="thin-sample-group">
+          <h3 className="text-[13px] font-semibold text-slate-700">{t(`另 ${thinY.length} 个楼盘租盘少于 ${RANK_MIN_SAMPLES} 则，不参与排名`, `${thinY.length} more projects have fewer than ${RANK_MIN_SAMPLES} rent ads and are not ranked`)}</h3>
+          <p className="text-[12px] text-slate-500 mb-2">{t('一两则叫租就能把回报拉高或拉低好几个百分点，只供参考。', 'One or two asking rents can move a yield by several points. Shown for reference only.')}</p>
+          <div className={compact ? 'grid grid-cols-1 gap-3' : 'grid grid-cols-1 min-[480px]:grid-cols-2 gap-x-5 gap-y-6 items-start'}>{renderCards(thinY, compact)}</div>
+        </div>
+      )}
       {groupNoYield && noY.length > 0 && (
         <div className="mt-6" data-testid="no-rent-group">
           <h3 className="text-[13px] font-semibold text-slate-700 mb-2">{t(`另 ${noY.length} 个楼盘暂无租金数据`, `${noY.length} more projects have no rent data`)}</h3>
@@ -450,7 +473,6 @@ export default function MapPage() {
         <NavTabs active="map" />
         <div className="flex-1 max-w-[560px] mx-auto">{searchBar}</div>
         <div className="text-[12px] text-slate-600 text-right leading-tight">{countLabel}<br />{t('更新', 'Updated')} {REAL_META.generated_at?.slice(0, 10)}</div>
-        <HoldChip />
         <LangToggle />
       </header>
       <div className="hidden md:flex items-center gap-2 px-6 py-3 border-b border-slate-100 overflow-x-auto no-scrollbar bg-white">{chips}</div>
@@ -496,7 +518,6 @@ export default function MapPage() {
                 <span className="text-[12px] font-semibold leading-tight">{t('地图', 'Map')}</span>
               </a>
               <div className="flex-1 min-w-0">{searchBar}</div>
-              <HoldChip className="h-10" />
               <LangToggle className="h-10" />
             </div>
             <div className="relative pointer-events-auto -mr-3">

@@ -40,16 +40,53 @@ export function monthlyInstalment(principal, annualRatePct, years) {
   return P * i / (1 - Math.pow(1 + i, -n))
 }
 
-export function cashVsRent({ price, rentMo, ltv = DEFAULT_LTV, rate = DEFAULT_RATE, years = DEFAULT_YEARS, maintMo = 0 }) {
+/** Holding-cost assumptions shared by net yield (launchYield.typYields, scraper net_yield) and net cash flow.
+ *  Vacancy 1 month a year, assessment 4% of annual rent (DBKL / MBSJ residential), quit rent + insurance
+ *  RM250 a year for strata (RM550 landed). Maintenance (incl. sinking fund) is passed per project. */
+export const HOLD_VACANCY_MONTHS = 1
+export const HOLD_ASSESSMENT_RATE = 0.04
+export const HOLD_FIXED_RM_YR = 250
+
+export function holdingCosts({ rentMo, maintMo = 0, fixedRmYr = HOLD_FIXED_RM_YR, vacancyMonths = HOLD_VACANCY_MONTHS, assessmentRate = HOLD_ASSESSMENT_RATE }) {
+  const r = Number(rentMo) > 0 ? Number(rentMo) : 0
+  const vacancy = r * vacancyMonths / 12
+  const assessment = r * assessmentRate
+  const maint = Number(maintMo) > 0 ? Number(maintMo) : 0
+  const fixed = (Number(fixedRmYr) || 0) / 12
+  return { vacancy, assessment, maint, fixed, total: vacancy + assessment + maint + fixed }
+}
+
+/** Monthly cash flow of a let unit at a loan percentage.
+ *  `cash` is the headline: rent − vacancy − assessment − maintenance − quit rent/insurance − instalment,
+ *  i.e. what actually leaves or enters the owner's wallet each month (before income tax).
+ *  `grossCash` (rent − instalment) is kept only for reference; never show it as the headline.
+ *  `principalMo` is the first-month principal inside the instalment (it builds equity, it is not a cost). */
+export function cashVsRent({ price, rentMo, ltv = DEFAULT_LTV, rate = DEFAULT_RATE, years = DEFAULT_YEARS, maintMo = 0, fixedRmYr = HOLD_FIXED_RM_YR }) {
   const ltvN = clampLtv(ltv)
   if (!(price > 0) || !(rentMo > 0) || !ltvN) return null
   const loan = price * ltvN / 100
   const down = price - loan
   const inst = monthlyInstalment(loan, rate, years)
   if (inst == null) return null
-  const cash = rentMo - inst
-  const cashAfterMaint = cash - (maintMo || 0)
-  return { ltv: ltvN, loan, down, inst, rentMo, cash, cashAfterMaint, maintMo: maintMo || 0, covers: cash >= 0 }
+  const hold = holdingCosts({ rentMo, maintMo, fixedRmYr })
+  const netRentMo = rentMo - hold.total
+  const cash = netRentMo - inst
+  const grossCash = rentMo - inst
+  const interestMo = loan * (Number(rate) / 100 / 12)
+  const principalMo = Math.max(0, inst - interestMo)
+  const netYield = netRentMo * 12 / price * 100
+  return {
+    ltv: ltvN, loan, down, inst, rentMo,
+    hold, holdMo: hold.total, netRentMo,
+    cash, grossCash,
+    // kept for older callers: same as the headline now that holding costs are in `cash`
+    cashAfterMaint: cash,
+    maintMo: hold.maint,
+    principalMo, interestMo,
+    netYield,
+    negativeLeverage: netYield < Number(rate),
+    covers: cash >= 0,
+  }
 }
 
 export function ltvVerdicts({ price, rentMo, rate = DEFAULT_RATE, years = DEFAULT_YEARS, maintMo = 0, ltv = DEFAULT_LTV, ltvs }) {

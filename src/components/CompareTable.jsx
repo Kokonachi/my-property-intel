@@ -20,7 +20,7 @@ export function CompareTable({ items, onClose, onRemove, onClear }) {
       return `${it.s.score.toFixed(1)} · ${t(b.zh, b.en)}`
     } },
     { key: 'inst', label: t('月供', 'Instalment'), render: it => it.s.v?.inst != null ? `${rm(it.s.v.inst)}${t('/月', '/mo')}` : '—' },
-    { key: 'cash', label: t('租金相对月供', 'Rent vs instalment'), render: it => {
+    { key: 'cash', label: t('每月净现金流', 'Net cash flow'), render: it => {
       const c = it.s.v?.cash
       if (c == null) return '—'
       const n = Math.round(c)

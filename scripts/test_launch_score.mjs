@@ -6,9 +6,10 @@ import { typYields } from '../src/lib/launchYield.js'
 import { cashVsRent } from '../src/lib/mortgage.js'
 
 const area = areaCompletedStats('bss')
-assert.equal(area.n, 13)
+// Projects with fewer than 3 rent ads are left out of the area median.
+assert.equal(area.n, 9)
 assert.ok(Math.abs(area.medianGross - 5.94) < 0.01, `median gross ${area.medianGross}`)
-assert.equal(area.medianPsf, 756)
+assert.equal(area.medianPsf, 757)
 
 assert.equal(confidencePts('band', 34), 1)
 assert.equal(confidencePts('band', 5), 0.7)
@@ -21,7 +22,7 @@ assert.ok(at90[0].s.score > at90[1].s.score)
 
 for (const { p, s } of at90) {
   assert.ok(s.score != null, p.name)
-  const sum = s.parts.yield + s.parts.cash + s.parts.vsArea + s.parts.confidence
+  const sum = (s.parts.yield + s.parts.vsArea + s.parts.confidence) / 7 * 10
   assert.ok(Math.abs(sum - s.score) < 0.06, `${p.name} parts ${sum} vs ${s.score}`)
   assert.ok(s.parts.yield >= 0 && s.parts.yield <= 4)
   assert.ok(s.parts.cash >= 0 && s.parts.cash <= 3)
@@ -37,7 +38,7 @@ for (const { p, s } of at90) {
 // Coverage at 70% should score the cash component higher (or equal) than at 90%.
 for (let i = 0; i < at90.length; i++) {
   assert.ok(at70[i].s.parts.cash >= at90.find(r => r.p.id === at70[i].p.id).s.parts.cash - 1e-9)
-  assert.ok(at70.find(r => r.p.id === at90[i].p.id).s.score >= at90[i].s.score - 1e-9)
+  assert.equal(at70.find(r => r.p.id === at90[i].p.id).s.score, at90[i].s.score, 'project score does not depend on the loan %')
 }
 
 const t = (zh, en) => zh

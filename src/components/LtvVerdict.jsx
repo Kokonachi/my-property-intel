@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useLang } from '../lib/i18n.jsx'
-import { cashVsRent, signedRM, DEFAULT_LTV, LTV_MIN, LTV_MAX, LTV_STEP, clampLtv, RATE_MIN, RATE_MAX, YEARS_MIN, YEARS_MAX } from '../lib/mortgage.js'
+import { cashVsRent, DEFAULT_LTV, LTV_MIN, LTV_MAX, LTV_STEP, clampLtv, RATE_MIN, RATE_MAX, YEARS_MIN, YEARS_MAX } from '../lib/mortgage.js'
 import { useLoanAssumptions } from '../lib/loanAssumptions.js'
+import { useHolder } from '../lib/holderProfile.js'
 import { headlineVerdict, downLabel } from '../lib/launchScore.js'
+import { HoldBreakdown } from './CompareTiles.jsx'
 
 function cf(n, t) {
   const v = Math.round(n)
@@ -16,9 +18,9 @@ export function ltvWho(ltv, t) {
   return t(`贷${ltv}%`, `${ltv}% loan`)
 }
 
-function useCurrentVerdict({ price, rentMo, maintMo = 0 }) {
+function useCurrentVerdict({ price, rentMo, maintMo = 0, fixedRmYr }) {
   const { loan } = useLoanAssumptions()
-  const v = cashVsRent({ price, rentMo, ltv: loan.ltv, rate: loan.rate, years: loan.years, maintMo })
+  const v = cashVsRent({ price, rentMo, ltv: loan.ltv, rate: loan.rate, years: loan.years, maintMo, ...(fixedRmYr != null ? { fixedRmYr } : {}) })
   return { loan, v }
 }
 
@@ -26,6 +28,9 @@ function useCurrentVerdict({ price, rentMo, maintMo = 0 }) {
 export function LoanPctControl({ variant = 'header', className = '' }) {
   const { t } = useLang()
   const { loan, setLoan } = useLoanAssumptions()
+  const { ltvCap } = useHolder()
+  const maxLtv = Math.min(LTV_MAX, ltvCap || LTV_MAX)
+  const capped = n => Math.min(maxLtv, clampLtv(n))
   const [draft, setDraft] = useState(null)
   useEffect(() => { setDraft(null) }, [loan.ltv])
   const shown = draft ?? String(loan.ltv)
@@ -33,9 +38,9 @@ export function LoanPctControl({ variant = 'header', className = '' }) {
     setDraft(null)
     const n = Number(String(raw).trim())
     if (!Number.isFinite(n)) return
-    setLoan({ ltv: clampLtv(n) }, { source: 'user' })
+    setLoan({ ltv: capped(n) }, { source: 'user' })
   }
-  const bump = dir => setLoan({ ltv: clampLtv(loan.ltv + dir * LTV_STEP) }, { source: 'user' })
+  const bump = dir => setLoan({ ltv: capped(loan.ltv + dir * LTV_STEP) }, { source: 'user' })
   const showSlider = variant !== 'compact'
 
   return (
@@ -70,7 +75,7 @@ export function LoanPctControl({ variant = 'header', className = '' }) {
         type="button"
         data-testid="loan-pct-inc"
         aria-label={t('提高贷款成数', 'Increase loan percentage')}
-        disabled={loan.ltv >= LTV_MAX}
+        disabled={loan.ltv >= maxLtv}
         onClick={() => bump(1)}
         className="shrink-0 h-7 w-7 rounded-full border border-slate-200 bg-white text-[16px] leading-none text-slate-700 disabled:opacity-30 disabled:pointer-events-none"
       >+</button>
@@ -79,12 +84,12 @@ export function LoanPctControl({ variant = 'header', className = '' }) {
           type="range"
           data-testid="loan-pct-slider"
           min={LTV_MIN}
-          max={LTV_MAX}
+          max={maxLtv}
           step={LTV_STEP}
           value={loan.ltv}
           aria-label={t('贷款成数', 'Loan percentage')}
           className="min-w-0 flex-1 h-7 accent-slate-900"
-          onChange={e => setLoan({ ltv: clampLtv(e.target.value) }, { source: 'user' })}
+          onChange={e => setLoan({ ltv: capped(e.target.value) }, { source: 'user' })}
         />
       )}
     </div>
@@ -92,9 +97,9 @@ export function LoanPctControl({ variant = 'header', className = '' }) {
 }
 
 /** One calm tinted verdict for the current loan percentage. */
-export function LoanVerdict({ price, rentMo, className = '', compact = false }) {
+export function LoanVerdict({ price, rentMo, maintMo = 0, className = '', compact = false }) {
   const { t } = useLang()
-  const { loan, v } = useCurrentVerdict({ price, rentMo })
+  const { loan, v } = useCurrentVerdict({ price, rentMo, maintMo })
   if (!v) {
     return (
       <div className={`text-[12px] text-slate-500 ${className}`} data-testid="loan-verdict">
@@ -110,8 +115,8 @@ export function LoanVerdict({ price, rentMo, className = '', compact = false }) 
       data-testid="loan-verdict"
       data-ltv={loan.ltv}
       title={t(
-        `${ltvWho(loan.ltv, t)}：月供约 RM${Math.round(v.inst).toLocaleString('en-MY')}，参考叫租 RM${Math.round(v.rentMo).toLocaleString('en-MY')}/月，首付约 RM${Math.round(v.down).toLocaleString('en-MY')}。租金是叫租估算。`,
-        `${ltvWho(loan.ltv, t)}: instalment about RM${Math.round(v.inst).toLocaleString('en-MY')} vs asking rent RM${Math.round(v.rentMo).toLocaleString('en-MY')}/mo, down payment about RM${Math.round(v.down).toLocaleString('en-MY')}. Rent is an asking-rent estimate.`,
+        `${ltvWho(loan.ltv, t)}：月供约 RM${Math.round(v.inst).toLocaleString('en-MY')}，持有成本约 RM${Math.round(v.holdMo).toLocaleString('en-MY')}/月，参考叫租 RM${Math.round(v.rentMo).toLocaleString('en-MY')}/月，首付约 RM${Math.round(v.down).toLocaleString('en-MY')}。租金是叫租估算。`,
+        `${ltvWho(loan.ltv, t)}: instalment about RM${Math.round(v.inst).toLocaleString('en-MY')}, holding costs about RM${Math.round(v.holdMo).toLocaleString('en-MY')}/mo, asking rent RM${Math.round(v.rentMo).toLocaleString('en-MY')}/mo, down payment about RM${Math.round(v.down).toLocaleString('en-MY')}. Rent is an asking-rent estimate.`,
       )}
       className={`rounded-xl px-2.5 py-1.5 ${v.covers ? 'bg-[#eef7f2] text-[#176b45]' : 'bg-[#f8eeee] text-[#9f1239]'} ${className}`}
     >
@@ -121,6 +126,7 @@ export function LoanVerdict({ price, rentMo, className = '', compact = false }) 
       {!compact && (
         <div className="mt-1 flex flex-wrap gap-x-2.5 gap-y-0.5 text-[11px] font-medium tabular-nums text-slate-600">
           <span>{t('月供', 'Inst.')} RM{Math.round(v.inst).toLocaleString('en-MY')}</span>
+          <span>{t('持有', 'Costs')} RM{Math.round(v.holdMo).toLocaleString('en-MY')}</span>
           <span>{t('租金', 'Rent')} RM{Math.round(v.rentMo).toLocaleString('en-MY')}</span>
           {down && <span>{down}</span>}
         </div>
@@ -138,12 +144,12 @@ export function LtvRows(props) {
   return <LoanVerdict {...props} />
 }
 
-/** Detail-page bar: rent vs instalment at the current loan %, plus net after maintenance. */
-export function LtvCompare({ price, rentMo, maintMo, hideTitle = false }) {
+/** Detail-page bars: rent vs (holding costs + instalment) at the current loan %, headline = net monthly cash flow. */
+export function LtvCompare({ price, rentMo, maintMo, fixedRmYr, hideTitle = false }) {
   const { t } = useLang()
-  const { loan, v } = useCurrentVerdict({ price, rentMo, maintMo })
+  const { loan, v } = useCurrentVerdict({ price, rentMo, maintMo, fixedRmYr })
   if (!v || !rentMo) return null
-  const max = Math.max(rentMo, v.inst, 1)
+  const max = Math.max(rentMo, v.inst + v.holdMo, 1)
   return (
     <div className="mt-3 rounded-2xl border border-slate-200 bg-slate-50 p-3" data-testid="ltv-compare">
       {!hideTitle && (
@@ -152,26 +158,24 @@ export function LtvCompare({ price, rentMo, maintMo, hideTitle = false }) {
           <div className="text-[11px] text-slate-500">{t('叫租估算，非实收', 'Asking-rent estimate, not achieved rent')}</div>
         </div>
       )}
-      <div className="mt-2 space-y-2">
-        <Bar label={t('参考月租', 'Est. rent')} value={rentMo} max={max} color="#0f172a" t={t} />
-        <div>
-          <Bar
-            label={`${ltvWho(loan.ltv, t)} ${t('月供', 'instalment')}`}
-            value={v.inst}
-            max={max}
-            color={v.covers ? '#059669' : '#be123c'}
-            t={t}
-          />
-          <div className={`mt-0.5 text-[12px] font-semibold tabular-nums ${v.covers ? 'text-emerald-800' : 'text-rose-800'}`}>
-            {v.covers
-              ? t(`租金 > 月供 ${signedRM(v.cash, { withMo: true, t })}`, `Rent covers instalment ${signedRM(v.cash, { withMo: true, t })}`)
-              : t(`倒贴 RM${Math.abs(Math.round(v.cash)).toLocaleString('en-MY')}/月`, `Short RM${Math.abs(Math.round(v.cash)).toLocaleString('en-MY')}/mo`)}
-            <span className="ml-2 font-medium text-slate-500">
-              {t(`扣管理费后 ${cf(v.cashAfterMaint, t)}`, `After maintenance ${cf(v.cashAfterMaint, t)}`)}
-            </span>
-          </div>
+      <div className={`flex items-baseline justify-between gap-2 ${hideTitle ? '' : 'mt-2'}`} data-testid="net-cash">
+        <div className={`text-[24px] font-semibold tabular-nums tracking-tight leading-none ${v.covers ? 'text-[#176b45]' : 'text-[#9f1239]'}`}>
+          {cf(v.cash, t)}
         </div>
+        <div className="text-[11px] font-medium text-slate-500 text-right">{t('出租后每月净现金流', 'Net monthly cash flow if let')}</div>
       </div>
+      <div className="mt-2.5 space-y-2">
+        <Bar label={t('参考月租', 'Est. rent')} value={rentMo} max={max} color="#0f172a" t={t} />
+        <Bar label={t('持有成本', 'Holding costs')} value={v.holdMo} max={max} color="#94a3b8" t={t} />
+        <Bar
+          label={`${ltvWho(loan.ltv, t)} ${t('月供', 'instalment')}`}
+          value={v.inst}
+          max={max}
+          color={v.covers ? '#059669' : '#be123c'}
+          t={t}
+        />
+      </div>
+      <HoldBreakdown v={v} t={t} />
       <div className="mt-2 text-[12px] text-slate-600 tabular-nums">
         {t(`首付 RM${Math.round(v.down).toLocaleString('en-MY')}（该价格的 ${100 - loan.ltv}%）`,
           `Down payment RM${Math.round(v.down).toLocaleString('en-MY')} (${100 - loan.ltv}% of this price)`)}
@@ -219,18 +223,27 @@ export function LoanRateYears({ className = '' }) {
   useEffect(() => { setRateDraft(null) }, [loan.rate])
   useEffect(() => { setYearsDraft(null) }, [loan.years])
 
+  const [err, setErr] = useState(null)
+  useEffect(() => {
+    if (!err) return undefined
+    const id = setTimeout(() => setErr(null), 4000)
+    return () => clearTimeout(id)
+  }, [err])
   const commitRate = raw => {
     const n = parseRate(raw)
-    if (n != null) setLoan({ rate: n })
+    if (n != null) { setLoan({ rate: n }); setErr(null) }
+    else if (String(raw).trim() !== String(loan.rate)) setErr(t(`利率要在 ${RATE_MIN}%–${RATE_MAX}% 之间，已保留 ${loan.rate}%。`, `Rate must be ${RATE_MIN}–${RATE_MAX}%; kept ${loan.rate}%.`))
     setRateDraft(null)
   }
   const commitYears = raw => {
     const n = parseYears(raw)
-    if (n != null) setLoan({ years: n })
+    if (n != null) { setLoan({ years: n }); setErr(null) }
+    else if (String(raw).trim() !== String(loan.years)) setErr(t(`年期要在 ${YEARS_MIN}–${YEARS_MAX} 年之间，已保留 ${loan.years} 年。`, `Tenure must be ${YEARS_MIN}–${YEARS_MAX} years; kept ${loan.years}.`))
     setYearsDraft(null)
   }
 
   return (
+    <>
     <div className={`mt-2 grid grid-cols-2 gap-2 ${className}`} data-testid="loan-rate-years">
       <label className="rounded-xl border border-slate-200 bg-white px-3 py-2">
         <div className="text-[11px] text-slate-500">{t('年利率', 'Interest rate')}</div>
@@ -286,6 +299,8 @@ export function LoanRateYears({ className = '' }) {
         </div>
       </label>
     </div>
+    {err ? <div className="mt-1.5 text-[12px] text-[#9f1239]" role="alert" data-testid="loan-input-error">{err}</div> : null}
+    </>
   )
 }
 
