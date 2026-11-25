@@ -1,0 +1,2634 @@
+{
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/damansara-heights/pavilion-damansara-heights/non-landed/": {
+  "name": "PAVILION DAMANSARA HEIGHTS",
+  "town": "damansara-heights",
+  "tx": 107,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/pavilion-damansara-heights-14178",
+  "condo_id": "14178"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/pangsapuri-servis-conlay/non-landed/": {
+  "name": "PANGSAPURI SERVIS CONLAY",
+  "town": "kl-city-centre",
+  "tx": 92,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/conlay-23086",
+  "condo_id": "23086"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/desa-parkcity/desa-parkcity--park-place-/non-landed/": {
+  "name": "DESA PARKCITY (PARK PLACE)",
+  "town": "desa-parkcity",
+  "tx": 67,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/park-place-17628",
+  "condo_id": "17628"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/the-manor-kl/non-landed/": {
+  "name": "THE MANOR KL",
+  "town": "kl-city-centre",
+  "tx": 60,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/oug-parklane/non-landed/": {
+  "name": "OUG PARKLANE",
+  "town": "old-klang-road",
+  "tx": 56,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/oug-parklane-1938",
+  "condo_id": "1938"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/platinum-suites--the-face-suites-/non-landed/": {
+  "name": "PLATINUM SUITES (THE FACE SUITES)",
+  "town": "kl-city-centre",
+  "tx": 53,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-face-suites-platinum-suites-2453",
+  "condo_id": "2453"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/pavilion-hilltop/non-landed/": {
+  "name": "PAVILION HILLTOP",
+  "town": "mont-kiara",
+  "tx": 54,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/pavilion-hilltop-6554",
+  "condo_id": "6554"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/residensi-agile-delima/non-landed/": {
+  "name": "RESIDENSI AGILE DELIMA",
+  "town": "kl-city-centre",
+  "tx": 50,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/residensi-agile-delima-23089",
+  "condo_id": "23089"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/quill-residence/non-landed/": {
+  "name": "QUILL RESIDENCE",
+  "town": "kl-city-centre",
+  "tx": 50,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/quill-residence-13427",
+  "condo_id": "13427"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/seni-mont-kiara/non-landed/": {
+  "name": "SENI MONT KIARA",
+  "town": "mont-kiara",
+  "tx": 50,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/seni-mont-kiara-1890",
+  "condo_id": "1890"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/residensi-trx-1--tun-razak-exchange/non-landed/": {
+  "name": "RESIDENSI TRX 1, TUN RAZAK EXCHANGE",
+  "town": "kl-city-centre",
+  "tx": 45,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/trx-residences-18014",
+  "condo_id": "18014"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/damansara-heights/residensi-dc--damansara-city-/non-landed/": {
+  "name": "RESIDENSI DC (DAMANSARA CITY)",
+  "town": "damansara-heights",
+  "tx": 44,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/so-sofitel-kuala-lumpur-residences/non-landed/": {
+  "name": "SO SOFITEL KUALA LUMPUR RESIDENCES",
+  "town": "kl-city-centre",
+  "tx": 43,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/so-sofitel-kuala-lumpur-residences-22879",
+  "condo_id": "22879"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/dutamas/agile-mont-kiara/non-landed/": {
+  "name": "AGILE MONT KIARA",
+  "town": "dutamas",
+  "tx": 42,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/agile-mont-kiara-8306",
+  "condo_id": "8306"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/seputeh/tria-seputeh-residences/non-landed/": {
+  "name": "TRIA SEPUTEH RESIDENCES",
+  "town": "seputeh",
+  "tx": 42,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/sunway-velocity-two/non-landed/": {
+  "name": "SUNWAY VELOCITY TWO",
+  "town": "kl-city-centre",
+  "tx": 40,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/sunway-velocity-two-14103",
+  "condo_id": "14103"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/the-ooak-suites---residence/non-landed/": {
+  "name": "THE OOAK SUITES & RESIDENCE",
+  "town": "mont-kiara",
+  "tx": 36,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/28-mont-kiara/non-landed/": {
+  "name": "28 MONT KIARA",
+  "town": "mont-kiara",
+  "tx": 35,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/28-mont-kiara-mk28-1878",
+  "condo_id": "1878"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/residensi-waltz/non-landed/": {
+  "name": "RESIDENSI WALTZ",
+  "town": "old-klang-road",
+  "tx": 34,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/waltz-residences-9648",
+  "condo_id": "9648"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kampung-kerinchi--bangsar-south-/laurel-residence/non-landed/": {
+  "name": "LAUREL RESIDENCE",
+  "town": "kampung-kerinchi--bangsar-south-",
+  "tx": 34,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/laurel-residence-17871",
+  "condo_id": "17871"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/seputeh/residensi-setia-sky-seputeh/non-landed/": {
+  "name": "RESIDENSI SETIA SKY SEPUTEH",
+  "town": "seputeh",
+  "tx": 34,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/setia-sky-seputeh-13358",
+  "condo_id": "13358"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/wisma-infinitum/non-landed/": {
+  "name": "WISMA INFINITUM",
+  "town": "kl-city-centre",
+  "tx": 34,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/the-park-sky-residence/non-landed/": {
+  "name": "THE PARK SKY RESIDENCE",
+  "town": "bukit-jalil",
+  "tx": 33,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-park-sky-residence-9443",
+  "condo_id": "9443"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bangsar/kl-eco-city/non-landed/": {
+  "name": "KL ECO CITY",
+  "town": "bangsar",
+  "tx": 32,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/residensi-allevia/non-landed/": {
+  "name": "RESIDENSI ALLEVIA",
+  "town": "mont-kiara",
+  "tx": 32,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/allevia-16375",
+  "condo_id": "16375"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/11-mont-kiara---mk11/non-landed/": {
+  "name": "11 MONT KIARA @ MK11",
+  "town": "mont-kiara",
+  "tx": 31,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/11-mont-kiara-mk11-1874",
+  "condo_id": "1874"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/residensi-tun-razak/non-landed/": {
+  "name": "RESIDENSI TUN RAZAK",
+  "town": "kl-city-centre",
+  "tx": 31,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/desa-parkcity/park-regent-desa-parkcity/non-landed/": {
+  "name": "PARK REGENT DESA PARKCITY",
+  "town": "desa-parkcity",
+  "tx": 31,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/four-seasons-place/non-landed/": {
+  "name": "FOUR SEASONS PLACE",
+  "town": "kl-city-centre",
+  "tx": 27,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/four-seasons-place-2120",
+  "condo_id": "2120"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/residensi-lavile/non-landed/": {
+  "name": "RESIDENSI LAVILE",
+  "town": "kl-city-centre",
+  "tx": 27,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/lavile-kuala-lumpur-9858",
+  "condo_id": "9858"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mid-valley-city/boulevard/non-landed/": {
+  "name": "BOULEVARD",
+  "town": "mid-valley-city",
+  "tx": 27,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/sentral-suite/non-landed/": {
+  "name": "SENTRAL SUITE",
+  "town": "kl-city-centre",
+  "tx": 26,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/arcoris-residences/non-landed/": {
+  "name": "ARCORIS RESIDENCES",
+  "town": "mont-kiara",
+  "tx": 26,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/arcoris-residences-5840",
+  "condo_id": "5840"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kampung-kerinchi--bangsar-south-/southlink/non-landed/": {
+  "name": "SOUTHLINK",
+  "town": "kampung-kerinchi--bangsar-south-",
+  "tx": 26,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/southlink-8399",
+  "condo_id": "8399"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/desa-parkcity/residensi-south-brooks/non-landed/": {
+  "name": "RESIDENSI SOUTH BROOKS",
+  "town": "desa-parkcity",
+  "tx": 26,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/south-brooks-10229",
+  "condo_id": "10229"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/10-stonor/non-landed/": {
+  "name": "10 STONOR",
+  "town": "kl-city-centre",
+  "tx": 25,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/10-stonor-8171",
+  "condo_id": "8171"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bangsar/jamnah-view/non-landed/": {
+  "name": "JAMNAH VIEW",
+  "town": "bangsar",
+  "tx": 25,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/jamnah-view-305",
+  "condo_id": "305"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/residensi-22-mont-kiara/non-landed/": {
+  "name": "RESIDENSI 22 MONT KIARA",
+  "town": "mont-kiara",
+  "tx": 25,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/residensi-22-5891",
+  "condo_id": "5891"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/novo-ampang/non-landed/": {
+  "name": "NOVO AMPANG",
+  "town": "kl-city-centre",
+  "tx": 25,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/novo-ampang-6584",
+  "condo_id": "6584"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/the-forum/non-landed/": {
+  "name": "THE FORUM",
+  "town": "kl-city-centre",
+  "tx": 25,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-forum-439",
+  "condo_id": "439"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/residensi-sunway-belfield/non-landed/": {
+  "name": "RESIDENSI SUNWAY BELFIELD",
+  "town": "kl-city-centre",
+  "tx": 25,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/sunway-belfield-14333",
+  "condo_id": "14333"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/the-oval/non-landed/": {
+  "name": "THE OVAL",
+  "town": "kl-city-centre",
+  "tx": 24,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-oval-279",
+  "condo_id": "279"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/7-u-thant/non-landed/": {
+  "name": "7 U THANT",
+  "town": "kl-city-centre",
+  "tx": 24,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/7-u-thant-1993",
+  "condo_id": "1993"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/pavilion-suites/non-landed/": {
+  "name": "PAVILION SUITES",
+  "town": "kl-city-centre",
+  "tx": 24,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/pavilion-suites-9735",
+  "condo_id": "9735"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/dutamas/solaris-dutamas/non-landed/": {
+  "name": "SOLARIS DUTAMAS",
+  "town": "dutamas",
+  "tx": 24,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/solaris-dutamas-483",
+  "condo_id": "483"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/sri-rakyat/non-landed/": {
+  "name": "SRI RAKYAT",
+  "town": "bukit-jalil",
+  "tx": 23,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/apartment-sri-rakyat-156",
+  "condo_id": "156"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/desa-parkcity/the-westside-three/non-landed/": {
+  "name": "THE WESTSIDE THREE",
+  "town": "desa-parkcity",
+  "tx": 23,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/westside-three-9737",
+  "condo_id": "9737"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/the-ruma-hotel---residences/non-landed/": {
+  "name": "THE RUMA HOTEL & RESIDENCES",
+  "town": "kl-city-centre",
+  "tx": 22,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-ruma-9110",
+  "condo_id": "9110"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bangsar/residensi-38-bangsar/non-landed/": {
+  "name": "RESIDENSI 38 BANGSAR",
+  "town": "bangsar",
+  "tx": 22,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/residensi-38-bangsar-15072",
+  "condo_id": "15072"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/desa-parkcity/the-westside-one/non-landed/": {
+  "name": "THE WESTSIDE ONE",
+  "town": "desa-parkcity",
+  "tx": 22,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-westside-one-470",
+  "condo_id": "470"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/mont-kiara-palma/non-landed/": {
+  "name": "MONT KIARA PALMA",
+  "town": "mont-kiara",
+  "tx": 22,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/mont-kiara-palma-601",
+  "condo_id": "601"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/pavilion-embassy/non-landed/": {
+  "name": "PAVILION EMBASSY",
+  "town": "kl-city-centre",
+  "tx": 22,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/service-suites-pavilion-embassy-21767",
+  "condo_id": "21767"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/pantai/vista-angkasa/non-landed/": {
+  "name": "VISTA ANGKASA",
+  "town": "pantai",
+  "tx": 21,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/vista-angkasa-1856",
+  "condo_id": "1856"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/the-manor-kuala-lumpur/non-landed/": {
+  "name": "THE MANOR KUALA LUMPUR",
+  "town": "kl-city-centre",
+  "tx": 21,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/fraser-place--lot-163-/non-landed/": {
+  "name": "FRASER PLACE (LOT 163)",
+  "town": "kl-city-centre",
+  "tx": 21,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/mont-kiara-pines/non-landed/": {
+  "name": "MONT KIARA PINES",
+  "town": "mont-kiara",
+  "tx": 21,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/mont-kiara-pines-602",
+  "condo_id": "602"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/pantai/pantai-hillpark-2/non-landed/": {
+  "name": "PANTAI HILLPARK 2",
+  "town": "pantai",
+  "tx": 20,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/pantai-hillpark-2-1632",
+  "condo_id": "1632"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/trinity-pentamont-mont-kiara/non-landed/": {
+  "name": "TRINITY PENTAMONT MONT KIARA",
+  "town": "mont-kiara",
+  "tx": 19,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/trinity-pentamont-9709",
+  "condo_id": "9709"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-sentral/the-sentral-residences/non-landed/": {
+  "name": "THE SENTRAL RESIDENCES",
+  "town": "kl-sentral",
+  "tx": 19,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-sentral-residences-22178",
+  "condo_id": "22178"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/pangsapuri-aria/non-landed/": {
+  "name": "PANGSAPURI ARIA",
+  "town": "kl-city-centre",
+  "tx": 19,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/aria-9176",
+  "condo_id": "9176"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/verve-suites/non-landed/": {
+  "name": "VERVE SUITES",
+  "town": "mont-kiara",
+  "tx": 19,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/verve-suites-484",
+  "condo_id": "484"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/dutamas/residensi-solaris-parq/non-landed/": {
+  "name": "RESIDENSI SOLARIS PARQ",
+  "town": "dutamas",
+  "tx": 19,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/residensi-solaris-parq-9933",
+  "condo_id": "9933"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kampung-kerinchi--bangsar-south-/the-park-residences-1/non-landed/": {
+  "name": "THE PARK RESIDENCES 1",
+  "town": "kampung-kerinchi--bangsar-south-",
+  "tx": 19,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-park-residences-1-1561",
+  "condo_id": "1561"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/arena-green/non-landed/": {
+  "name": "ARENA GREEN",
+  "town": "bukit-jalil",
+  "tx": 18,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/arena-green-163",
+  "condo_id": "163"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/taman-desa/abadi-indah-apartment/non-landed/": {
+  "name": "ABADI INDAH APARTMENT",
+  "town": "taman-desa",
+  "tx": 18,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/abadi-indah-389",
+  "condo_id": "389"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/kiaraville/non-landed/": {
+  "name": "KIARAVILLE",
+  "town": "mont-kiara",
+  "tx": 18,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/kiaraville-462",
+  "condo_id": "462"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/mont-kiara-pelangi/non-landed/": {
+  "name": "MONT KIARA PELANGI",
+  "town": "mont-kiara",
+  "tx": 18,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/mont-kiara-pelangi-475",
+  "condo_id": "475"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kampung-kerinchi--bangsar-south-/residensi-era-novum/non-landed/": {
+  "name": "RESIDENSI ERA NOVUM",
+  "town": "kampung-kerinchi--bangsar-south-",
+  "tx": 18,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/novum-7847",
+  "condo_id": "7847"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kuchai-lama/kuchai-avenue/non-landed/": {
+  "name": "KUCHAI AVENUE",
+  "town": "kuchai-lama",
+  "tx": 17,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/kuchai-avenue-444",
+  "condo_id": "444"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/dutamas/alix-residence--residensi-dutamas-/non-landed/": {
+  "name": "ALIX RESIDENCE (RESIDENSI DUTAMAS)",
+  "town": "dutamas",
+  "tx": 17,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/dutamas-residence-10637",
+  "condo_id": "10637"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/crown-regency/non-landed/": {
+  "name": "CROWN REGENCY",
+  "town": "kl-city-centre",
+  "tx": 17,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/crown-regency-262",
+  "condo_id": "262"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/the-park-2/non-landed/": {
+  "name": "THE PARK 2",
+  "town": "bukit-jalil",
+  "tx": 17,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-park-2-9431",
+  "condo_id": "9431"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/damansara-heights/twins--damansara-heights/non-landed/": {
+  "name": "TWINS@ DAMANSARA HEIGHTS",
+  "town": "damansara-heights",
+  "tx": 17,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/twins-damansara-heights-311",
+  "condo_id": "311"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/the-troika/non-landed/": {
+  "name": "THE TROIKA",
+  "town": "kl-city-centre",
+  "tx": 17,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/fahrenheit-88--kl-plaza-/non-landed/": {
+  "name": "FAHRENHEIT 88 (KL PLAZA)",
+  "town": "kl-city-centre",
+  "tx": 16,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/fahrenheit-88-2082",
+  "condo_id": "2082"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/marc-service-residence/non-landed/": {
+  "name": "MARC SERVICE RESIDENCE",
+  "town": "kl-city-centre",
+  "tx": 16,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kampung-kerinchi--bangsar-south-/southview-residence/non-landed/": {
+  "name": "SOUTHVIEW RESIDENCE",
+  "town": "kampung-kerinchi--bangsar-south-",
+  "tx": 16,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/i-zen-kiara-i/non-landed/": {
+  "name": "I-ZEN KIARA I",
+  "town": "mont-kiara",
+  "tx": 16,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/residensi-eaton/non-landed/": {
+  "name": "RESIDENSI EATON",
+  "town": "kl-city-centre",
+  "tx": 16,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/eaton-residence-14193",
+  "condo_id": "14193"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/damansara-heights/desa-damansara/non-landed/": {
+  "name": "DESA DAMANSARA",
+  "town": "damansara-heights",
+  "tx": 16,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/desa-damansara-301",
+  "condo_id": "301"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/dua-residency/non-landed/": {
+  "name": "DUA RESIDENCY",
+  "town": "kl-city-centre",
+  "tx": 16,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/dua-residency-264",
+  "condo_id": "264"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/st-mary-residences/non-landed/": {
+  "name": "ST MARY RESIDENCES",
+  "town": "kl-city-centre",
+  "tx": 16,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/st-mary-residences-1567",
+  "condo_id": "1567"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/10-mont-kiara---mk10/non-landed/": {
+  "name": "10 MONT KIARA @ MK10",
+  "town": "mont-kiara",
+  "tx": 16,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/10-mont-kiara-mk10-447",
+  "condo_id": "447"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/mont-kiara-aman/non-landed/": {
+  "name": "MONT KIARA AMAN",
+  "town": "mont-kiara",
+  "tx": 15,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/mont-kiara-aman-469",
+  "condo_id": "469"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/residen-simbar-trx/non-landed/": {
+  "name": "RESIDEN SIMBAR TRX",
+  "town": "kl-city-centre",
+  "tx": 15,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/kiara-residence-2--residensi-kiara-jalil-2-/non-landed/": {
+  "name": "KIARA RESIDENCE 2 (RESIDENSI KIARA JALIL 2)",
+  "town": "bukit-jalil",
+  "tx": 15,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/kiara-residence-2-residensi-kiara-jalil-2-2102",
+  "condo_id": "2102"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/meadow-park-2/non-landed/": {
+  "name": "MEADOW PARK 2",
+  "town": "old-klang-road",
+  "tx": 15,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/meadow-park-2-381",
+  "condo_id": "381"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/neu-suites--3rd-nvenue/non-landed/": {
+  "name": "NEU SUITES @3RD NVENUE",
+  "town": "kl-city-centre",
+  "tx": 15,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/neu-suites-11613",
+  "condo_id": "11613"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/mont-kiara-bayu/non-landed/": {
+  "name": "MONT KIARA BAYU",
+  "town": "mont-kiara",
+  "tx": 15,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/mont-kiara-bayu-472",
+  "condo_id": "472"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/sky-suites---klcc/non-landed/": {
+  "name": "SKY SUITES @ KLCC",
+  "town": "kl-city-centre",
+  "tx": 15,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/sky-suites-klcc-11800",
+  "condo_id": "11800"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/residensi-sefina/non-landed/": {
+  "name": "RESIDENSI SEFINA",
+  "town": "mont-kiara",
+  "tx": 15,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/regalia-residence/non-landed/": {
+  "name": "REGALIA RESIDENCE",
+  "town": "kl-city-centre",
+  "tx": 15,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/regalia-residence-286",
+  "condo_id": "286"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/residensi-akson/non-landed/": {
+  "name": "RESIDENSI AKSON",
+  "town": "kl-city-centre",
+  "tx": 15,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/seputeh/desa-green/non-landed/": {
+  "name": "DESA GREEN",
+  "town": "seputeh",
+  "tx": 15,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/kinrara-mas/non-landed/": {
+  "name": "KINRARA MAS",
+  "town": "bukit-jalil",
+  "tx": 14,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/berjaya-times-square/non-landed/": {
+  "name": "BERJAYA TIMES SQUARE",
+  "town": "kl-city-centre",
+  "tx": 14,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/berjaya-times-square-2037",
+  "condo_id": "2037"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kuchai-lama/m-oscar/non-landed/": {
+  "name": "M OSCAR",
+  "town": "kuchai-lama",
+  "tx": 14,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/m-oscar-12226",
+  "condo_id": "12226"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/residensi-convena-bukit-jalil/non-landed/": {
+  "name": "RESIDENSI CONVENA BUKIT JALIL",
+  "town": "bukit-jalil",
+  "tx": 14,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/seputeh/avara-seputeh/non-landed/": {
+  "name": "AVARA SEPUTEH",
+  "town": "seputeh",
+  "tx": 14,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kuchai-lama/residensi-kuchai-damai/non-landed/": {
+  "name": "RESIDENSI KUCHAI DAMAI",
+  "town": "kuchai-lama",
+  "tx": 14,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/dutamas/changkat-view-condominium/non-landed/": {
+  "name": "CHANGKAT VIEW CONDOMINIUM",
+  "town": "dutamas",
+  "tx": 14,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/changkat-view-506",
+  "condo_id": "506"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/sri-hartamas/sunway-vivaldi/non-landed/": {
+  "name": "SUNWAY VIVALDI",
+  "town": "sri-hartamas",
+  "tx": 14,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/sunway-vivaldi-1575",
+  "condo_id": "1575"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/verve-suites-kl-south/non-landed/": {
+  "name": "VERVE SUITES KL SOUTH",
+  "town": "old-klang-road",
+  "tx": 14,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/verve-suites-kl-south-6656",
+  "condo_id": "6656"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/dutamas/concerto-north-kiara/non-landed/": {
+  "name": "CONCERTO NORTH KIARA",
+  "town": "dutamas",
+  "tx": 14,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/concerto-north-kiara-4811",
+  "condo_id": "4811"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/desa-parkcity/the-westside-two/non-landed/": {
+  "name": "THE WESTSIDE TWO",
+  "town": "desa-parkcity",
+  "tx": 14,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-westside-two-7007",
+  "condo_id": "7007"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/desa-parkcity/the-northshore-gardens/non-landed/": {
+  "name": "THE NORTHSHORE GARDENS",
+  "town": "desa-parkcity",
+  "tx": 13,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-northshore-gardens-324",
+  "condo_id": "324"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/the-troika-kuala-lumpur-city-centre/non-landed/": {
+  "name": "THE TROIKA KUALA LUMPUR CITY CENTRE",
+  "town": "kl-city-centre",
+  "tx": 13,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/verticas-residensi/non-landed/": {
+  "name": "VERTICAS RESIDENSI",
+  "town": "kl-city-centre",
+  "tx": 13,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/verticas-residensi-1568",
+  "condo_id": "1568"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/menara-city-one/non-landed/": {
+  "name": "MENARA CITY ONE",
+  "town": "kl-city-centre",
+  "tx": 13,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/menara-city-one-1722",
+  "condo_id": "1722"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kuchai-lama/spring-avenue--residensi-kuchai-damai-/non-landed/": {
+  "name": "SPRING AVENUE (RESIDENSI KUCHAI DAMAI)",
+  "town": "kuchai-lama",
+  "tx": 13,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/spring-avenue-kuchai-damai-7739",
+  "condo_id": "7739"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/la-grande-kiara/non-landed/": {
+  "name": "LA GRANDE KIARA",
+  "town": "mont-kiara",
+  "tx": 13,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/la-grande-kiara-463",
+  "condo_id": "463"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/6-capsquare/non-landed/": {
+  "name": "6 CAPSQUARE",
+  "town": "kl-city-centre",
+  "tx": 13,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/6-capsquare-1990",
+  "condo_id": "1990"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/hampshire-residences/non-landed/": {
+  "name": "HAMPSHIRE RESIDENCES",
+  "town": "kl-city-centre",
+  "tx": 13,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/hampshire-residences-255",
+  "condo_id": "255"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/residensi-armani-raja-uda/non-landed/": {
+  "name": "RESIDENSI ARMANI RAJA UDA",
+  "town": "kl-city-centre",
+  "tx": 13,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/armani-raja-uda-21564",
+  "condo_id": "21564"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/the-binjai-on-the-park/non-landed/": {
+  "name": "THE BINJAI ON THE PARK",
+  "town": "kl-city-centre",
+  "tx": 13,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-binjai-on-the-park-1572",
+  "condo_id": "1572"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/vista-komanwel-a/non-landed/": {
+  "name": "VISTA KOMANWEL A",
+  "town": "bukit-jalil",
+  "tx": 13,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/vista-komanwel-a-159",
+  "condo_id": "159"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/pavilion-residences/non-landed/": {
+  "name": "PAVILION RESIDENCES",
+  "town": "kl-city-centre",
+  "tx": 13,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/pavilion-residences-152",
+  "condo_id": "152"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/desa-parkcity/one-central-park/non-landed/": {
+  "name": "ONE CENTRAL PARK",
+  "town": "desa-parkcity",
+  "tx": 13,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/one-central-park-8075",
+  "condo_id": "8075"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/the-z-residence/non-landed/": {
+  "name": "THE Z RESIDENCE",
+  "town": "bukit-jalil",
+  "tx": 13,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-z-residence-2107",
+  "condo_id": "2107"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/brickfields/establishment-bangsar--menara-teguh-bangsar-/non-landed/": {
+  "name": "ESTABLISHMENT BANGSAR (MENARA TEGUH BANGSAR)",
+  "town": "brickfields",
+  "tx": 13,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/establishment-bangsar-menara-teguh-bangsar-15504",
+  "condo_id": "15504"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/the-rainz-bukit-jalil/non-landed/": {
+  "name": "THE RAINZ BUKIT JALIL",
+  "town": "bukit-jalil",
+  "tx": 13,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/casa-green/non-landed/": {
+  "name": "CASA GREEN",
+  "town": "bukit-jalil",
+  "tx": 13,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/casa-green-condominium-9650",
+  "condo_id": "9650"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kuchai-lama/de-tropicana-condominium/non-landed/": {
+  "name": "DE TROPICANA CONDOMINIUM",
+  "town": "kuchai-lama",
+  "tx": 12,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/de-tropicana-363",
+  "condo_id": "363"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/the-avare/non-landed/": {
+  "name": "THE AVARE",
+  "town": "kl-city-centre",
+  "tx": 12,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-avare-275",
+  "condo_id": "275"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bangsar/sri-penaga/non-landed/": {
+  "name": "SRI PENAGA",
+  "town": "bangsar",
+  "tx": 12,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/dutamas/verdana/non-landed/": {
+  "name": "VERDANA",
+  "town": "dutamas",
+  "tx": 12,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/the-ritz-carlton-residences/non-landed/": {
+  "name": "THE RITZ CARLTON RESIDENCES",
+  "town": "kl-city-centre",
+  "tx": 12,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-ritz-carlton-residences-8222",
+  "condo_id": "8222"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kuchai-lama/dynasty-garden-condominium/non-landed/": {
+  "name": "DYNASTY GARDEN CONDOMINIUM",
+  "town": "kuchai-lama",
+  "tx": 12,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/dynasty-garden-condominium-380",
+  "condo_id": "380"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/mont-kiara-banyan/non-landed/": {
+  "name": "MONT KIARA BANYAN",
+  "town": "mont-kiara",
+  "tx": 12,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/mont-kiara-banyan-471",
+  "condo_id": "471"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/tiara-mutiara---the-crown/non-landed/": {
+  "name": "TIARA MUTIARA / THE CROWN",
+  "town": "old-klang-road",
+  "tx": 12,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/tiara-mutiara-the-crown-5423",
+  "condo_id": "5423"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/taman-desa/danau-idaman/non-landed/": {
+  "name": "DANAU IDAMAN",
+  "town": "taman-desa",
+  "tx": 12,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/danau-idaman-359",
+  "condo_id": "359"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/pantai/pantai-hillpark-5/non-landed/": {
+  "name": "PANTAI HILLPARK 5",
+  "town": "pantai",
+  "tx": 12,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/pantai-hillpark-5-1634",
+  "condo_id": "1634"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/savanna/non-landed/": {
+  "name": "SAVANNA",
+  "town": "bukit-jalil",
+  "tx": 12,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/savanna-condominium-2261",
+  "condo_id": "2261"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/dua-sentral/non-landed/": {
+  "name": "DUA SENTRAL",
+  "town": "kl-city-centre",
+  "tx": 12,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/dua-sentral-2095",
+  "condo_id": "2095"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/ceriaan-kiara/non-landed/": {
+  "name": "CERIAAN KIARA",
+  "town": "mont-kiara",
+  "tx": 12,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/ceriaan-kiara-1589",
+  "condo_id": "1589"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/soho-suites/non-landed/": {
+  "name": "SOHO SUITES",
+  "town": "kl-city-centre",
+  "tx": 12,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/le-yuan-residence/non-landed/": {
+  "name": "LE YUAN RESIDENCE",
+  "town": "old-klang-road",
+  "tx": 12,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/le-yuan-residence-5468",
+  "condo_id": "5468"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/vipod-suites/non-landed/": {
+  "name": "VIPOD SUITES",
+  "town": "kl-city-centre",
+  "tx": 12,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/vipod-residence-5573",
+  "condo_id": "5573"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/banyan-tree-signature/non-landed/": {
+  "name": "BANYAN TREE SIGNATURE",
+  "town": "kl-city-centre",
+  "tx": 12,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/sri-hartamas/windsor-tower/non-landed/": {
+  "name": "WINDSOR TOWER",
+  "town": "sri-hartamas",
+  "tx": 12,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/windsor-tower-604",
+  "condo_id": "604"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/the-legacy-oug/non-landed/": {
+  "name": "THE LEGACY OUG",
+  "town": "old-klang-road",
+  "tx": 12,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-legacy-oug-17809",
+  "condo_id": "17809"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/suria-stonor/non-landed/": {
+  "name": "SURIA STONOR",
+  "town": "kl-city-centre",
+  "tx": 12,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/suria-stonor-273",
+  "condo_id": "273"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/green-avenue/non-landed/": {
+  "name": "GREEN AVENUE",
+  "town": "bukit-jalil",
+  "tx": 11,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/green-avenue-condominium-164",
+  "condo_id": "164"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/pantai/pantai-hillpark-1/non-landed/": {
+  "name": "PANTAI HILLPARK 1",
+  "town": "pantai",
+  "tx": 11,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/pantai-hillpark-1-492",
+  "condo_id": "492"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/hampshire-park/non-landed/": {
+  "name": "HAMPSHIRE PARK",
+  "town": "kl-city-centre",
+  "tx": 11,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/hampshire-park-condominium-265",
+  "condo_id": "265"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/taman-desa/casa-desa/non-landed/": {
+  "name": "CASA DESA",
+  "town": "taman-desa",
+  "tx": 11,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/casa-desa-613",
+  "condo_id": "613"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/bukit-oug/non-landed/": {
+  "name": "BUKIT OUG",
+  "town": "bukit-jalil",
+  "tx": 11,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/villa-putra/non-landed/": {
+  "name": "VILLA PUTRA",
+  "town": "kl-city-centre",
+  "tx": 11,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/villa-putra-1717",
+  "condo_id": "1717"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/desa-parkcity/m-suite---desa-park-north/non-landed/": {
+  "name": "M SUITE @ DESA PARK NORTH",
+  "town": "desa-parkcity",
+  "tx": 11,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/m-suite-desa-park-north-9949",
+  "condo_id": "9949"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/brickfields/palm-court-condominium/non-landed/": {
+  "name": "PALM COURT CONDOMINIUM",
+  "town": "brickfields",
+  "tx": 11,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/palm-court-condominium-131",
+  "condo_id": "131"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/legasi-kampung-bharu/non-landed/": {
+  "name": "LEGASI KAMPUNG BHARU",
+  "town": "kl-city-centre",
+  "tx": 11,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/legasi-kampung-bharu-10241",
+  "condo_id": "10241"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-sentral/suasana-sentral-loft-condo/non-landed/": {
+  "name": "SUASANA SENTRAL LOFT CONDO",
+  "town": "kl-sentral",
+  "tx": 11,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/suasana-sentral-loft-133",
+  "condo_id": "133"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/residensi-astrea-mont-kiara/non-landed/": {
+  "name": "RESIDENSI ASTREA MONT KIARA",
+  "town": "mont-kiara",
+  "tx": 11,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/impression-u-thant/non-landed/": {
+  "name": "IMPRESSION U-THANT",
+  "town": "kl-city-centre",
+  "tx": 11,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/impression-u-thant-11737",
+  "condo_id": "11737"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/kenanga-point/non-landed/": {
+  "name": "KENANGA POINT",
+  "town": "kl-city-centre",
+  "tx": 11,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/kenanga-point-1741",
+  "condo_id": "1741"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/taman-desa/faber-heights/non-landed/": {
+  "name": "FABER HEIGHTS",
+  "town": "taman-desa",
+  "tx": 11,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/faber-heights-365",
+  "condo_id": "365"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/the-capsquare-residences/non-landed/": {
+  "name": "THE CAPSQUARE RESIDENCES",
+  "town": "kl-city-centre",
+  "tx": 11,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-capsquare-residences-276",
+  "condo_id": "276"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/one-kl/non-landed/": {
+  "name": "ONE KL",
+  "town": "kl-city-centre",
+  "tx": 10,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/one-kl-1587",
+  "condo_id": "1587"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/dutamas/residensi-riana-dutamas---savvy/non-landed/": {
+  "name": "RESIDENSI RIANA DUTAMAS @ SAVVY",
+  "town": "dutamas",
+  "tx": 10,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/savvy-riana-dutamas-18299",
+  "condo_id": "18299"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/pantai/desa-pantai-flat/non-landed/": {
+  "name": "DESA PANTAI FLAT",
+  "town": "pantai",
+  "tx": 10,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/desa-pantai-flat-22154",
+  "condo_id": "22154"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/gembira-residen/non-landed/": {
+  "name": "GEMBIRA RESIDEN",
+  "town": "old-klang-road",
+  "tx": 10,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/gembira-residen-1971",
+  "condo_id": "1971"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/millerz-square/non-landed/": {
+  "name": "MILLERZ SQUARE",
+  "town": "old-klang-road",
+  "tx": 10,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/millerz-square-serviced-residence-9658",
+  "condo_id": "9658"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/stonor-3/non-landed/": {
+  "name": "STONOR 3",
+  "town": "kl-city-centre",
+  "tx": 10,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/stonor-3-8030",
+  "condo_id": "8030"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/kiara-designer-suites/non-landed/": {
+  "name": "KIARA DESIGNER SUITES",
+  "town": "mont-kiara",
+  "tx": 10,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/kiara-designer-suites-1565",
+  "condo_id": "1565"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/vista-komanwel-c/non-landed/": {
+  "name": "VISTA KOMANWEL C",
+  "town": "bukit-jalil",
+  "tx": 10,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/vista-komanwel-c-161",
+  "condo_id": "161"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/united-garden--taman-lee-yan-lian-/non-landed/": {
+  "name": "UNITED GARDEN (TAMAN LEE YAN LIAN)",
+  "town": "old-klang-road",
+  "tx": 10,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/united-garden-taman-lee-yan-lian-17165",
+  "condo_id": "17165"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/kiara-9-residency/non-landed/": {
+  "name": "KIARA 9 RESIDENCY",
+  "town": "mont-kiara",
+  "tx": 10,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/kiara-9-residency-1906",
+  "condo_id": "1906"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/aurora-sovo---bukit-jalil/non-landed/": {
+  "name": "AURORA SOVO @ BUKIT JALIL",
+  "town": "bukit-jalil",
+  "tx": 10,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/aurora-sovo-bukit-jalil-10329",
+  "condo_id": "10329"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/parkview-service-apartment/non-landed/": {
+  "name": "PARKVIEW SERVICE APARTMENT",
+  "town": "kl-city-centre",
+  "tx": 10,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/parkview-service-apartment-1578",
+  "condo_id": "1578"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bangsar/bangsar-permai/non-landed/": {
+  "name": "BANGSAR PERMAI",
+  "town": "bangsar",
+  "tx": 10,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/bangsar-permai-90",
+  "condo_id": "90"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/anjung-hijau--greenfields-/non-landed/": {
+  "name": "ANJUNG HIJAU (GREENFIELDS)",
+  "town": "bukit-jalil",
+  "tx": 10,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/anjung-hijau-greenfields-162",
+  "condo_id": "162"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/idaman-residence/non-landed/": {
+  "name": "IDAMAN RESIDENCE",
+  "town": "kl-city-centre",
+  "tx": 9,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/kiaramas-danai/non-landed/": {
+  "name": "KIARAMAS DANAI",
+  "town": "mont-kiara",
+  "tx": 9,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/kiaramas-danai-1972",
+  "condo_id": "1972"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/sunway-mont-residences/non-landed/": {
+  "name": "SUNWAY MONT RESIDENCES",
+  "town": "mont-kiara",
+  "tx": 8,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/sunway-mont-residences-8297",
+  "condo_id": "8297"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/tiffani-kiara/non-landed/": {
+  "name": "TIFFANI KIARA",
+  "town": "mont-kiara",
+  "tx": 8,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/tiffani-kiara-479",
+  "condo_id": "479"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kuchai-lama/de-tropicana/non-landed/": {
+  "name": "DE TROPICANA",
+  "town": "kuchai-lama",
+  "tx": 8,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/de-tropicana-363",
+  "condo_id": "363"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/twin-arkz/non-landed/": {
+  "name": "TWIN ARKZ",
+  "town": "bukit-jalil",
+  "tx": 9,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/twin-arkz-6461",
+  "condo_id": "6461"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/the-tropika---bukit-jalil/non-landed/": {
+  "name": "THE TROPIKA @ BUKIT JALIL",
+  "town": "bukit-jalil",
+  "tx": 9,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-tropika-14080",
+  "condo_id": "14080"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/pavilion-ceylon-hill/non-landed/": {
+  "name": "PAVILION CEYLON HILL",
+  "town": "kl-city-centre",
+  "tx": 9,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/pavilion-ceylon-hill-17805",
+  "condo_id": "17805"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/richmond/non-landed/": {
+  "name": "RICHMOND",
+  "town": "mont-kiara",
+  "tx": 9,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/richmond-21694",
+  "condo_id": "21694"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/ramada--one---bukit-ceylon-/non-landed/": {
+  "name": "RAMADA (ONE @ BUKIT CEYLON)",
+  "town": "kl-city-centre",
+  "tx": 9,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/ramada-one-bukit-ceylon-5471",
+  "condo_id": "5471"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bangsar/tivoli-villas/non-landed/": {
+  "name": "TIVOLI VILLAS",
+  "town": "bangsar",
+  "tx": 9,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/tivoli-villas-115",
+  "condo_id": "115"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/3-kia-peng/non-landed/": {
+  "name": "3 KIA PENG",
+  "town": "kl-city-centre",
+  "tx": 9,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/3-kia-peng-252",
+  "condo_id": "252"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bangsar/vogue-suites-one/non-landed/": {
+  "name": "VOGUE SUITES ONE",
+  "town": "bangsar",
+  "tx": 9,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/vogue-suites-one-8267",
+  "condo_id": "8267"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bangsar/zehn-bukit-pantai/non-landed/": {
+  "name": "ZEHN BUKIT PANTAI",
+  "town": "bangsar",
+  "tx": 9,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/zehn-bukit-pantai-116",
+  "condo_id": "116"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/seputeh/robson-condominium/non-landed/": {
+  "name": "ROBSON CONDOMINIUM",
+  "town": "seputeh",
+  "tx": 9,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/robson-condominium-536",
+  "condo_id": "536"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/6-ceylon/non-landed/": {
+  "name": "6 CEYLON",
+  "town": "kl-city-centre",
+  "tx": 9,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/taman-desa/danau-impian-dan-danau-idaman/non-landed/": {
+  "name": "DANAU IMPIAN DAN DANAU IDAMAN",
+  "town": "taman-desa",
+  "tx": 9,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/vista-komanwel-b/non-landed/": {
+  "name": "VISTA KOMANWEL B",
+  "town": "bukit-jalil",
+  "tx": 9,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/vista-komanwel-b-160",
+  "condo_id": "160"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/mont-kiara-damai/non-landed/": {
+  "name": "MONT KIARA DAMAI",
+  "town": "mont-kiara",
+  "tx": 9,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/taman-sri-sentosa/non-landed/": {
+  "name": "TAMAN SRI SENTOSA",
+  "town": "old-klang-road",
+  "tx": 9,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/damansara-heights/sri-murni/non-landed/": {
+  "name": "SRI MURNI",
+  "town": "damansara-heights",
+  "tx": 9,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/happy-garden-flat/non-landed/": {
+  "name": "HAPPY GARDEN FLAT",
+  "town": "old-klang-road",
+  "tx": 9,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/happy-garden-flat-21837",
+  "condo_id": "21837"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kampung-kerinchi--bangsar-south-/the-goodwood-residence/non-landed/": {
+  "name": "THE GOODWOOD RESIDENCE",
+  "town": "kampung-kerinchi--bangsar-south-",
+  "tx": 9,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-goodwood-residence-14109",
+  "condo_id": "14109"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/seringin-residences/non-landed/": {
+  "name": "SERINGIN RESIDENCES",
+  "town": "old-klang-road",
+  "tx": 9,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/seringin-residences-4691",
+  "condo_id": "4691"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/taman-desa/danau-permai/non-landed/": {
+  "name": "DANAU PERMAI",
+  "town": "taman-desa",
+  "tx": 9,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/danau-permai-362",
+  "condo_id": "362"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/desa-parkcity/nadia-parkfront/non-landed/": {
+  "name": "NADIA PARKFRONT",
+  "town": "desa-parkcity",
+  "tx": 9,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/nadia-parkfront-323",
+  "condo_id": "323"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/taman-desa/teratak-muhibbah/non-landed/": {
+  "name": "TERATAK MUHIBBAH",
+  "town": "taman-desa",
+  "tx": 8,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/teratak-muhibbah-21154",
+  "condo_id": "21154"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/vortex-suites---residences/non-landed/": {
+  "name": "VORTEX SUITES & RESIDENCES",
+  "town": "kl-city-centre",
+  "tx": 8,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kampung-kerinchi--bangsar-south-/taman-bukit-angkasa--angkasapuri-flat-/non-landed/": {
+  "name": "TAMAN BUKIT ANGKASA (ANGKASAPURI FLAT)",
+  "town": "kampung-kerinchi--bangsar-south-",
+  "tx": 8,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/flat-taman-bukit-angkasa-5576",
+  "condo_id": "5576"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/residensi-vivo/non-landed/": {
+  "name": "RESIDENSI VIVO",
+  "town": "old-klang-road",
+  "tx": 8,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/taman-desa/obd-garden-tower/non-landed/": {
+  "name": "OBD GARDEN TOWER",
+  "town": "taman-desa",
+  "tx": 8,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/obd-garden-tower-373",
+  "condo_id": "373"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/the-pearl--pearl-point-/non-landed/": {
+  "name": "THE PEARL (PEARL POINT)",
+  "town": "old-klang-road",
+  "tx": 8,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-pearl-pearl-point-374",
+  "condo_id": "374"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/pinang-1c/non-landed/": {
+  "name": "PINANG 1C",
+  "town": "old-klang-road",
+  "tx": 8,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/1c-pinang-3971",
+  "condo_id": "3971"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/taman-desa/the-hipster/non-landed/": {
+  "name": "THE HIPSTER",
+  "town": "taman-desa",
+  "tx": 8,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-hipster-11901",
+  "condo_id": "11901"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/quadro-residence/non-landed/": {
+  "name": "QUADRO RESIDENCE",
+  "town": "kl-city-centre",
+  "tx": 8,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/quadro-residences-1667",
+  "condo_id": "1667"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mid-valley-city/northpoint/non-landed/": {
+  "name": "NORTHPOINT",
+  "town": "mid-valley-city",
+  "tx": 8,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/northpoint-residences-445",
+  "condo_id": "445"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/mont-kiara-meridin/non-landed/": {
+  "name": "MONT KIARA MERIDIN",
+  "town": "mont-kiara",
+  "tx": 8,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/mont-kiara-meridin-474",
+  "condo_id": "474"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/paraiso---the-earth/non-landed/": {
+  "name": "PARAISO @ THE EARTH",
+  "town": "bukit-jalil",
+  "tx": 8,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/paraiso-residence-the-earth-11653",
+  "condo_id": "11653"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/swiss-garden-residences/non-landed/": {
+  "name": "SWISS GARDEN RESIDENCES",
+  "town": "kl-city-centre",
+  "tx": 8,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/swiss-garden-residences-1924",
+  "condo_id": "1924"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/brickfields/villa-scott/non-landed/": {
+  "name": "VILLA SCOTT",
+  "town": "brickfields",
+  "tx": 8,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/villa-scott-135",
+  "condo_id": "135"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kuchai-lama/the-riyang--happy-garden-/non-landed/": {
+  "name": "THE RIYANG (HAPPY GARDEN)",
+  "town": "kuchai-lama",
+  "tx": 8,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/happy-garden-11854",
+  "condo_id": "11854"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/star-residence-1/non-landed/": {
+  "name": "STAR RESIDENCE 1",
+  "town": "kl-city-centre",
+  "tx": 8,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/8-kia-peng-residences/non-landed/": {
+  "name": "8 KIA PENG RESIDENCES",
+  "town": "kl-city-centre",
+  "tx": 8,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/38-bidara/non-landed/": {
+  "name": "38 BIDARA",
+  "town": "kl-city-centre",
+  "tx": 8,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/38-bidara-condominium-147",
+  "condo_id": "147"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/sri-hartamas/plaza-damas/non-landed/": {
+  "name": "PLAZA DAMAS",
+  "town": "sri-hartamas",
+  "tx": 8,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/plaza-damas-22311",
+  "condo_id": "22311"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/the-pearl/non-landed/": {
+  "name": "THE PEARL",
+  "town": "kl-city-centre",
+  "tx": 8,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/hampshire-place/non-landed/": {
+  "name": "HAMPSHIRE PLACE",
+  "town": "kl-city-centre",
+  "tx": 8,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/hampshire-place-1631",
+  "condo_id": "1631"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/menara-bintang-goldhill/non-landed/": {
+  "name": "MENARA BINTANG GOLDHILL",
+  "town": "kl-city-centre",
+  "tx": 8,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/menara-bintang-goldhill-20768",
+  "condo_id": "20768"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/d-majestic/non-landed/": {
+  "name": "D'MAJESTIC",
+  "town": "kl-city-centre",
+  "tx": 8,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/gateway-kiaramas/non-landed/": {
+  "name": "GATEWAY KIARAMAS",
+  "town": "mont-kiara",
+  "tx": 8,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/gateway-kiaramas-residences-456",
+  "condo_id": "456"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-sentral/the-st--regis-kuala-lumpur/non-landed/": {
+  "name": "THE ST. REGIS KUALA LUMPUR",
+  "town": "kl-sentral",
+  "tx": 8,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/st-regis-5444",
+  "condo_id": "5444"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/taman-desa/desa-villa/non-landed/": {
+  "name": "DESA VILLA",
+  "town": "taman-desa",
+  "tx": 8,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/desa-villa-condominium-767",
+  "condo_id": "767"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/288-residences/non-landed/": {
+  "name": "288 RESIDENCES",
+  "town": "old-klang-road",
+  "tx": 8,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/pantai/pantai-panorama-condominium/non-landed/": {
+  "name": "PANTAI PANORAMA CONDOMINIUM",
+  "town": "pantai",
+  "tx": 8,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/citizen-2---old-klang-road/non-landed/": {
+  "name": "CITIZEN 2 @ OLD KLANG ROAD",
+  "town": "old-klang-road",
+  "tx": 7,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/citizen-2-7445",
+  "condo_id": "7445"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/taman-desa/danau-impian/non-landed/": {
+  "name": "DANAU IMPIAN",
+  "town": "taman-desa",
+  "tx": 7,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/danau-impian-360",
+  "condo_id": "360"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-sentral/suasana-sentral/non-landed/": {
+  "name": "SUASANA SENTRAL",
+  "town": "kl-sentral",
+  "tx": 7,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/taman-desa/faber-ria/non-landed/": {
+  "name": "FABER RIA",
+  "town": "taman-desa",
+  "tx": 7,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/faber-ria-366",
+  "condo_id": "366"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/avenue-court/non-landed/": {
+  "name": "AVENUE COURT",
+  "town": "old-klang-road",
+  "tx": 7,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/avenue-court-1252",
+  "condo_id": "1252"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/avant-court/non-landed/": {
+  "name": "AVANT COURT",
+  "town": "old-klang-road",
+  "tx": 7,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/avant-court-condominium-1251",
+  "condo_id": "1251"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/taman-desa/danau-idaman-kondominium/non-landed/": {
+  "name": "DANAU IDAMAN KONDOMINIUM",
+  "town": "taman-desa",
+  "tx": 7,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/danau-idaman-359",
+  "condo_id": "359"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/mutiara-villa/non-landed/": {
+  "name": "MUTIARA VILLA",
+  "town": "kl-city-centre",
+  "tx": 7,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/mutiara-villa-151",
+  "condo_id": "151"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/km1-east/non-landed/": {
+  "name": "KM1 EAST",
+  "town": "bukit-jalil",
+  "tx": 7,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/km1-east-7697",
+  "condo_id": "7697"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/brickfields/menara-pelangi/non-landed/": {
+  "name": "MENARA PELANGI",
+  "town": "brickfields",
+  "tx": 7,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/menara-pelangi-137",
+  "condo_id": "137"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/bistari-lavendar/non-landed/": {
+  "name": "BISTARI LAVENDAR",
+  "town": "kl-city-centre",
+  "tx": 7,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/sri-hartamas/sunway-palazzio/non-landed/": {
+  "name": "SUNWAY PALAZZIO",
+  "town": "sri-hartamas",
+  "tx": 7,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/sunway-palazzio-309",
+  "condo_id": "309"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/casa-residency/non-landed/": {
+  "name": "CASA RESIDENCY",
+  "town": "kl-city-centre",
+  "tx": 7,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/casa-residency-2046",
+  "condo_id": "2046"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/the-horizon-residences/non-landed/": {
+  "name": "THE HORIZON RESIDENCES",
+  "town": "kl-city-centre",
+  "tx": 7,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bangsar/bangsar-heights/non-landed/": {
+  "name": "BANGSAR HEIGHTS",
+  "town": "bangsar",
+  "tx": 7,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/bangsar-heights-87",
+  "condo_id": "87"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/star-residence-2/non-landed/": {
+  "name": "STAR RESIDENCE 2",
+  "town": "kl-city-centre",
+  "tx": 7,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kuchai-lama/kuchai-brem-park-2/non-landed/": {
+  "name": "KUCHAI BREM PARK 2",
+  "town": "kuchai-lama",
+  "tx": 7,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/kuchai-brem-park-2-13636",
+  "condo_id": "13636"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/residensi-vivo/non-landed/": {
+  "name": "RESIDENSI VIVO",
+  "town": "kl-city-centre",
+  "tx": 7,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/binjai-residency/non-landed/": {
+  "name": "BINJAI RESIDENCY",
+  "town": "kl-city-centre",
+  "tx": 7,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/binjai-residency-259",
+  "condo_id": "259"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/one-cochrane-residences/non-landed/": {
+  "name": "ONE COCHRANE RESIDENCES",
+  "town": "kl-city-centre",
+  "tx": 7,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/one-cochrane-residence-14282",
+  "condo_id": "14282"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/kiaramas-ayuria/non-landed/": {
+  "name": "KIARAMAS AYURIA",
+  "town": "mont-kiara",
+  "tx": 7,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/kiaramas-ayuria-459",
+  "condo_id": "459"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/o-g-heights/non-landed/": {
+  "name": "O.G HEIGHTS",
+  "town": "old-klang-road",
+  "tx": 7,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/o-g-heights-372",
+  "condo_id": "372"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kampung-kerinchi--bangsar-south-/taman-bukit-angkasa/non-landed/": {
+  "name": "TAMAN BUKIT ANGKASA",
+  "town": "kampung-kerinchi--bangsar-south-",
+  "tx": 7,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/taman-desa/residensi-the-address/non-landed/": {
+  "name": "RESIDENSI THE ADDRESS",
+  "town": "taman-desa",
+  "tx": 7,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/the-scott-garden/non-landed/": {
+  "name": "THE SCOTT GARDEN",
+  "town": "old-klang-road",
+  "tx": 7,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/the-mews---klcc/non-landed/": {
+  "name": "THE MEWS @ KLCC",
+  "town": "kl-city-centre",
+  "tx": 7,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-mews-6575",
+  "condo_id": "6575"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/my-habitat/non-landed/": {
+  "name": "MY HABITAT",
+  "town": "kl-city-centre",
+  "tx": 7,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/my-habitat-21248",
+  "condo_id": "21248"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/menara-putra/non-landed/": {
+  "name": "MENARA PUTRA",
+  "town": "kl-city-centre",
+  "tx": 7,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/menara-putra-1715",
+  "condo_id": "1715"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kampung-kerinchi--bangsar-south-/pantai-panorama/non-landed/": {
+  "name": "PANTAI PANORAMA",
+  "town": "kampung-kerinchi--bangsar-south-",
+  "tx": 6,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/laman-suria/non-landed/": {
+  "name": "LAMAN SURIA",
+  "town": "mont-kiara",
+  "tx": 6,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/taman-desa/abadi-villa/non-landed/": {
+  "name": "ABADI VILLA",
+  "town": "taman-desa",
+  "tx": 6,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/abadi-villa-356",
+  "condo_id": "356"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/hijauan-kiara/non-landed/": {
+  "name": "HIJAUAN KIARA",
+  "town": "mont-kiara",
+  "tx": 6,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/hijauan-kiara-457",
+  "condo_id": "457"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/kiaramas-cendana/non-landed/": {
+  "name": "KIARAMAS CENDANA",
+  "town": "mont-kiara",
+  "tx": 6,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/kiaramas-cendana-460",
+  "condo_id": "460"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kuchai-lama/the-hermington-kuchai-lama/non-landed/": {
+  "name": "THE HERMINGTON KUCHAI LAMA",
+  "town": "kuchai-lama",
+  "tx": 6,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/casa-kiara-ii/non-landed/": {
+  "name": "CASA KIARA II",
+  "town": "mont-kiara",
+  "tx": 6,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/casa-kiara-ii-453",
+  "condo_id": "453"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kuchai-lama/taman-kuchai-jaya/non-landed/": {
+  "name": "TAMAN KUCHAI JAYA",
+  "town": "kuchai-lama",
+  "tx": 6,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/taman-ltat-bukit-jalil/non-landed/": {
+  "name": "TAMAN LTAT BUKIT JALIL",
+  "town": "bukit-jalil",
+  "tx": 6,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/skyluxe/non-landed/": {
+  "name": "SKYLUXE",
+  "town": "bukit-jalil",
+  "tx": 6,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/the-havre-residence/non-landed/": {
+  "name": "THE HAVRE RESIDENCE",
+  "town": "bukit-jalil",
+  "tx": 6,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/residensi-park-hill/non-landed/": {
+  "name": "RESIDENSI PARK HILL",
+  "town": "bukit-jalil",
+  "tx": 6,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/hill-park-10254",
+  "condo_id": "10254"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/ppr-kampung-muhibbah/non-landed/": {
+  "name": "PPR KAMPUNG MUHIBBAH",
+  "town": "bukit-jalil",
+  "tx": 6,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/ppr-kampung-muhibbah-16780",
+  "condo_id": "16780"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/brickfields/sri-impian/non-landed/": {
+  "name": "SRI IMPIAN",
+  "town": "brickfields",
+  "tx": 6,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/brickfields/tong-fatt-building/non-landed/": {
+  "name": "TONG FATT BUILDING",
+  "town": "brickfields",
+  "tx": 6,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/km1-west/non-landed/": {
+  "name": "KM1 WEST",
+  "town": "bukit-jalil",
+  "tx": 6,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/km1-west-2723",
+  "condo_id": "2723"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/mercu-summer-suites/non-landed/": {
+  "name": "MERCU SUMMER SUITES",
+  "town": "kl-city-centre",
+  "tx": 6,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/mercu-summer-suites-8252",
+  "condo_id": "8252"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/brickfields/scott-sentral/non-landed/": {
+  "name": "SCOTT SENTRAL",
+  "town": "brickfields",
+  "tx": 6,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/scott-sentral-2546",
+  "condo_id": "2546"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/brickfields/633-residency/non-landed/": {
+  "name": "633 RESIDENCY",
+  "town": "brickfields",
+  "tx": 6,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/633-residency-136",
+  "condo_id": "136"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/skyline-residence/non-landed/": {
+  "name": "SKYLINE RESIDENCE",
+  "town": "kl-city-centre",
+  "tx": 6,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/seputeh/seputih-permai/non-landed/": {
+  "name": "SEPUTIH PERMAI",
+  "town": "seputeh",
+  "tx": 6,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/stonor-park-condo/non-landed/": {
+  "name": "STONOR PARK CONDO",
+  "town": "kl-city-centre",
+  "tx": 6,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/stonor-park-440",
+  "condo_id": "440"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/taman-desa/iris-apartment/non-landed/": {
+  "name": "IRIS APARTMENT",
+  "town": "taman-desa",
+  "tx": 6,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/residensi-platinum-arena/non-landed/": {
+  "name": "RESIDENSI PLATINUM ARENA",
+  "town": "old-klang-road",
+  "tx": 6,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/platinum-arena-9853",
+  "condo_id": "9853"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/k-residence--avenue-k-/non-landed/": {
+  "name": "K RESIDENCE (AVENUE K)",
+  "town": "kl-city-centre",
+  "tx": 6,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/avenue-k-10187",
+  "condo_id": "10187"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/senada-residences---klgcc/non-landed/": {
+  "name": "SENADA RESIDENCES @ KLGCC",
+  "town": "mont-kiara",
+  "tx": 6,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/mont-kiara-sophia/non-landed/": {
+  "name": "MONT KIARA SOPHIA",
+  "town": "mont-kiara",
+  "tx": 6,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/mont-kiara-sophia-477",
+  "condo_id": "477"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/bayview-court/non-landed/": {
+  "name": "BAYVIEW COURT",
+  "town": "old-klang-road",
+  "tx": 6,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/bayview-court-1254",
+  "condo_id": "1254"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/dutamas/duta-ria/non-landed/": {
+  "name": "DUTA RIA",
+  "town": "dutamas",
+  "tx": 6,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/duta-ria-507",
+  "condo_id": "507"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/dutamas/hartamas-regency/non-landed/": {
+  "name": "HARTAMAS REGENCY",
+  "town": "dutamas",
+  "tx": 6,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/imperial-lexis-kl/non-landed/": {
+  "name": "IMPERIAL LEXIS KL",
+  "town": "kl-city-centre",
+  "tx": 6,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/imperial-lexis-8357",
+  "condo_id": "8357"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/dutamas/met-1-residence/non-landed/": {
+  "name": "MET 1 RESIDENCE",
+  "town": "dutamas",
+  "tx": 6,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/met-1-residences-8057",
+  "condo_id": "8057"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/tr-residence/non-landed/": {
+  "name": "TR RESIDENCE",
+  "town": "kl-city-centre",
+  "tx": 6,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/tr-residence-10228",
+  "condo_id": "10228"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/pantai/pantai-hillpark-3/non-landed/": {
+  "name": "PANTAI HILLPARK 3",
+  "town": "pantai",
+  "tx": 6,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/pantai-hillpark-3-1633",
+  "condo_id": "1633"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/pantai/kondominium-pantai-estet/non-landed/": {
+  "name": "KONDOMINIUM PANTAI ESTET",
+  "town": "pantai",
+  "tx": 6,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/the-meritz/non-landed/": {
+  "name": "THE MERITZ",
+  "town": "kl-city-centre",
+  "tx": 6,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-meritz-1004",
+  "condo_id": "1004"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/menara-belfield/non-landed/": {
+  "name": "MENARA BELFIELD",
+  "town": "kl-city-centre",
+  "tx": 6,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/menara-belfield-condominium-1739",
+  "condo_id": "1739"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/pantai/ppr-kerinchi-lembah-pantai/non-landed/": {
+  "name": "PPR KERINCHI LEMBAH PANTAI",
+  "town": "pantai",
+  "tx": 6,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/ppr-kerinchi-lembah-pantai-23274",
+  "condo_id": "23274"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/union-heights/non-landed/": {
+  "name": "UNION HEIGHTS",
+  "town": "old-klang-road",
+  "tx": 6,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/union-heights-377",
+  "condo_id": "377"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/damansara-heights/10-semantan--semantan-avenue-/non-landed/": {
+  "name": "10 SEMANTAN (SEMANTAN AVENUE)",
+  "town": "damansara-heights",
+  "tx": 6,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/semantan-avenue-suites-319",
+  "condo_id": "319"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/rumah-pangsa-jalan-loke-yew/non-landed/": {
+  "name": "RUMAH PANGSA JALAN LOKE YEW",
+  "town": "kl-city-centre",
+  "tx": 5,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/flat-dbkl-jalan-hang-tuah/non-landed/": {
+  "name": "FLAT DBKL JALAN HANG TUAH",
+  "town": "kl-city-centre",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/flat-dbkl-jalan-hang-tuah-22243",
+  "condo_id": "22243"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/corinthian/non-landed/": {
+  "name": "CORINTHIAN",
+  "town": "kl-city-centre",
+  "tx": 5,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/corinthian-condominium-261",
+  "condo_id": "261"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kuchai-lama/genkl/non-landed/": {
+  "name": "GENKL",
+  "town": "kuchai-lama",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/genkl-9790",
+  "condo_id": "9790"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/sri-hartamas/chelsea---plaza-damas-3/non-landed/": {
+  "name": "CHELSEA @ PLAZA DAMAS 3",
+  "town": "sri-hartamas",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/chelsea-plaza-damas-3-2054",
+  "condo_id": "2054"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/the-panorama/non-landed/": {
+  "name": "THE PANORAMA",
+  "town": "kl-city-centre",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-panorama-1571",
+  "condo_id": "1571"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/sri-kenny/non-landed/": {
+  "name": "SRI KENNY",
+  "town": "kl-city-centre",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/sri-kenny-1732",
+  "condo_id": "1732"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/the-robertson/non-landed/": {
+  "name": "THE ROBERTSON",
+  "town": "kl-city-centre",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-robertson-6863",
+  "condo_id": "6863"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/the-manhattan/non-landed/": {
+  "name": "THE MANHATTAN",
+  "town": "kl-city-centre",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-manhattan-7328",
+  "condo_id": "7328"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/pkns-kampung-baru/non-landed/": {
+  "name": "PKNS KAMPUNG BARU",
+  "town": "kl-city-centre",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/pkns-kampung-baru-16769",
+  "condo_id": "16769"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/isola---klcc/non-landed/": {
+  "name": "ISOLA @ KLCC",
+  "town": "kl-city-centre",
+  "tx": 5,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/residensi-opus/non-landed/": {
+  "name": "RESIDENSI OPUS",
+  "town": "kl-city-centre",
+  "tx": 5,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/opus-kl-7550",
+  "condo_id": "7550"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kl-city-centre/bintang-fairlane-residences/non-landed/": {
+  "name": "BINTANG FAIRLANE RESIDENCES",
+  "town": "kl-city-centre",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/bintang-fairlane-residences-1887",
+  "condo_id": "1887"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/residensi-andes-ria/non-landed/": {
+  "name": "RESIDENSI ANDES RIA",
+  "town": "bukit-jalil",
+  "tx": 5,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bukit-jalil/the-link-2---bukit-jalil/non-landed/": {
+  "name": "THE LINK 2 @ BUKIT JALIL",
+  "town": "bukit-jalil",
+  "tx": 5,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/the-link-2-bukit-jalil-serviced-residences-6482",
+  "condo_id": "6482"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/pantai/secoya/non-landed/": {
+  "name": "SECOYA",
+  "town": "pantai",
+  "tx": 5,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/secoya-residence-7619",
+  "condo_id": "7619"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kuchai-lama/kuchai-sentral/non-landed/": {
+  "name": "KUCHAI SENTRAL",
+  "town": "kuchai-lama",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/kuchai-sentral-15416",
+  "condo_id": "15416"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/brickfields/apartment-cuepacs/non-landed/": {
+  "name": "APARTMENT CUEPACS",
+  "town": "brickfields",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/apartment-cuepacs-128",
+  "condo_id": "128"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bangsar/bangsar-puteri/non-landed/": {
+  "name": "BANGSAR PUTERI",
+  "town": "bangsar",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/bangsar-puteri-117",
+  "condo_id": "117"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bangsar/nadi-bangsar/non-landed/": {
+  "name": "NADI BANGSAR",
+  "town": "bangsar",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/nadi-bangsar-6050",
+  "condo_id": "6050"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bangsar/one-menerung/non-landed/": {
+  "name": "ONE MENERUNG",
+  "town": "bangsar",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/one-menerung-1586",
+  "condo_id": "1586"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/bangsar/palmyra-bangsar/non-landed/": {
+  "name": "PALMYRA BANGSAR",
+  "town": "bangsar",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/palmyra-bangsar-104",
+  "condo_id": "104"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kampung-kerinchi--bangsar-south-/kl-gateway/non-landed/": {
+  "name": "KL GATEWAY",
+  "town": "kampung-kerinchi--bangsar-south-",
+  "tx": 5,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/kl-gateway-residences-8093",
+  "condo_id": "8093"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kampung-kerinchi--bangsar-south-/kuala-lumpur-gateway/non-landed/": {
+  "name": "KUALA LUMPUR GATEWAY",
+  "town": "kampung-kerinchi--bangsar-south-",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/kl-gateway-residences-8093",
+  "condo_id": "8093"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kampung-kerinchi--bangsar-south-/taman-bukit-angkasa--taman-angkasapuri-flat-/non-landed/": {
+  "name": "TAMAN BUKIT ANGKASA (TAMAN ANGKASAPURI FLAT)",
+  "town": "kampung-kerinchi--bangsar-south-",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/flat-taman-bukit-angkasa-5576",
+  "condo_id": "5576"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/mont-kiara-astana/non-landed/": {
+  "name": "MONT KIARA ASTANA",
+  "town": "mont-kiara",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/mont-kiara-astana-478",
+  "condo_id": "478"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/dutamas/menara-duta-1/non-landed/": {
+  "name": "MENARA DUTA 1",
+  "town": "dutamas",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/menara-duta-1-509",
+  "condo_id": "509"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/i-zen-kiara-ii/non-landed/": {
+  "name": "I-ZEN KIARA II",
+  "town": "mont-kiara",
+  "tx": 5,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/kuchai-lama/palace-court--sri-istana-/non-landed/": {
+  "name": "PALACE COURT (SRI ISTANA)",
+  "town": "kuchai-lama",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/palace-court-sri-istana-4631",
+  "condo_id": "4631"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/mont-kiara/almaspuri/non-landed/": {
+  "name": "ALMASPURI",
+  "town": "mont-kiara",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/almaspuri-448",
+  "condo_id": "448"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/dutamas/residensi-riana-dutamas/non-landed/": {
+  "name": "RESIDENSI RIANA DUTAMAS",
+  "town": "dutamas",
+  "tx": 5,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/residensi-dedaun-mas--d-ivo-residence-/non-landed/": {
+  "name": "RESIDENSI DEDAUN MAS (D'IVO RESIDENCE)",
+  "town": "old-klang-road",
+  "tx": 5,
+  "method": "core",
+  "condo_url": "https://www.propertyguru.com.my/condo/d-ivo-21691",
+  "condo_id": "21691"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/damansara-heights/aira-residence/non-landed/": {
+  "name": "AIRA RESIDENCE",
+  "town": "damansara-heights",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/aira-residence-15629",
+  "condo_id": "15629"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/damansara-heights/damansara-villa/non-landed/": {
+  "name": "DAMANSARA VILLA",
+  "town": "damansara-heights",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/damansara-villa-166",
+  "condo_id": "166"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/southbank-residence/non-landed/": {
+  "name": "SOUTHBANK RESIDENCE",
+  "town": "old-klang-road",
+  "tx": 5,
+  "method": "exact",
+  "condo_url": "https://www.propertyguru.com.my/condo/southbank-residence-6428",
+  "condo_id": "6428"
+ },
+ "https://www.brickz.my/transactions/residential/kuala-lumpur/old-klang-road/taman-sri-sentosa--low-cost-/non-landed/": {
+  "name": "TAMAN SRI SENTOSA (LOW COST)",
+  "town": "old-klang-road",
+  "tx": 5,
+  "method": "none",
+  "condo_url": null,
+  "condo_id": null
+ }
+}
