@@ -4,7 +4,6 @@ import { cashVsRent, DEFAULT_LTV, LTV_MIN, LTV_MAX, LTV_STEP, clampLtv, RATE_MIN
 import { useLoanAssumptions } from '../lib/loanAssumptions.js'
 import { useHolder } from '../lib/holderProfile.js'
 import { headlineVerdict, downLabel } from '../lib/launchScore.js'
-import { HoldBreakdown } from './CompareTiles.jsx'
 
 function cf(n, t) {
   const v = Math.round(n)
@@ -175,10 +174,8 @@ export function LtvCompare({ price, rentMo, maintMo, fixedRmYr, hideTitle = fals
           t={t}
         />
       </div>
-      <HoldBreakdown v={v} t={t} />
-      <div className="mt-2 text-[12px] text-slate-600 tabular-nums">
-        {t(`首付 RM${Math.round(v.down).toLocaleString('en-MY')}（该价格的 ${100 - loan.ltv}%）`,
-          `Down payment RM${Math.round(v.down).toLocaleString('en-MY')} (${100 - loan.ltv}% of this price)`)}
+      <div className="mt-2.5 border-t border-slate-200 pt-2 text-[12px] text-slate-600 tabular-nums">
+        {t('首付', 'Down')} <b className="text-slate-900">RM{Math.round(v.down).toLocaleString('en-MY')}</b>
       </div>
     </div>
   )

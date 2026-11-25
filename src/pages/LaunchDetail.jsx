@@ -43,47 +43,6 @@ function KeyFact({ label, value }) {
   )
 }
 
-function NetBreakdown({ y, t }) {
-  if (!y || y.net == null) return null
-  const row = (label, pts) => (
-    <div className="flex justify-between gap-3 tabular-nums">
-      <span>{label}</span>
-      <span>− {pts.toFixed(2)}%</span>
-    </div>
-  )
-  return (
-    <div className="mt-3 rounded-xl bg-slate-50 px-3 py-2.5 text-[12px] text-slate-600 space-y-1" data-testid="net-breakdown">
-      <div className="flex justify-between font-medium text-slate-800 tabular-nums">
-        <span>{t('毛回报', 'Gross')}</span><span>{y.gross.toFixed(2)}%</span>
-      </div>
-      {row(t('空置（约 1 个月）', 'Vacancy (about 1 month)'), y.vacancyPts)}
-      {row(t('门牌税（年租 4%）', 'Assessment (4% of annual rent)'), y.assessmentPts)}
-      {row(t('管理费', 'Maintenance'), y.maintenancePts)}
-      {row(t('地税和保险', 'Quit rent and insurance'), y.fixedPts)}
-      <div className="flex justify-between font-medium text-slate-800 tabular-nums border-t border-slate-200 pt-1">
-        <span>{t('净回报', 'Net')}</span><span>{y.net.toFixed(2)}%</span>
-      </div>
-    </div>
-  )
-}
-
-function CompList({ band, t }) {
-  if (!band?.listings?.length) return null
-  return (
-    <div className="mt-3" data-testid="comp-list">
-      <div className="text-[11px] text-slate-500 mb-1">{t(`可比叫租 ${band.n} 则`, `${band.n} asking-rent comps`)}</div>
-      <ul className="space-y-1 max-h-56 overflow-y-auto text-[12px] text-slate-600">
-        {band.listings.map((s, i) => (
-          <li key={i} className="flex justify-between gap-2">
-            <span className="min-w-0 truncate">{s.project} · {s.size.toLocaleString()} sqft{s.rooms ? ` · ${t(`${s.rooms} 房`, `${s.rooms} bed`)}` : ''}</span>
-            <span className="shrink-0 tabular-nums">{rm(s.rent)}{t('/月', '/mo')} · RM{s.psf.toFixed(2)} psf</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
-}
-
 function TypCard({ p, typ, t, draft, onChange, compactLoan = false, variant = 'default', currentRent = null }) {
   const { loan } = useLoanAssumptions()
   const { psf, band } = typRentPsf(typ)
@@ -113,7 +72,6 @@ function TypCard({ p, typ, t, draft, onChange, compactLoan = false, variant = 'd
     : null
   const typEntry = v ? entryCost({ price, down: v.down, size: typ.size }) : null
   const simple = variant === 'simple'
-  const pro = variant === 'pro'
 
   return (
     <section className="rounded-2xl bg-white p-4 sm:p-5 ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)]" data-testid={`typ-${typ.id}`}>
@@ -182,8 +140,6 @@ function TypCard({ p, typ, t, draft, onChange, compactLoan = false, variant = 'd
         </div>
       )}
 
-      {pro && <NetBreakdown y={y} t={t} />}
-      {pro && <CompList band={band} t={t} />}
 
       {!simple && (
         <div className="mt-2.5 flex flex-wrap items-start gap-1.5">
@@ -197,7 +153,7 @@ function TypCard({ p, typ, t, draft, onChange, compactLoan = false, variant = 'd
                 : null}
             </NoteChip>
           )}
-          {!pro && band?.sufficient && (
+          {band?.sufficient && (
             <NoteChip testId={`comps-${typ.id}`} label={t(`${band.n} 则可比`, `${band.n} comps`)}>
               <ul className="space-y-1 max-h-48 overflow-y-auto">
                 {band.listings.map((s, i) => (
@@ -292,13 +248,9 @@ function SalaryBox({ inst, salary, onSave, t }) {
             <div className="text-[28px] font-semibold tabular-nums leading-none tracking-tight text-slate-900">{burden.pct.toFixed(0)}%</div>
             <div className="pb-0.5 text-[13px] font-medium" style={{ color: bandColor }}>{salaryBandCopy(burden.band, t)}</div>
           </div>
-          <p className="mt-2 text-[12px] text-slate-500 leading-snug">
-            {t(`月供 ${rm(inst)}，以你填写的月薪 ${rm(salary)} 来算。这只是一般参考：30% 以下比较轻松，30%–40% 有点紧，超过 40% 压力较大。不是银行审批标准。`,
-              `The instalment is ${rm(inst)} against the monthly salary you entered, ${rm(salary)}. This is only a general guideline: under 30% is comfortable, 30–40% is tight, and over 40% is stretched. It is not a bank’s approval rule.`)}
-          </p>
         </>
       ) : (
-        <p className="mt-1 text-[13px] text-slate-600 leading-snug">{t('填写月薪后，可以看到月供大概占收入的多少。', 'Enter your monthly salary to see how much of it the instalment would take.')}</p>
+null
       )}
       <label className="mt-3 flex items-end gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2">
         <div className="flex-1 min-w-0">
@@ -474,7 +426,7 @@ export default function LaunchDetail({ p }) {
             onClick={() => setScoreOpen(v => !v)}
             className="w-full text-left rounded-2xl bg-white p-4 sm:p-5 ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)]"
           >
-            <div className="text-[11px] text-slate-500">{t('楼盘回报分（按表价，不随贷款变化）', 'Project score (at list price; does not move with your loan)')}</div>
+            <div className="text-[11px] text-slate-500">{t('楼盘回报分', 'Project score')}</div>
             <div className="mt-0.5 flex items-end gap-3">
               <div className="text-[32px] font-semibold tabular-nums leading-none tracking-tight" style={{ color: sBand.color }}>{scored.score.toFixed(1)}</div>
               <div className="pb-0.5 text-[13px] font-medium text-slate-600">{t(sBand.zh, sBand.en)}</div>

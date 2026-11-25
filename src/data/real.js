@@ -36,7 +36,6 @@ export function geoPrecision(r) {
   if (r.geo_source === 'approx' || SHARED.get(coordKey(r)) > 1) return 'area'
   return 'name'
 }
-export const geoStreet = r => (/^street from Brickz transactions \(([^)]+)\)/i.exec(r.geo_detail || '') || [])[1] || null
 
 export const REAL = ALL.map((r, i) => {
   const c = r.net_costs

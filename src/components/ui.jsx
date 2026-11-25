@@ -21,10 +21,9 @@ export function Bi({ zh, en, className = '' }) {
 export function Footer() {
   const { t } = useLang()
   return (
-    <footer className="text-[12px] text-slate-600 leading-relaxed px-4 py-6 text-center">
-      {t('※ 数据来自公开网页的小规模抓取（Brickz.my 成交中位价 + PropertyGuru / Mudah.my 叫租；有地住宅为区域同类房源估算）。净回报中的管理费、空置、门牌税等为估算假设。叫租不等于实际租金，仅供原型演示，不构成投资建议。',
-        '※ Data from a small scrape of public pages (Brickz.my transacted medians + PropertyGuru / Mudah.my asking rents; landed rents are area-level estimates). Net-yield costs (maintenance, vacancy, assessment etc.) are estimated assumptions. Asking rents are not achieved rents. Prototype only — not investment advice.')}
-      {' '}Map © OpenFreeMap / OpenMapTiles / OpenStreetMap contributors; imagery © Esri.
+    <footer className="text-[11px] text-slate-400 leading-relaxed px-4 py-6 text-center">
+      {t('估算 · 不构成投资建议 · 数据 Brickz / PropertyGuru / Mudah', 'Estimates · Not investment advice · Data Brickz / PropertyGuru / Mudah')}
+      <br />Map © OpenFreeMap / OpenMapTiles / OpenStreetMap; imagery © Esri
     </footer>
   )
 }

@@ -224,7 +224,6 @@ export function NeighbourCompare({ p, s, entry, goal, loan, currentRent }) {
       </div>
 
       <RiskRow risks={risks} t={t} L={L} />
-      <p className="text-[10px] leading-snug text-slate-400">{t('二手 = 同区成交中位 psf × 同面积，租金相同。估算，不构成投资建议。', 'Resale = area median psf × same size, same rent. Estimates, not advice.')}</p>
     </div>
   )
 }

@@ -210,13 +210,7 @@ function OwnerNotes({ own, t }) {
   const r = n => fmtRM(Math.round(n))
   return (
     <div className="mt-2 border-t border-slate-200/80 pt-2 space-y-1 text-[11px] leading-snug text-slate-500 tabular-nums" data-testid="owner-notes">
-      <div>{t(`月供 ${r(own.inst)} + 管理费、门牌税、地税和保险 ${r(own.fees)}。`, `Instalment ${r(own.inst)} + maintenance, assessment, quit rent and insurance ${r(own.fees)}.`)}</div>
-      {own.principal > 0 && (
-        <div>{t(
-          `其中约 ${r(own.principal)} 是还本金，等于存进房子里；真正花掉的是利息和杂费，约 ${r(own.spent)}/月。首付本来可以赚的利息没有算进去。`,
-          `About ${r(own.principal)} repays principal, which stays in the home; what is actually spent is interest and fees, about ${r(own.spent)}/mo. Returns the down payment could have earned elsewhere are not counted.`,
-        )}</div>
-      )}
+      <div>{t(`月供 ${r(own.inst)} · 杂费 ${r(own.fees)}`, `Instalment ${r(own.inst)} · fees ${r(own.fees)}`)}{own.principal > 0 ? t(` · 其中本金 ${r(own.principal)}`, ` · principal ${r(own.principal)}`) : ''}</div>
     </div>
   )
 }
