@@ -20,21 +20,30 @@ const GATEWAY = {
   'real-kuala-lumpur-gateway': 'Kuala Lumpur Gateway',
   'real-kuala-lumpur-gateway-menara-suezcap': 'Menara Suezcap',
 }
-function locationText(p, t) {
+/** One row of small chips: how exact the pin is, and whether other records are the same building. Tap a chip for the one-line detail. */
+function GeoChips({ p }) {
+  const { t } = useLang()
+  const [open, setOpen] = useState(null)
   const st = geoStreet(p)
-  switch (p.geo_precision) {
-    case 'none': return t('位置待核实，未在地图显示', 'Location unverified — not shown on the map')
-    case 'verified': return t('位置已按 Google 地图人工核对', 'Location checked by hand against Google Maps')
-    case 'street': return t(`位置只精确到街道（${st || '成交记录里的街道'}），地图上的点不是楼栋的准确位置`, `Location is street-level only (${st || 'street from transactions'}); the pin is not the exact building`)
-    case 'area': return t('位置只精确到片区，地图上的点不是楼栋的准确位置', 'Location is area-level only; the pin is not the exact building')
-    default: return t('位置根据楼盘名称匹配', 'Location matched from the project name')
-  }
-}
-
-function gatewayNote(id, t) {
-  if (!(id in GATEWAY)) return null
-  const others = Object.entries(GATEWAY).filter(([k]) => k !== id).map(([, n]) => n).join(' / ')
-  return t(`和 ${others} 是同一个项目（KL Gateway，2 Jalan Kerinchi）：Brickz 把成交分成几条记录，租盘是同一批，未合并`, `Same development as ${others} (KL Gateway, 2 Jalan Kerinchi): Brickz splits the transactions into several records; the rent ads are the same set. Not merged`)
+  const others = p.id in GATEWAY ? Object.entries(GATEWAY).filter(([k]) => k !== p.id).map(([, n]) => n) : []
+  const chips = []
+  if (p.geo_precision === 'verified') chips.push({ id: 'geo', cls: 'bg-emerald-50 text-emerald-800 ring-emerald-200', label: t('✓ 位置已核', '✓ Pin checked'), more: t('Google 地图人工核对', 'Checked on Google Maps') })
+  if (p.geo_precision === 'street' || p.geo_precision === 'area') chips.push({ id: 'geo', testId: 'geo-approx', cls: 'bg-amber-50 text-amber-800 ring-amber-200', label: t('📍 大概位置', '📍 Approx. pin'), more: p.geo_precision === 'street' ? (st ? t(`只到街道：${st}`, `Street only: ${st}`) : t('只到街道', 'Street only')) : t('只到片区', 'Area only') })
+  if (p.geo_precision === 'none') chips.push({ id: 'geo', cls: 'bg-slate-100 text-slate-600 ring-slate-200', label: t('📍 未上地图', '📍 Not on map'), more: t('位置待核实', 'Location unverified') })
+  if (others.length) chips.push({ id: 'dup', testId: 'related-precinct', cls: 'bg-slate-100 text-slate-700 ring-slate-200', label: t(`同一楼盘 ×${others.length + 1}`, `Same building ×${others.length + 1}`), more: `= ${others.join(' / ')}` })
+  if (!chips.length) return null
+  const cur = chips.find(c => c.id === open)
+  return (
+    <div className="mt-2" data-testid="geo-chips">
+      <div className="flex flex-wrap gap-1.5">
+        {chips.map(c => (
+          <button key={c.id} type="button" onClick={() => setOpen(o => (o === c.id ? null : c.id))} aria-expanded={open === c.id} data-testid={c.testId}
+            className={`rounded-full px-2 py-0.5 text-[11.5px] font-medium ring-1 ${c.cls}`}>{c.label}</button>
+        ))}
+      </div>
+      {cur && <div className="mt-1 text-[11.5px] text-slate-500" data-testid="geo-chip-more">{cur.more}</div>}
+    </div>
+  )
 }
 
 function displaySources(sources) {
@@ -272,7 +281,6 @@ export default function RealDetailPage({ p }) {
   const unranked = inArea.filter(x => x.gross == null || isThinSample(x)).sort(byGross).map(x => ({ ...x, rank: null }))
   const allPeers = [...rankable, ...unranked]
   const peers = showAll ? allPeers : allPeers.filter(x => (x.rank != null && x.rank <= 8) || x.id === p.id)
-  const locTxt = locationText(p, t)
   const nRent = est ? est.n : p.ask_rent.count
   const nRentAdsLabel = t(`${nRent} 则`, nRent === 1 ? '1 ad' : `${nRent} ads`)
   const tenure = p.tenure === 'Freehold' ? t('永久地契', 'Freehold') : t('租赁地契', 'Leasehold')
@@ -296,7 +304,6 @@ export default function RealDetailPage({ p }) {
   const mortPrice = p.net_costs?.ref_value || p.price
   const mortRent = p.net_costs?.ref_rent || p.rent
   const mortMaint = p.net_costs ? (p.net_costs.maint_psf || 0) * (p.net_costs.ref_size || 0) : (p.maint || 0)
-  const gw = gatewayNote(p.id, t)
 
   const quote = useQuoteOverrides(p.id)
   const fallbackKey = defaultTypKey(buckets, p)
@@ -362,10 +369,7 @@ export default function RealDetailPage({ p }) {
           <div className="p-4 sm:p-5">
             <h1 className="text-[22px] sm:text-[26px] font-semibold text-slate-900 leading-tight tracking-tight" data-testid="prop-name">{p.name}</h1>
             <p className="mt-1 text-[13px] text-slate-500" data-testid="prop-meta">{metaLine}</p>
-            {gw && <p className="mt-1 text-[12px] text-slate-500" data-testid="related-precinct">{gw}</p>}
-            {(p.geo_precision === 'street' || p.geo_precision === 'area') && (
-              <p className="mt-1 text-[12px] text-amber-800" data-testid="geo-approx">📍 {locTxt}</p>
-            )}
+            <GeoChips p={p} />
 
             {p.excluded && (
               <div className="mt-3 rounded-xl bg-slate-100 text-slate-700 text-[12px] p-3" data-testid="excluded">
@@ -573,7 +577,7 @@ export default function RealDetailPage({ p }) {
           </summary>
           <div className="px-4 sm:px-5 pb-5 border-t border-slate-100 space-y-4">
             <p className="pt-3 text-[12px] text-slate-500" data-testid="scrape-date">
-              {t(`数据更新于 ${UPDATED} · ${locTxt}`, `Updated ${UPDATED} · ${locTxt}`)}
+              {t(`数据更新于 ${UPDATED}`, `Updated ${UPDATED}`)}
             </p>
             {yieldMismatch && (
               <p className="text-[12px] text-slate-600" data-testid="yield-method-note">
