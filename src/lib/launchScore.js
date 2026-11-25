@@ -4,15 +4,16 @@
  *
  *  Yield: indicative gross of the headline typ (size-band asking rent × size × 12 ÷ list price).
  *    3% → 0, 6%+ → 4, linear in between.
- *  Cash at the user's current loan percentage: rent ÷ instalment at that LTV.
+ *  Cash at the user's current loan percentage: rent AFTER holding costs (vacancy, assessment,
+ *    maintenance, quit rent + insurance) ÷ instalment at that LTV.
  *    coverage 0.85 → 0, 1.25+ → 3, linear. Ranking updates when the loan % changes.
  *  Vs-area: headline gross minus the area’s completed-project median gross
- *    (same area, excluding Angkasapuri low-cost flats). Equal → 1.0; ±2 pp → 0 or 2.
+ *    (same area, excluding Angkasapuri low-cost flats and projects with fewer than 3 rent ads). Equal → 1.0; ±2 pp → 0 or 2.
  *  Confidence: size-band sample count (area-median fallback is 0.2).
  *
  *  Uses the list price (or a user-entered net price if provided). Rent is an asking-rent estimate.
  */
-import { REAL } from '../data/real.js'
+import { REAL, isThinSample } from '../data/real.js'
 import { typRentPsf } from '../data/launches.js'
 import { typYields } from './launchYield.js'
 import { entryYield } from './launchEntry.js'
@@ -36,9 +37,9 @@ function isLowCostFlat(p) {
   return n.includes('flat') || n.includes('angkasa')
 }
 
-/** Completed high-rise stats in the same area, excluding low-cost flats. */
+/** Completed high-rise stats in the same area, excluding low-cost flats and thin rent samples (< 3 ads). */
 export function areaCompletedStats(area) {
-  const ps = REAL.filter(p => p.area === area && p.gross != null && !isLowCostFlat(p))
+  const ps = REAL.filter(p => p.area === area && p.gross != null && !isLowCostFlat(p) && !isThinSample(p))
   const grosses = ps.map(p => p.gross)
   const psfs = ps.map(p => p.psf).filter(v => v > 0)
   return {
@@ -84,7 +85,7 @@ export function launchScore(p, { rate = DEFAULT_RATE, years = DEFAULT_YEARS, ltv
   const yieldPts = clamp(((gross - 3) / 3) * SCORE_WEIGHTS.yield, 0, SCORE_WEIGHTS.yield)
 
   const v = cashVsRent({ price, rentMo: yields.rentMo, ltv: ltvN, rate, years, maintMo: (p.maint_psf || 0) * typ.size })
-  const coverage = v && v.inst > 0 ? v.rentMo / v.inst : null
+  const coverage = v && v.inst > 0 ? v.netRentMo / v.inst : null
   const cashPts = coverage == null ? 0 : clamp(((coverage - 0.85) / 0.4) * SCORE_WEIGHTS.cash, 0, SCORE_WEIGHTS.cash)
 
   const delta = area.medianGross != null ? gross - area.medianGross : 0
@@ -183,9 +184,9 @@ export function takeaway(s, t) {
   if (!s.v) return head
   const short = Math.abs(Math.round(s.v.cash)).toLocaleString('en-MY')
   if (s.v.covers) {
-    return t(`${head}，租金可覆盖贷${s.ltv}%月供`, `${head}: rent covers a ${s.ltv}% loan instalment`)
+    return t(`${head}，扣持有成本后租金可覆盖贷${s.ltv}%月供`, `${head}: rent after holding costs covers a ${s.ltv}% loan instalment`)
   }
-  return t(`${head}，贷${s.ltv}%每月倒贴约 RM${short}`, `${head}: a ${s.ltv}% loan is about RM${short}/mo short`)
+  return t(`${head}，贷${s.ltv}%扣持有成本后每月倒贴约 RM${short}`, `${head}: a ${s.ltv}% loan is about RM${short}/mo short after holding costs`)
 }
 
 /** One-line investment verdict for cards and the map panel. */
@@ -193,8 +194,8 @@ export function headlineVerdict(s, t) {
   if (!s?.v) return null
   const amt = Math.abs(Math.round(s.v.cash)).toLocaleString('en-MY')
   const who = t(`贷${s.ltv}%`, `${s.ltv}% loan`)
-  if (s.v.covers) return t(`${who} · 每月+RM${amt}`, `${who} · +RM${amt}/mo`)
-  return t(`${who} · 每月倒贴 RM${amt}`, `${who} · −RM${amt}/mo`)
+  if (s.v.covers) return t(`${who} · 每月净 +RM${amt}`, `${who} · net +RM${amt}/mo`)
+  return t(`${who} · 每月净倒贴 RM${amt}`, `${who} · net −RM${amt}/mo`)
 }
 
 export function downLabel(down, t) {

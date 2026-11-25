@@ -95,9 +95,9 @@ function RankCard({ p, s, segment, compare }) {
             {!zero && <ScoreMark score={s.score} />}
           </div>
           {(!zero && inst != null && (s.v?.rentMo ?? y?.rentMo)) ? (
-            <CompareTiles className="mt-1.5" compact inst={inst} rentMo={s.v?.rentMo ?? y?.rentMo} cash={s.v?.cash} />
+            <CompareTiles className="mt-1.5" compact inst={inst} rentMo={s.v?.rentMo ?? y?.rentMo} cash={s.v?.cash} v={s.v} />
           ) : (!zero && verdict) ? (
-            <LoanVerdict price={s.price} rentMo={y?.rentMo} className="mt-1.5" compact={many} />
+            <LoanVerdict price={s.price} rentMo={y?.rentMo} maintMo={(p.maint_psf || 0) * (s.typ?.size || 0)} className="mt-1.5" compact={many} />
           ) : (!zero && down) ? (
             <div className="mt-1 text-[11px] text-slate-500">{down}</div>
           ) : null}
@@ -110,6 +110,7 @@ function RankCard({ p, s, segment, compare }) {
             currentRent={holder.currentRent}
             rentMo={s.v?.rentMo ?? y?.rentMo}
             cash={s.v?.cash}
+            v={s.v}
           />
         </a>
       ) : null}

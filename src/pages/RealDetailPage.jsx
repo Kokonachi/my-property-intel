@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ScatterChart, Scatter, XAxis, YAxis, ZAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts'
-import { REAL, REAL_META } from '../data/real.js'
+import { REAL, REAL_META, isThinSample, rentSampleN, RANK_MIN_SAMPLES } from '../data/real.js'
 import { TYPE_LABEL, fmtRM, fmtRMk } from '../data/properties.js'
 import { Footer, Logo } from '../components/ui.jsx'
 import ProjectPhoto from '../components/ProjectPhoto.jsx'
@@ -255,8 +255,13 @@ export default function RealDetailPage({ p }) {
   const est = p.rent_estimate
   const samples = (p.ask_rent.samples || []).filter(s => s.size > 0 && s.rent > 0).map(s => ({ ...s, size: +s.size, rent: +s.rent, psf: +(s.rent / s.size).toFixed(2) }))
   const [showAll, setShowAll] = useState(false)
-  const allPeers = REAL.filter(x => x.area === p.area).sort((x, y) => (y.gross ?? -1) - (x.gross ?? -1)).map((x, i) => ({ ...x, rank: i + 1 }))
-  const peers = showAll ? allPeers : allPeers.filter(x => x.rank <= 8 || x.id === p.id)
+  // Rank only projects with enough rent ads; thin-sample and no-yield projects follow, unranked.
+  const byGross = (x, y) => (y.gross ?? -1) - (x.gross ?? -1)
+  const inArea = REAL.filter(x => x.area === p.area)
+  const rankable = inArea.filter(x => x.gross != null && !isThinSample(x)).sort(byGross).map((x, i) => ({ ...x, rank: i + 1 }))
+  const unranked = inArea.filter(x => x.gross == null || isThinSample(x)).sort(byGross).map(x => ({ ...x, rank: null }))
+  const allPeers = [...rankable, ...unranked]
+  const peers = showAll ? allPeers : allPeers.filter(x => (x.rank != null && x.rank <= 8) || x.id === p.id)
   const locTxt = p.on_map === false
     ? t('位置待核实，未在地图显示', 'Location unverified — not shown on the map')
     : t('位置根据楼盘名称匹配', 'Location matched from the project name')
@@ -379,6 +384,14 @@ export default function RealDetailPage({ p }) {
                       )}
                     </div>
                     <p className="mt-2 text-[13px] text-slate-600 leading-snug">{sentence}</p>
+                    {!est && p.net_costs?.ref_value && p.net_costs?.ref_size ? (
+                      <p className="mt-1 text-[12px] text-slate-500 leading-snug tabular-nums" data-testid="value-basis">
+                        {t(
+                          `回报按 ${Math.round(p.net_costs.ref_size).toLocaleString('en-MY')} sqft 单位计算：成交 RM${p.tx.psf_median?.toLocaleString('en-MY')} psf × 租盘面积 = 估值 ${fmtRM(p.net_costs.ref_value)}${p.tx.price_median && Math.abs(p.tx.price_median - p.net_costs.ref_value) / p.tx.price_median > 0.1 ? `（不是成交中位价 ${fmtRM(p.tx.price_median)}，两者户型大小不同）` : ''}。`,
+                          `Yield is for a ${Math.round(p.net_costs.ref_size).toLocaleString('en-MY')} sqft unit: transacted RM${p.tx.psf_median?.toLocaleString('en-MY')} psf × the rent ads' size = value ${fmtRM(p.net_costs.ref_value)}${p.tx.price_median && Math.abs(p.tx.price_median - p.net_costs.ref_value) / p.tx.price_median > 0.1 ? ` (not the median sale price of ${fmtRM(p.tx.price_median)}, which is for a different unit size)` : ''}.`,
+                        )}
+                      </p>
+                    ) : null}
                   </div>
                 )}
                 <DataConfidence p={p} nRent={nRent} />
@@ -407,7 +420,7 @@ export default function RealDetailPage({ p }) {
             </div>
             <LoanPctControl variant="full" className="mt-2.5 rounded-xl bg-slate-50 border border-slate-200/80 px-2 py-1" />
             <LoanRateYears />
-            <LtvCompare price={calcPrice} rentMo={calcRent} maintMo={calcMaint} hideTitle />
+            <LtvCompare price={calcPrice} rentMo={calcRent} maintMo={calcMaint} fixedRmYr={p.net_costs?.fixed_rm_yr} hideTitle />
           </section>
         )}
 
@@ -489,16 +502,20 @@ export default function RealDetailPage({ p }) {
 
         <section className="rounded-2xl bg-white p-4 sm:p-5 ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,.04)]">
           <h2 className="text-[15px] font-semibold text-slate-900">{t(`${p.area_zh}其他楼盘`, `Other projects in ${p.area_en}`)}</h2>
+          <p className="mt-0.5 text-[12px] text-slate-500">{t(`按毛回报排名，只排租盘至少 ${RANK_MIN_SAMPLES} 则的楼盘。`, `Ranked by gross yield; only projects with at least ${RANK_MIN_SAMPLES} rent ads are ranked.`)}</p>
           <ol className="sm:hidden mt-2 divide-y divide-slate-100" data-testid="peer-cards">
             {peers.map(x => {
               const me = x.id === p.id
               return (
                 <li key={x.id} className="py-2.5 flex items-baseline justify-between gap-3">
                   <div className="min-w-0">
-                    <span className="text-[11px] text-slate-400 tabular-nums mr-1.5">{x.rank}</span>
+                    <span className="text-[11px] text-slate-400 tabular-nums mr-1.5">{x.rank ?? '–'}</span>
                     {me ? <span className="font-medium text-slate-900">{x.name}</span> : <a className="text-slate-800 hover:text-slate-950" href={`#/property/${x.id}`}>{x.name}</a>}
                   </div>
-                  <span className="shrink-0 font-semibold tabular-nums text-slate-900">{pct(x.gross)}</span>
+                  <span className="shrink-0 text-right">
+                    <span className="font-semibold tabular-nums text-slate-900">{pct(x.gross)}</span>
+                    {x.gross != null && isThinSample(x) ? <span className="block text-[10px] text-amber-700">{t(`仅 ${rentSampleN(x)} 则租盘`, `${rentSampleN(x)} rent ad${rentSampleN(x) === 1 ? '' : 's'}`)}</span> : null}
+                  </span>
                 </li>
               )
             })}
@@ -519,11 +536,11 @@ export default function RealDetailPage({ p }) {
                   const me = x.id === p.id
                   return (
                     <tr key={x.id} className={`border-t border-slate-100 ${me ? 'bg-slate-50' : ''}`}>
-                      <td className="py-2 text-slate-400 tabular-nums">{x.rank}</td>
+                      <td className="py-2 text-slate-400 tabular-nums">{x.rank ?? '–'}</td>
                       <td>{me ? <span className="font-medium text-slate-900">{x.name}</span> : <a className="text-slate-800 hover:text-slate-950" href={`#/property/${x.id}`}>{x.name}</a>}</td>
                       <td className="text-right px-2 whitespace-nowrap tabular-nums">{x.tx.psf_median ? `RM${x.tx.psf_median.toLocaleString('en-MY')}` : '—'}</td>
                       <td className="text-right px-2 whitespace-nowrap tabular-nums">{x.rent ? fmtRM(x.rent) : '—'}</td>
-                      <td className="text-right font-semibold tabular-nums">{pct(x.gross)}</td>
+                      <td className="text-right font-semibold tabular-nums">{pct(x.gross)}{x.gross != null && isThinSample(x) ? <span className="block text-[10px] font-normal text-amber-700">{t(`仅 ${rentSampleN(x)} 则租盘`, `${rentSampleN(x)} rent ad${rentSampleN(x) === 1 ? '' : 's'}`)}</span> : null}</td>
                     </tr>
                   )
                 })}

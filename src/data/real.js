@@ -48,6 +48,12 @@ export const REAL = raw.projects.map((r, i) => {
 
 export const realById = id => REAL.find(p => p.id === id)
 
+/** Rent listings behind a project's yield (own ads, or area comps for landed estimates). */
+export const rentSampleN = p => (p.rent_estimate ? p.rent_estimate.n : p.ask_rent?.count) ?? 0
+/** Below this many rent ads a yield is shown but kept out of yield rankings. */
+export const RANK_MIN_SAMPLES = 3
+export const isThinSample = p => rentSampleN(p) < RANK_MIN_SAMPLES
+
 // Area averages from real projects only (used by the heat layer)
 export function realAreaStats(area, rentMode = 'long') {
   const val = (p, metric) => yieldOf(p, rentMode, metric)

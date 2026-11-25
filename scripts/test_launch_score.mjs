@@ -6,9 +6,10 @@ import { typYields } from '../src/lib/launchYield.js'
 import { cashVsRent } from '../src/lib/mortgage.js'
 
 const area = areaCompletedStats('bss')
-assert.equal(area.n, 13)
+// Projects with fewer than 3 rent ads are left out of the area median.
+assert.equal(area.n, 9)
 assert.ok(Math.abs(area.medianGross - 5.94) < 0.01, `median gross ${area.medianGross}`)
-assert.equal(area.medianPsf, 756)
+assert.equal(area.medianPsf, 757)
 
 assert.equal(confidencePts('band', 34), 1)
 assert.equal(confidencePts('band', 5), 0.7)

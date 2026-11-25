@@ -74,7 +74,7 @@ export default function LaunchPanel({ p, onClose }) {
       </div>
 
       <div className="flex-1 min-h-0 overflow-y-auto px-3 pt-2.5 pb-3 space-y-2.5">
-        <LoanVerdict price={s.price} rentMo={s.yields?.rentMo} />
+        <LoanVerdict price={s.price} rentMo={s.yields?.rentMo} maintMo={(p.maint_psf || 0) * (s.typ?.size || 0)} />
 
         <LoanPctControl variant="panel" className="rounded-xl bg-white/55 border border-slate-200/70 px-2 py-1" />
 
