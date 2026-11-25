@@ -50,7 +50,7 @@ async def main():
         await page.goto(BASE + '#/map', wait_until='networkidle'); await page.wait_for_timeout(2500)
         await page.screenshot(path=str(OUT / 'datagaps-1440-zh-map.png'))
         # zoom out one step to show the whole Klang Valley
-        for _ in range(2):
+        for _ in range(1):
             btn = page.locator('.leaflet-control-zoom-out, [aria-label*="缩小"], [aria-label*="Zoom out"]')
             if await btn.count():
                 await btn.first.click(); await page.wait_for_timeout(700)

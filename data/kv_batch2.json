@@ -1,20 +1,20 @@
 {
- "generated_at": "2026-11-25T22:17+08:00",
+ "generated_at": "2026-11-25T22:56+08:00",
  "batch": "kv-2",
  "summary": {
   "projects": 1014,
-  "mudah_searched": 54,
-  "with_rent_ads": 31,
-  "on_map": 554,
-  "yield_display": 20,
-  "shown_on_site": 559,
+  "mudah_searched": 110,
+  "with_rent_ads": 62,
+  "on_map": 555,
+  "yield_display": 40,
+  "shown_on_site": 569,
   "by_area": {
    "Damansara Perdana": 8,
    "Kepong (Selangor)": 9,
    "Ampang": 44,
    "Segambut": 12,
    "Keramat": 4,
-   "Cheras (Selangor)": 23,
+   "Cheras (Selangor)": 24,
    "Cheras": 44,
    "Kota Damansara": 10,
    "Wangsa Maju": 14,
@@ -25,7 +25,7 @@
    "Bandar Utama": 5,
    "Ulu Kelang": 17,
    "Klang": 11,
-   "Bukit Raja": 1,
+   "Bukit Raja": 2,
    "Bangi": 8,
    "Ara Damansara": 8,
    "Sunway": 11,
@@ -36,21 +36,22 @@
    "Sentul": 18,
    "Batu Caves (KL)": 5,
    "Tropicana": 4,
-   "Bandar Kinrara": 6,
+   "Kajang": 18,
+   "Bandar Kinrara": 7,
    "Rawang": 3,
-   "Setapak": 25,
-   "Kajang": 17,
+   "Setapak": 26,
+   "Jalan Kuching": 7,
+   "Puncak Alam": 4,
+   "Puchong": 32,
    "Sungai Besi": 2,
    "Petaling Jaya": 40,
-   "Shah Alam": 17,
+   "Kapar": 1,
+   "Shah Alam": 18,
    "Jalan Ipoh": 4,
    "Ampang (KL)": 15,
-   "Puchong": 31,
    "Setia Alam": 12,
    "Sungai Buloh": 4,
-   "Jalan Kuching": 6,
    "Jinjang": 4,
-   "Puncak Alam": 3,
    "Bandar Menjalara": 5,
    "Mutiara Damansara": 3,
    "Sri Petaling": 9,
@@ -6506,15 +6507,34 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 3,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 3
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 1700.0,
+    "size_median": 449.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 1600.0,
+      "size": 445.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1700.0,
+      "size": 449.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1700.0,
+      "size": 449.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     }
+    ]
    },
    "gross_yield": null,
    "net_yield": null,
@@ -6526,10 +6546,14 @@
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/selangor/seri-kembangan/one-south-soho/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=one+south+soho"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:17+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -6576,15 +6600,22 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 1,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 1
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 4000.0,
+    "size_median": 1010.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 4000.0,
+      "size": 1010.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     }
+    ]
    },
    "gross_yield": null,
    "net_yield": null,
@@ -6596,10 +6627,14 @@
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/selangor/tropicana/lumi-tropicana/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=lumi+tropicana"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:18+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -6618,7 +6653,7 @@
    "geo_precision": "building",
    "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Perdana Exclusive Condominium",
    "excluded": null,
-   "rent_method": null,
+   "rent_method": "listings",
    "rent_estimate": null,
    "tenure": "Leasehold",
    "type": "Condo",
@@ -6646,30 +6681,79 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 5,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 5
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 1799.0,
+    "size_median": 851.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 1900.0,
+      "size": 851.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1400.0,
+      "size": 414.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 950.0,
+      "size": 415.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1999.0,
+      "size": 1000.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1799.0,
+      "size": 900.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     }
+    ]
    },
-   "gross_yield": null,
-   "net_yield": null,
-   "net_costs": null,
+   "gross_yield": 7.63,
+   "net_yield": 5.41,
+   "net_costs": {
+    "vacancy_months": 1,
+    "assessment_rate": 0.04,
+    "maint_psf": 0.35,
+    "fixed_rm_yr": 250,
+    "ref_size": 851.0,
+    "ref_value": 298701,
+    "ref_rent": 1799.0,
+    "pts": {
+     "vacancy": 0.636,
+     "assessment": 0.305,
+     "maintenance": 1.197,
+     "quit_rent_insurance": 0.084
+    }
+   },
    "gross_yield_vs_asking": null,
-   "yield_display": false,
-   "confidence": "low",
+   "yield_display": true,
+   "confidence": "medium",
    "sources": [
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/selangor/damansara-perdana/perdana-exclusive/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=perdana+exclusive"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:18+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -6688,7 +6772,7 @@
    "geo_precision": "building",
    "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Mentari Court",
    "excluded": null,
-   "rent_method": null,
+   "rent_method": "listings",
    "rent_estimate": null,
    "tenure": "Leasehold",
    "type": "Condo",
@@ -6716,30 +6800,199 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 25,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 25
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 1250.0,
+    "size_median": 785.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 1450.0,
+      "size": 775.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1100.0,
+      "size": 800.0,
+      "rooms": 4.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1800.0,
+      "size": 800.0,
+      "rooms": 5.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1200.0,
+      "size": 700.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1400.0,
+      "size": 775.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1000.0,
+      "size": 779.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1200.0,
+      "size": 775.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1400.0,
+      "size": 800.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1200.0,
+      "size": 800.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1200.0,
+      "size": 770.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1600.0,
+      "size": 900.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1200.0,
+      "size": 750.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1200.0,
+      "size": 770.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1200.0,
+      "size": 800.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1250.0,
+      "size": 850.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1300.0,
+      "size": 750.0,
+      "rooms": 4.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1300.0,
+      "size": 785.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1300.0,
+      "size": 750.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1200.0,
+      "size": 775.0,
+      "rooms": 4.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1400.0,
+      "size": 775.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1600.0,
+      "size": 900.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1200.0,
+      "size": 1000.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1600.0,
+      "size": 900.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1600.0,
+      "size": 900.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1250.0,
+      "size": 850.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     }
+    ]
    },
-   "gross_yield": null,
-   "net_yield": null,
-   "net_costs": null,
+   "gross_yield": 4.4,
+   "net_yield": 3.12,
+   "net_costs": {
+    "vacancy_months": 1,
+    "assessment_rate": 0.04,
+    "maint_psf": 0.25,
+    "fixed_rm_yr": 250,
+    "ref_size": 785.0,
+    "ref_value": 354820,
+    "ref_rent": 1250.0,
+    "pts": {
+     "vacancy": 0.367,
+     "assessment": 0.176,
+     "maintenance": 0.664,
+     "quit_rent_insurance": 0.07
+    }
+   },
    "gross_yield_vs_asking": null,
-   "yield_display": false,
-   "confidence": "low",
+   "yield_display": true,
+   "confidence": "high",
    "sources": [
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/selangor/sunway/mentari-court/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=mentari+court"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:18+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -6758,7 +7011,7 @@
    "geo_precision": null,
    "geo_detail": null,
    "excluded": null,
-   "rent_method": null,
+   "rent_method": "listings",
    "rent_estimate": null,
    "tenure": "Freehold",
    "type": "Serviced Residence",
@@ -6786,30 +7039,79 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 5,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 5
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 2000.0,
+    "size_median": 1155.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 2000.0,
+      "size": 1155.0,
+      "rooms": 4.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1700.0,
+      "size": 850.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2000.0,
+      "size": 1155.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2000.0,
+      "size": 1155.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2000.0,
+      "size": 1155.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     }
+    ]
    },
-   "gross_yield": null,
-   "net_yield": null,
-   "net_costs": null,
+   "gross_yield": 3.52,
+   "net_yield": 2.34,
+   "net_costs": {
+    "vacancy_months": 1,
+    "assessment_rate": 0.04,
+    "maint_psf": 0.35,
+    "fixed_rm_yr": 250,
+    "ref_size": 1155.0,
+    "ref_value": 681450,
+    "ref_rent": 2000.0,
+    "pts": {
+     "vacancy": 0.293,
+     "assessment": 0.141,
+     "maintenance": 0.712,
+     "quit_rent_insurance": 0.037
+    }
+   },
    "gross_yield_vs_asking": null,
-   "yield_display": false,
-   "confidence": "low",
+   "yield_display": true,
+   "confidence": "medium",
    "sources": [
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/selangor/kajang/akasa-cheras-south/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=akasa+cheras+south"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:18+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -6879,7 +7181,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -6898,7 +7200,7 @@
    "geo_precision": "building",
    "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Residensi Aster Cheras",
    "excluded": null,
-   "rent_method": null,
+   "rent_method": "listings",
    "rent_estimate": null,
    "tenure": "Leasehold",
    "type": "Serviced Residence",
@@ -6926,30 +7228,103 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 9,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 9
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 2500.0,
+    "size_median": 650.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 2500.0,
+      "size": 650.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2100.0,
+      "size": 650.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2500.0,
+      "size": 650.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2500.0,
+      "size": 650.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2500.0,
+      "size": 650.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2500.0,
+      "size": 650.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 4000.0,
+      "size": 957.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2400.0,
+      "size": 650.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1800.0,
+      "size": 650.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     }
+    ]
    },
-   "gross_yield": null,
-   "net_yield": null,
-   "net_costs": null,
+   "gross_yield": 6.44,
+   "net_yield": 5.01,
+   "net_costs": {
+    "vacancy_months": 1,
+    "assessment_rate": 0.04,
+    "maint_psf": 0.35,
+    "fixed_rm_yr": 250,
+    "ref_size": 650.0,
+    "ref_value": 466050,
+    "ref_rent": 2500.0,
+    "pts": {
+     "vacancy": 0.537,
+     "assessment": 0.258,
+     "maintenance": 0.586,
+     "quit_rent_insurance": 0.054
+    }
+   },
    "gross_yield_vs_asking": null,
-   "yield_display": false,
-   "confidence": "low",
+   "yield_display": true,
+   "confidence": "high",
    "sources": [
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/cheras/residensi-aster-cheras/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=residensi+aster+cheras"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:19+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -7019,7 +7394,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -7038,7 +7413,7 @@
    "geo_precision": "building",
    "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Pangsapuri Vista Lavender",
    "excluded": null,
-   "rent_method": null,
+   "rent_method": "listings",
    "rent_estimate": null,
    "tenure": "Leasehold",
    "type": "Condo",
@@ -7066,30 +7441,73 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 4,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 4
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 1275.0,
+    "size_median": 1017.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 1350.0,
+      "size": 1017.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1200.0,
+      "size": 1017.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1200.0,
+      "size": 1017.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1400.0,
+      "size": 852.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     }
+    ]
    },
-   "gross_yield": null,
-   "net_yield": null,
-   "net_costs": null,
+   "gross_yield": 5.76,
+   "net_yield": 3.81,
+   "net_costs": {
+    "vacancy_months": 1,
+    "assessment_rate": 0.04,
+    "maint_psf": 0.25,
+    "fixed_rm_yr": 250,
+    "ref_size": 1017.0,
+    "ref_value": 265437,
+    "ref_rent": 1275.0,
+    "pts": {
+     "vacancy": 0.48,
+     "assessment": 0.23,
+     "maintenance": 1.149,
+     "quit_rent_insurance": 0.094
+    }
+   },
    "gross_yield_vs_asking": null,
-   "yield_display": false,
-   "confidence": "low",
+   "yield_display": true,
+   "confidence": "medium",
    "sources": [
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/selangor/bandar-kinrara/vista-lavender/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=vista+lavender"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:19+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -7159,7 +7577,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -7178,7 +7596,7 @@
    "geo_precision": "building",
    "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Taman Melati",
    "excluded": null,
-   "rent_method": null,
+   "rent_method": "listings",
    "rent_estimate": null,
    "tenure": "Freehold",
    "type": "Condo",
@@ -7206,30 +7624,133 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 14,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 14
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 2300.0,
+    "size_median": 1236.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 2600.0,
+      "size": 1000.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 3300.0,
+      "size": 1300.0,
+      "rooms": 4.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2900.0,
+      "size": 1300.0,
+      "rooms": 4.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2000.0,
+      "size": 1384.0,
+      "rooms": 4.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2600.0,
+      "size": 1000.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1100.0,
+      "size": 700.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1850.0,
+      "size": 1272.0,
+      "rooms": 4.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2300.0,
+      "size": 1092.0,
+      "rooms": 5.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2600.0,
+      "size": 1450.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1700.0,
+      "size": 1200.0,
+      "rooms": 4.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1600.0,
+      "size": 1300.0,
+      "rooms": 4.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 800.0,
+      "size": 631.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2300.0,
+      "size": 1464.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2500.0,
+      "size": 1000.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     }
+    ]
    },
-   "gross_yield": null,
-   "net_yield": null,
-   "net_costs": null,
+   "gross_yield": 5.73,
+   "net_yield": 4.56,
+   "net_costs": {
+    "vacancy_months": 1,
+    "assessment_rate": 0.04,
+    "maint_psf": 0.12,
+    "fixed_rm_yr": 250,
+    "ref_size": 1236.0,
+    "ref_value": 435072,
+    "ref_rent": 2300.0,
+    "pts": {
+     "vacancy": 0.478,
+     "assessment": 0.229,
+     "maintenance": 0.409,
+     "quit_rent_insurance": 0.057
+    }
+   },
    "gross_yield_vs_asking": null,
-   "yield_display": false,
-   "confidence": "low",
+   "yield_display": true,
+   "confidence": "high",
    "sources": [
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/setapak/taman-melati/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=taman+melati"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:20+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -7248,7 +7769,7 @@
    "geo_precision": null,
    "geo_detail": null,
    "excluded": null,
-   "rent_method": null,
+   "rent_method": "listings",
    "rent_estimate": null,
    "tenure": "Freehold",
    "type": "Condo",
@@ -7276,30 +7797,145 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 16,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 16
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 1925.0,
+    "size_median": 1100.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 1700.0,
+      "size": 1100.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2000.0,
+      "size": 1050.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2100.0,
+      "size": 1100.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2100.0,
+      "size": 1100.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2000.0,
+      "size": 1100.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2000.0,
+      "size": 1100.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2100.0,
+      "size": 1050.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1850.0,
+      "size": 1050.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2100.0,
+      "size": 1100.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2100.0,
+      "size": 1100.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1800.0,
+      "size": 1100.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1500.0,
+      "size": 1050.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1700.0,
+      "size": 1100.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1700.0,
+      "size": 1100.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1800.0,
+      "size": 1100.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1700.0,
+      "size": 1100.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     }
+    ]
    },
-   "gross_yield": null,
-   "net_yield": null,
-   "net_costs": null,
+   "gross_yield": 4.98,
+   "net_yield": 3.34,
+   "net_costs": {
+    "vacancy_months": 1,
+    "assessment_rate": 0.04,
+    "maint_psf": 0.35,
+    "fixed_rm_yr": 250,
+    "ref_size": 1100.0,
+    "ref_value": 474100,
+    "ref_rent": 1925.0,
+    "pts": {
+     "vacancy": 0.415,
+     "assessment": 0.199,
+     "maintenance": 0.974,
+     "quit_rent_insurance": 0.053
+    }
+   },
    "gross_yield_vs_asking": null,
-   "yield_display": false,
-   "confidence": "low",
+   "yield_display": true,
+   "confidence": "high",
    "sources": [
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/jalan-kuching/sri-putramas/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=sri+putramas"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:20+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -7369,7 +8005,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -7388,7 +8024,7 @@
    "geo_precision": null,
    "geo_detail": null,
    "excluded": null,
-   "rent_method": null,
+   "rent_method": "listings",
    "rent_estimate": null,
    "tenure": "Freehold",
    "type": "Serviced Residence",
@@ -7416,30 +8052,157 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 18,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 18
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 1700.0,
+    "size_median": 575.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 2000.0,
+      "size": 656.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2000.0,
+      "size": 650.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1500.0,
+      "size": 450.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1700.0,
+      "size": 656.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1300.0,
+      "size": 500.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2000.0,
+      "size": 650.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2300.0,
+      "size": 753.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1850.0,
+      "size": 780.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1500.0,
+      "size": 450.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2500.0,
+      "size": 756.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1500.0,
+      "size": 450.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1700.0,
+      "size": 450.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2400.0,
+      "size": 753.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1600.0,
+      "size": 450.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1300.0,
+      "size": 451.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1500.0,
+      "size": 450.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1700.0,
+      "size": 653.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1500.0,
+      "size": 450.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     }
+    ]
    },
-   "gross_yield": null,
-   "net_yield": null,
-   "net_costs": null,
+   "gross_yield": 6.31,
+   "net_yield": 4.75,
+   "net_costs": {
+    "vacancy_months": 1,
+    "assessment_rate": 0.04,
+    "maint_psf": 0.35,
+    "fixed_rm_yr": 250,
+    "ref_size": 575.0,
+    "ref_value": 342700,
+    "ref_rent": 1700.0,
+    "pts": {
+     "vacancy": 0.526,
+     "assessment": 0.252,
+     "maintenance": 0.705,
+     "quit_rent_insurance": 0.073
+    }
+   },
    "gross_yield_vs_asking": null,
-   "yield_display": false,
-   "confidence": "low",
+   "yield_display": true,
+   "confidence": "high",
    "sources": [
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/selangor/bukit-raja/tulip-residence--denai-alam/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=tulip+residence+denai+alam"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:21+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -7509,7 +8272,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -7579,7 +8342,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -7649,7 +8412,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -7719,7 +8482,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -7766,15 +8529,28 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 2,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 2
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 2800.0,
+    "size_median": 762.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 2900.0,
+      "size": 762.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2700.0,
+      "size": 762.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     }
+    ]
    },
    "gross_yield": null,
    "net_yield": null,
@@ -7786,10 +8562,14 @@
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/cheras/ekocheras-service-residence/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=ekocheras+service+residence"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:26+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -7836,15 +8616,34 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 3,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 3
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 850.0,
+    "size_median": 800.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 1000.0,
+      "size": 950.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 850.0,
+      "size": 800.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 800.0,
+      "size": 603.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     }
+    ]
    },
    "gross_yield": null,
    "net_yield": null,
@@ -7856,10 +8655,14 @@
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/selangor/shah-alam/taman-alam-megah/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=taman+alam+megah"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:33+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -7929,7 +8732,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -7999,7 +8802,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -8046,15 +8849,34 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 3,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 3
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 1300.0,
+    "size_median": 850.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 800.0,
+      "size": 850.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1400.0,
+      "size": 890.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1300.0,
+      "size": 800.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     }
+    ]
    },
    "gross_yield": null,
    "net_yield": null,
@@ -8066,10 +8888,14 @@
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/selangor/ampang/taman-lembah-maju/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=taman+lembah+maju"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:34+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -8088,7 +8914,7 @@
    "geo_precision": "building",
    "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Ridzuan Condo",
    "excluded": null,
-   "rent_method": null,
+   "rent_method": "listings",
    "rent_estimate": null,
    "tenure": "Leasehold",
    "type": "Condo",
@@ -8116,30 +8942,235 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 31,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 31
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 1750.0,
+    "size_median": 1192.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 1600.0,
+      "size": 930.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1300.0,
+      "size": 1042.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1750.0,
+      "size": 1468.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2250.0,
+      "size": 1468.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2200.0,
+      "size": 1400.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1500.0,
+      "size": 1192.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1600.0,
+      "size": 1184.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1100.0,
+      "size": 560.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1800.0,
+      "size": 1500.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1500.0,
+      "size": 1190.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1350.0,
+      "size": 1100.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1799.0,
+      "size": 1198.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1400.0,
+      "size": 931.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1300.0,
+      "size": 550.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1300.0,
+      "size": 500.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1500.0,
+      "size": 1190.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2000.0,
+      "size": 1198.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2000.0,
+      "size": 1200.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1899.0,
+      "size": 1198.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2000.0,
+      "size": 1192.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1750.0,
+      "size": 1468.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1400.0,
+      "size": 1184.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2000.0,
+      "size": 1198.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2000.0,
+      "size": 1198.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1999.0,
+      "size": 1198.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2000.0,
+      "size": 1468.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1500.0,
+      "size": 1192.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1800.0,
+      "size": 1500.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1800.0,
+      "size": 1468.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1400.0,
+      "size": 550.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1200.0,
+      "size": 500.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     }
+    ]
    },
-   "gross_yield": null,
-   "net_yield": null,
-   "net_costs": null,
+   "gross_yield": 4.43,
+   "net_yield": 2.8,
+   "net_costs": {
+    "vacancy_months": 1,
+    "assessment_rate": 0.04,
+    "maint_psf": 0.35,
+    "fixed_rm_yr": 250,
+    "ref_size": 1192.0,
+    "ref_value": 485144,
+    "ref_rent": 1750.0,
+    "pts": {
+     "vacancy": 0.369,
+     "assessment": 0.177,
+     "maintenance": 1.032,
+     "quit_rent_insurance": 0.052
+    }
+   },
    "gross_yield_vs_asking": null,
-   "yield_display": false,
-   "confidence": "low",
+   "yield_display": true,
+   "confidence": "high",
    "sources": [
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/selangor/sunway/ridzuan-condominium/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=ridzuan+condominium"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:34+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -8209,7 +9240,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -8279,7 +9310,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -8298,7 +9329,7 @@
    "geo_precision": null,
    "geo_detail": null,
    "excluded": null,
-   "rent_method": null,
+   "rent_method": "listings",
    "rent_estimate": null,
    "tenure": "Leasehold",
    "type": "Condo",
@@ -8326,30 +9357,229 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 30,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 30
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 1200.0,
+    "size_median": 842.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 1200.0,
+      "size": 901.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1200.0,
+      "size": 842.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1000.0,
+      "size": 750.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1400.0,
+      "size": 850.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1150.0,
+      "size": 842.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1400.0,
+      "size": 842.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1600.0,
+      "size": 917.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1200.0,
+      "size": 901.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1200.0,
+      "size": 1200.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1200.0,
+      "size": 842.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 800.0,
+      "size": 760.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1100.0,
+      "size": 901.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 830.0,
+      "size": 720.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1200.0,
+      "size": 842.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1250.0,
+      "size": 947.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1200.0,
+      "size": 901.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1400.0,
+      "size": 889.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 900.0,
+      "size": 720.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1500.0,
+      "size": 850.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 800.0,
+      "size": 750.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1300.0,
+      "size": 842.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1400.0,
+      "size": 850.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1300.0,
+      "size": 842.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 850.0,
+      "size": 680.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1300.0,
+      "size": 842.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1200.0,
+      "size": 900.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1000.0,
+      "size": 750.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 800.0,
+      "size": 760.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 800.0,
+      "size": 750.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 850.0,
+      "size": 720.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     }
+    ]
    },
-   "gross_yield": null,
-   "net_yield": null,
-   "net_costs": null,
+   "gross_yield": 6.27,
+   "net_yield": 4.2,
+   "net_costs": {
+    "vacancy_months": 1,
+    "assessment_rate": 0.04,
+    "maint_psf": 0.25,
+    "fixed_rm_yr": 250,
+    "ref_size": 842.0,
+    "ref_value": 214710,
+    "ref_rent": 1200.0,
+    "pts": {
+     "vacancy": 0.522,
+     "assessment": 0.251,
+     "maintenance": 1.176,
+     "quit_rent_insurance": 0.116
+    }
+   },
    "gross_yield_vs_asking": null,
-   "yield_display": false,
-   "confidence": "low",
+   "yield_display": true,
+   "confidence": "high",
    "sources": [
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/selangor/puncak-alam/puncak-alam--apartment-/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=puncak+alam+apartment"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:35+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -8368,7 +9598,7 @@
    "geo_precision": "building",
    "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · The Zest",
    "excluded": null,
-   "rent_method": null,
+   "rent_method": "listings",
    "rent_estimate": null,
    "tenure": "Freehold",
    "type": "Condo",
@@ -8396,30 +9626,73 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 4,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 4
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 1990.0,
+    "size_median": 1119.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 2300.0,
+      "size": 1119.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2100.0,
+      "size": 1119.0,
+      "rooms": 4.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1800.0,
+      "size": 1200.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1880.0,
+      "size": 1110.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     }
+    ]
    },
-   "gross_yield": null,
-   "net_yield": null,
-   "net_costs": null,
+   "gross_yield": 5.33,
+   "net_yield": 3.57,
+   "net_costs": {
+    "vacancy_months": 1,
+    "assessment_rate": 0.04,
+    "maint_psf": 0.35,
+    "fixed_rm_yr": 250,
+    "ref_size": 1119.0,
+    "ref_value": 449838,
+    "ref_rent": 1990.0,
+    "pts": {
+     "vacancy": 0.444,
+     "assessment": 0.213,
+     "maintenance": 1.045,
+     "quit_rent_insurance": 0.056
+    }
+   },
    "gross_yield_vs_asking": null,
-   "yield_display": false,
-   "confidence": "low",
+   "yield_display": true,
+   "confidence": "medium",
    "sources": [
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/selangor/bandar-kinrara/the-zest---kinrara-9/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=the+zest+kinrara+9"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:35+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -8489,7 +9762,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -8559,7 +9832,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -8629,7 +9902,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -8699,7 +9972,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -8718,7 +9991,7 @@
    "geo_precision": null,
    "geo_detail": null,
    "excluded": null,
-   "rent_method": null,
+   "rent_method": "listings",
    "rent_estimate": null,
    "tenure": "Leasehold",
    "type": "Condo",
@@ -8746,30 +10019,85 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 6,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 6
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 1749.5,
+    "size_median": 1000.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 1700.0,
+      "size": 1000.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1799.0,
+      "size": 1000.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1800.0,
+      "size": 1000.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1800.0,
+      "size": 1000.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1350.0,
+      "size": 1000.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1300.0,
+      "size": 850.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     }
+    ]
    },
-   "gross_yield": null,
-   "net_yield": null,
-   "net_costs": null,
+   "gross_yield": 5.57,
+   "net_yield": 3.7,
+   "net_costs": {
+    "vacancy_months": 1,
+    "assessment_rate": 0.04,
+    "maint_psf": 0.35,
+    "fixed_rm_yr": 250,
+    "ref_size": 1000.0,
+    "ref_value": 377000,
+    "ref_rent": 1749.5,
+    "pts": {
+     "vacancy": 0.464,
+     "assessment": 0.223,
+     "maintenance": 1.114,
+     "quit_rent_insurance": 0.066
+    }
+   },
    "gross_yield_vs_asking": null,
-   "yield_display": false,
-   "confidence": "low",
+   "yield_display": true,
+   "confidence": "medium",
    "sources": [
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/selangor/puchong/vista-millennium/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=vista+millennium"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:36+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -8788,7 +10116,7 @@
    "geo_precision": null,
    "geo_detail": null,
    "excluded": null,
-   "rent_method": null,
+   "rent_method": "listings",
    "rent_estimate": null,
    "tenure": "Freehold",
    "type": "Condo",
@@ -8816,30 +10144,121 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 12,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 12
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 885.0,
+    "size_median": 680.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 950.0,
+      "size": 680.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 850.0,
+      "size": 680.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1100.0,
+      "size": 680.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1100.0,
+      "size": 680.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 900.0,
+      "size": 678.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 900.0,
+      "size": 678.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 850.0,
+      "size": 680.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 900.0,
+      "size": 680.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 800.0,
+      "size": 680.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 800.0,
+      "size": 650.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 850.0,
+      "size": 680.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 870.0,
+      "size": 680.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     }
+    ]
    },
-   "gross_yield": null,
-   "net_yield": null,
-   "net_costs": null,
+   "gross_yield": 4.7,
+   "net_yield": 3.11,
+   "net_costs": {
+    "vacancy_months": 1,
+    "assessment_rate": 0.04,
+    "maint_psf": 0.25,
+    "fixed_rm_yr": 250,
+    "ref_size": 680.0,
+    "ref_value": 225760,
+    "ref_rent": 885.0,
+    "pts": {
+     "vacancy": 0.392,
+     "assessment": 0.188,
+     "maintenance": 0.904,
+     "quit_rent_insurance": 0.111
+    }
+   },
    "gross_yield_vs_asking": null,
-   "yield_display": false,
-   "confidence": "low",
+   "yield_display": true,
+   "confidence": "high",
    "sources": [
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/selangor/bandar-kinrara/enggang/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=enggang"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:37+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -8886,15 +10305,28 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 2,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 2
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 1850.0,
+    "size_median": 905.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 1700.0,
+      "size": 960.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2000.0,
+      "size": 850.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     }
+    ]
    },
    "gross_yield": null,
    "net_yield": null,
@@ -8906,10 +10338,14 @@
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/cheras/miharja-condominium/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=miharja+condominium"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:37+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -8956,15 +10392,22 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 1,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 1
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 1300.0,
+    "size_median": 1100.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 1300.0,
+      "size": 1100.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     }
+    ]
    },
    "gross_yield": null,
    "net_yield": null,
@@ -8976,10 +10419,14 @@
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/bandar-tasik-selatan/tasik-heights/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=tasik+heights"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:37+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -9026,15 +10473,22 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 1,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 1
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 1500.0,
+    "size_median": 856.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 1500.0,
+      "size": 856.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     }
+    ]
    },
    "gross_yield": null,
    "net_yield": null,
@@ -9046,10 +10500,14 @@
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/sentul/maxim-citilights/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=maxim+citilights"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:37+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -9096,15 +10554,22 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 1,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 1
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 1050.0,
+    "size_median": 890.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 1050.0,
+      "size": 890.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     }
+    ]
    },
    "gross_yield": null,
    "net_yield": null,
@@ -9116,10 +10581,14 @@
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/setapak/idaman-sutera/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=idaman+sutera"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:38+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -9166,15 +10635,34 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 3,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 3
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 900.0,
+    "size_median": 700.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 800.0,
+      "size": 700.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1100.0,
+      "size": 700.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 900.0,
+      "size": 678.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     }
+    ]
    },
    "gross_yield": null,
    "net_yield": null,
@@ -9186,10 +10674,14 @@
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/sungai-besi/pangsapuri-permai/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=pangsapuri+permai"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:38+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -9259,7 +10751,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -9278,7 +10770,7 @@
    "geo_precision": "building",
    "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Uptown Residences",
    "excluded": null,
-   "rent_method": null,
+   "rent_method": "listings",
    "rent_estimate": null,
    "tenure": "Freehold",
    "type": "Serviced Residence",
@@ -9306,30 +10798,169 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 20,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 20
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 2000.0,
+    "size_median": 929.5,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 1500.0,
+      "size": 551.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 3500.0,
+      "size": 1572.0,
+      "rooms": 5.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2900.0,
+      "size": 1093.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1500.0,
+      "size": 859.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1800.0,
+      "size": 859.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1800.0,
+      "size": 859.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2500.0,
+      "size": 1093.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1800.0,
+      "size": 859.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2000.0,
+      "size": 859.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1900.0,
+      "size": 1093.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2000.0,
+      "size": 859.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1900.0,
+      "size": 1093.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2000.0,
+      "size": 859.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2500.0,
+      "size": 1093.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2500.0,
+      "size": 1093.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 3500.0,
+      "size": 1570.0,
+      "rooms": 4.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1750.0,
+      "size": 859.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2300.0,
+      "size": 1000.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 3300.0,
+      "size": 1572.0,
+      "rooms": 4.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2000.0,
+      "size": 859.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     }
+    ]
    },
-   "gross_yield": null,
-   "net_yield": null,
-   "net_costs": null,
+   "gross_yield": 2.49,
+   "net_yield": 1.77,
+   "net_costs": {
+    "vacancy_months": 1,
+    "assessment_rate": 0.04,
+    "maint_psf": 0.35,
+    "fixed_rm_yr": 250,
+    "ref_size": 929.5,
+    "ref_value": 1013155,
+    "ref_rent": 2000.0,
+    "pts": {
+     "vacancy": 0.208,
+     "assessment": 0.1,
+     "maintenance": 0.385,
+     "quit_rent_insurance": 0.025
+    }
+   },
    "gross_yield_vs_asking": null,
-   "yield_display": false,
-   "confidence": "low",
+   "yield_display": true,
+   "confidence": "high",
    "sources": [
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/selangor/petaling-jaya/uptown-residence/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=uptown+residence"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:38+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -9348,7 +10979,7 @@
    "geo_precision": "building",
    "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Riana Green Condominium",
    "excluded": null,
-   "rent_method": null,
+   "rent_method": "listings",
    "rent_estimate": null,
    "tenure": "Leasehold",
    "type": "Condo",
@@ -9376,30 +11007,97 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 8,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 8
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 2150.0,
+    "size_median": 868.5,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 1800.0,
+      "size": 520.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1800.0,
+      "size": 520.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2500.0,
+      "size": 1217.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 2500.0,
+      "size": 1300.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1800.0,
+      "size": 520.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1800.0,
+      "size": 520.0,
+      "rooms": 1.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 3000.0,
+      "size": 1600.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 4500.0,
+      "size": 2500.0,
+      "rooms": 4.0,
+      "src": "Mudah"
+     }
+    ]
    },
-   "gross_yield": null,
-   "net_yield": null,
-   "net_costs": null,
+   "gross_yield": 7.86,
+   "net_yield": 5.82,
+   "net_costs": {
+    "vacancy_months": 1,
+    "assessment_rate": 0.04,
+    "maint_psf": 0.35,
+    "fixed_rm_yr": 250,
+    "ref_size": 868.5,
+    "ref_value": 365638,
+    "ref_rent": 2150.0,
+    "pts": {
+     "vacancy": 0.655,
+     "assessment": 0.314,
+     "maintenance": 0.998,
+     "quit_rent_insurance": 0.068
+    }
+   },
    "gross_yield_vs_asking": null,
-   "yield_display": false,
-   "confidence": "low",
+   "yield_display": true,
+   "confidence": "high",
    "sources": [
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/selangor/tropicana/riana-green/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=riana+green"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:39+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -9469,7 +11167,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -9539,7 +11237,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -9558,7 +11256,7 @@
    "geo_precision": null,
    "geo_detail": null,
    "excluded": null,
-   "rent_method": null,
+   "rent_method": "listings",
    "rent_estimate": null,
    "tenure": "Freehold",
    "type": "Condo",
@@ -9586,30 +11284,73 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 4,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 4
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 1100.0,
+    "size_median": 850.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 1100.0,
+      "size": 850.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1100.0,
+      "size": 850.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1100.0,
+      "size": 850.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1100.0,
+      "size": 850.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     }
+    ]
    },
-   "gross_yield": null,
-   "net_yield": null,
-   "net_costs": null,
+   "gross_yield": 3.82,
+   "net_yield": 2.54,
+   "net_costs": {
+    "vacancy_months": 1,
+    "assessment_rate": 0.04,
+    "maint_psf": 0.25,
+    "fixed_rm_yr": 250,
+    "ref_size": 850.0,
+    "ref_value": 345100,
+    "ref_rent": 1100.0,
+    "pts": {
+     "vacancy": 0.318,
+     "assessment": 0.153,
+     "maintenance": 0.739,
+     "quit_rent_insurance": 0.072
+    }
+   },
    "gross_yield_vs_asking": null,
-   "yield_display": false,
-   "confidence": "low",
+   "yield_display": true,
+   "confidence": "medium",
    "sources": [
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/selangor/kapar/villamas/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=villamas"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:39+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -9628,7 +11369,7 @@
    "geo_precision": "building",
    "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Taman Sri Kemuning",
    "excluded": null,
-   "rent_method": null,
+   "rent_method": "listings",
    "rent_estimate": null,
    "tenure": "Freehold",
    "type": "Condo",
@@ -9656,30 +11397,121 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 12,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 12
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 975.0,
+    "size_median": 750.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 1000.0,
+      "size": 750.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 900.0,
+      "size": 750.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 800.0,
+      "size": 650.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1200.0,
+      "size": 750.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1100.0,
+      "size": 750.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 900.0,
+      "size": 650.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1300.0,
+      "size": 750.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1100.0,
+      "size": 736.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1400.0,
+      "size": 800.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 950.0,
+      "size": 750.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 900.0,
+      "size": 755.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 950.0,
+      "size": 755.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     }
+    ]
    },
-   "gross_yield": null,
-   "net_yield": null,
-   "net_costs": null,
+   "gross_yield": 4.57,
+   "net_yield": 3.07,
+   "net_costs": {
+    "vacancy_months": 1,
+    "assessment_rate": 0.04,
+    "maint_psf": 0.25,
+    "fixed_rm_yr": 250,
+    "ref_size": 750.0,
+    "ref_value": 267750,
+    "ref_rent": 975.0,
+    "pts": {
+     "vacancy": 0.381,
+     "assessment": 0.183,
+     "maintenance": 0.84,
+     "quit_rent_insurance": 0.093
+    }
+   },
    "gross_yield_vs_asking": null,
-   "yield_display": false,
-   "confidence": "low",
+   "yield_display": true,
+   "confidence": "high",
    "sources": [
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/selangor/shah-alam/sri-kemuning/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=sri+kemuning"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:45+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -9749,7 +11581,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -9796,15 +11628,34 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 3,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 3
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 3000.0,
+    "size_median": 1100.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 2000.0,
+      "size": 1040.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 3500.0,
+      "size": 1100.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 3000.0,
+      "size": 1100.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     }
+    ]
    },
    "gross_yield": null,
    "net_yield": null,
@@ -9816,10 +11667,14 @@
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/jalan-ipoh/putra-majestik/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=putra+majestik"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:46+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -9838,7 +11693,7 @@
    "geo_precision": null,
    "geo_detail": null,
    "excluded": null,
-   "rent_method": null,
+   "rent_method": "listings",
    "rent_estimate": null,
    "tenure": "Leasehold",
    "type": "Condo",
@@ -9866,30 +11721,73 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 4,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 4
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 3200.0,
+    "size_median": 1313.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 3200.0,
+      "size": 1313.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 3300.0,
+      "size": 1313.0,
+      "rooms": 4.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 3200.0,
+      "size": 1313.0,
+      "rooms": 4.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1750.0,
+      "size": 1450.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     }
+    ]
    },
-   "gross_yield": null,
-   "net_yield": null,
-   "net_costs": null,
+   "gross_yield": 8.06,
+   "net_yield": 5.86,
+   "net_costs": {
+    "vacancy_months": 1,
+    "assessment_rate": 0.04,
+    "maint_psf": 0.35,
+    "fixed_rm_yr": 250,
+    "ref_size": 1313.0,
+    "ref_value": 476619,
+    "ref_rent": 3200.0,
+    "pts": {
+     "vacancy": 0.672,
+     "assessment": 0.322,
+     "maintenance": 1.157,
+     "quit_rent_insurance": 0.052
+    }
+   },
    "gross_yield_vs_asking": null,
-   "yield_display": false,
-   "confidence": "low",
+   "yield_display": true,
+   "confidence": "medium",
    "sources": [
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/setapak/platinum-lake-pv16/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=platinum+lake+pv16"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:46+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -9959,7 +11857,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -10029,7 +11927,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -10099,7 +11997,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -10169,7 +12067,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -10188,7 +12086,7 @@
    "geo_precision": "building",
    "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · The Nova 1",
    "excluded": null,
-   "rent_method": null,
+   "rent_method": "listings",
    "rent_estimate": null,
    "tenure": "Freehold",
    "type": "Condo",
@@ -10216,30 +12114,79 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 5,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 5
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 1300.0,
+    "size_median": 750.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 1300.0,
+      "size": 993.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1200.0,
+      "size": 750.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1300.0,
+      "size": 750.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1400.0,
+      "size": 750.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1300.0,
+      "size": 750.0,
+      "rooms": 2.0,
+      "src": "Mudah"
+     }
+    ]
    },
-   "gross_yield": null,
-   "net_yield": null,
-   "net_costs": null,
+   "gross_yield": 3.68,
+   "net_yield": 2.64,
+   "net_costs": {
+    "vacancy_months": 1,
+    "assessment_rate": 0.04,
+    "maint_psf": 0.25,
+    "fixed_rm_yr": 250,
+    "ref_size": 750.0,
+    "ref_value": 423750,
+    "ref_rent": 1300.0,
+    "pts": {
+     "vacancy": 0.307,
+     "assessment": 0.147,
+     "maintenance": 0.531,
+     "quit_rent_insurance": 0.059
+    }
+   },
    "gross_yield_vs_asking": null,
-   "yield_display": false,
-   "confidence": "low",
+   "yield_display": true,
+   "confidence": "medium",
    "sources": [
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/kuala-lumpur/segambut/nova-1/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/kuala-lumpur/apartment-condominium-for-rent?q=nova+1"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:48+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -10309,7 +12256,7 @@
     }
    ],
    "scraped_at": null,
-   "mudah_searched": false,
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -10328,7 +12275,7 @@
    "geo_precision": null,
    "geo_detail": null,
    "excluded": null,
-   "rent_method": null,
+   "rent_method": "listings",
    "rent_estimate": null,
    "tenure": "Freehold",
    "type": "Condo",
@@ -10356,30 +12303,79 @@
     "count": 0
    },
    "ask_rent": {
-    "count": 0,
+    "count": 5,
     "by_source": {
      "PropertyGuru": 0,
-     "Mudah": 0
+     "Mudah": 5
     },
-    "rent_median": null,
-    "size_median": null,
+    "rent_median": 1070.0,
+    "size_median": 743.0,
     "rent_psf_median": null,
-    "samples": []
+    "samples": [
+     {
+      "rent": 1000.0,
+      "size": 740.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1200.0,
+      "size": 740.0,
+      "rooms": 5.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1070.0,
+      "size": 743.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 850.0,
+      "size": 743.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     },
+     {
+      "rent": 1200.0,
+      "size": 750.0,
+      "rooms": 3.0,
+      "src": "Mudah"
+     }
+    ]
    },
-   "gross_yield": null,
-   "net_yield": null,
-   "net_costs": null,
+   "gross_yield": 5.9,
+   "net_yield": 4.57,
+   "net_costs": {
+    "vacancy_months": 1,
+    "assessment_rate": 0.04,
+    "maint_psf": 0.12,
+    "fixed_rm_yr": 250,
+    "ref_size": 743.0,
+    "ref_value": 217699,
+    "ref_rent": 1070.0,
+    "pts": {
+     "vacancy": 0.492,
+     "assessment": 0.236,
+     "maintenance": 0.491,
+     "quit_rent_insurance": 0.115
+    }
+   },
    "gross_yield_vs_asking": null,
-   "yield_display": false,
-   "confidence": "low",
+   "yield_display": true,
+   "confidence": "medium",
    "sources": [
     {
      "name": "Brickz.my (transacted)",
      "url": "https://www.brickz.my/transactions/residential/selangor/shah-alam/taman-bunga-negara/non-landed/"
+    },
+    {
+     "name": "Mudah.my (rent listings)",
+     "url": "https://www.mudah.my/selangor/apartment-condominium-for-rent?q=taman+bunga+negara"
     }
    ],
-   "scraped_at": null,
-   "mudah_searched": false,
+   "scraped_at": "2026-11-25T22:56+08:00",
+   "mudah_searched": true,
    "batch": "kv-2"
   },
   {
@@ -37201,12 +39197,12 @@
    "brickz_town": "Cheras (Selangor)",
    "region": "kv",
    "state": "selangor",
-   "lat": null,
-   "lng": null,
-   "on_map": false,
-   "geo_source": "none",
-   "geo_precision": null,
-   "geo_detail": null,
+   "lat": 3.050426,
+   "lng": 101.783963,
+   "on_map": true,
+   "geo_source": "osm",
+   "geo_precision": "building",
+   "geo_detail": "OpenStreetMap object whose own name matches the project (Nominatim / Overpass, inside the Brickz town, 2026-11-25) · Mahkota Garden",
    "excluded": null,
    "rent_method": null,
    "rent_estimate": null,

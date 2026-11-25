@@ -1785,10 +1785,10 @@
 "Taman Cheras Intan"
 ],
 "real-kepong-sentral-condominium": [
-3.209589,
-101.628177,
-"landuse/residential",
-"Kepong Sentral Condominium"
+3.208648,
+101.628411,
+"railway/station",
+"KA07 Kepong Sentral"
 ],
 "real-alam-sanjung": [
 3.068524,
@@ -1851,9 +1851,9 @@
 "Permai Villa"
 ],
 "real-taman-seri-andalas": [
-3.016041,
-101.440752,
-"building/train_station",
+3.016101,
+101.44077,
+"railway/station",
 "Seri Andalas"
 ],
 "real-taman-cheras-awana": [
@@ -1875,16 +1875,16 @@
 "Silk Residence"
 ],
 "real-desa-mutiara": [
-3.162021,
-101.602981,
-"landuse/residential",
-"Desa Mutiara Apartment"
+3.15511,
+101.608826,
+"railway/station",
+"KG08 Mutiara Damansara"
 ],
 "real-taman-sri-batu-caves": [
-3.234512,
-101.686707,
-"landuse/commercial",
-"Taman Sri Batu Caves"
+3.231754,
+101.685136,
+"landuse/industrial",
+"Sri Batu Caves"
 ],
 "real-sri-lavender": [
 2.975047,
@@ -1971,10 +1971,10 @@
 "Pangsapuri Bukit Baru"
 ],
 "real-residensi-seventeen": [
-3.12868,
-101.634924,
-"building/apartments",
-"Seventeen Residences Tower B"
+3.129225,
+101.634938,
+"building/commercial",
+"Seventeen Mall"
 ],
 "real-taman-daya": [
 3.223064,
@@ -4167,10 +4167,10 @@
 "Savio @ Riana Dutamas"
 ],
 "real-skyawani-residence": [
-3.195916,
-101.693445,
+3.193171,
+101.721818,
 "landuse/residential",
-"SkyAwani V Residence"
+"SkyAwani 4 Residence"
 ],
 "real-bandar-damai-perdana": [
 3.046197,
@@ -4477,5 +4477,47 @@
 101.691988,
 "landuse/residential",
 "Villa Putra"
+],
+"real-greenview-apartment": [
+3.249893,
+101.638001,
+"building/apartments",
+"Casa Venicia GreenView"
+],
+"real-cheras-ria-apartment-taman-cheras-utama": [
+3.048532,
+101.74664,
+"place/neighbourhood",
+"Taman Cheras Utama"
+],
+"real-maxim-residences": [
+3.077151,
+101.742214,
+"landuse/residential",
+"Majestic Maxim"
+],
+"real-residensi-jernih": [
+3.000836,
+101.784127,
+"amenity/railway_station",
+"KG33 Sungai Jernih"
+],
+"real-residensi-rimbun-canopy-hills": [
+2.937614,
+101.792406,
+"natural/grassland",
+"ELC Rimbun Tropika"
+],
+"real-berkeley-uptown-residences": [
+3.055785,
+101.445168,
+"landuse/retail",
+"Berkeley Uptown"
+],
+"real-bandar-mahkota-cheras-mahkota-garden": [
+3.050426,
+101.783963,
+"landuse/residential",
+"Mahkota Garden"
 ]
 }
