@@ -162,6 +162,7 @@ function ListingCard({ p, metric, rentMode, active, onHover, onClick, compact })
               <div className="shrink-0 font-bold text-[15px] tabular-nums" style={{ color: bandColor(grossY) }}>{pct(grossY)}</div>
             </div>
             <div className="text-[12px] text-slate-600 truncate mt-0.5">{tl({ zh: p.area_zh, en: p.area_en })} · {tl(TYPE_LABEL[p.type])}</div>
+            {onMapOk(p) && (p.geo_precision === 'street' || p.geo_precision === 'area') && <div className="text-[11.5px] text-amber-800 truncate" data-testid="geo-approx">📍 {t('大概位置', 'Approx. location')}</div>}
             <SampleBadge p={p} />
           </div>
           <div>
