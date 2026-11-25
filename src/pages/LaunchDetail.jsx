@@ -142,6 +142,16 @@ function TypCard({ p, typ, t, draft, onChange, compactLoan = false, variant = 'd
       {simple && typEntry && (
         <EntryFacts entry={typEntry} inst={v?.inst} className="mt-3" />
       )}
+      {simple && thin && impliedRent ? (
+        <div className="mt-3 rounded-lg bg-amber-50 px-2.5 py-1.5 text-[11px] leading-snug text-amber-900 ring-1 ring-amber-200" data-testid={`rent-estimated-${typ.id}`}>
+          {t(`租金 ${rm(impliedRent)}/月是推算：附近同面积租盘不足，改用区域中位 RM${psf.toFixed(2)} psf。小户型每尺租金通常更高，这个数字可能偏低。`,
+            `Rent ${rm(impliedRent)}/mo is estimated: too few same-size ads nearby, so the area median of RM${psf.toFixed(2)} psf is used. Small units usually rent for more per sqft, so this may be low.`)}
+          {band?.listings?.length
+            ? t(` 最近的一则：${band.listings[0].project} ${band.listings[0].size} sqft，叫租 ${rm(band.listings[0].rent)}/月。`,
+              ` Nearest ad: ${band.listings[0].project} ${band.listings[0].size} sqft, asking ${rm(band.listings[0].rent)}/mo.`)
+            : null}
+        </div>
+      ) : null}
       {simple && v?.inst != null && (
         <CompareTiles
           className="mt-3"
@@ -150,10 +160,11 @@ function TypCard({ p, typ, t, draft, onChange, compactLoan = false, variant = 'd
           currentRent={currentRent}
           rentMo={impliedRent}
           cash={v.cash}
+          v={v}
         />
       )}
 
-      {!simple && price && impliedRent ? <LoanVerdict price={price} rentMo={impliedRent} className="mt-3" compact={compactLoan} /> : null}
+      {!simple && price && impliedRent ? <LoanVerdict price={price} rentMo={impliedRent} maintMo={(p.maint_psf || 0) * typ.size} className="mt-3" compact={compactLoan} /> : null}
 
       {showGrid && (
         <div className={`mt-3 grid gap-3 ${gridCols >= 3 ? 'grid-cols-3' : gridCols === 2 ? 'grid-cols-2' : 'grid-cols-1'}`}>
@@ -444,6 +455,7 @@ export default function LaunchDetail({ p }) {
                       currentRent={holder.currentRent}
                       rentMo={scored.v.rentMo ?? scored.yields?.rentMo}
                       cash={scored.v.cash}
+                      v={scored.v}
                     />
                   </div>
                 ) : null}
@@ -591,8 +603,8 @@ export default function LaunchDetail({ p }) {
                 'The instalment uses a standard amortising formula. Loan percentage defaults to 90% and can be set from 50% to 90%; the same value is shared on the home list, the map panel and this page. Interest defaults to 4.3% p.a. over 35 years, editable here. Bank Negara held the OPR at 2.75% on 5 Nov 2026, so every bank’s SBR is 2.75%. 4.3% is a mid-market assumption among advertised floating packages in November 2026 (about 4.10–4.75%), not a bank offer; investor loans can be higher. Tenure is often capped by age (commonly 70). Rent is an asking-rent estimate, not achieved rent after handover.')}</li>
               <li>{t('入场要准备的钱 = 首付 + 买卖合约和贷款协议印花税 + 律师费（按常见律师收费表估算，并加上 8% 服务税）+ 按每平方尺 RM40 预留的装修。这些都是估算。',
                 'Cash to enter = down payment + SPA and loan-agreement stamp duty + legal fees (estimated on the commonly published solicitors’ scale, plus 8% SST) + a RM40 per sqft renovation allowance. These are estimates.')}</li>
-              <li>{t('投资评分满分 10 分：租售比（参考毛回报）最多 4 分（3% 得 0 分，6% 或以上得满分），你当前贷款成数下租金覆盖月供最多 3 分（覆盖率 0.85 得 0 分，1.25 或以上得满分），与同区域已建成楼盘（不含组屋）毛回报中位相比最多 2 分（持平得 1 分，高或低 2 个百分点到满分或 0 分），可比租盘样本数量最多 1 分（同面积段 20 则以上得满分，样本不足改用区域中位则只得 0.2 分）。改贷款成数后评分和排序会一起更新。评分用表价和当前利率、年期，不会编造缺失的价格或租金。',
-                'The investment score is out of 10: up to 4 points for rent-to-price (indicative gross; 3% scores 0, 6% or more scores 4), up to 3 points for whether asking rent covers the instalment at your current loan percentage (coverage 0.85 scores 0, 1.25 or more scores 3), up to 2 points versus the area’s completed-project median gross yield excluding low-cost flats (in line scores 1; ±2 percentage points reach 2 or 0), and up to 1 point for comparable-rent sample size (a size band of 20+ ads scores 1; an area-median fallback scores 0.2). The score and ranking update when you change the loan percentage. The score uses the list price and the current rate and tenure. Missing prices or rents are not invented.')}</li>
+              <li>{t('投资评分满分 10 分：租售比（参考毛回报）最多 4 分（3% 得 0 分，6% 或以上得满分），你当前贷款成数下，扣掉空置、管理费、门牌税、地税和保险后的租金覆盖月供最多 3 分（覆盖率 0.85 得 0 分，1.25 或以上得满分），与同区域已建成楼盘（不含组屋）毛回报中位相比最多 2 分（持平得 1 分，高或低 2 个百分点到满分或 0 分），可比租盘样本数量最多 1 分（同面积段 20 则以上得满分，样本不足改用区域中位则只得 0.2 分）。改贷款成数后评分和排序会一起更新。评分用表价和当前利率、年期，不会编造缺失的价格或租金。',
+                'The investment score is out of 10: up to 4 points for rent-to-price (indicative gross; 3% scores 0, 6% or more scores 4), up to 3 points for whether asking rent, after vacancy, maintenance, assessment, quit rent and insurance, covers the instalment at your current loan percentage (coverage 0.85 scores 0, 1.25 or more scores 3), up to 2 points versus the area’s completed-project median gross yield excluding low-cost flats (in line scores 1; ±2 percentage points reach 2 or 0), and up to 1 point for comparable-rent sample size (a size band of 20+ ads scores 1; an area-median fallback scores 0.2). The score and ranking update when you change the loan percentage. The score uses the list price and the current rate and tenure. Missing prices or rents are not invented.')}</li>
             </ul>
                         {(p.render?.credit_zh || p.developer_note || p.handover_note || p.handover_note_zh || p.total_units_note || p.total_units_note_zh || p.abdullah_hukum || p.transit?.[0] || p.mid_valley || p.title_note) && (
               <div className="text-[12px] text-slate-500 space-y-1.5">

@@ -20,7 +20,23 @@ const rows = ltvVerdicts({ price: 1000000, rentMo: 3000, rate: 4.3, years: 35 })
 assert.equal(rows.length, 1)
 assert.equal(rows[0].ltv, 90)
 assert.equal(rows[0].down, 100000)
-assert.ok(Math.abs(rows[0].cash - (3000 - rows[0].inst)) < 1e-6)
+assert.ok(Math.abs(rows[0].grossCash - (3000 - rows[0].inst)) < 1e-6)
+// Net cash = rent − vacancy (1/12) − assessment (4%) − maintenance − RM250/yr − instalment.
+const hold = 3000 / 12 + 3000 * 0.04 + 0 + 250 / 12
+assert.ok(Math.abs(rows[0].holdMo - hold) < 1e-6, `hold ${rows[0].holdMo}`)
+assert.ok(Math.abs(rows[0].cash - (3000 - hold - rows[0].inst)) < 1e-6)
+const withMaint = cashVsRent({ price: 1000000, rentMo: 3000, rate: 4.3, years: 35, maintMo: 400 })
+assert.ok(Math.abs(withMaint.cash - (rows[0].cash - 400)) < 1e-6)
+assert.equal(withMaint.cashAfterMaint, withMaint.cash)
+// Principal + interest add up to the instalment; net yield below the rate flags negative leverage.
+assert.ok(Math.abs(withMaint.principalMo + withMaint.interestMo - withMaint.inst) < 1e-6)
+assert.equal(withMaint.negativeLeverage, withMaint.netYield < 4.3)
+// Net yield here matches typYields' net (same holding-cost assumptions).
+{
+  const ty = typYields({ size: 1000, price: 1000000, rentPsf: 3, maintPsf: 0.4 })
+  const v = cashVsRent({ price: 1000000, rentMo: 3000, rate: 4.3, years: 35, maintMo: 400 })
+  assert.ok(Math.abs(ty.net - v.netYield) < 1e-9, `${ty.net} vs ${v.netYield}`)
+}
 
 const both = ltvVerdicts({ price: 1000000, rentMo: 3000, rate: 4.3, years: 35, ltvs: [90, 70] })
 assert.equal(both.length, 2)
