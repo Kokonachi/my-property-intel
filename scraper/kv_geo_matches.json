@@ -1,0 +1,4523 @@
+{
+"real-flora-damansara-apartment": [
+3.176075,
+101.617546,
+"landuse/residential",
+"Flora Damansara"
+],
+"real-desa-satu": [
+3.215663,
+101.615181,
+"landuse/residential",
+"Desa Satu Flats"
+],
+"real-taman-pandan-jaya": [
+3.136078,
+101.743425,
+"place/neighbourhood",
+"Taman Pandan Jaya"
+],
+"real-the-era-duta-north": [
+3.182041,
+101.675287,
+"landuse/residential",
+"The ERA @ Duta North"
+],
+"real-residensi-picasso": [
+3.16367,
+101.733545,
+"landuse/residential",
+"Picasso Residence"
+],
+"real-venice-hill": [
+3.079855,
+101.773586,
+"landuse/residential",
+"Venice Hill Condominium"
+],
+"real-residensi-emerald-damai-emerald-hills": [
+3.058433,
+101.733819,
+"landuse/residential",
+"Emerald Hills"
+],
+"real-palm-spring": [
+3.151281,
+101.59919,
+"landuse/residential",
+"Palm Spring @ Damansara"
+],
+"real-residensi-1": null,
+"real-wangsa-maju-seksyen-2": null,
+"real-sri-penara": [
+3.097968,
+101.709053,
+"landuse/residential",
+"Pangsapuri Sri Penara"
+],
+"real-permai-apartment": [
+3.132556,
+101.599441,
+"landuse/residential",
+"Permai Apartment"
+],
+"real-damansara-foresta": [
+3.181625,
+101.61181,
+"landuse/residential",
+"Damansara Foresta Condominium"
+],
+"real-seri-telipot": [
+3.401476,
+101.600088,
+"landuse/residential",
+"Pangsapuri Seri Telipot"
+],
+"real-amara": [
+3.241717,
+101.679986,
+"building/apartments",
+"Amara Residence"
+],
+"real-bandar-sultan-sulaiman": null,
+"real-d-brightton": [
+3.188535,
+101.708349,
+"landuse/residential",
+"d'Brightton @ Titiwangsa"
+],
+"real-wangsa-maju-seksyen-1": null,
+"real-1-bukit-utama": [
+3.141032,
+101.604363,
+"landuse/residential",
+"1 Bukit Utama Condo"
+],
+"real-seri-maya": [
+3.174725,
+101.733924,
+"landuse/residential",
+"Seri Maya Condominium"
+],
+"real-bandar-country-homes": [
+3.32989,
+101.529731,
+"landuse/residential",
+"Phase 2 Bandar Country Homes"
+],
+"real-taman-bunga-raya": null,
+"real-perdana-villa": [
+3.00619,
+101.486565,
+"landuse/residential",
+"Perdana Villa"
+],
+"real-huni-eco-ardence": [
+3.094616,
+101.476876,
+"building/apartments",
+"Huni Residence"
+],
+"real-flat-pkns-section-7": null,
+"real-sd-apartment-ii": null,
+"real-bukit-sentosa": [
+3.403457,
+101.580345,
+"natural/peak",
+"Bukit Sentosa"
+],
+"real-suria-kipark-damansara": null,
+"real-pelangi-utama": [
+3.141,
+101.615663,
+"landuse/residential",
+"Pelangi Utama Condominium"
+],
+"real-bandar-seri-putra": [
+2.885665,
+101.780559,
+"landuse/residential",
+"Bandar Seri Putra"
+],
+"real-majestic-maxim-cheras": null,
+"real-d-aman-crimson": [
+3.115129,
+101.591736,
+"landuse/residential",
+"D'Aman Crimson Apartments"
+],
+"real-desa-dua": [
+3.213419,
+101.616156,
+"landuse/residential",
+"Desa Dua Apartments"
+],
+"real-kasuarina": [
+2.985024,
+101.425441,
+"landuse/residential",
+"Pangsapuri Kasuarina"
+],
+"real-casa-jasmine-rsku": null,
+"real-saujana": [
+3.192098,
+101.595258,
+"landuse/residential",
+"Apartmen Saujana"
+],
+"real-orchid-anggerik-teratai-lotus": null,
+"real-lagoon-perdana": [
+3.060806,
+101.611574,
+"landuse/residential",
+"Sunway Lagoon Perdana Apartments"
+],
+"real-sunway-velocity": [
+3.128717,
+101.722846,
+"landuse/commercial",
+"Sunway Velocity"
+],
+"real-ketumbar-heights": [
+3.102393,
+101.750306,
+"landuse/residential",
+"Ketumbar Heights Condominium"
+],
+"real-residensi-aetas-damansara-pju-3": null,
+"real-residensi-netizen": [
+3.048935,
+101.772172,
+"landuse/residential",
+"Residensi Netizen"
+],
+"real-impian-sentosa": [
+2.997029,
+101.469299,
+"landuse/residential",
+"Impian Sentosa Apartments"
+],
+"real-aman-satu": [
+3.213367,
+101.614322,
+"landuse/residential",
+"Aman Satu Apartments"
+],
+"real-seksyen-24-shah-alam": null,
+"real-setia-ecohill": [
+2.924357,
+101.842977,
+"landuse/residential",
+"Setia EcoHill"
+],
+"real-taman-pandan-indah": [
+3.134759,
+101.746693,
+"railway/station",
+"AG15 Pandan Indah"
+],
+"real-mutiara-magna": [
+3.211102,
+101.639112,
+"landuse/residential",
+"Pangsapuri Mutiara Magna"
+],
+"real-bandar-tasik-selatan": [
+3.072982,
+101.715031,
+"landuse/residential",
+"Bandar Tasik Selatan"
+],
+"real-juta-mines-condo": [
+3.023785,
+101.729554,
+"landuse/residential",
+"Juta Mines Condominum"
+],
+"real-pangsapuri-opal": null,
+"real-residensi-adelia": [
+2.905526,
+101.798818,
+"landuse/residential",
+"Residensi Adelia"
+],
+"real-skymeridien-residence": [
+3.188526,
+101.695961,
+"landuse/residential",
+"SkyMeridien"
+],
+"real-taman-sri-murni-apartment": [
+3.235519,
+101.662661,
+"landuse/residential",
+"Taman Sri Murni"
+],
+"real-one-south-soho": null,
+"real-lumi-tropicana": [
+3.128972,
+101.594701,
+"landuse/residential",
+"Lumi Tropicana"
+],
+"real-perdana-exclusive": [
+3.169068,
+101.605035,
+"landuse/residential",
+"Perdana Exclusive Condominium"
+],
+"real-mentari-court": [
+3.081614,
+101.609988,
+"landuse/residential",
+"Mentari Court"
+],
+"real-akasa-cheras-south": null,
+"real-taman-pandan-perdana": [
+3.122438,
+101.741316,
+"building/yes",
+"P/E Pandan Perdana No 8"
+],
+"real-residensi-aster-cheras": [
+3.080371,
+101.745524,
+"landuse/residential",
+"Residensi Aster Cheras"
+],
+"real-28-blvd": [
+3.11875,
+101.745118,
+"landuse/residential",
+"28 BLVD"
+],
+"real-vista-lavender": [
+3.06208,
+101.640358,
+"landuse/residential",
+"Pangsapuri Vista Lavender"
+],
+"real-taman-tun-teja": [
+3.297218,
+101.590634,
+"place/neighbourhood",
+"Taman Tun Teja"
+],
+"real-taman-melati": [
+3.223464,
+101.729197,
+"landuse/residential",
+"Taman Melati"
+],
+"real-sri-putramas": [
+3.180374,
+101.672577,
+"landuse/residential",
+"Sri Putramas 1"
+],
+"real-selesa-i-resort-damai-mewah-b": [
+2.985372,
+101.810224,
+"landuse/residential",
+"Selesa i-Resort Apartment"
+],
+"real-tulip-residence-denai-alam": null,
+"real-seri-inai": [
+3.420086,
+101.582613,
+"landuse/residential",
+"Apartment Seri Inai"
+],
+"real-residensi-wangsa-9": [
+3.199192,
+101.740045,
+"landuse/residential",
+"Wangsa 9 Residency"
+],
+"real-teratai-mewah-block-15-17-19-21": null,
+"real-teratai-mewah-block-4-6": [
+3.202444,
+101.712058,
+"building/apartments",
+"Teratai Mewah 101"
+],
+"real-ekocheras-service-residence": [
+3.093853,
+101.738637,
+"shop/mall",
+"EkoCheras Mall"
+],
+"real-taman-alam-megah": null,
+"real-aman-dua": [
+3.209692,
+101.613927,
+"landuse/residential",
+"Aman Dua Apartments"
+],
+"real-kenanga": null,
+"real-taman-lembah-maju": [
+3.123971,
+101.758891,
+"place/neighbourhood",
+"Taman Lembah Maju"
+],
+"real-ridzuan-condominium": [
+3.078944,
+101.605801,
+"landuse/residential",
+"Ridzuan Condo"
+],
+"real-united-point-residensi-berpadu": [
+3.191196,
+101.653965,
+"landuse/residential",
+"United Point Residence"
+],
+"real-residensi-m-vertika": null,
+"real-puncak-alam-apartment": [
+3.234205,
+101.425836,
+"landuse/residential",
+"Bandar Puncak Alam"
+],
+"real-the-zest-kinrara-9": [
+3.052422,
+101.653741,
+"landuse/residential",
+"The Zest"
+],
+"real-menara-klh": [
+3.05422,
+101.61937,
+"building/office",
+"Menara KLH"
+],
+"real-harmoni": [
+3.194968,
+101.583934,
+"landuse/residential",
+"Apartmen Harmoni"
+],
+"real-seri-teluki": [
+3.396952,
+101.57219,
+"landuse/residential",
+"Apartment Seri Teluki"
+],
+"real-sri-angsana-hilir": [
+3.148875,
+101.742818,
+"landuse/residential",
+"Sri Angsana Hilir Kondominium"
+],
+"real-vista-millennium": null,
+"real-enggang": [
+3.060967,
+101.624455,
+"place/neighbourhood",
+"Enggang"
+],
+"real-miharja-condominium": [
+3.122599,
+101.723934,
+"landuse/residential",
+"Miharja Condominium"
+],
+"real-tasik-heights": [
+3.075723,
+101.718804,
+"landuse/residential",
+"Tasik Heights Apartment"
+],
+"real-maxim-citilights": null,
+"real-idaman-sutera": [
+3.208332,
+101.710074,
+"landuse/residential",
+"Idaman Sutera Condominium"
+],
+"real-pangsapuri-permai": [
+3.064017,
+101.70596,
+"landuse/residential",
+"Pangsapuri Permai"
+],
+"real-d-latour": [
+3.059093,
+101.615309,
+"building/apartments",
+"The Suitel (D'Latour)"
+],
+"real-uptown-residence": [
+3.133734,
+101.622371,
+"landuse/residential",
+"Uptown Residences"
+],
+"real-riana-green": [
+3.136955,
+101.598196,
+"landuse/residential",
+"Riana Green Condominium"
+],
+"real-pangsapuri-putra-indah": [
+2.987221,
+101.675466,
+"landuse/residential",
+"Pangsapuri Putra Indah"
+],
+"real-vista-saujana": null,
+"real-villamas": null,
+"real-sri-kemuning": [
+3.015536,
+101.529991,
+"landuse/residential",
+"Taman Sri Kemuning"
+],
+"real-taman-desa-idaman-ii": null,
+"real-putra-majestik": [
+3.175736,
+101.684106,
+"landuse/commercial",
+"Putra Majestik"
+],
+"real-platinum-lake-pv16": null,
+"real-the-sky-residence-shamelin": null,
+"real-taman-zeta-zetapark": [
+3.207407,
+101.684572,
+"landuse/residential",
+"Zeta Deskye"
+],
+"real-residensi-pv9": [
+3.218092,
+101.725188,
+"landuse/residential",
+"Residensi PV9"
+],
+"real-pangsapuri-bandar-baru-sentul": [
+3.187043,
+101.697388,
+"place/neighbourhood",
+"Pangsapuri Bandar Baru Sentul"
+],
+"real-nova-1": [
+3.187552,
+101.648567,
+"landuse/residential",
+"The Nova 1"
+],
+"real-sastra-u-thant": [
+3.158287,
+101.726059,
+"landuse/residential",
+"Sastra U-Thant"
+],
+"real-taman-bunga-negara": null,
+"real-sri-anggerik-1": [
+3.05567,
+101.620851,
+"landuse/residential",
+"Sri Anggerik 1 Apartment"
+],
+"real-seri-jati": [
+3.130006,
+101.473534,
+"landuse/residential",
+"Pangsapuri Seri Jati"
+],
+"real-karisma-eco-majestic": [
+2.90288,
+101.848016,
+"landuse/residential",
+"Pangsapuri Karisma"
+],
+"real-pangsapuri-kemuning-aman": null,
+"real-subang-suria": [
+3.186039,
+101.533898,
+"landuse/residential",
+"Pangsapuri Subang Suria"
+],
+"real-one-damansara-pju-10-damansara-damai": null,
+"real-sri-ros": [
+2.97889,
+101.783137,
+"landuse/residential",
+"Sri Ros Apartments"
+],
+"real-villa-angsana": [
+3.193034,
+101.684202,
+"landuse/residential",
+"Villa Angsana"
+],
+"real-residensi-duta-park": [
+3.170535,
+101.68612,
+"landuse/residential",
+"Duta Park Residences"
+],
+"real-taman-fadason": [
+3.213225,
+101.653261,
+"place/neighbourhood",
+"Taman Fadason"
+],
+"real-pr1ma-alam-damai": [
+3.05702,
+101.742059,
+"landuse/residential",
+"Residensi PR1MA @ Alam Damai"
+],
+"real-genting-court": [
+3.196756,
+101.71057,
+"landuse/residential",
+"Genting Court Condominium"
+],
+"real-pusat-bandar-puchong": [
+3.033237,
+101.61608,
+"railway/station",
+"SP25 Pusat Bandar Puchong"
+],
+"real-seri-puri": [
+3.213677,
+101.611677,
+"landuse/residential",
+"Seri Puri"
+],
+"real-aman-heights": [
+3.026035,
+101.691254,
+"landuse/residential",
+"Aman Heights Condominium"
+],
+"real-pelangi-damansara": [
+3.153397,
+101.604394,
+"landuse/residential",
+"Pelangi Damansara"
+],
+"real-amazing-heights": null,
+"real-sri-ria": [
+2.982493,
+101.78365,
+"landuse/residential",
+"Sri Ria Apartments"
+],
+"real-botaniqa-residence": [
+3.076648,
+101.651373,
+"building/apartments",
+"BotaniQa Residence"
+],
+"real-sd-apartments": [
+3.238222,
+101.660863,
+"landuse/residential",
+"SD Residence"
+],
+"real-pusat-komersial-seksyen-7-shah-alam": null,
+"real-bayu-villa": null,
+"real-koi-kinrara": [
+3.071397,
+101.622793,
+"landuse/residential",
+"Koi Kinrara"
+],
+"real-residensi-warnasari-3": [
+3.243219,
+101.42222,
+"landuse/residential",
+"Residensi Warnasari 3"
+],
+"real-koi-tropika": [
+3.008736,
+101.616523,
+"landuse/residential",
+"Koi Tropika Condominium"
+],
+"real-aragreens": null,
+"real-prima-saujana": null,
+"real-villaria-condominium-pjs-5": null,
+"real-rampai-court": [
+3.193701,
+101.733833,
+"landuse/residential",
+"Rampai Court Apartment"
+],
+"real-menara-menjalara": [
+3.191468,
+101.627235,
+"landuse/residential",
+"Menara Menjalara Condominium"
+],
+"real-royal-domain-sri-putramas-2": [
+3.180776,
+101.674151,
+"landuse/residential",
+"Royal Domain Sri Putramas 2"
+],
+"real-setia-city-residences": [
+3.126926,
+101.47024,
+"landuse/commercial",
+"Setia Taipan 1"
+],
+"real-eve-suite": [
+3.113233,
+101.591569,
+"landuse/residential",
+"Eve Suite"
+],
+"real-bandar-teknologi-kajang": null,
+"real-surian": [
+3.162882,
+101.609268,
+"landuse/residential",
+"Surian Residences"
+],
+"real-teratai-mawar-cempaka": null,
+"real-akasia": [
+3.089422,
+101.489296,
+"landuse/residential",
+"Akasia"
+],
+"real-vista-pinggiran": [
+2.992263,
+101.67754,
+"landuse/residential",
+"Vista Pinggiran"
+],
+"real-desa-impiana": [
+2.997463,
+101.59286,
+"landuse/residential",
+"Desa Impiana"
+],
+"real-solace-service-apartment-setia-walk": null,
+"real-armanee-condominium-d-sara-damai": null,
+"real-menara-alpha": [
+3.20774,
+101.735894,
+"landuse/residential",
+"Menara Alpha Condominiums"
+],
+"real-the-elements": [
+3.161064,
+101.74815,
+"landuse/residential",
+"The Elements Ampang"
+],
+"real-casa-ria": [
+3.131805,
+101.735372,
+"landuse/residential",
+"Casa Ria"
+],
+"real-seasons-garden": [
+3.187442,
+101.734391,
+"landuse/residential",
+"Seasons Garden Residences"
+],
+"real-seri-riana-residence": [
+3.195216,
+101.73972,
+"landuse/residential",
+"Seri Riana Residence"
+],
+"real-angkasa": [
+3.079471,
+101.730649,
+"landuse/residential",
+"Angkasa Condominium"
+],
+"real-maisson": [
+3.122707,
+101.589562,
+"landuse/residential",
+"Maisson Residence"
+],
+"real-1120-park-avenue": [
+3.077844,
+101.648156,
+"landuse/residential",
+"1120 Park Avenue"
+],
+"real-kelana-puteri": [
+3.107362,
+101.594462,
+"landuse/residential",
+"Kondominium Kelana Puteri"
+],
+"real-taman-pandan-utama": [
+3.142162,
+101.74858,
+"landuse/residential",
+"Apartmen Pandan Utama"
+],
+"real-residensi-zamrud": [
+2.952664,
+101.791754,
+"landuse/residential",
+"Residensi Zamrud Block C & D"
+],
+"real-golden-villa": [
+3.011418,
+101.484815,
+"landuse/residential",
+"Golden Villa Condominiums"
+],
+"real-kota-bayuemas": null,
+"real-symphony-heights-simfoni-heights": [
+3.232513,
+101.674682,
+"landuse/residential",
+"Symphony Heights"
+],
+"real-sri-raya": [
+2.981908,
+101.784039,
+"landuse/residential",
+"Sri Raya Apartments"
+],
+"real-trefoil": [
+3.1114,
+101.460424,
+"landuse/residential",
+"Trefoil"
+],
+"real-residensi-idaman-abadi": null,
+"real-residensi-121": [
+3.13513,
+101.61424,
+"landuse/residential",
+"121 Residences PJ"
+],
+"real-damai": [
+3.17801,
+101.550595,
+"landuse/residential",
+"Pangsapuri Damai"
+],
+"real-fortune-perdana-lakeside": null,
+"real-residensi-semarak-platinum": null,
+"real-mizumi-residences": [
+3.219758,
+101.643981,
+"landuse/residential",
+"Residensi Mizumi"
+],
+"real-danau-kota-flat": [
+3.204917,
+101.717917,
+"landuse/residential",
+"Taman Danau Kota"
+],
+"real-cemara": [
+3.100814,
+101.709093,
+"landuse/residential",
+"Pangsapuri Cemara"
+],
+"real-perumahan-awam-desa-rejang": [
+3.187716,
+101.731161,
+"landuse/residential",
+"Perumahan Awam Desa Rejang"
+],
+"real-prima-setapak": [
+3.198251,
+101.711257,
+"landuse/residential",
+"Prima Setapak"
+],
+"real-wangsa-maju-seksyen-4": null,
+"real-anggerik": [
+3.41161,
+101.590656,
+"landuse/residential",
+"Pangsapuri Seri Anggerik 3"
+],
+"real-vista-impiana": [
+3.039005,
+101.690346,
+"landuse/residential",
+"Vista Impiana"
+],
+"real-residensi-laguna-biru-2": null,
+"real-ivory-residence": null,
+"real-taman-megah": [
+3.054864,
+101.769236,
+"place/neighbourhood",
+"Taman Megah"
+],
+"real-residensi-kajang-utama": [
+2.972652,
+101.796069,
+"landuse/residential",
+"Taman Kajang Utama"
+],
+"real-sri-anggerik-2": [
+3.058008,
+101.620883,
+"landuse/residential",
+"Sri Anggerik 2 Apartment"
+],
+"real-merdeka-villa": [
+3.137824,
+101.765364,
+"landuse/residential",
+"Merdeka Villa"
+],
+"real-taman-pandan-cahaya": [
+3.138799,
+101.756887,
+"place/neighbourhood",
+"Pandan Cahaya"
+],
+"real-plaza-indah": [
+2.983113,
+101.783552,
+"landuse/commercial",
+"Plaza Indah"
+],
+"real-las-palmas": null,
+"real-desa-tanjung": [
+3.026195,
+101.628838,
+"place/neighbourhood",
+"Desa Tanjung"
+],
+"real-taman-puncak-saujana": [
+3.015199,
+101.807497,
+"place/neighbourhood",
+"Taman Puncak Saujana"
+],
+"real-dahlia-bandar-bukit-beruntung": [
+3.398123,
+101.554988,
+"landuse/residential",
+"Taman Dahlia, Bandar Bukit Beruntung"
+],
+"real-almyra-residence": [
+2.877389,
+101.795298,
+"building/residential",
+"Almyra Residence"
+],
+"real-puncak-athenaeum": null,
+"real-seri-intan": [
+3.131153,
+101.470786,
+"landuse/residential",
+"Pangsapuri Seri Intan"
+],
+"real-teratai": [
+3.402382,
+101.605267,
+"landuse/residential",
+"Pangsapuri Seri Teratai"
+],
+"real-arc-ampang-ukay": [
+3.172694,
+101.757065,
+"building/yes",
+"Liberty Arc@Ampang Ukay"
+],
+"real-sri-dahlia": [
+2.975226,
+101.782596,
+"landuse/residential",
+"Sri Dahlia Apartments"
+],
+"real-taman-orkid": [
+3.077843,
+101.767111,
+"place/neighbourhood",
+"Taman Orkid"
+],
+"real-taman-miharja-fasa-1": null,
+"real-prisma-cheras": [
+3.099194,
+101.72987,
+"landuse/residential",
+"Prisma Cheras Condo"
+],
+"real-cengal": [
+3.099306,
+101.710508,
+"landuse/residential",
+"Cengal Condominium"
+],
+"real-taman-sungai-besi": [
+3.063828,
+101.708409,
+"railway/station",
+"PY29 Sungai Besi"
+],
+"real-fortune-avenue": [
+3.216798,
+101.644008,
+"landuse/residential",
+"Fortune Avenue Condominium"
+],
+"real-ppr-kampung-baru-air-panas": [
+3.195295,
+101.719373,
+"landuse/residential",
+"PPR Kampung Baru Air Panas"
+],
+"real-99-residence": [
+3.220116,
+101.665764,
+"shop/supermarket",
+"99 Speedmart"
+],
+"real-warisan-city-view": null,
+"real-villa-wangsamas-condominium": [
+3.194038,
+101.736485,
+"landuse/residential",
+"Villa Wangsamas"
+],
+"real-platinum-lake-pv13": null,
+"real-avenue-crest": [
+3.067908,
+101.555622,
+"landuse/residential",
+"Avenue Crest"
+],
+"real-pangsapuri-sentosa": [
+3.132871,
+101.458415,
+"landuse/residential",
+"Pangsapuri Sentosa"
+],
+"real-seri-baiduri": [
+3.128395,
+101.472841,
+"landuse/residential",
+"Pangsapuri Seri Baiduri"
+],
+"real-sri-manja-court": null,
+"real-seri-mutiara": [
+3.131303,
+101.468381,
+"landuse/residential",
+"Pangsapuri Seri Mutiara"
+],
+"real-taman-bukit-mewah": [
+2.973141,
+101.810038,
+"place/neighbourhood",
+"Taman Bukit Mewah"
+],
+"real-idaman": [
+3.189856,
+101.591989,
+"landuse/residential",
+"Apartment Idaman"
+],
+"real-apartment-sri-bayu-casuarina-bandar-armada-putra": null,
+"real-oakleaf-park": [
+3.181672,
+101.771993,
+"landuse/residential",
+"Oakleaf Park Apartments"
+],
+"real-ken-damansara": [
+3.129591,
+101.627161,
+"landuse/residential",
+"Ken Damansara"
+],
+"real-puchong-utama-court-1": [
+2.987048,
+101.609574,
+"landuse/residential",
+"Puchong Utama Court 1"
+],
+"real-perdana-puri": [
+3.212094,
+101.613427,
+"landuse/residential",
+"Perdana Puri"
+],
+"real-taman-bukit-rawang-putra": [
+3.319461,
+101.585155,
+"landuse/residential",
+"Pangsapuri Taman Bukit Rawang Putra"
+],
+"real-five-stones": [
+3.123895,
+101.627589,
+"landuse/residential",
+"Five Stones Condominium"
+],
+"real-pangsapuri-univillage": [
+2.943085,
+101.872564,
+"landuse/residential",
+"univillage"
+],
+"real-pacific-place-commercial-centre": null,
+"real-bandar-baru-ampang": [
+3.139329,
+101.769969,
+"landuse/residential",
+"Flat Bandar Baru Ampang"
+],
+"real-you-city-cheras": null,
+"real-sri-angkasa": null,
+"real-p-puri-sri-kesidang-bandar-puchong-jaya": null,
+"real-wangsa-metroview": [
+3.204738,
+101.735672,
+"landuse/residential",
+"Wangsa Metroview Condo"
+],
+"real-menara-orkid": [
+3.181495,
+101.696385,
+"landuse/residential",
+"Menara Orkid"
+],
+"real-endah-villa": [
+3.063848,
+101.692165,
+"landuse/residential",
+"Endah Villa Condominium"
+],
+"real-m-suites": [
+3.15993,
+101.735395,
+"landuse/residential",
+"M Suites"
+],
+"real-aman-putra-apartment": null,
+"real-nidoz-residences-desa-petaling": [
+3.085859,
+101.699897,
+"landuse/residential",
+"Nidoz Residences @ Desa Petaling"
+],
+"real-platinum-hill-pv5": null,
+"real-amadesa": [
+3.084502,
+101.702548,
+"tourism/apartment",
+"Amadesa Resort Condo"
+],
+"real-wangsa-maju-seksyen-10": null,
+"real-desa-petaling": [
+3.086074,
+101.66423,
+"railway/station",
+"KD04 Petaling"
+],
+"real-villa-wangsamas": [
+3.194181,
+101.73652,
+"landuse/residential",
+"Villa Wangsamas"
+],
+"real-d-alamanda": null,
+"real-riana-green-east-kl": [
+3.194916,
+101.740816,
+"landuse/residential",
+"Riana Green East Condominium"
+],
+"real-desa-kiara": [
+3.140445,
+101.644898,
+"place/neighbourhood",
+"Bukit Kiara"
+],
+"real-trion-kl": [
+3.123619,
+101.710608,
+"building/apartments",
+"Trion @ KL"
+],
+"real-shang-villa": [
+3.096796,
+101.592347,
+"landuse/residential",
+"Shang Villa Condominiums"
+],
+"real-hillcrest-heights-puchong-utama": null,
+"real-wira": [
+3.062332,
+101.759636,
+"landuse/residential",
+"Pangsapuri Wira"
+],
+"real-metropolitan-square": [
+3.165646,
+101.610049,
+"landuse/residential",
+"Metropolitan Square"
+],
+"real-kelana-mahkota": [
+3.102784,
+101.592287,
+"landuse/residential",
+"Kelana Mahkota"
+],
+"real-empire-soho-1": [
+3.167798,
+101.612442,
+"building/yes",
+"Empire SOHO 2"
+],
+"real-de-cendana-bandar-setia-alam": null,
+"real-ritze-perdana-1": null,
+"real-casa-residenza-kota-damansara": null,
+"real-semarak-taman-raintree": [
+3.245374,
+101.682392,
+"landuse/residential",
+"Taman Raintree (Kondominium Semarak / Penaga)"
+],
+"real-bandar-sungai-long-garden-park": [
+3.055608,
+101.803796,
+"landuse/residential",
+"Garden Park"
+],
+"real-puncak-damansara": [
+3.136385,
+101.615967,
+"landuse/residential",
+"Puncak Damansara Condominium"
+],
+"real-saujana-permai": null,
+"real-de-palma-apartment": [
+3.133557,
+101.470305,
+"landuse/residential",
+"De Palma Apartment"
+],
+"real-ablelink-square": null,
+"real-mutiara-subang": [
+3.182789,
+101.537113,
+"landuse/residential",
+"Mutiara Subang"
+],
+"real-taman-saga": [
+3.114467,
+101.771753,
+"place/neighbourhood",
+"Taman Saga"
+],
+"real-tropicana-grande-pju-3": null,
+"real-prima-bayu": [
+3.020608,
+101.429164,
+"landuse/residential",
+"Prima Bayu"
+],
+"real-palm-garden-apartment-bandar-baru-klang": null,
+"real-datum-jelatek": [
+3.167489,
+101.736122,
+"landuse/residential",
+"Datum Jelatek"
+],
+"real-teratai-mewah-condominium": [
+3.203056,
+101.711146,
+"landuse/residential",
+"Taman Teratai Mewah Condominium"
+],
+"real-tinggian-titiwangsa-the-reach": null,
+"real-prisma-perdana": null,
+"real-the-tamarind": [
+3.180905,
+101.691111,
+"landuse/residential",
+"The Tamarind"
+],
+"real-scenaria-north-kiara-hills": [
+3.182355,
+101.651223,
+"landuse/residential",
+"Scenaria @ North Kiara Hills Condominium"
+],
+"real-taman-sri-kuching": [
+3.196429,
+101.671538,
+"place/neighbourhood",
+"Taman Sri Kuching"
+],
+"real-kuala-lumpur-traders-square-residences": [
+3.203778,
+101.703962,
+"landuse/residential",
+"KL Traders Square"
+],
+"real-plaza-393": [
+3.130337,
+101.721791,
+"landuse/commercial",
+"Plaza 393"
+],
+"real-the-leafz-dedaun": [
+3.085361,
+101.695028,
+"building/apartments",
+"The Leafz"
+],
+"real-segar-ria": [
+3.093897,
+101.745468,
+"landuse/residential",
+"Pangsapuri Segar Ria"
+],
+"real-sri-putramas-iii-royal-regent": null,
+"real-platinum-hill-pv8": null,
+"real-kondominium-mulberi": [
+3.190714,
+101.64973,
+"landuse/residential",
+"Kondominium Mulberi"
+],
+"real-bayu-tasik-2": [
+3.103013,
+101.710067,
+"landuse/residential",
+"Bayu Tasik 2 Condominium"
+],
+"real-ascotte-boulevard": [
+2.924394,
+101.860781,
+"building/apartments",
+"Ascotte Boulevard"
+],
+"real-d-cassia": [
+2.921697,
+101.849511,
+"landuse/residential",
+"Pangsapuri D'Cassia"
+],
+"real-seruling-apartment": null,
+"real-surian-residences": [
+3.162899,
+101.609378,
+"landuse/residential",
+"Surian Residences"
+],
+"real-putra-raya": [
+2.989727,
+101.675092,
+"landuse/residential",
+"Pangsapuri Putra Raya"
+],
+"real-south-city-condominium-perdana-selatan": [
+3.029231,
+101.711127,
+"landuse/residential",
+"South City Condominium Perdana Selatan"
+],
+"real-seri-tulip": [
+3.398068,
+101.562036,
+"landuse/residential",
+"Apartment Seri Tulip"
+],
+"real-green-suria": null,
+"real-sri-meranti": null,
+"real-kekwa": null,
+"real-bayu-puteri": [
+3.13248,
+101.598425,
+"landuse/residential",
+"Bayu Puteri Apartment"
+],
+"real-casa-tropicana": [
+3.137303,
+101.594091,
+"landuse/residential",
+"Casa Tropicana Condominium"
+],
+"real-taman-nirwana": [
+3.145266,
+101.752442,
+"place/neighbourhood",
+"Taman Nirwana"
+],
+"real-sri-cempaka-bandar-puchong-jaya": null,
+"real-desa-idaman-residences": [
+2.996941,
+101.598945,
+"landuse/residential",
+"Desa Idaman Residence"
+],
+"real-sri-begonia": [
+3.025358,
+101.624929,
+"landuse/residential",
+"Pangsapuri Sri Begonia"
+],
+"real-seri-utama": [
+2.981728,
+101.607194,
+"landuse/residential",
+"Pangsapuri Seri Utama (Rumah Selangorku)"
+],
+"real-axis-residence-axis-pandan": [
+3.136311,
+101.747572,
+"building/apartments",
+"Axis Residence"
+],
+"real-armanee-terrace-2": [
+3.173098,
+101.604659,
+"building/apartments",
+"Armanee Terrace 2"
+],
+"real-puncak-seri-kelana": [
+3.111991,
+101.581142,
+"landuse/residential",
+"Puncak Seri Kelana Condominium"
+],
+"real-harmoni-elmina-1-city-of-elmina": [
+3.185945,
+101.526309,
+"landuse/commercial",
+"Temu, City of Elmina"
+],
+"real-silk-sky": [
+3.027643,
+101.750706,
+"landuse/residential",
+"SILK Sky"
+],
+"real-taman-pandan-mewah": [
+3.127716,
+101.765027,
+"place/neighbourhood",
+"Pandan Mewah"
+],
+"real-tulip-apartment": [
+3.137104,
+101.752286,
+"landuse/residential",
+"Tulip Apartment"
+],
+"real-symphony-tower": [
+3.025891,
+101.752866,
+"tourism/apartment",
+"Symphony Tower"
+],
+"real-pinggiran-batu-caves": [
+3.253472,
+101.695447,
+"landuse/residential",
+"Flat Pinggiran Batu Caves Fasa 2"
+],
+"real-banjaria-court": [
+3.235184,
+101.700313,
+"landuse/residential",
+"Banjaria Court"
+],
+"real-nadayu-801-u5-bandar-pinggirann-subang": null,
+"real-prima-u1": [
+3.078301,
+101.55618,
+"landuse/residential",
+"Prima U1 Condominium"
+],
+"real-suasana-lumayan-condominium-casa-impian": [
+3.096344,
+101.716789,
+"landuse/residential",
+"Kondominium Suasana Lumayan"
+],
+"real-sri-pelangi": null,
+"real-the-henge-residence": [
+3.221011,
+101.641538,
+"landuse/residential",
+"The Henge"
+],
+"real-the-capers": [
+3.181044,
+101.693471,
+"landuse/residential",
+"The Capers"
+],
+"real-desa-sri-puteri": [
+3.084488,
+101.714544,
+"landuse/residential",
+"Desa Sri Puteri - B"
+],
+"real-taman-jinjang-baru": [
+3.206162,
+101.658817,
+"landuse/residential",
+"Taman Jinjang Baru"
+],
+"real-midfields-2": [
+3.096384,
+101.701143,
+"landuse/residential",
+"Midfields Condominium"
+],
+"real-shamelin-star": [
+3.125707,
+101.736252,
+"building/apartments",
+"Shamelin Star (Capella)"
+],
+"real-court-28-kl-city": [
+3.176211,
+101.683015,
+"building/apartments",
+"Court 28 Residence"
+],
+"real-sri-intan-2": [
+3.196466,
+101.676105,
+"landuse/residential",
+"Sri Intan 2 Condominium"
+],
+"real-permai-ria": [
+3.206525,
+101.676221,
+"landuse/residential",
+"Permai Ria Condominium"
+],
+"real-idaman-putra": null,
+"real-m-centura": [
+3.203787,
+101.690334,
+"landuse/residential",
+"M Centura"
+],
+"real-residensi-pv-18": null,
+"real-m-city": [
+3.159588,
+101.746954,
+"landuse/residential",
+"M City"
+],
+"real-vista-bayu-apartment": null,
+"real-pelangi-heights": null,
+"real-sri-camellia": [
+2.980791,
+101.783682,
+"landuse/residential",
+"Sri Camellia Apartments"
+],
+"real-taman-kosas": [
+3.148116,
+101.771078,
+"place/neighbourhood",
+"Taman Kosas"
+],
+"real-ampang-putra-residency": [
+3.150796,
+101.751048,
+"landuse/residential",
+"Ampang Putra Residency"
+],
+"real-casa-indah-1": [
+3.14909,
+101.589527,
+"landuse/residential",
+"Casa Indah 1 Condominium"
+],
+"real-langat-jaya-condominium": null,
+"real-palmville": [
+3.06725,
+101.609689,
+"landuse/residential",
+"Palmville Resort Condominium"
+],
+"real-9-bukit-utama": [
+3.151164,
+101.603981,
+"landuse/residential",
+"9 Bukit Utama Condominium"
+],
+"real-taman-indah-perdana": [
+3.218058,
+101.635988,
+"place/neighbourhood",
+"Taman Indah Perdana"
+],
+"real-sd-tiara": null,
+"real-desa-lembah-permai": null,
+"real-taman-sri-manja": [
+3.072912,
+101.646395,
+"landuse/residential",
+"Taman Sri Manja"
+],
+"real-casa-damansara": [
+3.129843,
+101.626672,
+"building/apartments",
+"Casa Damansara"
+],
+"real-seri-bakawali": [
+3.404917,
+101.603155,
+"landuse/residential",
+"Pangsapuri Seri Bakawali"
+],
+"real-sunway-geosense": null,
+"real-desa-mentari": [
+3.079608,
+101.617548,
+"place/neighbourhood",
+"Desa Mentari"
+],
+"real-residency-park-51-seksyen-51-p-jaya": [
+3.131322,
+101.609818,
+"landuse/residential",
+"D' Residency"
+],
+"real-seroja": [
+3.110412,
+101.446364,
+"landuse/residential",
+"Pangsapuri Seroja"
+],
+"real-taman-cheras-utama": [
+3.048532,
+101.74664,
+"place/neighbourhood",
+"Taman Cheras Utama"
+],
+"real-ruby-seapark": [
+3.108735,
+101.621629,
+"landuse/residential",
+"Ruby Seapark"
+],
+"real-residensi-sunway-serene-ss-8": null,
+"real-pangsapuri-palma": [
+2.989354,
+101.425474,
+"landuse/residential",
+"Pangsapuri Palma"
+],
+"real-residensi-ryan-miho": [
+3.11799,
+101.633885,
+"landuse/residential",
+"Ryan & Miho"
+],
+"real-magna-ville": null,
+"real-d-rimba": null,
+"real-gaia-residences-gamuda-gardens": [
+3.282514,
+101.542272,
+"landuse/residential",
+"GAIA Residences"
+],
+"real-medan-cahaya": [
+3.081329,
+101.634296,
+"landuse/residential",
+"Flat Taman Medan Cahaya"
+],
+"real-ken-rimba-condominium-1": [
+3.053745,
+101.48263,
+"landuse/residential",
+"Ken Rimba Apartment"
+],
+"real-pangsapuri-mayang": [
+3.036207,
+101.678955,
+"landuse/residential",
+"Pangsapuri Mayang"
+],
+"real-sri-pandan": [
+3.127714,
+101.761958,
+"landuse/residential",
+"Sri Pandan Condominium"
+],
+"real-vista-magna": [
+3.213463,
+101.641966,
+"landuse/commercial",
+"Vista Magna"
+],
+"real-pinnacle-sri-petaling": [
+3.067869,
+101.694248,
+"landuse/residential",
+"Pinnacle Sri Petaling"
+],
+"real-anjali-north-kiara": [
+3.183689,
+101.652785,
+"landuse/residential",
+"Anjali North Kiara"
+],
+"real-endah-ria": [
+3.063461,
+101.699802,
+"landuse/residential",
+"Endah Ria"
+],
+"real-taman-bukit-cheras": [
+3.070882,
+101.747741,
+"landuse/residential",
+"Taman Bukit Cheras"
+],
+"real-mahsuri-apartment": [
+3.180725,
+101.742668,
+"landuse/residential",
+"Mahsuri Apartments"
+],
+"real-pangsapuri-melur": [
+3.185008,
+101.696278,
+"landuse/residential",
+"Pangsapuri Melur"
+],
+"real-taman-mulia": [
+3.093574,
+101.716002,
+"landuse/residential",
+"Flat Taman Mulia"
+],
+"real-winner-court-b": [
+3.083239,
+101.707915,
+"landuse/residential",
+"Winner Court B"
+],
+"real-brunsfield-embassyview": [
+3.159608,
+101.733499,
+"landuse/residential",
+"Brunsfield Embassyview"
+],
+"real-casa-idaman": [
+3.204974,
+101.681449,
+"landuse/residential",
+"Casa Idaman"
+],
+"real-taman-pusat-kepong": [
+3.20164,
+101.656067,
+"landuse/commercial",
+"Taman Pusat Kepong"
+],
+"real-petaling-indah": [
+3.066507,
+101.704422,
+"landuse/residential",
+"Petaling Indah Condominium"
+],
+"real-kondominium-rimbun": [
+3.158565,
+101.738346,
+"landuse/residential",
+"Rimbun"
+],
+"real-residensi-haute": [
+3.170887,
+101.727512,
+"building/apartments",
+"The Haute"
+],
+"real-bukit-pandan-1": [
+3.114692,
+101.737738,
+"landuse/residential",
+"Kondominium Bukit Pandan 1"
+],
+"real-endah-regal": [
+3.063371,
+101.698266,
+"landuse/residential",
+"Endah Regal"
+],
+"real-puncak-banyan": [
+3.078075,
+101.730731,
+"landuse/residential",
+"Puncak Banyan Condominium"
+],
+"real-anggun": [
+2.955611,
+101.77883,
+"landuse/residential",
+"Pangsapuri Anggun"
+],
+"real-d-rapport": [
+3.163699,
+101.741283,
+"landuse/residential",
+"D'Rapport Residence"
+],
+"real-taman-cheras-intan-cheras-court": [
+3.070804,
+101.776839,
+"place/neighbourhood",
+"Taman Cheras Intan"
+],
+"real-kepong-sentral-condominium": [
+3.208648,
+101.628411,
+"railway/station",
+"KA07 Kepong Sentral"
+],
+"real-alam-sanjung": [
+3.068524,
+101.553847,
+"landuse/residential",
+"Alam Sanjung Service Apartments"
+],
+"real-indah-condominium": [
+3.196437,
+101.5982,
+"landuse/residential",
+"Indah Condominium"
+],
+"real-puncak-nusa-kelana": [
+3.112318,
+101.580276,
+"landuse/residential",
+"Puncak Nusa Kelana Condominium"
+],
+"real-residensi-bistaria": [
+3.196551,
+101.766557,
+"landuse/residential",
+"Residensi Bistaria"
+],
+"real-d-shire-villa": [
+3.151254,
+101.584568,
+"landuse/residential",
+"D'Shire Villa"
+],
+"real-pangsapuri-seri-pinang": [
+3.132942,
+101.467145,
+"landuse/residential",
+"Pangsapuri Seri Pinang"
+],
+"real-ehsan-ria": [
+3.110645,
+101.644802,
+"landuse/residential",
+"Ehsan Ria Condominiums"
+],
+"real-taman-mulia-jaya": [
+3.131516,
+101.789444,
+"place/neighbourhood",
+"Taman Mulia Jaya"
+],
+"real-taman-putra-impian": [
+2.894524,
+101.772947,
+"landuse/residential",
+"Taman Impian Putra"
+],
+"real-permai-villa": [
+3.009517,
+101.597589,
+"landuse/residential",
+"Permai Villa"
+],
+"real-taman-seri-andalas": [
+3.016101,
+101.44077,
+"railway/station",
+"Seri Andalas"
+],
+"real-taman-cheras-awana": [
+3.088056,
+101.76237,
+"landuse/residential",
+"Taman Cheras Awana"
+],
+"real-sri-melor-mulberry-court": [
+3.203614,
+101.775044,
+"landuse/residential",
+"Pangsapuri Sri Melor"
+],
+"real-silk-residence": [
+3.029662,
+101.757843,
+"building/apartments",
+"Silk Residence"
+],
+"real-desa-mutiara": [
+3.15511,
+101.608826,
+"railway/station",
+"KG08 Mutiara Damansara"
+],
+"real-taman-sri-batu-caves": [
+3.231754,
+101.685136,
+"landuse/industrial",
+"Sri Batu Caves"
+],
+"real-sri-lavender": [
+2.975047,
+101.783975,
+"landuse/residential",
+"Sri Lavender Apartment"
+],
+"real-seri-semarak": [
+3.413339,
+101.568291,
+"landuse/residential",
+"Apartment Seri Semarak"
+],
+"real-ameera-residence": [
+3.123293,
+101.627446,
+"landuse/residential",
+"Ameera Residences"
+],
+"real-taman-muda": [
+3.121793,
+101.756825,
+"place/neighbourhood",
+"Taman Muda"
+],
+"real-bandar-mahkota-cheras": [
+3.055329,
+101.790613,
+"landuse/residential",
+"Bandar Mahkota Cheras"
+],
+"real-belimbing-heights": [
+3.031713,
+101.730048,
+"landuse/residential",
+"Pangsapuri Belimbing Heights"
+],
+"real-taman-sri-serdang": [
+3.009692,
+101.715182,
+"landuse/residential",
+"Sri Serdang"
+],
+"real-valencia-apartment": [
+3.033796,
+101.533039,
+"landuse/residential",
+"Pangsapuri Valencia"
+],
+"real-tropicana-city-tropics": [
+3.13045,
+101.626036,
+"building/apartments",
+"Tropicana City Tropics"
+],
+"real-sri-mekar": [
+3.049195,
+101.626841,
+"landuse/residential",
+"Pangsapuri Sri Mekar"
+],
+"real-jade-hills": [
+2.9972,
+101.754985,
+"landuse/residential",
+"Jade Hills"
+],
+"real-astana-alam-3": [
+3.247686,
+101.425737,
+"landuse/residential",
+"Apartment Astana Alam 3"
+],
+"real-sri-alam-condominium": [
+3.081903,
+101.536277,
+"landuse/residential",
+"Sri Alam Condominium"
+],
+"real-bukit-baru": [
+3.174847,
+101.73241,
+"landuse/residential",
+"Pangsapuri Bukit Baru"
+],
+"real-residensi-seventeen": [
+3.129225,
+101.634938,
+"building/commercial",
+"Seventeen Mall"
+],
+"real-taman-daya": [
+3.223064,
+101.636113,
+"place/neighbourhood",
+"Taman Daya"
+],
+"real-taman-tenaga": [
+2.95917,
+101.789328,
+"place/neighbourhood",
+"Taman Tenaga"
+],
+"real-sri-alpinia": [
+3.018347,
+101.626741,
+"landuse/residential",
+"Pangsapuri Sri Alpinia"
+],
+"real-vista-prima": [
+2.987972,
+101.625499,
+"landuse/residential",
+"Vista Prima"
+],
+"real-suasana-lumayan": [
+3.096344,
+101.716789,
+"landuse/residential",
+"Kondominium Suasana Lumayan"
+],
+"real-taman-wilayah-selayang": [
+3.237895,
+101.660553,
+"landuse/residential",
+"Taman Wilayah Selayang"
+],
+"real-vantage-point-menang-ria": [
+3.086098,
+101.70103,
+"landuse/residential",
+"Vantage Point Condominium"
+],
+"real-sunway-artessa-residences": [
+3.195481,
+101.736602,
+"landuse/residential",
+"Sunway Artessa"
+],
+"real-villa-orkid": [
+3.177809,
+101.644755,
+"landuse/residential",
+"Villa Orkid Condominium"
+],
+"real-midfields-1": [
+3.096384,
+101.701143,
+"landuse/residential",
+"Midfields Condominium"
+],
+"real-casa-prima": [
+3.213182,
+101.63636,
+"building/apartments",
+"Casa Prima Condominium"
+],
+"real-cheras-heights-condominium-bukit-cheras": [
+3.070882,
+101.747741,
+"landuse/residential",
+"Taman Bukit Cheras"
+],
+"real-anggun-lumayan": [
+3.100731,
+101.717067,
+"landuse/residential",
+"Anggun Lumayan"
+],
+"real-bayu-tasik-1": [
+3.103344,
+101.711845,
+"landuse/residential",
+"Tasik Bayu Condominium"
+],
+"real-rivercity-condominium": [
+3.17984,
+101.681415,
+"building/apartments",
+"Rivercity Condominium"
+],
+"real-nuri-court": [
+3.134993,
+101.755589,
+"landuse/residential",
+"Nuri Court"
+],
+"real-seri-kasturi": [
+3.129233,
+101.470475,
+"landuse/residential",
+"Pangsapuri Seri Kasturi"
+],
+"real-d-aman-ria-condominium": [
+3.113177,
+101.590516,
+"landuse/residential",
+"D'Aman Ria"
+],
+"real-saraka": [
+3.030774,
+101.628144,
+"landuse/residential",
+"Pangsapuri Saraka"
+],
+"real-residensi-sunway-geo-lake": [
+3.063401,
+101.608339,
+"landuse/residential",
+"Sunway Geo Lake Residences"
+],
+"real-sri-subang": [
+3.075172,
+101.607857,
+"landuse/residential",
+"Sri Subang Apartment"
+],
+"real-taman-desa-permai-ampang": [
+3.122057,
+101.783889,
+"place/neighbourhood",
+"Bukit Ampang Permai"
+],
+"real-atmosfera": [
+3.067375,
+101.623296,
+"landuse/residential",
+"Atmosfera Condominium"
+],
+"real-my-loft-empire-city": [
+3.168094,
+101.615651,
+"landuse/commercial",
+"Empire City"
+],
+"real-verando-residence": [
+3.081414,
+101.626179,
+"landuse/residential",
+"Verando Residence"
+],
+"real-suria-rafflesia": [
+3.123096,
+101.472553,
+"landuse/residential",
+"Suria Rafflesia"
+],
+"real-taman-wangsa-permai": [
+3.208944,
+101.610855,
+"landuse/residential",
+"Taman Wangsa Permai"
+],
+"real-taman-puchong-intan": [
+3.017559,
+101.607848,
+"place/neighbourhood",
+"Taman Puchong Intan"
+],
+"real-windows-on-the-park": [
+3.039427,
+101.752663,
+"landuse/residential",
+"Windows On The Park"
+],
+"real-green-acre": [
+3.046731,
+101.805302,
+"landuse/residential",
+"Green Acre Park Condominium"
+],
+"real-the-mark-cheras": [
+3.0945,
+101.752729,
+"landuse/residential",
+"The Mark @ Cheras"
+],
+"real-puchong-utama-court-2": [
+2.983964,
+101.607003,
+"landuse/residential",
+"Puchong Utama Court 2"
+],
+"real-dk-senza": [
+3.059999,
+101.61712,
+"building/dormitory",
+"DK Senza"
+],
+"real-kinrara-court": [
+3.068335,
+101.648497,
+"landuse/residential",
+"Kinrara Court"
+],
+"real-jasmine-towers": [
+3.124774,
+101.628108,
+"landuse/residential",
+"Jasmine Towers"
+],
+"real-kasturi-tiara": [
+3.040057,
+101.766769,
+"landuse/residential",
+"Pangsapuri Kasturi Tiara"
+],
+"real-paradesa-rustica": [
+3.182026,
+101.609401,
+"landuse/residential",
+"Paradesa Rustica Condominium"
+],
+"real-bandar-mahkota-cheras-the-i-residence": [
+3.055329,
+101.790613,
+"landuse/residential",
+"Bandar Mahkota Cheras"
+],
+"real-istara-kondominium": [
+3.105584,
+101.639814,
+"building/apartments",
+"Istara"
+],
+"real-seri-cempaka": [
+3.402401,
+101.562754,
+"landuse/residential",
+"Pangsapuri Seri Cempaka"
+],
+"real-pacific-63": [
+3.115879,
+101.635014,
+"landuse/residential",
+"Pacific 63"
+],
+"real-casa-mila-tower": [
+3.249493,
+101.639951,
+"building/apartments",
+"Casa Mila"
+],
+"real-mutiara-serdang-turf-view": [
+3.039765,
+101.702384,
+"landuse/residential",
+"Mutiara Serdang"
+],
+"real-millennium-square": [
+3.105236,
+101.634998,
+"landuse/residential",
+"Millennium Square"
+],
+"real-apartment-taman-connaught": [
+3.080961,
+101.736193,
+"landuse/residential",
+"Taman Connaught"
+],
+"real-holiday-place-d-villa-residence": [
+3.158789,
+101.726484,
+"landuse/residential",
+"D'Villa Residences"
+],
+"real-pertiwi-indah": [
+3.137937,
+101.733895,
+"landuse/residential",
+"Pertiwi Indah Apartments"
+],
+"real-arte-cheras": [
+3.100207,
+101.735572,
+"landuse/residential",
+"Arte Cheras"
+],
+"real-setapak-green-condominium": [
+3.194653,
+101.70659,
+"landuse/residential",
+"Setapak Green"
+],
+"real-gallery-u-thant": [
+3.158051,
+101.727577,
+"landuse/residential",
+"Gallery @ U-Thant Condominium"
+],
+"real-taman-intan-baiduri": [
+3.23192,
+101.648593,
+"place/neighbourhood",
+"Taman Intan Baiduri"
+],
+"real-sri-jinjang": [
+3.201989,
+101.660664,
+"landuse/residential",
+"Pangsapuri Sri Jinjang"
+],
+"real-residensi-ascenda": [
+3.19282,
+101.714814,
+"building/apartments",
+"Ascenda Residences"
+],
+"real-pandan-mas-residence": [
+3.133011,
+101.744027,
+"landuse/residential",
+"Pandan Mas Townhouse"
+],
+"real-permata-fadason": [
+3.213959,
+101.654175,
+"landuse/residential",
+"Taman Permata Fadason"
+],
+"real-desa-tun-razak": [
+3.07872,
+101.716182,
+"landuse/residential",
+"PPR Desa Tun Razak"
+],
+"real-medan-putra": [
+3.193692,
+101.623862,
+"landuse/residential",
+"Medan Putra Condominium"
+],
+"real-pangsapuri-mawar": [
+3.184621,
+101.697445,
+"landuse/residential",
+"Mawar Apartments"
+],
+"real-taman-setapak-indah": [
+3.214242,
+101.720696,
+"landuse/residential",
+"Taman Setapak Indah"
+],
+"real-nova-2": [
+3.18787,
+101.648348,
+"landuse/residential",
+"The Nova 1"
+],
+"real-sinaran-ttdi": [
+3.140387,
+101.627346,
+"building/apartments",
+"Sinaran TTDI"
+],
+"real-bukit-pandan-2": [
+3.115226,
+101.736734,
+"landuse/residential",
+"Kondominium Bukit Pandan 2"
+],
+"real-ketumbar-hill": [
+3.103546,
+101.748654,
+"landuse/residential",
+"Ketumbar Hill"
+],
+"real-pandan-mewah-heights": [
+3.129875,
+101.761816,
+"landuse/residential",
+"Pandan Mewah Heights Condominium"
+],
+"real-seri-anggerik-3": [
+3.41154,
+101.590596,
+"landuse/residential",
+"Pangsapuri Seri Anggerik 3"
+],
+"real-atria-sofo-suites": [
+3.126936,
+101.616408,
+"building/apartments",
+"Atria SOFO Suites Tower B"
+],
+"real-zefer-hill-residence": [
+3.067715,
+101.622172,
+"landuse/residential",
+"Zefer Hill Residences"
+],
+"real-danaumas": [
+3.080228,
+101.491279,
+"landuse/residential",
+"Apartment Danaumas"
+],
+"real-astana-alam-1-2": [
+3.247686,
+101.425737,
+"landuse/residential",
+"Apartment Astana Alam 3"
+],
+"real-azelia-residence": [
+3.198182,
+101.616275,
+"landuse/residential",
+"Azelia Residence"
+],
+"real-tiara-damansara": [
+3.126226,
+101.639103,
+"landuse/residential",
+"Tiara Damansara"
+],
+"real-zenith-residences-condo": [
+3.104261,
+101.591889,
+"landuse/residential",
+"Zenith Residences"
+],
+"real-pangsapuri-sri-budiman": [
+3.065962,
+101.506698,
+"building/yes",
+"Dewan Sri Budiman"
+],
+"real-taman-putra-kajang": [
+2.97746,
+101.773957,
+"place/neighbourhood",
+"Taman Putra Kajang"
+],
+"real-casa-riana": [
+3.014384,
+101.674605,
+"landuse/residential",
+"Pangsapuri Casa Riana"
+],
+"real-galleria-equine-park": [
+2.994866,
+101.67085,
+"landuse/residential",
+"Galleria Equine Park"
+],
+"real-east-lake-residence": [
+3.034358,
+101.706938,
+"building/apartments",
+"East Lake Residence"
+],
+"real-taman-bukit-ampang-permai": [
+3.122057,
+101.783889,
+"place/neighbourhood",
+"Bukit Ampang Permai"
+],
+"real-sri-lembayung": [
+3.025029,
+101.528427,
+"landuse/residential",
+"Taman Sri Lembayung"
+],
+"real-radia-residences-bukit-jelutong": [
+3.10132,
+101.535679,
+"building/commercial",
+"RADIA Bukit Jelutong"
+],
+"real-flat-pkns-seksyen-8": [
+3.069761,
+101.483032,
+"landuse/residential",
+"Flat PKNS Seksyen 7"
+],
+"real-de-kiara-apartment": [
+3.133096,
+101.472166,
+"landuse/residential",
+"De Kiara"
+],
+"real-taman-sentosa-perdana": [
+3.008272,
+101.481241,
+"place/neighbourhood",
+"Taman Sentosa Perdana"
+],
+"real-taman-bukit-indah": [
+3.153839,
+101.775132,
+"landuse/residential",
+"Taman Bukit Indah"
+],
+"real-suriamas": [
+3.080942,
+101.605481,
+"landuse/residential",
+"Kondominium Suriamas"
+],
+"real-bayu-suria-summerfields": [
+3.022378,
+101.752607,
+"landuse/residential",
+"Bayu Suria Apartment"
+],
+"real-162-residency": [
+3.248195,
+101.650302,
+"landuse/residential",
+"162 Residency"
+],
+"real-metro-cheras": [
+3.062915,
+101.774513,
+"landuse/residential",
+"Metro Cheras"
+],
+"real-impian-baiduri": [
+3.095101,
+101.623375,
+"landuse/residential",
+"Pangsapuri Impian Baiduri"
+],
+"real-lagoon-view": [
+3.06709,
+101.605252,
+"landuse/residential",
+"Lagoon View Resort Condo"
+],
+"real-ilham": [
+3.101474,
+101.550953,
+"landuse/residential",
+"Ilham Apartments"
+],
+"real-green-residence-cheras": [
+3.072183,
+101.755709,
+"landuse/residential",
+"Green Residence Cheras"
+],
+"real-impian": [
+3.19189,
+101.586082,
+"landuse/residential",
+"Apartmen Impian"
+],
+"real-la-costa": [
+3.060295,
+101.605524,
+"landuse/residential",
+"La Costa"
+],
+"real-suria-kinrara": [
+3.062219,
+101.642349,
+"landuse/residential",
+"Kompleks Suria Kinrara"
+],
+"real-kinrara-ria": [
+3.067205,
+101.637944,
+"landuse/residential",
+"Kinrara Ria Apartments"
+],
+"real-seri-gembira-apartment": [
+3.19473,
+101.674689,
+"landuse/residential",
+"Pangsapuri Seri Gembira"
+],
+"real-tuan-residency-residensi-selingsing": [
+3.195195,
+101.670445,
+"landuse/residential",
+"Tuan Residency"
+],
+"real-the-maple": [
+3.184883,
+101.682499,
+"landuse/residential",
+"The Maple Condominium"
+],
+"real-setapak-riviera-ppam": [
+3.209019,
+101.691691,
+"building/apartments",
+"PPAM"
+],
+"real-bam-villa": [
+3.13696,
+101.73214,
+"landuse/residential",
+"BAM VIlla"
+],
+"real-winner-court-a": [
+3.083134,
+101.706742,
+"landuse/residential",
+"Winner Court A"
+],
+"real-cendana": [
+3.097432,
+101.71278,
+"landuse/residential",
+"Cendana Apartment"
+],
+"real-sentul-village": [
+3.203307,
+101.688654,
+"landuse/residential",
+"Sentul Village (Desa Sentul)"
+],
+"real-sentul-point-puncak-sentul": [
+3.202173,
+101.688613,
+"landuse/residential",
+"Sentul Point (Puncak Sentul)"
+],
+"real-east-parc-menjalara": [
+3.194825,
+101.634817,
+"landuse/residential",
+"East Parc @ Menjalara"
+],
+"real-residensi-r8": [
+3.158669,
+101.731113,
+"landuse/residential",
+"Residensi R8"
+],
+"real-perumahan-awam-seri-langkawi-1": [
+3.219117,
+101.721097,
+"landuse/residential",
+"Perumahan Awam Seri Langkawi 2"
+],
+"real-idaman-suria": [
+3.207436,
+101.710582,
+"building/apartments",
+"Idaman Suria Apartments"
+],
+"real-idaman-puteri": [
+3.208987,
+101.709635,
+"landuse/residential",
+"Idaman Puteri Condominium"
+],
+"real-kenwingston-platz": [
+3.200497,
+101.704054,
+"landuse/residential",
+"Kenwingston Platz"
+],
+"real-residensi-vyne": [
+3.091083,
+101.69771,
+"landuse/residential",
+"Residensi Vyne"
+],
+"real-vista-amani": [
+3.096249,
+101.714959,
+"landuse/residential",
+"Vista Amani Condominium"
+],
+"real-the-valley-residensi-skysirerra": [
+3.176476,
+101.747655,
+"landuse/residential",
+"The Valley Residences"
+],
+"real-kiara-park": [
+3.155151,
+101.626074,
+"landuse/residential",
+"Kiara Park Condominiums"
+],
+"real-suria-magna": [
+3.21141,
+101.641038,
+"landuse/residential",
+"Pangsapuri Suria Magna"
+],
+"real-lido-residency": [
+3.109924,
+101.727606,
+"landuse/residential",
+"Lido Residency"
+],
+"real-putra-suria-residensi": [
+3.113215,
+101.716777,
+"landuse/residential",
+"Putra Suria Residensi"
+],
+"real-li-villas": [
+3.125377,
+101.641711,
+"landuse/residential",
+"Li Villas"
+],
+"real-jadite-suites": [
+2.995112,
+101.759881,
+"landuse/residential",
+"Jadite Suites"
+],
+"real-damansara-bistari": [
+3.122381,
+101.627657,
+"landuse/residential",
+"Pangsapuri Damansara Bistari"
+],
+"real-sri-ixora": [
+2.973876,
+101.78393,
+"landuse/residential",
+"Sri Ixora Apartment"
+],
+"real-pj-midtown": [
+3.113675,
+101.640646,
+"building/apartments",
+"PJ Midtown"
+],
+"real-maxwell-towers": [
+3.088308,
+101.661737,
+"building/apartments",
+"Maxwell Towers"
+],
+"real-salvia": [
+3.158593,
+101.596405,
+"landuse/residential",
+"Apartment Salvia"
+],
+"real-aurora-residence": [
+2.994868,
+101.598671,
+"landuse/residential",
+"Aurora Residences"
+],
+"real-reflection-residences": [
+3.1626,
+101.613369,
+"landuse/residential",
+"Reflection Residences"
+],
+"real-you-vista-you-city": [
+3.07466,
+101.763009,
+"landuse/residential",
+"You Vista"
+],
+"real-cantara-residences": [
+3.117311,
+101.590125,
+"landuse/residential",
+"Cantara Residences"
+],
+"real-verde": [
+3.122689,
+101.576733,
+"landuse/residential",
+"Verde"
+],
+"real-i-soho-i-city": [
+3.065609,
+101.480633,
+"building/apartments",
+"i-Soho (Block A)"
+],
+"real-krt-seksyen-2": [
+3.060646,
+101.783642,
+"landuse/residential",
+"KRT Apartment Seksyen 2"
+],
+"real-seri-pinang": [
+3.01571,
+101.695345,
+"landuse/residential",
+"Pangsapuri Seri Pinang"
+],
+"real-fortune-park-suria-perdana": [
+3.036645,
+101.706966,
+"landuse/residential",
+"Fortune Park Apartments"
+],
+"real-sri-permata": [
+3.082704,
+101.53195,
+"landuse/residential",
+"Pangsapuri Sri Permata"
+],
+"real-residensi-melor": [
+2.954712,
+101.786191,
+"building/apartments",
+"Residensi Melor"
+],
+"real-d-cerrum": [
+2.921256,
+101.846129,
+"landuse/residential",
+"Pangsapuri D'cerrum"
+],
+"real-tiara-ampang": [
+3.155136,
+101.755914,
+"landuse/residential",
+"Tiara Ampang"
+],
+"real-sutramas": [
+3.041147,
+101.624011,
+"landuse/residential",
+"Sutramas"
+],
+"real-kenari-court": [
+3.137495,
+101.754468,
+"landuse/residential",
+"Kenari Court"
+],
+"real-pandan-ville": [
+3.129359,
+101.747496,
+"landuse/residential",
+"Pandan Ville Condominium"
+],
+"real-pesona-villa": [
+3.215741,
+101.764712,
+"landuse/residential",
+"Pesona Villa"
+],
+"real-kampung-warisan": [
+3.176826,
+101.734396,
+"landuse/residential",
+"Kampung Warisan"
+],
+"real-skypod-residences": [
+3.042272,
+101.619837,
+"building/apartments",
+"SkyPod"
+],
+"real-perdana-view-condominium": [
+3.170806,
+101.603227,
+"landuse/residential",
+"Perdana View Condominium"
+],
+"real-sri-cassia": [
+3.020054,
+101.626501,
+"landuse/residential",
+"Sri Cassia Apartment"
+],
+"real-monte-bayu-condominium": [
+3.107191,
+101.75434,
+"landuse/residential",
+"Monte Bayu Condominium"
+],
+"real-kayangan": [
+3.079207,
+101.608725,
+"landuse/residential",
+"Pangsapuri Kayangan"
+],
+"real-emerald-hill": [
+3.157154,
+101.775191,
+"landuse/residential",
+"Emerald Hill Condominium"
+],
+"real-casa-magna": [
+3.211388,
+101.642982,
+"landuse/residential",
+"Casa Magna Apartment"
+],
+"real-taman-kepong-indah": [
+3.228051,
+101.639889,
+"place/neighbourhood",
+"Taman Kepong Indah"
+],
+"real-fortune-court": [
+3.214029,
+101.646107,
+"landuse/commercial",
+"Fortune Court"
+],
+"real-trinity-lemanja": [
+3.209489,
+101.638483,
+"building/apartments",
+"Trinity Lemanja"
+],
+"real-midah-ria-condominium": [
+3.102501,
+101.72825,
+"landuse/residential",
+"Midah Ria Condominium"
+],
+"real-pangsapuri-seroja": [
+3.212133,
+101.650546,
+"landuse/residential",
+"Pangsapuri Seroja"
+],
+"real-j-dupion": [
+3.113497,
+101.726918,
+"landuse/residential",
+"J Dupion"
+],
+"real-kondominium-rafflesia": [
+3.182944,
+101.697376,
+"landuse/residential",
+"Kondominium Rafflesia"
+],
+"real-connaught-avenue": [
+3.078919,
+101.741877,
+"landuse/commercial",
+"Connaught Avenue"
+],
+"real-menjalara-18": [
+3.191878,
+101.63542,
+"landuse/residential",
+"Menjalara 18 Residences"
+],
+"real-vim-3-desa-park-north": [
+3.193199,
+101.631117,
+"building/apartments",
+"VIM 3 @ Desa Park North"
+],
+"real-suria-jelatek": [
+3.163316,
+101.735562,
+"building/apartments",
+"Suria Jelatek Residence"
+],
+"real-residensi-pandan-mas-2": [
+3.133011,
+101.744027,
+"landuse/residential",
+"Pandan Mas Townhouse"
+],
+"real-infiniti-3-residences": [
+3.194185,
+101.738114,
+"building/apartments",
+"Infiniti 3 Residensi"
+],
+"real-saville-melawati": [
+3.217056,
+101.7388,
+"building/apartments",
+"Saville"
+],
+"real-prima-pelangi": [
+3.177826,
+101.648138,
+"landuse/residential",
+"Taman Prima Pelangi"
+],
+"real-prima-tiara-2": [
+3.18447,
+101.65228,
+"landuse/residential",
+"Prima Tiara 2"
+],
+"real-desa-sri-puteri-b": [
+3.084495,
+101.714627,
+"landuse/residential",
+"Desa Sri Puteri - B"
+],
+"real-pangsaria": [
+3.082609,
+101.714493,
+"landuse/residential",
+"PangsaRia"
+],
+"real-taman-sri-endah-flat": [
+3.064308,
+101.688243,
+"landuse/residential",
+"Flat Taman Sri Endah"
+],
+"real-menara-megah": [
+3.172481,
+101.688499,
+"landuse/residential",
+"Menara Megah Condominium"
+],
+"real-mandy-villa": [
+3.186237,
+101.656955,
+"landuse/residential",
+"Mandy Villa Condo"
+],
+"real-the-lumayan": [
+3.098264,
+101.716864,
+"landuse/residential",
+"The Lumayan Apartments"
+],
+"real-glomac-damansara": [
+3.131248,
+101.630135,
+"building/service",
+"SSU Glomac Damansara"
+],
+"real-intan-apartment": [
+3.182664,
+101.742754,
+"landuse/residential",
+"Intan Apartment"
+],
+"real-endah-puri-condominium": [
+3.064605,
+101.701398,
+"landuse/residential",
+"Endah Puri"
+],
+"real-taman-kajang-villa": [
+2.960079,
+101.798573,
+"place/neighbourhood",
+"Kajang Villa"
+],
+"real-kristal-view": [
+3.07097,
+101.48075,
+"landuse/residential",
+"Kristal View Condominium"
+],
+"real-taman-saga-3": [
+3.020958,
+101.467648,
+"landuse/residential",
+"Taman Saga 3"
+],
+"real-pangsapuri-persanda": [
+3.075765,
+101.553365,
+"building/apartments",
+"Pangsapuri Servis Persanda 3"
+],
+"real-casa-tropika": [
+2.997929,
+101.621133,
+"landuse/residential",
+"Casa Tropika"
+],
+"real-glen-view-villa": [
+3.111909,
+101.753804,
+"landuse/residential",
+"Glen View Villa"
+],
+"real-ampang-boulevard": [
+3.154429,
+101.749206,
+"landuse/residential",
+"Ampang Boulevard"
+],
+"real-sinaran-ukay-residence": [
+3.180037,
+101.768324,
+"building/apartments",
+"Sinaran Ukay Condominium"
+],
+"real-casa-indah-2": [
+3.149221,
+101.587597,
+"landuse/residential",
+"Casa Indah 2 Condominium"
+],
+"real-laksamana-puri": [
+3.244744,
+101.67855,
+"building/apartments",
+"Laksamana Puri Condominium"
+],
+"real-arnica-tropicana-gardens": [
+3.1488,
+101.593113,
+"building/apartments",
+"Arnica"
+],
+"real-villa-park": [
+3.042746,
+101.689523,
+"building/apartments",
+"Villa Park Apartment"
+],
+"real-taman-serdang-perdana": [
+3.039409,
+101.706682,
+"landuse/residential",
+"Flat Serdang Perdana"
+],
+"real-gugusan-seroja": [
+3.153485,
+101.576516,
+"landuse/residential",
+"Gugusan Seroja"
+],
+"real-ampang-prima": [
+3.144176,
+101.765742,
+"landuse/residential",
+"Ampang Prima Condominium"
+],
+"real-kantan-court": [
+3.02097,
+101.698689,
+"landuse/residential",
+"Kantan Court"
+],
+"real-amerin-residence": [
+3.025253,
+101.751176,
+"building/apartments",
+"Amerin"
+],
+"real-sunway-sutera-condominium": [
+3.139248,
+101.598185,
+"landuse/residential",
+"Sunway Sutera Condominium"
+],
+"real-vista-panorama": [
+3.109829,
+101.759596,
+"landuse/residential",
+"Vista Panorama Condominium"
+],
+"real-landmark-residence": [
+3.035986,
+101.773393,
+"building/apartments",
+"Landmark Residence 2"
+],
+"real-tun-teja-1": [
+3.012378,
+101.497775,
+"building/apartments",
+"Pangsapuri Tun Teja 1"
+],
+"real-seksyen-6-shah-alam": [
+3.067461,
+101.486968,
+"building/train_station",
+"Seksyen 7 Shah Alam"
+],
+"real-taman-dagang": [
+3.147799,
+101.756478,
+"landuse/residential",
+"Taman Dagang"
+],
+"real-renjana-ampang": [
+3.136362,
+101.779193,
+"landuse/residential",
+"Renjana Ampang"
+],
+"real-nexus-kajang": [
+2.98297,
+101.792505,
+"landuse/residential",
+"Nexus @ Kajang Station"
+],
+"real-armanee-terrace": [
+3.172198,
+101.603663,
+"landuse/residential",
+"Armanee Terrace Condominium"
+],
+"real-cameron-towers": [
+3.088812,
+101.66065,
+"building/apartments",
+"Cameron Towers"
+],
+"real-the-grand-kelana-damansara-suite": [
+3.101846,
+101.598023,
+"landuse/residential",
+"The Grand"
+],
+"real-the-wharf-residence-taman-tasik-prima": [
+2.982509,
+101.602991,
+"landuse/residential",
+"The Wharf Taman Tasik Prima"
+],
+"real-kondominium-casa-green": [
+3.057405,
+101.760881,
+"landuse/residential",
+"Casa Green"
+],
+"real-plaza-kelana-jaya": [
+3.09646,
+101.599058,
+"landuse/residential",
+"Plaza @ Kelana Jaya Boulevard"
+],
+"real-sea-park-apartment": [
+3.112052,
+101.623577,
+"landuse/residential",
+"Sea Park Apartments"
+],
+"real-sphere-damansara": [
+3.197685,
+101.598468,
+"landuse/residential",
+"Sphere Damansara"
+],
+"real-megah-rise-taman-megah": [
+3.114496,
+101.611149,
+"building/commercial",
+"Megah Rise Mall"
+],
+"real-mutiara-oriental": [
+3.125146,
+101.598754,
+"landuse/residential",
+"Mutiara Oriental Condominium"
+],
+"real-9ine-residensi-sembilan": [
+3.078276,
+101.777144,
+"landuse/residential",
+"9ine"
+],
+"real-aliran-damai": [
+3.053513,
+101.745422,
+"landuse/residential",
+"Aliran Damai Apartment"
+],
+"real-aera-servis-residensi-aera-pjs-5": [
+3.077321,
+101.624789,
+"landuse/residential",
+"Aera Residence"
+],
+"real-tiara-kelana": [
+3.101153,
+101.592928,
+"landuse/residential",
+"Tiara Kelana Condominium"
+],
+"real-atwater-petaling-jaya": [
+3.117695,
+101.63235,
+"landuse/residential",
+"ATWATER"
+],
+"real-taman-puchong-perdana": [
+3.007284,
+101.604951,
+"building/commercial",
+"Kompleks Puchong Perdana"
+],
+"real-endah-promenade": [
+3.06334,
+101.696956,
+"landuse/residential",
+"Endah Promenade"
+],
+"real-bustan-shamelin": [
+3.119669,
+101.736411,
+"landuse/residential",
+"Apartment Bustan Shamelin"
+],
+"real-awana-puri": [
+3.093983,
+101.735182,
+"landuse/residential",
+"Awana Puri Condominium"
+],
+"real-villa-crystal": [
+3.183819,
+101.6499,
+"landuse/residential",
+"Villa Crystal"
+],
+"real-astana-lumayan": [
+3.099019,
+101.715519,
+"landuse/residential",
+"Astana Lumayan"
+],
+"real-irama-wangsa": [
+3.189743,
+101.737986,
+"building/apartments",
+"Irama Wangsa"
+],
+"real-villa-flora-ttdi-fasa-7": [
+3.1548,
+101.62418,
+"landuse/residential",
+"Villa Flora Condominiums"
+],
+"real-taman-maluri": [
+3.138965,
+101.731716,
+"landuse/residential",
+"Taman Maluri"
+],
+"real-shamelin-bestari": [
+3.120658,
+101.735623,
+"landuse/residential",
+"Shamelin Bestari"
+],
+"real-ppr-desa-tun-razak": [
+3.07872,
+101.716182,
+"landuse/residential",
+"PPR Desa Tun Razak"
+],
+"real-the-saffron": [
+3.180689,
+101.689708,
+"landuse/residential",
+"The Saffron Condominium"
+],
+"real-u-thant-residence": [
+3.157095,
+101.726146,
+"landuse/residential",
+"U-Thant Residence"
+],
+"real-plaza-prima-setapak": [
+3.198313,
+101.713223,
+"building/apartments",
+"Plaza Prima Setapak"
+],
+"real-ampang-hilir-tara": [
+3.157256,
+101.737189,
+"landuse/residential",
+"Ampang Hilir Tara"
+],
+"real-katana-ii": [
+3.158384,
+101.739097,
+"landuse/residential",
+"Katana II"
+],
+"real-madge-mansions": [
+3.158184,
+101.726947,
+"landuse/residential",
+"Madge Mansions"
+],
+"real-menara-polo": [
+3.150617,
+101.739329,
+"landuse/residential",
+"Menara Polo"
+],
+"real-taman-batu-permai": [
+3.20687,
+101.677635,
+"landuse/residential",
+"Flat Taman Batu Permai"
+],
+"real-sri-lojing": [
+3.187342,
+101.738955,
+"landuse/residential",
+"Sri Lojing Condominiums"
+],
+"real-kl-traders-square-residences": [
+3.203883,
+101.703898,
+"landuse/residential",
+"KL Traders Square"
+],
+"real-tar-villa-apartment": [
+3.208216,
+101.729475,
+"landuse/residential",
+"Tar Villa"
+],
+"real-la-villas": [
+3.206096,
+101.705742,
+"landuse/residential",
+"La Villas Condominium"
+],
+"real-sri-intan-1": [
+3.196447,
+101.675,
+"landuse/residential",
+"Sri Intan 1 Condominium"
+],
+"real-mawar-sari": [
+3.181727,
+101.753296,
+"landuse/residential",
+"Pangsapuri Mawar Sari"
+],
+"real-viva-residency": [
+3.177932,
+101.685255,
+"building/apartments",
+"Viva Residency (Block B)"
+],
+"real-laman-damai-li-garden": [
+3.210161,
+101.638098,
+"landuse/residential",
+"Laman Damai"
+],
+"real-kl-trillion": [
+3.163594,
+101.718392,
+"landuse/residential",
+"KL Trillion"
+],
+"real-the-palladium": [
+3.166697,
+101.717576,
+"landuse/residential",
+"The Palladium Condominium"
+],
+"real-vista-damai": [
+3.162877,
+101.719307,
+"building/apartments",
+"Vista Damai Condominium"
+],
+"real-desa-palma": [
+3.157131,
+101.729173,
+"landuse/residential",
+"Desa Palma"
+],
+"real-seri-meranti": [
+3.005888,
+101.62169,
+"landuse/residential",
+"Pangsapuri Seri Meranti"
+],
+"real-one-jelatek": [
+3.173055,
+101.734417,
+"building/apartments",
+"One Jelatek"
+],
+"real-seri-pulai": [
+3.006118,
+101.623453,
+"landuse/residential",
+"Pangsapuri Seri Pulai"
+],
+"real-la-vista": [
+3.045003,
+101.625947,
+"landuse/residential",
+"La Vista Condiminium"
+],
+"real-d-palma": [
+3.033487,
+101.628764,
+"landuse/residential",
+"D' Palma Apartment"
+],
+"real-opal": [
+3.168235,
+101.543008,
+"landuse/residential",
+"Pangsapuri Opal"
+],
+"real-d-kiara": [
+3.030258,
+101.62691,
+"landuse/residential",
+"Pangsapuri D' Kiara"
+],
+"real-rose": [
+3.155442,
+101.76899,
+"landuse/residential",
+"Rose Apartment"
+],
+"real-university-towers": [
+3.113228,
+101.650645,
+"landuse/residential",
+"University Towers Condominium"
+],
+"real-residensi-warnasari-1": [
+3.244791,
+101.423435,
+"landuse/residential",
+"Residensi Warnasari 1"
+],
+"real-taman-saujana-puchong": [
+2.993536,
+101.637985,
+"landuse/residential",
+"Taman Saujana Puchong"
+],
+"real-makmur": [
+3.078521,
+101.609627,
+"landuse/residential",
+"Makmur Apartments"
+],
+"real-aseana-puteri": [
+3.01735,
+101.628229,
+"landuse/residential",
+"Aseana Puteri Condominium"
+],
+"real-sri-pinang": [
+3.022493,
+101.62723,
+"landuse/residential",
+"Sri Pinang Apartment"
+],
+"real-crystal-tower-pangsapuri-kristal": [
+3.158491,
+101.773624,
+"landuse/residential",
+"Pangsapuri Kristal"
+],
+"real-semarak": [
+3.09403,
+101.461383,
+"landuse/residential",
+"Pangsapuri Semarak"
+],
+"real-seri-anggerik-2": [
+3.411842,
+101.587934,
+"landuse/residential",
+"Pangsapuri Seri Anggerik 2"
+],
+"real-cita-damansara": [
+3.147045,
+101.598761,
+"landuse/residential",
+"Cita Damansara"
+],
+"real-villa-pavilion": [
+3.043156,
+101.694447,
+"landuse/residential",
+"Villa Pavilion"
+],
+"real-cova-suites": [
+3.146757,
+101.575168,
+"landuse/residential",
+"Cova Suites"
+],
+"real-komuter-raya": [
+3.056058,
+101.527428,
+"landuse/residential",
+"Apartment Komuter Raya"
+],
+"real-elaeis-2": [
+3.096933,
+101.533191,
+"landuse/residential",
+"Condominium Elaeis 2"
+],
+"real-univ-360-place": [
+3.020964,
+101.71444,
+"landuse/residential",
+"Univ 360 Place"
+],
+"real-serdang-villa": [
+3.037937,
+101.688114,
+"landuse/residential",
+"Serdang Villa Apartment"
+],
+"real-serdang-skyvillas-serdang-perdana": [
+3.039409,
+101.706682,
+"landuse/residential",
+"Flat Serdang Perdana"
+],
+"real-putra-impian": [
+2.986503,
+101.673283,
+"landuse/residential",
+"Pangsapuri Putra Impian"
+],
+"real-excelsa": [
+3.010972,
+101.693075,
+"landuse/residential",
+"Excelsa Apartment"
+],
+"real-the-heritage": [
+3.025364,
+101.717967,
+"landuse/residential",
+"The Heritage"
+],
+"real-desa-saujana": [
+3.032607,
+101.728161,
+"landuse/residential",
+"Desa Saujana"
+],
+"real-3-elements": [
+2.982662,
+101.667557,
+"landuse/residential",
+"3 Elements"
+],
+"real-taman-rawang-mutiara": [
+3.32588,
+101.580918,
+"landuse/commercial",
+"Rawang Mutiara Business Centre"
+],
+"real-pj-8-service-suites": [
+3.104725,
+101.646683,
+"building/yes",
+"PJ Tower"
+],
+"real-glomac-centro": [
+3.137051,
+101.614933,
+"building/apartments",
+"Glomac Centro"
+],
+"real-suria-jelutong": [
+3.097659,
+101.539043,
+"building/apartments",
+"Suria Jelutong Sunsuria"
+],
+"real-mayang-court": [
+3.110197,
+101.594724,
+"building/apartments",
+"Mayang Court Apartments"
+],
+"real-lily-rose": [
+3.119262,
+101.60284,
+"landuse/residential",
+"Pangsapuri Lily & Rose"
+],
+"real-mkh-boulevard-2": [
+2.990055,
+101.792603,
+"landuse/residential",
+"MKH Boulevard"
+],
+"real-taman-dato-ahmad-razali": [
+3.153988,
+101.757804,
+"landuse/residential",
+"Taman Dato' Ahmad Razali"
+],
+"real-rimba-residence": [
+3.035481,
+101.635295,
+"landuse/residential",
+"Rimba Residence"
+],
+"real-sri-teratai": [
+3.051486,
+101.633567,
+"building/apartments",
+"Sri Teratai Apartment"
+],
+"real-pangsapuri-permata": [
+3.084265,
+101.760666,
+"building/apartments",
+"Pangsapuri Permata"
+],
+"real-sering-akasia": [
+3.075732,
+101.768658,
+"landuse/residential",
+"Sering Akasia"
+],
+"real-rampai-idaman-flat": [
+3.19581,
+101.600124,
+"landuse/residential",
+"Rampai Idaman"
+],
+"real-metro-villa": [
+3.14113,
+101.760082,
+"landuse/residential",
+"Metro Villa"
+],
+"real-kajang-prima": [
+2.979925,
+101.813342,
+"landuse/residential",
+"Taman Kajang Prima"
+],
+"real-taman-putra-sulaiman-tiara-duta-condo": [
+3.151108,
+101.752921,
+"landuse/residential",
+"Tiara Duta Kondominium"
+],
+"real-taman-seri-merdeka": [
+3.140238,
+101.76808,
+"landuse/residential",
+"Flat Taman Seri Merdeka"
+],
+"real-sri-ara": [
+3.118326,
+101.572233,
+"landuse/residential",
+"Apartment Sri Ara"
+],
+"real-tiara-duta": [
+3.151108,
+101.752921,
+"landuse/residential",
+"Tiara Duta Kondominium"
+],
+"real-oasis-serviced-suites": [
+3.150631,
+101.610294,
+"building/retail",
+"Oasis 4"
+],
+"real-lestari": [
+3.195814,
+101.595713,
+"landuse/residential",
+"Apartmen Lestari"
+],
+"real-flora-damansara-flat": [
+3.176075,
+101.617546,
+"landuse/residential",
+"Flora Damansara"
+],
+"real-vista-perdana": [
+3.115951,
+101.738669,
+"landuse/residential",
+"Vista Perdana"
+],
+"real-kampung-tasik-tambahan": [
+3.128302,
+101.775303,
+"place/neighbourhood",
+"Taman Tasik Tambahan"
+],
+"real-taman-koperasi-cuepacs": [
+3.027604,
+101.774538,
+"place/neighbourhood",
+"Taman Koperasi Cuepacs"
+],
+"real-taman-kajang-perdana": [
+2.992017,
+101.816579,
+"place/neighbourhood",
+"Kajang Perdana"
+],
+"real-urban-360": [
+3.240032,
+101.701723,
+"building/apartments",
+"Urban 360"
+],
+"real-pandan-puteri": [
+3.137462,
+101.753614,
+"landuse/residential",
+"Pandan Puteri Condominium"
+],
+"real-sunway-batu-caves": [
+3.238252,
+101.692071,
+"landuse/residential",
+"Taman Sunway Batu Caves"
+],
+"real-riviera": [
+3.118233,
+101.753504,
+"landuse/residential",
+"Riviera Apartment"
+],
+"real-south-view-one-ampang-avenue": [
+3.153549,
+101.751665,
+"landuse/residential",
+"south view one ampang avenue"
+],
+"real-pandan-lake-view": [
+3.116975,
+101.745135,
+"landuse/residential",
+"Pandan Lake View Apartment"
+],
+"real-residensi-pr1ma-bandar-bukit-mahkota": [
+2.883478,
+101.798061,
+"landuse/residential",
+"Residensi PR1MA Bandar Bukit Mahkota"
+],
+"real-tks-business-centre-kajang": [
+2.964694,
+101.797354,
+"landuse/residential",
+"Kajang 2"
+],
+"real-taman-kajang-utama": [
+2.972652,
+101.796069,
+"landuse/residential",
+"Taman Kajang Utama"
+],
+"real-pavilion-damansara-heights": [
+3.145992,
+101.662761,
+"building/retail",
+"Pavilion Damansara Heights"
+],
+"real-desa-parkcity-park-place": [
+3.188295,
+101.633088,
+"landuse/residential",
+"Park Place @ ParkCity TownCenter"
+],
+"real-platinum-suites-the-face-suites": [
+3.158609,
+101.703858,
+"building/commercial",
+"The Face Platinum Suites"
+],
+"real-residensi-trx-1-tun-razak-exchange": [
+3.14146,
+101.718103,
+"landuse/commercial",
+"Tun Razak Exchange (TRX)"
+],
+"real-sunway-velocity-two": [
+3.128569,
+101.725527,
+"landuse/commercial",
+"Sunway Velocity Two"
+],
+"real-the-ooak-suites-residence": [
+3.16687,
+101.651591,
+"building/apartments",
+"The OOAK (Tower B)"
+],
+"real-wisma-infinitum": [
+3.160992,
+101.700626,
+"building/commercial",
+"Wisma Infinitum"
+],
+"real-kl-eco-city": [
+3.117923,
+101.673794,
+"landuse/commercial",
+"KL Eco City"
+],
+"real-four-seasons-place": [
+3.15826,
+101.713937,
+"building/yes",
+"Shoppes at Four Seasons Place"
+],
+"real-novo-ampang": [
+3.160247,
+101.739226,
+"building/yes",
+"NOVO Ampang"
+],
+"real-the-forum": [
+3.14442,
+101.721055,
+"building/yes",
+"The Forum Condominium"
+],
+"real-pavilion-suites": [
+3.14978,
+101.712075,
+"building/commercial",
+"Pavilion Tower"
+],
+"real-solaris-dutamas": [
+3.171175,
+101.665919,
+"landuse/commercial",
+"Solaris Dutamas"
+],
+"real-pantai-hillpark-2": [
+3.105006,
+101.663249,
+"landuse/residential",
+"Pantai Hillpark Phase 2"
+],
+"real-verve-suites": [
+3.167649,
+101.646023,
+"landuse/residential",
+"Verve Suites"
+],
+"real-mont-kiara-pelangi": [
+3.168767,
+101.653385,
+"building/apartments",
+"Venus Tower, Mont' Kiara Pelangi"
+],
+"real-crown-regency": [
+3.154958,
+101.708199,
+"building/hotel_&_service_suites",
+"Crown Regency Serviced Suites"
+],
+"real-i-zen-kiara-i": [
+3.165653,
+101.653926,
+"building/apartments",
+"i-Zen @ Kiara 2"
+],
+"real-kinrara-mas": [
+3.060828,
+101.649511,
+"landuse/residential",
+"Kinrara Mas Condominium"
+],
+"real-berjaya-times-square": [
+3.142221,
+101.710606,
+"building/retail",
+"Berjaya Times Square"
+],
+"real-residensi-convena-bukit-jalil": [
+3.059389,
+101.663009,
+"landuse/residential",
+"JRK Convena, Bukit Jalil"
+],
+"real-6-capsquare": [
+3.154849,
+101.700558,
+"building/apartments",
+"The Capsquare Residences"
+],
+"real-pavilion-residences": [
+3.14978,
+101.712075,
+"building/commercial",
+"Pavilion Tower"
+],
+"real-casa-green": [
+3.064661,
+101.663914,
+"landuse/residential",
+"Casa Green"
+],
+"real-sri-penaga": [
+3.141773,
+101.665048,
+"landuse/residential",
+"Sri Penaga"
+],
+"real-pantai-hillpark-5": [
+3.105218,
+101.662366,
+"landuse/residential",
+"Pantai Hillpark Phase 5"
+],
+"real-dua-sentral": [
+3.13637,
+101.692752,
+"building/yes",
+"Dua Sentral"
+],
+"real-banyan-tree-signature": [
+3.15053,
+101.713767,
+"building/yes",
+"Banyan Tree Signature"
+],
+"real-windsor-tower": [
+3.164624,
+101.658058,
+"building/yes",
+"Windsor Tower"
+],
+"real-pantai-hillpark-1": [
+3.107134,
+101.664986,
+"landuse/residential",
+"Pantai Hillpark Phase 1"
+],
+"real-bukit-oug": [
+3.062905,
+101.667463,
+"landuse/residential",
+"Bukit OUG Condominiums"
+],
+"real-legasi-kampung-bharu": [
+3.162153,
+101.706318,
+"landuse/residential",
+"Legasi Kampong Bharu"
+],
+"real-united-garden-taman-lee-yan-lian": [
+3.147908,
+101.698189,
+"building/yes",
+"Bangunan Lee Yan Lian"
+],
+"real-parkview-service-apartment": [
+3.155892,
+101.708532,
+"building/yes",
+"Parkview Service Apartment"
+],
+"real-mont-kiara-damai": [
+3.17115,
+101.656222,
+"landuse/residential",
+"Mont' Kiara Damai Resort Condominium"
+],
+"real-happy-garden-flat": [
+3.084723,
+101.688862,
+"landuse/residential",
+"Residensi Selesa @ Happy Garden"
+],
+"real-the-pearl-pearl-point": [
+3.084569,
+101.673439,
+"building/yes",
+"The Pearl Kuala Lumpur"
+],
+"real-8-kia-peng-residences": [
+3.153298,
+101.714643,
+"landuse/residential",
+"Residensi Kia Peng"
+],
+"real-plaza-damas": [
+3.164046,
+101.656493,
+"landuse/commercial",
+"Plaza Damas"
+],
+"real-hampshire-place": [
+3.162743,
+101.716122,
+"building/residential",
+"Hampshire Place Luxury Residences"
+],
+"real-d-majestic": [
+3.1609,
+101.698872,
+"landuse/residential",
+"Majestic Residence"
+],
+"real-288-residences": [
+3.080821,
+101.687859,
+"landuse/residential",
+"288 Residences"
+],
+"real-citizen-2-old-klang-road": [
+3.082328,
+101.661842,
+"building/apartments",
+"Citizen @ Old Klang Road"
+],
+"real-the-scott-garden": [
+3.094984,
+101.673965,
+"building/retail",
+"The Scott Garden"
+],
+"real-taman-kuchai-jaya": [
+3.089208,
+101.683011,
+"landuse/residential",
+"Flat Kuchai Jaya"
+],
+"real-sri-impian": [
+3.128876,
+101.681433,
+"landuse/residential",
+"Sri Impian Condominium"
+],
+"real-mercu-summer-suites": [
+3.159038,
+101.704571,
+"landuse/commercial",
+"Mercu Summer Suites"
+],
+"real-senada-residences-klgcc": [
+3.138352,
+101.649195,
+"landuse/residential",
+"Senada Residences and Menara KLGCC"
+],
+"real-bayview-court": [
+3.07137,
+101.647888,
+"landuse/residential",
+"Bayview Court 1D"
+],
+"real-imperial-lexis-kl": [
+3.152497,
+101.716218,
+"building/hotel",
+"Imperial Lexis Kuala Lumpur"
+],
+"real-pantai-hillpark-3": [
+3.107096,
+101.663442,
+"landuse/residential",
+"Pantai Hillpark Phase 3"
+],
+"real-chelsea-plaza-damas-3": [
+3.162873,
+101.656941,
+"building/retail",
+"Block B - Chelsea"
+],
+"real-the-robertson": [
+3.144167,
+101.704479,
+"building/commercial",
+"The Robertson"
+],
+"real-residensi-riana-dutamas": [
+3.184703,
+101.668545,
+"landuse/residential",
+"Savio @ Riana Dutamas"
+],
+"real-skyawani-residence": [
+3.193171,
+101.721818,
+"landuse/residential",
+"SkyAwani 4 Residence"
+],
+"real-bandar-damai-perdana": [
+3.046197,
+101.73781,
+"landuse/residential",
+"Bandar Damai Perdana"
+],
+"real-goodview-heights": [
+3.002016,
+101.825692,
+"landuse/residential",
+"Taman Goodview Heights"
+],
+"real-8-petaling": [
+3.066085,
+101.69043,
+"landuse/residential",
+"8 Petaling Condominium"
+],
+"real-villa-flora-taman-tun-dr-ismail": [
+3.1548,
+101.62418,
+"landuse/residential",
+"Villa Flora Condominiums"
+],
+"real-taman-pendamar-indah-2": [
+2.980222,
+101.425993,
+"place/neighbourhood",
+"Taman Pendamar Indah 2"
+],
+"real-desa-mentari-2": [
+3.083743,
+101.628885,
+"building/apartments",
+"Desa Mentari 2"
+],
+"real-bandar-bukit-tinggi": [
+3.008819,
+101.426091,
+"landuse/residential",
+"Flat Bandar Bukit Tinggi"
+],
+"real-1-sentul": [
+3.200138,
+101.689671,
+"landuse/residential",
+"1 Sentul Condominium"
+],
+"real-residensi-harmoni-2": [
+3.178765,
+101.64462,
+"building/apartments",
+"Residensi Harmoni 2"
+],
+"real-desa-mentari-3": [
+3.076592,
+101.633029,
+"landuse/residential",
+"Desa Mentari 3"
+],
+"real-mh-platinum-residensi": [
+3.198414,
+101.704669,
+"landuse/residential",
+"MH Platinum Residence"
+],
+"real-mh-platinum-residence": [
+3.198414,
+101.704669,
+"landuse/residential",
+"MH Platinum Residence"
+],
+"real-v-residensi-5": [
+3.248943,
+101.650231,
+"landuse/residential",
+"V-Residensi 5 Selayang"
+],
+"real-residensi-mh-platinum-2": [
+3.195039,
+101.723179,
+"landuse/residential",
+"Residensi MH Platinum 2"
+],
+"real-residensi-laguna": [
+3.103208,
+101.595519,
+"landuse/residential",
+"Laguna Residences"
+],
+"real-delima": [
+3.110588,
+101.535824,
+"landuse/residential",
+"Delima Apartment"
+],
+"real-star-residence-1": [
+3.14878,
+101.698873,
+"building/yes",
+"Arenaa Star Tower 1"
+],
+"real-star-residence-2": [
+3.148631,
+101.698749,
+"building/commercial",
+"Arenaa Star Tower 2"
+],
+"real-met-1-residence": [
+3.17552,
+101.669819,
+"building/apartments",
+"MET 1 Residences (Tower C)"
+],
+"real-menara-duta-1": [
+3.156582,
+101.6738,
+"landuse/residential",
+"Seri Duta 1"
+],
+"real-menara-warisan-the-heritage": [
+3.18584,
+101.700913,
+"landuse/residential",
+"Heritage Condominium"
+],
+"real-residensi-suasana-damai": [
+3.193582,
+101.591073,
+"landuse/residential",
+"Residensi Suasana @ Damai"
+],
+"real-v-residensi-2": [
+3.070255,
+101.553149,
+"building/apartments",
+"V-Residensi 2"
+],
+"real-residensi-m-arisa": [
+3.203062,
+101.690756,
+"landuse/residential",
+"M Arisa Sentul"
+],
+"real-pangsapuri-putra-permai-block-c": [
+2.99374,
+101.667885,
+"landuse/residential",
+"Pangsapuri Putra Permai Block C"
+],
+"real-taman-bukit-segar": [
+3.09334,
+101.755015,
+"landuse/residential",
+"Taman Bukit Segar"
+],
+"real-menara-mutiara": [
+3.169491,
+101.763582,
+"landuse/residential",
+"Menara Mutiara"
+],
+"real-d-pines": [
+3.141422,
+101.751066,
+"landuse/residential",
+"D'Pines Condominium"
+],
+"real-i-residence": [
+3.153836,
+101.604269,
+"building/apartments",
+"Block I"
+],
+"real-desa-perangsang": [
+3.071452,
+101.632248,
+"building/apartments",
+"Apartment Desa Perangsang"
+],
+"real-pelangi": [
+3.169026,
+101.653836,
+"landuse/residential",
+"Pelangi"
+],
+"real-desa-putra": [
+3.199895,
+101.737854,
+"landuse/residential",
+"Desa Putra Condominium"
+],
+"real-taman-equine": [
+3.001728,
+101.675075,
+"landuse/residential",
+"Taman Equine"
+],
+"real-taman-pandan-indah-villa-pandan": [
+3.131523,
+101.76683,
+"landuse/commercial",
+"Taman Komersial Pandan Indah"
+],
+"real-taman-cahaya": [
+3.143027,
+101.756798,
+"landuse/residential",
+"Taman Cahaya"
+],
+"real-putra-apartment": [
+3.180488,
+101.745763,
+"landuse/residential",
+"Putra Apartment"
+],
+"real-menara-indah": [
+3.169605,
+101.771861,
+"landuse/residential",
+"Menara Indah"
+],
+"real-residensi-dc-damansara-city": [
+3.147112,
+101.660869,
+"landuse/residential",
+"DC Residensi"
+],
+"real-boulevard": [
+3.131604,
+101.612245,
+"landuse/residential",
+"Boulevard Residence"
+],
+"real-one-kl": [
+3.155865,
+101.71056,
+"building/residential",
+"ONE KL"
+],
+"real-menara-pelangi": [
+3.129343,
+101.682134,
+"landuse/residential",
+"Menara Pelangi"
+],
+"real-menara-putra": [
+3.165776,
+101.695178,
+"building/apartments",
+"Menara Putra"
+],
+"real-kl-gateway": [
+3.113343,
+101.662802,
+"building/residential",
+"KL Gateway Residences"
+],
+"real-taman-pandan-indah-grandeur-tower": [
+3.129649,
+101.750329,
+"landuse/residential",
+"Grandeur Tower"
+],
+"real-seri-mas": [
+3.113119,
+101.722709,
+"landuse/residential",
+"Kondominium Seri Mas"
+],
+"real-seri-puteri": [
+3.111584,
+101.714821,
+"building/apartments",
+"Kondominium Seri Puteri"
+],
+"real-green-park-residence": [
+3.002093,
+101.73272,
+"landuse/residential",
+"Green Park Residence"
+],
+"real-bunga-raya": [
+3.212257,
+101.728742,
+"landuse/residential",
+"Taman Bunga Raya"
+],
+"real-i-suite-i-city": [
+3.065762,
+101.482253,
+"landuse/residential",
+"I-Residence @ i-City"
+],
+"real-taman-pandan-indah-indah-cempaka": [
+3.136446,
+101.750137,
+"landuse/residential",
+"Pangsapuri Indah Cempaka"
+],
+"real-villa-putra": [
+3.165342,
+101.691988,
+"landuse/residential",
+"Villa Putra"
+],
+"real-greenview-apartment": [
+3.249893,
+101.638001,
+"building/apartments",
+"Casa Venicia GreenView"
+],
+"real-cheras-ria-apartment-taman-cheras-utama": [
+3.048532,
+101.74664,
+"place/neighbourhood",
+"Taman Cheras Utama"
+],
+"real-maxim-residences": [
+3.077151,
+101.742214,
+"landuse/residential",
+"Majestic Maxim"
+],
+"real-residensi-jernih": [
+3.000836,
+101.784127,
+"amenity/railway_station",
+"KG33 Sungai Jernih"
+],
+"real-residensi-rimbun-canopy-hills": [
+2.937614,
+101.792406,
+"natural/grassland",
+"ELC Rimbun Tropika"
+],
+"real-berkeley-uptown-residences": [
+3.055785,
+101.445168,
+"landuse/retail",
+"Berkeley Uptown"
+],
+"real-bandar-mahkota-cheras-mahkota-garden": [
+3.050426,
+101.783963,
+"landuse/residential",
+"Mahkota Garden"
+]
+}
