@@ -41,7 +41,7 @@ for p in site:
         assert p["net_yield"] is None and p["net_costs"] is None
         continue
     n = p["ask_rent"]["count"]
-    assert n >= K.MIN_RENT_ADS, (p["id"], n)
+    assert n >= K.MIN_RENT_ADS and p["gross_yield"] <= B.MAX_GROSS, (p["id"], n)
     exp = st.median([s["rent"] * 12 / (p["tx"]["psf_median"] * s["size"]) * 100 for s in p["ask_rent"]["samples"]]) if n <= 40 else None
     assert exp is None or abs(exp - p["gross_yield"]) <= 0.01, (p["id"], exp, p["gross_yield"])
     assert abs(p["gross_yield"] - sum(p["net_costs"]["pts"].values()) - p["net_yield"]) <= 0.01

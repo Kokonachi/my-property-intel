@@ -471,6 +471,14 @@ def cmd_patch_b1():
     print(f"batch 1: {n} projects got coordinates; on map now {kl['summary']['on_map']} of {len(kl['projects'])}")
 
 
+MAX_GROSS = 12.0
+
+
+def name_is_town(name):
+    ks = {t for t in K.toks(re.sub(r"\([^)]*\)", "", name)) if t not in TYPE_WORDS}
+    return bool(ks) and ks <= TOWN_WORDS | {"seri", "sri", "bandar", "taman", "pusat"}
+
+
 def cmd_build():
     geo = json.loads(GEO_FP.read_text()) if GEO_FP.exists() else {}
     mudah = json.loads(MUDAH_FP.read_text()) if MUDAH_FP.exists() else {}
@@ -481,10 +489,14 @@ def cmd_build():
         typ = K.type_of(p["brickz_type"])
         raw = [dict(price=a[0], size=a[1], rooms=a[2], url=a[3], title=a[4], src="Mudah") for a in (m or {}).get("ads", [])
                if digits_ok(p["name"], a[4])]
+        if too_generic(p["name"]) or name_is_town(p["name"]):
+            raw = []   # e.g. "SERI KEMBANGAN": the search returns every condo in the town
         rents, _ = clean_whole_unit_rents(raw, typ=typ, brickz_type=p["brickz_type"])
         gross, net, costs = K.yield_block(p, rents, K.maint_psf(p, aid))
         n = len(rents)
-        show = gross is not None and n >= MIN_RENT_ADS
+        # data-quality guard: > MAX_GROSS means the ads and the Brickz records describe different units (e.g. low-cost
+        # flats resold at RM50k vs market-rent ads); the yield is withheld rather than shown
+        show = gross is not None and n >= MIN_RENT_ADS and gross <= MAX_GROSS
         conf = "high" if n >= 8 and p["tx_count"] >= 15 else "medium" if n >= MIN_RENT_ADS else "low"
         g = geo.get(p["id"]) if accept_geo(p["name"], geo.get(p["id"])) else None
         q = " ".join(scrape.tokens(p["name"]))
