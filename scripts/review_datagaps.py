@@ -6,7 +6,7 @@ from playwright.async_api import async_playwright
 
 BASE = sys.argv[1]
 IDS = sys.argv[2].split(",")
-OUT = Path('/workspace/my-property-intel/screenshots'); OUT.mkdir(exist_ok=True)
+OUT = Path(sys.argv[3] if len(sys.argv) > 3 else '/workspace/my-property-intel/screenshots'); OUT.mkdir(exist_ok=True)
 LANG = "localStorage.setItem('mpi-lang', 'zh');"
 report = {}
 
