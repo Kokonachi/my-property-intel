@@ -17,7 +17,7 @@
  *  Uses the list price (or a user-entered net price if provided). Rent is an asking-rent estimate.
  */
 import { REAL, isThinSample } from '../data/real.js'
-import { typRentPsf } from '../data/launches.js'
+import { typRentPsf, compsFor } from '../data/launches.js'
 import { typYields } from './launchYield.js'
 import { entryYield } from './launchEntry.js'
 import { cashVsRent, DEFAULT_RATE, DEFAULT_YEARS, DEFAULT_LTV, clampLtv, entryCost } from './mortgage.js'
@@ -49,7 +49,17 @@ export function areaCompletedProjects(area) {
   return REAL.filter(p => p.area === area && p.psf > 0 && p.gross != null && !isLowCostFlat(p) && !isThinSample(p) && !GATEWAY_DUPES.has(p.id))
 }
 
-export function areaCompletedStats(area) {
+/** Launches with their own comparable set (comps_key, e.g. HAUS ON 15 → ss15) use the pre-built nearby resale set. */
+export function launchPeers(p) {
+  const r = p?.comps_key ? compsFor(p.comps_key).resale : null
+  if (!r) return areaCompletedProjects(p.area)
+  const ids = new Set(r.projects.map(x => x.id))
+  return REAL.filter(x => ids.has(x.id) && x.psf > 0)
+}
+
+export function areaCompletedStats(area, launch) {
+  const r = launch?.comps_key ? compsFor(launch.comps_key).resale : null
+  if (r) return { n: r.n_projects, medianGross: r.median_gross, medianPsf: r.median_psf }
   const ps = REAL.filter(p => p.area === area && p.gross != null && !isLowCostFlat(p) && !isThinSample(p))
   const grosses = ps.map(p => p.gross)
   const psfs = ps.map(p => p.psf).filter(v => v > 0)
@@ -91,7 +101,7 @@ export function launchScore(p, { rate = DEFAULT_RATE, years = DEFAULT_YEARS, ltv
   if (!yields || !price) {
     return { score: null, typ, reason: 'missing_price_or_rent', area: null, parts: null, ltv: ltvN }
   }
-  const area = areaCompletedStats(p.area)
+  const area = areaCompletedStats(p.area, p)
   const gross = yields.gross
   const yieldPts = clamp(((gross - 3) / 3) * SCORE_WEIGHTS.yield, 0, SCORE_WEIGHTS.yield)
 

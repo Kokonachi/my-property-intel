@@ -1,0 +1,1192 @@
+{
+ "research_date": "2026-11-28",
+ "area": "ss15",
+ "area_en": "SS15 Subang Jaya",
+ "area_zh": "SS15 梳邦再也",
+ "resale": {
+  "method": "Completed freehold high-rise (Condo / Serviced Residence) projects within 1.5 km of SS15 LRT station (OSM KJ29 SS15), landed and low-cost flats excluded. Transacted psf is the cached Brickz median (Aug 2025 – Jul 2026); no new Brickz requests. Resale psf needs >= 4 cached transactions per project; gross yield needs >= 3 own rent ads.",
+  "ref_point": {
+   "lat": 3.0756959,
+   "lng": 101.5861786,
+   "source": "OSM way 407156837 (KJ29 SS15 station)"
+  },
+  "radius_km": 1.5,
+  "min_tx": 4,
+  "n_projects": 11,
+  "median_psf": 546,
+  "psf_min": 364.0,
+  "psf_max": 1018.0,
+  "n_gross_projects": 7,
+  "median_gross": 6.07,
+  "nearest": {
+   "id": "real-first-subang-ss-15-courtyard",
+   "name": "First Subang (Ss 15 Courtyard)",
+   "distance_km": 0.22,
+   "tx_count": 6,
+   "tx_period": [
+    "22/09/2025",
+    "12/06/2026"
+   ],
+   "psf_median": 762.0,
+   "rent_ads": 1,
+   "rent_psf_median": 3.2,
+   "gross_yield": 5.04
+  },
+  "projects": [
+   {
+    "id": "real-first-subang-ss-15-courtyard",
+    "name": "First Subang (Ss 15 Courtyard)",
+    "distance_km": 0.22,
+    "tx_count": 6,
+    "tx_period": [
+     "22/09/2025",
+     "12/06/2026"
+    ],
+    "psf_median": 762.0,
+    "rent_ads": 1,
+    "rent_psf_median": 3.2,
+    "gross_yield": 5.04
+   },
+   {
+    "id": "real-grand-subang-jaya-ss15",
+    "name": "Grand Subang Jaya @ Ss15",
+    "distance_km": 0.43,
+    "tx_count": 5,
+    "tx_period": [
+     "20/08/2025",
+     "26/02/2026"
+    ],
+    "psf_median": 1018.0,
+    "rent_ads": 13,
+    "rent_psf_median": 4.8,
+    "gross_yield": 5.65
+   },
+   {
+    "id": "real-lafite-apartment",
+    "name": "Lafite Apartment",
+    "distance_km": 0.56,
+    "tx_count": 4,
+    "tx_period": [
+     "24/09/2025",
+     "10/03/2026"
+    ],
+    "psf_median": 465.0,
+    "rent_ads": 3,
+    "rent_psf_median": 1.75,
+    "gross_yield": 4.51
+   },
+   {
+    "id": "real-saujana-residency",
+    "name": "Saujana Residency",
+    "distance_km": 0.84,
+    "tx_count": 5,
+    "tx_period": [
+     "02/09/2025",
+     "08/04/2026"
+    ],
+    "psf_median": 600.0,
+    "rent_ads": 1,
+    "rent_psf_median": 2.97,
+    "gross_yield": 5.93
+   },
+   {
+    "id": "real-subang-avenue",
+    "name": "Subang Avenue",
+    "distance_km": 0.84,
+    "tx_count": 11,
+    "tx_period": [
+     "07/08/2025",
+     "11/06/2026"
+    ],
+    "psf_median": 440.0,
+    "rent_ads": 2,
+    "rent_psf_median": 2.57,
+    "gross_yield": 7.01
+   },
+   {
+    "id": "real-e-tiara",
+    "name": "E-Tiara",
+    "distance_km": 0.88,
+    "tx_count": 7,
+    "tx_period": [
+     "04/09/2025",
+     "07/07/2026"
+    ],
+    "psf_median": 546.0,
+    "rent_ads": 4,
+    "rent_psf_median": 2.69,
+    "gross_yield": 5.91
+   },
+   {
+    "id": "real-casa-tiara",
+    "name": "Casa Tiara",
+    "distance_km": 0.92,
+    "tx_count": 14,
+    "tx_period": [
+     "10/10/2025",
+     "19/06/2026"
+    ],
+    "psf_median": 510.0,
+    "rent_ads": 3,
+    "rent_psf_median": 2.73,
+    "gross_yield": 6.41
+   },
+   {
+    "id": "real-sjcc-lot-15-ss-16-subang-jaya",
+    "name": "(Sjcc) Lot 15 - Ss 16 Subang Jaya",
+    "distance_km": 0.98,
+    "tx_count": 5,
+    "tx_period": [
+     "04/08/2025",
+     "05/02/2026"
+    ],
+    "psf_median": 871.0,
+    "rent_ads": 0,
+    "rent_psf_median": null,
+    "gross_yield": null
+   },
+   {
+    "id": "real-keranji",
+    "name": "Keranji",
+    "distance_km": 1.06,
+    "tx_count": 4,
+    "tx_period": [
+     "07/10/2025",
+     "10/04/2026"
+    ],
+    "psf_median": 482.0,
+    "rent_ads": 0,
+    "rent_psf_median": null,
+    "gross_yield": null
+   },
+   {
+    "id": "real-the-grand-subang-ss-13-subang-jaya",
+    "name": "The Grand Subang-Ss 13 Subang Jaya",
+    "distance_km": 1.3,
+    "tx_count": 10,
+    "tx_period": [
+     "10/09/2025",
+     "03/06/2026"
+    ],
+    "psf_median": 855.0,
+    "rent_ads": 12,
+    "rent_psf_median": 4.56,
+    "gross_yield": 6.4
+   },
+   {
+    "id": "real-subang-olives-residence",
+    "name": "Subang Olives Residence",
+    "distance_km": 1.48,
+    "tx_count": 6,
+    "tx_period": [
+     "11/08/2025",
+     "09/02/2026"
+    ],
+    "psf_median": 364.0,
+    "rent_ads": 2,
+    "rent_psf_median": 1.65,
+    "gross_yield": 5.43
+   }
+  ],
+  "gross_projects": [
+   {
+    "id": "real-grand-subang-jaya-ss15",
+    "name": "Grand Subang Jaya @ Ss15",
+    "distance_km": 0.43,
+    "tx_count": 5,
+    "tx_period": [
+     "20/08/2025",
+     "26/02/2026"
+    ],
+    "psf_median": 1018.0,
+    "rent_ads": 13,
+    "rent_psf_median": 4.8,
+    "gross_yield": 5.65
+   },
+   {
+    "id": "real-lafite-apartment",
+    "name": "Lafite Apartment",
+    "distance_km": 0.56,
+    "tx_count": 4,
+    "tx_period": [
+     "24/09/2025",
+     "10/03/2026"
+    ],
+    "psf_median": 465.0,
+    "rent_ads": 3,
+    "rent_psf_median": 1.75,
+    "gross_yield": 4.51
+   },
+   {
+    "id": "real-isola",
+    "name": "Isola",
+    "distance_km": 0.85,
+    "tx_count": 2,
+    "tx_period": [
+     "30/10/2025",
+     "20/04/2026"
+    ],
+    "psf_median": 674.0,
+    "rent_ads": 7,
+    "rent_psf_median": 3.41,
+    "gross_yield": 6.07
+   },
+   {
+    "id": "real-e-tiara",
+    "name": "E-Tiara",
+    "distance_km": 0.88,
+    "tx_count": 7,
+    "tx_period": [
+     "04/09/2025",
+     "07/07/2026"
+    ],
+    "psf_median": 546.0,
+    "rent_ads": 4,
+    "rent_psf_median": 2.69,
+    "gross_yield": 5.91
+   },
+   {
+    "id": "real-casa-tiara",
+    "name": "Casa Tiara",
+    "distance_km": 0.92,
+    "tx_count": 14,
+    "tx_period": [
+     "10/10/2025",
+     "19/06/2026"
+    ],
+    "psf_median": 510.0,
+    "rent_ads": 3,
+    "rent_psf_median": 2.73,
+    "gross_yield": 6.41
+   },
+   {
+    "id": "real-dorsett-waterfront-subang",
+    "name": "Dorsett Waterfront Subang",
+    "distance_km": 1.2,
+    "tx_count": 2,
+    "tx_period": [
+     "18/03/2026",
+     "06/04/2026"
+    ],
+    "psf_median": 808.0,
+    "rent_ads": 6,
+    "rent_psf_median": 5.18,
+    "gross_yield": 7.69
+   },
+   {
+    "id": "real-the-grand-subang-ss-13-subang-jaya",
+    "name": "The Grand Subang-Ss 13 Subang Jaya",
+    "distance_km": 1.3,
+    "tx_count": 10,
+    "tx_period": [
+     "10/09/2025",
+     "03/06/2026"
+    ],
+    "psf_median": 855.0,
+    "rent_ads": 12,
+    "rent_psf_median": 4.56,
+    "gross_yield": 6.4
+   }
+  ],
+  "in_radius_not_used": [
+   {
+    "id": "real-my-place",
+    "name": "My Place",
+    "distance_km": 0.41,
+    "tx_count": 1,
+    "tx_period": [
+     "02/09/2025",
+     "02/09/2025"
+    ],
+    "psf_median": 469.0,
+    "rent_ads": 1,
+    "rent_psf_median": 2.55,
+    "gross_yield": 6.53
+   },
+   {
+    "id": "real-isola",
+    "name": "Isola",
+    "distance_km": 0.85,
+    "tx_count": 2,
+    "tx_period": [
+     "30/10/2025",
+     "20/04/2026"
+    ],
+    "psf_median": 674.0,
+    "rent_ads": 7,
+    "rent_psf_median": 3.41,
+    "gross_yield": 6.07
+   },
+   {
+    "id": "real-dorsett-waterfront-subang",
+    "name": "Dorsett Waterfront Subang",
+    "distance_km": 1.2,
+    "tx_count": 2,
+    "tx_period": [
+     "18/03/2026",
+     "06/04/2026"
+    ],
+    "psf_median": 808.0,
+    "rent_ads": 6,
+    "rent_psf_median": 5.18,
+    "gross_yield": 7.69
+   }
+  ]
+ },
+ "comparables": {
+  "method": "Asking-rent ads (Mudah / PropertyGuru, collected earlier) of the same freehold high-rise projects within 1.5 km of SS15 LRT. Duplicate ads inside one project (same size + rent) counted once. Band is ±15% of the unit size when at least 5 ads exist; otherwise widened to ±20% then ±25% until at least 5 (or 4 at ±25%).",
+  "n_listings_primary": 40,
+  "n_projects_non_flat": 12,
+  "area_project_median_rent_psf": 3.41,
+  "area_project_median_note": "Median of each nearby project's own rent_psf_median (projects with >= 3 own rent ads, n=7).",
+  "samples_primary": [
+   {
+    "project": "First Subang (SS 15 Courtyard)",
+    "size": 500.0,
+    "rent": 1599.0,
+    "rooms": 1.0,
+    "src": "Mudah",
+    "psf": 3.2
+   },
+   {
+    "project": "My Place",
+    "size": 980.0,
+    "rent": 2500.0,
+    "rooms": 3.0,
+    "src": "Mudah",
+    "psf": 2.55
+   },
+   {
+    "project": "Grand Subang Jaya @ SS15",
+    "size": 600.0,
+    "rent": 3000.0,
+    "rooms": 3.0,
+    "src": "Mudah",
+    "psf": 5.0
+   },
+   {
+    "project": "Grand Subang Jaya @ SS15",
+    "size": 563.0,
+    "rent": 2800.0,
+    "rooms": 2.0,
+    "src": "PropertyGuru",
+    "psf": 4.97
+   },
+   {
+    "project": "Grand Subang Jaya @ SS15",
+    "size": 563.0,
+    "rent": 2600.0,
+    "rooms": 2.0,
+    "src": "PropertyGuru",
+    "psf": 4.62
+   },
+   {
+    "project": "Grand Subang Jaya @ SS15",
+    "size": 563.0,
+    "rent": 2700.0,
+    "rooms": 2.0,
+    "src": "PropertyGuru",
+    "psf": 4.8
+   },
+   {
+    "project": "Grand Subang Jaya @ SS15",
+    "size": 600.0,
+    "rent": 2699.0,
+    "rooms": 2.0,
+    "src": "PropertyGuru",
+    "psf": 4.5
+   },
+   {
+    "project": "Grand Subang Jaya @ SS15",
+    "size": 565.0,
+    "rent": 2599.0,
+    "rooms": 2.0,
+    "src": "PropertyGuru",
+    "psf": 4.6
+   },
+   {
+    "project": "Grand Subang Jaya @ SS15",
+    "size": 548.0,
+    "rent": 3000.0,
+    "rooms": 2.0,
+    "src": "PropertyGuru",
+    "psf": 5.47
+   },
+   {
+    "project": "Lafite Apartment",
+    "size": 915.0,
+    "rent": 1599.0,
+    "rooms": 3.0,
+    "src": "PropertyGuru",
+    "psf": 1.75
+   },
+   {
+    "project": "Lafite Apartment",
+    "size": 950.0,
+    "rent": 1700.0,
+    "rooms": 3.0,
+    "src": "PropertyGuru",
+    "psf": 1.79
+   },
+   {
+    "project": "Lafite Apartment",
+    "size": 950.0,
+    "rent": 1600.0,
+    "rooms": 3.0,
+    "src": "PropertyGuru",
+    "psf": 1.68
+   },
+   {
+    "project": "Saujana Residency",
+    "size": 1517.0,
+    "rent": 4500.0,
+    "rooms": 3.0,
+    "src": "PropertyGuru",
+    "psf": 2.97
+   },
+   {
+    "project": "Subang Avenue",
+    "size": 1021.0,
+    "rent": 2599.0,
+    "rooms": 3.0,
+    "src": "Mudah",
+    "psf": 2.55
+   },
+   {
+    "project": "Subang Avenue",
+    "size": 1080.0,
+    "rent": 2800.0,
+    "rooms": 3.0,
+    "src": "Mudah",
+    "psf": 2.59
+   },
+   {
+    "project": "Isola",
+    "size": 1026.0,
+    "rent": 3500.0,
+    "rooms": 2.0,
+    "src": "Mudah",
+    "psf": 3.41
+   },
+   {
+    "project": "Isola",
+    "size": 1927.0,
+    "rent": 5199.0,
+    "rooms": 3.0,
+    "src": "PropertyGuru",
+    "psf": 2.7
+   },
+   {
+    "project": "Isola",
+    "size": 1389.0,
+    "rent": 4499.0,
+    "rooms": 3.0,
+    "src": "PropertyGuru",
+    "psf": 3.24
+   },
+   {
+    "project": "Isola",
+    "size": 1400.0,
+    "rent": 3900.0,
+    "rooms": 2.0,
+    "src": "PropertyGuru",
+    "psf": 2.79
+   },
+   {
+    "project": "E-Tiara",
+    "size": 800.0,
+    "rent": 2300.0,
+    "rooms": 2.0,
+    "src": "Mudah",
+    "psf": 2.88
+   },
+   {
+    "project": "E-Tiara",
+    "size": 800.0,
+    "rent": 2099.0,
+    "rooms": 2.0,
+    "src": "Mudah",
+    "psf": 2.62
+   },
+   {
+    "project": "E-Tiara",
+    "size": 800.0,
+    "rent": 2200.0,
+    "rooms": 2.0,
+    "src": "Mudah",
+    "psf": 2.75
+   },
+   {
+    "project": "E-Tiara",
+    "size": 800.0,
+    "rent": 2080.0,
+    "rooms": 2.0,
+    "src": "PropertyGuru",
+    "psf": 2.6
+   },
+   {
+    "project": "Casa Tiara",
+    "size": 800.0,
+    "rent": 2400.0,
+    "rooms": 3.0,
+    "src": "Mudah",
+    "psf": 3.0
+   },
+   {
+    "project": "Casa Tiara",
+    "size": 550.0,
+    "rent": 1300.0,
+    "rooms": 1.0,
+    "src": "Mudah",
+    "psf": 2.36
+   },
+   {
+    "project": "Casa Tiara",
+    "size": 954.0,
+    "rent": 2600.0,
+    "rooms": 3.0,
+    "src": "Mudah",
+    "psf": 2.73
+   },
+   {
+    "project": "Dorsett Waterfront Subang",
+    "size": 399.0,
+    "rent": 2300.0,
+    "rooms": 1.0,
+    "src": "Mudah",
+    "psf": 5.76
+   },
+   {
+    "project": "Dorsett Waterfront Subang",
+    "size": 570.0,
+    "rent": 2700.0,
+    "rooms": 1.0,
+    "src": "Mudah",
+    "psf": 4.74
+   },
+   {
+    "project": "Dorsett Waterfront Subang",
+    "size": 570.0,
+    "rent": 2200.0,
+    "rooms": 1.0,
+    "src": "Mudah",
+    "psf": 3.86
+   },
+   {
+    "project": "Dorsett Waterfront Subang",
+    "size": 399.0,
+    "rent": 2299.0,
+    "rooms": null,
+    "src": "PropertyGuru",
+    "psf": 5.76
+   },
+   {
+    "project": "Dorsett Waterfront Subang",
+    "size": 570.0,
+    "rent": 3000.0,
+    "rooms": 1.0,
+    "src": "PropertyGuru",
+    "psf": 5.26
+   },
+   {
+    "project": "Dorsett Waterfront Subang",
+    "size": 570.0,
+    "rent": 2900.0,
+    "rooms": 1.0,
+    "src": "PropertyGuru",
+    "psf": 5.09
+   },
+   {
+    "project": "The Grand Subang-SS 13 Subang Jaya",
+    "size": 550.0,
+    "rent": 2300.0,
+    "rooms": 2.0,
+    "src": "PropertyGuru",
+    "psf": 4.18
+   },
+   {
+    "project": "The Grand Subang-SS 13 Subang Jaya",
+    "size": 548.0,
+    "rent": 2400.0,
+    "rooms": 2.0,
+    "src": "PropertyGuru",
+    "psf": 4.38
+   },
+   {
+    "project": "The Grand Subang-SS 13 Subang Jaya",
+    "size": 548.0,
+    "rent": 2500.0,
+    "rooms": 2.0,
+    "src": "PropertyGuru",
+    "psf": 4.56
+   },
+   {
+    "project": "The Grand Subang-SS 13 Subang Jaya",
+    "size": 548.0,
+    "rent": 2900.0,
+    "rooms": 2.0,
+    "src": "PropertyGuru",
+    "psf": 5.29
+   },
+   {
+    "project": "The Grand Subang-SS 13 Subang Jaya",
+    "size": 548.0,
+    "rent": 2600.0,
+    "rooms": 2.0,
+    "src": "PropertyGuru",
+    "psf": 4.74
+   },
+   {
+    "project": "The Grand Subang-SS 13 Subang Jaya",
+    "size": 563.0,
+    "rent": 2500.0,
+    "rooms": 2.0,
+    "src": "PropertyGuru",
+    "psf": 4.44
+   },
+   {
+    "project": "Subang Olives Residence",
+    "size": 1927.0,
+    "rent": 3000.0,
+    "rooms": 3.0,
+    "src": "Mudah",
+    "psf": 1.56
+   },
+   {
+    "project": "Subang Olives Residence",
+    "size": 1900.0,
+    "rent": 3299.0,
+    "rooms": 4.0,
+    "src": "PropertyGuru",
+    "psf": 1.74
+   }
+  ]
+ },
+ "net_yield_method": {
+  "vacancy_months": 1,
+  "assessment_rate": 0.04,
+  "fixed_rm_yr_strata": 250,
+  "maint_psf_assumption": 0.35,
+  "note": "Same method as the live map. Maintenance RM0.35 psf/month is the map assumption for Subang Jaya condos (no fee is stated in the sales kit)."
+ },
+ "bands": {
+  "690": {
+   "size": 690,
+   "tol_pct": 20,
+   "n": 16,
+   "n_near_if_insufficient": 0,
+   "rent_psf_median": 4.55,
+   "rent_median": 2600,
+   "sufficient": true,
+   "projects": {
+    "Grand Subang Jaya @ SS15": 6,
+    "E-Tiara": 4,
+    "Casa Tiara": 1,
+    "Dorsett Waterfront Subang": 4,
+    "The Grand Subang-SS 13 Subang Jaya": 1
+   },
+   "listings": [
+    {
+     "project": "Grand Subang Jaya @ SS15",
+     "size": 600.0,
+     "rent": 3000.0,
+     "rooms": 3.0,
+     "src": "Mudah",
+     "psf": 5.0
+    },
+    {
+     "project": "Grand Subang Jaya @ SS15",
+     "size": 600.0,
+     "rent": 2699.0,
+     "rooms": 2.0,
+     "src": "PropertyGuru",
+     "psf": 4.5
+    },
+    {
+     "project": "E-Tiara",
+     "size": 800.0,
+     "rent": 2300.0,
+     "rooms": 2.0,
+     "src": "Mudah",
+     "psf": 2.88
+    },
+    {
+     "project": "E-Tiara",
+     "size": 800.0,
+     "rent": 2099.0,
+     "rooms": 2.0,
+     "src": "Mudah",
+     "psf": 2.62
+    },
+    {
+     "project": "E-Tiara",
+     "size": 800.0,
+     "rent": 2200.0,
+     "rooms": 2.0,
+     "src": "Mudah",
+     "psf": 2.75
+    },
+    {
+     "project": "E-Tiara",
+     "size": 800.0,
+     "rent": 2080.0,
+     "rooms": 2.0,
+     "src": "PropertyGuru",
+     "psf": 2.6
+    },
+    {
+     "project": "Casa Tiara",
+     "size": 800.0,
+     "rent": 2400.0,
+     "rooms": 3.0,
+     "src": "Mudah",
+     "psf": 3.0
+    },
+    {
+     "project": "Dorsett Waterfront Subang",
+     "size": 570.0,
+     "rent": 2700.0,
+     "rooms": 1.0,
+     "src": "Mudah",
+     "psf": 4.74
+    },
+    {
+     "project": "Dorsett Waterfront Subang",
+     "size": 570.0,
+     "rent": 2200.0,
+     "rooms": 1.0,
+     "src": "Mudah",
+     "psf": 3.86
+    },
+    {
+     "project": "Dorsett Waterfront Subang",
+     "size": 570.0,
+     "rent": 3000.0,
+     "rooms": 1.0,
+     "src": "PropertyGuru",
+     "psf": 5.26
+    },
+    {
+     "project": "Dorsett Waterfront Subang",
+     "size": 570.0,
+     "rent": 2900.0,
+     "rooms": 1.0,
+     "src": "PropertyGuru",
+     "psf": 5.09
+    },
+    {
+     "project": "Grand Subang Jaya @ SS15",
+     "size": 565.0,
+     "rent": 2599.0,
+     "rooms": 2.0,
+     "src": "PropertyGuru",
+     "psf": 4.6
+    },
+    {
+     "project": "Grand Subang Jaya @ SS15",
+     "size": 563.0,
+     "rent": 2800.0,
+     "rooms": 2.0,
+     "src": "PropertyGuru",
+     "psf": 4.97
+    },
+    {
+     "project": "Grand Subang Jaya @ SS15",
+     "size": 563.0,
+     "rent": 2600.0,
+     "rooms": 2.0,
+     "src": "PropertyGuru",
+     "psf": 4.62
+    },
+    {
+     "project": "Grand Subang Jaya @ SS15",
+     "size": 563.0,
+     "rent": 2700.0,
+     "rooms": 2.0,
+     "src": "PropertyGuru",
+     "psf": 4.8
+    },
+    {
+     "project": "The Grand Subang-SS 13 Subang Jaya",
+     "size": 563.0,
+     "rent": 2500.0,
+     "rooms": 2.0,
+     "src": "PropertyGuru",
+     "psf": 4.44
+    }
+   ],
+   "note": null
+  },
+  "830": {
+   "size": 830,
+   "tol_pct": 15,
+   "n": 9,
+   "n_near_if_insufficient": 0,
+   "rent_psf_median": 2.62,
+   "rent_median": 2099,
+   "sufficient": true,
+   "projects": {
+    "Lafite Apartment": 3,
+    "E-Tiara": 4,
+    "Casa Tiara": 2
+   },
+   "listings": [
+    {
+     "project": "E-Tiara",
+     "size": 800.0,
+     "rent": 2300.0,
+     "rooms": 2.0,
+     "src": "Mudah",
+     "psf": 2.88
+    },
+    {
+     "project": "E-Tiara",
+     "size": 800.0,
+     "rent": 2099.0,
+     "rooms": 2.0,
+     "src": "Mudah",
+     "psf": 2.62
+    },
+    {
+     "project": "E-Tiara",
+     "size": 800.0,
+     "rent": 2200.0,
+     "rooms": 2.0,
+     "src": "Mudah",
+     "psf": 2.75
+    },
+    {
+     "project": "E-Tiara",
+     "size": 800.0,
+     "rent": 2080.0,
+     "rooms": 2.0,
+     "src": "PropertyGuru",
+     "psf": 2.6
+    },
+    {
+     "project": "Casa Tiara",
+     "size": 800.0,
+     "rent": 2400.0,
+     "rooms": 3.0,
+     "src": "Mudah",
+     "psf": 3.0
+    },
+    {
+     "project": "Lafite Apartment",
+     "size": 915.0,
+     "rent": 1599.0,
+     "rooms": 3.0,
+     "src": "PropertyGuru",
+     "psf": 1.75
+    },
+    {
+     "project": "Lafite Apartment",
+     "size": 950.0,
+     "rent": 1700.0,
+     "rooms": 3.0,
+     "src": "PropertyGuru",
+     "psf": 1.79
+    },
+    {
+     "project": "Lafite Apartment",
+     "size": 950.0,
+     "rent": 1600.0,
+     "rooms": 3.0,
+     "src": "PropertyGuru",
+     "psf": 1.68
+    },
+    {
+     "project": "Casa Tiara",
+     "size": 954.0,
+     "rent": 2600.0,
+     "rooms": 3.0,
+     "src": "Mudah",
+     "psf": 2.73
+    }
+   ],
+   "note": null
+  },
+  "905": {
+   "size": 905,
+   "tol_pct": 15,
+   "n": 12,
+   "n_near_if_insufficient": 0,
+   "rent_psf_median": 2.61,
+   "rent_median": 2250,
+   "sufficient": true,
+   "projects": {
+    "My Place": 1,
+    "Lafite Apartment": 3,
+    "Subang Avenue": 1,
+    "Isola": 1,
+    "E-Tiara": 4,
+    "Casa Tiara": 2
+   },
+   "listings": [
+    {
+     "project": "Lafite Apartment",
+     "size": 915.0,
+     "rent": 1599.0,
+     "rooms": 3.0,
+     "src": "PropertyGuru",
+     "psf": 1.75
+    },
+    {
+     "project": "Lafite Apartment",
+     "size": 950.0,
+     "rent": 1700.0,
+     "rooms": 3.0,
+     "src": "PropertyGuru",
+     "psf": 1.79
+    },
+    {
+     "project": "Lafite Apartment",
+     "size": 950.0,
+     "rent": 1600.0,
+     "rooms": 3.0,
+     "src": "PropertyGuru",
+     "psf": 1.68
+    },
+    {
+     "project": "Casa Tiara",
+     "size": 954.0,
+     "rent": 2600.0,
+     "rooms": 3.0,
+     "src": "Mudah",
+     "psf": 2.73
+    },
+    {
+     "project": "My Place",
+     "size": 980.0,
+     "rent": 2500.0,
+     "rooms": 3.0,
+     "src": "Mudah",
+     "psf": 2.55
+    },
+    {
+     "project": "E-Tiara",
+     "size": 800.0,
+     "rent": 2300.0,
+     "rooms": 2.0,
+     "src": "Mudah",
+     "psf": 2.88
+    },
+    {
+     "project": "E-Tiara",
+     "size": 800.0,
+     "rent": 2099.0,
+     "rooms": 2.0,
+     "src": "Mudah",
+     "psf": 2.62
+    },
+    {
+     "project": "E-Tiara",
+     "size": 800.0,
+     "rent": 2200.0,
+     "rooms": 2.0,
+     "src": "Mudah",
+     "psf": 2.75
+    },
+    {
+     "project": "E-Tiara",
+     "size": 800.0,
+     "rent": 2080.0,
+     "rooms": 2.0,
+     "src": "PropertyGuru",
+     "psf": 2.6
+    },
+    {
+     "project": "Casa Tiara",
+     "size": 800.0,
+     "rent": 2400.0,
+     "rooms": 3.0,
+     "src": "Mudah",
+     "psf": 3.0
+    },
+    {
+     "project": "Subang Avenue",
+     "size": 1021.0,
+     "rent": 2599.0,
+     "rooms": 3.0,
+     "src": "Mudah",
+     "psf": 2.55
+    },
+    {
+     "project": "Isola",
+     "size": 1026.0,
+     "rent": 3500.0,
+     "rooms": 2.0,
+     "src": "Mudah",
+     "psf": 3.41
+    }
+   ],
+   "note": null
+  },
+  "960": {
+   "size": 960,
+   "tol_pct": 15,
+   "n": 8,
+   "n_near_if_insufficient": 0,
+   "rent_psf_median": 2.55,
+   "rent_median": 2550,
+   "sufficient": true,
+   "projects": {
+    "My Place": 1,
+    "Lafite Apartment": 3,
+    "Subang Avenue": 2,
+    "Isola": 1,
+    "Casa Tiara": 1
+   },
+   "listings": [
+    {
+     "project": "Casa Tiara",
+     "size": 954.0,
+     "rent": 2600.0,
+     "rooms": 3.0,
+     "src": "Mudah",
+     "psf": 2.73
+    },
+    {
+     "project": "Lafite Apartment",
+     "size": 950.0,
+     "rent": 1700.0,
+     "rooms": 3.0,
+     "src": "PropertyGuru",
+     "psf": 1.79
+    },
+    {
+     "project": "Lafite Apartment",
+     "size": 950.0,
+     "rent": 1600.0,
+     "rooms": 3.0,
+     "src": "PropertyGuru",
+     "psf": 1.68
+    },
+    {
+     "project": "My Place",
+     "size": 980.0,
+     "rent": 2500.0,
+     "rooms": 3.0,
+     "src": "Mudah",
+     "psf": 2.55
+    },
+    {
+     "project": "Lafite Apartment",
+     "size": 915.0,
+     "rent": 1599.0,
+     "rooms": 3.0,
+     "src": "PropertyGuru",
+     "psf": 1.75
+    },
+    {
+     "project": "Subang Avenue",
+     "size": 1021.0,
+     "rent": 2599.0,
+     "rooms": 3.0,
+     "src": "Mudah",
+     "psf": 2.55
+    },
+    {
+     "project": "Isola",
+     "size": 1026.0,
+     "rent": 3500.0,
+     "rooms": 2.0,
+     "src": "Mudah",
+     "psf": 3.41
+    },
+    {
+     "project": "Subang Avenue",
+     "size": 1080.0,
+     "rent": 2800.0,
+     "rooms": 3.0,
+     "src": "Mudah",
+     "psf": 2.59
+    }
+   ],
+   "note": null
+  },
+  "980": {
+   "size": 980,
+   "tol_pct": 15,
+   "n": 8,
+   "n_near_if_insufficient": 0,
+   "rent_psf_median": 2.55,
+   "rent_median": 2550,
+   "sufficient": true,
+   "projects": {
+    "My Place": 1,
+    "Lafite Apartment": 3,
+    "Subang Avenue": 2,
+    "Isola": 1,
+    "Casa Tiara": 1
+   },
+   "listings": [
+    {
+     "project": "My Place",
+     "size": 980.0,
+     "rent": 2500.0,
+     "rooms": 3.0,
+     "src": "Mudah",
+     "psf": 2.55
+    },
+    {
+     "project": "Casa Tiara",
+     "size": 954.0,
+     "rent": 2600.0,
+     "rooms": 3.0,
+     "src": "Mudah",
+     "psf": 2.73
+    },
+    {
+     "project": "Lafite Apartment",
+     "size": 950.0,
+     "rent": 1700.0,
+     "rooms": 3.0,
+     "src": "PropertyGuru",
+     "psf": 1.79
+    },
+    {
+     "project": "Lafite Apartment",
+     "size": 950.0,
+     "rent": 1600.0,
+     "rooms": 3.0,
+     "src": "PropertyGuru",
+     "psf": 1.68
+    },
+    {
+     "project": "Subang Avenue",
+     "size": 1021.0,
+     "rent": 2599.0,
+     "rooms": 3.0,
+     "src": "Mudah",
+     "psf": 2.55
+    },
+    {
+     "project": "Isola",
+     "size": 1026.0,
+     "rent": 3500.0,
+     "rooms": 2.0,
+     "src": "Mudah",
+     "psf": 3.41
+    },
+    {
+     "project": "Lafite Apartment",
+     "size": 915.0,
+     "rent": 1599.0,
+     "rooms": 3.0,
+     "src": "PropertyGuru",
+     "psf": 1.75
+    },
+    {
+     "project": "Subang Avenue",
+     "size": 1080.0,
+     "rent": 2800.0,
+     "rooms": 3.0,
+     "src": "Mudah",
+     "psf": 2.59
+    }
+   ],
+   "note": null
+  }
+ }
+}

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useLang } from '../lib/i18n.jsx'
 import { GOALS } from '../lib/holderProfile.js'
-import { areaCompletedProjects } from '../lib/launchScore.js'
+import { launchPeers } from '../lib/launchScore.js'
 import { launchRisks } from '../lib/launchRisk.js'
 import { cashVsRent, entryCost } from '../lib/mortgage.js'
 import { ownerMonthly } from './CompareTiles.jsx'
@@ -157,7 +157,7 @@ export function NeighbourCompare({ p, s, entry, goal, loan, currentRent }) {
   const typ = s.typ
   const v = s.v
   const median = s.area?.medianPsf || null
-  const peers = areaCompletedProjects(p.area)
+  const peers = launchPeers(p)
   const room = typ.beds == null ? '' : typ.beds <= 0 ? t('套房', 'Studio') : t(`${typ.beds} 房`, `${typ.beds}-bed`)
   const premium = s.psf && median ? (s.psf / median - 1) * 100 : null
 

@@ -1,10 +1,15 @@
 import comps from './bss_launch_comps.json' with { type: 'json' }
+import ss15Comps from './ss15_launch_comps.json' with { type: 'json' }
 
 export const LAUNCH_COMPS = comps
 export const AREA_RENT_PSF = comps.comparables.area_project_median_rent_psf // 3.75, ex-flats
 
-function bandFor(size) {
-  return comps.bands[String(size)] || null
+/** Comparable sets by key. Bangsar South is the default; HAUS ON 15 uses the SS15 / Subang Jaya set. */
+export const COMPS_BY_KEY = { bss: comps, ss15: ss15Comps }
+export const compsFor = key => COMPS_BY_KEY[key || 'bss'] || comps
+
+function bandFor(size, key) {
+  return compsFor(key).bands[String(size)] || null
 }
 
 export const LAUNCHES = [
@@ -172,6 +177,68 @@ export const LAUNCHES = [
         price_source_zh: '面积和单位数来自官方许可证。许可证最高价 RM1,291,200 很可能是 Type B 高层，但不能当作已对上户型的起价。2026 年 11 月有中介列出 1,180 平方尺 RM907,000，那是叫价，这里不用。请填销售报价后再看回报。', price_confidence: 'size_only', band_size: 1180 },
     ],
   },
+  {
+    id: 'nl-haus-on-15',
+    name: 'HAUS ON 15',
+    marketing_name: 'HAUS ON 15 (SS15 Subang Jaya)',
+    registered_name: null,
+    developer: null,
+    developer_note: null,
+    comps_key: 'ss15',
+    area: 'sj',
+    area_en: 'SS15 Subang Jaya',
+    area_zh: 'SS15 梳邦再也',
+    address: 'SS15, Subang Jaya, Selangor. Exact street address not stated. Next to INTI International College Subang and Sri Kuala Lumpur International School (both 10 m per the sales kit); 12-minute walk to SS15 LRT.',
+    address_zh: '雪兰莪梳邦再也 SS15。未提供确切街道地址。紧邻 INTI 国际学院和吉隆坡国际学校（销售资料写均为 10 米）；步行约 12 分钟到 SS15 LRT。',
+    lat: null,
+    lng: null,
+    geo_source: 'none',
+    geo_detail: 'No OSM feature or street address exists for this project (Nominatim and Overpass checked 2026-11-28; the sales kit gives only an aerial map). No pin is drawn rather than guessing. Comparables are measured from OSM way 407156837 (KJ29 SS15 LRT station), which is a reference point, not the site.',
+    location_approx: true,
+    tenure: 'Freehold',
+    property_type: 'Serviced Residence',
+    property_type_zh: '服务式公寓',
+    total_units: 522,
+    total_units_note: 'Sales kit: Tower A 284 + Tower B 238 serviced apartments (24 floors each) = 522. Tower C is a separate 15-floor, 253-unit student accommodation block, and there are 18 strata shops over 2–3 floors; neither is counted. Developer headline: “SS15’s final freehold development”.',
+    total_units_note_zh: '销售资料：A 座 284 + B 座 238 个服务式公寓（各 24 层）= 522 个。C 座是另一栋 15 层、253 个单位的学生宿舍，另有 2–3 层共 18 间分层店铺，这两项都不计入。开发商标语：“SS15 最后一个永久地契项目”。',
+    expected_completion_year: null,
+    maint_psf: 0.35,
+    maint_source: 'No maintenance fee is stated in the sales kit. The map’s RM0.35 psf/month assumption for Subang Jaya condos and serviced residences (including sinking fund) is used and labelled as an assumption.',
+    maint_source_zh: '销售资料没有写管理费。这里采用地图上梳邦再也公寓和服务式公寓的假设值 RM0.35 psf/月（含偿债基金），并标明这是假设。',
+    maint_basis_zh: '梳邦再也',
+    maint_basis_en: 'Subang Jaya',
+    maint_is_published: false,
+    transit: [
+      { zh: 'SS15 LRT 站（销售资料：500 米范围；步行约 12 分钟）', en: 'SS15 LRT station (sales kit: 500 m radius; 12-minute walk)', official_m: 500, official: 'Sales kit: SS15 LRT Station 500 m (Kelana Jaya Line). The aerial map in the same kit says “12 mins walk to LRT SS15”. The kit’s transport key also lists the KTM Port Klang and BRT Sunway lines.' },
+    ],
+    facilities: [
+      { group_zh: '泳池与水景（7 楼设施层，A、B 座共用）', group_en: 'Pools and water (Level 7 podium, Towers A and B)', items_zh: ['休闲池、浅水池、泳道池', '绿洲按摩池、气泡池', '森林池亭与休息区、水池休息区', '池畔平台、户外冲凉'], items_en: ['Leisure pool, wading pool, lap pool', 'Oasis jacuzzi, bubbling pool', 'Forest pool pavilion and lounge, water pool lounge', 'Pool deck, outdoor showers'] },
+      { group_zh: '室内', group_en: 'Indoor', items_zh: ['多功能厅、多功能休息室、会前区', '共享工作室', '健身房、瑜伽 / 舞蹈室', '娱乐室、游戏室、派对室', '更衣室'], items_en: ['Multipurpose hall and lounge, pre-function area', 'Co-working room', 'Gym, yoga / dance room', 'Entertainment room, games room, party room', 'Changing rooms'] },
+      { group_zh: '户外', group_en: 'Outdoor', items_zh: ['香料烧烤花园、祈祷室（Surau）', '儿童草坪与游乐场、野餐草坪', '吊床花园、健身 / 体操区（Wellness Garden）', '观景休息区 / 户外活动区'], items_en: ['Aromatic BBQ garden, surau', 'Play lawn, playground, picnic lawn', 'Hammock garden, wellness garden / callisthenic zone', 'Viewing lounge / outdoor function area'] },
+    ],
+    extras: ['Nearby, per sales kit: SS15 Courtyard 500 m · Subang Jaya Medical Centre 500 m · Subang Parade 900 m · Sunway Pyramid 1.4 km · Asia e University 120 m · Monash 1.4 km · Sunway University 1.5 km'],
+    extras_zh: ['销售资料列出的周边：SS15 Courtyard 500 米 · 梳邦再也医药中心 500 米 · Subang Parade 900 米 · Sunway Pyramid 1.4 公里 · Asia e University 120 米 · 莫纳什 1.4 公里 · 双威大学 1.5 公里'],
+    source_note: 'Facts (tenure, location, tower and unit counts, unit sizes, car parks, facilities, transport) are from the developer’s sales kit; no images from the kit are used. The four from-prices come from an agent price list dated 28 Nov 2026. The kit does not state the developer, launch date, completion date, maintenance fee or street address, so those are left blank. The kit also lists a 980 sqft 3-bed 3-bath triple-key type (Type E) with no price.',
+    source_note_zh: '资料（地契、位置、楼栋和单位数、户型面积、车位、设施、交通）来自开发商销售资料，没有使用其中的图片。四个起价来自 2026 年 11 月 28 日的中介报价单。销售资料没有写开发商、推出日期、完工日期、管理费和街道地址，所以留空。资料另列 980 平方尺三房三卫的三钥匙户型（Type E），没有价格。',
+    sources: [],
+    comps_note: 'Comparable set: completed freehold condos and serviced residences within 1.5 km of SS15 LRT station; landed homes and low-cost flats are excluded; transacted psf is the cached Brickz median; rents are asking rents from Mudah / PropertyGuru already collected.',
+    comps_note_zh: '对照范围：SS15 LRT 站 1.5 公里内已建成的永久地契公寓和服务式公寓；不含有地住宅和组屋；成交价用已缓存的 Brickz 成交 psf 中位；租金用此前已收集的 Mudah / PropertyGuru 叫租。',
+    card_name: 'HAUS ON 15',
+    card_name_zh: 'HAUS ON 15',
+    render: null,
+    typologies: [
+      { id: 'haus-a', tower: 'Tower A / B', type: 'Type A 2-bed', type_zh: 'Type A 两房', beds: 2, baths: 2, size: 690, carpark: '1', price_from: 663000, price_to: null, psf_from: 961, comps_key: 'ss15', band_size: 690, price_confidence: 'agent_quote',
+        price_source: 'Agent price list, 28 Nov 2026: 690 sqft 2 bed 2 bath from RM663,000.', price_source_zh: '中介报价单（2026 年 11 月 28 日）：690 平方尺两房两卫，RM663,000 起。' },
+      { id: 'haus-b', tower: 'Tower A / B', type: 'Type B 3-bed dual-key', type_zh: 'Type B 三房双钥匙', beds: 3, baths: 2, size: 830, carpark: '1', price_from: 826000, price_to: null, psf_from: 995, comps_key: 'ss15', band_size: 830, price_confidence: 'agent_quote',
+        price_source: 'Agent price list, 28 Nov 2026: 830 sqft 3 bed 2 bath (dual key) from RM826,000.', price_source_zh: '中介报价单（2026 年 11 月 28 日）：830 平方尺三房两卫（双钥匙），RM826,000 起。' },
+      { id: 'haus-c', tower: 'Tower A / B', type: 'Type C 3-bed', type_zh: 'Type C 三房', beds: 3, baths: 2, size: 905, carpark: '2', price_from: 844000, price_to: null, psf_from: 933, comps_key: 'ss15', band_size: 905, price_confidence: 'agent_quote',
+        price_source: 'Agent price list, 28 Nov 2026: 905 sqft 3 bed 2 bath from RM844,000.', price_source_zh: '中介报价单（2026 年 11 月 28 日）：905 平方尺三房两卫，RM844,000 起。' },
+      { id: 'haus-d', tower: 'Tower A / B', type: 'Type D 3-bed dual-key', type_zh: 'Type D 三房双钥匙', beds: 3, baths: 2, size: 960, carpark: '2', price_from: 875000, price_to: null, psf_from: 912, comps_key: 'ss15', band_size: 960, price_confidence: 'agent_quote',
+        price_source: 'Agent price list, 28 Nov 2026: 960 sqft 3 bed 2 bath (dual key) from RM875,000.', price_source_zh: '中介报价单（2026 年 11 月 28 日）：960 平方尺三房两卫（双钥匙），RM875,000 起。' },
+      { id: 'haus-e', tower: 'Tower A / B', type: 'Type E 3-bed triple-key', type_zh: 'Type E 三房三钥匙', beds: 3, baths: 3, size: 980, carpark: '2', price_from: null, price_to: null, psf_from: null, comps_key: 'ss15', band_size: 980, price_confidence: 'size_only',
+        price_source: 'Size, rooms and car parks are from the sales kit. No price was given for this type. Enter a sales quote to see yield.', price_source_zh: '面积、房间数和车位来自销售资料。这个户型没有给价格。请填销售报价后再看回报。' },
+    ],
+  },
 ]
 
 export function launchById(id) {
@@ -179,14 +246,14 @@ export function launchById(id) {
 }
 
 export function typBand(typ) {
-  return bandFor(typ.band_size || typ.size)
+  return bandFor(typ.band_size || typ.size, typ.comps_key)
 }
 
 /** Rent psf used for the typ: size-band median when the band is sufficient, else area project-median. */
 export function typRentPsf(typ) {
   const b = typBand(typ)
   if (b?.sufficient && b.rent_psf_median) return { psf: b.rent_psf_median, source: 'band', band: b }
-  return { psf: AREA_RENT_PSF, source: 'area_fallback', band: b }
+  return { psf: compsFor(typ.comps_key).comparables.area_project_median_rent_psf, source: 'area_fallback', band: b }
 }
 
 export default LAUNCHES

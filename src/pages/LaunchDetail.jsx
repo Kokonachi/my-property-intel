@@ -3,7 +3,7 @@ import { AppNav } from '../components/AppNav.jsx'
 import { Footer } from '../components/ui.jsx'
 import { NoteChip } from '../components/NoteChip.jsx'
 import { useLang } from '../lib/i18n.jsx'
-import { typRentPsf, AREA_RENT_PSF } from '../data/launches.js'
+import { typRentPsf, compsFor } from '../data/launches.js'
 import { typYields, workingPrice, discountToTargetGross } from '../lib/launchYield.js'
 import { fmtRM, yieldBand } from '../data/properties.js'
 import { REAL_META } from '../data/real.js'
@@ -189,8 +189,8 @@ function TypCard({ p, typ, t, draft, onChange, compactLoan = false, variant = 'd
         <div className="mt-2.5 flex flex-wrap items-start gap-1.5">
           {thin && (
             <NoteChip testId={`thin-sample-${typ.id}`} label={t('样本少', 'Thin sample')}>
-              {t(`附近没有足够的相近面积租盘（±25% 内不足 4 则）。上面的回报改用孟沙南已建成楼盘的租金中位数 RM${psf.toFixed(2)} psf（不含组屋）。`,
-                `Not enough nearby listings in the same size band (fewer than 4 ads within ±25%). Yield above uses the Bangsar South completed-project median rent of RM${psf.toFixed(2)} psf, excluding low-cost flats.`)}
+              {t(`附近没有足够的相近面积租盘（±25% 内不足 4 则）。上面的回报改用${p.area_zh}已建成楼盘的租金中位数 RM${psf.toFixed(2)} psf（不含组屋）。`,
+                `Not enough nearby listings in the same size band (fewer than 4 ads within ±25%). Yield above uses the ${p.area_en} completed-project median rent of RM${psf.toFixed(2)} psf, excluding low-cost flats.`)}
               {band?.listings?.length
                 ? t(` 最近的一则：${band.listings[0].project} ${band.listings[0].size} sqft，叫租 ${rm(band.listings[0].rent)}/月。`,
                   ` Nearest ad: ${band.listings[0].project} ${band.listings[0].size} sqft, asking ${rm(band.listings[0].rent)}/mo.`)
@@ -359,7 +359,7 @@ export default function LaunchDetail({ p }) {
 
   const facts = [
     { label: t('地契', 'Tenure'), value: tenureLabel },
-    { label: t('交房', 'Handover / VP'), value: t(`${p.expected_completion_year} 年`, String(p.expected_completion_year)) },
+    p.expected_completion_year ? { label: t('交房', 'Handover / VP'), value: t(`${p.expected_completion_year} 年`, String(p.expected_completion_year)) } : null,
     unitsValue ? { label: t('单位数', 'Units'), value: unitsValue } : null,
     p.maint_psf != null ? { label: t('管理费', 'Maintenance'), value: `RM${p.maint_psf.toFixed(2)} psf` } : null,
     transitValue ? { label: t('轨道交通', 'Transit'), value: transitValue } : null,
@@ -376,7 +376,7 @@ export default function LaunchDetail({ p }) {
       <main className="flex-1 max-w-2xl mx-auto w-full px-3 sm:px-5 py-3 sm:py-5 space-y-3">
         <div className="flex flex-wrap items-center gap-3 text-[13px] font-medium text-slate-600">
           <a href="#/" className="hover:text-slate-900">{t('← 全部新楼盘', '← All new launches')}</a>
-          <a href={`#/explore/${p.id}`} className="hover:text-slate-900">{t('在地图上看', 'See on the map')}</a>
+          {p.lat != null && p.lng != null ? <a href={`#/explore/${p.id}`} className="hover:text-slate-900">{t('在地图上看', 'See on the map')}</a> : null}
         </div>
 
         <GoalPrompt />
@@ -397,7 +397,7 @@ export default function LaunchDetail({ p }) {
           <div className="p-4 sm:p-5">
             <h1 className="text-[22px] sm:text-[26px] font-semibold text-slate-900 leading-tight tracking-tight">{p.name}</h1>
             <p className="mt-1 text-[13px] text-slate-500">{metaLine}</p>
-            <p className="mt-0.5 text-[13px] text-slate-500">{p.developer}{p.developer_parent ? ` · ${p.developer_parent}` : ''}</p>
+            {p.developer ? <p className="mt-0.5 text-[13px] text-slate-500">{p.developer}{p.developer_parent ? ` · ${p.developer_parent}` : ''}</p> : null}
 
             <NeighbourCompare p={p} s={scored} entry={entry} goal={goal} loan={loan} currentRent={holder.currentRent} />
 
@@ -454,7 +454,7 @@ export default function LaunchDetail({ p }) {
               ) : null}
               {!p.maint_is_published && p.maint_psf != null ? (
                 <NoteChip testId="maint-note" label={t('管理费为假设', 'Assumed maintenance')}>
-                  {t(`RM${p.maint_psf.toFixed(2)} psf/月未公布，用孟沙南已建成楼盘的假设。`, `RM${p.maint_psf.toFixed(2)} psf/mo is not published; this uses the Bangsar South assumption.`)}
+                  {t(`RM${p.maint_psf.toFixed(2)} psf/月未公布，用${p.maint_basis_zh || '孟沙南'}已建成楼盘的假设。`, `RM${p.maint_psf.toFixed(2)} psf/mo is not published; this uses the ${p.maint_basis_en || 'Bangsar South'} assumption.`)}
                 </NoteChip>
               ) : null}
             </div>
@@ -526,8 +526,13 @@ export default function LaunchDetail({ p }) {
                   <div className="leading-relaxed">{t(g.items_zh.join(' · '), g.items_en.join(' · '))}</div>
                 </div>
               ))}
-              {p.extras && <div className="mt-3">{p.extras.join(' · ')}</div>}
-              {p.address && <div className="mt-3 text-[12px] text-slate-500">{p.address}</div>}
+              {p.extras && <div className="mt-3">{t((p.extras_zh || p.extras).join(' · '), p.extras.join(' · '))}</div>}
+              {p.address && (
+                <div className="mt-3 text-[12px] text-slate-500" data-testid="address-line">
+                  {p.location_approx ? <span className="mr-1 rounded bg-slate-100 px-1.5 py-0.5 font-medium text-slate-700">{t('位置为大约', 'Approximate location')}</span> : null}
+                  {t(p.address_zh || p.address, p.address)}
+                </div>
+              )}
             </div>
           </details>
         )}
@@ -555,7 +560,9 @@ export default function LaunchDetail({ p }) {
                 'Indicative gross = size-band median asking rent psf × typ size × 12 ÷ list price. Net yield uses the existing method: subtract about one month of vacancy, assessment tax (4% of annual rent), maintenance, and quit rent plus insurance (RM250/year for strata).')}</li>
               <li>{t('参考毛回报用的是附近已建成楼盘、接近同一面积的叫租中位数，不是地图上“每条租盘各自算完再取中位”的方法，也不能当成交房后的实际租金。', 'Indicative gross uses the median asking rent psf of nearby completed projects in the same size band. It is not the live map’s per-listing median, and it is not achieved rent after handover.')}</li>
               <li>{t(p.maint_source_zh || p.maint_source, p.maint_source)}</li>
-              <li>{t('可比样本已去掉安卡莎布里组屋（租金约 RM1.88 psf，和这类新盘不可比），KL Gateway / Suezcap 的重复广告只计一次。', 'Angkasapuri low-cost flats (about RM1.88 psf) are excluded; duplicate ads under the KL Gateway / Suezcap Brickz records are counted once.')}</li>
+              <li>{p.comps_note
+                ? t(p.comps_note_zh || p.comps_note, p.comps_note)
+                : t('可比样本已去掉安卡莎布里组屋（租金约 RM1.88 psf，和这类新盘不可比），KL Gateway / Suezcap 的重复广告只计一次。', 'Angkasapuri low-cost flats (about RM1.88 psf) are excluded; duplicate ads under the KL Gateway / Suezcap Brickz records are counted once.')}</li>
               <li>{t('开发商给的议价折扣通常不会挂在网上。本页数字默认是表价；只有你填了销售报价之后，折扣后的回报和月供才会按折后价重算。', 'Negotiated developer discounts are rarely listed online. Figures default to the list price; after-discount yields and instalments appear only after you enter a sales quote.')}</li>
               <li>{t('月供用等额本息公式，贷款成数默认 90%，可在 50%–90% 之间改，首页、地图小窗和本页共用。年利率默认 4.3%、年期默认 35 年，可在本页修改。国行 2026 年 11 月 5 日维持隔夜政策利率 2.75%，各银行标准化基准利率（SBR）同为 2.75%。4.3% 是目前市面常见浮动房贷（约 4.10–4.75%）的中间假设，不是银行批复利率；投资客贷款可能更高。年期通常会受年龄上限（多为 70 岁）限制。租金是叫租估算，不是交房后的实收租金。',
                 'The instalment uses a standard amortising formula. Loan percentage defaults to 90% and can be set from 50% to 90%; the same value is shared on the home list, the map panel and this page. Interest defaults to 4.3% p.a. over 35 years, editable here. Bank Negara held the OPR at 2.75% on 5 Nov 2026, so every bank’s SBR is 2.75%. 4.3% is a mid-market assumption among advertised floating packages in November 2026 (about 4.10–4.75%), not a bank offer; investor loans can be higher. Tenure is often capped by age (commonly 70). Rent is an asking-rent estimate, not achieved rent after handover.')}</li>
@@ -566,8 +573,9 @@ export default function LaunchDetail({ p }) {
               <li>{t('交房前利息：假设银行按施工进度放款，已完成的部分现在就放，其余到交房前平均放出，所以平均欠款 ≈ 贷款 ×（进度 +（1 − 进度）÷ 2）。这是粗估，实际按发展商的进度款时间表。',
                 'Interest before handover: the bank is assumed to release the loan with construction — what is built now is drawn now, the rest evenly until handover — so the average balance ≈ loan × (progress + (1 − progress) ÷ 2). A rough estimate; the developer’s billing schedule decides the real figure.')}</li>
             </ul>
-                        {(p.render?.credit_zh || p.developer_note || p.handover_note || p.handover_note_zh || p.total_units_note || p.total_units_note_zh || p.abdullah_hukum || p.transit?.[0] || p.mid_valley || p.title_note) && (
+                        {(p.render?.credit_zh || p.source_note || p.developer_note || p.handover_note || p.handover_note_zh || p.total_units_note || p.total_units_note_zh || p.abdullah_hukum || p.transit?.[0] || p.mid_valley || p.title_note) && (
               <div className="text-[12px] text-slate-500 space-y-1.5">
+                {p.source_note ? <p>{t(p.source_note_zh || p.source_note, p.source_note)}</p> : null}
                 {p.render?.credit_zh ? <p>{t('效果图', 'Render')}: {t(p.render.credit_zh, p.render.credit_en)}</p> : null}
                 {p.developer_note ? <p>{t('开发商主体是 Kumpulan Gapadu Sdn Bhd，母公司为 Malton Berhad。官网和销售邮箱用的是 Malton 名义。', p.developer_note)}</p> : null}
                 {(p.handover_note_zh || p.handover_note) ? <p>{t('交房', 'Handover')}: {t(p.handover_note_zh || p.handover_note, p.handover_note)}</p> : null}
@@ -578,7 +586,7 @@ export default function LaunchDetail({ p }) {
                 {p.title_note ? <p>{p.title_note}</p> : null}
               </div>
             )}
-            {pricedTyp && <p className="text-[12px] text-slate-500">{t(`区域楼盘租金中位（不含组屋）为 RM${AREA_RENT_PSF.toFixed(2)} psf，仅作对照，户型回报优先用同面积段。`, `The area project-median rent (excluding flats) is RM${AREA_RENT_PSF.toFixed(2)} psf, shown only as a cross-check. Typ yields prefer the same-size band.`)}</p>}
+            {pricedTyp && <p className="text-[12px] text-slate-500">{t(`区域楼盘租金中位（不含组屋）为 RM${compsFor(p.comps_key).comparables.area_project_median_rent_psf.toFixed(2)} psf，仅作对照，户型回报优先用同面积段。`, `The area project-median rent (excluding flats) is RM${compsFor(p.comps_key).comparables.area_project_median_rent_psf.toFixed(2)} psf, shown only as a cross-check. Typ yields prefer the same-size band.`)}</p>}
             {p.typologies.some(ty => ty.price_source || ty.price_source_zh) && (
               <div>
                 <div className="font-medium text-slate-800">{t('各户型价格来源', 'Price source by unit type')}</div>
@@ -597,7 +605,7 @@ export default function LaunchDetail({ p }) {
                 </ul>
               </div>
             ) : null}
-            <a href="#/map" className="inline-block text-[13px] font-medium text-slate-700 hover:text-slate-950">{t('打开孟沙南已建成楼盘的租金回报地图 →', 'Open the rental-yield map of completed Bangsar South projects →')}</a>
+            <a href="#/map" className="inline-block text-[13px] font-medium text-slate-700 hover:text-slate-950">{t(`打开${p.area_zh}已建成楼盘的租金回报地图 →`, `Open the rental-yield map of completed ${p.area_en} projects →`)}</a>
           </div>
         </details>
       </main>

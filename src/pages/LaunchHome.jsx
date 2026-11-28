@@ -1,10 +1,9 @@
 import { useState } from 'react'
 import { useLang } from '../lib/i18n.jsx'
 import { LAUNCHES } from '../data/launches.js'
-import { REAL } from '../data/real.js'
 import { fmtRM } from '../data/properties.js'
 import { useLoanAssumptions } from '../lib/loanAssumptions.js'
-import { rankedLaunches, scoreBand, entryCostOf, areaCompletedStats } from '../lib/launchScore.js'
+import { rankedLaunches, scoreBand, entryCostOf } from '../lib/launchScore.js'
 import { AppNav } from '../components/AppNav.jsx'
 import { LoanPctControl } from '../components/LtvVerdict.jsx'
 import { FirstBuyerNote, GoalPrompt, RentPrompt, LoansControl } from '../components/HolderSheet.jsx'
@@ -74,6 +73,7 @@ function RankCard({ p, s, goal }) {
                 {s.typ?.size ? <span className="text-slate-400 font-normal"> · {s.typ.size.toLocaleString()} sqft</span> : null}
               </div>
               <div className="mt-1 flex flex-wrap gap-1">
+                <span className="inline-flex items-center rounded-md bg-slate-100 px-1.5 py-0.5 text-[11px] font-medium text-slate-600">{t(p.area_zh, p.area_en)}</span>
                 <PremiumTag psf={s.psf} area={area} />
                 {p.expected_completion_year ? <span className="inline-flex items-center rounded-md bg-slate-100 px-1.5 py-0.5 text-[11px] font-medium text-slate-600">{t(`${p.expected_completion_year} 年交房`, `Ready ${p.expected_completion_year}`)}</span> : null}
               </div>
@@ -101,8 +101,6 @@ export default function LaunchHome() {
   const [compareOpen, setCompareOpen] = useState(false)
   const home = goal === GOALS.home
   const rows = rankedLaunches(LAUNCHES, { rate: loan.rate, years: loan.years, ltv: loan.ltv, sortBy: home ? 'entry' : 'score' })
-  const areaN = REAL.filter(p => p.area === 'bss').length
-  const area = areaCompletedStats('bss')
 
   return (
     <div className="min-h-full bg-[#f6f7f8] flex flex-col" data-testid="launch-home" data-goal={goal || 'none'}>
@@ -111,10 +109,10 @@ export default function LaunchHome() {
       <main className="flex-1 max-w-xl mx-auto w-full px-3 sm:px-5 py-3 sm:py-5 space-y-2.5">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <h1 className="text-[17px] font-semibold text-slate-900 tracking-tight">{t('孟沙南新楼盘', 'New launches in Bangsar South')}</h1>
+            <h1 className="text-[17px] font-semibold text-slate-900 tracking-tight">{t('新楼盘', 'New launches')}</h1>
             <p className="mt-0.5 text-[12px] text-slate-500 leading-snug" data-testid="scope-line">
-              {t(`收录 ${LAUNCHES.length} 个新盘，拿同区已建成楼盘做对照：二手成交中位 RM${area.medianPsf} psf（${area.n} 个楼盘）。`,
-                `${LAUNCHES.length} launches, checked against completed projects nearby: resale median RM${area.medianPsf} psf (${area.n} projects).`)}
+              {t(`${LAUNCHES.length} 个新盘（孟沙南、SS15），每个都对照附近已建成二手的成交价。`,
+                `${LAUNCHES.length} launches (Bangsar South, SS15), each checked against nearby resale prices.`)}
             </p>
           </div>
           {home && <FirstBuyerNote compact />}
@@ -139,7 +137,7 @@ export default function LaunchHome() {
           </button>
         )}
         <a href="#/map" className="block text-center text-[13px] font-medium text-slate-600 hover:text-slate-900 py-1" data-testid="to-map">
-          {t(`看同区 ${areaN} 个已建成楼盘的租金回报 →`, `See yields at ${areaN} completed projects nearby →`)}
+          {t('看已建成楼盘的租金回报地图 →', 'See rental yields at completed projects →')}
         </a>
       </main>
       {compareOpen && (
